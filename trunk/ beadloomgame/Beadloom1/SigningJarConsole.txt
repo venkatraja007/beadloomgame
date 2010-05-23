@@ -1,0 +1,73 @@
+"C:\Program Files\Java\jdk1.6.0_03\bin"
+Generate Keys:
+
+keytool - genkey -alias BeadFiles -keystore hollisstore1 - keypass beads3321 -dname "cn=hollis1" -storepass ccpjm20081
+[no console output]
+
+Sign the Jar:
+
+jarsigner -keystore hollisstore1 -storepass ccpjm20081 -keypass beads3321 -signedjar Beads0.jar Beads.jar BeadFiles
+[Warning: the signer certificate will expire within six months]
+
+Export the Public Key Certificate:
+
+keytool -export -keystore hollisstore1 -storepass ccpjm20081 -alias BeadFiles -file Beadloom0.cer
+[Certificate store in file <Beadloom.cer>]
+
+
+
+Signing Jar output Example for BeadLoom!!!
+
+Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
+
+C:\Documents and Settings\student>keytool -genkey -alias BeadFiles -keystore hol
+lisstore -keypass beads111 -dname "cn=BeadLoom" -storepass beads123
+
+C:\Documents and Settings\student>jarsigner -keystore hollisstore -storepass bea
+ds123 -signedjar BeadsFinal0.jar BeadFinal.jar BeadFiles
+Enter key password for BeadFiles:
+
+Warning:
+The signer certificate will expire within six months.
+
+C:\Documents and Settings\student>keytool -export -keystore hollisstore -storepa
+ss beads123 -alias BeadFiles -file BeadsFinal.cer
+Certificate stored in file <BeadsFinal.cer>
+
+C:\Documents and Settings\student>keytool -genkey -alias BeadFiles -keystore hol
+lisstore -keypass beads111 -dname "cn=BeadLoom" -storepass beads123
+keytool error: java.lang.Exception: Key pair not generated, alias <BeadFiles> al
+ready exists
+
+C:\Documents and Settings\student>keytool -genkey -alias BeadWin -keystore holli
+sstore -keypass beads111 -dname "cn=BeadLoom" -storepass beads123
+
+C:\Documents and Settings\student>jarsigner -keystore hollisstore -storepass bea
+ds123 -signedjar BeadWin1.jar BeadWin.jar BeadWin
+Enter key password for BeadWin:
+
+Warning:
+The signer certificate will expire within six months.
+
+C:\Documents and Settings\student>keytool -export -keystore hollisstore -storepa
+ss beads123 -alias BeadWin -file BeadWin.cer
+Certificate stored in file <BeadWin.cer>
+
+C:\Documents and Settings\student>keytool -genkey -alias BeadMac -keystore holli
+sstore -keypass beads111 -dname "cn=BeadLoom" -storepass beads123
+
+C:\Documents and Settings\student>jarsigner -keystore hollisstore -storepass bea
+ds123 -signedjar BeadMac1.jar BeadMac.jar BeadMac
+Enter key password for BeadMac:
+
+Warning:
+The signer certificate will expire within six months.
+
+C:\Documents and Settings\student>keytool -export -keystore hollisstore -storepa
+ss beads123 -alias BeadMac -file BeadMac.cer
+Certificate stored in file <BeadMac.cer>
+
+C:\Documents and Settings\student>
+
+

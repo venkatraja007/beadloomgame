@@ -1,0 +1,541 @@
+<4/19/2009 17:50:41> Acey logs in.
+	<4/19/2009 17:50:41> Loom Example 8 Puzzle Selected.
+<4/19/2009 17:52:11> Acey logs in.
+	<4/19/2009 17:52:11> Loom Example 8 Puzzle Selected.
+<4/19/2009 17:53:26> Acey logs in.
+	<4/19/2009 17:53:26> Loom Example 8 Puzzle Selected.
+<4/19/2009 18:9:46> Acey logs in.
+	<4/19/2009 18:9:46> Loom Example 8 Puzzle Selected.
+		<4/19/2009 18:9:59> Color Change: Orange
+		<4/19/2009 18:10:15> Draw Point:
+			x= 0
+			y= 0
+		<4/19/2009 18:10:19> Draw Point:
+			x= 0
+			y= 0
+<4/19/2009 18:32:1> Acey logs in.
+	<4/19/2009 18:32:1> Loom Example 8 Puzzle Selected.
+		<4/19/2009 18:32:15> Restart Performed
+	<4/19/2009 18:32:15> Batman Puzzle Selected.
+<4/19/2009 18:44:54> Acey logs in.
+	<4/19/2009 18:44:54> Loom Example 8 Puzzle Selected.
+		<4/19/2009 18:44:57> Restart Performed
+	<4/19/2009 18:44:57> Tutorial 1 Puzzle Selected.
+		<4/19/2009 18:45:5> Draw Point:
+			x= 5
+			y= 5
+		<4/19/2009 18:45:12> Color Change: Green
+		<4/19/2009 18:45:29> Draw Point:
+			x= -5
+			y= 5
+		<4/19/2009 18:45:37> Draw Point:
+			x= -5
+			y= -5
+		<4/19/2009 18:45:44> Draw Point:
+			x= 5
+			y= -5
+		<4/19/2009 18:45:48> Checked Solution.
+			<4/19/2009 18:45:48> Puzzle Completed in 4moves.  Earned Platinum!!!!!
+<4/19/2009 19:11:58> Acey logs in.
+	<4/19/2009 19:11:58> Loom Example 8 Puzzle Selected.
+<4/19/2009 19:20:29> Acey logs in.
+	<4/19/2009 19:20:29> Loom Example 8 Puzzle Selected.
+<4/19/2009 19:21:31> Acey logs in.
+	<4/19/2009 19:21:31> Loom Example 8 Puzzle Selected.
+<6/14/2009 16:13:52> Acey logs in.
+	<6/14/2009 16:13:52> Loom Example 8 Puzzle Selected.
+		<6/14/2009 16:13:56> Restart Performed
+	<6/14/2009 16:13:56> Tutorial 1 Puzzle Selected.
+<6/14/2009 16:19:19> Acey logs in.
+	<6/14/2009 16:19:19> Loom Example 8 Puzzle Selected.
+<6/14/2009 16:19:38> Acey logs out.
+<6/14/2009 16:19:44> Acey logs in.
+	<6/14/2009 16:19:44> Loom Example 8 Puzzle Selected.
+		<6/14/2009 16:20:2> Restart Performed
+	<6/14/2009 16:20:2> Triforce Puzzle Selected.
+		<6/14/2009 16:20:42> Color Change: White
+		<6/14/2009 16:21:3> Draw Rectangle:
+			x1= -20
+			x2= 20
+			y1= -20
+			y2= 20
+<6/14/2009 16:41:58> Acey logs in.
+	<6/14/2009 16:41:58> Loom Example 8 Puzzle Selected.
+		<6/14/2009 16:42:0> Restart Performed
+	<6/14/2009 16:42:7> Tutorial 1 Puzzle Selected.
+		<6/14/2009 16:42:12> Restart Performed
+	<6/14/2009 16:42:23> Tutorial 1 Puzzle Selected.
+<6/14/2009 16:43:23> Acey logs in.
+	<6/14/2009 16:43:23> Loom Example 8 Puzzle Selected.
+		<6/14/2009 16:43:28> Restart Performed
+	<6/14/2009 16:43:32> Tutorial 1 Puzzle Selected.
+		<6/14/2009 16:43:38> Restart Performed
+	<6/14/2009 16:43:43> Tutorial 1 Puzzle Selected.
+<6/14/2009 16:50:10> Acey logs in.
+	<6/14/2009 16:50:10> Loom Example 8 Puzzle Selected.
+		<6/14/2009 16:50:14> Restart Performed
+	<6/14/2009 16:50:14> Tutorial 1 Puzzle Selected.
+		<6/14/2009 16:50:16> Draw Point:
+			x= 0
+			y= 0
+		<6/14/2009 16:50:17> Draw Point:
+			x= 0
+			y= 0
+<6/14/2009 17:7:4> Acey logs in.
+	<6/14/2009 17:7:4> Loom Example 8 Puzzle Selected.
+		<6/14/2009 17:7:16> Restart Performed
+	<6/14/2009 17:7:16> Tutorial 1 Puzzle Selected.
+		<6/14/2009 17:7:24> Restart Performed
+	<6/14/2009 17:7:24> Tutorial 1 Puzzle Selected.
+		<6/14/2009 17:7:30> Color Change: Green
+		<6/14/2009 17:7:49> Draw Point:
+			x= -5
+			y= 5
+		<6/14/2009 17:8:4> Color Change: Yellow
+		<6/14/2009 17:9:0> Draw Point:
+			x= -5
+			y= -5
+		<6/14/2009 17:9:19> Undo Performed
+		<6/14/2009 17:9:22> Redo Performed
+<6/14/2009 17:37:47> Acey logs in.
+	<6/14/2009 17:37:47> Loom Example 8 Puzzle Selected.
+		<6/14/2009 17:37:57> Restart Performed
+	<6/14/2009 17:37:57> Triforce Puzzle Selected.
+		<6/14/2009 17:38:2> Draw Point:
+			x= 1
+			y= 0
+		<6/14/2009 17:38:4> Draw Point:
+			x= 1
+			y= 0
+		<6/14/2009 17:38:20> Draw Rectangle:
+			x1= 20
+			x2= -20
+			y1= 20
+			y2= -20
+		<6/14/2009 17:39:23> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+		<6/14/2009 17:39:37> Color Change: Green
+		<6/14/2009 17:41:4> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+		<6/14/2009 17:41:34> Draw Triangle:
+			x1= -15
+			x2= -5
+			x3= 0
+			y1= -15
+			y2= -5
+			y3= -10
+<6/14/2009 17:41:41> Acey logs in.
+	<6/14/2009 17:41:41> Loom Example 8 Puzzle Selected.
+		<6/14/2009 17:41:43> Restart Performed
+	<6/14/2009 17:41:43> Tutorial 1 Puzzle Selected.
+		<6/14/2009 17:41:52> Color Change: Green
+		<6/14/2009 17:42:0> Draw Point:
+			x= -5
+			y= 5
+		<6/14/2009 17:42:6> Color Change: Red
+		<6/14/2009 17:42:7> Draw Point:
+			x= 5
+			y= 5
+		<6/14/2009 17:42:11> Color Change: Blue
+		<6/14/2009 17:42:21> Draw Point:
+			x= 5
+			y= -5
+		<6/14/2009 17:42:29> Color Change: Yellow
+		<6/14/2009 17:42:36> Draw Point:
+			x= -5
+			y= -5
+		<6/14/2009 17:42:39> Checked Solution.
+			<6/14/2009 17:42:39> Puzzle Incomplete. Errors: 1681
+<6/14/2009 17:46:9> Acey logs in.
+	<6/14/2009 17:46:9> Loom Example 8 Puzzle Selected.
+		<6/14/2009 17:46:19> Restart Performed
+	<6/14/2009 17:46:19> Tutorial 1 Puzzle Selected.
+		<6/14/2009 17:46:26> Draw Point:
+			x= -5
+			y= 5
+		<6/14/2009 17:46:35> Draw Point:
+			x= 5
+			y= 5
+		<6/14/2009 17:46:45> Draw Point:
+			x= 5
+			y= -5
+		<6/14/2009 17:46:53> Draw Point:
+			x= -5
+			y= -5
+		<6/14/2009 17:46:57> Checked Solution.
+			<6/14/2009 17:46:57> Puzzle Completed in 4moves.  Earned Platinum!!!!!
+		<6/14/2009 17:47:7> Restart Performed
+	<6/14/2009 17:47:7> Triforce Puzzle Selected.
+		<6/14/2009 17:47:10> Draw Point:
+			x= -5
+			y= -5
+<7/5/2009 14:28:21> Acey logs in.
+	<7/5/2009 14:28:21> Loom Example 8 Puzzle Selected.
+		<7/5/2009 14:28:48> Restart Performed
+	<7/5/2009 14:28:48> Tutorial 2 Puzzle Selected.
+		<7/5/2009 14:29:51> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<7/5/2009 14:30:18> Draw Line:
+			x1= -5
+			x2= 5
+			y1= -5
+			y2= 5
+		<7/5/2009 14:30:28> Checked Solution.
+			<7/5/2009 14:30:28> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+		<7/5/2009 14:30:32> Restart Performed
+		<7/5/2009 14:30:33> Draw Line:
+			x1= -5
+			x2= 5
+			y1= -5
+			y2= 5
+		<7/5/2009 14:30:43> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<7/5/2009 14:30:47> Checked Solution.
+			<7/5/2009 14:30:47> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+<7/26/2009 15:18:17> Acey logs in.
+	<7/26/2009 15:18:17> Loom Example 8 Puzzle Selected.
+<7/26/2009 16:7:12> Acey logs in.
+	<7/26/2009 16:7:12> Loom Example 8 Puzzle Selected.
+		<7/26/2009 16:7:25> Restart Performed
+	<7/26/2009 16:7:25> Triforce Puzzle Selected.
+<7/29/2009 13:55:47> Acey logs in.
+	<7/29/2009 13:55:47> Loom Example 8 Puzzle Selected.
+		<7/29/2009 13:55:50> Restart Performed
+	<7/29/2009 13:55:50> Tutorial 1 Puzzle Selected.
+		<7/29/2009 13:55:54> Color Change: Green
+		<7/29/2009 13:56:1> Draw Point:
+			x= -5
+			y= 5
+		<7/29/2009 13:56:3> Color Change: Red
+		<7/29/2009 13:56:6> Draw Point:
+			x= 5
+			y= 5
+		<7/29/2009 13:56:10> Color Change: Blue
+		<7/29/2009 13:56:15> Draw Point:
+			x= 5
+			y= -5
+		<7/29/2009 13:56:18> Color Change: Yellow
+		<7/29/2009 13:56:22> Draw Point:
+			x= -5
+			y= -5
+		<7/29/2009 13:56:26> Checked Solution.
+			<7/29/2009 13:56:26> Puzzle Completed in 4moves.  Earned Platinum!!!!!
+<7/29/2009 13:56:44> Acey logs in.
+	<7/29/2009 13:56:44> Loom Example 8 Puzzle Selected.
+		<7/29/2009 13:56:52> Restart Performed
+	<7/29/2009 13:56:52> Loom Example 6 Puzzle Selected.
+<7/29/2009 14:5:32> Acey logs in.
+	<7/29/2009 14:5:32> Loom Example 8 Puzzle Selected.
+		<7/29/2009 14:5:37> Restart Performed
+	<7/29/2009 14:5:37> Loom Example 6 Puzzle Selected.
+<7/29/2009 14:6:32> Acey logs in.
+	<7/29/2009 14:6:32> Loom Example 8 Puzzle Selected.
+		<7/29/2009 14:6:35> Restart Performed
+	<7/29/2009 14:6:35> Loom Example 6 Puzzle Selected.
+<7/29/2009 14:9:36> Acey logs in.
+	<7/29/2009 14:9:36> Loom Example 8 Puzzle Selected.
+		<7/29/2009 14:9:42> Restart Performed
+	<7/29/2009 14:9:42> Loom Example 6 Puzzle Selected.
+<7/29/2009 14:11:57> Acey logs in.
+	<7/29/2009 14:11:57> Loom Example 8 Puzzle Selected.
+		<7/29/2009 14:12:1> Restart Performed
+	<7/29/2009 14:12:1> Loom Example 6 Puzzle Selected.
+<7/29/2009 14:13:43> Acey logs in.
+	<7/29/2009 14:13:43> Loom Example 8 Puzzle Selected.
+		<7/29/2009 14:13:46> Restart Performed
+	<7/29/2009 14:13:46> Loom Example 6 Puzzle Selected.
+<7/29/2009 14:31:47> Acey logs in.
+	<7/29/2009 14:31:47> Loom Example 8 Puzzle Selected.
+<7/29/2009 14:37:2> Acey logs in.
+	<7/29/2009 14:37:2> Loom Example 8 Puzzle Selected.
+<7/29/2009 14:37:6> Acey logs out.
+<7/29/2009 15:5:51> Acey logs in.
+	<7/29/2009 15:5:51> Loom Example 8 Puzzle Selected.
+<7/29/2009 15:7:20> Acey logs in.
+	<7/29/2009 15:7:20> Loom Example 8 Puzzle Selected.
+<9/1/2009 16:59:5> Acey logs in.
+	<9/1/2009 16:59:5> Loom Example 8 Puzzle Selected.
+<9/1/2009 17:9:23> Acey logs in.
+	<9/1/2009 17:9:23> Loom Example 8 Puzzle Selected.
+		<9/1/2009 17:9:51> Restart Performed
+	<9/1/2009 17:9:51> Batman Puzzle Selected.
+		<9/1/2009 17:10:42> Restart Performed
+	<9/1/2009 17:10:42> Batman Puzzle Selected.
+		<9/1/2009 17:10:46> Restart Performed
+	<9/1/2009 17:10:46> Tutorial 1 Puzzle Selected.
+		<9/1/2009 17:10:48> Restart Performed
+	<9/1/2009 17:10:48> Tutorial 2 Puzzle Selected.
+<9/1/2009 17:15:55> Acey logs in.
+	<9/1/2009 17:15:55> Loom Example 8 Puzzle Selected.
+		<9/1/2009 17:15:59> Restart Performed
+	<9/1/2009 17:15:59> Tutorial 1 Puzzle Selected.
+		<9/1/2009 17:16:6> Draw Point:
+			x= -5
+			y= 5
+		<9/1/2009 17:16:15> Draw Point:
+			x= 5
+			y= 5
+		<9/1/2009 17:16:22> Draw Point:
+			x= 5
+			y= -5
+		<9/1/2009 17:16:29> Draw Point:
+			x= -5
+			y= -5
+		<9/1/2009 17:16:34> Checked Solution.
+			<9/1/2009 17:16:34> Puzzle Completed in 4moves.  Earned Platinum!!!!!
+<9/1/2009 17:24:37> Acey logs in.
+	<9/1/2009 17:24:37> Loom Example 8 Puzzle Selected.
+		<9/1/2009 17:24:41> Restart Performed
+	<9/1/2009 17:24:41> Tutorial 2 Puzzle Selected.
+		<9/1/2009 17:24:56> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<9/1/2009 17:25:6> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<9/1/2009 17:25:11> Checked Solution.
+			<9/1/2009 17:25:11> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+<9/2/2009 12:22:57> Acey logs in.
+	<9/2/2009 12:22:57> Loom Example 8 Puzzle Selected.
+		<9/2/2009 12:23:1> Restart Performed
+	<9/2/2009 12:23:1> Batman Puzzle Selected.
+<9/2/2009 13:30:12> Acey logs in.
+	<9/2/2009 13:30:12> Loom Example 8 Puzzle Selected.
+		<9/2/2009 13:30:45> Restart Performed
+	<9/2/2009 13:30:45> Batman Puzzle Selected.
+		<9/2/2009 13:31:23> Restart Performed
+	<9/2/2009 13:31:23> Tutorial 1 Puzzle Selected.
+		<9/2/2009 13:31:29> Restart Performed
+	<9/2/2009 13:31:29> Tutorial 5 Puzzle Selected.
+		<9/2/2009 13:31:34> Restart Performed
+	<9/2/2009 13:31:34> Triforce Puzzle Selected.
+		<9/2/2009 13:32:23> Checked Solution.
+			<9/2/2009 13:32:23> Puzzle Incomplete. Errors: 1681
+		<9/2/2009 13:35:36> Restart Performed
+	<9/2/2009 13:35:36> Megaman Puzzle Selected.
+<10/9/2009 12:44:8> Acey logs in.
+	<10/9/2009 12:44:8> Loom Example 8 Puzzle Selected.
+		<10/9/2009 12:44:36> Restart Performed
+	<10/9/2009 12:44:36> Triforce Puzzle Selected.
+<1/19/2010 16:0:13> Acey logs in.
+	<1/19/2010 16:0:13> Loom Example 8 Puzzle Selected.
+<1/19/2010 16:0:31> Acey logs out.
+<1/19/2010 16:0:51> Acey logs in.
+	<1/19/2010 16:0:51> Loom Example 8 Puzzle Selected.
+		<1/19/2010 16:1:36> Restart Performed
+	<1/19/2010 16:1:36> Tutorial 1 Puzzle Selected.
+		<1/19/2010 16:1:51> Draw Point:
+			x= 5
+			y= 5
+		<1/19/2010 16:2:2> Draw Point:
+			x= 5
+			y= -5
+		<1/19/2010 16:2:6> Restart Performed
+	<1/19/2010 16:2:6> Tutorial 5 Puzzle Selected.
+		<1/19/2010 16:2:42> Restart Performed
+	<1/19/2010 16:2:42> Triforce Puzzle Selected.
+		<1/19/2010 16:3:46> Restart Performed
+	<1/19/2010 16:3:46> Megaman Puzzle Selected.
+		<1/19/2010 16:4:4> Restart Performed
+	<1/19/2010 16:4:4> Batman Puzzle Selected.
+		<1/19/2010 16:5:15> Draw Point:
+			x= 5
+			y= -5
+		<1/19/2010 16:5:27> Checked Solution.
+			<1/19/2010 16:5:27> Puzzle Incomplete. Errors: 1681
+<2/5/2010 9:45:21> Acey logs in.
+	<2/5/2010 9:45:21> Loom Example 8 Puzzle Selected.
+<2/5/2010 9:46:19> Acey logs in.
+	<2/5/2010 9:46:19> Loom Example 8 Puzzle Selected.
+<2/5/2010 9:47:13> Acey logs in.
+	<2/5/2010 9:47:13> Loom Example 8 Puzzle Selected.
+<2/5/2010 9:50:13> Acey logs in.
+	<2/5/2010 9:50:13> Loom Example 8 Puzzle Selected.
+<2/5/2010 9:51:39> Acey logs in.
+	<2/5/2010 9:51:39> Loom Example 8 Puzzle Selected.
+<2/5/2010 9:52:17> Acey logs in.
+	<2/5/2010 9:52:17> Loom Example 8 Puzzle Selected.
+<2/5/2010 9:53:15> Acey logs in.
+	<2/5/2010 9:53:15> Loom Example 8 Puzzle Selected.
+<2/5/2010 9:55:45> Acey logs in.
+	<2/5/2010 9:55:45> Loom Example 8 Puzzle Selected.
+		<2/5/2010 9:56:1> Restart Performed
+	<2/5/2010 9:56:1> Batman Puzzle Selected.
+<2/5/2010 10:45:1> Acey logs in.
+	<2/5/2010 10:45:1> Loom Example 8 Puzzle Selected.
+<2/5/2010 10:53:52> Acey logs out.
+<2/5/2010 10:55:20> Acey logs in.
+	<2/5/2010 10:55:20> Loom Example 8 Puzzle Selected.
+		<2/5/2010 10:56:15> Restart Performed
+	<2/5/2010 10:56:15> Triforce Puzzle Selected.
+		<2/5/2010 10:56:48> Restart Performed
+	<2/5/2010 10:56:48> Batman Puzzle Selected.
+		<2/5/2010 10:57:22> Restart Performed
+	<2/5/2010 10:57:22> Loom Example 14 Puzzle Selected.
+		<2/5/2010 10:57:29> Restart Performed
+	<2/5/2010 10:57:29> Triforce Puzzle Selected.
+		<2/5/2010 10:57:40> Restart Performed
+	<2/5/2010 10:57:40> Loom Example 8 Puzzle Selected.
+<2/5/2010 12:55:30> Acey logs in.
+	<2/5/2010 12:55:30> Loom Example 8 Puzzle Selected.
+		<2/5/2010 12:55:35> Restart Performed
+	<2/5/2010 12:55:35> Megaman Puzzle Selected.
+		<2/5/2010 12:55:44> Restart Performed
+	<2/5/2010 12:55:44> Batman Puzzle Selected.
+<2/7/2010 22:41:20> Acey logs in.
+	<2/7/2010 22:41:20> Loom Example 8 Puzzle Selected.
+		<2/7/2010 22:41:29> Restart Performed
+	<2/7/2010 22:41:29> UNCC Puzzle Selected.
+		<2/7/2010 22:41:42> Restart Performed
+	<2/7/2010 22:41:42> Flag Puzzle Selected.
+		<2/7/2010 22:41:54> Restart Performed
+	<2/7/2010 22:41:54> Stars and Stripes Puzzle Selected.
+<2/26/2010 11:59:0> Acey logs in.
+	<2/26/2010 11:59:0> Loom Example 8 Puzzle Selected.
+		<2/26/2010 11:59:27> Restart Performed
+	<2/26/2010 11:59:27> Triforce Puzzle Selected.
+		<2/26/2010 12:0:58> Restart Performed
+	<2/26/2010 12:0:58> Loom Example 10 Puzzle Selected.
+		<2/26/2010 12:1:5> Restart Performed
+	<2/26/2010 12:1:5> Loom Example 6 Puzzle Selected.
+		<2/26/2010 12:1:39> Restart Performed
+	<2/26/2010 12:1:39> Batman Puzzle Selected.
+<2/26/2010 12:24:39> Acey logs in.
+	<2/26/2010 12:24:39> Loom Example 8 Puzzle Selected.
+		<2/26/2010 12:24:54> Restart Performed
+	<2/26/2010 12:24:54> Batman Puzzle Selected.
+		<2/26/2010 12:25:25> Restart Performed
+	<2/26/2010 12:25:25> Loom Example 13 Puzzle Selected.
+		<2/26/2010 12:25:30> Restart Performed
+	<2/26/2010 12:25:30> Loom Example 10 Puzzle Selected.
+		<2/26/2010 12:25:35> Restart Performed
+	<2/26/2010 12:25:35> Loom Example 8 Puzzle Selected.
+<2/26/2010 12:25:40> Acey logs out.
+<2/26/2010 12:32:24> Acey logs in.
+	<2/26/2010 12:32:24> Loom Example 8 Puzzle Selected.
+		<2/26/2010 12:32:32> Restart Performed
+	<2/26/2010 12:32:32> Loom Example 3 Puzzle Selected.
+		<2/26/2010 12:32:44> Restart Performed
+	<2/26/2010 12:32:44> Triforce Puzzle Selected.
+		<2/26/2010 12:32:52> Color Change: White
+		<2/26/2010 12:34:18> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<2/26/2010 12:34:56> Restart Performed
+	<2/26/2010 12:34:56> Loom Example 8 Puzzle Selected.
+		<2/26/2010 12:35:33> Restart Performed
+	<2/26/2010 12:35:33> Triforce Puzzle Selected.
+		<2/26/2010 12:37:26> Restart Performed
+	<2/26/2010 12:37:26> Batman Puzzle Selected.
+		<2/26/2010 12:38:46> Restart Performed
+	<2/26/2010 12:38:46> Megaman Puzzle Selected.
+<3/19/2010 9:47:50> Acey logs in.
+	<3/19/2010 9:47:50> Loom Example 8 Puzzle Selected.
+		<3/19/2010 9:48:32> Restart Performed
+	<3/19/2010 9:48:32> Triforce Puzzle Selected.
+		<3/19/2010 9:49:37> Restart Performed
+	<3/19/2010 9:49:37> Loom Example 8 Puzzle Selected.
+		<3/19/2010 9:57:42> Restart Performed
+	<3/19/2010 9:57:42> Batman Puzzle Selected.
+		<3/19/2010 9:59:8> Restart Performed
+	<3/19/2010 9:59:8> Circle Puzzle Selected.
+		<3/19/2010 10:0:25> Restart Performed
+	<3/19/2010 10:0:25> Megaman Puzzle Selected.
+<3/26/2010 11:41:6> Acey logs in.
+	<3/26/2010 11:41:6> Loom Example 8 Puzzle Selected.
+		<3/26/2010 11:41:13> Restart Performed
+	<3/26/2010 11:41:13> Batman Puzzle Selected.
+		<3/26/2010 11:44:58> Restart Performed
+	<3/26/2010 11:44:58> Loom Example 14 Puzzle Selected.
+		<3/26/2010 11:45:6> Restart Performed
+	<3/26/2010 11:45:6> Loom Example 14 Puzzle Selected.
+		<3/26/2010 11:45:11> Restart Performed
+	<3/26/2010 11:45:11> Loom Example 6 Puzzle Selected.
+		<3/26/2010 11:45:15> Draw Point:
+			x= 0
+			y= 0
+		<3/26/2010 11:45:16> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<3/26/2010 11:45:18> Draw Rectangle:
+			x1= 0
+			x2= 6
+			y1= 0
+			y2= 6
+		<3/26/2010 11:45:27> Restart Performed
+		<3/26/2010 11:45:30> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<3/26/2010 11:45:52> Restart Performed
+	<3/26/2010 11:45:52> Triforce Puzzle Selected.
+		<3/26/2010 11:46:32> Restart Performed
+	<3/26/2010 11:46:32> Batman Puzzle Selected.
+		<3/26/2010 11:50:31> Restart Performed
+	<3/26/2010 11:50:31> Loom Example 8 Puzzle Selected.
+		<3/26/2010 11:56:31> Draw Point:
+			x= 0
+			y= 0
+		<3/26/2010 11:56:32> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<3/26/2010 11:56:34> Draw Rectangle:
+			x1= 0
+			x2= 6
+			y1= 0
+			y2= 6
+		<3/26/2010 11:56:39> Restart Performed
+		<3/26/2010 11:56:41> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+		<3/26/2010 11:56:47> Restart Performed
+		<3/26/2010 11:56:49> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<3/26/2010 11:57:29> Restart Performed
+	<3/26/2010 11:57:29> Triforce Puzzle Selected.
+		<3/26/2010 11:58:33> Restart Performed
+	<3/26/2010 11:58:33> Megaman Puzzle Selected.
+		<3/26/2010 11:58:37> Restart Performed
+	<3/26/2010 11:58:37> Batman Puzzle Selected.
+<5/13/2010 12:52:38> Acey logs in.
+	<5/13/2010 12:52:38> Loom Example 8 Puzzle Selected.

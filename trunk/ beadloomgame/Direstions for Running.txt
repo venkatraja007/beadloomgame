@@ -1,0 +1,26 @@
+Running Directions:
+
+You will need Eclipse (Google it)
+
+
+Run Eclipse
+Click File: Import
+Select General: Existing Projects into Workspace
+Click the top Browse Button
+
+Find where you put the BeadLoom Folder then select BeadFinalWindows then BeadLoom1.  Hit Ok then finish.
+
+Select the stuff folder on the left then Run: Run As
+
+Select Java Applet
+
+Select BeadLoom and hit ok
+
+Whenever you run it a 2nd time you will only need to hit the green run arrow.
+
+Enjoy the game!
+
+If you find any faster solutions or have any comments or questions please email me at:
+
+akboyce@uncc.edu
+

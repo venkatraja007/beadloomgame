@@ -1,0 +1,8 @@
+Bugs and To Dos
+
+Bead Does not resize.
+No Auto Resize
+Grey Base Bead
+Best Score in Game Menu not updating
+	-Need to read high score when you select a puzzle
+
