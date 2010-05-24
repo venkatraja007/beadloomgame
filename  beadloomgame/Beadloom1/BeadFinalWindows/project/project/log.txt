@@ -923,3 +923,147 @@
 	<5/23/2010 16:58:59> Tie Fighter Puzzle Selected.
 		<5/23/2010 16:59:48> Color Change: Black
 <5/23/2010 16:59:50> Acey logs out.
+<5/23/2010 17:6:41> Shaun logs in.
+	<5/23/2010 17:6:41> Loom Example 8 Puzzle Selected.
+<5/23/2010 17:7:16> Shaun logs in.
+	<5/23/2010 17:7:16> Loom Example 8 Puzzle Selected.
+<5/23/2010 17:7:23> Shaun logs out.
+<5/23/2010 17:7:27> Acey logs in.
+	<5/23/2010 17:7:27> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:7:31> Restart Performed
+	<5/23/2010 17:7:31> Tie Fighter Puzzle Selected.
+<5/23/2010 17:8:46> Acey logs in.
+	<5/23/2010 17:8:46> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:8:49> Restart Performed
+	<5/23/2010 17:8:49> Tie Fighter Puzzle Selected.
+<5/23/2010 17:9:16> Acey logs in.
+	<5/23/2010 17:9:16> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:9:31> Restart Performed
+	<5/23/2010 17:9:31> DC Puzzle Selected.
+		<5/23/2010 17:9:55> Restart Performed
+	<5/23/2010 17:9:55> Tutorial 5 Puzzle Selected.
+		<5/23/2010 17:10:6> Restart Performed
+	<5/23/2010 17:10:6> Tutorial 5 Puzzle Selected.
+<5/23/2010 17:10:30> Acey logs in.
+	<5/23/2010 17:10:30> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:10:33> Restart Performed
+	<5/23/2010 17:10:33> Tutorial 5 Puzzle Selected.
+		<5/23/2010 17:14:4> Restart Performed
+	<5/23/2010 17:14:4> Tie Fighter Puzzle Selected.
+<5/23/2010 17:15:13> Acey logs in.
+	<5/23/2010 17:15:13> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:15:16> Restart Performed
+	<5/23/2010 17:15:16> Tie Fighter Puzzle Selected.
+<5/23/2010 17:15:55> Acey logs in.
+	<5/23/2010 17:15:55> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:15:58> Restart Performed
+	<5/23/2010 17:15:58> Tie Fighter Puzzle Selected.
+<5/23/2010 17:16:38> Acey logs in.
+	<5/23/2010 17:16:38> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:16:41> Restart Performed
+	<5/23/2010 17:16:41> Tie Fighter Puzzle Selected.
+<5/23/2010 17:17:25> Acey logs in.
+	<5/23/2010 17:17:25> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:17:29> Restart Performed
+	<5/23/2010 17:17:29> Tie Fighter Puzzle Selected.
+<5/23/2010 17:18:34> Acey logs in.
+	<5/23/2010 17:18:34> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:18:36> Restart Performed
+	<5/23/2010 17:18:36> Tie Fighter Puzzle Selected.
+<5/23/2010 17:18:57> Acey logs in.
+	<5/23/2010 17:18:57> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:19:0> Restart Performed
+	<5/23/2010 17:19:0> Tie Fighter Puzzle Selected.
+<5/23/2010 17:19:28> Acey logs in.
+	<5/23/2010 17:19:28> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:19:31> Restart Performed
+	<5/23/2010 17:19:31> Tie Fighter Puzzle Selected.
+<5/23/2010 17:19:55> Acey logs in.
+	<5/23/2010 17:19:55> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:19:58> Restart Performed
+	<5/23/2010 17:19:58> Tie Fighter Puzzle Selected.
+<5/23/2010 17:20:30> Acey logs in.
+	<5/23/2010 17:20:30> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:20:32> Restart Performed
+	<5/23/2010 17:20:32> Tie Fighter Puzzle Selected.
+<5/23/2010 17:22:5> Acey logs in.
+	<5/23/2010 17:22:5> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:22:9> Restart Performed
+	<5/23/2010 17:22:9> Tie Fighter Puzzle Selected.
+<5/23/2010 17:22:51> Acey logs in.
+	<5/23/2010 17:22:51> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:22:54> Restart Performed
+	<5/23/2010 17:22:54> Tie Fighter Puzzle Selected.
+<5/23/2010 17:23:30> Acey logs in.
+	<5/23/2010 17:23:30> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:23:32> Restart Performed
+	<5/23/2010 17:23:32> Tie Fighter Puzzle Selected.
+<5/23/2010 17:24:10> Acey logs in.
+	<5/23/2010 17:24:10> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:24:12> Restart Performed
+	<5/23/2010 17:24:12> Tie Fighter Puzzle Selected.
+<5/23/2010 17:24:40> Acey logs in.
+	<5/23/2010 17:24:40> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:24:43> Restart Performed
+	<5/23/2010 17:24:43> Tie Fighter Puzzle Selected.
+<5/23/2010 17:25:0> Acey logs in.
+	<5/23/2010 17:25:0> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:25:3> Restart Performed
+	<5/23/2010 17:25:3> Tie Fighter Puzzle Selected.
+<5/23/2010 17:25:27> Acey logs in.
+	<5/23/2010 17:25:27> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:25:29> Restart Performed
+	<5/23/2010 17:25:29> Tie Fighter Puzzle Selected.
+<5/23/2010 17:25:53> Acey logs in.
+	<5/23/2010 17:25:53> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:25:56> Restart Performed
+	<5/23/2010 17:25:56> Tie Fighter Puzzle Selected.
+<5/23/2010 17:26:17> Acey logs in.
+	<5/23/2010 17:26:17> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:26:19> Restart Performed
+	<5/23/2010 17:26:19> Tie Fighter Puzzle Selected.
+<5/23/2010 17:26:59> Acey logs in.
+	<5/23/2010 17:26:59> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:27:2> Restart Performed
+	<5/23/2010 17:27:2> Tie Fighter Puzzle Selected.
+<5/23/2010 17:27:54> Acey logs in.
+	<5/23/2010 17:27:54> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:27:56> Restart Performed
+	<5/23/2010 17:27:56> Tie Fighter Puzzle Selected.
+<5/23/2010 17:28:18> Acey logs in.
+	<5/23/2010 17:28:18> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:28:20> Restart Performed
+	<5/23/2010 17:28:20> Tie Fighter Puzzle Selected.
+<5/23/2010 17:30:3> Acey logs in.
+	<5/23/2010 17:30:3> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:30:6> Restart Performed
+	<5/23/2010 17:30:6> Tie Fighter Puzzle Selected.
+<5/23/2010 17:30:37> Acey logs in.
+	<5/23/2010 17:30:37> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:30:40> Restart Performed
+	<5/23/2010 17:30:40> Tie Fighter Puzzle Selected.
+<5/23/2010 17:32:29> Acey logs in.
+	<5/23/2010 17:32:29> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:32:32> Restart Performed
+	<5/23/2010 17:32:32> Tie Fighter Puzzle Selected.
+<5/23/2010 17:33:59> Acey logs in.
+	<5/23/2010 17:33:59> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:34:2> Restart Performed
+	<5/23/2010 17:34:2> Tie Fighter Puzzle Selected.
+<5/23/2010 17:34:52> Acey logs in.
+	<5/23/2010 17:34:52> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:34:54> Restart Performed
+	<5/23/2010 17:34:54> Tie Fighter Puzzle Selected.
+<5/23/2010 17:35:40> Acey logs in.
+	<5/23/2010 17:35:40> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:35:43> Restart Performed
+	<5/23/2010 17:35:43> Tie Fighter Puzzle Selected.
+<5/23/2010 17:36:1> Acey logs in.
+	<5/23/2010 17:36:1> Loom Example 8 Puzzle Selected.
+		<5/23/2010 17:36:5> Restart Performed
+	<5/23/2010 17:36:5> Tie Fighter Puzzle Selected.
+		<5/23/2010 17:36:30> Draw Rectangle:
+			x1= -20
+			x2= 20
+			y1= 20
+			y2= -20

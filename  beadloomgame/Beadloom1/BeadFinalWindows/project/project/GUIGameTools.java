@@ -1204,8 +1204,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			HSLabelA.setText(" ");
 			MLabelA.setText(" ");	
 			
+			/*
 			HSLabelB.setText(" ");
-			MLabelB.setText(" ");
+			MLabelB.setText(" ");*/
 		}
 		
 		else if (e.getSource() == Tut1Button){
