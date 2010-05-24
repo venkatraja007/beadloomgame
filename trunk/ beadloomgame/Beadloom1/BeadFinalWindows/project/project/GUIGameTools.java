@@ -77,6 +77,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton HeartButton = new JButton();
 	private JButton SunnySkyButton = new JButton();
 	private JButton SergeantButton = new JButton();
+	private JButton TieFighterButton = new JButton();
 	
 	private JButton StarsAndStripesButton = new JButton();
 	private JButton ROSSButton = new JButton();
@@ -375,6 +376,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SergeantButton.setText("Sergeant");
 		SergeantButton.addActionListener(this);
 		SergeantButton.setBounds(R80);
+		
+		//---- Tie Fighter Button ----
+		TieFighterButton.setText("Tie Fighter");
+		TieFighterButton.addActionListener(this);
+		TieFighterButton.setBounds(R90);
 		
 		//---- Sunny Sky Button ----
 		SunnySkyButton.setText("Sunny Sky");
@@ -756,6 +762,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		ChoosePuzzlePanel.remove(HeartButton);
     		ChoosePuzzlePanel.remove(SunnySkyButton);
     		ChoosePuzzlePanel.remove(SergeantButton);
+    		ChoosePuzzlePanel.remove(TieFighterButton);
     		ChoosePuzzlePanel.remove(StarsAndStripesButton);
     		ChoosePuzzlePanel.remove(ROSSButton);
     		ChoosePuzzlePanel.remove(BullseyeButton);
@@ -1196,6 +1203,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			
 			HSLabelA.setText(" ");
 			MLabelA.setText(" ");	
+			
+			HSLabelB.setText(" ");
+			MLabelB.setText(" ");
 		}
 		
 		else if (e.getSource() == Tut1Button){
@@ -1641,6 +1651,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				      System.err.println("Error: " + ex.getMessage());
 				    }
 		}
+		
+		else if (e.getSource() == TieFighterButton){
+			Restart(true, true, true);
+			currentPuzzle = puz.setTieFighter();
+			bl.getPuzzleFrame().setVisible(false);
+			//Log the Puzzle Change
+			   try{
+				    FileWriter log = new FileWriter("log.txt", true);
+				    log.write("\t" + getTime() + " Tie Fighter Puzzle Selected.\n");
+				    log.close();
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
+		}
+		
 		else if (e.getSource() == CancelButton){
 			bl.getPuzzleFrame().setVisible(false);
 		}
@@ -1778,6 +1803,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			ChoosePuzzlePanel.add(LoomEx10Button);
 			ChoosePuzzlePanel.add(UNCCButton);
 			ChoosePuzzlePanel.add(SergeantButton);
+			ChoosePuzzlePanel.add(TieFighterButton);
 			
 			HSLabel1.setText("" + RecordMove[15]);
 			MLabel1.setText(RecordMedal[15]);
@@ -1803,8 +1829,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			HSLabel8.setText(""+ RecordMove[33]);
 			MLabel8.setText(RecordMedal[33]);
 			
-			HSLabel9.setText(" ");
-			MLabel9.setText(" ");
+			HSLabel9.setText(""+ RecordMove[34]);
+			MLabel9.setText(RecordMedal[34]);
 			
 			HSLabelA.setText(" ");
 			MLabelA.setText(" ");

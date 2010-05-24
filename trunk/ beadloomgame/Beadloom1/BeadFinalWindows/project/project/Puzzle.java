@@ -12,7 +12,7 @@
       
       private Color peach;
       
-      private final int TOTALPUZZLES = 34;
+      private final int TOTALPUZZLES = 35;
    
    //Constructor.  Takes the beadloom 
        public Puzzle(BeadLoom bl){
@@ -1678,4 +1678,145 @@
     	   
     	   return 33;
        }
+       
+     //Array Position = 34
+       //Returns array position
+         public int setTieFighter(){
+      	   
+      	   ideal = 23;
+             InputTools.setGrid(bl.getGridPanel2());
+             
+             /* Draw Black Background */
+             InputTools.setColor(Color.BLACK);
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-20, 20, -20, 20);
+             
+             /* Draw Inner Wings */
+             InputTools.setColor(Color.DARK_GRAY);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-11, 3, 11, -3);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-14, 14, 2, -2);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-17, 17, 1, -1);
+             
+             /* Draw Body */
+             InputTools.setColor(Color.GRAY);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(-7, 5, 15, -1, -1, 4, true, true, xValue, yValue);
+             //InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(-7, -5, 15, -1, -1, 4, true, false, xValue, yValue);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-8, 8, 4, -4);
+             
+             /* Draw Outer Wings */
+             InputTools.setColor(Color.GRAY);
+             
+             //Rectangles for either side of vertical edges of wings
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-19, -18, 4, -4);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(18, 19, 4, -4);
+             
+             //Linear Iterations for diagonals of outer wings
+             //Left outer wing upper diagonal, going from bottom to top left
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(-18, 5, 2, -1, 1, 9, true, true, xValue, yValue);
+             
+             //Left outer wing lower diagonal, going from top to bottom left
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(-18, -5, 2, -1, 1, 9, true, false, xValue, yValue);
+             
+             //Right outer wing upper diagonal, going from bottom to top right
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(17, 5, 2, 1, -1, 9, true, true, xValue, yValue);
+             
+             //Right outer wing lower diagonal, going from top to bottom right
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(17, -5, 2, 1, -1, 9, true, false, xValue, yValue);
+             
+             /* Draw Outer Window */
+             
+             InputTools.setColor(Color.DARK_GRAY);
+             
+             //Draw rectangle in center of window area
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-5, 5, 2, -2);
+             
+             //Linear Iteration for area above center rectangle
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(-4, 3, 9, -1, -1, 3, true, true, xValue, yValue);
+             
+             //Linear Iteration for area below center rectangle
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(-4, -3, 3, -1, -1, 3, true, false, xValue, yValue);
+             
+             /* Draw Inner Window */
+             
+             InputTools.setColor(Color.BLACK);
+             
+             //Draw rectangles for inner window
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-2, 4, 2, -4);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawRectangle(-4, 2, 4, -2);
+             
+             /* Draw Pieces of Outer Window that overlap Inner Window */
+             
+             InputTools.setColor(Color.GRAY);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawLine(0, 4, 0, -4, xValue, yValue);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawLine(-4, 0, 4, 0, xValue, yValue);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawLine(-3, 3, 3, -3, xValue, yValue);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawLine(3, 3, -3, -3, xValue, yValue);
+             
+             /* Draw Final black dot in center */
+             
+             InputTools.setColor(Color.BLACK);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.drawPoint(0, 0);
+             
+             return 34;
+             
+         }
+
    }
