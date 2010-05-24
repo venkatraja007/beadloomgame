@@ -87,6 +87,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton MoonButton = new JButton();
 	private JButton MegamanButton = new JButton();
 	private JButton BatmanButton = new JButton();
+	private JButton DCButton = new JButton();
 	
 	private JButton CancelButton = new JButton();
 	
@@ -102,6 +103,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JLabel HSLabel8 = new JLabel();
 	private JLabel HSLabel9 = new JLabel();
 	private JLabel HSLabelA = new JLabel();
+	private JLabel HSLabelB = new JLabel();
 	
 	//Choose Puzzle Medal Labels
 	private JLabel MLabel1 = new JLabel();
@@ -114,6 +116,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JLabel MLabel8 = new JLabel();
 	private JLabel MLabel9 = new JLabel();
 	private JLabel MLabelA = new JLabel();
+	private JLabel MLabelB = new JLabel();
 		
 	
 	//Choose Puzzle Misc Labels
@@ -172,6 +175,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle R80 = new Rectangle(startX, R70.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle R90 = new Rectangle(startX, R80.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle RA0 = new Rectangle(startX, R90.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
+	Rectangle RB0 = new Rectangle(startX, RA0.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	
 	Rectangle R01 = new Rectangle(R00.x +buttonLength+horizSpace, vertSpace, buttonLength, buttonHeight);
 	Rectangle R11 = new Rectangle(R10.x +buttonLength+horizSpace, R01.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
@@ -184,6 +188,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle R81 = new Rectangle(R80.x +buttonLength+horizSpace, R71.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle R91 = new Rectangle(R90.x +buttonLength+horizSpace, R81.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle RA1 = new Rectangle(RA0.x +buttonLength+horizSpace, R91.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
+	Rectangle RB1 = new Rectangle(RB0.x +buttonLength+horizSpace, RA1.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	
 	Rectangle R02 = new Rectangle(R01.x +buttonLength+horizSpace, vertSpace, buttonLength, buttonHeight);
 	Rectangle R12 = new Rectangle(R11.x +buttonLength+horizSpace, R02.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
@@ -196,6 +201,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle R82 = new Rectangle(R81.x +buttonLength+horizSpace, R72.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle R92 = new Rectangle(R91.x +buttonLength+horizSpace, R82.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle RA2 = new Rectangle(RA1.x +buttonLength+horizSpace, R92.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
+	Rectangle RB2 = new Rectangle(RB1.x +buttonLength+horizSpace, RA2.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 
 	Rectangle LeftDifR = new Rectangle(startX, RA0.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
 	Rectangle CenterDifR = new Rectangle(LeftDifR.x + buttonLength + horizSpace, RA1.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
@@ -344,7 +350,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		UNCCButton.addActionListener(this);
 		UNCCButton.setBounds(R70);
 		
-		
 		//---- LoomEx10 Button ----
 		LoomEx10Button.setText("Native American Example 10");
 		LoomEx10Button.addActionListener(this);
@@ -420,6 +425,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		BatmanButton.addActionListener(this);
 		BatmanButton.setBounds(RA0);
 		
+		//---- DC Button ----
+		DCButton.setText("DC");
+		DCButton.addActionListener(this);
+		DCButton.setBounds(RB0);
+		
 		//---- HSLabel0 ----
 		HSLabel0.setBounds(R01);
 		ChoosePuzzlePanel.add(HSLabel0);
@@ -465,6 +475,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HSLabelA.setBounds(RA1);
 		ChoosePuzzlePanel.add(HSLabelA);
 		
+		//---- HSLabelB ----
+		HSLabelB.setBounds(RB1);
+		ChoosePuzzlePanel.add(HSLabelB);
+		
 		//---- MLabel0 ----
 		MLabel0.setBounds(R02);
 		ChoosePuzzlePanel.add(MLabel0);
@@ -509,6 +523,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- MLabelA ----
 		MLabelA.setBounds(RA2);
 		ChoosePuzzlePanel.add(MLabelA);
+		
+		//---- MLabelA ----
+		MLabelB.setBounds(RB2);
+		ChoosePuzzlePanel.add(MLabelB);
 		
 		//---- Tutorial Button ----
 		TutButton.setText("Tutorial Puzzles");
@@ -724,6 +742,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		ChoosePuzzlePanel.remove(CircleButton);
     		ChoosePuzzlePanel.remove(FlagButton);
     		ChoosePuzzlePanel.remove(UNCCButton);
+    		ChoosePuzzlePanel.remove(DCButton);
     		ChoosePuzzlePanel.remove(LoomEx10Button);
     		ChoosePuzzlePanel.remove(LoomEx13Button);
     		ChoosePuzzlePanel.remove(SunriseButton);
@@ -1588,6 +1607,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				      System.err.println("Error: " + ex.getMessage());
 				    }
 		}
+		else if (e.getSource() == DCButton){
+			Restart(true, true, true);
+			currentPuzzle =puz.setDC();
+			bl.getPuzzleFrame().setVisible(false);
+			//Log the Puzzle Change
+			   try{
+				    FileWriter log = new FileWriter("log.txt", true);
+				    log.write("\t" + getTime() + " DC Puzzle Selected.\n");
+				    log.close();
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
+		}
 		else if (e.getSource() == CancelButton){
 			bl.getPuzzleFrame().setVisible(false);
 		}
@@ -1780,6 +1812,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			ChoosePuzzlePanel.add(LoomEx3Button);
 			ChoosePuzzlePanel.add(MegamanButton);
 			ChoosePuzzlePanel.add(BatmanButton);
+			ChoosePuzzlePanel.add(DCButton);
 			
 			HSLabel1.setText("" + RecordMove[22]);
 			MLabel1.setText(RecordMedal[22]);
@@ -1810,6 +1843,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			
 			HSLabelA.setText(""+RecordMove[31]);
 			MLabelA.setText(RecordMedal[31]);
+			
+			HSLabelB.setText(""+RecordMove[32]);
+			MLabelB.setText(RecordMedal[32]);
 					}
 		}
 		else if (e.getSource() == RedButton){

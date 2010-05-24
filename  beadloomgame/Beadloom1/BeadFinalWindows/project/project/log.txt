@@ -539,3 +539,308 @@
 	<3/26/2010 11:58:37> Batman Puzzle Selected.
 <5/13/2010 12:52:38> Acey logs in.
 	<5/13/2010 12:52:38> Loom Example 8 Puzzle Selected.
+<5/24/2010 9:49:48> Beastness logs in.
+	<5/24/2010 9:49:48> Loom Example 8 Puzzle Selected.
+<5/24/2010 9:52:0> Acey logs in.
+	<5/24/2010 9:52:0> Loom Example 8 Puzzle Selected.
+<5/24/2010 9:52:43> Acey logs in.
+	<5/24/2010 9:52:43> Loom Example 8 Puzzle Selected.
+		<5/24/2010 9:54:0> Draw Line:
+			x1= -3
+			x2= 0
+			y1= -9
+			y2= 0
+		<5/24/2010 9:54:17> Restart Performed
+<5/24/2010 9:56:46> Beastness logs in.
+	<5/24/2010 9:56:46> Loom Example 8 Puzzle Selected.
+<5/24/2010 9:57:47> Acey logs in.
+	<5/24/2010 9:57:47> Loom Example 8 Puzzle Selected.
+		<5/24/2010 9:58:46> Restart Performed
+	<5/24/2010 9:58:46> Tutorial 1 Puzzle Selected.
+		<5/24/2010 9:59:28> Draw Point:
+			x= -5
+			y= 5
+		<5/24/2010 9:59:37> Draw Point:
+			x= -5
+			y= -5
+		<5/24/2010 9:59:47> Draw Point:
+			x= 5
+			y= -5
+		<5/24/2010 9:59:54> Draw Point:
+			x= 5
+			y= 5
+		<5/24/2010 10:0:8> Checked Solution.
+			<5/24/2010 10:0:8> Puzzle Completed in 4moves.  Earned Platinum!!!!!
+<5/24/2010 10:0:42> Dustin logs in.
+	<5/24/2010 10:0:42> Loom Example 8 Puzzle Selected.
+		<5/24/2010 10:0:55> Restart Performed
+	<5/24/2010 10:0:55> Tutorial 1 Puzzle Selected.
+		<5/24/2010 10:1:15> Draw Point:
+			x= 5
+			y= 5
+		<5/24/2010 10:1:27> Draw Point:
+			x= 5
+			y= -5
+		<5/24/2010 10:1:36> Draw Point:
+			x= -5
+			y= -5
+		<5/24/2010 10:1:43> Draw Point:
+			x= -5
+			y= 5
+		<5/24/2010 10:1:49> Checked Solution.
+			<5/24/2010 10:1:49> Puzzle Completed in 4moves.  Earned Platinum!!!!!
+		<5/24/2010 10:1:53> Restart Performed
+	<5/24/2010 10:1:53> Tutorial 2 Puzzle Selected.
+		<5/24/2010 10:2:21> Draw Line:
+			x1= 5
+			x2= -5
+			y1= -5
+			y2= 5
+		<5/24/2010 10:2:31> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<5/24/2010 10:2:49> Draw Line:
+			x1= -5
+			x2= 5
+			y1= -5
+			y2= 5
+		<5/24/2010 10:2:52> Checked Solution.
+			<5/24/2010 10:2:52> Puzzle Completed in 3moves.  Earned Gold!!!
+		<5/24/2010 10:2:56> Restart Performed
+		<5/24/2010 10:2:57> Draw Line:
+			x1= -5
+			x2= 5
+			y1= -5
+			y2= 5
+		<5/24/2010 10:3:3> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<5/24/2010 10:3:7> Checked Solution.
+			<5/24/2010 10:3:7> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+		<5/24/2010 10:3:18> Restart Performed
+	<5/24/2010 10:3:18> Tutorial 3 Puzzle Selected.
+		<5/24/2010 10:4:5> Draw Rectangle:
+			x1= -10
+			x2= -5
+			y1= 10
+			y2= 5
+		<5/24/2010 10:4:34> Draw Rectangle:
+			x1= 0
+			x2= 10
+			y1= -5
+			y2= -10
+		<5/24/2010 10:4:55> Checked Solution.
+			<5/24/2010 10:4:55> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+		<5/24/2010 10:5:27> Restart Performed
+	<5/24/2010 10:5:27> Tutorial 4 Puzzle Selected.
+		<5/24/2010 10:6:16> Draw Triangle:
+			x1= 5
+			x2= 8
+			x3= 11
+			y1= 5
+			y2= 8
+			y3= 5
+		<5/24/2010 10:7:7> Draw Triangle:
+			x1= -10
+			x2= -10
+			x3= -2
+			y1= 0
+			y2= -14
+			y3= -7
+		<5/24/2010 10:7:11> Checked Solution.
+			<5/24/2010 10:7:11> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+		<5/24/2010 10:7:19> Restart Performed
+	<5/24/2010 10:7:19> Tutorial 5 Puzzle Selected.
+		<5/24/2010 10:10:40> Draw Linear Iteration:
+			x= -10
+			y= -10
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<5/24/2010 10:11:47> Draw Linear Iteration:
+			x= -8
+			y= 11
+			start length= 21
+			increment 1= -2
+			increment 2= -2
+			rows total= 9
+		<5/24/2010 10:12:33> Checked Solution.
+			<5/24/2010 10:12:33> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+		<5/24/2010 10:12:37> Restart Performed
+	<5/24/2010 10:12:37> Tutorial 6 Selected.
+		<5/24/2010 10:13:42> Draw Rectangle:
+			x1= 5
+			x2= 15
+			y1= 15
+			y2= 14
+		<5/24/2010 10:14:6> Draw Line:
+			x1= 10
+			x2= 10
+			y1= 13
+			y2= 5
+		<5/24/2010 10:15:38> Draw Triangle Iteration:
+			x= -10
+			y= 5
+			step height= 3
+			add= 1
+			rows total= 9
+		<5/24/2010 10:15:46> Restart Performed
+		<5/24/2010 10:15:54> Draw Triangle Iteration:
+			x= -10
+			y= -5
+			step height= 3
+			add= 1
+			rows total= 9
+		<5/24/2010 10:16:3> Restart Performed
+		<5/24/2010 10:16:7> Draw Triangle Iteration:
+			x= -10
+			y= -5
+			step height= 3
+			add= 1
+			rows total= 9
+		<5/24/2010 10:17:26> Draw Triangle Iteration:
+			x= 10
+			y= 5
+			step height= 9
+			add= 5
+			rows total= 12
+		<5/24/2010 10:17:34> Restart Performed
+		<5/24/2010 10:17:38> Draw Triangle Iteration:
+			x= 10
+			y= 5
+			step height= 9
+			add= 5
+			rows total= 11
+		<5/24/2010 10:17:59> Draw Triangle Iteration:
+			x= -10
+			y= -5
+			step height= 3
+			add= 1
+			rows total= 9
+		<5/24/2010 10:18:5> Checked Solution.
+			<5/24/2010 10:18:5> Puzzle Completed in 2moves.  Earned Platinum!!!!!
+		<5/24/2010 10:19:9> Restart Performed
+	<5/24/2010 10:19:9> Triforce Puzzle Selected.
+		<5/24/2010 10:19:48> Draw Rectangle:
+			x1= -20
+			x2= 20
+			y1= -20
+			y2= 20
+		<5/24/2010 10:20:14> Draw Triangle:
+			x1= -20
+			x2= 20
+			x3= 0
+			y1= -20
+			y2= -20
+			y3= 19
+		<5/24/2010 10:20:43> Draw Triangle:
+			x1= 9
+			x2= -9
+			x3= 0
+			y1= 1
+			y2= 1
+			y3= -19
+		<5/24/2010 10:20:57> Undo Performed
+		<5/24/2010 10:21:2> Draw Triangle:
+			x1= 9
+			x2= -9
+			x3= 0
+			y1= -1
+			y2= -1
+			y3= -19
+		<5/24/2010 10:21:19> Checked Solution.
+			<5/24/2010 10:21:19> Puzzle Completed in 4moves.  Earned Gold!!!
+		<5/24/2010 10:21:26> Restart Performed
+		<5/24/2010 10:22:26> Restart Performed
+	<5/24/2010 10:22:26> Tutorial 3 Puzzle Selected.
+		<5/24/2010 10:22:30> Restart Performed
+	<5/24/2010 10:22:30> Tutorial 4 Puzzle Selected.
+<5/24/2010 10:43:55> Dustin logs in.
+	<5/24/2010 10:43:55> Loom Example 8 Puzzle Selected.
+		<5/24/2010 10:44:16> Restart Performed
+	<5/24/2010 10:44:16> Triforce Puzzle Selected.
+		<5/24/2010 10:45:7> Draw Rectangle:
+			x1= -20
+			x2= 20
+			y1= -20
+			y2= 20
+		<5/24/2010 10:45:37> Draw Triangle:
+			x1= -20
+			x2= 20
+			x3= 0
+			y1= -20
+			y2= -20
+			y3= 19
+		<5/24/2010 10:46:27> Draw Triangle:
+			x1= -9
+			x2= 9
+			x3= 0
+			y1= -1
+			y2= -1
+			y3= -19
+		<5/24/2010 10:46:33> Checked Solution.
+			<5/24/2010 10:46:33> Puzzle Completed in 3moves.  Earned Platinum!!!!!
+		<5/24/2010 10:46:59> Restart Performed
+	<5/24/2010 10:46:59>Six Puzzle Selected.
+		<5/24/2010 10:47:38> Draw Rectangle:
+			x1= -20
+			x2= 20
+			y1= -20
+			y2= 20
+<5/24/2010 12:49:25> Dustin logs in.
+	<5/24/2010 12:49:25> Loom Example 8 Puzzle Selected.
+<5/24/2010 13:58:25> Dustin logs in.
+	<5/24/2010 13:58:25> Loom Example 8 Puzzle Selected.
+<5/24/2010 13:58:56> Acey logs in.
+	<5/24/2010 13:58:56> Loom Example 8 Puzzle Selected.
+		<5/24/2010 13:59:10> Restart Performed
+	<5/24/2010 13:59:10> DC Puzzle Selected.
+<5/24/2010 14:19:53> Acey logs in.
+	<5/24/2010 14:19:53> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:20:2> Restart Performed
+	<5/24/2010 14:20:2> DC Puzzle Selected.
+<5/24/2010 14:22:52> Acey logs in.
+	<5/24/2010 14:22:52> Loom Example 8 Puzzle Selected.
+<5/24/2010 14:23:16> Acey logs in.
+	<5/24/2010 14:23:16> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:23:27> Restart Performed
+	<5/24/2010 14:23:27> DC Puzzle Selected.
+<5/24/2010 14:24:45> Acey logs in.
+	<5/24/2010 14:24:45> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:25:3> Restart Performed
+	<5/24/2010 14:25:3> DC Puzzle Selected.
+<5/24/2010 14:26:30> Acey logs in.
+	<5/24/2010 14:26:30> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:26:41> Restart Performed
+	<5/24/2010 14:26:41> DC Puzzle Selected.
+<5/24/2010 14:27:27> Acey logs out.
+<5/24/2010 14:30:43> Acey logs in.
+	<5/24/2010 14:30:43> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:30:54> Restart Performed
+	<5/24/2010 14:30:54> DC Puzzle Selected.
+<5/24/2010 14:31:45> Acey logs in.
+	<5/24/2010 14:31:45> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:31:53> Restart Performed
+	<5/24/2010 14:31:53> DC Puzzle Selected.
+<5/24/2010 14:33:8> Acey logs in.
+	<5/24/2010 14:33:8> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:33:32> Restart Performed
+	<5/24/2010 14:33:32> DC Puzzle Selected.
+<5/24/2010 14:39:3> Acey logs in.
+	<5/24/2010 14:39:3> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:39:34> Restart Performed
+	<5/24/2010 14:39:34> DC Puzzle Selected.
+<5/24/2010 14:43:15> Acey logs in.
+	<5/24/2010 14:43:15> Loom Example 8 Puzzle Selected.
+<5/24/2010 14:46:37> Acey logs in.
+	<5/24/2010 14:46:37> Loom Example 8 Puzzle Selected.
+		<5/24/2010 14:47:3> Restart Performed
+	<5/24/2010 14:47:3> DC Puzzle Selected.
+<5/24/2010 14:48:40> Acey logs in.
+	<5/24/2010 14:48:40> Loom Example 8 Puzzle Selected.
+<5/24/2010 14:49:4> Acey logs out.
