@@ -1051,16 +1051,17 @@
      //Returns array pos
        public int setLoomEx7(){
     	   
-    	   ideal = 14;
+    	   ideal = 14; 
            InputTools.setGrid(bl.getGridPanel2());
            
            InputTools.setColor(Color.ORANGE);
            InputTools.drawRectangle(-20, 20, -20, 20);
            
            InputTools.setColor(Color.RED);
-           InputTools.drawTriangle(0, 20, 20, 0, -20, 20);
-           
-           InputTools.drawTriangle(0, -20, -20, 0, -20, 20);
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(-20, 20, 41, -1, -1, 41, false, true, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
            
            InputTools.setColor(Color.MAGENTA);
            InputTools.drawTriangle(7, 20, 20, 0, 13, -13);
