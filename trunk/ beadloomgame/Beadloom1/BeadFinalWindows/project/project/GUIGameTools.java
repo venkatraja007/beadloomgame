@@ -76,6 +76,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton SunriseButton = new JButton();
 	private JButton HeartButton = new JButton();
 	private JButton SunnySkyButton = new JButton();
+	private JButton SergeantButton = new JButton();
 	
 	private JButton StarsAndStripesButton = new JButton();
 	private JButton ROSSButton = new JButton();
@@ -369,6 +370,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HeartButton.setText("Heart");
 		HeartButton.addActionListener(this);
 		HeartButton.setBounds(R20);
+		
+		//---- Sergeant Button ----
+		SergeantButton.setText("Sergeant");
+		SergeantButton.addActionListener(this);
+		SergeantButton.setBounds(R80);
 		
 		//---- Sunny Sky Button ----
 		SunnySkyButton.setText("Sunny Sky");
@@ -749,6 +755,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		ChoosePuzzlePanel.remove(SunriseButton);
     		ChoosePuzzlePanel.remove(HeartButton);
     		ChoosePuzzlePanel.remove(SunnySkyButton);
+    		ChoosePuzzlePanel.remove(SergeantButton);
     		ChoosePuzzlePanel.remove(StarsAndStripesButton);
     		ChoosePuzzlePanel.remove(ROSSButton);
     		ChoosePuzzlePanel.remove(BullseyeButton);
@@ -1621,6 +1628,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				      System.err.println("Error: " + ex.getMessage());
 				    }
 		}
+		else if (e.getSource() == SergeantButton){
+			Restart(true, true, true);
+			currentPuzzle =puz.setSergeant();
+			bl.getPuzzleFrame().setVisible(false);
+			//Log the Puzzle Change
+			   try{
+				    FileWriter log = new FileWriter("log.txt", true);
+				    log.write("\t" + getTime() + " Sergeant Puzzle Selected.\n");
+				    log.close();
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
+		}
 		else if (e.getSource() == CancelButton){
 			bl.getPuzzleFrame().setVisible(false);
 		}
@@ -1757,6 +1777,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			ChoosePuzzlePanel.add(LoomEx13Button);
 			ChoosePuzzlePanel.add(LoomEx10Button);
 			ChoosePuzzlePanel.add(UNCCButton);
+			ChoosePuzzlePanel.add(SergeantButton);
 			
 			HSLabel1.setText("" + RecordMove[15]);
 			MLabel1.setText(RecordMedal[15]);
@@ -1779,8 +1800,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			HSLabel7.setText(""+ RecordMove[21]);
 			MLabel7.setText(RecordMedal[21]);
 			
-			HSLabel8.setText(" ");
-			MLabel8.setText(" ");
+			HSLabel8.setText(""+ RecordMove[33]);
+			MLabel8.setText(RecordMedal[33]);
 			
 			HSLabel9.setText(" ");
 			MLabel9.setText(" ");
