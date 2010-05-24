@@ -2009,7 +2009,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				if(width < 0 || height < 0 || cycles < 0)
 					throw new NumberFormatException();
 				if(startX < -1*GRID_SIZE/2 || startX > GRID_SIZE/2 || startY < -1*GRID_SIZE/2 || startY > GRID_SIZE/2 ||
-						width > GRID_SIZE/2 || height > GRID_SIZE/2 || height < -1*GRID_SIZE/2 || cycles > GRID_SIZE/2)
+						width > GRID_SIZE+1 || height > GRID_SIZE+1 || height < -1*GRID_SIZE+1 || cycles > GRID_SIZE+1)
 					throw new NumberFormatException();
 			}
 			catch(Exception exc)
@@ -2066,8 +2066,8 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				rows = Math.abs(Integer.parseInt(LinearIterationRowsTotalTextField.getText()));
 
 				//If the arguments are not in bounds throw an exception
-				if(startX < -1*GRID_SIZE/2 || startX > GRID_SIZE/2 || startY < -1*GRID_SIZE/2 || startY > GRID_SIZE/2 || startLength > GRID_SIZE/2 ||
-						rows > GRID_SIZE/2 || inc1 < -1*GRID_SIZE/2 || inc1 > GRID_SIZE/2 || inc2 < -1*GRID_SIZE/2 || inc2 > GRID_SIZE/2)
+				if(startX < -1*GRID_SIZE/2 || startX > GRID_SIZE/2 || startY < -1*GRID_SIZE/2 || startY > GRID_SIZE/2 || startLength > GRID_SIZE+1 ||
+						rows > GRID_SIZE+1 || inc1 < -1*GRID_SIZE+1 || inc1 > GRID_SIZE+1 || inc2 < -1*GRID_SIZE+1 || inc2 > GRID_SIZE+1)
 					throw new NumberFormatException();
 			}
 			catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
