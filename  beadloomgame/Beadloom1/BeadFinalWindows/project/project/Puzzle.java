@@ -12,7 +12,7 @@
       
       private Color peach;
       
-      private final int TOTALPUZZLES = 33;
+      private final int TOTALPUZZLES = 34;
    
    //Constructor.  Takes the beadloom 
        public Puzzle(BeadLoom bl){
@@ -1616,5 +1616,66 @@
     	   InputTools.setGrid(bl.getGridPanel());
            resetColor();
            return 32;
+       }
+       
+       public int setSergeant(){
+    	   
+    	   ideal = 15;
+    	   InputTools.setGrid(bl.getGridPanel2());
+    	   
+    	   InputTools.setColor(Color.BLACK);
+           InputTools.drawRectangle(-20, 20, -20, 20);
+           
+           InputTools.setColor(Color.ORANGE);
+           InputTools.drawRectangle(-12, 12, 2, -12);
+           
+           InputTools.drawTriangle(0, -12, 12, 18, 3, 3);
+           
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(-11, -13, 23, -1, -1, 7, true, false, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           
+           InputTools.setColor(Color.YELLOW);
+           InputTools.drawRectangle(-10, 10, 2, -12);
+           
+           InputTools.drawTriangle(0, -10, 10, 15, 3, 3);
+           
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(-9, -13, 19, -1, -1, 5, true, false, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           
+           InputTools.setColor(Color.ORANGE);
+           doTriangleIt(0, 12, 1, 1, 11, true, false);
+           
+           InputTools.setColor(Color.YELLOW);
+           doTriangleIt(0, 10, 1, 1, 9, true, false);
+           
+           InputTools.setColor(Color.ORANGE);
+           doTriangleIt(0, 8, 1, 1, 11, true, false);
+           
+           InputTools.setColor(Color.YELLOW);
+           doTriangleIt(0, 6, 1, 1, 9, true, false);
+           
+           InputTools.setColor(Color.ORANGE);
+           doTriangleIt(0, 4, 1, 1, 11, true, false);
+           
+           InputTools.setColor(Color.YELLOW);
+           doTriangleIt(0, 2, 1, 1, 9, true, false);
+           
+           InputTools.setColor(Color.ORANGE);
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(-2, -15, 5, 1, 1, 7, true, true, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           
+           InputTools.setColor(Color.YELLOW);
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(-2, -13, 5, 1, 1, 7, true, true, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+    	   
+    	   return 33;
        }
    }
