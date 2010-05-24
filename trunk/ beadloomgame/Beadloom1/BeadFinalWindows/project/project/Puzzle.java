@@ -1693,11 +1693,11 @@
              InputTools.drawRectangle(-20, 20, -20, 20);
              
              /* Draw Inner Wings */
-             InputTools.setColor(Color.DARK_GRAY);
+             InputTools.setColor(Color.BLUE);
              
              xValue = new ArrayList();
              yValue = new ArrayList();
-             InputTools.drawRectangle(-11, 3, 11, -3);
+             InputTools.drawRectangle(-11, 11, 3, -3);
              
              xValue = new ArrayList();
              yValue = new ArrayList();
@@ -1707,23 +1707,41 @@
              yValue = new ArrayList();
              InputTools.drawRectangle(-17, 17, 1, -1);
              
+           /*
+         InputTools.setColor(Color.BLUE);
+         xValue = new ArrayList();
+         yValue = new ArrayList();
+         InputTools.linearIteration(-10, -10, 5, -1, 1, 5, true, true, xValue, yValue);
+         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+      
+      //Note that you MUST reinitialize xValue and yValue for each linear iteration in the puzzle
+         InputTools.setColor(Color.GREEN);
+         xValue = new ArrayList();
+         yValue = new ArrayList();
+         InputTools.linearIteration(0, 15, 5, 2, 2, 5, true, false, xValue, yValue);
+         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+              */
+             
              /* Draw Body */
-             InputTools.setColor(Color.GRAY);
+             InputTools.setColor(Color.CYAN);
+             
              
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.linearIteration(-7, 5, 15, -1, -1, 4, true, true, xValue, yValue);
-             //InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.linearIteration(-7, -5, 15, -1, -1, 4, true, false, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
              
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.drawRectangle(-8, 8, 4, -4);
              
              /* Draw Outer Wings */
-             InputTools.setColor(Color.GRAY);
+             InputTools.setColor(Color.CYAN);
              
              //Rectangles for either side of vertical edges of wings
              xValue = new ArrayList();
@@ -1739,25 +1757,30 @@
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.linearIteration(-18, 5, 2, -1, 1, 9, true, true, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
              
              //Left outer wing lower diagonal, going from top to bottom left
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.linearIteration(-18, -5, 2, -1, 1, 9, true, false, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
              
              //Right outer wing upper diagonal, going from bottom to top right
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.linearIteration(17, 5, 2, 1, -1, 9, true, true, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
              
              //Right outer wing lower diagonal, going from top to bottom right
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.linearIteration(17, -5, 2, 1, -1, 9, true, false, xValue, yValue);
-             
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+            
              /* Draw Outer Window */
              
-             InputTools.setColor(Color.DARK_GRAY);
+             InputTools.setColor(Color.GRAY);
+             
              
              //Draw rectangle in center of window area
              xValue = new ArrayList();
@@ -1768,11 +1791,13 @@
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.linearIteration(-4, 3, 9, -1, -1, 3, true, true, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
              
              //Linear Iteration for area below center rectangle
              xValue = new ArrayList();
              yValue = new ArrayList();
-             InputTools.linearIteration(-4, -3, 3, -1, -1, 3, true, false, xValue, yValue);
+             InputTools.linearIteration(-4, -3, 9, -1, -1, 3, true, false, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
              
              /* Draw Inner Window */
              
@@ -1781,11 +1806,11 @@
              //Draw rectangles for inner window
              xValue = new ArrayList();
              yValue = new ArrayList();
-             InputTools.drawRectangle(-2, 4, 2, -4);
+             InputTools.drawRectangle(-2, 2, 4, -4);
              
              xValue = new ArrayList();
              yValue = new ArrayList();
-             InputTools.drawRectangle(-4, 2, 4, -2);
+             InputTools.drawRectangle(-4, 4, 2, -2);
              
              /* Draw Pieces of Outer Window that overlap Inner Window */
              
@@ -1794,18 +1819,22 @@
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.drawLine(0, 4, 0, -4, xValue, yValue);
+             InputTools.CoordListAction("LINEAR", xValue, yValue);
              
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.drawLine(-4, 0, 4, 0, xValue, yValue);
+             InputTools.CoordListAction("LINEAR", xValue, yValue);
              
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.drawLine(-3, 3, 3, -3, xValue, yValue);
+             InputTools.CoordListAction("LINEAR", xValue, yValue);
              
              xValue = new ArrayList();
              yValue = new ArrayList();
              InputTools.drawLine(3, 3, -3, -3, xValue, yValue);
+             InputTools.CoordListAction("LINEAR", xValue, yValue);
              
              /* Draw Final black dot in center */
              
