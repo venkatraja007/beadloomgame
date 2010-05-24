@@ -6,3 +6,5 @@ Grey Base Bead
 Best Score in Game Menu not updating
 	-Need to read high score when you select a puzzle
 
+Can not put in more than 20 where you should be able to in iterative tools
+
