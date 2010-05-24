@@ -12,7 +12,7 @@
       
       private Color peach;
       
-      private final int TOTALPUZZLES = 32;
+      private final int TOTALPUZZLES = 33;
    
    //Constructor.  Takes the beadloom 
        public Puzzle(BeadLoom bl){
@@ -1563,4 +1563,57 @@
            resetColor();
            return 31;
       }
+   
+       //Array Pos = 32
+     //Returns array pos
+       public int setDC(){
+    	   
+    	   ideal = 15;
+           InputTools.setGrid(bl.getGridPanel2());
+           
+           InputTools.setColor(Color.BLACK);
+           InputTools.drawRectangle(-20, 20, -20, 20);
+           
+           InputTools.setColor(Color.GREEN);
+           InputTools.drawRectangle(-15, 15, -15, 15);
+           
+           InputTools.setColor(Color.BLACK);
+           doTriangleIt(0, 12, 1, 2, 4, true, true);
+           doTriangleIt(0, -12, 1, 2, 4, true, false);
+           
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(-3, 10, 1, 0, 3, 3, false, false, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(-3, -10, 1, 3, 0, 3, false, false, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           
+           InputTools.drawRectangle(-8, -6, 11, -11);
+           InputTools.drawRectangle(-12, -9, -12, 12);
+           
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(3, 10, 1, 0, 3, 3, false, true, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           
+           xValue = new ArrayList();
+           yValue = new ArrayList();
+           InputTools.linearIteration(3, -10, 1, 3, 0, 3, false, true, xValue, yValue);
+           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           
+           InputTools.drawRectangle(8, 6, 11, -11);
+           InputTools.drawRectangle(12, 9, -12, 12);
+           
+           InputTools.drawTriangle(0, -2, 2, 8, -4, -4);
+           InputTools.drawTriangle(0, -2, 2, -8, 4, 4);
+           
+           InputTools.drawRectangle(13, 15, 7, -7);
+
+    	   InputTools.setGrid(bl.getGridPanel());
+           resetColor();
+           return 32;
+       }
    }
