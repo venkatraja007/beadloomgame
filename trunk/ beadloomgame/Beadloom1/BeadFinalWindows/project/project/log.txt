@@ -844,3 +844,67 @@
 <5/24/2010 14:48:40> Acey logs in.
 	<5/24/2010 14:48:40> Loom Example 8 Puzzle Selected.
 <5/24/2010 14:49:4> Acey logs out.
+<5/24/2010 15:4:16> Acey logs in.
+	<5/24/2010 15:4:16> Loom Example 8 Puzzle Selected.
+		<5/24/2010 15:4:51> Draw Linear Iteration:
+			x= 0
+			y= -20
+			start length= 10
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<5/24/2010 15:4:58> Undo Performed
+		<5/24/2010 15:5:2> Draw Linear Iteration:
+			x= 0
+			y= -20
+			start length= 10
+			increment 1= -1
+			increment 2= -1
+			rows total= 9
+		<5/24/2010 15:5:27> Undo Performed
+		<5/24/2010 15:5:28> Draw Linear Iteration:
+			x= =20
+			y= -20
+			start length= 41
+			increment 1= -1
+			increment 2= -1
+			rows total= 9
+		<5/24/2010 15:5:36> Undo Performed
+		<5/24/2010 15:5:37> Draw Linear Iteration:
+			x= -20
+			y= -20
+			start length= 41
+			increment 1= -1
+			increment 2= -1
+			rows total= 9
+		<5/24/2010 15:5:45> Undo Performed
+		<5/24/2010 15:5:46> Draw Linear Iteration:
+			x= -20
+			y= -20
+			start length= 41
+			increment 1= -1
+			increment 2= -1
+			rows total= 9
+		<5/24/2010 15:7:34> Restart Performed
+	<5/24/2010 15:7:34> Loom Example 8 Puzzle Selected.
+		<5/24/2010 15:8:58> Restart Performed
+	<5/24/2010 15:8:58> Triforce Puzzle Selected.
+		<5/24/2010 15:9:10> Restart Performed
+	<5/24/2010 15:9:10> Loom Example 14 Puzzle Selected.
+<5/24/2010 15:35:2> Acey logs in.
+	<5/24/2010 15:35:2> Loom Example 8 Puzzle Selected.
+		<5/24/2010 15:35:30> Restart Performed
+	<5/24/2010 15:35:30> DC Puzzle Selected.
+		<5/24/2010 15:36:3> Draw Rectangle:
+			x1= 20
+			x2= -20
+			y1= 20
+			y2= -20
+		<5/24/2010 15:36:8> Restart Performed
+		<5/24/2010 15:36:37> Color Change: Orange
+		<5/24/2010 15:36:45> Color Change: Black
+		<5/24/2010 15:36:49> Restart Performed
+	<5/24/2010 15:36:49> Tutorial 4 Puzzle Selected.
+<5/24/2010 15:42:3> Acey logs out.
+<5/24/2010 15:47:35> Acey logs in.
+	<5/24/2010 15:47:35> Loom Example 8 Puzzle Selected.
