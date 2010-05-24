@@ -1051,7 +1051,7 @@
      //Returns array pos
        public int setLoomEx7(){
     	   
-    	   ideal = 15;
+    	   ideal = 14;
            InputTools.setGrid(bl.getGridPanel2());
            
            InputTools.setColor(Color.ORANGE);
