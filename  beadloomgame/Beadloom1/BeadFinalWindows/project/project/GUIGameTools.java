@@ -1669,6 +1669,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			
 			HSLabelA.setText(" ");
 			MLabelA.setText(" ");	
+			
+			HSLabelB.setText(" ");
+			MLabelB.setText(" ");
 		}
 		else if (e.getSource() == EasyButton){
 			TutButton.setBounds(LeftDifR);
@@ -1717,9 +1720,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			
 			HSLabel9.setText(""+RecordMove[14]);
 			MLabel9.setText(RecordMedal[14]);
-			
+
 			HSLabelA.setText(" ");
 			MLabelA.setText(" ");
+			
+			HSLabelB.setText(" ");
+			MLabelB.setText(" ");
 		}
 		else if (e.getSource() == MediumButton){
 			if(RecordMedalShort[14].equals("N") ||
@@ -1780,6 +1786,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			
 			HSLabelA.setText(" ");
 			MLabelA.setText(" ");
+			
+			HSLabelB.setText(" ");
+			MLabelB.setText(" ");
 			}
 		}
 		else if (e.getSource() == HardButton){
