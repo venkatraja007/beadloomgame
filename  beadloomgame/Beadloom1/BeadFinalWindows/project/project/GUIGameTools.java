@@ -664,6 +664,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NameTextField.setText("Enter Your Name");
 		GamePanel.add(NameTextField);
 		NameTextField.setBounds(25, 50, 145, 25);
+		NameTextField.addActionListener(this);
 		
 		//---- Name Label ----
 		NameLabel.setBounds(25, 0, 200, 25);
@@ -1117,7 +1118,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	//Action Listener
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()== PlayGameButton) {
+		if (e.getSource()== PlayGameButton || e.getSource() == NameTextField) {
     		if (NameTextField.getText().equals("Enter Your Name") || NameTextField.getText().equals("")){
     			JOptionPane.showMessageDialog(null, "Please Enter Your Name", "Name Error", JOptionPane.PLAIN_MESSAGE);
     		}
