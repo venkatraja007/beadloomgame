@@ -1707,20 +1707,6 @@
              yValue = new ArrayList();
              InputTools.drawRectangle(-17, 17, 1, -1);
              
-           /*
-         InputTools.setColor(Color.BLUE);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(-10, -10, 5, -1, 1, 5, true, true, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
-      
-      //Note that you MUST reinitialize xValue and yValue for each linear iteration in the puzzle
-         InputTools.setColor(Color.GREEN);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(0, 15, 5, 2, 2, 5, true, false, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
-              */
              
              /* Draw Body */
              InputTools.setColor(Color.CYAN);
