@@ -31,6 +31,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private int currentPuzzle;
 	
 	private Color peach = new Color(255, 200, 150);
+	private Color betterOrange = new Color(255,100,0);
 	//GUI Parts
 	//Panels
 	private JPanel GamePanel = new JPanel();
@@ -613,7 +614,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Orange Button ----
 		OrangeButton.setText("Orange");
 		OrangeButton.addActionListener(this);
-		OrangeButton.setBackground(Color.ORANGE);
+		OrangeButton.setBackground(betterOrange);
 		OrangeButton.setBounds(CR02);
 		ColorPanel.add(OrangeButton);
 		
@@ -1984,9 +1985,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }
 		}
 		else if (e.getSource() == OrangeButton){
-			bl.getInputTools().setColor(Color.ORANGE);
+			bl.getInputTools().setColor(betterOrange);
 			bl.getColorFrame().setVisible(false);
-			bl.getMoveBeads().getTopColorsButton().setBackground(Color.ORANGE);
+			bl.getMoveBeads().getTopColorsButton().setBackground(betterOrange);
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
