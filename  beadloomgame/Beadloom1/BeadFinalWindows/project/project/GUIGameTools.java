@@ -251,7 +251,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		ColorPanel.setBorder(new LineBorder(Color.red));
 		ColorPanel.setBackground(Color.white);
 		ColorPanel.setLayout(null);
-		ColorPanel.setBounds((int)dim.getWidth()/2, (int)dim.getHeight()/2, 200, 200);
+		ColorPanel.setBounds((int)bl.dim.getWidth()/2, (int)bl.dim.getHeight()/2, 200, 200);
 		
 		//---- Choose puzzle name label ----
 		CPNameLabel.setText("Puzzle:");
@@ -786,11 +786,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		bl.getContentPanel().add(bl.getGridFrame2());
 			bl.getContentPanel().remove(bl.getGoalImagesFrame());
 			bl.getContentPanel().remove(bl.getMoveBeadsFrame());
-			bl.getGridFrame().setBounds((int)(dim.getWidth()*0.5) -10, 0, (int)(dim.getWidth()*0.5) -15,(int)(dim.getHeight()*0.6)-15);
-			bl.getGridFrame2().setBounds(0, 0, (int)(dim.getWidth()*0.5) -15,(int)(dim.getHeight()*0.6)-15);
-			bl.getOutputWindow().setBounds(5, (int)(dim.getHeight()*0.6) -10, 425, 190);
-			bl.getBeadUtilitiesFrame().setBounds((int)dim.getWidth() - bl.getBeadUtilitiesFrame().getWidth() - 20, (int)(dim.getHeight()*.6) -10, 420, 250);
-			bl.getGameFrame().setBounds((int)(dim.getWidth()/2) - 20 - (bl.getGameFrame().getWidth()/2), (int)(dim.getHeight()*0.6) -10, 205, 195);
+			bl.getGridFrame().setBounds((int)(bl.dim.getWidth()*0.5) -10, 0, (int)(bl.dim.getWidth()*0.5) -15,(int)(bl.dim.getHeight()*0.6)-15);
+			bl.getGridFrame2().setBounds(0, 0, (int)(bl.dim.getWidth()*0.5) -15,(int)(bl.dim.getHeight()*0.6)-15);
+			bl.getOutputWindow().setBounds(5, (int)(bl.dim.getHeight()*0.6) -10, 425, 190);
+			bl.getBeadUtilitiesFrame().setBounds((int)bl.dim.getWidth() - bl.getBeadUtilitiesFrame().getWidth() - 20, (int)(bl.dim.getHeight()*.6) -10, 420, 250);
+			bl.getGameFrame().setBounds((int)(bl.dim.getWidth()/2) - 20 - (bl.getGameFrame().getWidth()/2), (int)(bl.dim.getHeight()*0.6) -10, 205, 195);
 			bl.getTop().getFileMenu().setEnabled(false);
 			bl.getTop().getOptionsMenu().setEnabled(false);
 			bl.getTop().getHelpMenu().setEnabled(false);
@@ -943,7 +943,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		bl.getContentPanel().remove(bl.getGridFrame2());
     		bl.getContentPanel().add(bl.getGoalImagesFrame());
     		bl.getContentPanel().add(bl.getMoveBeadsFrame());
-    		bl.getGridFrame().setBounds(440, 5, (int)(dim.getWidth()/2) -15,(int)(dim.getWidth()/2)-15);
+    		bl.getGridFrame().setBounds(440, 5, (int)(bl.dim.getWidth()/2) -15,(int)(bl.dim.getWidth()/2)-15);
     		bl.getOutputWindow().setBounds(5, 495, 425, 190);
     		bl.getBeadUtilitiesFrame().setBounds(5, 205, 425, 285);
     		bl.getGameFrame().setBounds(5, 700, 205, 195);

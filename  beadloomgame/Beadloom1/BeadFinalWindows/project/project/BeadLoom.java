@@ -57,7 +57,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 	//******* Main Method *******
     public void init() {
-    	setSize((int)dim.getWidth(),(int)dim.getWidth());
+    	setSize((int)dim.getWidth(),(int)dim.getHeight());
     	BeadLoom Gui = new BeadLoom();
     	color = Gui.getMoveBeads().getColor();
     	
@@ -85,8 +85,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     }
 	
 	//******* Variables declaration ******
-  
-    public static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
+    //public static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+    public static Dimension dim = new Dimension(1024, 768);
     //Set BEAD_ADDRESS to null, initialized in the the init() function
 	public static String BEAD_ADDRESS = "null";
 	
@@ -363,19 +364,19 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				//======== GridFrame ========
 				{
 					GridFrame.setVisible(true);
-					GridFrame.setResizable(true);
+					GridFrame.setResizable(false);
 					GridFrame.setBorder(new LineBorder(Color.red));
 					GridFrame.setTitle("Grid");
-					GridFrame.setMaximizable(true);
+					GridFrame.setMaximizable(false);
 
 					Container internalFrame1ContentPane = GridFrame.getContentPane();
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
 				}
 				ContentPanel.add(GridFrame);
-				GridFrame.setBounds(440, 5, (int)(dim.getWidth()/2) -15,(int)(dim.getWidth()/2)-15);
+				GridFrame.setBounds(440, 5, (int)(dim.getWidth()/2) -15,(int)(dim.getHeight()/2)-15);
 				GridFrame.getContentPane().add(gridPanel);
 				Dimension d = new Dimension();
-				d.setSize((dim.getWidth()/2) -15,(dim.getWidth()/2)-15);
+				d.setSize((dim.getWidth()/2) -15,(dim.getHeight()/2)-15);
 				//This needs to be adjusted for auto resizing -Acey
 				//GridFrame.setMinimumSize(d);
 				GridFrame.toFront();
@@ -383,18 +384,18 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				//======== GridFrame 2 ========
 				{
 					GridFrame2.setVisible(true);
-					GridFrame2.setResizable(true);
+					GridFrame2.setResizable(false);
 					GridFrame2.setBorder(new LineBorder(Color.red));
 					GridFrame2.setTitle("Goal");
-					GridFrame2.setMaximizable(true);
+					GridFrame2.setMaximizable(false);
 
 					Container internalFrame1ContentPane = GridFrame2.getContentPane();
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
 				}
-				GridFrame2.setBounds(0, 0, (int)(dim.getWidth()/2) -15,(int)(dim.getWidth()/2)-15);
+				GridFrame2.setBounds(0, 0, (int)(dim.getWidth()/2) -15,(int)(dim.getHeight()/2)-15);
 				GridFrame2.getContentPane().add(gridPanel2);
 				Dimension d2 = new Dimension();
-				d2.setSize((dim.getWidth()/2) -15,(dim.getWidth()/2)-15);
+				d2.setSize((dim.getWidth()/2) -15,(dim.getHeight()/2)-15);
 				//This needs to be adjusted for auto resizing -Acey
 				//GridFrame2.setMinimumSize(d2);
 				GridFrame2.toFront();
@@ -523,7 +524,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				ContentPanel.add(GameFrame);
 				ContentPanel.add(PuzzleFrame);
 				ContentPanel.add(ColorFrame);
-				GameFrame.setBounds((int)(dim.getWidth()) - 250, (int)(dim.getHeight()/8), 205, 195);
+				GameFrame.setBounds((int)(dim.getWidth()) - 350, (int)(dim.getHeight()/2), 205, 195);
 				PuzzleFrame.setBounds(0, 0, (int)(dim.getWidth()/2) -15,(int)(dim.getHeight()/2)-15);
 				ColorFrame.setBounds((int)(dim.getWidth()/8), (int)(dim.getHeight()/4), 375, 140);
 				

@@ -463,4 +463,17 @@ class GridPanel extends JPanel {
     	if(isClear == false) bl.getTop().enableRedo(false);
     	repaint();
     }
+    
+    public Color[][] getGameGrid()
+    {
+    	return gameGrid;
+    }
+    
+    public void setGameGrid(Color[][] newGrid)
+    {
+    	if(gameGrid.length == newGrid.length && gameGrid[0].length == newGrid[0].length)
+    	{
+    		gameGrid = newGrid.clone();
+    	}
+    }
 }
