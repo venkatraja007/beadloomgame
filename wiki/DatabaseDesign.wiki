@@ -12,9 +12,9 @@ SQL Query: create table HighScores
 Should be grouped by puzzle upon display
 Time should be used for tie-breakers
 
-Display Schema:
-|| *User Name* || *Score* || *Time* || *Medal* || *Puzzle* ||
-|| Acey || 10 || 2:10 ||  Platinum || Batman ||
+Display Schema(per puzzle):
+|| *User Name* || *Score* || *Time* || *Medal* ||
+|| Acey || 10 || 2:10 ||  Platinum ||
 
 Table Schema:
 || *user* || *score* || *time* || *medal* || *puzzle* || *timeStamp* ||
