@@ -1,0 +1,45 @@
+/* orange: ffa405 */
+/* white-ish: f7f7f7 */
+/* blue-ish: 066db5 */
+/* tan: #ffa */
+body
+{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse:collapse;
+	background-color:#066db5;
+	color:#ffa;
+	
+}
+th
+{
+	background-color:#ffa405;
+	color:#f7f7f7;
+	font-size:1.2em;
+}
+
+td.off
+{
+	color:black;
+	background-color:#f7f7f7
+}
+td.on
+{
+	color:black;
+	background-color:#ffa;
+}
+
+/* Links */
+a
+{
+	color:#f7f7f7;
+}
+
+a:visited
+{
+	color:#ffa;
+}
+
+a:hover
+{
+	color:#ffa405;
+}
