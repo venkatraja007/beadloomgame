@@ -868,13 +868,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		
     		//If new player add in default scores for them
     		if (!exists){
-    		scoreFile[lineCounter] = playerName + " 1000 1000 1000 1000 1000 1000" +
-    				                             " 1000 1000 1000 1000 1000 1000" +
-    				                             " 1000 1000 1000 1000 1000 1000" +
-    				                             " 1000 1000 1000 1000 1000 1000" +
-    				                             " 1000 1000 1000 1000 1000 1000 1000 1000";
+    		scoreFile[lineCounter] = playerName + " 1682 1682 1682 1682 1682 1682" +
+    				                             " 1682 1682 1682 1682 1682 1682" +
+    				                             " 1682 1682 1682 1682 1682 1682" +
+    				                             " 1682 1682 1682 1682 1682 1682" +
+    				                             " 1682 1682 1682 1682 1682 1682 1682 1682 1682 1682 1682";
     		lineCounter++;
-    		scoreFile[lineCounter] = playerName + " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N";
+    		scoreFile[lineCounter] = playerName + " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N";
     		}
     		
     		StringTokenizer st = new StringTokenizer(scoreFile[playerIndex + playerIndex + totalEntries -1]);
