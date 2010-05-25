@@ -76,7 +76,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     	{
     		//Create new bead URL for makeBullet function
     		URL url = new URL(baseURL+"bead.JPG");
-    		catimage = makeBullet(color, url);
+    		catimage = makeBullet(color, url, 1, 1);
     		
     	}catch(Exception exc){JOptionPane.showMessageDialog(null, "Invalid Image Bead URL"); }
     	
@@ -588,13 +588,16 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     /*
      * Create a bullet bitmap from a new foreground color and a color image.
      */
-    private synchronized Image makeBullet(Color fg, URL url) {
+    private synchronized Image makeBullet(Color fg, URL url, int panelWidth, int panelHeight) {
         Image bullet;
         
         //This needs to be here to work offline -Acey
-        Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG"); 
+        Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
         //This needs to be uncommented to work with online applet -Acey
         //Image sourceImage = getImage(url);
+        
+        //scale
+        sourceImage = sourceImage.getScaledInstance(panelWidth/41, panelHeight/41, 0);
         ImageFilter imgf = new HueFilter(fg);
         ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
         	bullet = createImage(imgp);
@@ -785,7 +788,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     		fg = color;//(attr != null) ? lookupColor(attr) : getForeground();
     	else
     		fg = layer.getColor();
-    	     m = makeBullet(fg, url);
+    	     m = makeBullet(fg, url, gp.getWidth(), gp.getHeight());
     	     
     	    float temp = (float)30 / gp.getGridSize();
         
