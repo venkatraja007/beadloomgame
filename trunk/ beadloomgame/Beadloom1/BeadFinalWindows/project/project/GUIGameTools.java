@@ -1221,6 +1221,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == Tut1Button){
 			Restart(true, true, true);
 			currentPuzzle = puz.setTut1();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1235,6 +1237,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == Tut2Button){
 			Restart(true, true, true);
 			currentPuzzle = puz.setTut2();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1248,6 +1252,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == Tut3Button){
 			Restart(true, true, true);
 			currentPuzzle = puz.setTut3();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1261,6 +1267,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == Tut4Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setTut4();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1274,6 +1282,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == Tut5Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setTut5();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1287,6 +1297,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == Tut6Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setTut6();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1300,6 +1312,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == TriforceButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setTriforce();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1313,6 +1327,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == OverlappingSquaresButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setOverlappingSquares();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1326,6 +1342,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == SixButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setSix();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1339,6 +1357,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == CanYouHearMeNowButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setCanYouHearMeNow();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1352,6 +1372,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == StarrySkyButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setStarrySky();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1365,6 +1387,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx6Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx6();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1378,6 +1402,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx8Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx8();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1391,6 +1417,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == CircleButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setCircle();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1404,6 +1432,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == FlagButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setFlag();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1417,6 +1447,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == UNCCButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setUNCC();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1430,6 +1462,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx10Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx10();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1443,6 +1477,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx13Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx13();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1456,6 +1492,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx14Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx14();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1469,6 +1507,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == SunriseButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setSunRise();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1482,6 +1522,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == HeartButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setHeart();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1495,6 +1537,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == SunnySkyButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setSunnySky();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1508,6 +1552,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == StarsAndStripesButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setStarsAndStripes();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1521,6 +1567,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == ROSSButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setROSS();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1534,6 +1582,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == BullseyeButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setBullseye();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1547,6 +1597,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx7Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx7();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1560,6 +1612,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx1Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx1();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1573,6 +1627,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx5Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx5();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1586,6 +1642,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx3Button){
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx3();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1599,6 +1657,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == MoonButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setMoon();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1612,6 +1672,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == MegamanButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setMegaman();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1625,6 +1687,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == BatmanButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setBatman();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1638,6 +1702,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == DCButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setDC();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1651,6 +1717,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == SergeantButton){
 			Restart(true, true, true);
 			currentPuzzle =puz.setSergeant();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
@@ -1665,6 +1733,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == TieFighterButton){
 			Restart(true, true, true);
 			currentPuzzle = puz.setTieFighter();
+    		bestScore = RecordMove[currentPuzzle];
+    		BestScoreLabel.setText("Best Score:" + bestScore);
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			   try{
