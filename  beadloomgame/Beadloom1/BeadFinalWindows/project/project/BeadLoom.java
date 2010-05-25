@@ -596,8 +596,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         //This needs to be uncommented to work with online applet -Acey
         //Image sourceImage = getImage(url);
         
-        //scale
-        sourceImage = sourceImage.getScaledInstance(panelWidth/41, panelHeight/41, 0);
+        //scale beads to fit panel width and height
+        sourceImage = sourceImage.getScaledInstance(panelWidth/InputTools.GRID_SIZE+1,
+        		panelHeight/InputTools.GRID_SIZE+1, 0);
         ImageFilter imgf = new HueFilter(fg);
         ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
         	bullet = createImage(imgp);
