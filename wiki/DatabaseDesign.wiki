@@ -5,10 +5,14 @@
 Information about the database, currently hosted on playground.
 database name: BeadLoomGame
 
-SQL Query: "create table HighScores"
+SQL Query: create table HighScores
 
 == High Scores Table==
 
 Should be grouped by puzzle upon display
 
-|| user || score || time || medal || puzzle || timeStamp
+Display Schema:
+|| *user* || 
+
+Table Schema:
+|| *user* || *score* || *time* || *medal* || *puzzle* || *timeStamp* ||
