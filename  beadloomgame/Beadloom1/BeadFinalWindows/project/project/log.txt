@@ -1,5 +1,0 @@
-<5/25/2010 9:18:20> Acey logs in.
-	<5/25/2010 9:18:20> Loom Example 8 Puzzle Selected.
-		<5/25/2010 9:18:26> Draw Point:
-			x= 0
-			y= 0
