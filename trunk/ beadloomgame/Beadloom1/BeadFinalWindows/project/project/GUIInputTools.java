@@ -1193,7 +1193,9 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	
 	
 	public void setGrid(GridPanel gp)
-	{grid = gp;}
+	{
+		grid = gp;
+	}
 	
 	//Draw a single point
 	public void drawPoint(int x, int y)
@@ -1875,7 +1877,6 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		
 		//Fires when delete button is pressed
 		if (e.getSource() == DeleteLayer) 
 		{
