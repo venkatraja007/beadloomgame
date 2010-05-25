@@ -1210,7 +1210,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("POINT", coords," ");
 		l.setColor(color);
-		l.setImage(makeBullet(l.getColor()));
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);		
 	}
 
@@ -1315,7 +1315,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("RECTANGLE", coords," ");
 		l.setColor(color);
-		l.setImage(makeBullet(l.getColor()));
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
 	
@@ -1350,7 +1350,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		//Draw the triangle
 		Layer l = new Layer("TRIANGLE", coords," ");
 		l.setColor(color);
-		l.setImage(makeBullet(l.getColor()));
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
 	
@@ -1526,7 +1526,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("LINEAR_ITERATION_CYCLES", coords," ");
 		l.setColor(color);
-		l.setImage(makeBullet(l.getColor()));
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
 	
@@ -1749,7 +1749,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("TRIANGLE_ITERATION_CYCLES", coords," ");
 		l.setColor(color);
-		l.setImage(makeBullet(l.getColor()));
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
 	
@@ -1840,7 +1840,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("TRIG_FUNCTION", coords," ");
 		l.setColor(color);
-		l.setImage(makeBullet(l.getColor()));
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
 	
@@ -1859,7 +1859,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer(type, coords, " ");
 		l.setColor(color);
-		l.setImage(makeBullet(l.getColor()));
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 		
 	}
@@ -2426,14 +2426,19 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     }
     
 
-    private synchronized Image makeBullet(Color fg) {
+    private synchronized Image makeBullet(Color fg, int panelWidth, int panelHeight) {
         Image bullet;
+        Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
+        
+        //scale beads to fit panel width and height
+        sourceImage = sourceImage.getScaledInstance(panelWidth/GRID_SIZE+1,
+        		panelHeight/GRID_SIZE+1, 0);
 
     	ImageFilter imgf = new HueFilter(fg);
-    	ImageProducer imgp = new FilteredImageSource(catimage.getSource(),imgf);
+    	ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
     	bullet = createImage(imgp);
     	return bullet;
-   }
+   } 
 
     public void setColor(Color c) {
     	color = c;

@@ -576,15 +576,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	
 	//******* Methods *******
 	
-    private synchronized Image makeBullet(Color fg) {
-        Image bullet;
-        	
-    	ImageFilter imgf = new HueFilter(fg);
-    	ImageProducer imgp = new FilteredImageSource(catimage.getSource(),imgf);
-    	bullet = createImage(imgp);
-    	return bullet;
-   } 
-    
     /*
      * Create a bullet bitmap from a new foreground color and a color image.
      */
