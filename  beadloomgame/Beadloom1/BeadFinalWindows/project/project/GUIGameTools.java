@@ -390,17 +390,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Stars and Stripes Button ----
 		StarsAndStripesButton.setText("Stars and Stripes");
 		StarsAndStripesButton.addActionListener(this);
-		StarsAndStripesButton.setBounds(R60);
+		StarsAndStripesButton.setBounds(R70);
 		
 		//---- ROSS Button ----
 		ROSSButton.setText("ROSS the bunny");
 		ROSSButton.addActionListener(this);
-		ROSSButton.setBounds(R50);
+		ROSSButton.setBounds(R60);
 		
 		//---- Bullseye Button ----
 		BullseyeButton.setText("Bullseye");
 		BullseyeButton.addActionListener(this);
-		BullseyeButton.setBounds(R30);
+		BullseyeButton.setBounds(R40);
 		
 		//---- LoomEx7 Button ----
 		LoomEx7Button.setText("Native American Example 7");
@@ -410,17 +410,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- LoomEx1 Button ----
 		LoomEx1Button.setText("Native American Example 1");
 		LoomEx1Button.addActionListener(this);
-		LoomEx1Button.setBounds(R40);
+		LoomEx1Button.setBounds(R50);
 		
 		//---- LoomEx5 Button ----
 		LoomEx5Button.setText("Native American Example 5");
 		LoomEx5Button.addActionListener(this);
-		LoomEx5Button.setBounds(R70);
+		LoomEx5Button.setBounds(R80);
 		
 		//---- LoomEx3 Button ----
 		LoomEx3Button.setText("Native American Example 3");
 		LoomEx3Button.addActionListener(this);
-		LoomEx3Button.setBounds(R80);
+		LoomEx3Button.setBounds(R90);
 		
 		//---- Moon Button ----
 		MoonButton.setText("Moon");
@@ -430,17 +430,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Megaman Button ----
 		MegamanButton.setText("Megaman");
 		MegamanButton.addActionListener(this);
-		MegamanButton.setBounds(R90);
+		MegamanButton.setBounds(RA0);
 		
 		//---- Batman Button ----
 		BatmanButton.setText("Batman");
 		BatmanButton.addActionListener(this);
-		BatmanButton.setBounds(RA0);
+		BatmanButton.setBounds(RB0);
 		
 		//---- DC Button ----
 		DCButton.setText("DC");
 		DCButton.addActionListener(this);
-		DCButton.setBounds(RB0);
+		DCButton.setBounds(R30);
 		
 		//---- HSLabel0 ----
 		HSLabel0.setBounds(R01);
@@ -1862,6 +1862,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			
 			ChoosePuzzlePanel.add(MoonButton);
 			ChoosePuzzlePanel.add(LoomEx7Button);
+			ChoosePuzzlePanel.add(DCButton);
 			ChoosePuzzlePanel.add(BullseyeButton);
 			ChoosePuzzlePanel.add(LoomEx1Button);
 			ChoosePuzzlePanel.add(ROSSButton);
@@ -1870,7 +1871,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			ChoosePuzzlePanel.add(LoomEx3Button);
 			ChoosePuzzlePanel.add(MegamanButton);
 			ChoosePuzzlePanel.add(BatmanButton);
-			ChoosePuzzlePanel.add(DCButton);
 			
 			HSLabel1.setText("" + RecordMove[22]);
 			MLabel1.setText(RecordMedal[22]);
@@ -1878,32 +1878,32 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			HSLabel2.setText("" + RecordMove[23]);
 			MLabel2.setText(RecordMedal[23]);
 			
-			HSLabel3.setText("" + RecordMove[24]);
-			MLabel3.setText(RecordMedal[24]);
+			HSLabel3.setText("" + RecordMove[32]);
+			MLabel3.setText(RecordMedal[32]);
 			
-			HSLabel4.setText("" + RecordMove[25]);
-			MLabel4.setText(RecordMedal[25]);
+			HSLabel4.setText("" + RecordMove[24]);
+			MLabel4.setText(RecordMedal[24]);
 			
-			HSLabel5.setText("" + RecordMove[26]);
-			MLabel5.setText(RecordMedal[26]);
+			HSLabel5.setText("" + RecordMove[25]);
+			MLabel5.setText(RecordMedal[25]);
 			
-			HSLabel6.setText("" + RecordMove[27]);
-			MLabel6.setText(RecordMedal[27]);
+			HSLabel6.setText("" + RecordMove[26]);
+			MLabel6.setText(RecordMedal[26]);
 			
-			HSLabel7.setText(""+RecordMove[28]);
-			MLabel7.setText(RecordMedal[28]);
+			HSLabel7.setText(""+RecordMove[27]);
+			MLabel7.setText(RecordMedal[27]);
 			
-			HSLabel8.setText(""+RecordMove[29]);
-			MLabel8.setText(RecordMedal[29]);
+			HSLabel8.setText(""+RecordMove[28]);
+			MLabel8.setText(RecordMedal[28]);
 			
-			HSLabel9.setText(""+RecordMove[30]);
-			MLabel9.setText(RecordMedal[30]);
+			HSLabel9.setText(""+RecordMove[29]);
+			MLabel9.setText(RecordMedal[29]);
 			
-			HSLabelA.setText(""+RecordMove[31]);
-			MLabelA.setText(RecordMedal[31]);
+			HSLabelA.setText(""+RecordMove[30]);
+			MLabelA.setText(RecordMedal[30]);
 			
-			HSLabelB.setText(""+RecordMove[32]);
-			MLabelB.setText(RecordMedal[32]);
+			HSLabelB.setText(""+RecordMove[31]);
+			MLabelB.setText(RecordMedal[31]);
 					}
 		}
 		else if (e.getSource() == RedButton){
