@@ -30,6 +30,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private int totalEntries;
 	private int currentPuzzle;
 	
+	private long puzzleStartTime;
+	
 	private Color peach = new Color(255, 200, 150);
 	private Color betterOrange = new Color(255,100,0);
 	//GUI Parts
@@ -698,6 +700,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     	//Clears grid 2 if clear2 is true
     	//Logs the restart if log is true (only doesn't log during start and when not in game)
     	public void Restart(Boolean clear1, Boolean clear2, Boolean dolog){
+    		puzzleStartTime = System.currentTimeMillis();
     		moveCounter = 0;
     		MoveLabel.setText("Total Actions: " + moveCounter);
     		if (clear2){
@@ -994,25 +997,28 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		}
 				    
     		if(totalErrors == 0){
+    			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
+    			
+    			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
     			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
     			String medal;
     			if (moveCounter <= puz.getIdeal()){
-    				JOptionPane.showMessageDialog(null, "You Earned the Platinum Medal.", "Congratulations", JOptionPane.PLAIN_MESSAGE);
+    				JOptionPane.showMessageDialog(null, "You Earned the Platinum Medal.  You completed the puzzle in "+completeTime+" second(s).", "Congratulations", JOptionPane.PLAIN_MESSAGE);
     				medal = "Platinum!!!!!";
     				RecordMedalShort[currentPuzzle] = "P";
     			}
     			else if (moveCounter <= puz.getIdeal()*2){
-    				JOptionPane.showMessageDialog(null, "You Earned the Gold Medal.", "Congratulations", JOptionPane.PLAIN_MESSAGE);
+    				JOptionPane.showMessageDialog(null, "You Earned the Gold Medal.  You completed the puzzle in "+completeTime+" second(s).", "Congratulations", JOptionPane.PLAIN_MESSAGE);
     				medal = "Gold!!!";
     				RecordMedalShort[currentPuzzle] = "G";
     			}
     			else if (moveCounter <= puz.getIdeal()*3){
-    				JOptionPane.showMessageDialog(null, "You Earned the Silver Medal.", "Congratulations", JOptionPane.PLAIN_MESSAGE);
+    				JOptionPane.showMessageDialog(null, "You Earned the Silver Medal.  You completed the puzzle in "+completeTime+" second(s).", "Congratulations", JOptionPane.PLAIN_MESSAGE);
     				medal = "Silver!!";
     				RecordMedalShort[currentPuzzle] = "S";
     			}
     			else{
-    				JOptionPane.showMessageDialog(null, "You Earned the Bronze Medal.", "Congratulations", JOptionPane.PLAIN_MESSAGE); 				  
+    				JOptionPane.showMessageDialog(null, "You Earned the Bronze Medal.  You completed the puzzle in "+completeTime+" second(s).", "Congratulations", JOptionPane.PLAIN_MESSAGE); 				  
     				medal = "Bronze!";
     				RecordMedalShort[currentPuzzle] = "B";
     			}
