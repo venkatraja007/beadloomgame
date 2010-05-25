@@ -1615,7 +1615,12 @@
            
            InputTools.drawRectangle(13, 15, 7, -7);
 
-    	   InputTools.setGrid(bl.getGridPanel());
+         //Calculate the Goal Images bead array
+           bl.getGridPanel2().calcGameGrid();
+           
+        //Change grid back so they can work on the puzzle
+        //Reset the Current Selected Color to default
+           InputTools.setGrid(bl.getGridPanel());
            resetColor();
            return 32;
        }
@@ -1678,6 +1683,13 @@
            InputTools.linearIteration(-2, -13, 5, 1, 1, 7, true, true, xValue, yValue);
            InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
     	   
+         //Calculate the Goal Images bead array
+           bl.getGridPanel2().calcGameGrid();
+           
+        //Change grid back so they can work on the puzzle
+        //Reset the Current Selected Color to default
+           InputTools.setGrid(bl.getGridPanel());
+           resetColor();
     	   return 33;
        }
        
@@ -1832,6 +1844,13 @@
              yValue = new ArrayList();
              InputTools.drawPoint(0, 0);
              
+           //Calculate the Goal Images bead array
+             bl.getGridPanel2().calcGameGrid();
+             
+          //Change grid back so they can work on the puzzle
+          //Reset the Current Selected Color to default
+             InputTools.setGrid(bl.getGridPanel());
+             resetColor();
              return 34;
              
          }
