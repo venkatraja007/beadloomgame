@@ -78,7 +78,12 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     		URL url = new URL(baseURL+"bead.JPG");
     		catimage = makeBullet(color, url, 1, 1);
     		
-    	}catch(Exception exc){JOptionPane.showMessageDialog(null, "Invalid Image Bead URL"); }
+    	}
+    	catch(Exception exc)
+    	{
+    		/* Commented out until the beadURL is needed or we decied to remove this completely */
+    		//JOptionPane.showMessageDialog(null, "Invalid Image Bead URL");
+    	}
     	
     	doBeadSetting(null, gridPanel);
     	Gui.setVisible(true);
@@ -597,9 +602,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         Image bullet;
         
         //This needs to be here to work offline -Acey
-        Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
+        //Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
         //This needs to be uncommented to work with online applet -Acey
         //Image sourceImage = getImage(url);
+        Image sourceImage = Toolkit.getDefaultToolkit().getImage("http://webpages.uncc.edu/~sgpickfo/bead.jpg");
         
         //scale beads to fit panel width and height
         sourceImage = sourceImage.getScaledInstance(panelWidth/InputTools.GRID_SIZE+1,
@@ -785,7 +791,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     	{
     		//JOptionPane.showMessageDialog(null, "Invalid Image Bead URL"); DISABLED FOR DEBUG
     		//If BEAD_ADDRESS is null set to my default location
-    		try{url = new URL("http://www.rpi.edu/~kotulc/Images/bead.JPG");}
+    		//try{url = new URL("http://www.rpi.edu/~kotulc/Images/bead.JPG");}
+    		try{url = new URL("http://webpages.uncc.edu/~sgpickfo/bead.jpg");}
     		catch(MalformedURLException ex){return;}//Else quit
     	}
     	//Bead color manipulation

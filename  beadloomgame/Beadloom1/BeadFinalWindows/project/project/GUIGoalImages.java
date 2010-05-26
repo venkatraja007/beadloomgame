@@ -158,7 +158,9 @@ public class GUIGoalImages extends JInternalFrame implements ActionListener{
 		catch(Exception ex)
 		{
 			//Passed URL is null; quit
-			JOptionPane.showMessageDialog(null, "Invalid Image Goal URL"); 
+			
+			/* Commented out until we fix the code or decided this is unnecessary */
+			//JOptionPane.showMessageDialog(null, "Invalid Image Goal URL"); 
 			return;
 		}
 		//Set the image of the GoalImageButton
