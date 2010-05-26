@@ -1,0 +1,1707 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Loom>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-22" YOffset="-18" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="11"/>
+        <Coordinates x0="0" y0="0"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="12"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="13"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="14"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="15"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="16"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="17"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="18"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="19"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="6" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="20"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="7" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="21"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="8" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="22"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="9" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="23"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="10" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="24"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="10" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="25"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="26"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="27"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="28"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="29"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="30"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="31"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="32"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="33"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="34"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-1" XOffset="2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="35"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-1" XOffset="3" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="36"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-1" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="37"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="40"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="41"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-1" XOffset="5" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="42"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-1" XOffset="6" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="43"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-1" XOffset="6" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="44"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="45"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="46"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="47"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="48"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="3" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="49"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="50"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="0" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="51"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="52"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="53"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="4" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="54"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="4" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="55"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="4" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="56"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="5" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="57"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="6" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="58"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="7" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="59"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="7" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="60"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="7" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="61"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="9" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="62"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="8" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="63"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="8" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="64"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="3" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="65"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="4" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="66"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="67"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="2" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="68"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="3" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="69"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="6" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="70"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="7" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="71"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="8" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="72"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="9" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="73"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="5" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="74"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="6" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="75"/>
+        <Coordinates x0="-21" y0="18"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="-1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="76"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="77"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="78"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="79"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="-1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="80"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="-2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="81"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="-4" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="82"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26317" XOffset="-3" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="83"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-8" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="84"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-8" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="85"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-7" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="86"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-6" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="87"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-9" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="88"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-10" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="89"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-11" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="90"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-12" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="91"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-11" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="92"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-12" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="93"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-11" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="94"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-12" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="95"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-10" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="96"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-11" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="97"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-9" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="98"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-8" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="99"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3407872" XOffset="-12" YOffset="6" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="100"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="101"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="102"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="103"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="104"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="105"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="106"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="107"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="108"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="6" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="109"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-6" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="110"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-7" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="111"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-8" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="112"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-9" YOffset="6" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="113"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-10" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="114"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-10" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="115"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-10" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="116"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-10" YOffset="10" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="117"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-9" YOffset="11" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="118"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-8" YOffset="12" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="119"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-7" YOffset="13" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="120"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-6" YOffset="14" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="121"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-5" YOffset="14" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="122"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-4" YOffset="14" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="123"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-3" YOffset="14" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="124"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-16777216" XOffset="-1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="125"/>
+        <Coordinates x0="-14" y0="2" x1="-13" y1="2" x2="-12" y2="2" x3="-11" y3="2" x4="-10" y4="2" x5="-9" y5="2" x6="-8" y6="2" x7="-7" y7="2" x8="-6" y8="2" x9="-5" y9="2" x10="-4" y10="2" x11="-3" y11="2" x12="-2" y12="2" x13="-1" y13="2" x14="0" y14="2" x15="1" y15="2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="126"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="127"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="128"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="129"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="131"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="132"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="133"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="134"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="135"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="136"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-16777216" XOffset="-2" YOffset="-7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="137"/>
+        <Coordinates x0="-5" y0="2" x1="-4" y1="2" x2="-3" y2="2" x3="-2" y3="2" x4="-1" y4="2" x5="0" y5="2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="12" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="138"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="13" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="139"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="14" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="140"/>
+        <Coordinates x0="-13" y0="16"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="141"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="142"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="143"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="144"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="145"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="146"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="6" YOffset="-6" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="147"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="148"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="149"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="150"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="151"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="6" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="152"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="7" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="153"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="8" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="154"/>
+        <Coordinates x0="0" y0="9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="155"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="156"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="157"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="158"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="159"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="160"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="161"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="162"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="163"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="164"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="165"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-7" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="166"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-5" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="167"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-6" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="168"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-4" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="169"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-3" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="170"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="171"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="172"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-4" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="173"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="174"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="175"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="176"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="177"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="178"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="179"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-3" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="180"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-5" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="181"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-4" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="182"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="183"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="184"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="185"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-6" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="186"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-5" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="187"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-4" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="188"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-3" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="189"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="1" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="190"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-1" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="191"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-3" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="192"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="193"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="194"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="1" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="195"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="0" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="196"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="0" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="197"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="1" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="198"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-26368" XOffset="-1" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="199"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="200"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="201"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="202"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="6" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="203"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="204"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="205"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="206"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-3" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="207"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-7" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="208"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-6" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="209"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-4" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="210"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-5" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="211"/>
+        <Coordinates x0="8" y0="11"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-16777216" XOffset="1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="212"/>
+        <Coordinates x0="-21" y0="-2" x1="-20" y1="-2" x2="-19" y2="-2" x3="-18" y3="-2" x4="-17" y4="-2" x5="-16" y5="-2" x6="-15" y6="-2" x7="-14" y7="-2" x8="-13" y8="-2" x9="-12" y9="-2" x10="-11" y10="-2" x11="-10" y11="-2" x12="-9" y12="-2" x13="-8" y13="-2" x14="-7" y14="-2" x15="-6" y15="-2" x16="-5" y16="-2" x17="-4" y17="-2" x18="-3" y18="-2" x19="-2" y19="-2" x20="-1" y20="-2" x21="0" y21="-2" x22="1" y22="-2" x23="2" y23="-2" x24="3" y24="-2" x25="4" y25="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="213"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="214"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="215"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="216"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="217"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="218"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="219"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="220"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="221"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="222"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="223"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="224"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="225"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="226"/>
+        <Coordinates x0="-22" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="227"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="228"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="229"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="230"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="231"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="232"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="233"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="234"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="235"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="6" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="236"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="237"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="238"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="9" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="239"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="10" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="240"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="11" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="241"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="12" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="242"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="12" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="243"/>
+        <Coordinates x0="6" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-16777216" XOffset="1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="244"/>
+        <Coordinates x0="-15" y0="-10" x1="-14" y1="-10" x2="-13" y2="-10" x3="-12" y3="-10" x4="-11" y4="-10" x5="-10" y5="-10" x6="-9" y6="-10" x7="-8" y7="-10" x8="-7" y8="-10" x9="-6" y9="-10" x10="-5" y10="-10" x11="-4" y11="-10" x12="-3" y12="-10" x13="-2" y13="-10" x14="-1" y14="-10" x15="0" y15="-10" x16="1" y16="-10" x17="2" y17="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="21" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="245"/>
+        <Coordinates x0="-15" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="246"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="247"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-3" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="248"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-8" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="249"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-9" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="250"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-9" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="251"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-9" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="252"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-9" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="253"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-8" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="254"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-7" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="255"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-6" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="256"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-5" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="257"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-4" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="258"/>
+        <Coordinates x0="-15" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="259"/>
+        <Coordinates x0="-22" y0="-9" x1="-21" y1="-9" x2="-20" y2="-9" x3="-19" y3="-9" x4="-18" y4="-9" x5="-17" y5="-9" x6="-16" y6="-9" x7="-15" y7="-9" x8="-14" y8="-9" x9="-13" y9="-9" x10="-12" y10="-9" x11="-11" y11="-9" x12="-10" y12="-9" x13="-9" y13="-9" x14="-8" y14="-9" x15="-7" y15="-9" x16="-6" y16="-9" x17="-5" y17="-9" x18="-4" y18="-9" x19="-3" y19="-9" x20="-2" y20="-9" x21="-1" y21="-9" x22="0" y22="-9" x23="1" y23="-9" x24="2" y24="-9" x25="3" y25="-9" x26="4" y26="-9" x27="5" y27="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="260"/>
+        <Coordinates x0="-23" y0="-9" x1="-22" y1="-9" x2="-21" y2="-9" x3="-20" y3="-9" x4="-19" y4="-9" x5="-18" y5="-9" x6="-17" y6="-9" x7="-16" y7="-9" x8="-15" y8="-9" x9="-14" y9="-9" x10="-13" y10="-9" x11="-12" y11="-9" x12="-11" y12="-9" x13="-10" y13="-9" x14="-9" y14="-9" x15="-8" y15="-9" x16="-7" y16="-9" x17="-6" y17="-9" x18="-5" y18="-9" x19="-4" y19="-9" x20="-3" y20="-9" x21="-2" y21="-9" x22="-1" y22="-9" x23="0" y23="-9" x24="1" y24="-9" x25="2" y25="-9" x26="3" y26="-9" x27="4" y27="-9" x28="5" y28="-9" x29="6" y29="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="261"/>
+        <Coordinates x0="-23" y0="-9" x1="-22" y1="-9" x2="-21" y2="-9" x3="-20" y3="-9" x4="-19" y4="-9" x5="-18" y5="-9" x6="-17" y6="-9" x7="-16" y7="-9" x8="-15" y8="-9" x9="-14" y9="-9" x10="-13" y10="-9" x11="-12" y11="-9" x12="-11" y12="-9" x13="-10" y13="-9" x14="-9" y14="-9" x15="-8" y15="-9" x16="-7" y16="-9" x17="-6" y17="-9" x18="-5" y18="-9" x19="-4" y19="-9" x20="-3" y20="-9" x21="-2" y21="-9" x22="-1" y22="-9" x23="0" y23="-9" x24="1" y24="-9" x25="2" y25="-9" x26="3" y26="-9" x27="4" y27="-9" x28="5" y28="-9" x29="6" y29="-9" x30="7" y30="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="262"/>
+        <Coordinates x0="-23" y0="-9" x1="-22" y1="-9" x2="-21" y2="-9" x3="-20" y3="-9" x4="-19" y4="-9" x5="-18" y5="-9" x6="-17" y6="-9" x7="-16" y7="-9" x8="-15" y8="-9" x9="-14" y9="-9" x10="-13" y10="-9" x11="-12" y11="-9" x12="-11" y12="-9" x13="-10" y13="-9" x14="-9" y14="-9" x15="-8" y15="-9" x16="-7" y16="-9" x17="-6" y17="-9" x18="-5" y18="-9" x19="-4" y19="-9" x20="-3" y20="-9" x21="-2" y21="-9" x22="-1" y22="-9" x23="0" y23="-9" x24="1" y24="-9" x25="2" y25="-9" x26="3" y26="-9" x27="4" y27="-9" x28="5" y28="-9" x29="6" y29="-9" x30="7" y30="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="263"/>
+        <Coordinates x0="-23" y0="-9" x1="-22" y1="-9" x2="-21" y2="-9" x3="-20" y3="-9" x4="-19" y4="-9" x5="-18" y5="-9" x6="-17" y6="-9" x7="-16" y7="-9" x8="-15" y8="-9" x9="-14" y9="-9" x10="-13" y10="-9" x11="-12" y11="-9" x12="-11" y12="-9" x13="-10" y13="-9" x14="-9" y14="-9" x15="-8" y15="-9" x16="-7" y16="-9" x17="-6" y17="-9" x18="-5" y18="-9" x19="-4" y19="-9" x20="-3" y20="-9" x21="-2" y21="-9" x22="-1" y22="-9" x23="0" y23="-9" x24="1" y24="-9" x25="2" y25="-9" x26="3" y26="-9" x27="4" y27="-9" x28="5" y28="-9" x29="6" y29="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="264"/>
+        <Coordinates x0="-22" y0="-9" x1="-21" y1="-9" x2="-20" y2="-9" x3="-19" y3="-9" x4="-18" y4="-9" x5="-17" y5="-9" x6="-16" y6="-9" x7="-15" y7="-9" x8="-14" y8="-9" x9="-13" y9="-9" x10="-12" y10="-9" x11="-11" y11="-9" x12="-10" y12="-9" x13="-9" y13="-9" x14="-8" y14="-9" x15="-7" y15="-9" x16="-6" y16="-9" x17="-5" y17="-9" x18="-4" y18="-9" x19="-3" y19="-9" x20="-2" y20="-9" x21="-1" y21="-9" x22="0" y22="-9" x23="1" y23="-9" x24="2" y24="-9" x25="3" y25="-9" x26="4" y26="-9" x27="5" y27="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="265"/>
+        <Coordinates x0="-21" y0="-2" x1="-20" y1="-2" x2="-19" y2="-2" x3="-18" y3="-2" x4="-17" y4="-2" x5="-16" y5="-2" x6="-15" y6="-2" x7="-14" y7="-2" x8="-13" y8="-2" x9="-12" y9="-2" x10="-11" y10="-2" x11="-10" y11="-2" x12="-9" y12="-2" x13="-8" y13="-2" x14="-7" y14="-2" x15="-6" y15="-2" x16="-5" y16="-2" x17="-4" y17="-2" x18="-3" y18="-2" x19="-2" y19="-2" x20="-1" y20="-2" x21="0" y21="-2" x22="1" y22="-2" x23="2" y23="-2" x24="3" y24="-2" x25="4" y25="-2" x26="5" y26="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="266"/>
+        <Coordinates x0="-21" y0="-2" x1="-20" y1="-2" x2="-19" y2="-2" x3="-18" y3="-2" x4="-17" y4="-2" x5="-16" y5="-2" x6="-15" y6="-2" x7="-14" y7="-2" x8="-13" y8="-2" x9="-12" y9="-2" x10="-11" y10="-2" x11="-10" y11="-2" x12="-9" y12="-2" x13="-8" y13="-2" x14="-7" y14="-2" x15="-6" y15="-2" x16="-5" y16="-2" x17="-4" y17="-2" x18="-3" y18="-2" x19="-2" y19="-2" x20="-1" y20="-2" x21="0" y21="-2" x22="1" y22="-2" x23="2" y23="-2" x24="3" y24="-2" x25="4" y25="-2" x26="5" y26="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="267"/>
+        <Coordinates x0="-21" y0="-2" x1="-20" y1="-2" x2="-19" y2="-2" x3="-18" y3="-2" x4="-17" y4="-2" x5="-16" y5="-2" x6="-15" y6="-2" x7="-14" y7="-2" x8="-13" y8="-2" x9="-12" y9="-2" x10="-11" y10="-2" x11="-10" y11="-2" x12="-9" y12="-2" x13="-8" y13="-2" x14="-7" y14="-2" x15="-6" y15="-2" x16="-5" y16="-2" x17="-4" y17="-2" x18="-3" y18="-2" x19="-2" y19="-2" x20="-1" y20="-2" x21="0" y21="-2" x22="1" y22="-2" x23="2" y23="-2" x24="3" y24="-2" x25="4" y25="-2" x26="5" y26="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="268"/>
+        <Coordinates x0="-21" y0="-2" x1="-20" y1="-2" x2="-19" y2="-2" x3="-18" y3="-2" x4="-17" y4="-2" x5="-16" y5="-2" x6="-15" y6="-2" x7="-14" y7="-2" x8="-13" y8="-2" x9="-12" y9="-2" x10="-11" y10="-2" x11="-10" y11="-2" x12="-9" y12="-2" x13="-8" y13="-2" x14="-7" y14="-2" x15="-6" y15="-2" x16="-5" y16="-2" x17="-4" y17="-2" x18="-3" y18="-2" x19="-2" y19="-2" x20="-1" y20="-2" x21="0" y21="-2" x22="1" y22="-2" x23="2" y23="-2" x24="3" y24="-2" x25="4" y25="-2" x26="5" y26="-2" x27="6" y27="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="269"/>
+        <Coordinates x0="-21" y0="-2" x1="-20" y1="-2" x2="-19" y2="-2" x3="-18" y3="-2" x4="-17" y4="-2" x5="-16" y5="-2" x6="-15" y6="-2" x7="-14" y7="-2" x8="-13" y8="-2" x9="-12" y9="-2" x10="-11" y10="-2" x11="-10" y11="-2" x12="-9" y12="-2" x13="-8" y13="-2" x14="-7" y14="-2" x15="-6" y15="-2" x16="-5" y16="-2" x17="-4" y17="-2" x18="-3" y18="-2" x19="-2" y19="-2" x20="-1" y20="-2" x21="0" y21="-2" x22="1" y22="-2" x23="2" y23="-2" x24="3" y24="-2" x25="4" y25="-2" x26="5" y26="-2" x27="6" y27="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="270"/>
+        <Coordinates x0="-13" y0="3" x1="-12" y1="3" x2="-11" y2="3" x3="-10" y3="3" x4="-9" y4="3" x5="-8" y5="3" x6="-7" y6="3" x7="-6" y7="3" x8="-5" y8="3" x9="-4" y9="3" x10="-3" y10="3" x11="-2" y11="3" x12="-1" y12="3" x13="0" y13="3" x14="1" y14="3" x15="2" y15="3" x16="3" y16="3" x17="4" y17="3" x18="5" y18="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="271"/>
+        <Coordinates x0="-18" y0="3" x1="-17" y1="3" x2="-16" y2="3" x3="-15" y3="3" x4="-14" y4="3" x5="-13" y5="3" x6="-12" y6="3" x7="-11" y7="3" x8="-10" y8="3" x9="-9" y9="3" x10="-8" y10="3" x11="-7" y11="3" x12="-6" y12="3" x13="-5" y13="3" x14="-4" y14="3" x15="-3" y15="3" x16="-2" y16="3" x17="-1" y17="3" x18="0" y18="3" x19="1" y19="3" x20="2" y20="3" x21="3" y21="3" x22="4" y22="3" x23="5" y23="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="272"/>
+        <Coordinates x0="-21" y0="3" x1="-20" y1="3" x2="-19" y2="3" x3="-18" y3="3" x4="-17" y4="3" x5="-16" y5="3" x6="-15" y6="3" x7="-14" y7="3" x8="-13" y8="3" x9="-12" y9="3" x10="-11" y10="3" x11="-10" y11="3" x12="-9" y12="3" x13="-8" y13="3" x14="-7" y14="3" x15="-6" y15="3" x16="-5" y16="3" x17="-4" y17="3" x18="-3" y18="3" x19="-2" y19="3" x20="-1" y20="3" x21="0" y21="3" x22="1" y22="3" x23="2" y23="3" x24="3" y24="3" x25="4" y25="3" x26="5" y26="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="273"/>
+        <Coordinates x0="-22" y0="3" x1="-21" y1="3" x2="-20" y2="3" x3="-19" y3="3" x4="-18" y4="3" x5="-17" y5="3" x6="-16" y6="3" x7="-15" y7="3" x8="-14" y8="3" x9="-13" y9="3" x10="-12" y10="3" x11="-11" y11="3" x12="-10" y12="3" x13="-9" y13="3" x14="-8" y14="3" x15="-7" y15="3" x16="-6" y16="3" x17="-5" y17="3" x18="-4" y18="3" x19="-3" y19="3" x20="-2" y20="3" x21="-1" y21="3" x22="0" y22="3" x23="1" y23="3" x24="2" y24="3" x25="3" y25="3" x26="4" y26="3" x27="5" y27="3" x28="6" y28="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="274"/>
+        <Coordinates x0="-22" y0="3" x1="-21" y1="3" x2="-20" y2="3" x3="-19" y3="3" x4="-18" y4="3" x5="-17" y5="3" x6="-16" y6="3" x7="-15" y7="3" x8="-14" y8="3" x9="-13" y9="3" x10="-12" y10="3" x11="-11" y11="3" x12="-10" y12="3" x13="-9" y13="3" x14="-8" y14="3" x15="-7" y15="3" x16="-6" y16="3" x17="-5" y17="3" x18="-4" y18="3" x19="-3" y19="3" x20="-2" y20="3" x21="-1" y21="3" x22="0" y22="3" x23="1" y23="3" x24="2" y24="3" x25="3" y25="3" x26="4" y26="3" x27="5" y27="3" x28="6" y28="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="9" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="275"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="8" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="276"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="7" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="277"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="6" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="278"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="5" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="279"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="4" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="280"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="3" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="281"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="282"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="283"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="4" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="284"/>
+        <Coordinates x0="-22" y0="3"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="285"/>
+        <Coordinates x0="5" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="286"/>
+        <Coordinates x0="-7" y0="8" x1="-6" y1="8" x2="-5" y2="8" x3="-4" y3="8" x4="-3" y4="8" x5="-2" y5="8" x6="-1" y6="8" x7="0" y7="8" x8="1" y8="8" x9="2" y9="8" x10="3" y10="8" x11="4" y11="8" x12="5" y12="8" x13="6" y13="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="287"/>
+        <Coordinates x0="-22" y0="8" x1="-21" y1="8" x2="-20" y2="8" x3="-19" y3="8" x4="-18" y4="8" x5="-17" y5="8" x6="-16" y6="8" x7="-15" y7="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="288"/>
+        <Coordinates x0="-22" y0="8" x1="-21" y1="8" x2="-20" y2="8" x3="-19" y3="8" x4="-18" y4="8" x5="-17" y5="8" x6="-16" y6="8" x7="-15" y7="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="289"/>
+        <Coordinates x0="-21" y0="8" x1="-20" y1="8" x2="-19" y2="8" x3="-18" y3="8" x4="-17" y4="8" x5="-16" y5="8" x6="-15" y6="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="290"/>
+        <Coordinates x0="-20" y0="8" x1="-19" y1="8" x2="-18" y2="8" x3="-17" y3="8" x4="-16" y4="8" x5="-15" y5="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="291"/>
+        <Coordinates x0="-19" y0="8" x1="-18" y1="8" x2="-17" y2="8" x3="-16" y3="8" x4="-15" y4="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="292"/>
+        <Coordinates x0="-18" y0="8" x1="-17" y1="8" x2="-16" y2="8" x3="-15" y3="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="LINE" BColor="-3381760" XOffset="0" YOffset="-6" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="293"/>
+        <Coordinates x0="-17" y0="8" x1="-16" y1="8" x2="-15" y2="8"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="294"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="-1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="295"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="-2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="296"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="297"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="-1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="298"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="-2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="299"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="-2" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="300"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="-1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="301"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="-2" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="302"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="303"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="304"/>
+        <Coordinates x0="-12" y0="14"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="305"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="306"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="307"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="3" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="308"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="4" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="309"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="6" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="310"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="4" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="311"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="4" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="312"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="313"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="314"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="315"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="5" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="316"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="3" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="317"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="5" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="318"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="5" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="319"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="7" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="320"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="5" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="321"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="6" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="322"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="6" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="323"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="7" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="324"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="7" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="325"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="6" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="326"/>
+        <Coordinates x0="2" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="20" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="327"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="328"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="329"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="330"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="331"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="332"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="333"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="334"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="335"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="336"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="337"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="338"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="339"/>
+        <Coordinates x0="-19" y0="10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="340"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="341"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="342"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="343"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="344"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="345"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="346"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="347"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="7" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="348"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="7" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="349"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="8" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="350"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="9" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="351"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="8" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="352"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="9" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="353"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="9" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="354"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="8" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="355"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="10" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="356"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="10" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="357"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="10" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="358"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="20" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="359"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="19" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="360"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="21" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="361"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="19" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="362"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="20" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="363"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="21" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="364"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="19" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="365"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="21" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="366"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="20" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="367"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="21" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="368"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="19" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="369"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-3381760" XOffset="2" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="370"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="371"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="372"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="8" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="373"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="7" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="374"/>
+        <Coordinates x0="-18" y0="5"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="375"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="376"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="377"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="378"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="379"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="380"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="381"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="5" YOffset="-5" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="382"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="383"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="11" YOffset="4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="384"/>
+        <Coordinates x0="-14" y0="1"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="385"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="386"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="387"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="388"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="389"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="390"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="391"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="392"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="393"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="394"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="395"/>
+        <Coordinates x0="-3" y0="-2"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="396"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="397"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="398"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="399"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="400"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="401"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="402"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="403"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="404"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-1" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="405"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="406"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="407"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="-2" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="408"/>
+        <Coordinates x0="-18" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="409"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="410"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="411"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="412"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="413"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="414"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="415"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="416"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="417"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="418"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="419"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="420"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="421"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="422"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="423"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="424"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="4" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="425"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="12" YOffset="1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="426"/>
+        <Coordinates x0="-11" y0="-9"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="0" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="427"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="0" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="428"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="429"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="430"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="1" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="431"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="432"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="2" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="433"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-2" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="434"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-1" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="435"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="436"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-3" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="437"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-16777216" XOffset="3" YOffset="-4" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="438"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+    <Layer>
+        <Options LType="POINT" BColor="-65536" XOffset="-23" YOffset="-22" BShape="http://home.alltel.net/clodge/Beads/Images/bead.JPG" ZValue="439"/>
+        <Coordinates x0="0" y0="-10"/>
+    </Layer>
+</Loom>
