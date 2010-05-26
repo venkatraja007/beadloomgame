@@ -47,6 +47,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton ChoosePuzzleButton = new JButton();
 	private JButton RestartButton = new JButton();
 	private JButton SubmitButton = new JButton();
+	private JButton OptionsButton = new JButton();
 	private JButton QuitButton = new JButton();
 	private JButton PlayGameButton = new JButton();
 	private JButton HighScoresButton = new JButton();
@@ -678,12 +679,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Submit button ----
 		SubmitButton.setText("Submit");
 		SubmitButton.setBounds(25, 100, 145, SubmitButton.getPreferredSize().height);
-		SubmitButton.setBackground(color);
 		SubmitButton.addActionListener(this);
+		
+		//---- Options button ---
+		OptionsButton.setText("Options");
+		OptionsButton.setBounds(25, 125, 145, OptionsButton.getPreferredSize().height);
+		OptionsButton.addActionListener(this);
 		
 		//---- Quit button ----
 		QuitButton.setText("Quit");
-		QuitButton.setBounds(25, 125, 145, QuitButton.getPreferredSize().height);
+		QuitButton.setBounds(25, 150, 145, QuitButton.getPreferredSize().height);
 		QuitButton.addActionListener(this);
 		
 		//---- Play Game button ----
@@ -695,6 +700,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Name Text Field ----
 		NameTextField.setText("Enter Your Name");
 		GamePanel.add(NameTextField);
+		NameTextField.selectAll();
 		NameTextField.setBounds(25, 50, 145, 25);
 		NameTextField.addActionListener(this);
 		
@@ -702,7 +708,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NameLabel.setBounds(25, 0, 200, 25);
 		
 		//---- Best Score Label ----
-		BestScoreLabel.setBounds(25, 150, 200, 25);
+		BestScoreLabel.setBounds(25, 175, 200, 25);
 		
 		GamePanel.setBounds(4, 3, 189, 155);
 		
@@ -830,6 +836,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		GamePanel.add(ChoosePuzzleButton);
     		GamePanel.add(RestartButton);
     		GamePanel.add(SubmitButton);
+    		GamePanel.add(OptionsButton);
     		GamePanel.add(QuitButton);
     		GamePanel.add(NameLabel);
     		GamePanel.add(BestScoreLabel);
