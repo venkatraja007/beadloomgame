@@ -528,7 +528,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				ContentPanel.add(PuzzleFrame);
 				ContentPanel.add(ColorFrame);
 				GameFrame.setBounds((int)(usableDim.getWidth()*0.42)+panelBorder, (int)(usableDim.getHeight()*.70)+panelBorder, (int)(usableDim.getWidth()*0.58)-panelBorder, (int)(usableDim.getHeight()*0.30)-panelBorder);
-				PuzzleFrame.setBounds(0, 0, (int)(usableDim.getWidth()*0.6),(int)(usableDim.getHeight()*0.6));
+				PuzzleFrame.setBounds(panelBorder, panelBorder, (int)(usableDim.getWidth()*0.65) - panelBorder,(int)(usableDim.getHeight()*0.65) - panelBorder);
 				ColorFrame.setBounds((int)(usableDim.getWidth()/8), (int)(usableDim.getHeight()/4), 375, 140);
 
 				//------- Coordinate Label -------				
