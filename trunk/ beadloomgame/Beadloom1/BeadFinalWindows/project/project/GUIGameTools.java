@@ -247,7 +247,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		ChoosePuzzlePanel.setBorder(new LineBorder(Color.red));
 		ChoosePuzzlePanel.setBackground(Color.white);
 		ChoosePuzzlePanel.setLayout(null);
-		ChoosePuzzlePanel.setBounds(4, 3, 195, 165);
+		ChoosePuzzlePanel.setBounds(4, 3, 200, 300);
 		
 		//---- choose Color Panel ----
 		ColorPanel.setBorder(new LineBorder(Color.red));
