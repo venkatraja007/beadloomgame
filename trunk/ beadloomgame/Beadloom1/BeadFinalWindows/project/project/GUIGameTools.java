@@ -703,10 +703,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NameTextField.setBounds(25, 50, 145, 25);
 		NameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(MouseEvent me) {
-                //if(NameTextField.isFocusOwner())
-                {
-                	NameTextField.selectAll();
-                }
+            	if(NameTextField.getText().equals("Enter Your Name"))
+            	{
+            		NameTextField.selectAll();
+            	}
             }
         });
 
