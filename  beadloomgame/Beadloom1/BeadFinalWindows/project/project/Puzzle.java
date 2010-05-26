@@ -1697,28 +1697,46 @@
        //Returns array position
          public int setTieFighter(){
       	   
-      	   ideal = 23;
+      	   ideal = 21;
              InputTools.setGrid(bl.getGridPanel2());
              
              /* Draw Black Background */
              InputTools.setColor(Color.BLACK);
+             InputTools.drawRectangle(-20, 20, -20, 20);
+             
+             
+             /*Draw Outter Wings*/
+             InputTools.setColor((Color.CYAN));
+             
              xValue = new ArrayList();
              yValue = new ArrayList();
-             InputTools.drawRectangle(-20, 20, -20, 20);
+             InputTools.linearIteration(-19, 4, 9, 1, 1, 10, false, true, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(19, 4, 9, 1, 1, 10, false, false, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             
+             InputTools.setColor((Color.BLACK));
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(-17, 4, 9, 1, 1, 8, false, true, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             
+             xValue = new ArrayList();
+             yValue = new ArrayList();
+             InputTools.linearIteration(17, 4, 9, 1, 1, 8, false, false, xValue, yValue);
+             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             
              
              /* Draw Inner Wings */
              InputTools.setColor(Color.BLUE);
-             
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-11, 11, 3, -3);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-14, 14, 2, -2);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-17, 17, 1, -1);
              
              
@@ -1736,55 +1754,21 @@
              InputTools.linearIteration(-7, -5, 15, -1, -1, 4, true, false, xValue, yValue);
              InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-8, 8, 4, -4);
              
              /* Draw Outer Wings */
              InputTools.setColor(Color.CYAN);
              
              //Rectangles for either side of vertical edges of wings
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-19, -18, 4, -4);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(18, 19, 4, -4);
-             
-             //Linear Iterations for diagonals of outer wings
-             //Left outer wing upper diagonal, going from bottom to top left
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-18, 5, 2, -1, 1, 9, true, true, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
-             
-             //Left outer wing lower diagonal, going from top to bottom left
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-18, -5, 2, -1, 1, 9, true, false, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
-             
-             //Right outer wing upper diagonal, going from bottom to top right
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(17, 5, 2, 1, -1, 9, true, true, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
-             
-             //Right outer wing lower diagonal, going from top to bottom right
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(17, -5, 2, 1, -1, 9, true, false, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
             
              /* Draw Outer Window */
              
              InputTools.setColor(Color.GRAY);
              
-             
              //Draw rectangle in center of window area
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-5, 5, 2, -2);
              
              //Linear Iteration for area above center rectangle
@@ -1804,12 +1788,8 @@
              InputTools.setColor(Color.BLACK);
              
              //Draw rectangles for inner window
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-2, 2, 4, -4);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawRectangle(-4, 4, 2, -2);
              
              /* Draw Pieces of Outer Window that overlap Inner Window */
@@ -1839,9 +1819,6 @@
              /* Draw Final black dot in center */
              
              InputTools.setColor(Color.BLACK);
-             
-             xValue = new ArrayList();
-             yValue = new ArrayList();
              InputTools.drawPoint(0, 0);
              
            //Calculate the Goal Images bead array
@@ -1851,8 +1828,6 @@
           //Reset the Current Selected Color to default
              InputTools.setGrid(bl.getGridPanel());
              resetColor();
-             return 34;
-             
+             return 34;  
          }
-
    }
