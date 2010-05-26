@@ -77,3 +77,7 @@
 	<5/26/2010 15:10:31> Loom Example 8 Puzzle Selected.
 <5/26/2010 15:10:48> Enter Your Namea logs in.
 	<5/26/2010 15:10:48> Loom Example 8 Puzzle Selected.
+<5/26/2010 15:23:52> Acey logs in.
+	<5/26/2010 15:23:52> Loom Example 8 Puzzle Selected.
+<5/26/2010 15:50:15> Acey logs in.
+	<5/26/2010 15:50:15> Loom Example 8 Puzzle Selected.
