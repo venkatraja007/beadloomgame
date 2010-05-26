@@ -126,8 +126,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	ImageIcon img;
 	
 	//------- Alignment Stuff -----
-	private final int panelBorder = 3;
-	private final Dimension usableDim = new Dimension((int)dim.getWidth()-24-panelBorder, (int)dim.getHeight()-47-panelBorder);
+	public static final int panelBorder = 3;
+	public static final Dimension usableDim = new Dimension((int)dim.getWidth()-24-panelBorder, (int)dim.getHeight()-47-panelBorder);
 	
 	
 
