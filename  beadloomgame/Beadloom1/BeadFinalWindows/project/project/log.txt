@@ -81,3 +81,59 @@
 	<5/26/2010 15:23:52> Loom Example 8 Puzzle Selected.
 <5/26/2010 15:50:15> Acey logs in.
 	<5/26/2010 15:50:15> Loom Example 8 Puzzle Selected.
+<5/26/2010 16:1:0> Acey logs in.
+	<5/26/2010 16:1:0> Loom Example 8 Puzzle Selected.
+<5/26/2010 16:2:56> Acey logs in.
+	<5/26/2010 16:2:56> Loom Example 8 Puzzle Selected.
+<5/26/2010 16:4:46> Acey logs in.
+	<5/26/2010 16:4:46> Loom Example 8 Puzzle Selected.
+		<5/26/2010 16:4:51> Checked Solution.
+			<5/26/2010 16:4:51> Puzzle Incomplete. Errors: 117
+<5/26/2010 16:6:1> Acey logs in.
+	<5/26/2010 16:6:1> Loom Example 8 Puzzle Selected.
+		<5/26/2010 16:6:11> Checked Solution.
+			<5/26/2010 16:6:11> Puzzle Incomplete. Errors: 117
+<5/26/2010 16:6:12> Acey logs out.
+<5/26/2010 16:8:6> Acey logs in.
+	<5/26/2010 16:8:6> Loom Example 8 Puzzle Selected.
+<5/26/2010 17:26:56> 25 logs in.
+	<5/26/2010 17:26:56> Loom Example 8 Puzzle Selected.
+<5/26/2010 17:26:59> 25 logs out.
+<5/26/2010 17:52:9> Acye logs in.
+	<5/26/2010 17:52:9> Loom Example 8 Puzzle Selected.
+<5/26/2010 17:52:12> Acye logs out.
+<5/26/2010 17:52:17> Acey logs in.
+	<5/26/2010 17:52:17> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:7:43> Acey logs in.
+	<5/26/2010 18:7:43> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:8:43> Acey logs in.
+	<5/26/2010 18:8:43> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:22:0> Acey logs in.
+	<5/26/2010 18:22:0> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:28:34> Acey logs in.
+	<5/26/2010 18:28:34> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:41:1> Acey logs in.
+	<5/26/2010 18:41:1> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:43:1> Acey logs in.
+	<5/26/2010 18:43:1> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:43:20> Acey logs out.
+<5/26/2010 18:44:39> Acey logs in.
+	<5/26/2010 18:44:39> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:45:50> Acey logs in.
+	<5/26/2010 18:45:50> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:46:20> Acey logs in.
+	<5/26/2010 18:46:21> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:56:13> Acey logs in.
+	<5/26/2010 18:56:13> Loom Example 8 Puzzle Selected.
+<5/26/2010 18:59:31> Acey logs in.
+	<5/26/2010 18:59:31> Loom Example 8 Puzzle Selected.
+<5/26/2010 19:2:40> Acey logs in.
+	<5/26/2010 19:2:40> Loom Example 8 Puzzle Selected.
+<5/26/2010 19:6:11> Acey logs in.
+	<5/26/2010 19:6:11> Loom Example 8 Puzzle Selected.
+<5/26/2010 19:6:52> Acey logs in.
+	<5/26/2010 19:6:52> Loom Example 8 Puzzle Selected.
+<5/26/2010 19:7:36> Acey logs in.
+	<5/26/2010 19:7:36> Loom Example 8 Puzzle Selected.
+<5/26/2010 19:10:15> Acey logs in.
+	<5/26/2010 19:10:15> Loom Example 8 Puzzle Selected.
