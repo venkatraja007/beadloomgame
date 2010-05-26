@@ -1,19 +1,25 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.*;
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.*;
 
-
-
+import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 import javax.swing.JPanel;
 
@@ -41,7 +47,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JPanel ChoosePuzzlePanel = new JPanel();
 	private JPanel ColorPanel = new JPanel();
 	private JPanel HighScoresPanel = new JPanel();
-	private GroupLayout HighScoresGroupLayout = new GroupLayout(HighScoresPanel);
+	private FlowLayout HighScoresLayout = new FlowLayout(FlowLayout.LEFT);
 	
 	//GamePanel Parts
 	private JButton ChoosePuzzleButton = new JButton();
@@ -51,6 +57,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton QuitButton = new JButton();
 	private JButton PlayGameButton = new JButton();
 	private JButton HighScoresButton = new JButton();
+	private JButton WebRequestButton = new JButton();
 	private JLabel NameLabel = new JLabel();
 	private JLabel BestScoreLabel = new JLabel();
 	private JTextField NameTextField = new JTextField();
@@ -103,6 +110,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	//High Scores Panel Label
 	private JLabel HighScoresLabel = new JLabel();
+	private JTextField WebRequestTextField = new JTextField(20);
 	
 	//Choose Puzzle High Score Labels
 	private JLabel HSLabel1 = new JLabel();
@@ -253,8 +261,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- high scores panel ----
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
 		HighScoresPanel.setBackground(color.white);
-		HighScoresPanel.setLayout(HighScoresGroupLayout);
 		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
+		HighScoresPanel.setLayout(HighScoresLayout);
 		
 		//---- choose puzzle panel -----
 		ChoosePuzzlePanel.setBorder(new LineBorder(Color.red));
@@ -720,9 +728,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		GamePanel.setBounds(4, 3, 189, 155);
 		
+		//---- Web Request Button ----
+		WebRequestButton.setText("Sumbit Web Request");
+		WebRequestTextField.setAlignmentX(Component.CENTER_ALIGNMENT);
+		WebRequestButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		HighScoresPanel.add(WebRequestTextField);
+		HighScoresPanel.add(WebRequestButton);
+		WebRequestButton.addActionListener(this);
+		
 		//---- High Scores Label ----
-		HighScoresLabel.setText("High Scores: ");
+		HighScoresLabel.setText("High Scores: Acey has 1000 points");
+		HighScoresLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		HighScoresPanel.add(HighScoresLabel);
+		HighScoresLabel.setMaximumSize(HighScoresPanel.getMaximumSize());
 	}
 		
     	public void incrementMove(){
@@ -1192,8 +1210,37 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		}
 		}
 		
-		else if (e.getSource() == HighScoresButton) {
+		else if (e.getSource() == WebRequestButton) {
 			
+			
+			 try {
+				URL test = new URL("http://playground.uncc.edu/BeadLoomGame/scores.php");
+				    URLConnection con = test.openConnection();
+				    BufferedReader in = new BufferedReader(
+				                            new InputStreamReader(
+				                            con.getInputStream()));
+				    String inputLine;
+				    StringBuilder builder = new StringBuilder();
+
+				    while ((inputLine = in.readLine()) != null)  {
+				    	
+				    	builder.append(inputLine);
+				    }
+				    in.close();
+				    
+				    HighScoresLabel.setText(builder.toString() +"not exception");
+			} catch (Exception ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
+				HighScoresLabel.setText(ex.getMessage() + "exception");
+			}
+			
+		}
+		
+		else if (e.getSource() == HighScoresButton) {
+			bl.getHighScoresFrame().setVisible(!bl.getHighScoresFrame().isVisible());
+			bl.getHighScoresFrame().toFront();
+			bl.getHighScoresFrame().setBounds(bl.getGridFrame2().getBounds());
 		}
 		
 		else if (e.getSource()== SubmitButton) {
