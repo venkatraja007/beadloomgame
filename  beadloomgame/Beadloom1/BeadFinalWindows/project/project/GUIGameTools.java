@@ -9,6 +9,7 @@ import java.util.*;
 
 
 
+import javax.swing.GroupLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -39,6 +40,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JPanel GamePanel = new JPanel();
 	private JPanel ChoosePuzzlePanel = new JPanel();
 	private JPanel ColorPanel = new JPanel();
+	private JPanel HighScoresPanel = new JPanel();
 	
 	//GamePanel Parts
 	private JButton ChoosePuzzleButton = new JButton();
@@ -46,6 +48,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton SubmitButton = new JButton();
 	private JButton QuitButton = new JButton();
 	private JButton PlayGameButton = new JButton();
+	private JButton HighScoresButton = new JButton();
 	private JLabel NameLabel = new JLabel();
 	private JLabel BestScoreLabel = new JLabel();
 	private JTextField NameTextField = new JTextField();
@@ -242,6 +245,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GamePanel.setBackground(Color.white);
 		GamePanel.setLayout(null);
 		GamePanel.setBounds(4, 3, 195, 165);
+		
+		//---- high scores panel ----
+		HighScoresPanel.setBorder(new LineBorder(Color.red));
+		HighScoresPanel.setBackground(color.white);
+		HighScoresPanel.setLayout(new GroupLayout(HighScoresPanel));
 		
 		//---- choose puzzle panel -----
 		ChoosePuzzlePanel.setBorder(new LineBorder(Color.red));
@@ -648,25 +656,30 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		WhiteButton.setBounds(CR13);
 		ColorPanel.add(WhiteButton);
 		
+		//---- High Scores Button ----
+		HighScoresButton.setText("High Scores");
+		HighScoresButton.setBounds(25, 25, 145, HighScoresButton.getPreferredSize().height);
+		HighScoresButton.addActionListener(this);
+		
 		//---- choose puzzle button ----
 		ChoosePuzzleButton.setText("Choose Puzzle");
-		ChoosePuzzleButton.setBounds(25, 25, 145, ChoosePuzzleButton.getPreferredSize().height);
+		ChoosePuzzleButton.setBounds(25, 50, 145, ChoosePuzzleButton.getPreferredSize().height);
 		ChoosePuzzleButton.addActionListener(this);
 
 		//---- restart button ----
 		RestartButton.setText("Restart");
-		RestartButton.setBounds(25, 50, 145, RestartButton.getPreferredSize().height);
+		RestartButton.setBounds(25, 75, 145, RestartButton.getPreferredSize().height);
 		RestartButton.addActionListener(this);
 		
 		//---- Submit button ----
 		SubmitButton.setText("Submit");
-		SubmitButton.setBounds(25, 75, 145, SubmitButton.getPreferredSize().height);
+		SubmitButton.setBounds(25, 100, 145, SubmitButton.getPreferredSize().height);
 		SubmitButton.setBackground(color);
 		SubmitButton.addActionListener(this);
 		
 		//---- Quit button ----
 		QuitButton.setText("Quit");
-		QuitButton.setBounds(25, 100, 145, QuitButton.getPreferredSize().height);
+		QuitButton.setBounds(25, 125, 145, QuitButton.getPreferredSize().height);
 		QuitButton.addActionListener(this);
 		
 		//---- Play Game button ----
@@ -685,7 +698,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NameLabel.setBounds(25, 0, 200, 25);
 		
 		//---- Best Score Label ----
-		BestScoreLabel.setBounds(25, 125, 200, 25);
+		BestScoreLabel.setBounds(25, 150, 200, 25);
 		
 		GamePanel.setBounds(4, 3, 189, 155);
 	}
@@ -812,6 +825,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		GamePanel.add(QuitButton);
     		GamePanel.add(NameLabel);
     		GamePanel.add(BestScoreLabel);
+    		GamePanel.add(HighScoresButton);
     		GamePanel.remove(PlayGameButton);
     		GamePanel.remove(NameTextField);
     		NameLabel.setText(playerName);
@@ -967,6 +981,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		GamePanel.remove(QuitButton);
     		GamePanel.remove(NameLabel);
     		GamePanel.remove(BestScoreLabel);
+    		GamePanel.remove(HighScoresButton);
     		GamePanel.add(PlayGameButton);
     		GamePanel.add(NameTextField);
     		NameTextField.setText("Enter Your Name");
@@ -1110,6 +1125,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//Gets
 	public JPanel getGamePanel() {
 		return GamePanel;
+	}
+	public JPanel getHighScoresPanel() {
+		return HighScoresPanel;
 	}
 	public JPanel getChoosePuzzlePanel(){
 		return ChoosePuzzlePanel;

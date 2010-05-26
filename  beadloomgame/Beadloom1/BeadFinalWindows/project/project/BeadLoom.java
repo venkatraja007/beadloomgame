@@ -104,6 +104,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	private JPanel ContentPanel;
 	private JInternalFrame MoveBeadsFrame;
 	private JInternalFrame GameFrame;
+	private JInternalFrame HighScoresFrame;
 	private JInternalFrame PuzzleFrame;
 	private JInternalFrame ColorFrame;
 	private JInternalFrame BeadUtilitiesFrame;
@@ -155,6 +156,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		//======= Move Beads, Grid Frame, Bead Utilities Frames =======
 		MoveBeadsFrame = new JInternalFrame();
 		GameFrame = new JInternalFrame();
+		HighScoresFrame = new JInternalFrame();
 		PuzzleFrame = new JInternalFrame();
 		ColorFrame = new JInternalFrame();
 		GridFrame = new JInternalFrame();
@@ -501,6 +503,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				{
 				    Game = new GUIGameTools();
 				    Game.setLoom(this);
+				    
+				    
 				    
 				    GameFrame.getContentPane().add(Game.getGamePanel());
 					GameFrame.setVisible(true);
