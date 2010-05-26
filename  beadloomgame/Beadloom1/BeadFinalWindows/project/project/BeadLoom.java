@@ -373,7 +373,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
 				}
 				ContentPanel.add(GridFrame);
-				GridFrame.setBounds(440, 5, (int)(dim.getWidth()/2) -15,(int)(dim.getHeight()/2)-15);
+				GridFrame.setBounds((int)(dim.getWidth()*0.42)+3, 5, (int)(dim.getWidth()*0.555)-8,(int)(dim.getHeight()*.65)-3);
 				GridFrame.getContentPane().add(gridPanel);
 				Dimension d = new Dimension();
 				d.setSize((dim.getWidth()/2) -15,(dim.getHeight()/2)-15);
@@ -422,7 +422,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					OutputWindow.getClearOutputWindowButton().setBounds(5, 125, 155, 15);
 				}
 				ContentPanel.add(OutputWindow);
-				OutputWindow.setBounds(5, 495, 425, 190);
+				OutputWindow.setBounds(5, (int)(dim.getHeight()*0.62)+3, (int)(dim.getWidth()*0.42)-8, (int)(dim.getHeight()*0.32)-10);
 				ContentPanel.add(BeadLoomDesktopPane);
 				BeadLoomDesktopPane.setBounds(new Rectangle(new Point(815, 75), BeadLoomDesktopPane.getPreferredSize()));
 
@@ -449,7 +449,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					internalFrame3ContentPane.setLayout(new BorderLayout(1, 1));
 				}
 				ContentPanel.add(BeadUtilitiesFrame);
-				BeadUtilitiesFrame.setBounds(5, 205, 425, 285);
+				BeadUtilitiesFrame.setBounds(5, (int)(dim.getHeight()*0.25)+3, (int)(dim.getWidth()*0.42)-8, (int)(dim.getHeight()*0.37)-6);
 
 				//======== GoalImagesFrame ========
 				{
@@ -467,10 +467,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					e.setSize(210,195);
 					GoalImagesFrame.setMinimumSize(e);
 					GoalImagesFrameContentPane.add(GoalImagesFrame.getGoalImagesButton());
-					GoalImagesFrame.getGoalImagesButton().setBounds(7, 7, 195, 160);
+					GoalImagesFrame.getGoalImagesButton().setBounds(5, 5, 195, 160);
 				}
 				ContentPanel.add(GoalImagesFrame);
-				GoalImagesFrame.setBounds(5, 5, 210, 195);
+				GoalImagesFrame.setBounds(5, 5, (int)(dim.getWidth()*0.21)-6, (int)(dim.getHeight()*0.25)-6);
 
 				//======== MoveBeadsFrame ========
 				{
@@ -495,7 +495,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					MoveBeadsFrameContentPane.setLayout(null);
 				}
 				ContentPanel.add(MoveBeadsFrame);
-				MoveBeadsFrame.setBounds(225, 5, 205, 195);
+				MoveBeadsFrame.setBounds((int)(dim.getWidth()*0.21)+3, 5, (int)(dim.getWidth()*0.21)-6, (int)(dim.getHeight()*0.25)-6);
 				
 				//======== GameFrame ========
 				{
@@ -524,10 +524,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				ContentPanel.add(GameFrame);
 				ContentPanel.add(PuzzleFrame);
 				ContentPanel.add(ColorFrame);
-				GameFrame.setBounds((int)(dim.getWidth()) - 350, (int)(dim.getHeight()/2), 205, 195);
-				PuzzleFrame.setBounds(0, 0, (int)(dim.getWidth()/2) -15,(int)(dim.getHeight()/2)-15);
+				GameFrame.setBounds((int)(dim.getWidth()*0.42)+3, (int)(dim.getHeight()*.65)+8, (int)(dim.getWidth()*0.555)-8, (int)(dim.getHeight()*.285)-12);
+				PuzzleFrame.setBounds(0, 0, (int)(dim.getWidth()*0.6),(int)(dim.getHeight()*0.6));
 				ColorFrame.setBounds((int)(dim.getWidth()/8), (int)(dim.getHeight()/4), 375, 140);
-				
+
+				GridFrame.setBounds((int)(dim.getWidth()*0.42)+3, 5, (int)(dim.getWidth()*0.555)-8,(int)(dim.getHeight()*.65)-3);
 				//------- Coordinate Label -------				
 				JPanel holder = new JPanel();
 				BorderLayout bl = new BorderLayout();
@@ -557,17 +558,17 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 
 				{ //------- Compute preferred size and dimensions for content pane (entire program) -------
-					Dimension preferredSize = new Dimension();
-					for(int i = 0; i < ContentPanel.getComponentCount(); i++) {
-						Rectangle bounds = ContentPanel.getComponent(i).getBounds();
-						preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
-						preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
-					}
-					Insets insets = ContentPanel.getInsets();
-					preferredSize.width += insets.right;
-					preferredSize.height += insets.bottom;
-					ContentPanel.setMinimumSize(preferredSize);
-					ContentPanel.setPreferredSize(preferredSize);
+//					Dimension preferredSize = new Dimension();
+//					for(int i = 0; i < ContentPanel.getComponentCount(); i++) {
+//						Rectangle bounds = ContentPanel.getComponent(i).getBounds();
+//						preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+//						preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+//					}
+//					Insets insets = ContentPanel.getInsets();
+//					preferredSize.width += insets.right;
+//					preferredSize.height += insets.bottom;
+//					ContentPanel.setMinimumSize(preferredSize);
+//					ContentPanel.setPreferredSize(preferredSize);
 				}
 			}
 			BeadLoomBackgroundPane.add(ContentPanel, BorderLayout.CENTER);
