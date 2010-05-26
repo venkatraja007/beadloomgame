@@ -41,6 +41,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JPanel ChoosePuzzlePanel = new JPanel();
 	private JPanel ColorPanel = new JPanel();
 	private JPanel HighScoresPanel = new JPanel();
+	private GroupLayout HighScoresGroupLayout = new GroupLayout(HighScoresPanel);
 	
 	//GamePanel Parts
 	private JButton ChoosePuzzleButton = new JButton();
@@ -99,6 +100,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	private JButton CancelButton = new JButton();
 	
+	//High Scores Panel Label
+	private JLabel HighScoresLabel = new JLabel();
 	
 	//Choose Puzzle High Score Labels
 	private JLabel HSLabel1 = new JLabel();
@@ -249,7 +252,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- high scores panel ----
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
 		HighScoresPanel.setBackground(color.white);
-		HighScoresPanel.setLayout(new GroupLayout(HighScoresPanel));
+		HighScoresPanel.setLayout(HighScoresGroupLayout);
+		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
 		
 		//---- choose puzzle panel -----
 		ChoosePuzzlePanel.setBorder(new LineBorder(Color.red));
@@ -701,6 +705,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		BestScoreLabel.setBounds(25, 150, 200, 25);
 		
 		GamePanel.setBounds(4, 3, 189, 155);
+		
+		//---- High Scores Label ----
+		HighScoresLabel.setText("High Scores: ");
+		HighScoresPanel.add(HighScoresLabel);
 	}
 		
     	public void incrementMove(){
@@ -1167,6 +1175,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		else{
     			startGame();
     		}
+		}
+		
+		else if (e.getSource() == HighScoresButton) {
+			
 		}
 		
 		else if (e.getSource()== SubmitButton) {
