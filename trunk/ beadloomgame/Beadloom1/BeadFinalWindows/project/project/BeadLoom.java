@@ -104,7 +104,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	private JPanel ContentPanel;
 	private JInternalFrame MoveBeadsFrame;
 	private JInternalFrame GameFrame;
-	private JInternalFrame HighScoresFrame;
 	private JInternalFrame PuzzleFrame;
 	private JInternalFrame ColorFrame;
 	private JInternalFrame BeadUtilitiesFrame;
@@ -125,6 +124,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	double yInc;
 	Image catimage;
 	ImageIcon img;
+	
+	//------- Alignment Stuff -----
+	private final int panelBorder = 3;
+	private final Dimension usableDim = new Dimension((int)dim.getWidth()-24-panelBorder, (int)dim.getHeight()-47-panelBorder);
+	
 	
 
 	//------- Constructor -------
@@ -156,7 +160,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		//======= Move Beads, Grid Frame, Bead Utilities Frames =======
 		MoveBeadsFrame = new JInternalFrame();
 		GameFrame = new JInternalFrame();
-		HighScoresFrame = new JInternalFrame();
 		PuzzleFrame = new JInternalFrame();
 		ColorFrame = new JInternalFrame();
 		GridFrame = new JInternalFrame();
@@ -375,10 +378,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
 				}
 				ContentPanel.add(GridFrame);
-				GridFrame.setBounds((int)(dim.getWidth()*0.42)+3, 5, (int)(dim.getWidth()*0.555)-8,(int)(dim.getHeight()*.65)-3);
+				GridFrame.setBounds((int)(usableDim.getWidth()*0.42)+panelBorder, panelBorder, (int)(usableDim.getWidth()*0.58)-panelBorder,(int)(usableDim.getHeight()*0.70)-panelBorder);
 				GridFrame.getContentPane().add(gridPanel);
-				Dimension d = new Dimension();
-				d.setSize((dim.getWidth()/2) -15,(dim.getHeight()/2)-15);
 				//This needs to be adjusted for auto resizing -Acey
 				//GridFrame.setMinimumSize(d);
 				GridFrame.toFront();
@@ -394,7 +395,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					Container internalFrame1ContentPane = GridFrame2.getContentPane();
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
 				}
-				GridFrame2.setBounds(0, 0, (int)(dim.getWidth()/2) -15,(int)(dim.getHeight()/2)-15);
+				GridFrame2.setBounds(0, 0, (int)(usableDim.getWidth()/2) -15,(int)(usableDim.getHeight()/2)-15);
 				GridFrame2.getContentPane().add(gridPanel2);
 				Dimension d2 = new Dimension();
 				d2.setSize((dim.getWidth()/2) -15,(dim.getHeight()/2)-15);
@@ -424,7 +425,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					OutputWindow.getClearOutputWindowButton().setBounds(5, 125, 155, 15);
 				}
 				ContentPanel.add(OutputWindow);
-				OutputWindow.setBounds(5, (int)(dim.getHeight()*0.62)+3, (int)(dim.getWidth()*0.42)-8, (int)(dim.getHeight()*0.32)-10);
+				OutputWindow.setBounds(panelBorder, (int)(usableDim.getHeight()*0.65)+panelBorder, (int)(usableDim.getWidth()*0.42)-panelBorder, (int)(usableDim.getHeight()*0.35)-panelBorder);
 				ContentPanel.add(BeadLoomDesktopPane);
 				BeadLoomDesktopPane.setBounds(new Rectangle(new Point(815, 75), BeadLoomDesktopPane.getPreferredSize()));
 
@@ -451,7 +452,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					internalFrame3ContentPane.setLayout(new BorderLayout(1, 1));
 				}
 				ContentPanel.add(BeadUtilitiesFrame);
-				BeadUtilitiesFrame.setBounds(5, (int)(dim.getHeight()*0.25)+3, (int)(dim.getWidth()*0.42)-8, (int)(dim.getHeight()*0.37)-6);
+				BeadUtilitiesFrame.setBounds(panelBorder, (int)(usableDim.getHeight()*0.27)+panelBorder, (int)(usableDim.getWidth()*0.42)-panelBorder, (int)(usableDim.getHeight()*0.38)-panelBorder);
 
 				//======== GoalImagesFrame ========
 				{
@@ -472,7 +473,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					GoalImagesFrame.getGoalImagesButton().setBounds(5, 5, 195, 160);
 				}
 				ContentPanel.add(GoalImagesFrame);
-				GoalImagesFrame.setBounds(5, 5, (int)(dim.getWidth()*0.21)-6, (int)(dim.getHeight()*0.25)-6);
+				GoalImagesFrame.setBounds(panelBorder, panelBorder, (int)(usableDim.getWidth()*0.21)-panelBorder, (int)(usableDim.getHeight()*0.27)-panelBorder);
 
 				//======== MoveBeadsFrame ========
 				{
@@ -497,14 +498,12 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					MoveBeadsFrameContentPane.setLayout(null);
 				}
 				ContentPanel.add(MoveBeadsFrame);
-				MoveBeadsFrame.setBounds((int)(dim.getWidth()*0.21)+3, 5, (int)(dim.getWidth()*0.21)-6, (int)(dim.getHeight()*0.25)-6);
+				MoveBeadsFrame.setBounds((int)(usableDim.getWidth()*0.21)+panelBorder, panelBorder, (int)(usableDim.getWidth()*0.21)-panelBorder, (int)(usableDim.getHeight()*0.27)-panelBorder);
 				
 				//======== GameFrame ========
 				{
 				    Game = new GUIGameTools();
 				    Game.setLoom(this);
-				    
-				    
 				    
 				    GameFrame.getContentPane().add(Game.getGamePanel());
 					GameFrame.setVisible(true);
@@ -528,11 +527,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				ContentPanel.add(GameFrame);
 				ContentPanel.add(PuzzleFrame);
 				ContentPanel.add(ColorFrame);
-				GameFrame.setBounds((int)(dim.getWidth()*0.42)+3, (int)(dim.getHeight()*.65)+8, (int)(dim.getWidth()*0.555)-8, (int)(dim.getHeight()*.285)-12);
-				PuzzleFrame.setBounds(0, 0, (int)(dim.getWidth()*0.6),(int)(dim.getHeight()*0.6));
-				ColorFrame.setBounds((int)(dim.getWidth()/8), (int)(dim.getHeight()/4), 375, 140);
+				GameFrame.setBounds((int)(usableDim.getWidth()*0.42)+panelBorder, (int)(usableDim.getHeight()*.70)+panelBorder, (int)(usableDim.getWidth()*0.58)-panelBorder, (int)(usableDim.getHeight()*0.30)-panelBorder);
+				PuzzleFrame.setBounds(0, 0, (int)(usableDim.getWidth()*0.6),(int)(usableDim.getHeight()*0.6));
+				ColorFrame.setBounds((int)(usableDim.getWidth()/8), (int)(usableDim.getHeight()/4), 375, 140);
 
-				GridFrame.setBounds((int)(dim.getWidth()*0.42)+3, 5, (int)(dim.getWidth()*0.555)-8,(int)(dim.getHeight()*.65)-3);
 				//------- Coordinate Label -------				
 				JPanel holder = new JPanel();
 				BorderLayout bl = new BorderLayout();
