@@ -141,3 +141,20 @@
 	<5/27/2010 9:6:34> Loom Example 8 Puzzle Selected.
 <5/27/2010 9:28:27> Acey logs in.
 	<5/27/2010 9:28:27> Loom Example 8 Puzzle Selected.
+<5/27/2010 10:12:23> Acey logs in.
+	<5/27/2010 10:12:23> Loom Example 8 Puzzle Selected.
+<5/27/2010 11:48:23> Acey logs in.
+	<5/27/2010 11:48:23> Loom Example 8 Puzzle Selected.
+<5/27/2010 11:50:6> Acey logs in.
+	<5/27/2010 11:50:6> Loom Example 8 Puzzle Selected.
+<5/27/2010 11:51:5> Acey logs in.
+	<5/27/2010 11:51:5> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:51:7> Restart Performed
+	<5/27/2010 11:51:7> Tutorial 2 Puzzle Selected.
+		<5/27/2010 11:51:10> Restart Performed
+	<5/27/2010 11:51:10> Tutorial 1 Puzzle Selected.
+		<5/27/2010 11:51:16> Draw Point:
+			x= 5
+			y= 5
+		<5/27/2010 11:51:22> Checked Solution.
+			<5/27/2010 11:51:22> Puzzle Completed in 1moves.  Earned Platinum!!!!!
