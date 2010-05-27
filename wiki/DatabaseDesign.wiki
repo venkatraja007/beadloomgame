@@ -37,4 +37,5 @@ Display Schema(per puzzle):
 || Acey || 10 || 2:10 ||  Platinum ||
 
 Table Schema:
+primary keys: user name & puzzle, keeping only the best score on each puzzle
 || *user* || *score* || *time* || *medal* || *puzzle* || *timeStamp* ||
