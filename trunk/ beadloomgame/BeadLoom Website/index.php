@@ -27,7 +27,7 @@
 			<td><a href="scores.php">High Scores</a></td>
 		</tr>
 		<tr>
-			<td><input type="button" text="Play!" onclick="playGame()" />
+			<td><input type="button" value="Play!" onclick="playGame()" />
 	
 	</table>
 	</form>

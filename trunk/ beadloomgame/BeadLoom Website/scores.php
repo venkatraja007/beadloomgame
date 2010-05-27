@@ -28,7 +28,7 @@ include('connect.php');
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Time</b></td>
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Medal</b></td>
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Puzzle</b></td>
-		<tr>
+		</tr>
 
 	<?php
 	$query = "SELECT user,score,time,medal,puzzle FROM HighScores WHERE 1";

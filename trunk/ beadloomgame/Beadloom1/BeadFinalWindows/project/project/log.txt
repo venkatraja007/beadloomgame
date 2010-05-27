@@ -232,3 +232,7 @@
 			y= 5
 		<5/27/2010 12:44:14> Checked Solution.
 			<5/27/2010 12:44:14> Puzzle Completed in 1moves.  Earned Platinum!!!!!
+<5/27/2010 15:42:51> asd logs in.
+	<5/27/2010 15:42:51> Loom Example 8 Puzzle Selected.
+<5/27/2010 16:15:45> Acey logs in.
+	<5/27/2010 16:15:45> Loom Example 8 Puzzle Selected.
