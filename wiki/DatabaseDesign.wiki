@@ -5,14 +5,15 @@
 Information about the database, currently hosted on playground.
 database name: BeadLoomGame
 
-SQL Table Query: 
-CREATE TABLE  `BeadLoomGame`.`HighScores` (
+CREATE TABLE  
+`BeadLoomGame`.`HighScores` (
 `user` VARCHAR( 20 ) NOT NULL ,
 `score` INT NOT NULL ,
 `time` VARCHAR( 10 ) NOT NULL ,
-`Medal` VARCHAR( 20 ) NOT NULL ,
-`Puzzle` VARCHAR( 20 ) NOT NULL ,
-`timeStamp` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+`medal` VARCHAR( 20 ) NOT NULL ,
+`puzzle` VARCHAR( 30 ) NOT NULL ,
+`timeStamp` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (  `user` ,  `puzzle` )
 
 SQL Insert Query: 
 INSERT INTO  `BeadLoomGame`.`HighScores` (
