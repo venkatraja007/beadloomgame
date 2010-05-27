@@ -26,9 +26,12 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyVetoException;
 
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
 
 
 public class GUIOutputWindow extends JInternalFrame{
@@ -159,6 +162,10 @@ public class GUIOutputWindow extends JInternalFrame{
 	}
 	public JTextArea getEditorPane(){
 		return OutputWindowPane;
+	}
+	
+	public JInternalFrame getOutputWindowFrame() {
+		return OutputCodeWindowFrame;
 	}
 	
 	//ClearOutputWindowButton Listener

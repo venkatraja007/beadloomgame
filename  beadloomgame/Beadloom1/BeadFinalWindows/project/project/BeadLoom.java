@@ -35,6 +35,7 @@ import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.swing.event.*;
 import com.sun.image.codec.jpeg.*;
 import nu.xom.ValidityException;
 import java.awt.Graphics;
@@ -49,6 +50,7 @@ import java.awt.image.ImageFilter;
 import java.awt.image.RGBImageFilter;
 import java.awt.image.ImageProducer;
 import java.awt.image.FilteredImageSource;
+import java.beans.PropertyVetoException;
 import java.util.ArrayList;
 
 import java.io.FilenameFilter; 
@@ -383,6 +385,23 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					GridFrame.setBorder(new LineBorder(Color.red));
 					GridFrame.setTitle("Grid");
 					GridFrame.setMaximizable(false);
+					GridFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(GridFrame);
+							try {
+								GridFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 
 					Container internalFrame1ContentPane = GridFrame.getContentPane();
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
@@ -401,6 +420,23 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					GridFrame2.setBorder(new LineBorder(Color.red));
 					GridFrame2.setTitle("Goal");
 					GridFrame2.setMaximizable(false);
+					GridFrame2.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(GridFrame2);
+							try {
+								GridFrame2.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 
 					Container internalFrame1ContentPane = GridFrame2.getContentPane();
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
@@ -411,7 +447,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				d2.setSize((dim.getWidth()/2) -15,(dim.getHeight()/2)-15);
 				//This needs to be adjusted for auto resizing -Acey
 				//GridFrame2.setMinimumSize(d2);
-				GridFrame2.toFront();
 				
 
 				//======== OutputCodeWindowFrame ========
@@ -436,6 +471,23 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				}
 				ContentPanel.add(OutputWindow);
 				OutputWindow.setBounds(panelBorder, (int)(usableDim.getHeight()*0.65)+panelBorder, (int)(usableDim.getWidth()*0.42)-panelBorder, (int)(usableDim.getHeight()*0.35)-panelBorder);
+				OutputWindow.addInternalFrameListener(new InternalFrameListener()
+				{
+					public void internalFrameActivated(InternalFrameEvent arg0) {
+						decrementZVals(OutputWindow);
+						try {
+							OutputWindow.setSelected(false);
+						} catch (PropertyVetoException e) {
+							e.printStackTrace();
+						}
+					}
+					public void internalFrameClosed(InternalFrameEvent arg0) {}
+					public void internalFrameClosing(InternalFrameEvent arg0) {}
+					public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+					public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+					public void internalFrameIconified(InternalFrameEvent arg0) {}
+					public void internalFrameOpened(InternalFrameEvent arg0) {}
+				});
 				ContentPanel.add(BeadLoomDesktopPane);
 				BeadLoomDesktopPane.setBounds(new Rectangle(new Point(815, 75), BeadLoomDesktopPane.getPreferredSize()));
 
@@ -457,6 +509,23 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					BeadUtilitiesFrame.setVisible(true);
 					BeadUtilitiesFrame.setBorder(new LineBorder(Color.red));
 					BeadUtilitiesFrame.setTitle("Bead Utilities");
+					BeadUtilitiesFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(BeadUtilitiesFrame);
+							try {
+								BeadUtilitiesFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 					
 					Container internalFrame3ContentPane = BeadUtilitiesFrame.getContentPane();
 					internalFrame3ContentPane.setLayout(new BorderLayout(1, 1));
@@ -472,6 +541,23 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					GoalImagesFrame.setBorder(new LineBorder(Color.red));
 					GoalImagesFrame.setTitle("Click for Goal Images");
 					GoalImagesFrame.setBackground(Color.white);
+					GoalImagesFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(GoalImagesFrame);
+							try {
+								GoalImagesFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 					Container GoalImagesFrameContentPane = GoalImagesFrame.getContentPane();
 					GoalImagesFrameContentPane.setLayout(new BorderLayout(1, 1));
 
@@ -503,6 +589,23 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					MoveBeadsFrame.setVisible(true);
 					MoveBeadsFrame.setBorder(new LineBorder(Color.red));
 					MoveBeadsFrame.setTitle("Adjust Beads");
+					MoveBeadsFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(MoveBeadsFrame);
+							try {
+								MoveBeadsFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 
 					Container MoveBeadsFrameContentPane = MoveBeadsFrame.getContentPane();
 					MoveBeadsFrameContentPane.setLayout(null);
@@ -520,23 +623,91 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				    HighScoresFrame.setBorder(new LineBorder(Color.red));
 				    HighScoresFrame.setTitle("High Scores");
 				    HighScoresFrame.setResizable(true);
+					HighScoresFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(HighScoresFrame);
+							try {
+								HighScoresFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 				    
 				    GameFrame.getContentPane().add(Game.getGamePanel());
 					GameFrame.setVisible(true);
 					GameFrame.setBorder(new LineBorder(Color.red));
 					GameFrame.setTitle("Game");
 					GameFrame.setResizable(true);
+					GameFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(GameFrame);
+							try {
+								GameFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 					
 					PuzzleFrame.getContentPane().add(Game.getChoosePuzzlePanel());
 					PuzzleFrame.setVisible(false);
 					PuzzleFrame.setBorder(new LineBorder(Color.red));
 					PuzzleFrame.setTitle("Choose a Puzzle");
 					PuzzleFrame.setResizable(true);
+					PuzzleFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(PuzzleFrame);
+							try {
+								PuzzleFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 					
 					ColorFrame.getContentPane().add(Game.getColorPanel());
 					ColorFrame.setVisible(false);
 					ColorFrame.setBorder(new LineBorder(Color.red));
 					ColorFrame.setTitle("Choose a Color");
+					ColorFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(ColorFrame);
+							try {
+								ColorFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 					GameFrame.setResizable(true);
 
 				}
@@ -597,6 +768,22 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	}
 	
 	//******* Methods *******
+	/*
+	 * Decrement the z values of all JInternalFrames in ContentPanel
+	 */
+	public void decrementZVals(JInternalFrame toFront)
+	{
+		for(int i=0;i<ContentPanel.getComponentCount();i++)
+		{
+			if(ContentPanel.getComponent(i).getClass()==JInternalFrame.class &&
+					ContentPanel.getComponentZOrder(ContentPanel.getComponent(i))<ContentPanel.getComponentZOrder(toFront))
+			{
+//				ContentPanel.setComponentZOrder(ContentPanel.getComponent(i), 1);
+				ContentPanel.setComponentZOrder(ContentPanel.getComponent(i), ContentPanel.getComponentZOrder(ContentPanel.getComponent(i))+1);
+			}
+		}
+		ContentPanel.setComponentZOrder(toFront, 0);
+	}
 	
     /*
      * Create a bullet bitmap from a new foreground color and a color image.
