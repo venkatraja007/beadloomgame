@@ -11,6 +11,7 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.*;
 
 import javax.swing.BoxLayout;
@@ -1056,6 +1057,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
     			
     			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
+    			String urlTime = ((int)puzzleTime/60) + ":" + ((int)(puzzleTime % 60));
     			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
     			String medal;
     			if (moveCounter <= puz.getIdeal()){
@@ -1080,10 +1082,25 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			}
     			
     			//Send this medal to the website
-				System.out.println(sendWebRequest("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
-						"user=" + NameLabel.getText() + "&score=" + getMoveCount() + "&time=" + completeTime + 
-						"&medal=" + medal + "&puzzle=" + puz.getPuzzleName(currentPuzzle)));
-    			
+				try {
+					System.out.println(sendWebRequest("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
+							"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
+							"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
+							"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
+							"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
+							"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8")));
+					
+					//testing
+					System.out.println("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
+							"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
+							"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
+							"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
+							"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
+							"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8"));
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				
     			//Log the Results
 				   try{
 					    FileWriter log = new FileWriter("log.txt", true);
