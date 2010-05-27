@@ -610,6 +610,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		//---- Blue Button ----
 		BlueButton.setText("Blue");
+		BlueButton.setForeground(Color.WHITE);
 		BlueButton.addActionListener(this);
 		BlueButton.setBackground(Color.BLUE);
 		BlueButton.setBounds(CR20);
@@ -666,6 +667,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		//---- Black Button ----
 		BlackButton.setText("Black");
+		BlackButton.setForeground(Color.WHITE);
 		BlackButton.addActionListener(this);
 		BlackButton.setBackground(Color.BLACK);
 		BlackButton.setBounds(CR03);
@@ -2148,6 +2150,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLUE);
 			bl.getMoveBeads().getTopColorsButton().setText("Blue");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.WHITE);
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2260,6 +2263,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLACK);
 			bl.getMoveBeads().getTopColorsButton().setText("Black");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.WHITE);
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
