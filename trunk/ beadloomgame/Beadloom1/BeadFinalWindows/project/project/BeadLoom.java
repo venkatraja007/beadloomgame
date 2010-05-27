@@ -189,6 +189,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						InputTools.setColor(colorAt);
 						MoveBeads.getTopColorsButton().setBackground(colorAt);
 						MoveBeads.getTopColorsButton().setText(getColorName(colorAt));
+						if(getColorName(colorAt).equalsIgnoreCase("Black") || getColorName(colorAt).equalsIgnoreCase("Blue"))
+						{
+							MoveBeads.getTopColorsButton().setForeground(Color.WHITE);
+						}
 					}
 				}
 			}
@@ -233,6 +237,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						InputTools.setColor(colorAt);
 						MoveBeads.getTopColorsButton().setBackground(colorAt);
 						MoveBeads.getTopColorsButton().setText(getColorName(colorAt));
+						if(getColorName(colorAt).equalsIgnoreCase("Black") || getColorName(colorAt).equalsIgnoreCase("Blue"))
+						{
+							MoveBeads.getTopColorsButton().setForeground(Color.WHITE);
+						}
 					}
 				}
 			}
@@ -1478,6 +1486,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         				MoveBeads.setColor(c);
         			MoveBeads.getTopColorsButton().setBackground(MoveBeads.getColor());
         			MoveBeads.getTopColorsButton().setText(getColorName(MoveBeads.getColor()));
+					if(getColorName(MoveBeads.getColor()).equalsIgnoreCase("Black") || getColorName(MoveBeads.getColor()).equalsIgnoreCase("Blue"))
+					{
+						MoveBeads.getTopColorsButton().setForeground(Color.WHITE);
+					}
         		
     			
         			color = MoveBeads.getColor();
