@@ -1,4 +1,4 @@
-#Database Design Decisions 
+#summary Database Design Decisions
 
 =Database Design=
 
