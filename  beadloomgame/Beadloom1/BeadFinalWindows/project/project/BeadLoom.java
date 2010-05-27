@@ -135,7 +135,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	public static final int panelBorder = 3;
 	public static final Dimension usableDim = new Dimension((int)dim.getWidth()-24-panelBorder, (int)dim.getHeight()-47-panelBorder);
 	
-	
+	//--------Colorblind Mode
+	boolean colorblindModeOn = false;
 
 	//------- Constructor -------
 	public BeadLoom() {
@@ -1400,6 +1401,18 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         		name = "Color";
         	}
         	return name;
+        }
+        
+        public void toggleColorBlindMode()
+        {
+        	if(!colorblindModeOn)
+        	{
+        		//code to turn on colorblind mode
+        		
+        		
+        		colorblindModeOn = true;
+        	}
+        	
         }
         
         
