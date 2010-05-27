@@ -65,7 +65,7 @@ public class GUIMovePanel extends JPanel{
 		UndoButton.setBounds(25, 95, 63, UndoButton.getPreferredSize().height);
 		
 		//---- top colors button ----
-		TopColorsButton.setText("Color");
+		TopColorsButton.setText("Red");
 		MoveLastDrawnBeadsPanel.add(TopColorsButton);
 		
 		TopColorsButton.setBounds(65, 95, 71, TopColorsButton.getPreferredSize().height);

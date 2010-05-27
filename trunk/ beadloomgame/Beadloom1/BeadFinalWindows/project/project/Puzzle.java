@@ -208,6 +208,7 @@
       //A Basic Rectangle Call
       //First Set Color
       //Then Call drawRectangle (Careful the input order is x1 x2 y1 y2)
+         
          InputTools.setColor(Color.RED);
          InputTools.drawRectangle(-10, -5, 10, 5);
       
@@ -555,7 +556,7 @@
          InputTools.setColor(Color.RED);
          doTriangleIt(0, 0, 3, 1, 10, true, false);
       
-         InputTools.setColor(Color.ORANGE);
+         InputTools.setColor(betterOrange);
          doTriangleIt(0, -3, 3, 1, 7, true, false);
       
          InputTools.setColor(Color.YELLOW);
@@ -1744,8 +1745,8 @@
              InputTools.drawRectangle(-20, 20, -20, 20);
              
              
-             /*Draw Outter Wings*/
-             InputTools.setColor((Color.CYAN));
+             /*Draw Outer Wings*/
+             InputTools.setColor((Color.WHITE));
              
              xValue = new ArrayList();
              yValue = new ArrayList();
@@ -1771,7 +1772,7 @@
              
              
              /* Draw Inner Wings */
-             InputTools.setColor(Color.BLUE);
+             InputTools.setColor(Color.GRAY);
              InputTools.drawRectangle(-11, 11, 3, -3);
              
              InputTools.drawRectangle(-14, 14, 2, -2);
@@ -1780,7 +1781,7 @@
              
              
              /* Draw Body */
-             InputTools.setColor(Color.CYAN);
+             InputTools.setColor(Color.WHITE);
              
              
              xValue = new ArrayList();
@@ -1796,7 +1797,7 @@
              InputTools.drawRectangle(-8, 8, 4, -4);
              
              /* Draw Outer Wings */
-             InputTools.setColor(Color.CYAN);
+             InputTools.setColor(Color.WHITE);
              
              //Rectangles for either side of vertical edges of wings
              InputTools.drawRectangle(-19, -18, 4, -4);
