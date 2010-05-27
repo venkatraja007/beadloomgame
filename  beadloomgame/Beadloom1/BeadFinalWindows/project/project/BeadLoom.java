@@ -185,6 +185,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					if (!colorAt.equals(blank)){
 						InputTools.setColor(colorAt);
 						MoveBeads.getTopColorsButton().setBackground(colorAt);
+						MoveBeads.getTopColorsButton().setText(getColorName(colorAt));
 					}
 				}
 			}
@@ -228,6 +229,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					if (!colorAt.equals(blank)){
 						InputTools.setColor(colorAt);
 						MoveBeads.getTopColorsButton().setBackground(colorAt);
+						MoveBeads.getTopColorsButton().setText(getColorName(colorAt));
 					}
 				}
 			}
@@ -1287,6 +1289,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         			if(c != null)
         				MoveBeads.setColor(c);
         			MoveBeads.getTopColorsButton().setBackground(MoveBeads.getColor());
+        			MoveBeads.getTopColorsButton().setText(getColorName(MoveBeads.getColor()));
         		
     			
         			color = MoveBeads.getColor();
@@ -1335,6 +1338,68 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         		gridPanel.setPanelGridSize(100);
         		gridPanel2.setPanelGridSize(100);
         	}
+        }
+        
+        public String getColorName(Color col)
+        {
+        	Color peach = new Color(255, 200, 150);
+        	Color betterOrange = new Color(255,100,0);
+        	
+        	int RGBValue = col.getRGB();
+        	String name = null;
+        	if(Color.RED.getRGB() == RGBValue)
+        	{
+        		name = "Red";
+        	}
+        	else if(Color.YELLOW.getRGB() == RGBValue)
+        	{
+        		name = "Yellow";
+        	}
+        	else if(betterOrange.getRGB() == RGBValue)
+        	{
+        		name = "Orange";
+        	}
+        	else if(Color.BLACK.getRGB() == RGBValue)
+        	{
+        		name = "Black";
+        	}
+        	else if(Color.GREEN.getRGB() == RGBValue)
+        	{
+        		name = "Green";
+        	}
+        	else if(Color.CYAN.getRGB() == RGBValue)
+        	{
+        		name = "Cyan";
+        	}
+        	else if(Color.PINK.getRGB() == RGBValue)
+        	{
+        		name = "Pink";
+        	}
+        	else if(Color.WHITE.getRGB() == RGBValue)
+        	{
+        		name = "White";
+        	}
+        	else if(Color.BLUE.getRGB() == RGBValue)
+        	{
+        		name = "Blue";
+        	}
+        	else if(Color.MAGENTA.getRGB() == RGBValue)
+        	{
+        		name = "Magenta";
+        	}
+        	else if(peach.getRGB() == RGBValue)
+        	{
+        		name = "Peach";
+        	}
+        	else if(Color.GRAY.getRGB() == RGBValue)
+        	{
+        		name = "Gray";
+        	}
+        	else
+        	{
+        		name = "Color";
+        	}
+        	return name;
         }
         
         

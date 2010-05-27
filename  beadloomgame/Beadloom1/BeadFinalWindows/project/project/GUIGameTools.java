@@ -158,7 +158,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton BlackButton = new JButton();
 	private JButton PinkButton = new JButton();
 	private JButton PeachButton = new JButton(); 
-
+	private JButton GrayButton = new JButton();
+	
 	
 	private JLabel MoveLabel = new JLabel();
 	
@@ -249,7 +250,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	Rectangle CR03 = new Rectangle(CR02.x + colorButtonLength + colorHorizSpace, colorVertSpace, colorButtonLength, colorButtonHeight);
 	Rectangle CR13 = new Rectangle(CR12.x + colorButtonLength + colorHorizSpace, CR03.y + colorButtonHeight + colorVertSpace, colorButtonLength, colorButtonHeight);
-	
+	Rectangle CR23 = new Rectangle(CR22.x + colorButtonLength + colorHorizSpace, CR13.y + colorButtonHeight + colorVertSpace, colorButtonLength, colorButtonHeight);
 	
 		public GUIGameTools() {
 				
@@ -261,7 +262,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		//---- high scores panel ----
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
-		HighScoresPanel.setBackground(color.white);
+		HighScoresPanel.setBackground(Color.white);
 		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
 		HighScoresPanel.setLayout(HighScoresLayout);
 		
@@ -655,6 +656,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		PeachButton.setBackground(peach);
 		PeachButton.setBounds(CR22);
 		ColorPanel.add(PeachButton);
+		
+		//-----Gray Button ----
+		GrayButton.setText("Gray");
+		GrayButton.addActionListener(this);
+		GrayButton.setBackground(Color.GRAY);
+		GrayButton.setBounds(CR23);
+		ColorPanel.add(GrayButton);
 		
 		//---- Black Button ----
 		BlackButton.setText("Black");
@@ -2111,6 +2119,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.RED);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.RED);
+			bl.getMoveBeads().getTopColorsButton().setText("Red");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2124,6 +2133,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.GREEN);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.GREEN);
+			bl.getMoveBeads().getTopColorsButton().setText("Green");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2137,6 +2147,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.BLUE);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLUE);
+			bl.getMoveBeads().getTopColorsButton().setText("Blue");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2150,6 +2161,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.YELLOW);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.YELLOW);
+			bl.getMoveBeads().getTopColorsButton().setText("Yellow");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2163,6 +2175,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.CYAN);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.CYAN);
+			bl.getMoveBeads().getTopColorsButton().setText("Cyan");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2176,6 +2189,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.MAGENTA);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.MAGENTA);
+			bl.getMoveBeads().getTopColorsButton().setText("Magenta");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2189,6 +2203,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(betterOrange);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(betterOrange);
+			bl.getMoveBeads().getTopColorsButton().setText("Orange");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2202,6 +2217,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.PINK);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.PINK);
+			bl.getMoveBeads().getTopColorsButton().setText("Pink");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2215,6 +2231,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(peach);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(peach);
+			bl.getMoveBeads().getTopColorsButton().setText("Peach");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2224,10 +2241,25 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				      System.err.println("Error: " + ex.getMessage());
 				    }
 		}
+		else if (e.getSource() == GrayButton) {
+			bl.getInputTools().setColor(Color.GRAY);
+			bl.getColorFrame().setVisible(false);
+			bl.getMoveBeads().getTopColorsButton().setBackground(Color.GRAY);
+			bl.getMoveBeads().getTopColorsButton().setText("Gray");
+			//Log the color change
+				try{
+						FileWriter log = new FileWriter("log.txt", true);
+						log.write("\t\t" + getTime() + " Color Change: Gray\n");
+						log.close();
+				}catch (Exception ex){ System.err.println("Error: " + ex.getMessage());
+				}
+		}
+		
 		else if (e.getSource() == BlackButton){
 			bl.getInputTools().setColor(Color.BLACK);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLACK);
+			bl.getMoveBeads().getTopColorsButton().setText("Black");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
@@ -2241,6 +2273,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.WHITE);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.WHITE);
+			bl.getMoveBeads().getTopColorsButton().setText("White");
 			//Log the Color Change
 			   try{
 				    FileWriter log = new FileWriter("log.txt", true);
