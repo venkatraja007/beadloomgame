@@ -1067,12 +1067,22 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
     			
     			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
-    			String urlTime = ((int)puzzleTime/60) + ":" + ((int)(puzzleTime % 60));
+    			String seconds = "";
+    			if(((int)puzzleTime % 60) < 10)
+    			{
+    				seconds = "0" + ((int)(puzzleTime % 60));
+    			}
+    			else
+    			{
+    				seconds = ((int)(puzzleTime % 60)) + "";
+    			}
+    			
+    			String urlTime = ((int)puzzleTime/60) + ":" + seconds;
     			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
     			String medal;
     			if (moveCounter <= puz.getIdeal()){
     				JOptionPane.showMessageDialog(null, "You Earned the Platinum Medal.  You completed the puzzle in "+completeTime+" second(s).", "Congratulations", JOptionPane.PLAIN_MESSAGE);
-    				medal = "Platinum!!!!!";
+    				medal = "Platinum!!!!";
     				RecordMedalShort[currentPuzzle] = "P";
     			}
     			else if (moveCounter <= puz.getIdeal()*2){
@@ -1099,14 +1109,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 							"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
 							"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
 							"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8")));
-					
-					//testing
-					System.out.println("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
-							"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
-							"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
-							"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
-							"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
-							"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8"));
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
