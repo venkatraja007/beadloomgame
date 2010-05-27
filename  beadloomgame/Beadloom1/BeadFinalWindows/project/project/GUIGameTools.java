@@ -1078,6 +1078,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
     				medal = "Bronze!";
     				RecordMedalShort[currentPuzzle] = "B";
     			}
+    			
+    			//Send this medal to the website
+				System.out.println(sendWebRequest("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
+						"user=" + NameLabel.getText() + "&score=" + getMoveCount() + "&time=" + completeTime + 
+						"&medal=" + medal + "&puzzle=" + puz.getPuzzleName(currentPuzzle)));
+    			
     			//Log the Results
 				   try{
 					    FileWriter log = new FileWriter("log.txt", true);
@@ -1199,6 +1205,34 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		return moveCounter;
 	}
 	
+	public String sendWebRequest(String url) {
+		return sendWebRequest(url, "token");
+	}
+	
+	public String sendWebRequest(String url, String token) {
+		StringBuilder builder = new StringBuilder(); 
+		try {
+				URL test = new URL(url);
+				    URLConnection con = test.openConnection();
+				    BufferedReader in = new BufferedReader(
+				                            new InputStreamReader(
+				                            con.getInputStream()));
+				    String inputLine;
+				    
+
+				    while ((inputLine = in.readLine()) != null)  {
+				    	
+				    	builder.append(inputLine);
+				    }
+				    in.close();
+			} catch (Exception ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
+				return builder.toString();
+			}
+			return builder.toString();
+	}
+	
 	//Action Listener
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()== PlayGameButton || e.getSource() == NameTextField) {
@@ -1211,29 +1245,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == WebRequestButton) {
-			
-			
-			 try {
-				URL test = new URL("http://playground.uncc.edu/BeadLoomGame/scores.php");
-				    URLConnection con = test.openConnection();
-				    BufferedReader in = new BufferedReader(
-				                            new InputStreamReader(
-				                            con.getInputStream()));
-				    String inputLine;
-				    StringBuilder builder = new StringBuilder();
-
-				    while ((inputLine = in.readLine()) != null)  {
-				    	
-				    	builder.append(inputLine);
-				    }
-				    in.close();
-				    
-				    HighScoresLabel.setText(builder.toString() +"not exception");
-			} catch (Exception ex) {
-				// TODO Auto-generated catch block
-				ex.printStackTrace();
-				HighScoresLabel.setText(ex.getMessage() + "exception");
-			}
+			HighScoresLabel.setText(
+					sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php"));
 			
 		}
 		

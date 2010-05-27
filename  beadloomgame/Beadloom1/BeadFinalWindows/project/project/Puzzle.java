@@ -14,7 +14,41 @@
       private Color betterOrange;
       
       private final int TOTALPUZZLES = 35;
-   
+      private String[] PuzzleNames = {"Tutorial 1",
+    		  						 "Tutorial 2",
+    		  						 "Tutorial 3",
+    		  						 "Tutorial 4",
+    		  						 "Tutorial 5",
+    		  						 "Tutorial 6",
+    		  						 "TriForce",
+    		  						 "Overlapping Squares",
+    		  						 "Native American Example 14",
+    		  						 "Six",
+    		  						 "Can You Hear Me Now",
+    		  						 "Starry Sky",
+    		  						 "Native American Example 6",
+    		  						 "Native American Example 8",
+    		  						 "Circle",
+    		  						 "Flag",
+    		  						 "UNCC",
+    		  						 "Native American Example 10",
+    		  						 "Native American Example 13",
+    		  						 "Sun Rise",
+    		  						 "Heart",
+    		  						 "Sunny Sky",
+    		  						 "Stars and Stripes",
+    		  						 "ROSS",
+    		  						 "Bullseye",
+    		  						 "Native American Example 7",
+    		  						 "Native American Example 1",
+    		  						 "Native American Example 5",
+    		  						 "Native American Example 3",
+    		  						 "Moon",
+    		  						 "Megaman",
+    		  						 "Batman",
+    		  						 "DC",
+    		  						 "Sergeant",
+    		  						 "Tie Fighter"};
    //Constructor.  Takes the beadloom 
        public Puzzle(BeadLoom bl){
          this.bl = bl;
@@ -22,6 +56,11 @@
          peach = new Color(255, 200, 150);
          betterOrange = new Color(255, 100, 0);
       }
+       
+      //Returns the name of a puzzle based on an int index
+       public String getPuzzleName(int index) {
+    	   return PuzzleNames[index];
+       }
    
    //Returns the total number of puzzle types
        public int getTotalPuzzles(){
@@ -94,17 +133,17 @@
       
       //A Basic Point Call
       //Set Color then call draw Point
-         InputTools.setColor(Color.GREEN);
-         InputTools.drawPoint(-5, 5);
+         //InputTools.setColor(Color.GREEN);
+         //InputTools.drawPoint(-5, 5);
       
          InputTools.setColor(Color.RED);
          InputTools.drawPoint(5, 5);
       
-         InputTools.setColor(Color.YELLOW);
-         InputTools.drawPoint(-5, -5);
+         //InputTools.setColor(Color.YELLOW);
+        // InputTools.drawPoint(-5, -5);
       
-         InputTools.setColor(Color.BLUE);
-         InputTools.drawPoint(5, -5);
+         //InputTools.setColor(Color.BLUE);
+         //InputTools.drawPoint(5, -5);
       
       //Calculate the Goal Images bead array
          bl.getGridPanel2().calcGameGrid();
