@@ -1,0 +1,30 @@
+#Dustin's Week 1 (05/24/08 - 05/24/08)
+
+== Dustin's Week 1==
+
+= What I planned to do =
+
+ * Create a new puzzle
+ * Work on resizing the game and tool to display correctly in different resolutions
+ * Organize the windows in the tool and game to look better
+
+= What I did =
+
+ * Created a new puzzle "DC"
+ * Set beads to display correctly at different grid resolutions
+ * Set all windows in the tool to display based on percentages of usable window
+ * Reorganized all windows in the tool to be more organized
+ * Set all windows in the game to display based on percentages of usable window
+ * Reorganized all windows in the game to be more organized
+ * Researched why beads where not as defined in different colors
+ * Created an in game options menu
+ * Set up the color blind mode toggle
+ * Set up the hint mode toggle
+ * Set up for the display of different types of beads
+ * Set grids to completely redraw for when new bead types are set
+ * Updated game pane to show correct Best Score from the scores text file
+ * Resized applet resolution to 1024x768 (though applet can still be scaled easily in code)
+ * Name Text Field highlights when clicked also continues to game when enter is pressed
+ * Added a puzzle Time element to track the amount of time it takes to complete a puzzle
+ * Fixed problem where windows could not be brought to front.  Active windows are now displayed on top
+ * Fixed a lot of coding errors (including coding standards)
