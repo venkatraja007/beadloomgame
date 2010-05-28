@@ -1,11 +1,10 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= Dustin's Weekly Reports =
 
 Here you can find all of my weekly reports
 
 
-= Details =
+= Reports =
 
-Add your content here.  Format your content with:
-[Week 1 (5/24/08 - 5/28/08)]
+[DustinWeek1]
