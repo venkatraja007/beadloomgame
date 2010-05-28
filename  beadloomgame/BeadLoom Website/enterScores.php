@@ -94,8 +94,8 @@ if($result)
 			//Score is equivalent comparing times
 			else if($db_score == $score)
 			{
-				$timeValue;
-				$db_timeValue;
+				$timeValue = mktime()
+				$db_timeValue = idate("i:s", $db_timeValue);
 				die("<html><h2>timeValue: $timeValue.</h2></html><br/>");
 			}
 		}
