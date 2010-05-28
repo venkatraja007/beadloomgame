@@ -23,6 +23,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import javax.swing.UIManager;
 
 import javax.swing.JPanel;
 
@@ -115,6 +116,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//High Scores Panel Label
 	private JLabel HighScoresLabel = new JLabel();
 	private JTextField WebRequestTextField = new JTextField(20);
+	
+	//Game Options Panel
+	private JButton ColorBlindButton = new JButton();
+	private JButton HintsButton = new JButton();
+	private JButton NormalBeadButton = new JButton();
+	private JButton AwesomeBeadButton = new JButton();
+	private JButton PeaceBeadButton = new JButton();
+	private JButton GameOptionsCloseButton = new JButton();
+	//
 	
 	//Choose Puzzle High Score Labels
 	private JLabel HSLabel1 = new JLabel();
@@ -273,6 +283,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GameOptionsPanel.setBorder(new LineBorder(Color.red));
 		GameOptionsPanel.setBackground(Color.white);
 		GameOptionsPanel.setBounds(ChoosePuzzlePanel.getBounds());
+		GameOptionsPanel.setLayout(null);
 		
 		//---- choose puzzle panel -----
 		ChoosePuzzlePanel.setBorder(new LineBorder(Color.red));
@@ -706,6 +717,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Submit button ----
 		SubmitButton.setText("Submit");
 		SubmitButton.setBounds(25, 100, 145, SubmitButton.getPreferredSize().height);
+		SubmitButton.setBackground(color);
 		SubmitButton.addActionListener(this);
 		
 		//---- Options button ---
@@ -738,6 +750,43 @@ public class GUIGameTools extends JPanel implements ActionListener{
         });
 
 		NameTextField.addActionListener(this);
+		
+		//---- Color Blind Button ----
+		ColorBlindButton.setText("Color Blind Mode Off");
+		ColorBlindButton.setBounds(20, 25, 155, ColorBlindButton.getPreferredSize().height);
+		ColorBlindButton.addActionListener(this);
+		GameOptionsPanel.add(ColorBlindButton);
+		
+		//---- Hints Button ----
+		HintsButton.setText("Hints Off");
+		HintsButton.setBounds(20, 50, 155, HintsButton.getPreferredSize().height);
+		HintsButton.addActionListener(this);
+		GameOptionsPanel.add(HintsButton);
+		
+		//---- Normal Bead Button ----
+		NormalBeadButton.setText("Normal Bead");
+		NormalBeadButton.setBounds(20, 100, 155, NormalBeadButton.getPreferredSize().height);
+		NormalBeadButton.setBackground(color.CYAN);
+		NormalBeadButton.addActionListener(this);
+		GameOptionsPanel.add(NormalBeadButton);
+		
+		//---- Awesome Bead Button ----
+		AwesomeBeadButton.setText("Awesome Bead");
+		AwesomeBeadButton.setBounds(20, 125, 155, AwesomeBeadButton.getPreferredSize().height);
+		AwesomeBeadButton.addActionListener(this);
+		GameOptionsPanel.add(AwesomeBeadButton);
+		
+		//---- Peace Bead Button ----
+		PeaceBeadButton.setText("Peace Bead");
+		PeaceBeadButton.setBounds(20, 150, 155, PeaceBeadButton.getPreferredSize().height);
+		PeaceBeadButton.addActionListener(this);
+		GameOptionsPanel.add(PeaceBeadButton);
+		
+		//---- Peace Bead Button ----
+		GameOptionsCloseButton.setText("Close");
+		GameOptionsCloseButton.setBounds(20, 175, 155, GameOptionsCloseButton.getPreferredSize().height);
+		GameOptionsCloseButton.addActionListener(this);
+		GameOptionsPanel.add(GameOptionsCloseButton);
 		
 		//---- Name Label ----
 		NameLabel.setBounds(25, 0, 200, 25);
@@ -1289,6 +1338,50 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			HighScoresLabel.setText(
 					sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php"));
 			
+		}
+		
+		else if (e.getSource() == NormalBeadButton) {
+			NormalBeadButton.setBackground(color.CYAN);
+			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
+			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+		}
+		
+		else if (e.getSource() == AwesomeBeadButton) {
+			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
+			AwesomeBeadButton.setBackground(color.CYAN);
+			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+		}
+		
+		else if (e.getSource() == PeaceBeadButton) {
+			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
+			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
+			PeaceBeadButton.setBackground(color.CYAN);
+		}
+		
+		else if (e.getSource() == ColorBlindButton) {
+			if(ColorBlindButton.getText().equals("Color Blind Mode On"))
+			{
+				ColorBlindButton.setText("Color Blind Mode Off");
+			}
+			else
+			{
+				ColorBlindButton.setText("Color Blind Mode On");
+			}
+		}
+		
+		else if (e.getSource() == HintsButton) {
+			if(HintsButton.getText().equals("Hints On"))
+			{
+				HintsButton.setText("Hints Off");
+			}
+			else
+			{
+				HintsButton.setText("Hints On");
+			}
+		}
+		
+		else if (e.getSource() == GameOptionsCloseButton) {
+			bl.getGameOptionsFrame().setVisible(false);
 		}
 		
 		else if (e.getSource() == HighScoresButton) {
