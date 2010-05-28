@@ -112,6 +112,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	private JInternalFrame MoveBeadsFrame;
 	private JInternalFrame GameFrame;
 	private JInternalFrame HighScoresFrame;
+	private JInternalFrame GameOptionsFrame;
 	private JInternalFrame PuzzleFrame;
 	private JInternalFrame ColorFrame;
 	private JInternalFrame BeadUtilitiesFrame;
@@ -170,6 +171,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		MoveBeadsFrame = new JInternalFrame();
 		GameFrame = new JInternalFrame();
 		HighScoresFrame = new JInternalFrame();
+		GameOptionsFrame = new JInternalFrame();
 		PuzzleFrame = new JInternalFrame();
 		ColorFrame = new JInternalFrame();
 		GridFrame = new JInternalFrame();
@@ -649,6 +651,29 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						public void internalFrameOpened(InternalFrameEvent arg0) {}
 					});
 				    
+				    GameOptionsFrame.getContentPane().add(Game.getHighScoresPanel());
+				    GameOptionsFrame.setVisible(false);
+				    GameOptionsFrame.setBorder(new LineBorder(Color.red));
+				    GameOptionsFrame.setTitle("Game Options");
+				    GameOptionsFrame.setResizable(true);
+				    GameOptionsFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(GameOptionsFrame);
+							try {
+								GameOptionsFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
+				    
 				    GameFrame.getContentPane().add(Game.getGamePanel());
 					GameFrame.setVisible(true);
 					GameFrame.setBorder(new LineBorder(Color.red));
@@ -723,10 +748,12 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				ContentPanel.add(PuzzleFrame);
 				ContentPanel.add(ColorFrame);
 				ContentPanel.add(HighScoresFrame);
+				ContentPanel.add(GameOptionsFrame);
 				GameFrame.setBounds((int)(usableDim.getWidth()*0.42)+panelBorder, (int)(usableDim.getHeight()*.70)+panelBorder, (int)(usableDim.getWidth()*0.58)-panelBorder, (int)(usableDim.getHeight()*0.30)-panelBorder);
 				PuzzleFrame.setBounds(panelBorder, panelBorder, (int)(usableDim.getWidth()*0.65) - panelBorder,(int)(usableDim.getHeight()*0.65) - panelBorder);
 				ColorFrame.setBounds((int)(usableDim.getWidth()/8), (int)(usableDim.getHeight()/4), 375, 140);
 				HighScoresFrame.setBounds(PuzzleFrame.getBounds());
+				GameOptionsFrame.setBounds(PuzzleFrame.getBounds());
 				
 				//------- Coordinate Label -------				
 				JPanel holder = new JPanel();
@@ -1064,6 +1091,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
    }
    public JInternalFrame getHighScoresFrame() {
 	   return HighScoresFrame;
+   }
+   public JInternalFrame getGameOptionsFrame() {
+	   return GameOptionsFrame;
    }
    public JInternalFrame getGameFrame(){
 	   return GameFrame;

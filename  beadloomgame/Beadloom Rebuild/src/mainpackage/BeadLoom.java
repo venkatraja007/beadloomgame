@@ -603,7 +603,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         Image bullet;
         
         //This needs to be here to work offline -Acey
-        Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
+        Image sourceImage = Toolkit.getDefaultToolkit().getImage("./src/mainpackage/bead.JPG");
         //This needs to be uncommented to work with online applet -Acey
         //Image sourceImage = getImage(url);
         //Image sourceImage = Toolkit.getDefaultToolkit().getImage("http://webpages.uncc.edu/~sgpickfo/bead.jpg");
