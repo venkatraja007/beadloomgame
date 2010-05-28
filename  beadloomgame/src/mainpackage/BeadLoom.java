@@ -1368,10 +1368,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         	}
         	else if (e.getSource() == InputTools.getDrawPointButton()) {
         		OutputWindow.getEditorPane().append
-        		("draw.BeadPoint(x,y,color)\n"
-        				+"    add bead("+InputTools.getDrawPointXTextField().getText()+","
+        		("Method: Draw BeadPoint\nParameters: (x, y, color)\n"
+        				+"    Draw BeadPoint("+InputTools.getDrawPointXTextField().getText()+","
         				+InputTools.getDrawPointYTextField().getText()+","
-        				+MoveBeads.getColor().toString()+")\n");
+        				+getColorName(MoveBeads.getTopColorsButton().getBackground())+")\n");
         		if (gridPanel2.isShowing()){
         			Game.incrementMove();
         			//Log the Draw Point
@@ -1388,10 +1388,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         	}
         	else if (e.getSource() == InputTools.getDrawLineButton()) {
         		OutputWindow.getEditorPane().append
-        		("draw.BeadLine(x1,y1,x2,y2,color)\n"
-        				+"    add bead("+InputTools.getDrawLineX1TextField().getText()+","+InputTools.getDrawLineY1TextField().getText()+","
+        		("Method: Draw BeadLine\nParameters: (x1, y1, x2, y2, color)\n"
+        				+"    Draw BeadLine("+InputTools.getDrawLineX1TextField().getText()+","+InputTools.getDrawLineY1TextField().getText()+","
         				+InputTools.getDrawLineX2TextField().getText()+","+InputTools.getDrawLineY2TextField().getText()+","
-        				+MoveBeads.getColor().toString()+")\n");
+        				+getColorName(MoveBeads.getTopColorsButton().getBackground())+")\n");
         		if (gridPanel2.isShowing()){
         			Game.incrementMove();
         			//Log the Draw Line
@@ -1410,10 +1410,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         	}
         	else if (e.getSource() == InputTools.getRectangleButton()) {
         		OutputWindow.getEditorPane().append
-        		("draw.BeadRectangle(x1,y1,x2,y2,color)\n"
-        				+"    add bead("+InputTools.getDrawRectangleX1TextField().getText()+","+InputTools.getDrawRectangleY1TextField().getText()+","
+        		("Method: Draw BeadRectangle\nParameters: (x1, y1, x2, y2, color)\n"
+        				+"    Draw BeadRectangle("+InputTools.getDrawRectangleX1TextField().getText()+","+InputTools.getDrawRectangleY1TextField().getText()+","
         				+InputTools.getDrawRectangleX2TextField().getText()+","+InputTools.getDrawRectangleY2TextField().getText()+","
-        				+MoveBeads.getColor().toString()+")\n");
+        				+getColorName(MoveBeads.getTopColorsButton().getBackground())+")\n");
         		if (gridPanel2.isShowing()){
         			Game.incrementMove();
         			//Log the Draw Rectangle
@@ -1432,11 +1432,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         	}
         	else if (e.getSource() == InputTools.getDrawTriangleButton()) {
         		OutputWindow.getEditorPane().append
-        		("draw.BeadTriangle(x1,y1,x2,y2,x3,y3,color)\n"
-        				+"    add bead("+InputTools.getDrawTriangleX1TextField().getText()+","+InputTools.getDrawTriangleY1TextField().getText()+","
+        		("Method: Draw BeadTriangle\nParameters: (x1, y1, x2, y2, x3, y3, color)\n"
+        				+"    Draw BeadTriangle("+InputTools.getDrawTriangleX1TextField().getText()+","+InputTools.getDrawTriangleY1TextField().getText()+","
         				+InputTools.getDrawTriangleX2TextField().getText()+","+InputTools.getDrawTriangleY2TextField().getText()+","
         				+InputTools.getDrawTriangleX3TextField().getText()+","+InputTools.getDrawTriangleY3TextField().getText()+","
-        				+MoveBeads.getColor().toString()+")\n");
+        				+getColorName(MoveBeads.getTopColorsButton().getBackground())+")\n");
         		if (gridPanel2.isShowing()){
         			Game.incrementMove();
         			//Log the Draw Triangle 
@@ -1457,13 +1457,13 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         	}
         	else if (e.getSource() == InputTools.getDrawTriangleIterationButton()) {
         		OutputWindow.getEditorPane().append
-        		("draw.TriangleBeadIteration(x,y,width,color)\n"
+        		("Method: Draw TriangleBeadIteration\nParameters: (x, y, width, color)\n"
         				+"         for Cycles("+InputTools.getTriangleIterationRowsTotalTextField().getText()+")\n"
         				+"            for Steps("+InputTools.getTriangleIterationStepHeightTextField().getText()+")\n"
-        				+"               add bead("+InputTools.getTriangleIterationStartXTextField().getText()+","
+        				+"               Draw TriangleBeadIteration("+InputTools.getTriangleIterationStartXTextField().getText()+","
         				                           +InputTools.getTriangleIterationStartYTextField().getText()+","
         				                           +InputTools.getTriangleIterationBeadsAddedTextField().getText()+","
-        				                           +MoveBeads.getColor().toString()+")\n");
+        				                           +getColorName(MoveBeads.getTopColorsButton().getBackground())+")\n");
         		if (gridPanel2.isShowing()){
         			Game.incrementMove();
         		//Log the Draw Triangle Iteration Tool
@@ -1483,13 +1483,13 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         	}
         	else if (e.getSource() == InputTools.getDrawLinearIterationButton()) {
         		OutputWindow.getEditorPane().append
-        		("draw.BeadIteration(x,y,width,color)\n"
+        		("Method: Draw LinearBeadIteration\nParameters: (x, y, width, color)\n"
         				+"         for Cycles("+InputTools.getLinearIterationRowsTotalTextField().getText()+")\n"
-        				+"            for Inc("+InputTools.getLinearIterationInc1TextField().getText()+ " " + InputTools.getLinearIterationInc2TextField().getText()+ ")\n"
-        				+"               add bead("+InputTools.getLinearIterationStartXTextField().getText()+","
+        				+"            for Inc("+InputTools.getLinearIterationInc1TextField().getText()+ "," + InputTools.getLinearIterationInc2TextField().getText()+ ")\n"
+        				+"               Draw LinearBeadIteration("+InputTools.getLinearIterationStartXTextField().getText()+","
         				                           +InputTools.getLinearIterationStartYTextField().getText()+","
         				                           +InputTools.getLinearIterationStartLengthTextField().getText()+","
-        				                           +MoveBeads.getColor().toString()+")\n");
+        				                           +getColorName(MoveBeads.getTopColorsButton().getBackground())+")\n");
         		
         		if (gridPanel2.isShowing()){
         			Game.incrementMove();

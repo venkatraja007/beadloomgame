@@ -2374,7 +2374,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     	return LinearIterationInc2TextField;
     }
     public JTextField getLinearIterationRowsTotalTextField(){
-    	return TriangleIterationRowsTotalTextField;
+    	return LinearIterationRowsTotalTextField;
     }
     public JTextField getLinearIterationStartLengthTextField(){
     	return LinearIterationStartLengthTextField;

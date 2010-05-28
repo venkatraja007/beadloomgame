@@ -15,3 +15,365 @@
 <5/27/2010 9:54:18> Acey logs out.
 <5/27/2010 9:54:23> Acey logs in.
 	<5/27/2010 9:54:23> Loom Example 8 Puzzle Selected.
+<5/27/2010 10:20:8> Acey logs in.
+	<5/27/2010 10:20:8> Loom Example 8 Puzzle Selected.
+		<5/27/2010 10:20:11> Restart Performed
+	<5/27/2010 10:20:11> Tie Fighter Puzzle Selected.
+<5/27/2010 10:36:42> Acey logs in.
+	<5/27/2010 10:36:42> Loom Example 8 Puzzle Selected.
+<5/27/2010 10:39:7> Acey logs in.
+	<5/27/2010 10:39:7> Loom Example 8 Puzzle Selected.
+		<5/27/2010 10:39:10> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 10:40:13> Color Change: Pink
+<5/27/2010 11:5:37> Acey logs in.
+	<5/27/2010 11:5:37> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:5:39> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:5:44> Color Change: Black
+		<5/27/2010 11:5:46> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:10:12> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 11:10:45> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+		<5/27/2010 11:15:57> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<5/27/2010 11:16:11> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+<5/27/2010 11:24:56> Acey logs in.
+	<5/27/2010 11:24:56> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:24:58> Draw Point:
+			x= 0
+			y= 0
+<5/27/2010 11:25:27> Acey logs in.
+	<5/27/2010 11:25:27> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:25:29> Draw Point:
+			x= 0
+			y= 0
+<5/27/2010 11:28:8> Acey logs in.
+	<5/27/2010 11:28:8> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:28:10> Draw Point:
+			x= 0
+			y= 0
+<5/27/2010 11:28:37> Acey logs in.
+	<5/27/2010 11:28:37> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:28:42> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:29:1> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+<5/27/2010 11:30:9> cey logs in.
+	<5/27/2010 11:30:9> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:30:11> Draw Point:
+			x= 0
+			y= 0
+<5/27/2010 11:32:14> d logs in.
+	<5/27/2010 11:32:14> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:32:17> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+<5/27/2010 11:33:39> Acey logs in.
+	<5/27/2010 11:33:39> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:33:41> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:33:45> Color Change: White
+		<5/27/2010 11:33:47> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 11:33:57> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 11:34:2> Color Change: Cyan
+		<5/27/2010 11:34:3> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 11:34:7> Color Change: Peach
+		<5/27/2010 11:34:9> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 11:34:19> Draw Rectangle:
+			x1= 0
+			x2= 6
+			y1= 0
+			y2= 6
+<5/27/2010 11:52:41> s logs in.
+	<5/27/2010 11:52:41> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:52:42> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:52:47> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:53:22> Color Change: Gray
+		<5/27/2010 11:53:24> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+<5/27/2010 11:55:38> s logs in.
+	<5/27/2010 11:55:38> Loom Example 8 Puzzle Selected.
+		<5/27/2010 11:55:41> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:55:45> Color Change: Pink
+		<5/27/2010 11:55:46> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:55:50> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 11:55:54> Draw Point:
+			x= 0
+			y= 0
+<5/27/2010 12:0:23> sEnter Your Name logs in.
+	<5/27/2010 12:0:23> Loom Example 8 Puzzle Selected.
+		<5/27/2010 12:0:26> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 12:0:28> Color Change: Pink
+		<5/27/2010 12:0:29> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 12:0:31> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 12:0:34> Color Change: Orange
+		<5/27/2010 12:0:35> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 12:0:38> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+		<5/27/2010 12:0:40> Color Change: Magenta
+		<5/27/2010 12:0:42> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+		<5/27/2010 12:0:50> Color Change: Cyan
+		<5/27/2010 12:0:52> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<5/27/2010 12:1:0> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+		<5/27/2010 12:1:3> Color Change: Green
+		<5/27/2010 12:1:5> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+<5/27/2010 12:7:18> shaun logs in.
+	<5/27/2010 12:7:18> Loom Example 8 Puzzle Selected.
+		<5/27/2010 12:7:20> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 12:7:21> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 12:7:24> Color Change: White
+		<5/27/2010 12:7:31> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 12:7:32> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 12:7:36> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<5/27/2010 12:8:51> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<5/27/2010 12:9:10> Draw Linear Iteration:
+			x= -5
+			y= -5
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 9
+		<5/27/2010 12:9:46> Draw Linear Iteration:
+			x= -5
+			y= -5
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 3
+		<5/27/2010 12:10:13> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 5
+		<5/27/2010 12:10:15> Draw Linear Iteration:
+			x= -5
+			y= -5
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 5
+		<5/27/2010 12:10:38> Draw Linear Iteration:
+			x= -10
+			y= -10
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 5
+		<5/27/2010 12:10:48> Draw Linear Iteration:
+			x= -10
+			y= -10
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 8
+<5/27/2010 13:56:2> s logs in.
+	<5/27/2010 13:56:2> Loom Example 8 Puzzle Selected.
+		<5/27/2010 13:56:17> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 5
+		<5/27/2010 13:56:19> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+<5/27/2010 14:0:6> s logs in.
+	<5/27/2010 14:0:6> Loom Example 8 Puzzle Selected.
+		<5/27/2010 14:0:15> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+<5/27/2010 14:1:24> s logs in.
+	<5/27/2010 14:1:24> Loom Example 8 Puzzle Selected.
+		<5/27/2010 14:1:27> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 14:1:38> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 14:1:59> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+		<5/27/2010 14:2:7> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 5
+		<5/27/2010 14:2:11> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+<5/27/2010 14:3:12> s logs in.
+	<5/27/2010 14:3:12> Loom Example 8 Puzzle Selected.
+		<5/27/2010 14:3:16> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 5
+		<5/27/2010 14:3:22> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+		<5/27/2010 14:3:26> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+<5/27/2010 14:4:2> s logs in.
+	<5/27/2010 14:4:2> Loom Example 8 Puzzle Selected.
+		<5/27/2010 14:4:5> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 14:4:9> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 5
