@@ -881,7 +881,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		
     		//Load Player Data
     		try{
-    		FileReader fr = new FileReader("Scores.txt"); 
+    		FileReader fr = new FileReader("../resources/Scores.txt"); 
     		BufferedReader br = new BufferedReader(fr); 
     		String s; 
     		s = br.readLine();
@@ -1103,7 +1103,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					    	scoreFile[playerIndex+playerIndex+totalEntries-1] = move;
 					    	scoreFile[playerIndex+playerIndex+totalEntries] = med;
 					    	try{
-					    		FileWriter log = new FileWriter("Scores.txt", false);
+					    		FileWriter log = new FileWriter("../resources/Scores.txt", false);
 					    		int i = 0;
 					    		System.out.println(scoreFile[i]);
 					    		log.write(scoreFile[i]);

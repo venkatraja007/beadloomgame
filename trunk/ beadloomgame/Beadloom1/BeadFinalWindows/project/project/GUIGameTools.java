@@ -48,13 +48,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JPanel ChoosePuzzlePanel = new JPanel();
 	private JPanel ColorPanel = new JPanel();
 	private JPanel HighScoresPanel = new JPanel();
+	private JPanel GameOptionsPanel = new JPanel();
 	private FlowLayout HighScoresLayout = new FlowLayout(FlowLayout.LEFT);
 	
 	//GamePanel Parts
 	private JButton ChoosePuzzleButton = new JButton();
 	private JButton RestartButton = new JButton();
 	private JButton SubmitButton = new JButton();
-	private JButton OptionsButton = new JButton();
+	private JButton GameOptionsButton = new JButton();
 	private JButton QuitButton = new JButton();
 	private JButton PlayGameButton = new JButton();
 	private JButton HighScoresButton = new JButton();
@@ -265,6 +266,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HighScoresPanel.setBackground(Color.white);
 		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
 		HighScoresPanel.setLayout(HighScoresLayout);
+		
+		//---- high scores panel ----
+		GameOptionsPanel.setBorder(new LineBorder(Color.red));
+		GameOptionsPanel.setBackground(Color.white);
+		GameOptionsPanel.setBounds(ChoosePuzzlePanel.getBounds());
 		
 		//---- choose puzzle panel -----
 		ChoosePuzzlePanel.setBorder(new LineBorder(Color.red));
@@ -701,9 +707,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitButton.addActionListener(this);
 		
 		//---- Options button ---
-		OptionsButton.setText("Options");
-		OptionsButton.setBounds(25, 125, 145, OptionsButton.getPreferredSize().height);
-		OptionsButton.addActionListener(this);
+		GameOptionsButton.setText("Options");
+		GameOptionsButton.setBounds(25, 125, 145, GameOptionsButton.getPreferredSize().height);
+		GameOptionsButton.addActionListener(this);
 		
 		//---- Quit button ----
 		QuitButton.setText("Quit");
@@ -873,7 +879,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		GamePanel.add(ChoosePuzzleButton);
     		GamePanel.add(RestartButton);
     		GamePanel.add(SubmitButton);
-    		GamePanel.add(OptionsButton);
+    		GamePanel.add(GameOptionsButton);
     		GamePanel.add(QuitButton);
     		GamePanel.add(NameLabel);
     		GamePanel.add(BestScoreLabel);
@@ -1034,6 +1040,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		GamePanel.remove(NameLabel);
     		GamePanel.remove(BestScoreLabel);
     		GamePanel.remove(HighScoresButton);
+    		GamePanel.remove(GameOptionsButton);
     		GamePanel.add(PlayGameButton);
     		GamePanel.add(NameTextField);
     		NameTextField.setText("Enter Your Name");
@@ -1283,6 +1290,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getHighScoresFrame().setVisible(!bl.getHighScoresFrame().isVisible());
 			bl.getHighScoresFrame().toFront();
 			bl.getHighScoresFrame().setBounds(bl.getGridFrame2().getBounds());
+		}
+		
+		else if (e.getSource() == GameOptionsButton) {
+			bl.getGameOptionsFrame().setVisible(!bl.getGameOptionsFrame().isVisible());
 		}
 		
 		else if (e.getSource()== SubmitButton) {
