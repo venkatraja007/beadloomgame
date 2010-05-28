@@ -1070,6 +1070,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     	public void quitGame(){
     		//Adjust BeadLoom
     		bl.getContentPanel().remove(bl.getGridFrame2());
+    		bl.getContentPanel().remove(bl.getGameOptionsFrame());
     		bl.getContentPanel().add(bl.getGoalImagesFrame());
     		bl.getContentPanel().add(bl.getMoveBeadsFrame());
     		bl.getGridFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.42)+BeadLoom.panelBorder, BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.58)-BeadLoom.panelBorder,(int)(BeadLoom.usableDim.getHeight()*0.70)-BeadLoom.panelBorder);
@@ -2415,7 +2416,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	private void redrawGrid()
 	{
-		bl.getGridPanel().setGameGrid(bl.getGridPanel().getGameGrid());
+		bl.getGridPanel().resetBeadType();
+		bl.getGridPanel2().resetBeadType();
+		bl.getContentPanel().repaint();
 	}
 	
 }

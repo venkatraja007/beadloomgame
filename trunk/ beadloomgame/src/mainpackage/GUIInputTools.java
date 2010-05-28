@@ -2441,7 +2441,11 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     	ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
     	bullet = createImage(imgp);
     	return bullet;
-   } 
+   }
+   
+   public Image getMakeBullet(Color fg, int panelWidth, int panelHeight) {
+	   return makeBullet(fg, panelWidth, panelHeight);
+   }
 
     public void setColor(Color c) {
     	color = c;
