@@ -1129,7 +1129,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			
     			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
     			String seconds = "";
-    			String minutes = (((int)puzzleTime)/60) + "";
+    			String minutes = "";
     			if(((int)puzzleTime % 60) < 10)
     			{
     				seconds = "0" + ((int)(puzzleTime % 60));
@@ -1139,6 +1139,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     				seconds = ((int)(puzzleTime % 60)) + "";
     			}
     			
+    			String urlTime = ((int)puzzleTime/60) + ":" + seconds;
     			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
     			String medal;
     			if (moveCounter <= puz.getIdeal()){
@@ -1167,8 +1168,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					System.out.println(sendWebRequest("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
 							"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
 							"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
-							"&seconds=" + URLEncoder.encode(seconds, "UTF-8")  + 
-							"&minutes=" + URLEncoder.encode(minutes, "UTF-8")  + 
+							"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
 							"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
 							"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8")));
 				} catch (Exception e1) {
