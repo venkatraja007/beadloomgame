@@ -28,3 +28,6 @@
  * Added a puzzle Time element to track the amount of time it takes to complete a puzzle
  * Fixed problem where windows could not be brought to front.  Active windows are now displayed on top
  * Fixed a lot of coding errors (including coding standards)
+
+
+[Dustins_Weekly_Reports More Weekly Reports]
