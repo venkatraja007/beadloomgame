@@ -31,7 +31,7 @@ include('connect.php');
 		</tr>
 
 	<?php
-	$query = "SELECT user,score,time,medal,puzzle FROM HighScores WHERE 1";
+	$query = "SELECT user,score,time,medal,puzzle FROM HighScores WHERE 1 ORDER BY puzzle, score, user";
 	$result = $db->query($query);
 	if($result)
 	{
