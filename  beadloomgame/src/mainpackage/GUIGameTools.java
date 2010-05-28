@@ -1130,6 +1130,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			
     			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
     			String seconds = "";
+    			String message = "";
     			if(((int)puzzleTime % 60) < 10)
     			{
     				seconds = "0" + ((int)(puzzleTime % 60));
@@ -1165,12 +1166,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			
     			//Send this medal to the website
 				try {
-					System.out.println(sendWebRequest("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
+					message = sendWebRequest("http://playground.uncc.edu/BeadLoomGame/enterScores.php?" +
 							"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
 							"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
 							"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
 							"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
-							"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8")));
+							"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8"));
+					JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}

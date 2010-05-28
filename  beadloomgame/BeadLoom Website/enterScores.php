@@ -51,15 +51,15 @@ if($result)
 	//NO Duplicate add record
 	if($row['count'] < 1)
 	{
-		echo "<html><h2>NO Entry for $user on $puzzle.</h2></html><br/>";
+		//echo "<html><h2>NO Entry for $user on $puzzle.</h2></html><br/>";
 		$result = $db->query($insertQuery);
 		if($result)
 		{
-			die("<html><h2>Entry for $user on $puzzle added.</h2></html><br/>");
+			die("<html><h2>High Score for $user on $puzzle added.</h2></html><br/>");
 		}
 		else
 		{
-			die("<html><h2>ERROR adding entry for $user on $puzzle.</h2></html><br/>");
+			die("<html><h2>ERROR adding High Score for $user on $puzzle.</h2></html><br/>");
 		}
 	}
 	//Duplicate Found
@@ -70,7 +70,7 @@ if($result)
 		if($result)
 		{
 			$row = $result->fetch_assoc();
-			echo "<html><h2>Entry exists for $user on $puzzle.</h2></html><br/>";
+			//echo "<html><h2>Entry exists for $user on $puzzle.</h2></html><br/>";
 			$db_user = $row['user'];
 			$db_score = $row['score'];
 			$db_time = $row['time'];
@@ -84,11 +84,11 @@ if($result)
 				$result = $db->query($updateQuery);
 				if($result)
 				{
-					die("<html><h2>You beat your previous record on $puzzle.</h2></html><br/>");
+					die("<html><h2>You beat your previous High Score on $puzzle.</h2></html><br/>");
 				}
 				else
 				{
-					die("<html><h2>ERROR inserting record for $user on $puzzle at score comparision.</h2></html><br/>");
+					die("<html><h2>ERROR inserting High Score for $user on $puzzle at score comparision.</h2></html><br/>");
 				}
 			}
 			//Score is equivalent comparing times
@@ -105,28 +105,28 @@ if($result)
 					$result = $db->query($updateQuery);
 					if($result)
 					{
-						die("<html><h2>You beat your previous record on $puzzle.</h2></html><br/>");
+						die("<html><h2>You beat your previous High Score on $puzzle.</h2></html><br/>");
 					}
 					else
 					{
-						die("<html><h2>ERROR inserting record for $user on $puzzle at time comparision.</h2></html><br/>");
+						die("<html><h2>ERROR inserting High Score for $user on $puzzle at time comparision.</h2></html><br/>");
 					}
 				}
 				else
 				{
-					die("<html><h2>You did not beat your previous record on $puzzle.</h2></html><br/>");
+					die("<html><h2>You did not beat your previous High Score on $puzzle.</h2></html><br/>");
 				}
 			}
 			//New score is lower than score in database
 			//$db_score < $score
 			else
 			{
-				die("<html><h2>You did not beat your previous record on $puzzle.</h2></html><br/>");
+				die("<html><h2>You did not beat your previous High Score on $puzzle.</h2></html><br/>");
 			}
 		}
 		else
 		{
-			die("<html><h2>ERROR retrieving record for $user on $puzzle.</h2></html><br/>");
+			die("<html><h2>ERROR retrieving High Score for $user on $puzzle.</h2></html><br/>");
 		}
 	}
 }
