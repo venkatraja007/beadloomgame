@@ -1214,6 +1214,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public JPanel getHighScoresPanel() {
 		return HighScoresPanel;
 	}
+	public JPanel getGameOptionsPanel() {
+		return GameOptionsPanel;
+	}
 	public JPanel getChoosePuzzlePanel(){
 		return ChoosePuzzlePanel;
 	}
