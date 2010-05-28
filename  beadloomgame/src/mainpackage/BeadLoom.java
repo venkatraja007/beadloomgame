@@ -99,6 +99,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     public static Dimension dim = new Dimension(1024, 768);
     //Set BEAD_ADDRESS to null, initialized in the the init() function
 	public static String BEAD_ADDRESS = "http://webpages.uncc.edu/~sgpickfo/bead.jpg";
+	public static String beadLocation = "bead.JPG";
 	
 	private GUIGoalImages GoalImagesFrame;
 	private GUIOutputWindow OutputWindow;

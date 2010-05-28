@@ -40,6 +40,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private int playerIndex;
 	private int totalEntries;
 	private int currentPuzzle;
+	private int hintLevel;
 	
 	private long puzzleStartTime;
 	
@@ -266,6 +267,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle CR23 = new Rectangle(CR22.x + colorButtonLength + colorHorizSpace, CR13.y + colorButtonHeight + colorVertSpace, colorButtonLength, colorButtonHeight);
 	
 		public GUIGameTools() {
+		
+		hintLevel = 0;
 				
 		//---- game panel -----
 		GamePanel.setBorder(new LineBorder(Color.red));
@@ -1341,18 +1344,24 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == NormalBeadButton) {
+			BeadLoom.beadLocation = "bead.JPG";
+			redrawGrid();
 			NormalBeadButton.setBackground(Color.CYAN);
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
 		
 		else if (e.getSource() == AwesomeBeadButton) {
+			BeadLoom.beadLocation = "beadAwesome.JPG";
+			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(Color.CYAN);
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
 		
 		else if (e.getSource() == PeaceBeadButton) {
+			BeadLoom.beadLocation = "beadPeace.JPG";
+			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
 			PeaceBeadButton.setBackground(Color.CYAN);
@@ -1374,10 +1383,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			if(HintsButton.getText().equals("Hints On"))
 			{
 				HintsButton.setText("Hints Off");
+				hintLevel = 0;
 			}
 			else
 			{
 				HintsButton.setText("Hints On");
+				hintLevel = 1;
 			}
 		}
 		
@@ -2399,6 +2410,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				      System.err.println("Error: " + ex.getMessage());
 				    }
 		}
+	}
+	
+	private void redrawGrid()
+	{
+		bl.getGridPanel().setGameGrid(bl.getGridPanel().getGameGrid());
 	}
 	
 }

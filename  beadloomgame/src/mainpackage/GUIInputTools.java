@@ -2431,7 +2431,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
     private synchronized Image makeBullet(Color fg, int panelWidth, int panelHeight) {
         Image bullet;
-        Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
+        Image sourceImage = Toolkit.getDefaultToolkit().getImage(BeadLoom.beadLocation);
         
         //scale beads to fit panel width and height
         sourceImage = sourceImage.getScaledInstance(panelWidth/GRID_SIZE+1,
