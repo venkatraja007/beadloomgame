@@ -77,11 +77,11 @@ if($result)
 			$db_medal = $row['medal'];
 			$db_puzzle = $row['puzzle'];
 			
-			//New medal is better insert new record
+			//New medal is better update new record
 			if($db_score < $score)
 			{
 				//Insert new record
-				$result = $db->query($insertQuery);
+				$result = $db->query($updateQuery);
 				if($result)
 				{
 					die("<html><h2>You beat your previous record on $puzzle.</h2></html><br/>");
@@ -94,9 +94,34 @@ if($result)
 			//Score is equivalent comparing times
 			else if($db_score == $score)
 			{
-				$timeValue = mktime()
-				$db_timeValue = idate("i:s", $db_timeValue);
-				die("<html><h2>timeValue: $timeValue.</h2></html><br/>");
+				$timeSplit = explode(":", $time, 2);
+				$timeValue = intval($timeSplit[0]) * 60 + intval($timeSplit[1]);
+				$timeSplit = explode(":", $db_time, 2);
+				$db_timeValue = intval($timeSplit[0]) * 60 + intval($timeSplit[1]);
+				
+				//Update new record
+				if($db_timeValue > $timeValue)
+				{
+					$result = $db->query($updateQuery);
+					if($result)
+					{
+						die("<html><h2>You beat your previous record on $puzzle.</h2></html><br/>");
+					}
+					else
+					{
+						die("<html><h2>ERROR inserting record for $user on $puzzle at time comparision.</h2></html><br/>");
+					}
+				}
+				else
+				{
+					die("<html><h2>You did not beat your previous record on $puzzle.</h2></html><br/>");
+				}
+			}
+			//New score is lower than score in database
+			//$db_score < $score
+			else
+			{
+				die("<html><h2>You did not beat your previous record on $puzzle.</h2></html><br/>");
 			}
 		}
 		else
@@ -105,7 +130,6 @@ if($result)
 		}
 	}
 }
-
 
 function checkVariable($name, $var)
 {

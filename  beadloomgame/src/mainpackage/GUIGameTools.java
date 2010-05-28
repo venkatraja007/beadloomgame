@@ -1130,7 +1130,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			
     			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
     			String seconds = "";
-    			String minutes = "";
     			if(((int)puzzleTime % 60) < 10)
     			{
     				seconds = "0" + ((int)(puzzleTime % 60));
