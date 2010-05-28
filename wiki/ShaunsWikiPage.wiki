@@ -5,12 +5,12 @@ Shaun Pickford's Wiki Page!
 ==Week 1:==
 
 ===Completed Tasks:===
-*Created New Puzzle (Tie Fighter!) <br />
-*Code Restructuring Error Fixes (Obvious and Logical) <br />
-*Web Applet (>:-|) <br />
-*Code Output Window <br />
-*Create Website Elements <br />
-*Color Picker <br />
-*Color Display Box <br />
+  *Created New Puzzle (Tie Fighter!) <br />
+  *Code Restructuring Error Fixes (Obvious and Logical) <br />
+  *Web Applet (>:-|) <br />
+  *Code Output Window <br />
+  *Create Website Elements <br />
+  *Color Picker <br />
+  *Color Display Box <br />
 
 <a href="https://docs.google.com/fileview?id=0B9HYDS2eCNcRMjdiMDEwMTUtZTIyMi00MjdkLTg2YWYtMmIxOTkyMDc1ZDc0&hl=en" target="_blank">Week 1 Summary (PDF Power Point)</a>
