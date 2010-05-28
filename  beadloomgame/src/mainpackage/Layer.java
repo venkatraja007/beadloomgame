@@ -45,7 +45,7 @@ public class Layer {
         this.color = movePanel.getColor();
         this.beadType=beadType;
         zValue=ZZzzzz++;
-        this.beadType=BeadLoom.BEAD_ADDRESS;
+        this.beadType=BeadLoom.beadLocation;
     }
     public Layer() {;}
     //****************************************************************************

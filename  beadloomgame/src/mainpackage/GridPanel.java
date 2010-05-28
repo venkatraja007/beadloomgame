@@ -415,6 +415,18 @@ class GridPanel extends JPanel {
     	}
     }
     
+    public void resetBeadType()
+    {
+    	for(int i=0; i<layer.size(); i++)
+    	{
+    		//layer.get(i).setBeadType(BeadLoom.beadLocation);
+    		Color beadColor = layer.get(i).getColor();
+    		layer.set(i, new Layer(layer.get(i).getType(), layer.get(i).getCoords(), BeadLoom.beadLocation));
+    		layer.get(i).setImage(bl.getInputTools().getMakeBullet(beadColor, getWidth(), getHeight()));
+    		layer.get(i).setColor(beadColor);
+    	}
+    }
+    
     public void setRepaintFalse() {
     	repaint = false;
     	clear();
