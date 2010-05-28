@@ -1033,16 +1033,16 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     	    float temp = (float)30 / gp.getGridSize();
         
     	 // Set the bead image to certain height and width with respect to screen resolution
-		 if (dim.height == 600 && dim.width == 800){m = m.getScaledInstance(Math.round(temp * 11), Math.round(temp * 11), m.SCALE_REPLICATE);}
-		 if (dim.height == 768 && dim.width == 1024){m = m.getScaledInstance(Math.round(temp * 15), Math.round(temp * 15), m.SCALE_REPLICATE);}
-		 if (dim.height == 864 && dim.width == 1152){m = m.getScaledInstance(Math.round(temp * 16), Math.round(temp * 16), m.SCALE_REPLICATE);}
-		 if (dim.height == 600 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 17), Math.round(temp * 17), m.SCALE_REPLICATE);}
-		 if (dim.height == 720 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 20), Math.round(temp * 20), m.SCALE_REPLICATE);}
-		 if (dim.height == 768 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 19), Math.round(temp * 19), m.SCALE_REPLICATE);}
-		 if (dim.height == 960 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 20), Math.round(temp * 20), m.SCALE_REPLICATE);}
-		 if (dim.height == 1024 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 20), Math.round(temp * 20), m.SCALE_REPLICATE);}
-		 if (dim.height == 800 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 18), Math.round(temp * 18), m.SCALE_REPLICATE);}
-		 if (dim.height == 1200 && dim.width == 1920){m = m.getScaledInstance(Math.round(temp * 30), Math.round(temp * 30), m.SCALE_REPLICATE);}
+		 if (dim.height == 600 && dim.width == 800){m = m.getScaledInstance(Math.round(temp * 11), Math.round(temp * 11), Image.SCALE_REPLICATE);}
+		 if (dim.height == 768 && dim.width == 1024){m = m.getScaledInstance(Math.round(temp * 15), Math.round(temp * 15), Image.SCALE_REPLICATE);}
+		 if (dim.height == 864 && dim.width == 1152){m = m.getScaledInstance(Math.round(temp * 16), Math.round(temp * 16), Image.SCALE_REPLICATE);}
+		 if (dim.height == 600 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 17), Math.round(temp * 17), Image.SCALE_REPLICATE);}
+		 if (dim.height == 720 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 20), Math.round(temp * 20), Image.SCALE_REPLICATE);}
+		 if (dim.height == 768 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 19), Math.round(temp * 19), Image.SCALE_REPLICATE);}
+		 if (dim.height == 960 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 20), Math.round(temp * 20), Image.SCALE_REPLICATE);}
+		 if (dim.height == 1024 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 20), Math.round(temp * 20), Image.SCALE_REPLICATE);}
+		 if (dim.height == 800 && dim.width == 1280){m = m.getScaledInstance(Math.round(temp * 18), Math.round(temp * 18), Image.SCALE_REPLICATE);}
+		 if (dim.height == 1200 && dim.width == 1920){m = m.getScaledInstance(Math.round(temp * 30), Math.round(temp * 30), Image.SCALE_REPLICATE);}
 
 		 
 		 if(layer == null) {
@@ -1512,8 +1512,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         	else if(e.getSource() == MoveBeads.getTopColorsButton()) {
         		if (!gridPanel2.isShowing()){
         			Color c;
-        			JColorChooser j = new JColorChooser();
-        			c = j.showDialog(this, null, MoveBeads.getColor());
+        			//JColorChooser j = new JColorChooser();
+        			c = JColorChooser.showDialog(this, null, MoveBeads.getColor());
         			if(c != null)
         				MoveBeads.setColor(c);
         			MoveBeads.getTopColorsButton().setBackground(MoveBeads.getColor());

@@ -295,7 +295,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		ColorPanel.setBorder(new LineBorder(Color.red));
 		ColorPanel.setBackground(Color.white);
 		ColorPanel.setLayout(null);
-		ColorPanel.setBounds((int)bl.dim.getWidth()/2, (int)bl.dim.getHeight()/2, 200, 200);
+		ColorPanel.setBounds((int)BeadLoom.dim.getWidth()/2, (int)BeadLoom.dim.getHeight()/2, 200, 200);
 		
 		//---- Choose puzzle name label ----
 		CPNameLabel.setText("Puzzle:");
@@ -717,7 +717,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Submit button ----
 		SubmitButton.setText("Submit");
 		SubmitButton.setBounds(25, 100, 145, SubmitButton.getPreferredSize().height);
-		SubmitButton.setBackground(color);
+		SubmitButton.setBackground(Color.RED);
 		SubmitButton.addActionListener(this);
 		
 		//---- Options button ---
@@ -766,7 +766,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Normal Bead Button ----
 		NormalBeadButton.setText("Normal Bead");
 		NormalBeadButton.setBounds(20, 100, 155, NormalBeadButton.getPreferredSize().height);
-		NormalBeadButton.setBackground(color.CYAN);
+		NormalBeadButton.setBackground(Color.CYAN);
 		NormalBeadButton.addActionListener(this);
 		GameOptionsPanel.add(NormalBeadButton);
 		
@@ -910,11 +910,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		bl.getContentPanel().add(bl.getGridFrame2());
 			bl.getContentPanel().remove(bl.getGoalImagesFrame());
 			bl.getContentPanel().remove(bl.getMoveBeadsFrame());
-			bl.getGridFrame().setBounds((int)(bl.usableDim.getWidth()*0.5) + bl.panelBorder, bl.panelBorder, (int)(bl.usableDim.getWidth()*0.5) - bl.panelBorder,(int)(bl.usableDim.getHeight()*0.65)-bl.panelBorder);
-			bl.getGridFrame2().setBounds(bl.panelBorder, bl.panelBorder, (int)(bl.usableDim.getWidth()*0.5) -bl.panelBorder,(int)(bl.usableDim.getHeight()*0.65)-bl.panelBorder);
-			bl.getOutputWindow().setBounds(bl.panelBorder, (int)(bl.usableDim.getHeight()*0.65) + bl.panelBorder, (int)(bl.usableDim.getWidth()*0.37) - bl.panelBorder, (int)(bl.usableDim.getHeight()*0.35) - bl.panelBorder);
-			bl.getGameFrame().setBounds((int)(bl.usableDim.getWidth()*0.37) + bl.panelBorder, (int)(bl.usableDim.getHeight()*0.65) + bl.panelBorder, (int)(bl.usableDim.getWidth()*0.20) - bl.panelBorder, (int)(bl.usableDim.getHeight()*0.35) - bl.panelBorder);
-			bl.getBeadUtilitiesFrame().setBounds((int)(bl.usableDim.getWidth()*0.57) + bl.panelBorder, (int)(bl.usableDim.getHeight()*0.65) + bl.panelBorder, (int)(bl.usableDim.getWidth()*0.43) - bl.panelBorder, (int)(bl.usableDim.getHeight()*0.35) - bl.panelBorder);
+			bl.getGridFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.5) + BeadLoom.panelBorder, BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.5) - BeadLoom.panelBorder,(int)(BeadLoom.usableDim.getHeight()*0.65)-BeadLoom.panelBorder);
+			bl.getGridFrame2().setBounds(BeadLoom.panelBorder, BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.5) -BeadLoom.panelBorder,(int)(BeadLoom.usableDim.getHeight()*0.65)-BeadLoom.panelBorder);
+			bl.getOutputWindow().setBounds(BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.37) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
+			bl.getGameFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
+			bl.getBeadUtilitiesFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.57) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.43) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
 			bl.getTop().getFileMenu().setEnabled(false);
 			bl.getTop().getOptionsMenu().setEnabled(false);
 			bl.getTop().getHelpMenu().setEnabled(false);
@@ -1069,10 +1069,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		bl.getContentPanel().remove(bl.getGridFrame2());
     		bl.getContentPanel().add(bl.getGoalImagesFrame());
     		bl.getContentPanel().add(bl.getMoveBeadsFrame());
-    		bl.getGridFrame().setBounds((int)(bl.usableDim.getWidth()*0.42)+bl.panelBorder, bl.panelBorder, (int)(bl.usableDim.getWidth()*0.58)-bl.panelBorder,(int)(bl.usableDim.getHeight()*0.70)-bl.panelBorder);
-    		bl.getOutputWindow().setBounds(bl.panelBorder, (int)(bl.usableDim.getHeight()*0.65)+bl.panelBorder, (int)(bl.usableDim.getWidth()*0.42)-bl.panelBorder, (int)(bl.usableDim.getHeight()*0.35)-bl.panelBorder);
-    		bl.getBeadUtilitiesFrame().setBounds(bl.panelBorder, (int)(bl.usableDim.getHeight()*0.27)+bl.panelBorder, (int)(bl.usableDim.getWidth()*0.42)-bl.panelBorder, (int)(bl.usableDim.getHeight()*0.38)-bl.panelBorder);
-    		bl.getGameFrame().setBounds((int)(bl.usableDim.getWidth()*0.42)+bl.panelBorder, (int)(bl.usableDim.getHeight()*.70)+bl.panelBorder, (int)(bl.usableDim.getWidth()*0.58)-bl.panelBorder, (int)(bl.usableDim.getHeight()*0.30)-bl.panelBorder);
+    		bl.getGridFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.42)+BeadLoom.panelBorder, BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.58)-BeadLoom.panelBorder,(int)(BeadLoom.usableDim.getHeight()*0.70)-BeadLoom.panelBorder);
+    		bl.getOutputWindow().setBounds(BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65)+BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.42)-BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35)-BeadLoom.panelBorder);
+    		bl.getBeadUtilitiesFrame().setBounds(BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.27)+BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.42)-BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.38)-BeadLoom.panelBorder);
+    		bl.getGameFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.42)+BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*.70)+BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.58)-BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.30)-BeadLoom.panelBorder);
     		bl.getTop().getFileMenu().setEnabled(true);
 			bl.getTop().getOptionsMenu().setEnabled(true);
 			bl.getTop().getHelpMenu().setEnabled(true);
@@ -1341,24 +1341,25 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == NormalBeadButton) {
-			NormalBeadButton.setBackground(color.CYAN);
+			NormalBeadButton.setBackground(Color.CYAN);
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
 		
 		else if (e.getSource() == AwesomeBeadButton) {
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
-			AwesomeBeadButton.setBackground(color.CYAN);
+			AwesomeBeadButton.setBackground(Color.CYAN);
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
 		
 		else if (e.getSource() == PeaceBeadButton) {
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
-			PeaceBeadButton.setBackground(color.CYAN);
+			PeaceBeadButton.setBackground(Color.CYAN);
 		}
 		
 		else if (e.getSource() == ColorBlindButton) {
+			bl.toggleColorBlindMode();
 			if(ColorBlindButton.getText().equals("Color Blind Mode On"))
 			{
 				ColorBlindButton.setText("Color Blind Mode Off");
