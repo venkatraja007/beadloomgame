@@ -1,5 +1,0 @@
-<html>
-<applet code = "BeadLoom.class" archive = "xom-1.1.jar"
-	width = 1200 height = 800>
-	</applet>
-	</html>

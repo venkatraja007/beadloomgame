@@ -1,4 +1,0 @@
-The publisher cannot be verified by a trusted source. Code will be treated as unsigned.
-
-Name:  org.jdesktop.applet.util.JNLPappletLauncher
-
