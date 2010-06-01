@@ -9,7 +9,7 @@
 	
 	function playGame()
 	{
-		<!-- Change once we have URL of actual applet -->
+		//Change once we have URL of actual applet
 		window.location = "http://playground.uncc.edu/beadLoomGame";
 	
 	}
@@ -21,10 +21,12 @@
 <body>
 	<form id="mainTable" name="mainTable">
 	<table width="800" align="center">
-		<th colspan="2"><h2> Bead Loom Game<br /></h2><h3>Coming Soon!!</h3></th>
+		<tr>
+			<th colspan="2"><h2> Bead Loom Game<br /></h2><h3>Coming Soon!!</h3></th>
+		</tr>
 		<tr>
 			<td>Play Bead Loom Game!</td>
-			<td><a href="scores.php">High Scores</a></td>
+			<td><a href="puzzleScores.php">High Scores</a></td>
 		</tr>
 		<tr>
 			<td><input type="button" value="Play!" onclick="playGame()" />
