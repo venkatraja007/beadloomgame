@@ -4,14 +4,22 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="beadloomstyles.css" />
 	<link rel="SHORTCUT ICON" href="http://www.uncc.edu/uncc.ico" type="image/x-icon" />
-
+	<script type="text/javascript">
+		function puzzleSelect()
+		{
+			var selectBox = document.getElementById("puzzle").value;
+			window.location = "http://playground.uncc.edu/BeadLoomGame/scores.php?puzzleName=" + selectBox;
+		}
+	</script>
 <?php
 
 include('config.php');
 include('connect.php');
 
+$puzzleName = $_GET['puzzleName'];
+
 ?>
-	<title>Bead Loom Game - High Scores</title>
+	<title>Bead Loom Game - High Scores - <?php echo "$puzzleName"; ?> </title>
 </head>
 
 <body>
@@ -20,6 +28,29 @@ include('connect.php');
 		<tr>
 			<th colspan="5">
 				<h2>High Scores</h2>
+				<?php 
+					echo "$puzzleName";
+					echo "<br/>";
+					$query = "SELECT DISTINCT puzzle FROM HighScores WHERE 1 ORDER BY puzzle";
+					$result = $db->query($query);
+					if($result)
+					{
+						
+						//echo "<tr><td>";
+						echo "<select id='puzzle' name='puzzle' onchange='puzzleSelect()'>";
+						echo "<option selected='selected' value=''>Chosse a puzzle...</option>";
+						while($row = $result->fetch_array(MYSQLI_NUM))
+						{
+							echo "<option value='$row[0]'>$row[0]</option>";
+						}
+						echo "</select>";
+						//echo "</td></tr>";
+					}
+					else
+					{
+						
+					}
+					?>
 			</th>
 		</tr>
 		<tr>
@@ -27,11 +58,24 @@ include('connect.php');
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Score</b></td>
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Time</b></td>
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Medal</b></td>
-			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Puzzle</b></td>
+			<?php
+				//If no puzzle was selected show all
+				if(!isset($_GET['puzzleName']) || empty($_GET['puzzleName']))
+				{
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Puzzle</b></td>";
+				}
+			?>
 		</tr>
 
 	<?php
-	$query = "SELECT user,score,time,medal,puzzle FROM HighScores WHERE 1 ORDER BY puzzle, score, user";
+	if(isset($_GET['puzzleName']) && !empty($_GET['puzzleName']))
+	{
+		$query = "SELECT user,score,time,medal FROM HighScores WHERE puzzle='$puzzleName' ORDER BY puzzle, score, user";
+	}
+	else
+	{
+		$query = "SELECT user,score,time,medal,puzzle FROM HighScores WHERE 1 ORDER BY puzzle, score, user";
+	}
 	$result = $db->query($query);
 	if($result)
 	{
