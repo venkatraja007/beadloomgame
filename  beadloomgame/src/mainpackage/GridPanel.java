@@ -415,7 +415,7 @@ class GridPanel extends JPanel {
     	}
     }
     
-    public void resetBeadType()
+    public void rebuildLayerImages()
     {
     	for(int i=0; i<layer.size(); i++)
     	{

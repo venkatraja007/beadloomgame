@@ -2417,8 +2417,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	private void redrawGrid()
 	{
-		bl.getGridPanel().resetBeadType();
-		bl.getGridPanel2().resetBeadType();
+		bl.getGridPanel().rebuildLayerImages();
+		bl.getGridPanel2().rebuildLayerImages();
 		bl.getContentPanel().repaint();
 	}
 	
