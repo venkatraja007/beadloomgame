@@ -42,6 +42,7 @@
 5. What's planned for next week?
   * Move Database from playground over to unccmakesgames
   * Set up high scores page to be separated by Puzzle
+  * Familiarize with Unity
 
 6. Hours worked. 
   * 36.5
