@@ -1,7 +1,13 @@
 package src.mainpackage;
 
 import java.awt.Color;
-   import java.util.ArrayList;
+import java.util.ArrayList;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
     public class Puzzle {
    
@@ -57,6 +63,7 @@ import java.awt.Color;
          InputTools = bl.getInputTools();
          peach = new Color(255, 200, 150);
          betterOrange = new Color(255, 100, 0);
+         //ReadFromXML();
       }
        
       //Returns the name of a puzzle based on an int index
@@ -1482,7 +1489,7 @@ import java.awt.Color;
    
        //Array Pos = 32
      //Returns array pos
-       public int setDC(){
+       public int setaDC(){
     	   
     	   ideal = 15;
            InputTools.setGrid(bl.getGridPanel2());
@@ -1683,4 +1690,125 @@ import java.awt.Color;
              resetColor();
              return 34;  
          }
+         
+         public int setDC()
+         {
+//        	 import java.awt.Color;
+//        	 import java.util.ArrayList;
+//        	 import javax.xml.parsers.DocumentBuilder;
+//        	 import javax.xml.parsers.DocumentBuilderFactory;
+//        	 import org.w3c.dom.Document;
+//        	 import org.w3c.dom.Element;
+//        	 import org.w3c.dom.Node;
+//        	 import org.w3c.dom.NodeList;
+             InputTools.setGrid(bl.getGridPanel2());
+        	 
+        	 String fileName = "D:\\beadloomgame\\resources\\custompuzzleexample.xml";
+        	 
+        	 try {
+        		
+        		  DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        		  DocumentBuilder db = dbf.newDocumentBuilder();
+        		  Document doc = db.parse(fileName);
+        		  doc.getDocumentElement().normalize();
+        		  //if(!doc.getDocumentElement().getNodeName().equals("custompuzzle"))
+        		  NodeList nodeLst = doc.getElementsByTagName("layer");
+        		  //System.out.println("Information of all employees");
+
+        		  for (int s = 0; s < nodeLst.getLength(); s++)
+        		  {
+
+        		    Node fstNode = nodeLst.item(s);
+        		    
+        		    if (fstNode.getNodeType() == Node.ELEMENT_NODE) 
+        		    {
+        		    	Element layer = (Element) fstNode;
+        		    	Color newColor = bl.getColorFromString(layer.getAttribute("color"));
+        		    	if(newColor != null)
+        		    	{
+	        		    	InputTools.setColor(newColor);
+	        		    	//check for point
+	        		    	if(layer.getAttribute("typeID").equalsIgnoreCase("point"))
+	        		    	{
+	        		    		int x = Integer.parseInt(layer.getAttribute("x"));
+	        		    		int y = Integer.parseInt(layer.getAttribute("y"));
+	        		    		InputTools.drawPoint(x, y);
+	        		    	}
+	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("line"))
+	        		    	{
+	        		    		int x1 = Integer.parseInt(layer.getAttribute("x1"));
+	        		    		int y1 = Integer.parseInt(layer.getAttribute("y1"));
+	        		    		int x2 = Integer.parseInt(layer.getAttribute("x2"));
+	        		    		int y2 = Integer.parseInt(layer.getAttribute("y2"));
+	        		    		doLine(x1, y1, x2, y2);
+	        		    	}
+	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("triangle"))
+	        		    	{
+	        		    		int x1 = Integer.parseInt(layer.getAttribute("x1"));
+	        		    		int y1 = Integer.parseInt(layer.getAttribute("y1"));
+	        		    		int x2 = Integer.parseInt(layer.getAttribute("x2"));
+	        		    		int y2 = Integer.parseInt(layer.getAttribute("y2"));
+	        		    		int x3 = Integer.parseInt(layer.getAttribute("x3"));
+	        		    		int y3 = Integer.parseInt(layer.getAttribute("y3"));
+	        		    		InputTools.drawTriangle(x1, x2, x3, y1, y2, y3);
+	        		    	}
+	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("rectangle"))
+	        		    	{
+	        		    		int x1 = Integer.parseInt(layer.getAttribute("x1"));
+	        		    		int y1 = Integer.parseInt(layer.getAttribute("y1"));
+	        		    		int x2 = Integer.parseInt(layer.getAttribute("x2"));
+	        		    		int y2 = Integer.parseInt(layer.getAttribute("y2"));
+	        		    		InputTools.drawRectangle(x1, x2, y1, y2);
+	        		    	}
+	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("triangleit"))
+	        		    	{
+	        		    		int x = Integer.parseInt(layer.getAttribute("x"));
+	        		    		int y = Integer.parseInt(layer.getAttribute("y"));
+	        		    		int every = Integer.parseInt(layer.getAttribute("stepheight"));
+	        		    		int add = Integer.parseInt(layer.getAttribute("beadsadded"));
+	        		    		int total = Integer.parseInt(layer.getAttribute("rowstotal"));
+	        		    		boolean incY=false;
+	        		    		if(layer.getAttribute("direction").contains("Y")) { incY=true; }
+	        		    		boolean isPositive=true;
+	        		    		if(layer.getAttribute("direction").contains("-")) { isPositive=false; }
+	        		    		doTriangleIt(x, y, every, add, total, incY, isPositive);
+	        		    	}
+	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("linearit"))
+	        		    	{
+	        		    		int x = Integer.parseInt(layer.getAttribute("x"));
+	        		    		int y = Integer.parseInt(layer.getAttribute("y"));
+	        		    		int startLength = Integer.parseInt(layer.getAttribute("startlength"));
+	        		    		int inc1 = Integer.parseInt(layer.getAttribute("beadsadded1"));
+	        		    		int inc2 = Integer.parseInt(layer.getAttribute("beadsadded2"));
+	        		    		int totalRows = Integer.parseInt(layer.getAttribute("rowstotal"));
+	        		    		
+	        		    		boolean incY=false;
+	        		    		if(layer.getAttribute("direction").contains("Y")) { incY=true; }
+	        		    		boolean isPositive=true;
+	        		    		if(layer.getAttribute("direction").contains("-")) { isPositive=false; }
+	        		    		doLinearIt(x, y, startLength, inc1, inc2, totalRows, incY, isPositive);
+	        		    	}
+        		    	}
+        		    }
+
+        		  }
+        		  }
+        	 catch (Exception e) {
+        		    e.printStackTrace();
+        		  }
+             
+             //Calculate the Goal Images bead array
+               bl.getGridPanel2().calcGameGrid();
+               
+            //Change grid back so they can work on the puzzle
+            //Reset the Current Selected Color to default
+               InputTools.setGrid(bl.getGridPanel());
+               resetColor();
+             return 1;
+        		 }
+
+        	 
+        	 
+         
+         
    }
