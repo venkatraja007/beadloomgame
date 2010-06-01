@@ -394,7 +394,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				//======== GridFrame ========
 				{
 					GridFrame.setVisible(true);
-					GridFrame.setResizable(false);
+					GridFrame.setResizable(true);
 					GridFrame.setBorder(new LineBorder(Color.red));
 					GridFrame.setTitle("Grid");
 					GridFrame.setMaximizable(false);
@@ -415,6 +415,15 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						public void internalFrameIconified(InternalFrameEvent arg0) {}
 						public void internalFrameOpened(InternalFrameEvent arg0) {}
 					});
+					GridFrame.addComponentListener(new ComponentListener(){
+						public void componentHidden(ComponentEvent arg0) {}
+						public void componentMoved(ComponentEvent arg0) {}
+						public void componentResized(ComponentEvent arg0) {
+							gridPanel.rebuildLayerImages();
+							gridPanel.repaint();
+						}
+						public void componentShown(ComponentEvent arg0) {}
+					});
 
 					Container internalFrame1ContentPane = GridFrame.getContentPane();
 					internalFrame1ContentPane.setLayout(new BorderLayout(1, 1));
@@ -429,7 +438,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				//======== GridFrame 2 ========
 				{
 					GridFrame2.setVisible(true);
-					GridFrame2.setResizable(false);
+					GridFrame2.setResizable(true);
 					GridFrame2.setBorder(new LineBorder(Color.red));
 					GridFrame2.setTitle("Goal");
 					GridFrame2.setMaximizable(false);
@@ -449,6 +458,15 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
 						public void internalFrameIconified(InternalFrameEvent arg0) {}
 						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
+					GridFrame2.addComponentListener(new ComponentListener(){
+						public void componentHidden(ComponentEvent arg0) {}
+						public void componentMoved(ComponentEvent arg0) {}
+						public void componentResized(ComponentEvent arg0) {
+							gridPanel2.rebuildLayerImages();
+							gridPanel2.repaint();
+						}
+						public void componentShown(ComponentEvent arg0) {}
 					});
 
 					Container internalFrame1ContentPane = GridFrame2.getContentPane();
