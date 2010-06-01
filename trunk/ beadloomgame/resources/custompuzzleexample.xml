@@ -1,0 +1,8 @@
+<custompuzzle Name="puzzleName">
+  <layer color="GREEN" typeID="point" x="10" y="1" />
+  <layer color="BLUE" typeID="line" x1="0" y1="1" x2="5" y2="8" />
+  <layer color="BLACK" typeID="rectangle" x1="-4" y1="3" x2="-8" y2="4" />
+  <layer color="BLUE" typeID="triangle" x1="3" y1="12" x2="15" y2="3" x3="7" y3="7" />
+  <layer color="RED" typeID="triangleit" x="3" y="4" stepheight="3" beadsadded="1" rowstotal="9" direction="-Y" />
+  <layer color="ORANGE" typeID="linearit" x="3" y="-7" startlength="5" beadsadded1="1" beadsadded2="2" rowstotal="9" direction="-Y" />
+</custompuzzle>

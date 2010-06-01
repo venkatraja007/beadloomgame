@@ -1215,80 +1215,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     	return InputTools;
     }
     
-    public String getColorName(Color col)
-    {
-    	Color peach = new Color(255, 200, 150);
-    	Color betterOrange = new Color(255,100,0);
-    	
-    	int RGBValue = col.getRGB();
-    	String name = null;
-    	if(Color.RED.getRGB() == RGBValue)
-    	{
-    		name = "Red";
-    	}
-    	else if(Color.YELLOW.getRGB() == RGBValue)
-    	{
-    		name = "Yellow";
-    	}
-    	else if(betterOrange.getRGB() == RGBValue)
-    	{
-    		name = "Orange";
-    	}
-    	else if(Color.BLACK.getRGB() == RGBValue)
-    	{
-    		name = "Black";
-    	}
-    	else if(Color.GREEN.getRGB() == RGBValue)
-    	{
-    		name = "Green";
-    	}
-    	else if(Color.CYAN.getRGB() == RGBValue)
-    	{
-    		name = "Cyan";
-    	}
-    	else if(Color.PINK.getRGB() == RGBValue)
-    	{
-    		name = "Pink";
-    	}
-    	else if(Color.WHITE.getRGB() == RGBValue)
-    	{
-    		name = "White";
-    	}
-    	else if(Color.BLUE.getRGB() == RGBValue)
-    	{
-    		name = "Blue";
-    	}
-    	else if(Color.MAGENTA.getRGB() == RGBValue)
-    	{
-    		name = "Magenta";
-    	}
-    	else if(peach.getRGB() == RGBValue)
-    	{
-    		name = "Peach";
-    	}
-    	else if(Color.GRAY.getRGB() == RGBValue)
-    	{
-    		name = "Gray";
-    	}
-    	else
-    	{
-    		name = "Color";
-    	}
-    	return name;
-    }
-    
-    public void toggleColorBlindMode()
-    {
-    	if(!colorblindModeOn)
-    	{
-    		//code to turn on colorblind mode
-    		
-    		
-    		colorblindModeOn = true;
-    	}
-    	
-    }
-    
     public String getTime()
     {
     	return time;
@@ -1773,9 +1699,140 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         		gridPanel.setPanelGridSize(100);
         		gridPanel2.setPanelGridSize(100);
         	}
+        }
+       
+        public String getColorName(Color col)
+        {
+        	Color peach = new Color(255, 200, 150);
+        	Color betterOrange = new Color(255,100,0);
         	
+        	int RGBValue = col.getRGB();
+        	String name = null;
+        	if(Color.RED.getRGB() == RGBValue)
+        	{
+        		name = "Red";
+        	}
+        	else if(Color.YELLOW.getRGB() == RGBValue)
+        	{
+        		name = "Yellow";
+        	}
+        	else if(betterOrange.getRGB() == RGBValue)
+        	{
+        		name = "Orange";
+        	}
+        	else if(Color.BLACK.getRGB() == RGBValue)
+        	{
+        		name = "Black";
+        	}
+        	else if(Color.GREEN.getRGB() == RGBValue)
+        	{
+        		name = "Green";
+        	}
+        	else if(Color.CYAN.getRGB() == RGBValue)
+        	{
+        		name = "Cyan";
+        	}
+        	else if(Color.PINK.getRGB() == RGBValue)
+        	{
+        		name = "Pink";
+        	}
+        	else if(Color.WHITE.getRGB() == RGBValue)
+        	{
+        		name = "White";
+        	}
+        	else if(Color.BLUE.getRGB() == RGBValue)
+        	{
+        		name = "Blue";
+        	}
+        	else if(Color.MAGENTA.getRGB() == RGBValue)
+        	{
+        		name = "Magenta";
+        	}
+        	else if(peach.getRGB() == RGBValue)
+        	{
+        		name = "Peach";
+        	}
+        	else if(Color.GRAY.getRGB() == RGBValue)
+        	{
+        		name = "Gray";
+        	}
+        	else
+        	{
+        		name = "Color";
+        	}
+        	return name;
         }
         
+        public Color getColorFromString(String col)
+        {
+        	Color peach = new Color(255, 200, 150);
+        	Color betterOrange = new Color(255,100,0);
+        	
+        	if(col.equalsIgnoreCase("Red"))
+        	{
+        		return Color.RED;
+        	}
+        	else if(col.equalsIgnoreCase("Yellow"))
+        	{
+        		return Color.YELLOW;
+        	}
+        	else if(col.equalsIgnoreCase("Orange"))
+        	{
+        		return betterOrange;
+        	}
+        	else if(col.equalsIgnoreCase("Black"))
+        	{
+        		return Color.BLACK;
+        	}
+        	else if(col.equalsIgnoreCase("Green"))
+        	{
+        		return Color.GREEN;
+        	}
+        	else if(col.equalsIgnoreCase("Cyan"))
+        	{
+        		return Color.CYAN;
+        	}
+        	else if(col.equalsIgnoreCase("Pink"))
+        	{
+        		return Color.PINK;
+        	}
+        	else if(col.equalsIgnoreCase("White"))
+        	{
+        		return Color.WHITE;
+        	}
+        	else if(col.equalsIgnoreCase("Blue"))
+        	{
+        		return Color.BLUE;
+        	}
+        	else if(col.equalsIgnoreCase("Magenta"))
+        	{
+        		return Color.MAGENTA;
+        	}
+        	else if(col.equalsIgnoreCase("Peach"))
+        	{
+        		return peach;
+        	}
+        	else if(col.equalsIgnoreCase("Gray"))
+        	{
+        		return Color.GRAY;
+        	}
+        	else
+        	{
+        		return null;
+        	}
+        }
+        
+        public void toggleColorBlindMode()
+        {
+        	if(!colorblindModeOn)
+        	{
+        		//code to turn on colorblind mode
+        		
+        		
+        		colorblindModeOn = true;
+        	}
+        	
+        }
         
         
 /** The XMLFileFilter class opens directories and only sees xml files **/        
