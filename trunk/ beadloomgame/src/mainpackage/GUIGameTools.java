@@ -40,7 +40,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private int playerIndex;
 	private int totalEntries;
 	private int currentPuzzle;
-	private int hintLevel;
 	
 	private long puzzleStartTime;
 	
@@ -185,6 +184,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	int bestScore = 1000;
 	Puzzle puz;
 	
+	//Features
+	private boolean hintsOn = false;
+	
 	
 	int[] RecordMove;
 	String[] RecordMedal;
@@ -268,7 +270,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 		public GUIGameTools() {
 		
-		hintLevel = 0;
 				
 		//---- game panel -----
 		GamePanel.setBorder(new LineBorder(Color.red));
@@ -1110,7 +1111,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }
     	}
     	
-    	public void checkSolution(){    		
+    	public void checkSolution(){
     		int errorX[] = new int[41*41];
     		int errorY[] = new int[41*41];
     		bl.getGridPanel().calcGameGrid();
@@ -1126,6 +1127,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		}
 				    
     		if(totalErrors == 0){
+    			bl.stopTimer();
     			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
     			
     			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
@@ -1386,12 +1388,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			if(HintsButton.getText().equals("Hints On"))
 			{
 				HintsButton.setText("Hints Off");
-				hintLevel = 0;
+				hintsOn = false;
 			}
 			else
 			{
 				HintsButton.setText("Hints On");
-				hintLevel = 1;
+				hintsOn = true;
 			}
 		}
 		
@@ -1490,6 +1492,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		
 		else if (e.getSource() == Tut2Button){
@@ -1506,6 +1517,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == Tut3Button){
 			Restart(true, true, true);
@@ -1521,6 +1541,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == Tut4Button){
 			Restart(true, true, true);
@@ -1536,6 +1565,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();		    
 		}
 		else if (e.getSource() == Tut5Button){
 			Restart(true, true, true);
@@ -1551,6 +1589,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();				    
 		}
 		else if (e.getSource() == Tut6Button){
 			Restart(true, true, true);
@@ -1566,6 +1613,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == TriforceButton){
 			Restart(true, true, true);
@@ -1581,6 +1637,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == OverlappingSquaresButton){
 			Restart(true, true, true);
@@ -1596,6 +1661,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == SixButton){
 			Restart(true, true, true);
@@ -1611,6 +1685,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == CanYouHearMeNowButton){
 			Restart(true, true, true);
@@ -1626,6 +1709,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == StarrySkyButton){
 			Restart(true, true, true);
@@ -1641,6 +1733,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == LoomEx6Button){
 			Restart(true, true, true);
@@ -1656,6 +1757,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == LoomEx8Button){
 			Restart(true, true, true);
@@ -1671,6 +1781,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == CircleButton){
 			Restart(true, true, true);
@@ -1686,6 +1805,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == FlagButton){
 			Restart(true, true, true);
@@ -1701,6 +1829,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == UNCCButton){
 			Restart(true, true, true);
@@ -1716,6 +1853,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == LoomEx10Button){
 			Restart(true, true, true);
@@ -1731,6 +1877,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx13Button){
 			Restart(true, true, true);
@@ -1746,6 +1901,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == LoomEx14Button){
 			Restart(true, true, true);
@@ -1761,6 +1925,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == SunriseButton){
 			Restart(true, true, true);
@@ -1776,6 +1949,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == HeartButton){
 			Restart(true, true, true);
@@ -1791,6 +1973,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == SunnySkyButton){
 			Restart(true, true, true);
@@ -1806,6 +1997,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();	    
 		}
 		else if (e.getSource() == StarsAndStripesButton){
 			Restart(true, true, true);
@@ -1821,6 +2021,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == ROSSButton){
 			Restart(true, true, true);
@@ -1836,6 +2045,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == BullseyeButton){
 			Restart(true, true, true);
@@ -1851,6 +2069,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx7Button){
 			Restart(true, true, true);
@@ -1866,6 +2093,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx1Button){
 			Restart(true, true, true);
@@ -1881,6 +2117,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx5Button){
 			Restart(true, true, true);
@@ -1896,6 +2141,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx3Button){
 			Restart(true, true, true);
@@ -1911,6 +2165,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+			//Display Hint
+			if(hintsOn)	
+			{
+				String hint;
+				hint = getHint();
+				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+			}
+			//Restart Timer
+			bl.restartTimer();
 		}
 		else if (e.getSource() == MoonButton){
 			Restart(true, true, true);
@@ -1926,6 +2189,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint();
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+					}
+					//Restart Timer
+					bl.restartTimer();
 		}
 		else if (e.getSource() == MegamanButton){
 			Restart(true, true, true);
@@ -1941,6 +2213,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint();
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+					}
+					//Restart Timer
+					bl.restartTimer();
 		}
 		else if (e.getSource() == BatmanButton){
 			Restart(true, true, true);
@@ -1956,6 +2237,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint();
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+					}
+					//Restart Timer
+					bl.restartTimer();
 		}
 		else if (e.getSource() == DCButton){
 			Restart(true, true, true);
@@ -1971,6 +2261,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint();
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+					}
+					//Restart Timer
+					bl.restartTimer();
 		}
 		else if (e.getSource() == SergeantButton){
 			Restart(true, true, true);
@@ -1986,6 +2285,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint();
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+					}
+					//Restart Timer
+					bl.restartTimer();
 		}
 		
 		else if (e.getSource() == TieFighterButton){
@@ -2002,6 +2310,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint();
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+					}
+					//Restart Timer
+					bl.restartTimer();
 		}
 		
 		else if (e.getSource() == CancelButton){
@@ -2421,5 +2738,22 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridPanel2().rebuildLayerImages();
 		bl.getContentPanel().repaint();
 	}
+	
+	public boolean getHintModeStatus()
+	{
+		return hintsOn;
+	}
+	
+	public void setHintModeStatus(boolean isOn)
+	{
+		hintsOn = isOn;
+	}
+	
+	public String getHint()
+	{
+		String hint = "";
+		return hint;
+	}
+	
 	
 }

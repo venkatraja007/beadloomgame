@@ -85,7 +85,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     	}
     	catch(Exception exc)
     	{
-    		/* Commented out until the beadURL is needed or we decied to remove this completely */
+    		/* Commented out until the beadURL is needed or we decide to remove this completely */
     		//JOptionPane.showMessageDialog(null, "Invalid Image Bead URL");
     	}
     	
@@ -125,10 +125,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	private JLabel CoordinatesLabel2;
 	private JLabel MousePosition;
 	private JLabel MousePosition2;
+	private JLabel TimerLabel;
 	private JDesktopPane BeadLoomDesktopPane;
 	private Color color;
-	
 	private JLabel MoveLabel;
+	
 
 	//------- Grid stuff -------
     int PAD = 20;
@@ -141,8 +142,36 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	public static final int panelBorder = 3;
 	public static final Dimension usableDim = new Dimension((int)dim.getWidth()-24-panelBorder, (int)dim.getHeight()-47-panelBorder);
 	
-	//--------Colorblind Mode
+	//--------Colorblind Mode -------
 	boolean colorblindModeOn = false;
+	
+	//--------Features --------
+	
+	/*  Hints */
+	boolean hintsOn = false;
+	
+	/* Timer */
+	/* Change this to disable or enable the Timer! */
+	boolean timerEnabled = true;
+	String time;
+	int seconds = 0;
+	int minutes = 0;
+	Timer timer = new Timer(1000, new ActionListener()
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			if(timerEnabled)
+			{
+				seconds++;
+				if (seconds == 60)
+				{
+					seconds = 0;
+					minutes ++;
+				}
+				TimerLabel.setText("Timer: " + updateTime(minutes, seconds));
+			}
+		}
+	});
 
 	//------- Constructor -------
 	public BeadLoom() {
@@ -166,6 +195,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		//------- Coordinates Menu Components -------
 		CoordinatesLabel = new JLabel();
 		CoordinatesLabel2 = new JLabel();
+		
+		//------- Timer Label ---------
+		TimerLabel = new JLabel();
 		
 		//------- Move Count Components -------
 		MoveLabel = new JLabel();
@@ -786,6 +818,18 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				CoordinatesLabel.setForeground(Color.gray);
 				holder.add(CoordinatesLabel,BorderLayout.AFTER_LINE_ENDS);
 				GridFrame.add(holder,BorderLayout.NORTH );
+					//Test to add timer label to this panel
+				TimerLabel.setForeground(Color.GRAY);
+				if(!timerEnabled)
+				{
+					TimerLabel.setText("");
+				}
+				else
+				{
+					TimerLabel.setText("Timer: 00:00");
+				}
+				holder.add(TimerLabel, BorderLayout.CENTER);
+				
 				
 				//------- Coordinate Label 2 -------				
 				JPanel holder2 = new JPanel();
@@ -1171,6 +1215,146 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     	return InputTools;
     }
     
+    public String getColorName(Color col)
+    {
+    	Color peach = new Color(255, 200, 150);
+    	Color betterOrange = new Color(255,100,0);
+    	
+    	int RGBValue = col.getRGB();
+    	String name = null;
+    	if(Color.RED.getRGB() == RGBValue)
+    	{
+    		name = "Red";
+    	}
+    	else if(Color.YELLOW.getRGB() == RGBValue)
+    	{
+    		name = "Yellow";
+    	}
+    	else if(betterOrange.getRGB() == RGBValue)
+    	{
+    		name = "Orange";
+    	}
+    	else if(Color.BLACK.getRGB() == RGBValue)
+    	{
+    		name = "Black";
+    	}
+    	else if(Color.GREEN.getRGB() == RGBValue)
+    	{
+    		name = "Green";
+    	}
+    	else if(Color.CYAN.getRGB() == RGBValue)
+    	{
+    		name = "Cyan";
+    	}
+    	else if(Color.PINK.getRGB() == RGBValue)
+    	{
+    		name = "Pink";
+    	}
+    	else if(Color.WHITE.getRGB() == RGBValue)
+    	{
+    		name = "White";
+    	}
+    	else if(Color.BLUE.getRGB() == RGBValue)
+    	{
+    		name = "Blue";
+    	}
+    	else if(Color.MAGENTA.getRGB() == RGBValue)
+    	{
+    		name = "Magenta";
+    	}
+    	else if(peach.getRGB() == RGBValue)
+    	{
+    		name = "Peach";
+    	}
+    	else if(Color.GRAY.getRGB() == RGBValue)
+    	{
+    		name = "Gray";
+    	}
+    	else
+    	{
+    		name = "Color";
+    	}
+    	return name;
+    }
+    
+    public void toggleColorBlindMode()
+    {
+    	if(!colorblindModeOn)
+    	{
+    		//code to turn on colorblind mode
+    		
+    		
+    		colorblindModeOn = true;
+    	}
+    	
+    }
+    
+    public String getTime()
+    {
+    	return time;
+    }
+    
+    public int getSeconds()
+    {
+    	return seconds;
+    }
+    
+    public int getMinutes()
+    {
+    	return minutes;
+    }
+    
+    public String updateTime(int minutes, int seconds)
+    {	
+    	String strMinutes = "";
+    	String strSeconds = "";
+    	if(seconds == 60)
+    	{
+    		seconds = 0;
+    		minutes++;
+    	}
+    	
+    	if(minutes < 10)
+    	{
+    		strMinutes = "0" + minutes;
+    	}
+    	else
+    	{
+    		strMinutes = "" + minutes;
+    	}
+    	
+    	if(seconds < 10)
+    	{
+    		strSeconds = "0" + seconds;
+    	}
+    	else
+    	{
+    		strSeconds = "" + seconds;
+    	}
+    	
+    	
+    	time = strMinutes + ":" + strSeconds;
+    	
+    	return time;
+    }
+    
+    public void startTimer()
+    {
+    	timer.start();
+    }
+    
+    public void restartTimer()
+    {
+    	seconds = 0;
+    	minutes = 0;
+    	timer.stop();
+    	timer.restart();
+    }
+    
+    public void stopTimer()
+    {
+    	timer.stop();
+    }
         
  //******* Event Handlers, Action Events, Action Listeners *******
 
@@ -1589,81 +1773,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         		gridPanel.setPanelGridSize(100);
         		gridPanel2.setPanelGridSize(100);
         	}
-        }
-        
-        public String getColorName(Color col)
-        {
-        	Color peach = new Color(255, 200, 150);
-        	Color betterOrange = new Color(255,100,0);
-        	
-        	int RGBValue = col.getRGB();
-        	String name = null;
-        	if(Color.RED.getRGB() == RGBValue)
-        	{
-        		name = "Red";
-        	}
-        	else if(Color.YELLOW.getRGB() == RGBValue)
-        	{
-        		name = "Yellow";
-        	}
-        	else if(betterOrange.getRGB() == RGBValue)
-        	{
-        		name = "Orange";
-        	}
-        	else if(Color.BLACK.getRGB() == RGBValue)
-        	{
-        		name = "Black";
-        	}
-        	else if(Color.GREEN.getRGB() == RGBValue)
-        	{
-        		name = "Green";
-        	}
-        	else if(Color.CYAN.getRGB() == RGBValue)
-        	{
-        		name = "Cyan";
-        	}
-        	else if(Color.PINK.getRGB() == RGBValue)
-        	{
-        		name = "Pink";
-        	}
-        	else if(Color.WHITE.getRGB() == RGBValue)
-        	{
-        		name = "White";
-        	}
-        	else if(Color.BLUE.getRGB() == RGBValue)
-        	{
-        		name = "Blue";
-        	}
-        	else if(Color.MAGENTA.getRGB() == RGBValue)
-        	{
-        		name = "Magenta";
-        	}
-        	else if(peach.getRGB() == RGBValue)
-        	{
-        		name = "Peach";
-        	}
-        	else if(Color.GRAY.getRGB() == RGBValue)
-        	{
-        		name = "Gray";
-        	}
-        	else
-        	{
-        		name = "Color";
-        	}
-        	return name;
-        }
-        
-        public void toggleColorBlindMode()
-        {
-        	if(!colorblindModeOn)
-        	{
-        		//code to turn on colorblind mode
-        		
-        		
-        		colorblindModeOn = true;
-        	}
         	
         }
+        
         
         
 /** The XMLFileFilter class opens directories and only sees xml files **/        
