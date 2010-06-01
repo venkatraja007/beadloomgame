@@ -36,7 +36,21 @@ public class Layer {
     private Image image;
     private static int ZZzzzz = 0;
     private static GUIMovePanel movePanel;
-        //****************************************************************************
+
+    private int x1;
+    private int y1;
+    private int x2;
+    private int y2;
+    private int x3;
+    private int y3;
+    private int beadsAdded1;
+    private int beadsAdded2;
+    private int rowsTotal;
+    private int startLength;
+    private int stepHeight;
+    private boolean yInc;
+    private boolean positiveInc;
+    //****************************************************************************
     //***************[Constructors]***********************************************
     //****************************************************************************
     public Layer(String type, CoordList coords,  String beadType) {
@@ -78,6 +92,46 @@ public class Layer {
     public Image getImage() {
     	return image;
     }
+
+    public int getX1() {
+    	return x1;
+    }
+    public int getY1() {
+    	return y1;
+    }
+    public int getX2() {
+    	return x2;
+    }
+    public int getY2() {
+    	return y2;
+    }
+    public int getX3() {
+    	return x3;
+    }
+    public int getY3() {
+    	return y3;
+    }
+    public int getBeadsAdded1() {
+    	return beadsAdded1;
+    }
+    public int getBeadsAdded2() {
+    	return beadsAdded2;
+    }
+    public int getRowsTotal() {
+    	return rowsTotal;
+    }
+    public int getStartLength() {
+    	return startLength;
+    }
+    public int getStepHeight() {
+    	return stepHeight;
+    }
+    public boolean getYInc() {
+    	return yInc;
+    }
+    public boolean getPositiveInc() {
+    	return positiveInc;
+    }
     //****************************************************************************
     //***************[Set Methods]************************************************
     //****************************************************************************
@@ -108,7 +162,47 @@ public class Layer {
     public void setMovePanel(GUIMovePanel p)
     {
     	movePanel = p;
-    }    
+    }
+
+    public void setX1(int newX1) {
+    	x1 = newX1;
+    }
+    public void setY1(int newY1) {
+    	y1 = newY1;
+    }
+    public void setX2(int newX2) {
+    	x2 = newX2;
+    }
+    public void setY2(int newY2) {
+    	y2 = newY2;
+    }
+    public void setX3(int newX3) {
+    	x3 = newX3;
+    }
+    public void setY3(int newY3) {
+    	y3 = newY3;
+    }
+    public void setBeadsAdded1(int newBeadsAdded1) {
+    	beadsAdded1 = newBeadsAdded1;
+    }
+    public void setBeadsAdded2(int newBeadsAdded2) {
+    	beadsAdded2 = newBeadsAdded2;
+    }
+    public void setRowsTotal(int newRowsTotal) {
+    	rowsTotal = newRowsTotal;
+    }
+    public void setStartLength(int newStartLength) {
+    	startLength = newStartLength;
+    }
+    public void setStepHeight(int newStepHeight) {
+    	stepHeight = newStepHeight;
+    }
+    public void setYInc(boolean newYInc) {
+    	yInc = newYInc;
+    }
+    public void setPositiveInc(boolean newPositiveInc) {
+    	positiveInc = newPositiveInc;
+    }
 
     //****************************************************************************
     //***************[To String]  ************************************************

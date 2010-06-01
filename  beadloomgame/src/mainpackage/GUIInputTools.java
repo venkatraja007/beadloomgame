@@ -1215,6 +1215,10 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		Layer l = new Layer("POINT", coords," ");
 		l.setColor(color);
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
+		
+		//write coordinate and type data
+		l.setX1(x);
+		l.setY1(y);
 		grid.addLayer(l);		
 	}
 
@@ -1320,6 +1324,10 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		Layer l = new Layer("RECTANGLE", coords," ");
 		l.setColor(color);
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
+		l.setX1(x1);
+		l.setY1(y1);
+		l.setX2(x2);
+		l.setY2(y2);
 		grid.addLayer(l);
 	}
 	
@@ -1355,6 +1363,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		Layer l = new Layer("TRIANGLE", coords," ");
 		l.setColor(color);
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
+		l.setX1(x1);
+		l.setY1(y1);
+		l.setX2(x2);
+		l.setY2(y2);
+		l.setX3(x3);
+		l.setY3(y3);
 		grid.addLayer(l);
 	}
 	
@@ -1858,14 +1872,17 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	//Draws the Iteration for Linear and Triangle Iteration
 	//This is done so draw line, linear iteration, and triangle iteration can be called by the game
 	//type is either LINE, LINEAR_ITERATION, or TRIANGLE_ITERATION
-	public void CoordListAction(String type, ArrayList<Integer> xValue, ArrayList<Integer> yValue){
+	public Layer CoordListAction(String type, ArrayList<Integer> xValue, ArrayList<Integer> yValue){
 		
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer(type, coords, " ");
 		l.setColor(color);
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
+		return l;
+	}
+	
+	public void addGridLayer(Layer l) {
 		grid.addLayer(l);
-		
 	}
 		
 	
@@ -1930,7 +1947,8 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					throw new NumberFormatException();
 				
 				//Initialize the coordinate list and layer
-				CoordListAction("LINE", xValue, yValue);
+				Layer l = CoordListAction("LINE", xValue, yValue);
+				grid.addLayer(l);
 				
 			} catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
 			
@@ -2046,7 +2064,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			triangleIteration(startX, startY, width, exSteps, height, cycles, incY, true, xValue, yValue);
 			
 			//Draw the iteration
-			CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
+			Layer l = CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
+			l.setX1(startX);
+			l.setY1(startY);
+			l.setStepHeight(Math.abs(height));
+			l.setBeadsAdded1(width);
+			l.setRowsTotal((int)cycles);
+			l.setYInc(incY);
+			l.setPositiveInc(height>=0);
+			grid.addLayer(l);
 		}
 		
 		//Fires when the [Linear]draw button is pressed
@@ -2085,7 +2111,16 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			linearIteration(startX, startY, startLength, inc1, inc2, rows, incY, posDir, xValue, yValue);
 			
 			//Draw the iteration
-			CoordListAction("LINEAR_ITERATION", xValue, yValue);
+			Layer l = CoordListAction("LINEAR_ITERATION", xValue, yValue);
+			l.setX1(startX);
+			l.setY1(startY);
+			l.setStartLength(startLength);
+			l.setBeadsAdded1(inc1);
+			l.setBeadsAdded2(inc2);
+			l.setRowsTotal(rows);
+			l.setYInc(incY);
+			l.setPositiveInc(posDir);
+			grid.addLayer(l);
 		}
 		
 		//Fires when the [Linear Sequence]draw button is pressed

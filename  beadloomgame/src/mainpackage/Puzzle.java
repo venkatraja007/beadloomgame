@@ -119,7 +119,43 @@ import java.awt.Color;
             height *= -1;
       
          InputTools.triangleIteration(startX, startY, width, exSteps, height, cycles, incY, true, xValue, yValue);
-         InputTools.CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
+         Layer l = InputTools.CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
+         l.setX1(x);
+         l.setY1(y);
+         l.setStepHeight(every);
+         l.setBeadsAdded1(add);
+         l.setRowsTotal(total);
+         l.setYInc(incY);
+         l.setPositiveInc(isPositive);
+         InputTools.addGridLayer(l);
+      }
+      
+      public void doLinearIt(int x, int y, int startLength, int inc1, int inc2, int totalRows, boolean incY, boolean isPositive) {
+    	  xValue = new ArrayList();
+          yValue = new ArrayList();
+          InputTools.linearIteration(x, y, startLength, inc1, inc2, totalRows, incY, isPositive, xValue, yValue);
+          Layer l = InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+          l.setX1(x);
+          l.setY1(y);
+          l.setStartLength(startLength);
+          l.setBeadsAdded1(inc1);
+          l.setBeadsAdded2(inc2);
+          l.setRowsTotal(totalRows);
+          l.setYInc(incY);
+          l.setPositiveInc(isPositive);
+          InputTools.addGridLayer(l);
+      }
+       
+      public void doLine(int x1, int y1, int x2, int y2) {
+          xValue = new ArrayList();
+          yValue = new ArrayList();
+          Layer l = InputTools.CoordListAction("LINEAR", xValue, yValue);
+          l.setX1(x1);
+          l.setY1(y1);
+          l.setX2(x2);
+          l.setY2(y2);
+          InputTools.addGridLayer(l);
+          InputTools.drawLine(x1, y1, x2, y2, xValue, yValue);
       }
    
    //Tutorial 1
@@ -175,16 +211,10 @@ import java.awt.Color;
       //Call CoordListAction to initialize the CoordinateList
       //Finally call draw line with the points and xValue an yValue
          InputTools.setColor(Color.RED);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.CoordListAction("LINEAR", xValue, yValue);
-         InputTools.drawLine(-5, -5, 5, 5, xValue, yValue);
+         doLine(-5, -5, 5, 5);
       
       //Note that you MUST reinitialize xValue and yValue for each drawLine in the puzzle
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.CoordListAction("LINEAR", xValue, yValue);
-         InputTools.drawLine(-5, 5, 5, -5, xValue, yValue);
+         doLine(-5, 5, 5, -5);
       
        //Calculate the Goal Images bead array
          bl.getGridPanel2().calcGameGrid();
@@ -273,17 +303,11 @@ import java.awt.Color;
       //Then initialize xValue and yValue.
       //Then Call linearIteration
          InputTools.setColor(Color.BLUE);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(-10, -10, 5, -1, 1, 5, true, true, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(-10, -10, 5, -1, 1, 5, true, true);
       
       //Note that you MUST reinitialize xValue and yValue for each linear iteration in the puzzle
          InputTools.setColor(Color.GREEN);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(0, 15, 5, 2, 2, 5, true, false, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(0, 15, 5, 2, 2, 5, true, false);
       
        //Calculate the Goal Images bead array
          bl.getGridPanel2().calcGameGrid();
@@ -407,10 +431,7 @@ import java.awt.Color;
          InputTools.drawTriangle(7, 0, 0, 0, 9, -9);
       
          InputTools.setColor(Color.BLUE);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.CoordListAction("LINEAR", xValue, yValue);
-         InputTools.drawLine(0, 9, 0, -9, xValue, yValue);
+         doLine(0, 9, 0, -9);
       
          bl.getGridPanel2().calcGameGrid();
          
@@ -517,14 +538,9 @@ import java.awt.Color;
       
          InputTools.drawTriangle(4, -4, 0, 0, 0, 9);
       
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.CoordListAction("LINEAR", xValue, yValue);
-         InputTools.drawLine(5, -1, 20, 0, xValue, yValue);
+         doLine(5, -1, 20, 0);
       
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.CoordListAction("LINEAR", xValue, yValue);
+         doLine(-5,-1, -20, 0);
          InputTools.drawLine(-5, -1, -20, 0, xValue, yValue);
       
          InputTools.drawRectangle(-9, -16, -5, 6);
@@ -704,21 +720,12 @@ import java.awt.Color;
          doTriangleIt(-11, 10, 1, 1, 8, false, false);
       
          InputTools.setColor(Color.WHITE);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(-2, 11, 3, 1, 1, 3, false, true, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(-2, 11, 3, 1, 1, 3, false, true);
       
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(2, 11, 3, 1, 1, 3, false, false, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(2, 11, 3, 1, 1, 3, false, false);
       
          InputTools.setColor(Color.RED);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.CoordListAction("LINEAR", xValue, yValue);
-         InputTools.drawLine(0, 11, 0, 9, xValue, yValue);
+         doLine(0, 11, 0, 9);
       
          InputTools.drawRectangle(-20, 20, -1, -20);
       
@@ -753,26 +760,14 @@ import java.awt.Color;
          doTriangleIt(-10, 0, 7, 3, 11, false, true);
          
          InputTools.setColor(betterOrange);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(-1, 7, 3, 1, 1, 14, true, true, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(-1, 7, 3, 1, 1, 14, true, true);
          
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(-1, -7, 3, 1, 1, 14, true, false, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(-1, -7, 3, 1, 1, 14, true, false);
          
          InputTools.setColor(Color.GREEN);
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(-1, -11, 3, 1, 1, 10, true, false, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(-1, -11, 3, 1, 1, 10, true, false);
          
-         xValue = new ArrayList();
-         yValue = new ArrayList();
-         InputTools.linearIteration(-1, 11, 3, 1, 1, 10, true, true, xValue, yValue);
-         InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+         doLinearIt(-1, 11, 3, 1, 1, 10, true, true);
          
          bl.getGridPanel2().calcGameGrid();
          
@@ -898,40 +893,19 @@ import java.awt.Color;
            
            InputTools.setColor(Color.WHITE);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-19, 19, -1, 19, xValue, yValue);
+           doLine(-19, 19, -1, 19);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-19, 16, -1, 16, xValue, yValue);
+           doLine(-19, 16, -1, 16);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-19, 13, -1, 13, xValue, yValue);
+           doLine(-19, 13, -1, 13);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-19, 10, -1, 10, xValue, yValue);
+           doLine(-19, 10, -1, 10);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-19, 7, -1, 7, xValue, yValue);
+           doLine(-19, 7, -1, 7);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-19, 4, -1, 4, xValue, yValue);
+           doLine(-19, 4, -1, 4);
 
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-19, 1, -1, 1, xValue, yValue);
+           doLine(-19, 1, -1, 1);
            
            InputTools.setColor(Color.BLUE);
            InputTools.drawRectangle(-18, -17, 19, 1);
@@ -966,17 +940,11 @@ import java.awt.Color;
            InputTools.setColor(Color.PINK);
            InputTools.drawRectangle(-9, -8, 15, 11);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-5, 14, 2, 1 ,-1, 4, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-5, 14, 2, 1 ,-1, 4, true, false);
            
            InputTools.drawRectangle(-12, -7, 10, 5);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-14, 8, 3, 1, 1, 2, false, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-14, 8, 3, 1, 1, 2, false, true);
            
            InputTools.setColor(Color.BLACK);
            InputTools.drawPoint(-14, 7);
@@ -986,29 +954,17 @@ import java.awt.Color;
            InputTools.setColor(Color.PINK);
            InputTools.drawRectangle(-9, 8, 7, 2);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-8, 1, 7, 1, xValue, yValue);
+           doLine(-8, 1, 7, 1);
            
            InputTools.drawRectangle(-9, 6, 0, -1);
            
            InputTools.setColor(Color.CYAN);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-6, -1, 1, -1, xValue, yValue);
+           doLine(-6, -1, 1, -1);
            
            InputTools.setColor(Color.PINK);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(3, -2, 5, -2, xValue, yValue);
+           doLine(3, -2, 5, -2);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-4, 8, 3, 8, xValue, yValue);
+           doLine(-4, 8, 3, 8);
            
            InputTools.setColor(Color.WHITE);
            InputTools.drawRectangle(7, 8, 9, 6);
@@ -1074,15 +1030,9 @@ import java.awt.Color;
            InputTools.drawRectangle(-2, 2, 2, -2);
            
            InputTools.setColor(Color.YELLOW);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-20, 20, 20, -20, xValue, yValue);
+           doLine(-20, 20, 20, -20);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(20, 20, -20, -20, xValue, yValue);
+           doLine(20, 20, -20, -20);
     	   
            bl.getGridPanel2().calcGameGrid();
            
@@ -1102,10 +1052,7 @@ import java.awt.Color;
            InputTools.drawRectangle(-20, 20, -20, 20);
            
            InputTools.setColor(Color.RED);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-20, 20, 41, -1, -1, 41, false, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-20, 20, 41, -1, -1, 41, false, true);
            
            InputTools.setColor(Color.MAGENTA);
            InputTools.drawTriangle(7, 20, 20, 0, 13, -13);
@@ -1133,15 +1080,9 @@ import java.awt.Color;
            InputTools.drawTriangle(-3, 3, 0, 16, 16, 13);
 
            InputTools.setColor(betterOrange);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-7, 0, -11, 0, xValue, yValue);
+           doLine(-7, 0, -11, 0);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(7, 0, 11, 0, xValue, yValue);
+           doLine(7, 0, 11, 0);
     	   
            bl.getGridPanel2().calcGameGrid();
     	   
@@ -1161,15 +1102,9 @@ import java.awt.Color;
            InputTools.drawRectangle(-20, 20, -20, 20);
            
            InputTools.setColor(Color.BLACK);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-8, -7, 3, -1,1, 15, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-8, -7, 3, -1,1, 15, true, true);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-8, 7, 3, -1, 1, 15, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-8, 7, 3, -1, 1, 15, true, false);
            
            InputTools.setColor(betterOrange);
            
@@ -1268,16 +1203,10 @@ import java.awt.Color;
            InputTools.drawRectangle(-1, 1, 7, -7);
            
            InputTools.setColor(Color.BLUE);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(0, 7, 0, -7, xValue, yValue);
+           doLine(0, 7, 0, -7);
            
            InputTools.setColor(betterOrange);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(0, 6, 0, -6, xValue, yValue);
+           doLine(0, 6, 0, -6);
            
            InputTools.setColor(Color.YELLOW);
            InputTools.drawRectangle(1, -1, 1, -1);
@@ -1489,112 +1418,54 @@ import java.awt.Color;
            InputTools.drawRectangle(-20, 20, -20, 20);
            
            InputTools.setColor(Color.YELLOW);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-7, 5, 15, 1, 1, 4, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-7, 5, 15, 1, 1, 4, true, true);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-12, 13, 2, -2, 2, 2, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-12, 13, 2, -2, 2, 2, true, true);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(11, 13, 2, 2, -2, 2, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(11, 13, 2, 2, -2, 2, true, true);
            
            InputTools.drawRectangle(-8, 8, 15, 14);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-7, 13, 15, 1, 1, 3, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-7, 13, 15, 1, 1, 3, true, false);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-9, 10, 19, 1, 1, 2, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-9, 10, 19, 1, 1, 2, true, false);
            
            InputTools.setColor(Color.BLACK);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-5, 5, 11, -1, -1, 3, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-5, 5, 11, -1, -1, 3, true, true);
            
            InputTools.drawRectangle(-3, 3, 14, 8);
            
-           InputTools.setColor(Color.YELLOW);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-2, 14, 5, 1, 1, 3, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-2, 14, 5, 1, 1, 3, true, true);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-2, 13, 5, -1, -1, 2, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-2, 13, 5, -1, -1, 2, true, false);
            
            InputTools.drawRectangle(-12, 12, -5, -9);
            
            InputTools.drawRectangle(-13, 13, -6, -7);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-11, -10, 23, -1, -1, 2, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-11, -10, 23, -1, -1, 2, true, false);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-12, -12, 25, -1, -1, 3, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-12, -12, 25, -1, -1, 3, true, false);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-8, -15, 17, -4, -4, 2, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-8, -15, 17, -4, -4, 2, true, false);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(13, 12, 17, 8, xValue, yValue);
+           doLine(13, 12, 17, 8);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-13, 12, -17, 8, xValue, yValue);
+           doLine(-13, 12, -17, 8);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(-12, -13, -17, -8, xValue, yValue);
+           doLine(-12, -13, -17, -8);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.CoordListAction("LINEAR", xValue, yValue);
-           InputTools.drawLine(12, -13, 17, -8, xValue, yValue);
+           doLine(12, -13, 17, -8);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-20, 3, 7, 2, 2, 3, false, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-20, 3, 7, 2, 2, 3, false, true);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(20, 3, 7, 2, 2, 3, false, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(20, 3, 7, 2, 2, 3, false, false);
            
            
            InputTools.setColor(Color.BLACK);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-19, 3, 7, 2, 2, 2, false, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-19, 3, 7, 2, 2, 2, false, true);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(19, 3, 7, 2, 2, 2, false, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(19, 3, 7, 2, 2, 2, false, false);
            
            InputTools.drawTriangle(0, -3, 3, -11, -5, -5);
            
@@ -1626,28 +1497,16 @@ import java.awt.Color;
            doTriangleIt(0, 12, 1, 2, 4, true, true);
            doTriangleIt(0, -12, 1, 2, 4, true, false);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-3, 10, 1, 0, 3, 3, false, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-3, 10, 1, 0, 3, 3, false, false);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-3, -10, 1, 3, 0, 3, false, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-3, -10, 1, 3, 0, 3, false, false);
            
            InputTools.drawRectangle(-8, -6, 11, -11);
            InputTools.drawRectangle(-12, -9, -12, 12);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(3, 10, 1, 0, 3, 3, false, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(3, 10, 1, 0, 3, 3, false, true);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(3, -10, 1, 3, 0, 3, false, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(3, -10, 1, 3, 0, 3, false, true);
            
            InputTools.drawRectangle(8, 6, 11, -11);
            InputTools.drawRectangle(12, 9, -12, 12);
@@ -1680,20 +1539,14 @@ import java.awt.Color;
            
            InputTools.drawTriangle(0, -12, 12, 18, 3, 3);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-11, -13, 23, -1, -1, 7, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-11, -13, 23, -1, -1, 7, true, false);
            
            InputTools.setColor(Color.BLUE);
            InputTools.drawRectangle(-10, 10, 2, -12);
            
            InputTools.drawTriangle(0, -10, 10, 15, 3, 3);
            
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-9, -13, 19, -1, -1, 5, true, false, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-9, -13, 19, -1, -1, 5, true, false);
            
            InputTools.setColor(betterOrange);
            doTriangleIt(0, 12, 1, 1, 11, true, false);
@@ -1714,16 +1567,10 @@ import java.awt.Color;
            doTriangleIt(0, 2, 1, 1, 9, true, false);
            
            InputTools.setColor(betterOrange);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-2, -15, 5, 1, 1, 9, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-2, -15, 5, 1, 1, 9, true, true);
            
            InputTools.setColor(Color.BLUE);
-           xValue = new ArrayList();
-           yValue = new ArrayList();
-           InputTools.linearIteration(-2, -13, 5, 1, 1, 7, true, true, xValue, yValue);
-           InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+           doLinearIt(-2, -13, 5, 1, 1, 7, true, true);
     	   
          //Calculate the Goal Images bead array
            bl.getGridPanel2().calcGameGrid();
@@ -1750,27 +1597,15 @@ import java.awt.Color;
              /*Draw Outer Wings*/
              InputTools.setColor((Color.WHITE));
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-19, 4, 9, 1, 1, 10, false, true, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(-19, 4, 9, 1, 1, 10, false, true);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(19, 4, 9, 1, 1, 10, false, false, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(19, 4, 9, 1, 1, 10, false, false);
              
              InputTools.setColor((Color.BLACK));
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-17, 4, 9, 1, 1, 8, false, true, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(-17, 4, 9, 1, 1, 8, false, true);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(17, 4, 9, 1, 1, 8, false, false, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(17, 4, 9, 1, 1, 8, false, false);
              
              
              /* Draw Inner Wings */
@@ -1786,15 +1621,9 @@ import java.awt.Color;
              InputTools.setColor(Color.WHITE);
              
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-7, 5, 15, -1, -1, 4, true, true, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(-7, 5, 15, -1, -1, 4, true, true);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-7, -5, 15, -1, -1, 4, true, false, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(-7, -5, 15, -1, -1, 4, true, false);
              
              InputTools.drawRectangle(-8, 8, 4, -4);
              
@@ -1814,16 +1643,10 @@ import java.awt.Color;
              InputTools.drawRectangle(-5, 5, 2, -2);
              
              //Linear Iteration for area above center rectangle
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-4, 3, 9, -1, -1, 3, true, true, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(-4, 3, 9, -1, -1, 3, true, true);
              
              //Linear Iteration for area below center rectangle
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.linearIteration(-4, -3, 9, -1, -1, 3, true, false, xValue, yValue);
-             InputTools.CoordListAction("LINEAR_ITERATION", xValue, yValue);
+             doLinearIt(-4, -3, 9, -1, -1, 3, true, false);
              
              /* Draw Inner Window */
              
@@ -1838,25 +1661,13 @@ import java.awt.Color;
              
              InputTools.setColor(Color.GRAY);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.drawLine(0, 4, 0, -4, xValue, yValue);
-             InputTools.CoordListAction("LINEAR", xValue, yValue);
+             doLine(0, 4, 0, -4);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.drawLine(-4, 0, 4, 0, xValue, yValue);
-             InputTools.CoordListAction("LINEAR", xValue, yValue);
+             doLine(-4, 0, 4, 0);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.drawLine(-3, 3, 3, -3, xValue, yValue);
-             InputTools.CoordListAction("LINEAR", xValue, yValue);
+             doLine(-3, 3, 3, -3);
              
-             xValue = new ArrayList();
-             yValue = new ArrayList();
-             InputTools.drawLine(3, 3, -3, -3, xValue, yValue);
-             InputTools.CoordListAction("LINEAR", xValue, yValue);
+             doLine(3, 3, -3, -3);
              
              /* Draw Final black dot in center */
              
