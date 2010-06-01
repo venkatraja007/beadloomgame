@@ -17,3 +17,12 @@ Shaun Pickford's Wiki Page!
 
 _See Weekly Summary for complete weekly report_ <br />
 <a href="http://webpages.uncc.edu/~sgpickfo/week1report.pdf" target="_blank">Week 1 Summary (PDF Power Point)</a>
+
+==Week 2:==
+
+===Monday===
+
+Planned Work:
+  * Hint System
+  * Storage of hints (as database or text file?)
+  * Timer
