@@ -320,6 +320,7 @@ public class GUIMenuBar {
 				}
 			});
 			HelpMenu.add(PseudoCodeMenuItem);
+			HelpMenu.remove(PseudoCodeMenuItem);
 
 			//---- AboutMenuItem ----
 			AboutMenuItem.setText("About...");
