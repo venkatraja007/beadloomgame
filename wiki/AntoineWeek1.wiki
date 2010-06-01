@@ -8,13 +8,13 @@
 
   * Become familiar with the Bead Loom Game code and Java
 
-  *Add External High Scores Functionality via Database
-  *Add buttons and frames to access and display high scores from within Bead Loom Game
-  *Create PHP script to access the database on behalf of Bead Loom Game, rather than have Bead Loom Game access the database directly for security reasons, and the need of a JDBC driver.
-  *Create a webpage to view high scores on the Bead Loom Game website
-  *Create an area for the Bead Loom Game website(soon to be Drupal)
-  *Move Database from playground over to unccmakesgames
-  *Set up high scores page to be separated by Puzzle
+  * Add External High Scores Functionality via Database
+  * Add buttons and frames to access and display high scores from within Bead Loom Game
+  * Create PHP script to access the database on behalf of Bead Loom Game, rather than have Bead Loom Game access the database directly for security reasons, and the need of a JDBC driver.
+  * Create a webpage to view high scores on the Bead Loom Game website
+  * Create an area for the Bead Loom Game website(soon to be Drupal)
+  * Move Database from playground over to unccmakesgames
+  * Set up high scores page to be separated by Puzzle
 
 2. What was done?
 
