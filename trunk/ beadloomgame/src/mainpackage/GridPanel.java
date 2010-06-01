@@ -132,9 +132,7 @@ class GridPanel extends JPanel {
         if (hidelines) {
         
         	// row lines
-        	int beadPadHeight = getHeight()/41/2;
-        	int beadPadWidth = getWidth()/41/2;
-        	double x1 = PAD + beadPadWidth, y1 = PAD+ beadPadHeight, x2 = w - PAD + beadPadWidth, y2 = h - PAD +beadPadHeight;
+        	double x1 = PAD, y1 = PAD, x2 = w - PAD, y2 = h - PAD;
         	BasicStroke stroke = new BasicStroke(1.0f);
         	BasicStroke wideStroke = new BasicStroke(3.0f);
         	for(int j = 0; j <= getGridSize(); j++)
@@ -156,7 +154,9 @@ class GridPanel extends JPanel {
         }
             
         //BEAD REPAINTING
-        int iconSize=catimage.getHeight(null)/2;
+        //int iconSize=catimage.getHeight(null)/2;
+        int iconSize=getHeight()/41/2;	//get half of the bead size
+        System.out.println(iconSize);
         
         for (int i = 0; i < layer.size(); i++) {
         //int i = layer.size() - 1;
