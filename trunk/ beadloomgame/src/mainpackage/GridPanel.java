@@ -132,7 +132,9 @@ class GridPanel extends JPanel {
         if (hidelines) {
         
         	// row lines
-        	double x1 = PAD, y1 = PAD, x2 = w - PAD, y2 = h - PAD;
+        	int beadPadHeight = getHeight()/41/2;
+        	int beadPadWidth = getWidth()/41/2;
+        	double x1 = PAD + beadPadWidth, y1 = PAD+ beadPadHeight, x2 = w - PAD + beadPadWidth, y2 = h - PAD +beadPadHeight;
         	BasicStroke stroke = new BasicStroke(1.0f);
         	BasicStroke wideStroke = new BasicStroke(3.0f);
         	for(int j = 0; j <= getGridSize(); j++)
