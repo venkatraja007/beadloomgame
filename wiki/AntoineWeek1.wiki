@@ -5,9 +5,7 @@
 1. What was planned? 
 
   * Create puzzle for Bead Loom Game 
-
   * Become familiar with the Bead Loom Game code and Java
-
   * Add External High Scores Functionality via Database
   * Add buttons and frames to access and display high scores from within Bead Loom Game
   * Create PHP script to access the database on behalf of Bead Loom Game, rather than have Bead Loom Game access the database directly for security reasons, and the need of a JDBC driver.
