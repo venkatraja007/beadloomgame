@@ -23,6 +23,7 @@ import javax.swing.GroupLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
@@ -58,6 +59,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JPanel ChoosePuzzlePanel = new JPanel();
 	private JPanel ColorPanel = new JPanel();
 	private JPanel HighScoresPanel = new JPanel();
+	private JComboBox HighScoresComboBox = new JComboBox();
 	private JScrollPane HighScoresScrollPane = new JScrollPane(
 			HighScoresPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	private JPanel GameOptionsPanel = new JPanel();
@@ -289,7 +291,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- high scores panel ----
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
 		HighScoresPanel.setBackground(Color.white);
-		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
+		HighScoresPanel.setBounds(this.getBounds());
 		HighScoresPanel.setLayout(HighScoresLayout);
 		
 		//---- high scores panel ----
@@ -809,10 +811,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		GamePanel.setBounds(4, 3, 189, 155);
 		
-		//---- Web Request Button ----
+		//---- Update HighScores Button ----
 		UpdateHighScoresButton.setText("Update High Scores");
 		//HighScoresPanel.add(WebRequestTextField);
 	    HighScoresPanel.add(UpdateHighScoresButton);
+	    HighScoresPanel.add(HighScoresComboBox);
 	    //HighScoresPanel.add(Box.createRigidArea(new Dimension(500, 15)));
 	    HighScoresLayout.setAlignOnBaseline(true);
 		UpdateHighScoresButton.addActionListener(this);
@@ -1353,9 +1356,27 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		else if (e.getSource() == UpdateHighScoresButton) {
 			try {
-				HighScoresLabel.setText(
-						sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php"));//?puzzleName=" + 
-								//URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8")));
+				if (HighScoresComboBox.getSelectedItem() == null) {
+					HighScoresLabel.setText(
+							sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php?puzzleName=" + 
+									URLEncoder.encode(
+											puz.getPuzzleName(currentPuzzle), "UTF-8")));
+				}
+				else
+				{
+					HighScoresLabel.setText(
+							sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php?puzzleName=" + 
+									URLEncoder.encode(
+											HighScoresComboBox.getSelectedItem().toString(),"UTF-8")));
+				}
+				HighScoresComboBox.removeAllItems();
+				String temp = sendWebRequest("http://playground.uncc.edu/BeadLoomGame/puzzles.php");
+				String[] items = temp.split(",");
+				for(int i=0; i<items.length; i++)
+				{
+					HighScoresComboBox.addItem(items[i]);
+				}
+				
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
