@@ -26,7 +26,16 @@ $puzzleName = $_GET['puzzleName'];
 	
 	<table border="1" align="center">
 		<tr>
-			<th colspan="5">
+			<?php
+				if(isset($puzzleName) && !empty($puzzleName))
+				{
+					echo "<th colspan=\"5\">";
+				} 
+				else
+				{
+					echo "<th colspan=\"6\">";
+				}
+			?>
 				<h2>High Scores</h2>
 				<?php 
 					echo "$puzzleName";
@@ -54,6 +63,7 @@ $puzzleName = $_GET['puzzleName'];
 			</th>
 		</tr>
 		<tr>
+			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Rank</b></td>
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>User Name</b></td>
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Score</b></td>
 			<td class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><b>Time</b></td>
@@ -70,7 +80,7 @@ $puzzleName = $_GET['puzzleName'];
 	<?php
 	if(isset($_GET['puzzleName']) && !empty($_GET['puzzleName']))
 	{
-		$query = "SELECT user,score,time,medal FROM HighScores WHERE puzzle='$puzzleName' ORDER BY puzzle, score, user";
+		$query = "SELECT user,score,time,medal FROM HighScores WHERE puzzle='$puzzleName' ORDER BY puzzle, score, time, user";
 	}
 	else
 	{
@@ -79,9 +89,10 @@ $puzzleName = $_GET['puzzleName'];
 	$result = $db->query($query);
 	if($result)
 	{
+		$rank = 1;
 		while($row = $result->fetch_array(MYSQLI_NUM))
 		{
-			echo "<tr>";
+			echo "<tr><td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">$rank</td>";
 			foreach($row as $val)
 			{
 				echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">";
@@ -89,6 +100,7 @@ $puzzleName = $_GET['puzzleName'];
 				echo "</td>";
 			}
 			echo "</tr>";
+			$rank++;
 		}
 	}
 	else
