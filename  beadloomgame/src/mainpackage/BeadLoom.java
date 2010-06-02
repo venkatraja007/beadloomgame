@@ -681,7 +681,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				    Game = new GUIGameTools();
 				    Game.setLoom(this);
 				    
-				    HighScoresFrame.getContentPane().add(Game.getHighScoresPanel());
+				    HighScoresFrame.getContentPane().add(Game.getHighScoresScrollPane());
 				    HighScoresFrame.setVisible(false);
 				    HighScoresFrame.setBorder(new LineBorder(Color.red));
 				    HighScoresFrame.setTitle("High Scores");
