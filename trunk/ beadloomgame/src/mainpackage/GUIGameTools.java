@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.*;
@@ -16,13 +17,19 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.*;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.Spring;
+import javax.swing.SpringLayout;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import javax.swing.JPanel;
@@ -51,6 +58,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JPanel ChoosePuzzlePanel = new JPanel();
 	private JPanel ColorPanel = new JPanel();
 	private JPanel HighScoresPanel = new JPanel();
+	private JScrollPane HighScoresScrollPane = new JScrollPane(
+			HighScoresPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	private JPanel GameOptionsPanel = new JPanel();
 	private FlowLayout HighScoresLayout = new FlowLayout(FlowLayout.LEFT);
 	
@@ -62,7 +71,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton QuitButton = new JButton();
 	private JButton PlayGameButton = new JButton();
 	private JButton HighScoresButton = new JButton();
-	private JButton WebRequestButton = new JButton();
+	private JButton UpdateHighScoresButton = new JButton();
 	private JLabel NameLabel = new JLabel();
 	private JLabel BestScoreLabel = new JLabel();
 	private JTextField NameTextField = new JTextField();
@@ -801,16 +810,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GamePanel.setBounds(4, 3, 189, 155);
 		
 		//---- Web Request Button ----
-		WebRequestButton.setText("Sumbit Web Request");
-		WebRequestTextField.setAlignmentX(Component.CENTER_ALIGNMENT);
-		WebRequestButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		HighScoresPanel.add(WebRequestTextField);
-		HighScoresPanel.add(WebRequestButton);
-		WebRequestButton.addActionListener(this);
+		UpdateHighScoresButton.setText("Update High Scores");
+		//HighScoresPanel.add(WebRequestTextField);
+	    HighScoresPanel.add(UpdateHighScoresButton);
+	    //HighScoresPanel.add(Box.createRigidArea(new Dimension(500, 15)));
+	    HighScoresLayout.setAlignOnBaseline(true);
+		UpdateHighScoresButton.addActionListener(this);
 		
 		//---- High Scores Label ----
-		HighScoresLabel.setText("High Scores: Acey has 1000 points");
-		HighScoresLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		HighScoresLabel.setText("");
 		HighScoresPanel.add(HighScoresLabel);
 		HighScoresLabel.setMaximumSize(HighScoresPanel.getMaximumSize());
 	}
@@ -1085,6 +1093,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().getBeadLoomUtilitiesTabbedPane().addTab("Trig Functions Tool", bl.getInputTools().getTrigFunctionsTabbedPane());
 			bl.getPuzzleFrame().setVisible(false);
 			bl.getColorFrame().setVisible(false);
+			bl.getHighScoresFrame().setVisible(false);
 			bl.getInputTools().addLoopTools();
 			
 			
@@ -1268,8 +1277,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public JPanel getGamePanel() {
 		return GamePanel;
 	}
-	public JPanel getHighScoresPanel() {
-		return HighScoresPanel;
+	public JScrollPane getHighScoresScrollPane() {
+		return HighScoresScrollPane;
 	}
 	public JPanel getGameOptionsPanel() {
 		return GameOptionsPanel;
@@ -1342,10 +1351,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
     		}
 		}
 		
-		else if (e.getSource() == WebRequestButton) {
-			HighScoresLabel.setText(
-					sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php"));
-			
+		else if (e.getSource() == UpdateHighScoresButton) {
+			try {
+				HighScoresLabel.setText(
+						sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php"));//?puzzleName=" + 
+								//URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8")));
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		
 		else if (e.getSource() == NormalBeadButton) {
