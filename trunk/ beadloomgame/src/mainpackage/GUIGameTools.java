@@ -1489,18 +1489,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Tutorial 1 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		
 		else if (e.getSource() == Tut2Button){
@@ -1514,18 +1517,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Tutorial 2 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == Tut3Button){
 			Restart(true, true, true);
@@ -1538,18 +1544,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Tutorial 3 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == Tut4Button){
 			Restart(true, true, true);
@@ -1562,18 +1571,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Tutorial 4 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();		    
+				    }	    
 		}
 		else if (e.getSource() == Tut5Button){
 			Restart(true, true, true);
@@ -1586,18 +1598,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Tutorial 5 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();				    
+				    }			    
 		}
 		else if (e.getSource() == Tut6Button){
 			Restart(true, true, true);
@@ -1610,18 +1625,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Tutorial 6 Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == TriforceButton){
 			Restart(true, true, true);
@@ -1634,18 +1652,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Triforce Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == OverlappingSquaresButton){
 			Restart(true, true, true);
@@ -1658,18 +1679,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Overlapping Squares Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == SixButton){
 			Restart(true, true, true);
@@ -1682,18 +1706,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + "Six Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == CanYouHearMeNowButton){
 			Restart(true, true, true);
@@ -1706,18 +1733,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Can You Hear Me Now Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == StarrySkyButton){
 			Restart(true, true, true);
@@ -1730,18 +1760,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Starry Sky Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == LoomEx6Button){
 			Restart(true, true, true);
@@ -1754,18 +1787,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 6 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }	    
 		}
 		else if (e.getSource() == LoomEx8Button){
 			Restart(true, true, true);
@@ -1778,18 +1814,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 8 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == CircleButton){
 			Restart(true, true, true);
@@ -1802,18 +1841,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Circle Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }   
 		}
 		else if (e.getSource() == FlagButton){
 			Restart(true, true, true);
@@ -1826,18 +1868,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Flag Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == UNCCButton){
 			Restart(true, true, true);
@@ -1850,18 +1895,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " UNCC Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == LoomEx10Button){
 			Restart(true, true, true);
@@ -1874,18 +1922,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 10 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx13Button){
 			Restart(true, true, true);
@@ -1898,18 +1949,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 13 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }  
 		}
 		else if (e.getSource() == LoomEx14Button){
 			Restart(true, true, true);
@@ -1922,18 +1976,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 14 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }	    
 		}
 		else if (e.getSource() == SunriseButton){
 			Restart(true, true, true);
@@ -1946,18 +2003,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Sunrise Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == HeartButton){
 			Restart(true, true, true);
@@ -1970,18 +2030,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Heart Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == SunnySkyButton){
 			Restart(true, true, true);
@@ -1994,18 +2057,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Sunny Sky Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
-				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();	    
+				    }    
 		}
 		else if (e.getSource() == StarsAndStripesButton){
 			Restart(true, true, true);
@@ -2018,18 +2084,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Stars and Stripes Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == ROSSButton){
 			Restart(true, true, true);
@@ -2042,18 +2111,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " ROSS Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == BullseyeButton){
 			Restart(true, true, true);
@@ -2066,18 +2138,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Bullseye Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx7Button){
 			Restart(true, true, true);
@@ -2090,18 +2165,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 7 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx1Button){
 			Restart(true, true, true);
@@ -2114,18 +2192,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 1 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx5Button){
 			Restart(true, true, true);
@@ -2138,18 +2219,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 5 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == LoomEx3Button){
 			Restart(true, true, true);
@@ -2162,18 +2246,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Loom Example 3 Puzzle Selected.\n");
 				    log.close();
+				    
+				  //Display Hint
+					if(hintsOn)	
+					{
+						String hint;
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
+						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
+					}
+					//Restart Timer
+					bl.restartTimer();
+					
 				    }catch (Exception ex){//Catch exception if any
 				      System.err.println("Error: " + ex.getMessage());
 				    }
-			//Display Hint
-			if(hintsOn)	
-			{
-				String hint;
-				hint = getHint();
-				JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
-			}
-			//Restart Timer
-			bl.restartTimer();
 		}
 		else if (e.getSource() == MoonButton){
 			Restart(true, true, true);
@@ -2186,18 +2273,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Moon Puzzle Selected.\n");
 				    log.close();
-				    }catch (Exception ex){//Catch exception if any
-				      System.err.println("Error: " + ex.getMessage());
-				    }
+				    
 				  //Display Hint
 					if(hintsOn)	
 					{
 						String hint;
-						hint = getHint();
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
 						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
 					}
 					//Restart Timer
 					bl.restartTimer();
+					
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
 		}
 		else if (e.getSource() == MegamanButton){
 			Restart(true, true, true);
@@ -2210,18 +2300,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Megaman Puzzle Selected.\n");
 				    log.close();
-				    }catch (Exception ex){//Catch exception if any
-				      System.err.println("Error: " + ex.getMessage());
-				    }
+				    
 				  //Display Hint
 					if(hintsOn)	
 					{
 						String hint;
-						hint = getHint();
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
 						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
 					}
 					//Restart Timer
 					bl.restartTimer();
+					
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
 		}
 		else if (e.getSource() == BatmanButton){
 			Restart(true, true, true);
@@ -2234,18 +2327,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Batman Puzzle Selected.\n");
 				    log.close();
-				    }catch (Exception ex){//Catch exception if any
-				      System.err.println("Error: " + ex.getMessage());
-				    }
+				    
 				  //Display Hint
 					if(hintsOn)	
 					{
 						String hint;
-						hint = getHint();
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
 						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
 					}
 					//Restart Timer
 					bl.restartTimer();
+					
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
 		}
 		else if (e.getSource() == DCButton){
 			Restart(true, true, true);
@@ -2258,18 +2354,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " DC Puzzle Selected.\n");
 				    log.close();
-				    }catch (Exception ex){//Catch exception if any
-				      System.err.println("Error: " + ex.getMessage());
-				    }
+				    
 				  //Display Hint
 					if(hintsOn)	
 					{
 						String hint;
-						hint = getHint();
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
 						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
 					}
 					//Restart Timer
 					bl.restartTimer();
+					
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
 		}
 		else if (e.getSource() == SergeantButton){
 			Restart(true, true, true);
@@ -2282,18 +2381,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Sergeant Puzzle Selected.\n");
 				    log.close();
-				    }catch (Exception ex){//Catch exception if any
-				      System.err.println("Error: " + ex.getMessage());
-				    }
+				    
 				  //Display Hint
 					if(hintsOn)	
 					{
 						String hint;
-						hint = getHint();
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
 						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
 					}
 					//Restart Timer
 					bl.restartTimer();
+					
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
 		}
 		
 		else if (e.getSource() == TieFighterButton){
@@ -2307,18 +2409,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				    FileWriter log = new FileWriter("log.txt", true);
 				    log.write("\t" + getTime() + " Tie Fighter Puzzle Selected.\n");
 				    log.close();
-				    }catch (Exception ex){//Catch exception if any
-				      System.err.println("Error: " + ex.getMessage());
-				    }
+				    
 				  //Display Hint
 					if(hintsOn)	
 					{
 						String hint;
-						hint = getHint();
+						hint = getHint(puz.getPuzzleName(currentPuzzle));
 						JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+						
 					}
 					//Restart Timer
 					bl.restartTimer();
+					
+				    }catch (Exception ex){//Catch exception if any
+				      System.err.println("Error: " + ex.getMessage());
+				    }
 		}
 		
 		else if (e.getSource() == CancelButton){
@@ -2749,9 +2854,24 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		hintsOn = isOn;
 	}
 	
-	public String getHint()
+	public String getHint(String puzzleName)
 	{
 		String hint = "";
+		try
+		{
+			puzzleName = URLEncoder.encode(puzzleName, "UTF-8");
+			hint = sendWebRequest("http://playground.uncc.edu/BeadLoomGame/hints.php?puzzleName=" + puzzleName);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return hint;
+	}
+	
+	public String getHint()
+	{
+		String hint = "this is a test";
 		return hint;
 	}
 	
