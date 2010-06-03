@@ -1,6 +1,11 @@
 package src.mainpackage;
 
 import java.awt.Color;
+import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -1445,6 +1450,7 @@ import org.w3c.dom.NodeList;
            
            InputTools.drawRectangle(-3, 3, 14, 8);
            
+           InputTools.setColor(Color.YELLOW);
            doLinearIt(-2, 14, 5, 1, 1, 3, true, true);
            
            doLinearIt(-2, 13, 5, -1, -1, 2, true, false);
@@ -1693,30 +1699,32 @@ import org.w3c.dom.NodeList;
              resetColor();
              return 34;  
          }
+     	
+     	public InputStream getStream(String url) {
+     		try {
+     				URL test = new URL(url);
+     				    URLConnection con = test.openConnection();
+     				    return con.getInputStream();
+     			} catch (Exception ex) {
+     				ex.printStackTrace();
+     				return null;
+     			}
+     	}
          
          public int setDC()
          {
-//        	 import java.awt.Color;
-//        	 import java.util.ArrayList;
-//        	 import javax.xml.parsers.DocumentBuilder;
-//        	 import javax.xml.parsers.DocumentBuilderFactory;
-//        	 import org.w3c.dom.Document;
-//        	 import org.w3c.dom.Element;
-//        	 import org.w3c.dom.Node;
-//        	 import org.w3c.dom.NodeList;
+        	 String puzzleName = "Dustin-testPuzzle";
              InputTools.setGrid(bl.getGridPanel2());
-        	 
-        	 String fileName = "D:\\beadloomgame\\resources\\custompuzzleexample.xml";
-        	 
         	 try {
         		
         		  DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         		  DocumentBuilder db = dbf.newDocumentBuilder();
-        		  Document doc = db.parse(fileName);
+        		  InputStream stream = getStream(
+        				  "http://playground.uncc.edu/BeadLoomGame/CustomPuzzles/"+puzzleName+".xml");
+        		  Document doc = db.parse(stream);
+        		  stream.close();
         		  doc.getDocumentElement().normalize();
-        		  //if(!doc.getDocumentElement().getNodeName().equals("custompuzzle"))
         		  NodeList nodeLst = doc.getElementsByTagName("layer");
-        		  //System.out.println("Information of all employees");
 
         		  for (int s = 0; s < nodeLst.getLength(); s++)
         		  {
@@ -1737,6 +1745,7 @@ import org.w3c.dom.NodeList;
 	        		    		int y = Integer.parseInt(layer.getAttribute("y"));
 	        		    		InputTools.drawPoint(x, y);
 	        		    	}
+	        		    	//check for line
 	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("line"))
 	        		    	{
 	        		    		int x1 = Integer.parseInt(layer.getAttribute("x1"));
@@ -1745,6 +1754,7 @@ import org.w3c.dom.NodeList;
 	        		    		int y2 = Integer.parseInt(layer.getAttribute("y2"));
 	        		    		doLine(x1, y1, x2, y2);
 	        		    	}
+	        		    	//check for triangle
 	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("triangle"))
 	        		    	{
 	        		    		int x1 = Integer.parseInt(layer.getAttribute("x1"));
@@ -1755,6 +1765,7 @@ import org.w3c.dom.NodeList;
 	        		    		int y3 = Integer.parseInt(layer.getAttribute("y3"));
 	        		    		InputTools.drawTriangle(x1, x2, x3, y1, y2, y3);
 	        		    	}
+	        		    	//check for rectangle
 	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("rectangle"))
 	        		    	{
 	        		    		int x1 = Integer.parseInt(layer.getAttribute("x1"));
@@ -1763,6 +1774,7 @@ import org.w3c.dom.NodeList;
 	        		    		int y2 = Integer.parseInt(layer.getAttribute("y2"));
 	        		    		InputTools.drawRectangle(x1, x2, y1, y2);
 	        		    	}
+	        		    	//check for triangle iteration
 	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("triangleit"))
 	        		    	{
 	        		    		int x = Integer.parseInt(layer.getAttribute("x"));
@@ -1776,6 +1788,7 @@ import org.w3c.dom.NodeList;
 	        		    		if(layer.getAttribute("direction").contains("-")) { isPositive=false; }
 	        		    		doTriangleIt(x, y, every, add, total, incY, isPositive);
 	        		    	}
+	        		    	//check for linear iteration
 	        		    	else if(layer.getAttribute("typeID").equalsIgnoreCase("linearit"))
 	        		    	{
 	        		    		int x = Integer.parseInt(layer.getAttribute("x"));
