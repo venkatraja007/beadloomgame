@@ -249,8 +249,8 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	URL u = null;
 	private Color color;
 	
-
-	
+	//Bead Information
+	Image beadImage = null;	
 	
 	///////////////////////////////////////////////////////////////////////////////////////
 	//============================== Panel implementation ===============================//
@@ -1181,6 +1181,9 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
 		}
 		BeadLoomUtilitiesTabbedPane.addTab("Iterative Tools", LinearIterationTabbedPane);
+		
+		//Make the bead so it is stored in memory
+		redrawBead();
 	}
 
 	
@@ -2465,7 +2468,23 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     
 
     private synchronized Image makeBullet(Color fg, int panelWidth, int panelHeight) {
-        Image bullet;
+        
+    	Image bullet = null;
+    	try
+        {
+			beadImage = beadImage.getScaledInstance(panelWidth/GRID_SIZE+1,
+            		panelHeight/GRID_SIZE+1, 0);
+			ImageFilter imgf = new HueFilter(fg);
+			ImageProducer imgp = new FilteredImageSource(beadImage.getSource(), imgf);
+			bullet = createImage(imgp);
+        }
+        catch(Exception e)
+        {
+        	JOptionPane.showMessageDialog(null, "Error! Error Message: " + e.getCause());
+        }
+    	
+    	
+    	/*Image bullet;
         Image sourceImage = Toolkit.getDefaultToolkit().getImage(BeadLoom.beadLocation);
         
         //scale beads to fit panel width and height
@@ -2475,6 +2494,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     	ImageFilter imgf = new HueFilter(fg);
     	ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
     	bullet = createImage(imgp);
+    	JOptionPane.showMessageDialog(null, "makeBullet in GUIInputTools was called");*/
     	return bullet;
    }
    
@@ -2755,6 +2775,21 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
     		return 0;
     	} 	
+    }
+    
+    public void redrawBead()
+    {
+    	try
+        {
+        	URL beadURL = new URL(BeadLoom.beadLocation);
+        	java.awt.Toolkit.getDefaultToolkit();
+        	beadImage = Toolkit.getDefaultToolkit().createImage(beadURL);
+			
+        }
+        catch(Exception e)
+        {
+        	JOptionPane.showMessageDialog(null, "Error Creating Bead!");
+        }
     }
     
     
