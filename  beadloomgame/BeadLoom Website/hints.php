@@ -20,7 +20,7 @@ if($result && $result->num_rows != 0)
 }
 else
 {
-	echo "No hint for this puzzle!";
+	echo "No Hint!";
 }
 ?>
 
