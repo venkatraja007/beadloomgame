@@ -121,8 +121,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton MegamanButton = new JButton();
 	private JButton BatmanButton = new JButton();
 	private JButton DCButton = new JButton();
-	
+
 	private JButton CancelButton = new JButton();
+	private JButton CustomPuzzleButton = new JButton();
 	
 	//High Scores Panel Label
 	private JLabel HighScoresLabel = new JLabel();
@@ -208,7 +209,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	BeadLoom bl;
 	
 	//Choose Puzzle Button Locations
-	int buttonLength = 200;
+	int buttonLength = 150;
 	int buttonHeight = 26;
 	int vertSpace = 5;
 	int horizSpace = 5;
@@ -252,9 +253,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle RA2 = new Rectangle(RA1.x +buttonLength+horizSpace, R92.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle RB2 = new Rectangle(RB1.x +buttonLength+horizSpace, RA2.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 
-	Rectangle LeftDifR = new Rectangle(startX, RA0.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
+//	Rectangle LeftDifR = new Rectangle(startX, RA0.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
+//	Rectangle CenterDifR = new Rectangle(LeftDifR.x + buttonLength + horizSpace, RA1.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
+//	Rectangle RightDifR = new Rectangle(CenterDifR.x + buttonLength + horizSpace, RA2.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
+	Rectangle FarLeftDifR = new Rectangle(startX, RA0.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
+	Rectangle LeftDifR = new Rectangle(FarLeftDifR.x + buttonLength + horizSpace, RA1.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
 	Rectangle CenterDifR = new Rectangle(LeftDifR.x + buttonLength + horizSpace, RA1.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
 	Rectangle RightDifR = new Rectangle(CenterDifR.x + buttonLength + horizSpace, RA2.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
+	Rectangle FarRightDifR = new Rectangle(RightDifR.x + buttonLength + horizSpace, RA2.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
+	Rectangle CustomR = new Rectangle(LeftDifR.x, LeftDifR.y + buttonHeight + vertSpace, buttonLength, buttonHeight);
 	Rectangle CancelR = new Rectangle(CenterDifR.x, CenterDifR.y + buttonHeight + vertSpace, buttonLength, buttonHeight);
 		
 	//Color Button Locations
@@ -603,6 +610,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Tutorial Button ----
 		TutButton.setText("Tutorial Puzzles");
 		TutButton.addActionListener(this);
+		TutButton.setBounds(FarLeftDifR);
+		ChoosePuzzlePanel.add(TutButton);
 		
 		//---- Easy Button ----
 		EasyButton.setText("Easy Puzzles");
@@ -627,6 +636,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		CancelButton.addActionListener(this);
 		CancelButton.setBounds(CancelR);
 		ChoosePuzzlePanel.add(CancelButton);
+		
+		//---- Custom Puzzle Button ----
+		CustomPuzzleButton.setText("Custom Puzzle");
+		CustomPuzzleButton.addActionListener(this);
+		CustomPuzzleButton.setBounds(CustomR);
+		ChoosePuzzlePanel.add(CustomPuzzleButton);
 		
 		//---- Green Button ----
 		GreenButton.setText("Green");
@@ -1472,7 +1487,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			ChoosePuzzlePanel.add(MediumButton);
 			HardButton.setBounds(RightDifR);
 			ChoosePuzzlePanel.add(HardButton);
-			ChoosePuzzlePanel.remove(TutButton);
+//			ChoosePuzzlePanel.remove(TutButton);
 			removePuzzleButtons();
 			
 			ChoosePuzzlePanel.add(Tut1Button);
@@ -2468,13 +2483,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getPuzzleFrame().setVisible(false);
 		}
 		else if (e.getSource() == TutButton){
-			EasyButton.setBounds(LeftDifR);
-			ChoosePuzzlePanel.add(EasyButton);
-			MediumButton.setBounds(CenterDifR);
-			ChoosePuzzlePanel.add(MediumButton);
-			HardButton.setBounds(RightDifR);
-			ChoosePuzzlePanel.add(HardButton);
-			ChoosePuzzlePanel.remove(TutButton);
+//			EasyButton.setBounds(LeftDifR);
+//			ChoosePuzzlePanel.add(EasyButton);
+//			MediumButton.setBounds(CenterDifR);
+//			ChoosePuzzlePanel.add(MediumButton);
+//			HardButton.setBounds(RightDifR);
+//			ChoosePuzzlePanel.add(HardButton);
+//			ChoosePuzzlePanel.remove(TutButton);
 			removePuzzleButtons();
 			
 			ChoosePuzzlePanel.add(Tut1Button);
@@ -2518,13 +2533,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			MLabelB.setText(" ");
 		}
 		else if (e.getSource() == EasyButton){
-			TutButton.setBounds(LeftDifR);
-			ChoosePuzzlePanel.add(TutButton);
-			MediumButton.setBounds(CenterDifR);
-			ChoosePuzzlePanel.add(MediumButton);
-			HardButton.setBounds(RightDifR);
-			ChoosePuzzlePanel.add(HardButton);
-			ChoosePuzzlePanel.remove(EasyButton);
+//			TutButton.setBounds(LeftDifR);
+//			ChoosePuzzlePanel.add(TutButton);
+//			MediumButton.setBounds(CenterDifR);
+//			ChoosePuzzlePanel.add(MediumButton);
+//			HardButton.setBounds(RightDifR);
+//			ChoosePuzzlePanel.add(HardButton);
+//			ChoosePuzzlePanel.remove(EasyButton);
 			
 			removePuzzleButtons();
 			
@@ -2584,13 +2599,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
 			}
 			else{
-			EasyButton.setBounds(LeftDifR);
-			ChoosePuzzlePanel.add(EasyButton);
-			TutButton.setBounds(CenterDifR);
-			ChoosePuzzlePanel.add(TutButton);
-			HardButton.setBounds(RightDifR);
-			ChoosePuzzlePanel.add(HardButton);
-			ChoosePuzzlePanel.remove(MediumButton);
+//			EasyButton.setBounds(LeftDifR);
+//			ChoosePuzzlePanel.add(EasyButton);
+//			TutButton.setBounds(CenterDifR);
+//			ChoosePuzzlePanel.add(TutButton);
+//			HardButton.setBounds(RightDifR);
+//			ChoosePuzzlePanel.add(HardButton);
+//			ChoosePuzzlePanel.remove(MediumButton);
 			removePuzzleButtons();
 			
 			ChoosePuzzlePanel.add(SunnySkyButton);
@@ -2650,13 +2665,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 						JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
 					}
 					else{
-			EasyButton.setBounds(LeftDifR);
-			ChoosePuzzlePanel.add(EasyButton);
-			MediumButton.setBounds(CenterDifR);
-			ChoosePuzzlePanel.add(MediumButton);
-			TutButton.setBounds(RightDifR);
-			ChoosePuzzlePanel.add(TutButton);
-			ChoosePuzzlePanel.remove(HardButton);
+//			EasyButton.setBounds(LeftDifR);
+//			ChoosePuzzlePanel.add(EasyButton);
+//			MediumButton.setBounds(CenterDifR);
+//			ChoosePuzzlePanel.add(MediumButton);
+//			TutButton.setBounds(RightDifR);
+//			ChoosePuzzlePanel.add(TutButton);
+//			ChoosePuzzlePanel.remove(HardButton);
 			removePuzzleButtons();
 			
 			ChoosePuzzlePanel.add(MoonButton);
