@@ -291,7 +291,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- high scores panel ----
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
 		HighScoresPanel.setBackground(Color.white);
-		HighScoresPanel.setBounds(this.getBounds());
+		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
 		HighScoresPanel.setLayout(HighScoresLayout);
 		
 		//---- high scores panel ----
@@ -816,8 +816,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//HighScoresPanel.add(WebRequestTextField);
 	    HighScoresPanel.add(UpdateHighScoresButton);
 	    HighScoresPanel.add(HighScoresComboBox);
-	    //HighScoresPanel.add(Box.createRigidArea(new Dimension(500, 15)));
-	    HighScoresLayout.setAlignOnBaseline(true);
 		UpdateHighScoresButton.addActionListener(this);
 		
 		//---- High Scores Label ----
@@ -1316,10 +1314,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 	
 	public String sendWebRequest(String url) {
-		return sendWebRequest(url, "token");
-	}
-	
-	public String sendWebRequest(String url, String token) {
 		StringBuilder builder = new StringBuilder(); 
 		try {
 				URL test = new URL(url);
@@ -1329,7 +1323,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				                            con.getInputStream()));
 				    String inputLine;
 				    
-
 				    while ((inputLine = in.readLine()) != null)  {
 				    	
 				    	builder.append(inputLine);
@@ -1360,14 +1353,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					HighScoresLabel.setText(
 							sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php?puzzleName=" + 
 									URLEncoder.encode(
-											puz.getPuzzleName(currentPuzzle), "UTF-8")));
+											puz.getPuzzleName(currentPuzzle), "UTF-8")) +
+											"&token=token");
 				}
 				else
 				{
 					HighScoresLabel.setText(
 							sendWebRequest("http://playground.uncc.edu/BeadLoomGame/scores.php?puzzleName=" + 
 									URLEncoder.encode(
-											HighScoresComboBox.getSelectedItem().toString(),"UTF-8")));
+											HighScoresComboBox.getSelectedItem().toString(),"UTF-8")) +
+											"&token=token");
 				}
 				HighScoresComboBox.removeAllItems();
 				String temp = sendWebRequest("http://playground.uncc.edu/BeadLoomGame/puzzles.php");
@@ -1439,7 +1434,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == HighScoresButton) {
 			bl.getHighScoresFrame().setVisible(!bl.getHighScoresFrame().isVisible());
 			bl.getHighScoresFrame().toFront();
-			bl.getHighScoresFrame().setBounds(bl.getGridFrame2().getBounds());
+			bl.getHighScoresFrame().setBounds(bl.getPuzzleFrame().getBounds());
+			HighScoresComboBox.removeAllItems();
+			//Po
+			String temp = sendWebRequest("http://playground.uncc.edu/BeadLoomGame/puzzles.php");
+			String[] items = temp.split(",");
+			for(int i=0; i<items.length; i++)
+			{
+				HighScoresComboBox.addItem(items[i]);
+			}
 		}
 		
 		else if (e.getSource() == GameOptionsButton) {

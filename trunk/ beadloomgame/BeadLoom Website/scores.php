@@ -40,24 +40,27 @@ $puzzleName = $_GET['puzzleName'];
 				<?php 
 					echo "$puzzleName";
 					echo "<br/>";
-					$query = "SELECT DISTINCT puzzle FROM HighScores WHERE 1 ORDER BY puzzle";
-					$result = $db->query($query);
-					if($result)
+					if(!isset($_GET['token']))
 					{
-						
-						//echo "<tr><td>";
-						echo "<select id='puzzle' name='puzzle' onchange='puzzleSelect()'>";
-						echo "<option selected='selected' value=''>Chosse a puzzle...</option>";
-						while($row = $result->fetch_array(MYSQLI_NUM))
+						$query = "SELECT DISTINCT puzzle FROM HighScores WHERE 1 ORDER BY puzzle";
+						$result = $db->query($query);
+						if($result)
 						{
-							echo "<option value='$row[0]'>$row[0]</option>";
+							
+							//echo "<tr><td>";
+							echo "<select id='puzzle' name='puzzle' onchange='puzzleSelect()'>";
+							echo "<option selected='selected' value=''>Chosse a puzzle...</option>";
+							while($row = $result->fetch_array(MYSQLI_NUM))
+							{
+								echo "<option value='$row[0]'>$row[0]</option>";
+							}
+							echo "</select>";
+							//echo "</td></tr>";
 						}
-						echo "</select>";
-						//echo "</td></tr>";
-					}
-					else
-					{
-						
+						else
+						{
+							
+						}
 					}
 					?>
 			</th>
@@ -78,35 +81,35 @@ $puzzleName = $_GET['puzzleName'];
 		</tr>
 
 	<?php
-	if(isset($_GET['puzzleName']) && !empty($_GET['puzzleName']))
-	{
-		$query = "SELECT user,score,time,medal FROM HighScores WHERE puzzle='$puzzleName' ORDER BY puzzle, score, time, user";
-	}
-	else
-	{
-		$query = "SELECT user,score,time,medal,puzzle FROM HighScores WHERE 1 ORDER BY puzzle, score, user";
-	}
-	$result = $db->query($query);
-	if($result)
-	{
-		$rank = 1;
-		while($row = $result->fetch_array(MYSQLI_NUM))
+		if(isset($_GET['puzzleName']) && !empty($_GET['puzzleName']))
 		{
-			echo "<tr><td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">$rank</td>";
-			foreach($row as $val)
-			{
-				echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">";
-				echo $val;
-				echo "</td>";
-			}
-			echo "</tr>";
-			$rank++;
+			$query = "SELECT user,score,time,medal FROM HighScores WHERE puzzle='$puzzleName' ORDER BY puzzle, score, time, user";
 		}
-	}
-	else
-	{
-		echo "No result something happeneded maybe query is wrong</br>";
-	}
+		else
+		{
+			$query = "SELECT user,score,time,medal,puzzle FROM HighScores WHERE 1 ORDER BY puzzle, score, user";
+		}
+		$result = $db->query($query);
+		if($result)
+		{
+			$rank = 1;
+			while($row = $result->fetch_array(MYSQLI_NUM))
+			{
+				echo "<tr><td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">$rank</td>";
+				foreach($row as $val)
+				{
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">";
+					echo $val;
+					echo "</td>";
+				}
+				echo "</tr>";
+				$rank++;
+			}
+		}
+		else
+		{
+			echo "No result something happeneded maybe query is wrong</br>";
+		}
 	?>
 
 	</table>
