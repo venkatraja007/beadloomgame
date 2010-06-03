@@ -1436,7 +1436,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getHighScoresFrame().toFront();
 			bl.getHighScoresFrame().setBounds(bl.getPuzzleFrame().getBounds());
 			HighScoresComboBox.removeAllItems();
-			//Po
+			//Populate the level comboBox on click of HighScores button
 			String temp = sendWebRequest("http://playground.uncc.edu/BeadLoomGame/puzzles.php");
 			String[] items = temp.split(",");
 			for(int i=0; i<items.length; i++)
