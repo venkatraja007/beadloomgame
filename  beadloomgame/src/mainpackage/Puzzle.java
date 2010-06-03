@@ -1720,7 +1720,7 @@ import org.w3c.dom.NodeList;
         		  DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         		  DocumentBuilder db = dbf.newDocumentBuilder();
         		  InputStream stream = getStream(
-        				  "http://playground.uncc.edu/BeadLoomGame/CustomPuzzles/"+puzzleName+".xml");
+        				  "http://unccmakesgames.com/games/BeadLoomGame/CustomPuzzles/"+puzzleName+".xml");
         		  Document doc = db.parse(stream);
         		  stream.close();
         		  doc.getDocumentElement().normalize();
