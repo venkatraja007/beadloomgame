@@ -2635,7 +2635,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == HardButton){
-			if(		   RecordMedalShort[21].equals("N") ||	
+			if(		   RecordMedalShort[34].equals("N") ||
+					   RecordMedalShort[33].equals("N") ||
+					   RecordMedalShort[21].equals("N") ||	
 					   RecordMedalShort[20].equals("N") ||	
 					   RecordMedalShort[19].equals("N") ||
 					   RecordMedalShort[18].equals("N") ||
