@@ -48,6 +48,7 @@ import java.awt.Color;
 import java.awt.FileDialog;
 import java.awt.Frame;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.image.ImageFilter;
 import java.awt.image.RGBImageFilter;
 import java.awt.image.ImageProducer;
@@ -99,7 +100,12 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     public static Dimension dim = new Dimension(1024, 768);
     //Set BEAD_ADDRESS to null, initialized in the the init() function
 	public static String BEAD_ADDRESS = "http://webpages.uncc.edu/~sgpickfo/bead.jpg";
-	public static String beadLocation = "bead.JPG";
+	
+	//this line is correct
+	//public static String beadLocation = "bead.JPG";
+	
+	//this line is added for testing to see if it will pull from an online space
+	public static String beadLocation = "http://webpages.uncc.edu/~sgpickfo/bead.jpg";
 	
 	private GUIGoalImages GoalImagesFrame;
 	private GUIOutputWindow OutputWindow;
@@ -169,6 +175,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 					minutes ++;
 				}
 				TimerLabel.setText("Timer: " + updateTime(minutes, seconds));
+			}
+			else
+			{
+				TimerLabel.setEnabled(false);
 			}
 		}
 	});
@@ -895,6 +905,27 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
         //Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
         //This needs to be uncommented to work with online applet -Acey
         //Image sourceImage = getImage(url);
+        
+        /*try
+        {
+        	URL beadURL = new URL("http://webpages.uncc.edu/~sgpickfo/bead.JPG");
+        	
+        	java.awt.Toolkit.getDefaultToolkit();
+			java.awt.Image beadImage = Toolkit.getDefaultToolkit().createImage(beadURL);
+			beadImage = beadImage.getScaledInstance(panelWidth/InputTools.GRID_SIZE+1,
+            		panelHeight/InputTools.GRID_SIZE+1, 0);
+			ImageFilter imgf = new HueFilter(fg);
+			ImageProducer imgp = new FilteredImageSource(beadImage.getSource(), imgf);
+			bullet = createImage(imgp);
+			
+        }
+        catch(Exception e)
+        {
+        	JOptionPane.showMessageDialog(null, "Error! Error Message: " + e.getCause());
+        }*/
+        
+        
+        // Commented out to see if above try/catch works
         try
         {
         	//scale beads to fit panel width and height
@@ -1083,15 +1114,22 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     	try 
     	{
     		//Set URL to the baseURL 'BEAD_ADDRESS' and append image name
-    	    url = new URL(BEAD_ADDRESS+"bead.JPG");
+    	    //url = new URL(BEAD_ADDRESS+"bead.JPG");
+    		url = new URL("http://webpages.uncc.edu/~sgpickfo/bead.JPG");
     	} 
     	catch (MalformedURLException e) 
     	{
     		//JOptionPane.showMessageDialog(null, "Invalid Image Bead URL"); DISABLED FOR DEBUG
     		//If BEAD_ADDRESS is null set to my default location
     		//try{url = new URL("http://www.rpi.edu/~kotulc/Images/bead.JPG");}
-    		try{url = new URL("http://webpages.uncc.edu/~sgpickfo/bead.jpg");}
-    		catch(MalformedURLException ex){return;}//Else quit
+    		try
+    		{
+    			url = new URL("http://webpages.uncc.edu/~sgpickfo/bead.jpg");
+    		}
+    		catch(MalformedURLException ex)
+    		{
+    			return;//Else quit
+    		}
     	}
     	//Bead color manipulation
     	Color fg;
@@ -1288,6 +1326,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
     public void stopTimer()
     {
     	timer.stop();
+    }
+    
+    public void disableTimer()
+    {
+    	TimerLabel.setEnabled(false);
     }
         
  //******* Event Handlers, Action Events, Action Listeners *******
