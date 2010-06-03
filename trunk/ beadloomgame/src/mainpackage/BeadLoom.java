@@ -889,21 +889,29 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
      * Create a bullet bitmap from a new foreground color and a color image.
      */
     private synchronized Image makeBullet(Color fg, URL url, int panelWidth, int panelHeight) {
-        Image bullet;
+        Image bullet = null;
         
         //This needs to be here to work offline -Acey
         //Image sourceImage = Toolkit.getDefaultToolkit().getImage("bead.JPG");
         //This needs to be uncommented to work with online applet -Acey
         //Image sourceImage = getImage(url);
-        Image sourceImage = Toolkit.getDefaultToolkit().getImage("http://webpages.uncc.edu/~sgpickfo/bead.jpg");
+        try
+        {
+        	//scale beads to fit panel width and height
+        	Image sourceImage = Toolkit.getDefaultToolkit().getImage("http://webpages.uncc.edu/~sgpickfo/bead.jpg");
+        	sourceImage = sourceImage.getScaledInstance(panelWidth/InputTools.GRID_SIZE+1,
+            		panelHeight/InputTools.GRID_SIZE+1, 0);
+            ImageFilter imgf = new HueFilter(fg);
+            ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
+            	bullet = createImage(imgp);
+            	
+        }
+        catch (Exception ex)
+        {
+        	JOptionPane.showMessageDialog(null, "Error! Error message: " + ex.getMessage());
+        }
         
-        //scale beads to fit panel width and height
-        sourceImage = sourceImage.getScaledInstance(panelWidth/InputTools.GRID_SIZE+1,
-        		panelHeight/InputTools.GRID_SIZE+1, 0);
-        ImageFilter imgf = new HueFilter(fg);
-        ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
-        	bullet = createImage(imgp);
-        	return bullet;
+        return bullet;
         }
               
     public boolean accept(File f, String s) {
