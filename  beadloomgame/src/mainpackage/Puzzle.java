@@ -186,17 +186,17 @@ import org.w3c.dom.NodeList;
       
       //A Basic Point Call
       //Set Color then call draw Point
-         //InputTools.setColor(Color.GREEN);
-         //InputTools.drawPoint(-5, 5);
+         InputTools.setColor(Color.GREEN);
+         InputTools.drawPoint(-5, 5);
       
          InputTools.setColor(Color.RED);
          InputTools.drawPoint(5, 5);
       
-         //InputTools.setColor(Color.YELLOW);
-        // InputTools.drawPoint(-5, -5);
+         InputTools.setColor(Color.YELLOW);
+         InputTools.drawPoint(-5, -5);
       
-         //InputTools.setColor(Color.BLUE);
-         //InputTools.drawPoint(5, -5);
+         InputTools.setColor(Color.BLUE);
+         InputTools.drawPoint(5, -5);
       
       //Calculate the Goal Images bead array
          bl.getGridPanel2().calcGameGrid();

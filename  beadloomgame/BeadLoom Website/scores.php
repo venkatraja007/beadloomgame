@@ -8,7 +8,7 @@
 		function puzzleSelect()
 		{
 			var selectBox = document.getElementById("puzzle").value;
-			window.location = "http://playground.uncc.edu/BeadLoomGame/scores.php?puzzleName=" + selectBox;
+			window.location = "http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + selectBox;
 		}
 	</script>
 <?php

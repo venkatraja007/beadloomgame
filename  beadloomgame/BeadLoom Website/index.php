@@ -10,7 +10,7 @@
 	function playGame()
 	{
 		//Change once we have URL of actual applet
-		window.location = "http://playground.uncc.edu/beadLoomGame";
+		window.location = "http://unccmakesgames.com/games/BeadLoomGame";
 	
 	}
 	

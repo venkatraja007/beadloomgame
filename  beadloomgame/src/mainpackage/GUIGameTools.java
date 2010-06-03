@@ -1193,7 +1193,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
     			
     			//Send this medal to the website
 				try {
-					message = sendWebRequest("http://unccmakesgames.com/BeadLoomGame/enterScores.php?" +
+					message = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php?" +
 							"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
 							"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
 							"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
@@ -1366,7 +1366,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			try {
 				if (HighScoresComboBox.getSelectedItem() == null) {
 					HighScoresLabel.setText(
-							sendWebRequest("http://unccmakesgames.com/BeadLoomGame/scores.php?puzzleName=" + 
+							sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											puz.getPuzzleName(currentPuzzle), "UTF-8")) +
 											"&token=token");
@@ -1374,13 +1374,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				else
 				{
 					HighScoresLabel.setText(
-							sendWebRequest("http://unccmakesgames.com/BeadLoomGame/scores.php?puzzleName=" + 
+							sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											HighScoresComboBox.getSelectedItem().toString(),"UTF-8")) +
 											"&token=token");
 				}
 				HighScoresComboBox.removeAllItems();
-				String temp = sendWebRequest("http://unccmakesgames.com/BeadLoomGame/puzzles.php");
+				String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/puzzles.php");
 				String[] items = temp.split(",");
 				for(int i=0; i<items.length; i++)
 				{
@@ -1452,7 +1452,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getHighScoresFrame().setBounds(bl.getPuzzleFrame().getBounds());
 			HighScoresComboBox.removeAllItems();
 			//Populate the level comboBox on click of HighScores button
-			String temp = sendWebRequest("http://unccmakesgames.com/BeadLoomGame/puzzles.php");
+			String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/puzzles.php");
 			String[] items = temp.split(",");
 			for(int i=0; i<items.length; i++)
 			{
@@ -2915,7 +2915,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		try
 		{
 			puzzleName = URLEncoder.encode(puzzleName, "UTF-8");
-			hint = sendWebRequest("http://unccmakesgames.com/BeadLoomGame/hints.php?puzzleName=" + puzzleName);
+			hint = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName);
 		}
 		catch (Exception e)
 		{
