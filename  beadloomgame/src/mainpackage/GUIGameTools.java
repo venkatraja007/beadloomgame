@@ -41,6 +41,8 @@ import javax.swing.JTextField;
 
 import javax.swing.border.LineBorder;
 
+import com.sun.xml.internal.ws.wsdl.writer.UsingAddressing;
+
 public class GUIGameTools extends JPanel implements ActionListener{
 	public static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	
@@ -2922,6 +2924,46 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			e.printStackTrace();
 		}
 		return hint;
+	}
+	
+	public void setMainMenuMode()
+	{
+		removeAllWindows();
+		
+		JPanel panel = bl.getContentPanel();
+		//TODO insert code to add main menu here
+	}
+	
+	public void setCustomPuzzle()
+	{
+		removeAllWindows();
+		
+		JPanel panel = bl.getContentPanel();
+		panel.add(bl.getGridFrame());
+		panel.add(bl.getBeadUtilitiesFrame());
+		panel.add(bl.getOutputWindow());
+		//TODO insert code to add custom puzzle menu here
+		panel.repaint();
+	}
+	
+	public void setGamePlayMode()
+	{
+		removeAllWindows();
+		
+		JPanel panel = bl.getContentPanel();
+		panel.add(bl.getGridFrame());
+		panel.add(bl.getGridFrame2());
+		panel.add(bl.getOutputWindow());
+		panel.add(bl.getBeadUtilitiesFrame());
+		//TODO insert code to add in-game frame here
+		panel.add(bl.getGameFrame());
+		panel.repaint();
+	}
+	
+	public void removeAllWindows()
+	{
+		bl.getContentPanel().removeAll();
+		bl.getContentPanel().repaint();
 	}
 	
 	public String getHint()
