@@ -1,26 +1,26 @@
 /*******************************************************************
-* 																   *
-*	NAME:		GUIInputTools.java		                           *
-*	DATE:		4/22/08								               *
-*	VERSION:	1.0.0							                   *
-*	PURPOSE:	Create a Layer from input values and pass it	   *
-*				onto the GridPanel class for graphing.             *
-*	DOCUMENT REFERENCE(S):	                    				   *
-*											                       *
-*	PROCEDURE INVOCATION:						                   *
-*	      actionPerformed(ActionEvent)                             *
-*				                                                   *
-*	INPUT PARAMETERS:							                   *
-*		  Integers, Floats                                         *
-*								                                   *
-*	OUTPUT PARAMETERS:							                   *
-*		   Layer                                                   *
-*											                       *
-*	ASSUMPTIONS: None			                                   *
-*	LIMITATIONS: Input values must be between -50 and 50           *
-*									                               *
-*											                       *
-*******************************************************************/
+ * 																   *
+ *	NAME:		GUIInputTools.java		                           *
+ *	DATE:		4/22/08								               *
+ *	VERSION:	1.0.0							                   *
+ *	PURPOSE:	Create a Layer from input values and pass it	   *
+ *				onto the GridPanel class for graphing.             *
+ *	DOCUMENT REFERENCE(S):	                    				   *
+ *											                       *
+ *	PROCEDURE INVOCATION:						                   *
+ *	      actionPerformed(ActionEvent)                             *
+ *				                                                   *
+ *	INPUT PARAMETERS:							                   *
+ *		  Integers, Floats                                         *
+ *								                                   *
+ *	OUTPUT PARAMETERS:							                   *
+ *		   Layer                                                   *
+ *											                       *
+ *	ASSUMPTIONS: None			                                   *
+ *	LIMITATIONS: Input values must be between -50 and 50           *
+ *									                               *
+ *											                       *
+ *******************************************************************/
 package src.mainpackage;
 
 import java.awt.*;
@@ -38,7 +38,7 @@ import java.util.ArrayList;
 public class GUIInputTools extends JApplet implements ActionListener, ItemListener{
 	private GridPanel grid;
 	private Layer lay;
-	
+
 	//======= Utilities Tabbed Panel=======
 	private JTabbedPane BeadLoomUtilitiesTabbedPane = new JTabbedPane();
 	private JPanel BeadLoomUtilitiesPanel = new JPanel();
@@ -118,7 +118,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	private JTextField LinearIterationInc2TextField = new JTextField();
 	//	private JTextField LinearIterationColorTextField = new JTextField();
 	private JTextField LinearIterationRowsTotalTextField = new JTextField();
-	
+
 	//------- Triangle Iteration Components -------
 	private JTabbedPane TriangleIterationTabbedPane = new JTabbedPane();
 	private JPanel TriangleIterationPanel = new JPanel();
@@ -142,7 +142,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	private JTextField TriangleIterationBeadsAddedTextField = new JTextField();
 	//	private JTextField TriangleIterationColorTextField = new JTextField();
 	private JTextField TriangleIterationRowsTotalTextField = new JTextField();
-	
+
 	//-------- Linear Iteration Loop Tool ---------  
 	private JLayeredPane LinearItrLoopLayeredPane = new JLayeredPane();
 	private JButton DrawLinearItrLoopButton = new JButton();
@@ -194,7 +194,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	private JComboBox TrigPlusOrMinusSelector = new JComboBox();
 	private String TrigPlusOrMinusStrings[] = {"+", "-"};
 	private JTextField TrigAdditiveTextField = new JTextField();
-	
+
 	//-------- Triangle Iteration Loop Tool ---------  
 	private JLayeredPane TriangleItrLoopLayeredPane = new JLayeredPane();
 	private String TriangleItrLoopIncrementStrings[] = {"Y = Y", "Y = X", "X = Y", "X = X"};
@@ -234,12 +234,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	private JTextField TriangleItrLoopRowsTextField = new JTextField();
 	private JTextField TriangleItrLoopStatement1TextField = new JTextField();
 	private JTextField TriangleItrLoopStatement2TextField = new JTextField();
-	
-	
+
+
 	//Grid stuff
 	//GridPanel gp = new GridPanel();
 	int GRID_SIZE = 40; // default grid size
-    int PAD       = 20;
+	int PAD       = 20;
 	double xInc;
 	double yInc;
 
@@ -248,685 +248,685 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	double gridY;
 	URL u = null;
 	private Color color;
-	
+
 	//Bead Information
 	Image beadImage = null;	
-	
+
 	///////////////////////////////////////////////////////////////////////////////////////
 	//============================== Panel implementation ===============================//
 	///////////////////////////////////////////////////////////////////////////////////////
-	
-	
+
+
 
 	public GUIInputTools() {
 		//======== BeadLoomUtilitiesTabbedPane ========
 
-			//======== BeadLoomUtilitiesPanel ========
+		//======== BeadLoomUtilitiesPanel ========
+		{
+			BeadLoomUtilitiesPanel.setLayout(null);
+
+			//---- DrawPointXLabel ----
+			DrawPointXLabel.setText("X =");
+			BeadLoomUtilitiesPanel.add(DrawPointXLabel);
+			DrawPointXLabel.setBounds(140, 15, 25, DrawPointXLabel.getPreferredSize().height);
+
+			//---- DrawPointYLabel ----
+			DrawPointYLabel.setText(" Y =");
+			BeadLoomUtilitiesPanel.add(DrawPointYLabel);
+			DrawPointYLabel.setBounds(210, 15, 27, 14);
+
+			//---- DrawLineX1Label ----
+			DrawLineX1Label.setText("X1 =");
+			BeadLoomUtilitiesPanel.add(DrawLineX1Label);
+			DrawLineX1Label.setBounds(135, 60, 25, 14);
+
+			//---- DrawLineY1Label ----
+			DrawLineY1Label.setText(" Y1 =");
+			BeadLoomUtilitiesPanel.add(DrawLineY1Label);
+			DrawLineY1Label.setBounds(205, 60, 30, 14);
+
+			//---- DrawLineX2Label ----
+			DrawLineX2Label.setText("X2 =");
+			BeadLoomUtilitiesPanel.add(DrawLineX2Label);
+			DrawLineX2Label.setBounds(135, 95, 25, 14);
+
+			//---- DrawLineY2Label ----
+			DrawLineY2Label.setText("   Y2 =");
+			BeadLoomUtilitiesPanel.add(DrawLineY2Label);
+			DrawLineY2Label.setBounds(200, 95, 35, 14);
+
+			//---- DrawPointXTextField ----
+			DrawPointXTextField.setText("0");
+			BeadLoomUtilitiesPanel.add(DrawPointXTextField);
+			DrawPointXTextField.setBounds(165, 10, 30, 26);
+
+			//---- DrawPointYTextField ----
+			DrawPointYTextField.setText("0");
+			BeadLoomUtilitiesPanel.add(DrawPointYTextField);
+			DrawPointYTextField.setBounds(235, 10, 30, 26);
+
+			//---- DrawLineX1TextField ----
+			DrawLineX1TextField.setText("0");
+			BeadLoomUtilitiesPanel.add(DrawLineX1TextField);
+			DrawLineX1TextField.setBounds(165, 55, 30, 26);
+
+			//---- DrawLineX2TextField ----
+			DrawLineX2TextField.setText("7");
+			BeadLoomUtilitiesPanel.add(DrawLineX2TextField);
+			DrawLineX2TextField.setBounds(165, 90, 30, 26);
+
+			//---- DrawLineY1TextField ----
+			DrawLineY1TextField.setText("0");
+			BeadLoomUtilitiesPanel.add(DrawLineY1TextField);
+			DrawLineY1TextField.setBounds(235, 55, 30, 26);
+
+			//---- DrawLineY2TextField ----
+			DrawLineY2TextField.setText("7");
+			BeadLoomUtilitiesPanel.add(DrawLineY2TextField);
+			DrawLineY2TextField.setBounds(235, 90, 30, 26);
+
+			//---- DrawPointButton ----
+			DrawPointButton.setText("Draw Point");
+			BeadLoomUtilitiesPanel.add(DrawPointButton);
+			DrawPointButton.setBounds(5, 10, 115, 21);
+			DrawPointButton.addActionListener(this);
+
+			//---- DrawLineButton ----
+			DrawLineButton.setText("Draw Line");
+			BeadLoomUtilitiesPanel.add(DrawLineButton);
+			DrawLineButton.setBounds(5, 55, 115, 21);
+			DrawLineButton.addActionListener(this);
+
+
+		}
+		BeadLoomUtilitiesTabbedPane.addTab("Point & Line Tool", BeadLoomUtilitiesPanel);
+
+
+		//			======== RectangleDrawTabbedPane ========
+		{
+
+			//======== RectangleDrawLayeredPane ========
 			{
-				BeadLoomUtilitiesPanel.setLayout(null);
 
-				//---- DrawPointXLabel ----
-				DrawPointXLabel.setText("X =");
-				BeadLoomUtilitiesPanel.add(DrawPointXLabel);
-				DrawPointXLabel.setBounds(140, 15, 25, DrawPointXLabel.getPreferredSize().height);
+				//---- DrawRectangleButton ----
+				DrawRectangleButton.setText("Draw Rectangle");
+				RectangleDrawLayeredPane.add(DrawRectangleButton, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleButton.setBounds(5, 25, 135, 21);
+				DrawRectangleButton.addActionListener(this);
 
-				//---- DrawPointYLabel ----
-				DrawPointYLabel.setText(" Y =");
-				BeadLoomUtilitiesPanel.add(DrawPointYLabel);
-				DrawPointYLabel.setBounds(210, 15, 27, 14);
+				//---- DrawRectangleX1Label ----
+				DrawRectangleX1Label.setText("X1 =");
+				RectangleDrawLayeredPane.add(DrawRectangleX1Label, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleX1Label.setBounds(160, 10, 25, 14);
 
-				//---- DrawLineX1Label ----
-				DrawLineX1Label.setText("X1 =");
-				BeadLoomUtilitiesPanel.add(DrawLineX1Label);
-				DrawLineX1Label.setBounds(135, 60, 25, 14);
+				//---- DrawRectangleX2Label ----
+				DrawRectangleX2Label.setText("X2 =");
+				RectangleDrawLayeredPane.add(DrawRectangleX2Label, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleX2Label.setBounds(160, 45, 25, 14);
 
-				//---- DrawLineY1Label ----
-				DrawLineY1Label.setText(" Y1 =");
-				BeadLoomUtilitiesPanel.add(DrawLineY1Label);
-				DrawLineY1Label.setBounds(205, 60, 30, 14);
+				//---- DrawRectangleY1Label ----
+				DrawRectangleY1Label.setText("Y1 =");
+				RectangleDrawLayeredPane.add(DrawRectangleY1Label, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleY1Label.setBounds(240, 10, 25, 14);
 
-				//---- DrawLineX2Label ----
-				DrawLineX2Label.setText("X2 =");
-				BeadLoomUtilitiesPanel.add(DrawLineX2Label);
-				DrawLineX2Label.setBounds(135, 95, 25, 14);
+				//---- DrawRectangleY2Label ----
+				DrawRectangleY2Label.setText("Y2 =");
+				RectangleDrawLayeredPane.add(DrawRectangleY2Label, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleY2Label.setBounds(240, 45, 25, 14);
 
-				//---- DrawLineY2Label ----
-				DrawLineY2Label.setText("   Y2 =");
-				BeadLoomUtilitiesPanel.add(DrawLineY2Label);
-				DrawLineY2Label.setBounds(200, 95, 35, 14);
+				//---- DrawRectangleX1TextField ----
+				DrawRectangleX1TextField.setText("0");
+				RectangleDrawLayeredPane.add(DrawRectangleX1TextField, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleX1TextField.setBounds(190, 5, 30, 26);
 
-				//---- DrawPointXTextField ----
-				DrawPointXTextField.setText("0");
-				BeadLoomUtilitiesPanel.add(DrawPointXTextField);
-				DrawPointXTextField.setBounds(165, 10, 30, 26);
+				//---- DrawRectangleX2TextField ----
+				DrawRectangleX2TextField.setText("6");
+				RectangleDrawLayeredPane.add(DrawRectangleX2TextField, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleX2TextField.setBounds(190, 40, 30, 26);
 
-				//---- DrawPointYTextField ----
-				DrawPointYTextField.setText("0");
-				BeadLoomUtilitiesPanel.add(DrawPointYTextField);
-				DrawPointYTextField.setBounds(235, 10, 30, 26);
+				//---- DrawRectangleY1TextField ----
+				DrawRectangleY1TextField.setText("0");
+				RectangleDrawLayeredPane.add(DrawRectangleY1TextField, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleY1TextField.setBounds(270, 5, 30, 26);
 
-				//---- DrawLineX1TextField ----
-				DrawLineX1TextField.setText("0");
-				BeadLoomUtilitiesPanel.add(DrawLineX1TextField);
-				DrawLineX1TextField.setBounds(165, 55, 30, 26);
+				//---- DrawRectangleY2TextField ----
+				DrawRectangleY2TextField.setText("6");
+				RectangleDrawLayeredPane.add(DrawRectangleY2TextField, JLayeredPane.DEFAULT_LAYER);
+				DrawRectangleY2TextField.setBounds(270, 40, 30, 26);
+			}
+			RectangleDrawTabbedPane.addTab("Rectangle Draw", RectangleDrawLayeredPane);
 
-				//---- DrawLineX2TextField ----
-				DrawLineX2TextField.setText("7");
-				BeadLoomUtilitiesPanel.add(DrawLineX2TextField);
-				DrawLineX2TextField.setBounds(165, 90, 30, 26);
+		}
+		BeadLoomUtilitiesTabbedPane.addTab("Rectangle Tool", RectangleDrawTabbedPane);
 
-				//---- DrawLineY1TextField ----
-				DrawLineY1TextField.setText("0");
-				BeadLoomUtilitiesPanel.add(DrawLineY1TextField);
-				DrawLineY1TextField.setBounds(235, 55, 30, 26);
 
-				//---- DrawLineY2TextField ----
-				DrawLineY2TextField.setText("7");
-				BeadLoomUtilitiesPanel.add(DrawLineY2TextField);
-				DrawLineY2TextField.setBounds(235, 90, 30, 26);
+		//			======== LayersTabbedPane ========
+		{
 
-				//---- DrawPointButton ----
-				DrawPointButton.setText("Draw Point");
-				BeadLoomUtilitiesPanel.add(DrawPointButton);
-				DrawPointButton.setBounds(5, 10, 115, 21);
-				DrawPointButton.addActionListener(this);
+			//======== LayersSelectLayeredPane ========
+			{
 
-				//---- DrawLineButton ----
-				DrawLineButton.setText("Draw Line");
-				BeadLoomUtilitiesPanel.add(DrawLineButton);
-				DrawLineButton.setBounds(5, 55, 115, 21);
-				DrawLineButton.addActionListener(this);
+				LayersLabel.setText("Select a layer to modify");
+				LayersSelectPane.add(LayersLabel, JLayeredPane.DEFAULT_LAYER);
+				LayersLabel.setBounds(200, 1, 300, 30);
+				DeleteLayer.setBounds(5, 54, 115, 21);
+				DeleteLayer.setText("Delete Layer");
+				LayersSelectPane.add(DeleteLayer);
+				LayersSelectPane.add(LayersBox, JLayeredPane.DEFAULT_LAYER);
+				LayersBox.setBounds(5, 30, 400, 21);
+				LayersBox.addItemListener(this);
+				DeleteLayer.addActionListener(this);
+			}
+			LayersDrawTabbedPane.addTab("Modify Layers", LayersSelectPane);
+
+		}
+		BeadLoomUtilitiesTabbedPane.addTab("Layers Tool", LayersDrawTabbedPane);
+
+
+		//======== TriangleDrawTabbedPane ========
+		{
+
+			//======== TriangleDrawPanel ========
+			{
+				TriangleDrawPanel.setLayout(null);
+
+				//---- DrawTriangleX1Label ----
+				DrawTriangleX1Label.setText("X1 =");
+				TriangleDrawPanel.add(DrawTriangleX1Label);
+				DrawTriangleX1Label.setBounds(130, 10, 25, 14);
+
+				//---- DrawTriangleX2Label ----
+				DrawTriangleX2Label.setText("X2 =");
+				TriangleDrawPanel.add(DrawTriangleX2Label);
+				DrawTriangleX2Label.setBounds(130, 45, 25, 14);
+
+				//---- DrawTriangleX3Label ----
+				DrawTriangleX3Label.setText("X3 =");
+				TriangleDrawPanel.add(DrawTriangleX3Label);
+				DrawTriangleX3Label.setBounds(130, 80, 25, 14);
+
+				//---- DrawTriangleY1Label ----
+				DrawTriangleY1Label.setText("Y1 =");
+				TriangleDrawPanel.add(DrawTriangleY1Label);
+				DrawTriangleY1Label.setBounds(210, 10, 25, 14);
+
+				//---- DrawTriangleY2Label ----
+				DrawTriangleY2Label.setText("Y2 =");
+				TriangleDrawPanel.add(DrawTriangleY2Label);
+				DrawTriangleY2Label.setBounds(210, 45, 25, 14);
+
+				//---- DrawTriangleY3Label ----
+				DrawTriangleY3Label.setText("Y3 =");
+				TriangleDrawPanel.add(DrawTriangleY3Label);
+				DrawTriangleY3Label.setBounds(210, 80, 25, 14);
+
+				//---- DrawTriangleButton ----
+				DrawTriangleButton.setText("Draw Triangle");
+				TriangleDrawPanel.add(DrawTriangleButton);
+				DrawTriangleButton.setBounds(5, 40, 115, 21);
+				DrawTriangleButton.addActionListener(this);
+
+				//---- DrawTriangleX1TextField ----
+				DrawTriangleX1TextField.setText("0");
+				TriangleDrawPanel.add(DrawTriangleX1TextField);
+				DrawTriangleX1TextField.setBounds(160, 5, 30, 26);
+
+				//---- DrawTriangleX2TextField ----
+				DrawTriangleX2TextField.setText("4");
+				TriangleDrawPanel.add(DrawTriangleX2TextField);
+				DrawTriangleX2TextField.setBounds(160, 40, 30, 26);
+
+				//---- DrawTriangleX3TextField ----
+				DrawTriangleX3TextField.setText("0");
+				TriangleDrawPanel.add(DrawTriangleX3TextField);
+				DrawTriangleX3TextField.setBounds(160, 75, 30, 26);
+
+				//---- DrawTriangleY1TextField ----
+				DrawTriangleY1TextField.setText("0");
+				TriangleDrawPanel.add(DrawTriangleY1TextField);
+				DrawTriangleY1TextField.setBounds(240, 5, 30, 26);
+
+				//---- DrawTriangleY2TextField ----
+				DrawTriangleY2TextField.setText("0");
+				TriangleDrawPanel.add(DrawTriangleY2TextField);
+				DrawTriangleY2TextField.setBounds(240, 40, 30, 26);
+
+				//---- DrawTriangleY3TextField ----
+				DrawTriangleY3TextField.setText("4");
+				TriangleDrawPanel.add(DrawTriangleY3TextField);
+				DrawTriangleY3TextField.setBounds(240, 75, 30, 26);
 
 
 			}
-			BeadLoomUtilitiesTabbedPane.addTab("Point & Line Tool", BeadLoomUtilitiesPanel);
+			TriangleDrawTabbedPane.addTab("Triangle Draw", TriangleDrawPanel);
+
+		}
+		BeadLoomUtilitiesTabbedPane.addTab("Triangle Tool", TriangleDrawTabbedPane);
 
 
-//			======== RectangleDrawTabbedPane ========
+		//======== IterationTabbedPane ========
+		{
+
+			//======== LinearIterationPanel ========
 			{
+				LinearIterationPanel.setLayout(null);
 
-				//======== RectangleDrawLayeredPane ========
-				{
+				//---- DrawLinearIterationButton ----
+				DrawLinearIterationButton.setText("Draw");
+				LinearIterationPanel.add(DrawLinearIterationButton);
+				DrawLinearIterationButton.setBounds(5, 5, 80, 25);
+				DrawLinearIterationButton.addActionListener(this);
 
-					//---- DrawRectangleButton ----
-					DrawRectangleButton.setText("Draw Rectangle");
-					RectangleDrawLayeredPane.add(DrawRectangleButton, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleButton.setBounds(5, 25, 135, 21);
-					DrawRectangleButton.addActionListener(this);
+				//---- LinearIterationHelpLabel ----
+				LinearIterationHelpLabel.setText(" Help with...");
+				LinearIterationPanel.add(LinearIterationHelpLabel, JLayeredPane.DEFAULT_LAYER);
+				LinearIterationHelpLabel.setBounds(5, 50, 90, 24);
 
-					//---- DrawRectangleX1Label ----
-					DrawRectangleX1Label.setText("X1 =");
-					RectangleDrawLayeredPane.add(DrawRectangleX1Label, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleX1Label.setBounds(160, 10, 25, 14);
+				//---- HelpLinearItrLoopButton ----
+				LinearIterationHelpButton.setText("<html>Linear<br>Iteration&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
+				LinearIterationPanel.add(LinearIterationHelpButton, JLayeredPane.DEFAULT_LAYER);
+				LinearIterationHelpButton.setBounds(5, 75, 100,40);
+				LinearIterationHelpButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						LinearHelpButtonActionPerformed(e);
+					}
+				});
 
-					//---- DrawRectangleX2Label ----
-					DrawRectangleX2Label.setText("X2 =");
-					RectangleDrawLayeredPane.add(DrawRectangleX2Label, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleX2Label.setBounds(160, 45, 25, 14);
+				//---- LinearIterationFunctionLabel ----
+				LinearIterationFunctionLabel.setText("Function Outline:");
+				LinearIterationPanel.add(LinearIterationFunctionLabel);
+				LinearIterationFunctionLabel.setBounds(110, 5, 110, 24);
 
-					//---- DrawRectangleY1Label ----
-					DrawRectangleY1Label.setText("Y1 =");
-					RectangleDrawLayeredPane.add(DrawRectangleY1Label, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleY1Label.setBounds(240, 10, 25, 14);
+				//---- LinearIterationFunctionArgsLabel ----
+				LinearIterationFunctionArgsLabel.setText("linearIteration(startX, startY, startLength, ");
+				LinearIterationPanel.add(LinearIterationFunctionArgsLabel);
+				LinearIterationFunctionArgsLabel.setBounds(110, 30, 320, 24);
 
-					//---- DrawRectangleY2Label ----
-					DrawRectangleY2Label.setText("Y2 =");
-					RectangleDrawLayeredPane.add(DrawRectangleY2Label, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleY2Label.setBounds(240, 45, 25, 14);
+				//---- LinearIterationFunctionArgs2Label ----
+				LinearIterationFunctionArgs2Label.setText("beadsAdded1, beadsAdded2, rowsTotal, direction);");
+				LinearIterationPanel.add(LinearIterationFunctionArgs2Label);
+				LinearIterationFunctionArgs2Label.setBounds(115, 45, 300, 24);
 
-					//---- DrawRectangleX1TextField ----
-					DrawRectangleX1TextField.setText("0");
-					RectangleDrawLayeredPane.add(DrawRectangleX1TextField, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleX1TextField.setBounds(190, 5, 30, 26);
+				//---- LinearIterationStartXLabel ----
+				LinearIterationStartXLabel.setText("startX:");
+				LinearIterationPanel.add(LinearIterationStartXLabel);
+				LinearIterationStartXLabel.setBounds(166, 75, 60, 24);
 
-					//---- DrawRectangleX2TextField ----
-					DrawRectangleX2TextField.setText("6");
-					RectangleDrawLayeredPane.add(DrawRectangleX2TextField, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleX2TextField.setBounds(190, 40, 30, 26);
+				//---- LinearIterationStartXTextField ----
+				LinearIterationStartXTextField.setText("0");
+				LinearIterationPanel.add(LinearIterationStartXTextField);
+				LinearIterationStartXTextField.setBounds(215, 75, 25, 24);
 
-					//---- DrawRectangleY1TextField ----
-					DrawRectangleY1TextField.setText("0");
-					RectangleDrawLayeredPane.add(DrawRectangleY1TextField, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleY1TextField.setBounds(270, 5, 30, 26);
+				//---- LinearIterationStartYLabel ----
+				LinearIterationStartYLabel.setText("startY:");
+				LinearIterationPanel.add(LinearIterationStartYLabel);
+				LinearIterationStartYLabel.setBounds(166, 100, 60, 24);
 
-					//---- DrawRectangleY2TextField ----
-					DrawRectangleY2TextField.setText("6");
-					RectangleDrawLayeredPane.add(DrawRectangleY2TextField, JLayeredPane.DEFAULT_LAYER);
-					DrawRectangleY2TextField.setBounds(270, 40, 30, 26);
-				}
-				RectangleDrawTabbedPane.addTab("Rectangle Draw", RectangleDrawLayeredPane);
+				//---- LinearIterationStartYTextField ----
+				LinearIterationStartYTextField.setText("0");
+				LinearIterationPanel.add(LinearIterationStartYTextField);
+				LinearIterationStartYTextField.setBounds(215, 100, 25, 24);
+
+				//---- LinearIterationStartLengthLabel ----
+				LinearIterationStartLengthLabel.setText("startLength:");
+				LinearIterationPanel.add(LinearIterationStartLengthLabel);
+				LinearIterationStartLengthLabel.setBounds(134, 125, 75, 24);
+
+				//---- LinearIterationStartLengthTextField ----
+				LinearIterationStartLengthTextField.setText("5");
+				LinearIterationPanel.add(LinearIterationStartLengthTextField);
+				LinearIterationStartLengthTextField.setBounds(215, 125, 25, 24);
+
+				//---- LinearIterationIncLabel ----
+				LinearIterationIncLabel.setText("beadsAdded: ");
+				LinearIterationPanel.add(LinearIterationIncLabel);
+				LinearIterationIncLabel.setBounds(265, 75, 120, 24);
+
+				//---- LinearIterationBeadsInc1TextField ----
+				LinearIterationInc1TextField.setText("-1");
+				LinearIterationPanel.add(LinearIterationInc1TextField);
+				LinearIterationInc1TextField.setBounds(350, 75, 25, 24);
+
+				//---- LinearIterationBeadsInc2TextField ----
+				LinearIterationInc2TextField.setText("1");
+				LinearIterationPanel.add(LinearIterationInc2TextField);
+				LinearIterationInc2TextField.setBounds(375, 75, 25, 24);
+
+				//---- LinearIterationRowsTotalLabel ----
+				LinearIterationRowsTotalLabel.setText("rowsTotal: ");
+				LinearIterationPanel.add(LinearIterationRowsTotalLabel);
+				LinearIterationRowsTotalLabel.setBounds(278, 100, 80, 24);
+
+				//---- LinearIterationRowsTotalTextField ----
+				LinearIterationRowsTotalTextField.setText("5");
+				LinearIterationPanel.add(LinearIterationRowsTotalTextField);
+				LinearIterationRowsTotalTextField.setBounds(350, 100, 25, 24);
+
+				//---- TriangleDirectionLabel ----
+				LinearDirectionLabel.setText("direction:");
+				LinearIterationPanel.add(LinearDirectionLabel);
+				LinearDirectionLabel.setBounds(285, 125, 100, 24);
+
+				//---- LinearItrLoopDirectionSelector ----
+				for (int i = 0; i < 4; i++){
+					LinearIterationDirectionSelector.addItem(DirectionStrings[i]);}
+				LinearIterationPanel.add(LinearIterationDirectionSelector, JLayeredPane.DEFAULT_LAYER);
+				LinearIterationDirectionSelector.setBounds(350, 125, 40, 24);
 
 			}
-			BeadLoomUtilitiesTabbedPane.addTab("Rectangle Tool", RectangleDrawTabbedPane);
+			LinearIterationTabbedPane.addTab("Linear Iteration", LinearIterationPanel);
 
 
-//			======== LayersTabbedPane ========
+			//======== TriangleIterationTabbedPane ========
 			{
 
-				//======== LayersSelectLayeredPane ========
+				//======== TriangleIterationPanel ========
 				{
+					TriangleIterationPanel.setLayout(null);
 
-					LayersLabel.setText("Select a layer to modify");
-					LayersSelectPane.add(LayersLabel, JLayeredPane.DEFAULT_LAYER);
-					LayersLabel.setBounds(200, 1, 300, 30);
-					DeleteLayer.setBounds(5, 54, 115, 21);
-					DeleteLayer.setText("Delete Layer");
-					LayersSelectPane.add(DeleteLayer);
-					LayersSelectPane.add(LayersBox, JLayeredPane.DEFAULT_LAYER);
-					LayersBox.setBounds(5, 30, 400, 21);
-					LayersBox.addItemListener(this);
-					DeleteLayer.addActionListener(this);
-				}
-				LayersDrawTabbedPane.addTab("Modify Layers", LayersSelectPane);
+					//---- DrawTriangleIterationButton ----
+					DrawTriangleIterationButton.setText("Draw");
+					TriangleIterationPanel.add(DrawTriangleIterationButton);
+					DrawTriangleIterationButton.setBounds(5, 5, 80, 25);
+					DrawTriangleIterationButton.addActionListener(this);
 
-			}
-			BeadLoomUtilitiesTabbedPane.addTab("Layers Tool", LayersDrawTabbedPane);
+					//---- TriangleIterationHelpLabel ----
+					TriangleIterationHelpLabel.setText(" Help with...");
+					TriangleIterationPanel.add(TriangleIterationHelpLabel, JLayeredPane.DEFAULT_LAYER);
+					TriangleIterationHelpLabel.setBounds(5, 50, 90, 24);
 
-
-			//======== TriangleDrawTabbedPane ========
-			{
-
-				//======== TriangleDrawPanel ========
-				{
-					TriangleDrawPanel.setLayout(null);
-
-					//---- DrawTriangleX1Label ----
-					DrawTriangleX1Label.setText("X1 =");
-					TriangleDrawPanel.add(DrawTriangleX1Label);
-					DrawTriangleX1Label.setBounds(130, 10, 25, 14);
-
-					//---- DrawTriangleX2Label ----
-					DrawTriangleX2Label.setText("X2 =");
-					TriangleDrawPanel.add(DrawTriangleX2Label);
-					DrawTriangleX2Label.setBounds(130, 45, 25, 14);
-
-					//---- DrawTriangleX3Label ----
-					DrawTriangleX3Label.setText("X3 =");
-					TriangleDrawPanel.add(DrawTriangleX3Label);
-					DrawTriangleX3Label.setBounds(130, 80, 25, 14);
-
-					//---- DrawTriangleY1Label ----
-					DrawTriangleY1Label.setText("Y1 =");
-					TriangleDrawPanel.add(DrawTriangleY1Label);
-					DrawTriangleY1Label.setBounds(210, 10, 25, 14);
-
-					//---- DrawTriangleY2Label ----
-					DrawTriangleY2Label.setText("Y2 =");
-					TriangleDrawPanel.add(DrawTriangleY2Label);
-					DrawTriangleY2Label.setBounds(210, 45, 25, 14);
-
-					//---- DrawTriangleY3Label ----
-					DrawTriangleY3Label.setText("Y3 =");
-					TriangleDrawPanel.add(DrawTriangleY3Label);
-					DrawTriangleY3Label.setBounds(210, 80, 25, 14);
-
-					//---- DrawTriangleButton ----
-					DrawTriangleButton.setText("Draw Triangle");
-					TriangleDrawPanel.add(DrawTriangleButton);
-					DrawTriangleButton.setBounds(5, 40, 115, 21);
-					DrawTriangleButton.addActionListener(this);
-
-					//---- DrawTriangleX1TextField ----
-					DrawTriangleX1TextField.setText("0");
-					TriangleDrawPanel.add(DrawTriangleX1TextField);
-					DrawTriangleX1TextField.setBounds(160, 5, 30, 26);
-
-					//---- DrawTriangleX2TextField ----
-					DrawTriangleX2TextField.setText("4");
-					TriangleDrawPanel.add(DrawTriangleX2TextField);
-					DrawTriangleX2TextField.setBounds(160, 40, 30, 26);
-
-					//---- DrawTriangleX3TextField ----
-					DrawTriangleX3TextField.setText("0");
-					TriangleDrawPanel.add(DrawTriangleX3TextField);
-					DrawTriangleX3TextField.setBounds(160, 75, 30, 26);
-
-					//---- DrawTriangleY1TextField ----
-					DrawTriangleY1TextField.setText("0");
-					TriangleDrawPanel.add(DrawTriangleY1TextField);
-					DrawTriangleY1TextField.setBounds(240, 5, 30, 26);
-
-					//---- DrawTriangleY2TextField ----
-					DrawTriangleY2TextField.setText("0");
-					TriangleDrawPanel.add(DrawTriangleY2TextField);
-					DrawTriangleY2TextField.setBounds(240, 40, 30, 26);
-
-					//---- DrawTriangleY3TextField ----
-					DrawTriangleY3TextField.setText("4");
-					TriangleDrawPanel.add(DrawTriangleY3TextField);
-					DrawTriangleY3TextField.setBounds(240, 75, 30, 26);
-
-
-				}
-				TriangleDrawTabbedPane.addTab("Triangle Draw", TriangleDrawPanel);
-
-			}
-			BeadLoomUtilitiesTabbedPane.addTab("Triangle Tool", TriangleDrawTabbedPane);
-
-
-			//======== IterationTabbedPane ========
-			{
-
-				//======== LinearIterationPanel ========
-				{
-					LinearIterationPanel.setLayout(null);
-
-					//---- DrawLinearIterationButton ----
-					DrawLinearIterationButton.setText("Draw");
-					LinearIterationPanel.add(DrawLinearIterationButton);
-					DrawLinearIterationButton.setBounds(5, 5, 80, 25);
-					DrawLinearIterationButton.addActionListener(this);
-					
-					//---- LinearIterationHelpLabel ----
-					LinearIterationHelpLabel.setText(" Help with...");
-					LinearIterationPanel.add(LinearIterationHelpLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearIterationHelpLabel.setBounds(5, 50, 90, 24);
-					
 					//---- HelpLinearItrLoopButton ----
-					LinearIterationHelpButton.setText("<html>Linear<br>Iteration&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
-					LinearIterationPanel.add(LinearIterationHelpButton, JLayeredPane.DEFAULT_LAYER);
-					LinearIterationHelpButton.setBounds(5, 75, 100,40);
-					LinearIterationHelpButton.addActionListener(new ActionListener() {
+					TriangleIterationHelpButton.setText("<html>Triangle<br>Iteration&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
+					TriangleIterationPanel.add(TriangleIterationHelpButton, JLayeredPane.DEFAULT_LAYER);
+					TriangleIterationHelpButton.setBounds(5, 75, 100,40);
+					TriangleIterationHelpButton.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
-							LinearHelpButtonActionPerformed(e);
+							TriangleIterHelpButtonActionPerformed(e);
 						}
 					});
 
-					//---- LinearIterationFunctionLabel ----
-					LinearIterationFunctionLabel.setText("Function Outline:");
-					LinearIterationPanel.add(LinearIterationFunctionLabel);
-					LinearIterationFunctionLabel.setBounds(110, 5, 110, 24);
+					//---- TriangleIterationFunctionLabel ----
+					TriangleIterationFunctionLabel.setText("Function Outline:");
+					TriangleIterationPanel.add(TriangleIterationFunctionLabel);
+					TriangleIterationFunctionLabel.setBounds(140, 5, 110, 24);
 
-					//---- LinearIterationFunctionArgsLabel ----
-					LinearIterationFunctionArgsLabel.setText("linearIteration(startX, startY, startLength, ");
-					LinearIterationPanel.add(LinearIterationFunctionArgsLabel);
-					LinearIterationFunctionArgsLabel.setBounds(110, 30, 320, 24);
-					
-					//---- LinearIterationFunctionArgs2Label ----
-					LinearIterationFunctionArgs2Label.setText("beadsAdded1, beadsAdded2, rowsTotal, direction);");
-					LinearIterationPanel.add(LinearIterationFunctionArgs2Label);
-					LinearIterationFunctionArgs2Label.setBounds(115, 45, 300, 24);
-					
-					//---- LinearIterationStartXLabel ----
-					LinearIterationStartXLabel.setText("startX:");
-					LinearIterationPanel.add(LinearIterationStartXLabel);
-					LinearIterationStartXLabel.setBounds(166, 75, 60, 24);
-					
-					//---- LinearIterationStartXTextField ----
-					LinearIterationStartXTextField.setText("0");
-					LinearIterationPanel.add(LinearIterationStartXTextField);
-					LinearIterationStartXTextField.setBounds(215, 75, 25, 24);
-					
-					//---- LinearIterationStartYLabel ----
-					LinearIterationStartYLabel.setText("startY:");
-					LinearIterationPanel.add(LinearIterationStartYLabel);
-					LinearIterationStartYLabel.setBounds(166, 100, 60, 24);
-					
-					//---- LinearIterationStartYTextField ----
-					LinearIterationStartYTextField.setText("0");
-					LinearIterationPanel.add(LinearIterationStartYTextField);
-					LinearIterationStartYTextField.setBounds(215, 100, 25, 24);
+					//---- TriangleIterationFunctionArgsLabel ----
+					TriangleIterationFunctionArgsLabel.setText("triangularIteration(startX, startY, stepHeight, ");
+					TriangleIterationPanel.add(TriangleIterationFunctionArgsLabel);
+					TriangleIterationFunctionArgsLabel.setBounds(140, 30, 300, 24);
 
-					//---- LinearIterationStartLengthLabel ----
-					LinearIterationStartLengthLabel.setText("startLength:");
-					LinearIterationPanel.add(LinearIterationStartLengthLabel);
-					LinearIterationStartLengthLabel.setBounds(134, 125, 75, 24);
+					//---- TriangleIterationFunctionArgs2Label ----
+					TriangleIterationFunctionArgs2Label.setText("beadsAdded, rowsTotal, direction);");
+					TriangleIterationPanel.add(TriangleIterationFunctionArgs2Label);
+					TriangleIterationFunctionArgs2Label.setBounds(195, 45, 200, 24);
 
-					//---- LinearIterationStartLengthTextField ----
-					LinearIterationStartLengthTextField.setText("5");
-					LinearIterationPanel.add(LinearIterationStartLengthTextField);
-					LinearIterationStartLengthTextField.setBounds(215, 125, 25, 24);
+					//---- TriangleIterationStartXLabel ----
+					TriangleIterationStartXLabel.setText("startX:");
+					TriangleIterationPanel.add(TriangleIterationStartXLabel);
+					TriangleIterationStartXLabel.setBounds(166, 75, 60, 24);
 
-					//---- LinearIterationIncLabel ----
-					LinearIterationIncLabel.setText("beadsAdded: ");
-					LinearIterationPanel.add(LinearIterationIncLabel);
-					LinearIterationIncLabel.setBounds(265, 75, 120, 24);
-					
-					//---- LinearIterationBeadsInc1TextField ----
-					LinearIterationInc1TextField.setText("-1");
-					LinearIterationPanel.add(LinearIterationInc1TextField);
-					LinearIterationInc1TextField.setBounds(350, 75, 25, 24);
+					//---- TriangleIterationStartXTextField ----
+					TriangleIterationStartXTextField.setText("0");
+					TriangleIterationPanel.add(TriangleIterationStartXTextField);
+					TriangleIterationStartXTextField.setBounds(215, 75, 25, 24);
 
-					//---- LinearIterationBeadsInc2TextField ----
-					LinearIterationInc2TextField.setText("1");
-					LinearIterationPanel.add(LinearIterationInc2TextField);
-					LinearIterationInc2TextField.setBounds(375, 75, 25, 24);
+					//---- TriangleIterationStartYLabel ----
+					TriangleIterationStartYLabel.setText("startY:");
+					TriangleIterationPanel.add(TriangleIterationStartYLabel);
+					TriangleIterationStartYLabel.setBounds(166, 100, 60, 24);
 
-					//---- LinearIterationRowsTotalLabel ----
-					LinearIterationRowsTotalLabel.setText("rowsTotal: ");
-					LinearIterationPanel.add(LinearIterationRowsTotalLabel);
-					LinearIterationRowsTotalLabel.setBounds(278, 100, 80, 24);
+					//---- TriangleIterationStartYTextField ----
+					TriangleIterationStartYTextField.setText("0");
+					TriangleIterationPanel.add(TriangleIterationStartYTextField);
+					TriangleIterationStartYTextField.setBounds(215, 100, 25, 24);
 
-					//---- LinearIterationRowsTotalTextField ----
-					LinearIterationRowsTotalTextField.setText("5");
-					LinearIterationPanel.add(LinearIterationRowsTotalTextField);
-					LinearIterationRowsTotalTextField.setBounds(350, 100, 25, 24);
+					//---- TriangleIterationStepHeightLabel ----
+					TriangleIterationStepHeightLabel.setText("stepHeight:");
+					TriangleIterationPanel.add(TriangleIterationStepHeightLabel);
+					TriangleIterationStepHeightLabel.setBounds(139, 125, 65, 24);
+
+					//---- TriangleIterationStepHeightTextField ----
+					TriangleIterationStepHeightTextField.setText("3");
+					TriangleIterationPanel.add(TriangleIterationStepHeightTextField);
+					TriangleIterationStepHeightTextField.setBounds(215, 125, 25, 24);
+
+					//---- TriangleIterationBeadsAddedLabel ----
+					TriangleIterationBeadsAddedLabel.setText("beadsAdded: ");
+					TriangleIterationPanel.add(TriangleIterationBeadsAddedLabel);
+					TriangleIterationBeadsAddedLabel.setBounds(264, 75, 80, 24);
+
+					//---- TriangleIterationBeadsAddedTextField ----
+					TriangleIterationBeadsAddedTextField.setText("1");
+					TriangleIterationPanel.add(TriangleIterationBeadsAddedTextField);
+					TriangleIterationBeadsAddedTextField.setBounds(350, 75, 25, 24);
+
+					//---- TriangleIterationRowsTotalLabel ----
+					TriangleIterationRowsTotalLabel.setText("rowsTotal: ");
+					TriangleIterationPanel.add(TriangleIterationRowsTotalLabel);
+					TriangleIterationRowsTotalLabel.setBounds(278, 100, 80, 24);
+
+					//---- TriangleIterationRowsTotalTextField ----
+					TriangleIterationRowsTotalTextField.setText("9");
+					TriangleIterationPanel.add(TriangleIterationRowsTotalTextField);
+					TriangleIterationRowsTotalTextField.setBounds(350, 100, 25, 24);
 
 					//---- TriangleDirectionLabel ----
-					LinearDirectionLabel.setText("direction:");
-					LinearIterationPanel.add(LinearDirectionLabel);
-					LinearDirectionLabel.setBounds(285, 125, 100, 24);
-					
+					TriangleDirectionLabel.setText("direction:");
+					TriangleIterationPanel.add(TriangleDirectionLabel);
+					TriangleDirectionLabel.setBounds(285, 125, 100, 24);
+
 					//---- LinearItrLoopDirectionSelector ----
 					for (int i = 0; i < 4; i++){
-						LinearIterationDirectionSelector.addItem(DirectionStrings[i]);}
-					LinearIterationPanel.add(LinearIterationDirectionSelector, JLayeredPane.DEFAULT_LAYER);
-					LinearIterationDirectionSelector.setBounds(350, 125, 40, 24);
-					
+						TriangleIterationDirectionSelector.addItem(DirectionStrings[i]);}
+					TriangleIterationPanel.add(TriangleIterationDirectionSelector, JLayeredPane.DEFAULT_LAYER);
+					TriangleIterationDirectionSelector.setSelectedIndex(1);
+					TriangleIterationDirectionSelector.setBounds(350, 125, 40, 24);
+
 				}
-				LinearIterationTabbedPane.addTab("Linear Iteration", LinearIterationPanel);
-
-
-				//======== TriangleIterationTabbedPane ========
-				{
-
-					//======== TriangleIterationPanel ========
-					{
-						TriangleIterationPanel.setLayout(null);
-
-						//---- DrawTriangleIterationButton ----
-						DrawTriangleIterationButton.setText("Draw");
-						TriangleIterationPanel.add(DrawTriangleIterationButton);
-						DrawTriangleIterationButton.setBounds(5, 5, 80, 25);
-						DrawTriangleIterationButton.addActionListener(this);
-						
-						//---- TriangleIterationHelpLabel ----
-						TriangleIterationHelpLabel.setText(" Help with...");
-						TriangleIterationPanel.add(TriangleIterationHelpLabel, JLayeredPane.DEFAULT_LAYER);
-						TriangleIterationHelpLabel.setBounds(5, 50, 90, 24);
-						
-						//---- HelpLinearItrLoopButton ----
-						TriangleIterationHelpButton.setText("<html>Triangle<br>Iteration&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
-						TriangleIterationPanel.add(TriangleIterationHelpButton, JLayeredPane.DEFAULT_LAYER);
-						TriangleIterationHelpButton.setBounds(5, 75, 100,40);
-						TriangleIterationHelpButton.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-								TriangleIterHelpButtonActionPerformed(e);
-							}
-						});
-
-						//---- TriangleIterationFunctionLabel ----
-						TriangleIterationFunctionLabel.setText("Function Outline:");
-						TriangleIterationPanel.add(TriangleIterationFunctionLabel);
-						TriangleIterationFunctionLabel.setBounds(140, 5, 110, 24);
-
-						//---- TriangleIterationFunctionArgsLabel ----
-						TriangleIterationFunctionArgsLabel.setText("triangularIteration(startX, startY, stepHeight, ");
-						TriangleIterationPanel.add(TriangleIterationFunctionArgsLabel);
-						TriangleIterationFunctionArgsLabel.setBounds(140, 30, 300, 24);
-						
-						//---- TriangleIterationFunctionArgs2Label ----
-						TriangleIterationFunctionArgs2Label.setText("beadsAdded, rowsTotal, direction);");
-						TriangleIterationPanel.add(TriangleIterationFunctionArgs2Label);
-						TriangleIterationFunctionArgs2Label.setBounds(195, 45, 200, 24);
-						
-						//---- TriangleIterationStartXLabel ----
-						TriangleIterationStartXLabel.setText("startX:");
-						TriangleIterationPanel.add(TriangleIterationStartXLabel);
-						TriangleIterationStartXLabel.setBounds(166, 75, 60, 24);
-						
-						//---- TriangleIterationStartXTextField ----
-						TriangleIterationStartXTextField.setText("0");
-						TriangleIterationPanel.add(TriangleIterationStartXTextField);
-						TriangleIterationStartXTextField.setBounds(215, 75, 25, 24);
-						
-						//---- TriangleIterationStartYLabel ----
-						TriangleIterationStartYLabel.setText("startY:");
-						TriangleIterationPanel.add(TriangleIterationStartYLabel);
-						TriangleIterationStartYLabel.setBounds(166, 100, 60, 24);
-						
-						//---- TriangleIterationStartYTextField ----
-						TriangleIterationStartYTextField.setText("0");
-						TriangleIterationPanel.add(TriangleIterationStartYTextField);
-						TriangleIterationStartYTextField.setBounds(215, 100, 25, 24);
-
-						//---- TriangleIterationStepHeightLabel ----
-						TriangleIterationStepHeightLabel.setText("stepHeight:");
-						TriangleIterationPanel.add(TriangleIterationStepHeightLabel);
-						TriangleIterationStepHeightLabel.setBounds(139, 125, 65, 24);
-
-						//---- TriangleIterationStepHeightTextField ----
-						TriangleIterationStepHeightTextField.setText("3");
-						TriangleIterationPanel.add(TriangleIterationStepHeightTextField);
-						TriangleIterationStepHeightTextField.setBounds(215, 125, 25, 24);
-
-						//---- TriangleIterationBeadsAddedLabel ----
-						TriangleIterationBeadsAddedLabel.setText("beadsAdded: ");
-						TriangleIterationPanel.add(TriangleIterationBeadsAddedLabel);
-						TriangleIterationBeadsAddedLabel.setBounds(264, 75, 80, 24);
-
-						//---- TriangleIterationBeadsAddedTextField ----
-						TriangleIterationBeadsAddedTextField.setText("1");
-						TriangleIterationPanel.add(TriangleIterationBeadsAddedTextField);
-						TriangleIterationBeadsAddedTextField.setBounds(350, 75, 25, 24);
-
-						//---- TriangleIterationRowsTotalLabel ----
-						TriangleIterationRowsTotalLabel.setText("rowsTotal: ");
-						TriangleIterationPanel.add(TriangleIterationRowsTotalLabel);
-						TriangleIterationRowsTotalLabel.setBounds(278, 100, 80, 24);
-
-						//---- TriangleIterationRowsTotalTextField ----
-						TriangleIterationRowsTotalTextField.setText("9");
-						TriangleIterationPanel.add(TriangleIterationRowsTotalTextField);
-						TriangleIterationRowsTotalTextField.setBounds(350, 100, 25, 24);
-
-						//---- TriangleDirectionLabel ----
-						TriangleDirectionLabel.setText("direction:");
-						TriangleIterationPanel.add(TriangleDirectionLabel);
-						TriangleDirectionLabel.setBounds(285, 125, 100, 24);
-						
-						//---- LinearItrLoopDirectionSelector ----
-						for (int i = 0; i < 4; i++){
-							TriangleIterationDirectionSelector.addItem(DirectionStrings[i]);}
-						TriangleIterationPanel.add(TriangleIterationDirectionSelector, JLayeredPane.DEFAULT_LAYER);
-						TriangleIterationDirectionSelector.setSelectedIndex(1);
-						TriangleIterationDirectionSelector.setBounds(350, 125, 40, 24);
-						
-					}
-					LinearIterationTabbedPane.addTab("Triangle Iteration", TriangleIterationPanel);
-				}
-	
-
+				LinearIterationTabbedPane.addTab("Triangle Iteration", TriangleIterationPanel);
 			}
-			//BeadLoomUtilitiesTabbedPane.addTab("Iterative Tools", LinearIterationTabbedPane);
-		
 
-				//======== LinearItrLoopPanel ========
-				{
-					
-					//---- DrawLinearItrLoopButton ----
-					DrawLinearItrLoopButton.setText("Draw");
-					LinearItrLoopLayeredPane.add(DrawLinearItrLoopButton, JLayeredPane.DEFAULT_LAYER);
-					DrawLinearItrLoopButton.setBounds(5, 5, 80, 25);
-					DrawLinearItrLoopButton.addActionListener(this);
-					
-					//---- LinearItrLoopItrHelpLabel ----
-					LinearItrLoopItrHelpLabel.setText(" Help with...");
-					LinearItrLoopLayeredPane.add(LinearItrLoopItrHelpLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopItrHelpLabel.setBounds(5, 50, 90, 24);
-					
-					//---- HelpLinearItrLoopButton ----
-					LinearItrLoopItrHelpButton.setText("<html>Linear<br>Iteration");
-					LinearItrLoopLayeredPane.add(LinearItrLoopItrHelpButton, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopItrHelpButton.setBounds(5, 75, 100,40);
-					LinearItrLoopItrHelpButton.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							LinearHelpButtonActionPerformed(e);
-						}
-					});
-					
-					//---- HelpLinearItrLoopButton ----
-					LinearItrLoopHelpButton.setText("<html>Iteration<br>Loop");
-					LinearItrLoopLayeredPane.add(LinearItrLoopHelpButton, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopHelpButton.setBounds(5, 122, 100, 40);
-					LinearItrLoopHelpButton.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							LinearItrHelpButtonActionPerformed(e);
-						}
-					});
-					
-					//---- LinearItrLoopStartXLabel ----
-					LinearItrLoopStartXLabel.setText("X = ");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStartXLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStartXLabel.setBounds(120, 5, 35, 24);
-					
-					//---- LinearItrLoopStartXTextField ----
-					LinearItrLoopStartXTextField.setText("0");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStartXTextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStartXTextField.setBounds(140, 5, 25, 24);
-					
-					//---- LinearItrLoopStartYLabel ----
-					LinearItrLoopStartYLabel.setText(";    Y = ");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStartYLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStartYLabel.setBounds(167, 5, 55, 24);
-					
-					//---- LinearItrLoopStartYTextField ----
-					LinearItrLoopStartYTextField.setText("0");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStartYTextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStartYTextField.setBounds(203, 5, 25, 24);
-					
-					//---- LinearItrLoopEndYLabel ----
-					LinearItrLoopEndYLabel.setText(" ;");
-					LinearItrLoopLayeredPane.add(LinearItrLoopEndYLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopEndYLabel.setBounds(227, 5, 10, 24);
-					
-					//---- LinearItrLoopStartNLabel ----
-					LinearItrLoopStartNLabel.setText("For  (   N = ");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStartNLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStartNLabel.setBounds(120, 35, 70, 24);
-					
-					//---- LinearItrLoopStartNTextField ----
-					LinearItrLoopStartNTextField.setText("3");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStartNTextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStartNTextField.setBounds(180, 35, 25, 24);
-					
-					//---- LinearItrLoopToNLabel ----
-					LinearItrLoopToNLabel.setText(" to ");
-					LinearItrLoopLayeredPane.add(LinearItrLoopToNLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopToNLabel.setBounds(205, 35, 25, 24);
-					
-					//---- LinearItrLoopEndNTextField ----
-					LinearItrLoopEndNTextField.setText("5");
-					LinearItrLoopLayeredPane.add(LinearItrLoopEndNTextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopEndNTextField.setBounds(225, 35, 25, 24);
-					
-					//---- LinearItrLoopEndNLabel ----
-					LinearItrLoopEndNLabel.setText(" )");
-					LinearItrLoopLayeredPane.add(LinearItrLoopEndNLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopEndNLabel.setBounds(255, 35, 15, 24);
-					
-					//---- LinearItrLoopFunctStartLabel ----
-					LinearItrLoopFunctStartLabel.setText("linearIteration(X,Y,");
-					LinearItrLoopLayeredPane.add(LinearItrLoopFunctStartLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopFunctStartLabel.setBounds(134, 62, 120, 24);
-					
-					//---- LinearItrLoopStartLengthSelector ----
-					for (int i = 0; i < 7; i++){
-						LinearItrLoopStartLengthSelector.addItem(SelectionStrings[i]);}
-					LinearItrLoopLayeredPane.add(LinearItrLoopStartLengthSelector, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStartLengthSelector.setSelectedIndex(0);
-					LinearItrLoopStartLengthSelector.setBounds(239, 62, 35, 24);
-					
-					//---- LinearItrLoopFunctCommaLabel ----
-					LinearItrLoopFunctComma4Label.setText(",");
-					LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma4Label, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopFunctComma4Label.setBounds(275, 62, 10, 24);
-					
-					//---- LinearItrLoopInc1TextField ----
-					LinearItrLoopInc1TextField.setText("-1");
-					LinearItrLoopLayeredPane.add(LinearItrLoopInc1TextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopInc1TextField.setBounds(280, 62, 20, 24);
-					
-					//---- LinearItrLoopFunctCommaLabel ----
-					LinearItrLoopFunctComma1Label.setText(",");
-					LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma1Label, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopFunctComma1Label.setBounds(300, 62, 10, 24);
-					
-					//---- LinearItrLoopInc2TextField ----
-					LinearItrLoopInc2TextField.setText("1");
-					LinearItrLoopLayeredPane.add(LinearItrLoopInc2TextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopInc2TextField.setBounds(305, 62, 20, 24);
-					
-					//---- LinearItrLoopFunctCommaLabel ----
-					LinearItrLoopFunctComma2Label.setText(",");
-					LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma2Label, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopFunctComma2Label.setBounds(326, 62, 10, 24);
-					
-					//---- LinearItrLoopRowsTextField ----
-					LinearItrLoopRowsTextField.setText("5");
-					LinearItrLoopLayeredPane.add(LinearItrLoopRowsTextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopRowsTextField.setBounds(330, 62, 20, 24);
-					
-					//---- LinearItrLoopFunctComma3Label ----
-					LinearItrLoopFunctComma3Label.setText(",");
-					LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma3Label, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopFunctComma3Label.setBounds(350, 62, 10, 24);
-					
-					//---- LinearItrLoopDirectionSelector ----
-					for (int i = 0; i < 4; i++){
-						LinearItrLoopDirectionSelector.addItem(DirectionStrings[i]);}
-					LinearItrLoopLayeredPane.add(LinearItrLoopDirectionSelector, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopDirectionSelector.setBounds(355, 62, 40, 24);
-					
-					//---- LinearItrLoopFunctNLabel ----
-					LinearItrLoopFunctEndLabel.setText(" );");
-					LinearItrLoopLayeredPane.add(LinearItrLoopFunctEndLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopFunctEndLabel.setBounds(395, 62, 40, 24);
-					
-					//---- LinearItrLoopStatement1Selector ----
-					for (int i = 0; i < 4; i++){
-						LinearItrLoopStatement1Selector.addItem(TriangleItrLoopIncrementStrings[i]);}
-					LinearItrLoopLayeredPane.add(LinearItrLoopStatement1Selector, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStatement1Selector.setBounds(135, 90, 80, 24);
-					
-					//---- LinearItrLoopPlusOrMinus1Selector ----
-					LinearItrLoopPlusOrMinus1Selector.addItem(TriangleItrLoopPlusOrMinusStrings[0]);
-					LinearItrLoopPlusOrMinus1Selector.addItem(TriangleItrLoopPlusOrMinusStrings[1]);
-					LinearItrLoopLayeredPane.add(LinearItrLoopPlusOrMinus1Selector, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopPlusOrMinus1Selector.setBounds(215, 90, 40, 24);
-					
-					//---- LinearItrLoopStatement1TextField ----
-					LinearItrLoopStatement1TextField.setText("4");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStatement1TextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStatement1TextField.setBounds(255, 90, 25, 24);
-					
-					//---- LinearItrLoopSemiLabel ----
-					LinearItrLoopSemiLabel.setText(" ;");
-					LinearItrLoopLayeredPane.add(LinearItrLoopSemiLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopSemiLabel.setBounds(280, 90, 15, 24);
-					
-					//---- LinearItrLoopStatement2Selector ----
-					for (int i = 0; i < 4; i++){
-						LinearItrLoopStatement2Selector.addItem(TriangleItrLoopIncrementStrings[i]);}
-					LinearItrLoopStatement2Selector.setSelectedIndex(3);
-					LinearItrLoopLayeredPane.add(LinearItrLoopStatement2Selector, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStatement2Selector.setBounds(135, 115, 80, 24);
-					
-					//---- LinearItrLoopPlusOrMinus2Selector ----
-					LinearItrLoopPlusOrMinus2Selector.addItem(TriangleItrLoopPlusOrMinusStrings[0]);
-					LinearItrLoopPlusOrMinus2Selector.addItem(TriangleItrLoopPlusOrMinusStrings[1]);
-					LinearItrLoopLayeredPane.add(LinearItrLoopPlusOrMinus2Selector, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopPlusOrMinus2Selector.setBounds(215, 115, 40, 24);
-					
-					//---- LinearItrLoopStatement2TextField ----
-					LinearItrLoopStatement2TextField.setText("0");
-					LinearItrLoopLayeredPane.add(LinearItrLoopStatement2TextField, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopStatement2TextField.setBounds(255, 115, 25, 24);
-					
-					//---- LinearItrLoopSemi1Label ----
-					LinearItrLoopSemi1Label.setText(" ;");
-					LinearItrLoopLayeredPane.add(LinearItrLoopSemi1Label, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopSemi1Label.setBounds(280, 115, 15, 24);
-					
-					//---- LinearItrLoopEndBracketLabel ----
-					LinearItrLoopEndBracketLabel.setText("End for loop");
-					LinearItrLoopLayeredPane.add(LinearItrLoopEndBracketLabel, JLayeredPane.DEFAULT_LAYER);
-					LinearItrLoopEndBracketLabel.setBounds(120, 140, 80, 24);
+
+		}
+		//BeadLoomUtilitiesTabbedPane.addTab("Iterative Tools", LinearIterationTabbedPane);
+
+
+		//======== LinearItrLoopPanel ========
+		{
+
+			//---- DrawLinearItrLoopButton ----
+			DrawLinearItrLoopButton.setText("Draw");
+			LinearItrLoopLayeredPane.add(DrawLinearItrLoopButton, JLayeredPane.DEFAULT_LAYER);
+			DrawLinearItrLoopButton.setBounds(5, 5, 80, 25);
+			DrawLinearItrLoopButton.addActionListener(this);
+
+			//---- LinearItrLoopItrHelpLabel ----
+			LinearItrLoopItrHelpLabel.setText(" Help with...");
+			LinearItrLoopLayeredPane.add(LinearItrLoopItrHelpLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopItrHelpLabel.setBounds(5, 50, 90, 24);
+
+			//---- HelpLinearItrLoopButton ----
+			LinearItrLoopItrHelpButton.setText("<html>Linear<br>Iteration");
+			LinearItrLoopLayeredPane.add(LinearItrLoopItrHelpButton, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopItrHelpButton.setBounds(5, 75, 100,40);
+			LinearItrLoopItrHelpButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					LinearHelpButtonActionPerformed(e);
 				}
-				LinearIterationTabbedPane.addTab("Linear Iteration Loop", LinearItrLoopLayeredPane);
+			});
+
+			//---- HelpLinearItrLoopButton ----
+			LinearItrLoopHelpButton.setText("<html>Iteration<br>Loop");
+			LinearItrLoopLayeredPane.add(LinearItrLoopHelpButton, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopHelpButton.setBounds(5, 122, 100, 40);
+			LinearItrLoopHelpButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					LinearItrHelpButtonActionPerformed(e);
+				}
+			});
+
+			//---- LinearItrLoopStartXLabel ----
+			LinearItrLoopStartXLabel.setText("X = ");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStartXLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStartXLabel.setBounds(120, 5, 35, 24);
+
+			//---- LinearItrLoopStartXTextField ----
+			LinearItrLoopStartXTextField.setText("0");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStartXTextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStartXTextField.setBounds(140, 5, 25, 24);
+
+			//---- LinearItrLoopStartYLabel ----
+			LinearItrLoopStartYLabel.setText(";    Y = ");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStartYLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStartYLabel.setBounds(167, 5, 55, 24);
+
+			//---- LinearItrLoopStartYTextField ----
+			LinearItrLoopStartYTextField.setText("0");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStartYTextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStartYTextField.setBounds(203, 5, 25, 24);
+
+			//---- LinearItrLoopEndYLabel ----
+			LinearItrLoopEndYLabel.setText(" ;");
+			LinearItrLoopLayeredPane.add(LinearItrLoopEndYLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopEndYLabel.setBounds(227, 5, 10, 24);
+
+			//---- LinearItrLoopStartNLabel ----
+			LinearItrLoopStartNLabel.setText("For  (   N = ");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStartNLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStartNLabel.setBounds(120, 35, 70, 24);
+
+			//---- LinearItrLoopStartNTextField ----
+			LinearItrLoopStartNTextField.setText("3");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStartNTextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStartNTextField.setBounds(180, 35, 25, 24);
+
+			//---- LinearItrLoopToNLabel ----
+			LinearItrLoopToNLabel.setText(" to ");
+			LinearItrLoopLayeredPane.add(LinearItrLoopToNLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopToNLabel.setBounds(205, 35, 25, 24);
+
+			//---- LinearItrLoopEndNTextField ----
+			LinearItrLoopEndNTextField.setText("5");
+			LinearItrLoopLayeredPane.add(LinearItrLoopEndNTextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopEndNTextField.setBounds(225, 35, 25, 24);
+
+			//---- LinearItrLoopEndNLabel ----
+			LinearItrLoopEndNLabel.setText(" )");
+			LinearItrLoopLayeredPane.add(LinearItrLoopEndNLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopEndNLabel.setBounds(255, 35, 15, 24);
+
+			//---- LinearItrLoopFunctStartLabel ----
+			LinearItrLoopFunctStartLabel.setText("linearIteration(X,Y,");
+			LinearItrLoopLayeredPane.add(LinearItrLoopFunctStartLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopFunctStartLabel.setBounds(134, 62, 120, 24);
+
+			//---- LinearItrLoopStartLengthSelector ----
+			for (int i = 0; i < 7; i++){
+				LinearItrLoopStartLengthSelector.addItem(SelectionStrings[i]);}
+			LinearItrLoopLayeredPane.add(LinearItrLoopStartLengthSelector, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStartLengthSelector.setSelectedIndex(0);
+			LinearItrLoopStartLengthSelector.setBounds(239, 62, 35, 24);
+
+			//---- LinearItrLoopFunctCommaLabel ----
+			LinearItrLoopFunctComma4Label.setText(",");
+			LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma4Label, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopFunctComma4Label.setBounds(275, 62, 10, 24);
+
+			//---- LinearItrLoopInc1TextField ----
+			LinearItrLoopInc1TextField.setText("-1");
+			LinearItrLoopLayeredPane.add(LinearItrLoopInc1TextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopInc1TextField.setBounds(280, 62, 20, 24);
+
+			//---- LinearItrLoopFunctCommaLabel ----
+			LinearItrLoopFunctComma1Label.setText(",");
+			LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma1Label, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopFunctComma1Label.setBounds(300, 62, 10, 24);
+
+			//---- LinearItrLoopInc2TextField ----
+			LinearItrLoopInc2TextField.setText("1");
+			LinearItrLoopLayeredPane.add(LinearItrLoopInc2TextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopInc2TextField.setBounds(305, 62, 20, 24);
+
+			//---- LinearItrLoopFunctCommaLabel ----
+			LinearItrLoopFunctComma2Label.setText(",");
+			LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma2Label, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopFunctComma2Label.setBounds(326, 62, 10, 24);
+
+			//---- LinearItrLoopRowsTextField ----
+			LinearItrLoopRowsTextField.setText("5");
+			LinearItrLoopLayeredPane.add(LinearItrLoopRowsTextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopRowsTextField.setBounds(330, 62, 20, 24);
+
+			//---- LinearItrLoopFunctComma3Label ----
+			LinearItrLoopFunctComma3Label.setText(",");
+			LinearItrLoopLayeredPane.add(LinearItrLoopFunctComma3Label, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopFunctComma3Label.setBounds(350, 62, 10, 24);
+
+			//---- LinearItrLoopDirectionSelector ----
+			for (int i = 0; i < 4; i++){
+				LinearItrLoopDirectionSelector.addItem(DirectionStrings[i]);}
+			LinearItrLoopLayeredPane.add(LinearItrLoopDirectionSelector, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopDirectionSelector.setBounds(355, 62, 40, 24);
+
+			//---- LinearItrLoopFunctNLabel ----
+			LinearItrLoopFunctEndLabel.setText(" );");
+			LinearItrLoopLayeredPane.add(LinearItrLoopFunctEndLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopFunctEndLabel.setBounds(395, 62, 40, 24);
+
+			//---- LinearItrLoopStatement1Selector ----
+			for (int i = 0; i < 4; i++){
+				LinearItrLoopStatement1Selector.addItem(TriangleItrLoopIncrementStrings[i]);}
+			LinearItrLoopLayeredPane.add(LinearItrLoopStatement1Selector, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStatement1Selector.setBounds(135, 90, 80, 24);
+
+			//---- LinearItrLoopPlusOrMinus1Selector ----
+			LinearItrLoopPlusOrMinus1Selector.addItem(TriangleItrLoopPlusOrMinusStrings[0]);
+			LinearItrLoopPlusOrMinus1Selector.addItem(TriangleItrLoopPlusOrMinusStrings[1]);
+			LinearItrLoopLayeredPane.add(LinearItrLoopPlusOrMinus1Selector, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopPlusOrMinus1Selector.setBounds(215, 90, 40, 24);
+
+			//---- LinearItrLoopStatement1TextField ----
+			LinearItrLoopStatement1TextField.setText("4");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStatement1TextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStatement1TextField.setBounds(255, 90, 25, 24);
+
+			//---- LinearItrLoopSemiLabel ----
+			LinearItrLoopSemiLabel.setText(" ;");
+			LinearItrLoopLayeredPane.add(LinearItrLoopSemiLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopSemiLabel.setBounds(280, 90, 15, 24);
+
+			//---- LinearItrLoopStatement2Selector ----
+			for (int i = 0; i < 4; i++){
+				LinearItrLoopStatement2Selector.addItem(TriangleItrLoopIncrementStrings[i]);}
+			LinearItrLoopStatement2Selector.setSelectedIndex(3);
+			LinearItrLoopLayeredPane.add(LinearItrLoopStatement2Selector, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStatement2Selector.setBounds(135, 115, 80, 24);
+
+			//---- LinearItrLoopPlusOrMinus2Selector ----
+			LinearItrLoopPlusOrMinus2Selector.addItem(TriangleItrLoopPlusOrMinusStrings[0]);
+			LinearItrLoopPlusOrMinus2Selector.addItem(TriangleItrLoopPlusOrMinusStrings[1]);
+			LinearItrLoopLayeredPane.add(LinearItrLoopPlusOrMinus2Selector, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopPlusOrMinus2Selector.setBounds(215, 115, 40, 24);
+
+			//---- LinearItrLoopStatement2TextField ----
+			LinearItrLoopStatement2TextField.setText("0");
+			LinearItrLoopLayeredPane.add(LinearItrLoopStatement2TextField, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopStatement2TextField.setBounds(255, 115, 25, 24);
+
+			//---- LinearItrLoopSemi1Label ----
+			LinearItrLoopSemi1Label.setText(" ;");
+			LinearItrLoopLayeredPane.add(LinearItrLoopSemi1Label, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopSemi1Label.setBounds(280, 115, 15, 24);
+
+			//---- LinearItrLoopEndBracketLabel ----
+			LinearItrLoopEndBracketLabel.setText("End for loop");
+			LinearItrLoopLayeredPane.add(LinearItrLoopEndBracketLabel, JLayeredPane.DEFAULT_LAYER);
+			LinearItrLoopEndBracketLabel.setBounds(120, 140, 80, 24);
+		}
+		LinearIterationTabbedPane.addTab("Linear Iteration Loop", LinearItrLoopLayeredPane);
 
 
-	//	======== TrigTabbedPane ========
+		//	======== TrigTabbedPane ========
 		{
 
 			//======== TrigLayeredPane ========
@@ -983,9 +983,9 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			TrigFunctionsTabbedPane.addTab("Trigonometric Functions", TrigFunctionsLayeredPane);
 		}
 		BeadLoomUtilitiesTabbedPane.addTab("Trig Functions Tool", TrigFunctionsTabbedPane);
-		
-		
-	//  ======== TriangleItrLoopTabbedPane ========
+
+
+		//  ======== TriangleItrLoopTabbedPane ========
 		{
 
 			//======== TriangleItrLoopLayeredPane ========
@@ -995,12 +995,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				TriangleItrLoopLayeredPane.add(DrawTriangleItrLoopButton, JLayeredPane.DEFAULT_LAYER);
 				DrawTriangleItrLoopButton.setBounds(5, 5, 80, 25);
 				DrawTriangleItrLoopButton.addActionListener(this);
-				
+
 				//---- TriangleItrLoopItrHelpLabel ----
 				TriangleItrLoopItrHelpLabel.setText(" Help with...");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopItrHelpLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopItrHelpLabel.setBounds(5, 50, 90, 24);
-				
+
 				//---- HelpTriangleItrLoopButton ----
 				TriangleItrLoopItrHelpButton.setText("<html>Triangle<br>Iteration");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopItrHelpButton, JLayeredPane.DEFAULT_LAYER);
@@ -1010,7 +1010,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						TriangleIterHelpButtonActionPerformed(e);
 					}
 				});
-				
+
 				//---- HelpTriangleItrLoopButton ----
 				TriangleItrLoopHelpButton.setText("<html>Iteration<br>Loop");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopHelpButton, JLayeredPane.DEFAULT_LAYER);
@@ -1020,159 +1020,159 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						TriangleCycleHelpButtonActionPerformed(e);
 					}
 				});
-				
+
 				//---- TriangleItrLoopImage ----
 				/*TriangleItrLoopImage.setBounds(6, 42, 125, 125);
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopImage, JLayeredPane.DEFAULT_LAYER);
 				repaint();*/
-				
+
 				//---- TriangleItrLoopStartXLabel ----
 				TriangleItrLoopStartXLabel.setText("X = ");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStartXLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStartXLabel.setBounds(120, 5, 35, 24);
-				
+
 				//---- TriangleItrLoopStartXTextField ----
 				TriangleItrLoopStartXTextField.setText("0");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStartXTextField, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStartXTextField.setBounds(140, 5, 25, 24);
-				
+
 				//---- TriangleItrLoopStartYLabel ----
 				TriangleItrLoopStartYLabel.setText(";    Y = ");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStartYLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStartYLabel.setBounds(167, 5, 55, 24);
-				
+
 				//---- TriangleItrLoopStartYTextField ----
 				TriangleItrLoopStartYTextField.setText("10");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStartYTextField, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStartYTextField.setBounds(203, 5, 25, 24);
-				
+
 				//---- TriangleItrLoopEndYLabel ----
 				TriangleItrLoopEndYLabel.setText(" ;");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopEndYLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopEndYLabel.setBounds(227, 5, 10, 24);
-				
+
 				//---- TriangleItrLoopStartNLabel ----
 				TriangleItrLoopStartNLabel.setText("For  (   N = ");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStartNLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStartNLabel.setBounds(120, 35, 70, 24);
-				
+
 				//---- TriangleItrLoopStartNTextField ----
 				TriangleItrLoopStartNTextField.setText("1");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStartNTextField, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStartNTextField.setBounds(180, 35, 25, 24);
-				
+
 				//---- TriangleItrLoopToNLabel ----
 				TriangleItrLoopToNLabel.setText(" to ");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopToNLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopToNLabel.setBounds(205, 35, 25, 24);
-				
+
 				//---- TriangleItrLoopEndNTextField ----
 				TriangleItrLoopEndNTextField.setText("4");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopEndNTextField, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopEndNTextField.setBounds(225, 35, 25, 24);
-				
+
 				//---- TriangleItrLoopEndNLabel ----
 				TriangleItrLoopEndNLabel.setText(" )");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopEndNLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopEndNLabel.setBounds(255, 35, 15, 24);
-				
+
 				//---- TriangleItrLoopFunctStartLabel ----
 				TriangleItrLoopFunctStartLabel.setText("triangularIteration(X,Y,");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopFunctStartLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopFunctStartLabel.setBounds(134, 62, 140, 24);
-				
+
 				//---- TriangleItrLoopStepSelector ----
 				for (int i = 0; i < 7; i++){
 					TriangleItrLoopStepSelector.addItem(SelectionStrings[i]);}
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStepSelector, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStepSelector.setSelectedIndex(0);
 				TriangleItrLoopStepSelector.setBounds(260, 62, 35, 24);
-				
+
 				//---- TriangleItrLoopFunctNLabel ----
 				TriangleItrLoopFunctNLabel.setText(",");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopFunctNLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopFunctNLabel.setBounds(295, 62, 5, 24);
-				
+
 				//---- TriangleItrLoopAddedSelector ----
 				for (int i = 0; i < 7; i++){
 					TriangleItrLoopNSelector.addItem(SelectionStrings[i]);}
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopNSelector, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopNSelector.setSelectedIndex(0);
 				TriangleItrLoopNSelector.setBounds(299, 62, 35, 24);
-				
+
 				//---- TriangleItrLoopFunctNLabel ----
 				TriangleItrLoopFunctN2Label.setText(",");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopFunctN2Label, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopFunctN2Label.setBounds(334, 62, 5, 24);
-				
+
 				//---- TriangleItrLoopRowsTextField ----
 				TriangleItrLoopRowsTextField.setText("6");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopRowsTextField, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopRowsTextField.setBounds(338, 62, 20, 24);
-				
+
 				//---- LinearItrLoopFunctComma3Label ----
 				TriangleItrLoopFunctCommaLabel.setText(",");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopFunctCommaLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopFunctCommaLabel.setBounds(359, 62, 10, 24);
-				
+
 				//---- TriangleItrLoopDirectionSelector ----
 				for (int i = 0; i < 4; i++){
 					TriangleItrLoopDirectionSelector.addItem(DirectionStrings[i]);}
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopDirectionSelector, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopDirectionSelector.setSelectedIndex(0);
 				TriangleItrLoopDirectionSelector.setBounds(362, 62, 39, 24);
-				
+
 				//---- TriangleItrLoopFunctNLabel ----
 				TriangleItrLoopFunctEndLabel.setText(" );");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopFunctEndLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopFunctEndLabel.setBounds(400, 62, 40, 24);
-				
+
 				//---- TriangleItrLoopStatement1Selector ----
 				for (int i = 0; i < 4; i++){
 					TriangleItrLoopStatement1Selector.addItem(TriangleItrLoopIncrementStrings[i]);}
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStatement1Selector, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStatement1Selector.setBounds(135, 90, 80, 24);
-				
+
 				//---- TriangleItrLoopPlusOrMinus1Selector ----
 				TriangleItrLoopPlusOrMinus1Selector.addItem(TriangleItrLoopPlusOrMinusStrings[0]);
 				TriangleItrLoopPlusOrMinus1Selector.addItem(TriangleItrLoopPlusOrMinusStrings[1]);
 				TriangleItrLoopPlusOrMinus1Selector.setSelectedIndex(1);
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopPlusOrMinus1Selector, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopPlusOrMinus1Selector.setBounds(215, 90, 40, 24);
-				
+
 				//---- TriangleItrLoopStatement1TextField ----
 				TriangleItrLoopStatement1TextField.setText("8");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStatement1TextField, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStatement1TextField.setBounds(255, 90, 25, 24);
-				
+
 				//---- TriangleItrLoopSemiLabel ----
 				TriangleItrLoopSemiLabel.setText(" ;");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopSemiLabel, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopSemiLabel.setBounds(280, 90, 15, 24);
-				
+
 				//---- TriangleItrLoopStatement2Selector ----
 				for (int i = 0; i < 4; i++){
 					TriangleItrLoopStatement2Selector.addItem(TriangleItrLoopIncrementStrings[i]);}
 				TriangleItrLoopStatement2Selector.setSelectedIndex(3);
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStatement2Selector, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStatement2Selector.setBounds(135, 115, 80, 24);
-				
+
 				//---- TriangleItrLoopPlusOrMinus2Selector ----
 				TriangleItrLoopPlusOrMinus2Selector.addItem(TriangleItrLoopPlusOrMinusStrings[0]);
 				TriangleItrLoopPlusOrMinus2Selector.addItem(TriangleItrLoopPlusOrMinusStrings[1]);
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopPlusOrMinus2Selector, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopPlusOrMinus2Selector.setBounds(215, 115, 40, 24);
-				
+
 				//---- TriangleItrLoopStatement2TextField ----
 				TriangleItrLoopStatement2TextField.setText("0");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopStatement2TextField, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopStatement2TextField.setBounds(255, 115, 25, 24);
-				
+
 				//---- TriangleItrLoopSemi1Label ----
 				TriangleItrLoopSemi1Label.setText(" ;");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopSemi1Label, JLayeredPane.DEFAULT_LAYER);
 				TriangleItrLoopSemi1Label.setBounds(280, 115, 15, 24);
-				
+
 				//---- TriangleItrLoopEndBracketLabel ----
 				TriangleItrLoopEndBracketLabel.setText("End for loop");
 				TriangleItrLoopLayeredPane.add(TriangleItrLoopEndBracketLabel, JLayeredPane.DEFAULT_LAYER);
@@ -1181,44 +1181,44 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
 		}
 		BeadLoomUtilitiesTabbedPane.addTab("Iterative Tools", LinearIterationTabbedPane);
-		
+
 		//Make the bead so it is stored in memory
 		redrawBead();
 	}
 
-	
-	
-	
-	
+
+
+
+
 	///////////////////////////////////////////////////////////////////////////////////////
 	//============================== Main drawing functions =============================// 
 	///////////////////////////////////////////////////////////////////////////////////////
-	
-	
-	
-	
+
+
+
+
 	public void setGrid(GridPanel gp)
 	{
 		grid = gp;
 	}
-	
+
 	//Draw a single point
 	public void drawPoint(int x, int y)
 	{	
 		//Initialize the coordinate arrays
 		ArrayList<Integer> xValue = new ArrayList(1);
 		ArrayList<Integer> yValue = new ArrayList(1);
-		
+
 		//Add x and y coordinates
 		xValue.add(x);
 		yValue.add(y);
-	
+
 		//Draw the bead
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("POINT", coords," ");
 		l.setColor(color);
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
-		
+
 		//write coordinate and type data
 		l.setX1(x);
 		l.setY1(y);
@@ -1296,14 +1296,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			}
 		}
 	}
-	
+
 	//Draw a solid rectangle
 	public void drawRectangle(int x1, int x2, int y1, int y2)
 	{
 		//Initialize the coordinate arrays
 		ArrayList<Integer> xValue = new ArrayList();
 		ArrayList<Integer> yValue = new ArrayList();
-		
+
 		//If the 1st x coordinate is bigger, swap
 		if(x1 > x2) {
 			int temp = x1;
@@ -1333,35 +1333,35 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setY2(y2);
 		grid.addLayer(l);
 	}
-	
+
 	//Draw a solid triangle, relies on the drawLine method
 	public void drawTriangle(int x1, int x2, int x3, int y1, int y2, int y3)
 	{
 		//Initialize the coordinate arrays
 		ArrayList<Integer> xValue = new ArrayList();
 		ArrayList<Integer> yValue = new ArrayList();
-		
+
 		//Draw the three sides of the triangle
 		drawLine(x1, y1, x2, y2, xValue, yValue);
 		drawLine(x2, y2, x3, y3, xValue, yValue);
 		drawLine(x1, y1, x3, y3, xValue, yValue);
-		
+
 		//Find the fill start point
 		int start = x1;
 		if(x2 < start) start = x2;
 		if(x3 < start) start = x3;
-		
+
 		//Find the fill end point
 		int stop = x1;
 		if(x2 > stop) stop = x2;
 		if(x3 > stop) stop = x3;
-		
+
 		//Fill the triangle
 		CoordList coords = new CoordList(xValue, yValue);
 		coords.sortByX(start, stop);
 		coords.sortByY();
 		coords.fillTriangle();
-		
+
 		//Draw the triangle
 		Layer l = new Layer("TRIANGLE", coords," ");
 		l.setColor(color);
@@ -1374,13 +1374,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setY3(y3);
 		grid.addLayer(l);
 	}
-	
+
 	//Draw a linear sequence of iterative beads
 	public void linearIteration(int startX, int startY, int startLength, int inc1, 
 			int inc2, int rows, boolean incY, boolean posDir, ArrayList<Integer> xValue, ArrayList<Integer> yValue )
 	{
 		int newX, newY;
-		
+
 		//If the iteration is in the vertical direction...
 		if(incY == true)
 		{
@@ -1456,7 +1456,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			}
 		}
 	}
-	
+
 	public void LinearIterationLoop(int startX, int startY, int nStart, int nEnd, int inc1, int inc2, int rows, boolean incY, boolean posDir)
 	{
 		//Initialize the coordinate arrays
@@ -1465,7 +1465,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		int startLength = 1;
 		//Assume loop is increments in the positive direction
 		boolean posLoop = true;
-		
+
 		//If the start value is greater than the end value decrement loop
 		if (nStart > nEnd)
 		{
@@ -1478,14 +1478,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		else
 			//Account for extra cycle
 			nEnd++;
-		
+
 		//Do-while loop in order to get at least one iteration
 		do 
 		{	
 			startLength = LinearItrLoopStartLengthSelector.getSelectedIndex(); //Set the startLength
 			if(startLength == 0) //If N is not selected
 				startLength = nStart; //Set startLength to N
-			
+
 			try
 			{
 				//If arguments are not in bounds throw an exception
@@ -1518,7 +1518,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				startX = LinearItrLoopStatement1(startX);
 				break;
 			}
-			
+
 			switch(LinearItrLoopStatement2Selector.getSelectedIndex()) {
 			case 0:
 				startY = LinearItrLoopStatement2(startY);
@@ -1533,7 +1533,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				startX = LinearItrLoopStatement2(startX);
 				break;
 			}
-			
+
 			//If the loop is in the positive direction increment
 			if (posLoop == true)
 				nStart++;
@@ -1542,7 +1542,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				nStart--;
 			//Continue if the start does not equal the end
 		} while (nStart != nEnd);
-		
+
 		//Draw the iteration
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("LINEAR_ITERATION_CYCLES", coords," ");
@@ -1550,14 +1550,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
-	
+
 	//Draw a sequence of iterative triangles
 	public void triangleIteration(int startX, int startY, int steps, int exSteps, int width, double cycles, 
-				boolean incY, boolean fill, ArrayList<Integer> xValue, ArrayList<Integer> yValue)
+			boolean incY, boolean fill, ArrayList<Integer> xValue, ArrayList<Integer> yValue)
 	{	
 		int tempSteps = 0;
 		boolean lastLoop = false;
-		
+
 		//Loop through the cycles (Steps)
 		for(int i = 0; i < cycles; i++)
 		{
@@ -1625,28 +1625,28 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					}
 				}
 			}
-				
-				//Increment appropriate fields
-				tempSteps += steps;
-				if(incY)
-					startY += width;
-				else
-					startX += width;
-				if (((int)cycles-i) <= 1) //Account for unfilled steps
+
+			//Increment appropriate fields
+			tempSteps += steps;
+			if(incY)
+				startY += width;
+			else
+				startX += width;
+			if (((int)cycles-i) <= 1) //Account for unfilled steps
+			{
+				if(width < 0)
 				{
-					if(width < 0)
-					{
-						exSteps = exSteps*-1;
-						width = exSteps;
-					}
-					else
-					{
-						width = exSteps;
-					}
+					exSteps = exSteps*-1;
+					width = exSteps;
 				}
-				if(lastLoop)
-					break;
-				/*if(i == (int)cycles - 1 && cycles > (int)cycles)
+				else
+				{
+					width = exSteps;
+				}
+			}
+			if(lastLoop)
+				break;
+			/*if(i == (int)cycles - 1 && cycles > (int)cycles)
 				{
 					int temp = Math.abs(Integer.parseInt(TriangleIterationRowsTotalTextField.getText())) % Math.abs(width);
 					width = (width >= 0) ? temp : temp * -1;
@@ -1655,7 +1655,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				}*/
 		}
 	}
-	
+
 	//Draw a sequence of user defined iterative triangles, relies of triangleIteration method
 	public void TriangleIterationLoop(int startX, int startY, int nStart, int nEnd, int exSteps, double cycles, boolean incY)
 	{
@@ -1666,7 +1666,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		//Initialize the coordinate arrays
 		ArrayList<Integer> xValue = new ArrayList();
 		ArrayList<Integer> yValue = new ArrayList();
-		
+
 		//If the start value is greater than the end value decrement loop
 		if (nStart > nEnd)
 		{
@@ -1678,7 +1678,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		//The start value is less than the end value
 		else
 			nEnd++; //Account for extra cycle
-		
+
 		//Do-while loop in order to get at least one iteration
 		do 
 		{	
@@ -1686,14 +1686,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			tempStep = TriangleItrLoopStepSelector.getSelectedIndex(); //Set the temporary step
 			if(tempStep == 0) //If N is not selected
 				tempStep = nStart; //Set tempStep to N
-		
+
 			try
 			{
 				//If arguments are not in bounds throw an exception
 				if(startX < -50 || startX > 50 || startY < -50 || startY > 50 || nStart < -50
 						|| nStart > 50 || nEnd > 50 || nEnd < -50 || cycles > 50 )
 					throw new NumberFormatException();
-				
+
 				//If stepHeight > totalRows only draw the total number of rows
 				if ((tempCycle/(double)tempStep) < 1)
 				{
@@ -1705,7 +1705,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					exSteps = (int)tempCycle % tempStep;
 					tempCycle = tempCycle/(double)tempStep;
 				}
-				
+
 				//Set incY to false if horizontal iteration is selected
 				incY = !(TriangleItrLoopDirectionSelector.getSelectedIndex() == 2 || TriangleItrLoopDirectionSelector.getSelectedIndex() == 3);
 				if(TriangleItrLoopDirectionSelector.getSelectedIndex() == 3 || TriangleItrLoopDirectionSelector.getSelectedIndex() == 1)
@@ -1721,7 +1721,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			tempN = TriangleItrLoopNSelector.getSelectedIndex();
 			if(tempN == 0) //N is not selected
 				tempN = nStart;
-				
+
 			triangleIteration(startX, startY, tempN, exSteps, tempStep, tempCycle, incY, true, xValue, yValue);
 
 			//Before the loop ends parse the statements and use the 
@@ -1740,7 +1740,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				startX = TriangleItrLoopStatement1(startX);
 				break;
 			}
-			
+
 			switch(TriangleItrLoopStatement2Selector.getSelectedIndex()) {
 			case 0:
 				startY = TriangleItrLoopStatement2(startY);
@@ -1755,7 +1755,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				startX = TriangleItrLoopStatement2(startX);
 				break;
 			}
-			
+
 			//If the loop is in the positive direction increment
 			if (posLoop == true)
 				nStart++;
@@ -1765,7 +1765,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			//Continue if the start does not equal the end
 		} 
 		while (nStart != nEnd);
-		
+
 		//Draw the iteration
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer("TRIANGLE_ITERATION_CYCLES", coords," ");
@@ -1773,14 +1773,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
-	
+
 	//Draw specified trigonometric function
 	public void trigFunction (int additive, float multiplier, float argument)
 	{
 		//Initialize the coordinate arrays
 		ArrayList<Integer> xValue = new ArrayList(101);
 		ArrayList<Integer> yValue = new ArrayList(101);
-		
+
 		double functionValue = 0, tempSum = 0, yGraph = 0;
 		//Loop through as long as x is in bounds
 		for(int x = -50; x < 51; x++)
@@ -1788,24 +1788,24 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			//Get the index and choose the trig function appropriately 
 			switch(TrigFunctionSelector.getSelectedIndex()) 
 			{
-				case 0:
-					functionValue = Math.sin(argument * x);
-					break;
-				case 1:
-					functionValue = Math.cos(argument * x);
-					break;
-				case 2:
-					functionValue = Math.tan(argument * x);
-					break;
-				case 3:
-					functionValue = Math.asin(argument * x);
-					break;
-				case 4:
-					functionValue = Math.acos(argument * x);
-					break;
-				case 5:
-					functionValue = Math.atan(argument * x);
-					break;
+			case 0:
+				functionValue = Math.sin(argument * x);
+				break;
+			case 1:
+				functionValue = Math.cos(argument * x);
+				break;
+			case 2:
+				functionValue = Math.tan(argument * x);
+				break;
+			case 3:
+				functionValue = Math.asin(argument * x);
+				break;
+			case 4:
+				functionValue = Math.acos(argument * x);
+				break;
+			case 5:
+				functionValue = Math.atan(argument * x);
+				break;
 			}
 			//If the result is a number (not an imaginary number)...
 			if(!Double.isNaN(functionValue)) 
@@ -1825,7 +1825,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 		final int size = xValue.size() - 1;
 		int increment = 0;
-		
+
 		//When loop ends find the y values for coordinates
 		for(int i = 0; i < size; i++) 
 		{
@@ -1864,54 +1864,54 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		grid.addLayer(l);
 	}
-	
+
 	public void itemStateChanged(ItemEvent e) {
 		if (e.getStateChange() == ItemEvent.SELECTED) {
 			lay=(Layer)e.getItem();
 		}
 	}
-	
+
 	//Initializes the coordinate List for draw Line button
 	//Draws the Iteration for Linear and Triangle Iteration
 	//This is done so draw line, linear iteration, and triangle iteration can be called by the game
 	//type is either LINE, LINEAR_ITERATION, or TRIANGLE_ITERATION
 	public Layer CoordListAction(String type, ArrayList<Integer> xValue, ArrayList<Integer> yValue){
-		
+
 		CoordList coords = new CoordList(xValue, yValue);
 		Layer l = new Layer(type, coords, " ");
 		l.setColor(color);
 		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
 		return l;
 	}
-	
+
 	public void addGridLayer(Layer l) {
 		grid.addLayer(l);
 	}
-		
-	
-	
-	
+
+
+
+
 	///////////////////////////////////////////////////////////////////////////////////////
 	//=============================== Action event functions ============================//
 	///////////////////////////////////////////////////////////////////////////////////////
-	
-	
-	
-	
+
+
+
+
 	public void actionPerformed(ActionEvent e) {
 		//Fires when delete button is pressed
 		if (e.getSource() == DeleteLayer) 
 		{
 			grid.deleteLayer(lay);
 		}
-		
+
 		//Fires when the draw point button is pressed
 		//Utilizes the drawPoint method
 		if(e.getSource() == DrawPointButton) 
 		{
 			int x = 0;
 			int y = 0;
-			
+
 			try 
 			{
 				x = Integer.parseInt((DrawPointXTextField.getText()));
@@ -1923,21 +1923,21 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				else{
 					drawPoint(x, y);
 				}
-				
+
 			} catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
 		}
-		
+
 		//Fires when the draw line button is pressed
 		//Utilizes the drawLine method
 		else if(e.getSource() == DrawLineButton) 
 		{
 			int x1 = 0, x2 = 1;
 			int y1 = 0, y2 = 1;
-			
+
 			//Initialize the coordinate arrays
 			ArrayList<Integer> xValue = new ArrayList();
 			ArrayList<Integer> yValue = new ArrayList();
-			
+
 			try {
 				x1 = Integer.parseInt(DrawLineX1TextField.getText());
 				x2 = Integer.parseInt(DrawLineX2TextField.getText());
@@ -1948,23 +1948,23 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				if(x1 < -1*GRID_SIZE/2 || x1 > GRID_SIZE/2 || y1 > GRID_SIZE/2 || y1 < -1*GRID_SIZE/2 || x2 > GRID_SIZE/2 || x2 < -1*GRID_SIZE/2 ||
 						y2 > GRID_SIZE/2 || y2 < -1*GRID_SIZE/2)
 					throw new NumberFormatException();
-				
+
 				//Initialize the coordinate list and layer
 				Layer l = CoordListAction("LINE", xValue, yValue);
 				grid.addLayer(l);
-				
+
 			} catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
-			
+
 			drawLine(x1, y1, x2, y2, xValue, yValue);
 		}
-		
+
 		//Fires when the draw rectangle button is pressed
 		//Utilizes the drawRectangle method
 		else if(e.getSource() == DrawRectangleButton) {
-			
+
 			int x1 = 0, x2 = 1;
 			int y1 = 0, y2 = 1;
-			
+
 			try {
 				x1 = Integer.parseInt(DrawRectangleX1TextField.getText());
 				x2 = Integer.parseInt(DrawRectangleX2TextField.getText());
@@ -1982,14 +1982,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 			} catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
 		}
-		
+
 		//Fires when the draw triangle button is pressed
 		//Utilizes the drawTriangle method
 		else if(e.getSource() == DrawTriangleButton) {
-			
+
 			int x1=0, x2=1, x3=0;
 			int y1=0, y2=1, y3=0;
-			
+
 			try {
 				x1 = Integer.parseInt(DrawTriangleX1TextField.getText());
 				x2 = Integer.parseInt(DrawTriangleX2TextField.getText());
@@ -2008,9 +2008,9 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				}
 
 			}catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
-			
+
 		}
-		
+
 		//Fires when the [triangle]iterate button is pressed
 		//Utilizes the triangleIteration method
 		else if(e.getSource() == DrawTriangleIterationButton) 
@@ -2021,14 +2021,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			//Initialize the coordinate arrays
 			ArrayList<Integer> xValue = new ArrayList();
 			ArrayList<Integer> yValue = new ArrayList();
-			
+
 			try {
 				startX = Integer.parseInt(TriangleIterationStartXTextField.getText());
 				startY = Integer.parseInt(TriangleIterationStartYTextField.getText());
 				width = Integer.parseInt(TriangleIterationBeadsAddedTextField.getText());
 				height = Integer.parseInt(TriangleIterationStepHeightTextField.getText());
 				cycles = Integer.parseInt(TriangleIterationRowsTotalTextField.getText());
-				
+
 				//If the arguments are not in bounds throw an exception
 				if(width < 0 || height < 0 || cycles < 0)
 					throw new NumberFormatException();
@@ -2043,7 +2043,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				else
 					JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);
 			}
-			
+
 			//If stepHeight > totalRows only draw the total number of rows
 			if ((cycles/(double)height) < 1)
 			{
@@ -2055,17 +2055,17 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				exSteps = (int)cycles % height;
 				cycles = cycles/(double)height;
 			}
-			
+
 			//Set incY to false if horizontal iteration is selected
 			incY = !(TriangleIterationDirectionSelector.getSelectedIndex() == 2 || TriangleIterationDirectionSelector.getSelectedIndex() == 3);
 			if(TriangleIterationDirectionSelector.getSelectedIndex() == 3 || TriangleIterationDirectionSelector.getSelectedIndex() == 1)
 				height *= -1;
-			
+
 			//fill = TriangleIterationFilledCheckBox.isSelected();
 
 			//Call the triangleIteration method
 			triangleIteration(startX, startY, width, exSteps, height, cycles, incY, true, xValue, yValue);
-			
+
 			//Draw the iteration
 			Layer l = CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
 			l.setX1(startX);
@@ -2077,7 +2077,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			l.setPositiveInc(height>=0);
 			grid.addLayer(l);
 		}
-		
+
 		//Fires when the [Linear]draw button is pressed
 		//Utilizes the linearIteration method
 		else if(e.getSource() == DrawLinearIterationButton)
@@ -2087,7 +2087,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			//Initialize the coordinate arrays
 			ArrayList<Integer> xValue = new ArrayList();
 			ArrayList<Integer> yValue = new ArrayList();
-			
+
 			try
 			{
 				startLength = Math.abs(Integer.parseInt(LinearIterationStartLengthTextField.getText()));
@@ -2103,16 +2103,16 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					throw new NumberFormatException();
 			}
 			catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
-			
+
 			incY = !(LinearIterationDirectionSelector.getSelectedIndex() == 2 || LinearIterationDirectionSelector.getSelectedIndex() == 3);
 			if(LinearIterationDirectionSelector.getSelectedIndex() == 3 || LinearIterationDirectionSelector.getSelectedIndex() == 1)
 			{
 				posDir = false;
 			}
-			
+
 			//Call the linearIteration method
 			linearIteration(startX, startY, startLength, inc1, inc2, rows, incY, posDir, xValue, yValue);
-			
+
 			//Draw the iteration
 			Layer l = CoordListAction("LINEAR_ITERATION", xValue, yValue);
 			l.setX1(startX);
@@ -2125,14 +2125,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			l.setPositiveInc(posDir);
 			grid.addLayer(l);
 		}
-		
+
 		//Fires when the [Linear Sequence]draw button is pressed
 		//Utilizes the linearIteration method
 		else if(e.getSource() == DrawLinearItrLoopButton) 
 		{
 			int startX = 0, startY = 0, nStart = 5, nEnd = 8, inc1 = 0, inc2 = 1, rows = 5;
 			boolean incY = true, posDir = true;
-			
+
 			try 
 			{
 				startX = Integer.parseInt(LinearItrLoopStartXTextField.getText());
@@ -2142,11 +2142,11 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				inc1 = Integer.parseInt(LinearItrLoopInc1TextField.getText());
 				inc2 = Integer.parseInt(LinearItrLoopInc2TextField.getText());
 				rows = Integer.parseInt(LinearItrLoopRowsTextField.getText());
-				
+
 				//If the arguments are not in bounds throw an exception
 				if( rows < 0 || nStart < 0)
 					throw new NumberFormatException();
-				
+
 				//Set incY to false if horizontal iteration is selected
 				incY = !(LinearItrLoopDirectionSelector.getSelectedIndex() == 2 || LinearItrLoopDirectionSelector.getSelectedIndex() == 3);
 				if(LinearItrLoopDirectionSelector.getSelectedIndex() == 3 || LinearItrLoopDirectionSelector.getSelectedIndex() == 1)
@@ -2162,11 +2162,11 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				else
 					JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);
 			}
-			
+
 			//Call the sequenceIteration method
 			LinearIterationLoop(startX, startY, nStart, nEnd, inc1, inc2, rows, incY, posDir);
 		}
-		
+
 		//Fires when the [Triangle Sequence]draw button is pressed
 		//Utilizes the TriangleItrLoopuenceIteration method
 		else if(e.getSource() == DrawTriangleItrLoopButton) 
@@ -2174,7 +2174,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			int startX = 0, startY = 0, nStart = 0, nEnd = 1, exSteps = 0;
 			double cycles = 0;
 			boolean incY = true;
-			
+
 			try 
 			{
 				startX = Integer.parseInt(TriangleItrLoopStartXTextField.getText());
@@ -2182,11 +2182,11 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				nStart = Integer.parseInt(TriangleItrLoopStartNTextField.getText());
 				nEnd = Integer.parseInt(TriangleItrLoopEndNTextField.getText());
 				cycles = Integer.parseInt(TriangleItrLoopRowsTextField.getText());
-				
+
 				//If the arguments are not in bounds throw an exception
 				if(cycles < 0 || nStart < 0)
 					throw new NumberFormatException();
-				
+
 			}
 			catch(Exception exc)
 			{
@@ -2196,27 +2196,27 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				else
 					JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);
 			}
-			
+
 			//Call the sequenceIteration method
 			TriangleIterationLoop(startX, startY, nStart, nEnd, exSteps, cycles, incY);
 		}
-		
+
 		//Fires when the GraphTrigFunctionButton is pressed
 		else if(e.getSource() == GraphTrigFunctionButton) 
 		{
-			
+
 			String multiplierString = TrigMultiplierTextField.getText();
 			String argumentString = TrigFunctionArgumentTextField.getText();
 			boolean legalMultiplier = true, legalFunctionArgument = true, additiveIsInt = true;
-			
+
 			float multiplier = 0, argument = 0;
 			int additive = 0;
-			
+
 			try 
 			{multiplier = Float.parseFloat(multiplierString);} 
 			catch(Exception exc)
 			{//multiplier must be fraction or float
-			try {
+				try {
 					if(multiplierString.indexOf('/') == -1)
 						throw new NumberFormatException();
 					int numerator = Integer.parseInt(multiplierString.substring(0, multiplierString.indexOf('/')));
@@ -2236,7 +2236,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			{
 				try {
 					if(argumentString.indexOf('/') == -1)
-							throw new NumberFormatException();
+						throw new NumberFormatException();
 					int numerator = Integer.parseInt(argumentString.substring(0, argumentString.indexOf('/')));
 					int denominator = Integer.parseInt(argumentString.substring(argumentString.indexOf('/') + 1, argumentString.length()));
 					if(denominator != 0)
@@ -2252,7 +2252,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			}
 			try {
 				additive = Integer.parseInt(TrigAdditiveTextField.getText());
-				} catch(Exception exc)
+			} catch(Exception exc)
 			{
 				additiveIsInt = false;
 				JOptionPane.showMessageDialog(this, "Numerical additive must be an integer");
@@ -2263,7 +2263,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				trigFunction(additive, multiplier, argument);
 			}
 		}
-		
+
 		/*else if(e.getSource() == LinearIterationPYDirectionButton || e.getSource() == LinearIterationNYDirectionButton
 				|| e.getSource() == LinearIterationPXDirectionButton || e.getSource() == LinearIterationNXDirectionButton)
 		{
@@ -2272,8 +2272,8 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			System.out.println("Radio button clicked.");
 		}*/
 	}
-	
-	
+
+
 	//Removes the Loop Tools from the GUI
 	//Do not want them to have access to them in the game... for now
 	public void removeLoopTools(){
@@ -2286,207 +2286,207 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		LinearIterationTabbedPane.addTab("Linear Iteration Loop", LinearItrLoopLayeredPane);
 		LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
 	}
-	
-	
+
+
 	//------------Other Get and Set Methods--------------//
-	
-	
+
+
 	public JTabbedPane getBeadLoomUtilitiesTabbedPane() {
 		return BeadLoomUtilitiesTabbedPane;
 	}
 	//	Set Grid stuff
-    public void setGridSize(int x) {
-    	GRID_SIZE = x;
-    }
-    public void setPad(int x) {
-    	PAD = x;
-    }
-    public void setxInc(double x) {
-    	xInc = x;
-    }
-    public void setyInc(double x) {
-    	yInc = x;
-    }
+	public void setGridSize(int x) {
+		GRID_SIZE = x;
+	}
+	public void setPad(int x) {
+		PAD = x;
+	}
+	public void setxInc(double x) {
+		xInc = x;
+	}
+	public void setyInc(double x) {
+		yInc = x;
+	}
 
-    public int getGridSize() {
-    	return GRID_SIZE;
-    }
-    public int getPad() {
-    	return PAD;
-    }
-    public double getxInc() {
-    	return xInc;
-    }
-    public double getyInc() {
-    	return yInc;
-    }
+	public int getGridSize() {
+		return GRID_SIZE;
+	}
+	public int getPad() {
+		return PAD;
+	}
+	public double getxInc() {
+		return xInc;
+	}
+	public double getyInc() {
+		return yInc;
+	}
 
-    public JButton getDrawPointButton() {
-    	return DrawPointButton;
-    }
-    public JButton getDrawLineButton() {
-    	return DrawLineButton;
-    }
-    public JButton getRectangleButton() {
-    	return DrawRectangleButton;
-    }
-    public JButton getDrawTriangleIterationButton() {
-    	return DrawTriangleIterationButton;
-    }
-    
-    public JButton getDrawLinearIterationButton() {
-    	return DrawLinearIterationButton;
-    }
+	public JButton getDrawPointButton() {
+		return DrawPointButton;
+	}
+	public JButton getDrawLineButton() {
+		return DrawLineButton;
+	}
+	public JButton getRectangleButton() {
+		return DrawRectangleButton;
+	}
+	public JButton getDrawTriangleIterationButton() {
+		return DrawTriangleIterationButton;
+	}
 
-    public JButton getDrawTriangleButton() {
-    	return DrawTriangleButton;
-    }
+	public JButton getDrawLinearIterationButton() {
+		return DrawLinearIterationButton;
+	}
 
-    public JButton getGraphTrigFunctionButton()
-    {
-    	return GraphTrigFunctionButton;
-    }
-    public JTextField getDrawPointXTextField(){
-    	return DrawPointXTextField;
-    }
-    public JTextField getDrawPointYTextField(){
-    	return DrawPointYTextField;
-    }
-    public JTextField getDrawLineX1TextField(){
-    	return DrawLineX1TextField;
-    }
-    public JTextField getDrawLineX2TextField(){
-    	return DrawLineX2TextField;
-    }
-    public JTextField getDrawLineY1TextField(){
-    	return DrawLineY1TextField;
-    }
-    public JTextField getDrawLineY2TextField(){
-    	return DrawLineY2TextField;
-    }
-    public JTextField getDrawRectangleX1TextField(){
-    	return DrawRectangleX1TextField;
-    }
-    public JTextField getDrawRectangleX2TextField(){
-    	return DrawRectangleX2TextField;
-    }
-    public JTextField getDrawRectangleY1TextField(){
-    	return DrawRectangleY1TextField;
-    }
-    public JTextField getDrawRectangleY2TextField(){
-    	return DrawRectangleY2TextField;
-    }
-    
-    public JTextField getTriangleIterationStartXTextField(){
-    	return TriangleIterationStartXTextField;
-    }
-    public JTextField getTriangleIterationStartYTextField(){
-    	return TriangleIterationStartYTextField;
-    }
-    public JTextField getTriangleIterationStepHeightTextField(){
-    	return TriangleIterationStepHeightTextField;
-    }
-    public JTextField getTriangleIterationBeadsAddedTextField(){
-    	return TriangleIterationBeadsAddedTextField;
-    }
-    public JTextField getTriangleIterationRowsTotalTextField(){
-    	return TriangleIterationRowsTotalTextField;
-    }
-    public JComboBox getTriangleIterationDirectionLabel(){
-    	return TriangleIterationDirectionSelector;
-    }
-    
-    public JTextField getLinearIterationStartXTextField(){
-    	return LinearIterationStartXTextField;
-    }
-    public JTextField getLinearIterationStartYTextField(){
-    	return LinearIterationStartYTextField;
-    }
-    public JTextField getLinearIterationStepsTextField(){
-    	return LinearIterationRowsTotalTextField;
-    }
-    public JTextField getLinearIterationInc1TextField(){
-    	return LinearIterationInc1TextField;
-    }
-    public JTextField getLinearIterationInc2TextField(){
-    	return LinearIterationInc2TextField;
-    }
-    public JTextField getLinearIterationRowsTotalTextField(){
-    	return LinearIterationRowsTotalTextField;
-    }
-    public JTextField getLinearIterationStartLengthTextField(){
-    	return LinearIterationStartLengthTextField;
-    }
+	public JButton getDrawTriangleButton() {
+		return DrawTriangleButton;
+	}
 
-    public JTextField getDrawTriangleX1TextField(){
-    	return DrawTriangleX1TextField;
-    }
-    public JTextField getDrawTriangleX2TextField(){
-    	return DrawTriangleX2TextField;
-    }
-    public JTextField getDrawTriangleX3TextField(){
-    	return DrawTriangleX3TextField;
-    }
-    public JTextField getDrawTriangleY1TextField(){
-    	return DrawTriangleY1TextField;
-    }
-    public JTextField getDrawTriangleY2TextField(){
-    	return DrawTriangleY2TextField;
-    }
-    public JTextField getDrawTriangleY3TextField(){
-    	return DrawTriangleY3TextField;
-    }
+	public JButton getGraphTrigFunctionButton()
+	{
+		return GraphTrigFunctionButton;
+	}
+	public JTextField getDrawPointXTextField(){
+		return DrawPointXTextField;
+	}
+	public JTextField getDrawPointYTextField(){
+		return DrawPointYTextField;
+	}
+	public JTextField getDrawLineX1TextField(){
+		return DrawLineX1TextField;
+	}
+	public JTextField getDrawLineX2TextField(){
+		return DrawLineX2TextField;
+	}
+	public JTextField getDrawLineY1TextField(){
+		return DrawLineY1TextField;
+	}
+	public JTextField getDrawLineY2TextField(){
+		return DrawLineY2TextField;
+	}
+	public JTextField getDrawRectangleX1TextField(){
+		return DrawRectangleX1TextField;
+	}
+	public JTextField getDrawRectangleX2TextField(){
+		return DrawRectangleX2TextField;
+	}
+	public JTextField getDrawRectangleY1TextField(){
+		return DrawRectangleY1TextField;
+	}
+	public JTextField getDrawRectangleY2TextField(){
+		return DrawRectangleY2TextField;
+	}
 
-    public JTabbedPane getLayersDrawTabbedPane(){
-    	return LayersDrawTabbedPane;
-    }
-    public JTabbedPane getTrigFunctionsTabbedPane(){
-    	return TrigFunctionsTabbedPane;
-    }
+	public JTextField getTriangleIterationStartXTextField(){
+		return TriangleIterationStartXTextField;
+	}
+	public JTextField getTriangleIterationStartYTextField(){
+		return TriangleIterationStartYTextField;
+	}
+	public JTextField getTriangleIterationStepHeightTextField(){
+		return TriangleIterationStepHeightTextField;
+	}
+	public JTextField getTriangleIterationBeadsAddedTextField(){
+		return TriangleIterationBeadsAddedTextField;
+	}
+	public JTextField getTriangleIterationRowsTotalTextField(){
+		return TriangleIterationRowsTotalTextField;
+	}
+	public JComboBox getTriangleIterationDirectionLabel(){
+		return TriangleIterationDirectionSelector;
+	}
 
-    public void setImage(Image ii){
-    	catimage = ii;
-    	System.out.println("setImage called");
-    }
+	public JTextField getLinearIterationStartXTextField(){
+		return LinearIterationStartXTextField;
+	}
+	public JTextField getLinearIterationStartYTextField(){
+		return LinearIterationStartYTextField;
+	}
+	public JTextField getLinearIterationStepsTextField(){
+		return LinearIterationRowsTotalTextField;
+	}
+	public JTextField getLinearIterationInc1TextField(){
+		return LinearIterationInc1TextField;
+	}
+	public JTextField getLinearIterationInc2TextField(){
+		return LinearIterationInc2TextField;
+	}
+	public JTextField getLinearIterationRowsTotalTextField(){
+		return LinearIterationRowsTotalTextField;
+	}
+	public JTextField getLinearIterationStartLengthTextField(){
+		return LinearIterationStartLengthTextField;
+	}
 
-    //Used for getting layer
-    public int getSelectedZ() {
-    	return lay.getZValue();
-    }
-    public JComboBox getLayerList() {
-    	return LayersBox;
-    }
-    public void setLay(Layer l) {
-    	lay=l;
-    }
-    public Layer getLay() {
-    	return lay;
-    }
-    public JButton getLinearIterationDrawButton(){
-    	return DrawLinearIterationButton;
-    }
-    
+	public JTextField getDrawTriangleX1TextField(){
+		return DrawTriangleX1TextField;
+	}
+	public JTextField getDrawTriangleX2TextField(){
+		return DrawTriangleX2TextField;
+	}
+	public JTextField getDrawTriangleX3TextField(){
+		return DrawTriangleX3TextField;
+	}
+	public JTextField getDrawTriangleY1TextField(){
+		return DrawTriangleY1TextField;
+	}
+	public JTextField getDrawTriangleY2TextField(){
+		return DrawTriangleY2TextField;
+	}
+	public JTextField getDrawTriangleY3TextField(){
+		return DrawTriangleY3TextField;
+	}
 
-    private synchronized Image makeBullet(Color fg, int panelWidth, int panelHeight) {
-        
-    	Image bullet = null;
-    	try
-        {
+	public JTabbedPane getLayersDrawTabbedPane(){
+		return LayersDrawTabbedPane;
+	}
+	public JTabbedPane getTrigFunctionsTabbedPane(){
+		return TrigFunctionsTabbedPane;
+	}
+
+	public void setImage(Image ii){
+		catimage = ii;
+		System.out.println("setImage called");
+	}
+
+	//Used for getting layer
+	public int getSelectedZ() {
+		return lay.getZValue();
+	}
+	public JComboBox getLayerList() {
+		return LayersBox;
+	}
+	public void setLay(Layer l) {
+		lay=l;
+	}
+	public Layer getLay() {
+		return lay;
+	}
+	public JButton getLinearIterationDrawButton(){
+		return DrawLinearIterationButton;
+	}
+
+
+	private synchronized Image makeBullet(Color fg, int panelWidth, int panelHeight) {
+
+		Image bullet = null;
+		try
+		{
 			beadImage = beadImage.getScaledInstance(panelWidth/GRID_SIZE+1,
-            		panelHeight/GRID_SIZE+1, 0);
+					panelHeight/GRID_SIZE+1, 0);
 			ImageFilter imgf = new HueFilter(fg);
 			ImageProducer imgp = new FilteredImageSource(beadImage.getSource(), imgf);
 			bullet = createImage(imgp);
-        }
-        catch(Exception e)
-        {
-        	JOptionPane.showMessageDialog(null, "Error! Error Message: " + e.getCause());
-        }
-    	
-    	
-    	/*Image bullet;
+		}
+		catch(Exception e)
+		{
+			JOptionPane.showMessageDialog(null, "Error! Error Message: " + e.getCause());
+		}
+
+
+		/*Image bullet;
         Image sourceImage = Toolkit.getDefaultToolkit().getImage(BeadLoom.beadLocation);
-        
+
         //scale beads to fit panel width and height
         sourceImage = sourceImage.getScaledInstance(panelWidth/GRID_SIZE+1,
         		panelHeight/GRID_SIZE+1, 0);
@@ -2495,20 +2495,20 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     	ImageProducer imgp = new FilteredImageSource(sourceImage.getSource(),imgf);
     	bullet = createImage(imgp);
     	JOptionPane.showMessageDialog(null, "makeBullet in GUIInputTools was called");*/
-    	return bullet;
-   }
-   
-   public Image getMakeBullet(Color fg, int panelWidth, int panelHeight) {
-	   return makeBullet(fg, panelWidth, panelHeight);
-   }
+		return bullet;
+	}
 
-    public void setColor(Color c) {
-    	color = c;
-    }
+	public Image getMakeBullet(Color fg, int panelWidth, int panelHeight) {
+		return makeBullet(fg, panelWidth, panelHeight);
+	}
 
-    public JRadioButton getLinearIterationDirection()
-    {
-    	/*if(LinearIterationPYDirectionButton.isSelected())
+	public void setColor(Color c) {
+		color = c;
+	}
+
+	public JRadioButton getLinearIterationDirection()
+	{
+		/*if(LinearIterationPYDirectionButton.isSelected())
     		return LinearIterationPYDirectionButton;
     	if(LinearIterationNYDirectionButton.isSelected())
     		return LinearIterationNYDirectionButton;
@@ -2516,283 +2516,283 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
     		return LinearIterationPXDirectionButton;
     	if(LinearIterationNXDirectionButton.isSelected())
     		return LinearIterationNXDirectionButton;*/
-    	return null;
-    }
-    
-    //Linear Iteration "Help" message button action
-    private void LinearHelpButtonActionPerformed(ActionEvent e)
+		return null;
+	}
+
+	//Linear Iteration "Help" message button action
+	private void LinearHelpButtonActionPerformed(ActionEvent e)
 	{
-    	URL url;
-    	
+		URL url;
+
 		try 
 		{
 			url = new URL(BeadLoom.BEAD_ADDRESS+"LinearItrHelp.jpg");
 			ImageIcon ii = new ImageIcon(url);
-    	    Icon i = ii;
-    	    
+			Icon i = ii;
+
 			//Set image URL to baseURL 'BEAD_ADDRESS' and append image name 
-    	    JOptionPane.showMessageDialog(null, i,"Linear iteration help", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, i,"Linear iteration help", JOptionPane.INFORMATION_MESSAGE);
 
 		}
-    	catch (Exception ex) 
-    	{
-    		//If BEAD_ADDRESS is null set to my default location
-    		try
-    		{
-    			url = new URL("http://www.rpi.edu/~kotulc/Images/LinearItrHelp.jpg");
-    			ImageIcon ii = new ImageIcon(url);
-        	    Icon i = ii;
-        	    
-        	    JOptionPane.showMessageDialog(null, i,"Linear iteration help", JOptionPane.INFORMATION_MESSAGE);
-    		}
-    		catch(MalformedURLException exp){return;}//Else quit
-    	}
+		catch (Exception ex) 
+		{
+			//If BEAD_ADDRESS is null set to my default location
+			try
+			{
+				url = new URL("http://www.rpi.edu/~kotulc/Images/LinearItrHelp.jpg");
+				ImageIcon ii = new ImageIcon(url);
+				Icon i = ii;
+
+				JOptionPane.showMessageDialog(null, i,"Linear iteration help", JOptionPane.INFORMATION_MESSAGE);
+			}
+			catch(MalformedURLException exp){return;}//Else quit
+		}
 	}
-    
-    //Linear Iteration Cycle "Help" message button action
-    private void LinearItrHelpButtonActionPerformed(ActionEvent e)
+
+	//Linear Iteration Cycle "Help" message button action
+	private void LinearItrHelpButtonActionPerformed(ActionEvent e)
 	{
-    	URL url;
-    	
+		URL url;
+
 		try 
 		{
 			url = new URL(BeadLoom.BEAD_ADDRESS+"LinearItrLoopHelp.jpg");
 			ImageIcon ii = new ImageIcon(url);
-    	    Icon i = ii;
-    	    
+			Icon i = ii;
+
 			//Set image URL to baseURL 'BEAD_ADDRESS' and append image name 
-    	    JOptionPane.showMessageDialog(null, i,"Linear iteration loop help", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, i,"Linear iteration loop help", JOptionPane.INFORMATION_MESSAGE);
 
 		}
-    	catch (Exception ex) 
-    	{
-    		//If BEAD_ADDRESS is null set to my default location
-    		try
-    		{
-    			url = new URL("http://www.rpi.edu/~kotulc/Images/LinearItrLoopHelp.jpg");
-    			ImageIcon ii = new ImageIcon(url);
-        	    Icon i = ii;
-        	    
-        	    JOptionPane.showMessageDialog(null, i,"Linear iteration loop help", JOptionPane.INFORMATION_MESSAGE);
-    		}
-    		catch(MalformedURLException exp){return;}//Else quit
-    	}
+		catch (Exception ex) 
+		{
+			//If BEAD_ADDRESS is null set to my default location
+			try
+			{
+				url = new URL("http://www.rpi.edu/~kotulc/Images/LinearItrLoopHelp.jpg");
+				ImageIcon ii = new ImageIcon(url);
+				Icon i = ii;
+
+				JOptionPane.showMessageDialog(null, i,"Linear iteration loop help", JOptionPane.INFORMATION_MESSAGE);
+			}
+			catch(MalformedURLException exp){return;}//Else quit
+		}
 	}
-    
-    //Triangle iteration "Help" message button action
-    private void TriangleIterHelpButtonActionPerformed(ActionEvent e)
+
+	//Triangle iteration "Help" message button action
+	private void TriangleIterHelpButtonActionPerformed(ActionEvent e)
 	{
-    	URL url;
-    	
+		URL url;
+
 		try 
 		{
 			url = new URL(BeadLoom.BEAD_ADDRESS+"TriangularItrHelp.jpg");
 			ImageIcon ii = new ImageIcon(url);
-    	    Icon i = ii;
-    	    
+			Icon i = ii;
+
 			//Set image URL to baseURL 'BEAD_ADDRESS' and append image name 
-    	    JOptionPane.showMessageDialog(null, i,"Triangle iteration help", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, i,"Triangle iteration help", JOptionPane.INFORMATION_MESSAGE);
 
 		}
-    	catch (Exception ex) 
-    	{
-    		//If BEAD_ADDRESS is null set to my default location
-    		try
-    		{
-    			url = new URL("http://www.rpi.edu/~kotulc/Images/TriangularItrHelp.jpg");
-    			ImageIcon ii = new ImageIcon(url);
-        	    Icon i = ii;
-        	    
-        	    JOptionPane.showMessageDialog(null, i,"Triangle iteration help", JOptionPane.INFORMATION_MESSAGE);
-    		}
-    		catch(MalformedURLException exp){return;}//Else quit
-    	}
+		catch (Exception ex) 
+		{
+			//If BEAD_ADDRESS is null set to my default location
+			try
+			{
+				url = new URL("http://www.rpi.edu/~kotulc/Images/TriangularItrHelp.jpg");
+				ImageIcon ii = new ImageIcon(url);
+				Icon i = ii;
+
+				JOptionPane.showMessageDialog(null, i,"Triangle iteration help", JOptionPane.INFORMATION_MESSAGE);
+			}
+			catch(MalformedURLException exp){return;}//Else quit
+		}
 	}
-    
-    private void TriangleCycleHelpButtonActionPerformed(ActionEvent e)
+
+	private void TriangleCycleHelpButtonActionPerformed(ActionEvent e)
 	{
-    	URL url;
-    	
+		URL url;
+
 		try 
 		{
 			url = new URL(BeadLoom.BEAD_ADDRESS+"TriangularItrLoopHelp.jpg");
 			ImageIcon ii = new ImageIcon(url);
-    	    Icon i = ii;
-    	    
+			Icon i = ii;
+
 			//Set image URL to baseURL 'BEAD_ADDRESS' and append image name 
-    	    JOptionPane.showMessageDialog(null, i,"Triangle Iteration loop help", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, i,"Triangle Iteration loop help", JOptionPane.INFORMATION_MESSAGE);
 
 		}
-    	catch (Exception ex) 
-    	{
-    		//If BEAD_ADDRESS is null set to my default location
-    		try
-    		{
-    			url = new URL("http://www.rpi.edu/~kotulc/Images/TriangularItrLoopHelp.jpg");
-    			ImageIcon ii = new ImageIcon(url);
-        	    Icon i = ii;
-        	    
-        	    JOptionPane.showMessageDialog(null, i,"Triangle Iteration loop help", JOptionPane.INFORMATION_MESSAGE);
-    		}
-    		catch(MalformedURLException exp){return;}//Else quit
-    	}
+		catch (Exception ex) 
+		{
+			//If BEAD_ADDRESS is null set to my default location
+			try
+			{
+				url = new URL("http://www.rpi.edu/~kotulc/Images/TriangularItrLoopHelp.jpg");
+				ImageIcon ii = new ImageIcon(url);
+				Icon i = ii;
+
+				JOptionPane.showMessageDialog(null, i,"Triangle Iteration loop help", JOptionPane.INFORMATION_MESSAGE);
+			}
+			catch(MalformedURLException exp){return;}//Else quit
+		}
 	}
-    
-    //Linear sequence tool Statement1 method
-    public int LinearItrLoopStatement1(int x)
-    {
-    	int y = 0;
-    	
-    	//If the statement is adding a number...
-    	if (LinearItrLoopPlusOrMinus1Selector.getSelectedIndex() == 0)
-    	{
-    		try {
-    			//Get the number being added
-    			y = Integer.parseInt(LinearItrLoopStatement1TextField.getText());
-    			//Add this number to the argument and return the result
-    			x = x+y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	}
-    	//The statement is subtracting a number
-    	else 
-    	{
-    		try {
-    			//Get the number being subtracted
-    			y = Integer.parseInt(LinearItrLoopStatement1TextField.getText());
-    			//Subtract this number from the argument and return the result
-    			x = x-y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	} 	
-    }
-    
-    public int LinearItrLoopStatement2(int x)
-    {
-    	int y = 0;
-    	
-    	//If the statement is adding a number...
-    	if (LinearItrLoopPlusOrMinus2Selector.getSelectedIndex() == 0)
-    	{
-    		try {
-    			//Get the number being added
-    			y = Integer.parseInt(LinearItrLoopStatement2TextField.getText());
-    			//Add this number to the argument and return the result
-    			x = x+y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	}
-    	//The statement is subtracting a number
-    	else 
-    	{
-    		try {
-    			//Get the number being subtracted
-    			y = Integer.parseInt(LinearItrLoopStatement2TextField.getText());
-    			//Subtract this number from the argument and return the result
-    			x = x-y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	} 	
-    }
-    
-    //Triangle sequence tool Statement1 method
-    public int TriangleItrLoopStatement1(int x)
-    {
-    	int y = 0;
-    	
-    	//If the statement is adding a number...
-    	if (TriangleItrLoopPlusOrMinus1Selector.getSelectedIndex() == 0)
-    	{
-    		try {
-    			//Get the number being added
-    			y = Integer.parseInt(TriangleItrLoopStatement1TextField.getText());
-    			//Add this number to the argument and return the result
-    			x = x+y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	}
-    	//The statement is subtracting a number
-    	else 
-    	{
-    		try {
-    			//Get the number being subtracted
-    			y = Integer.parseInt(TriangleItrLoopStatement1TextField.getText());
-    			//Subtract this number from the argument and return the result
-    			x = x-y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	} 	
-    }
-    
-    //Triangle sequence tool Statement2 method
-    public int TriangleItrLoopStatement2(int x)
-    {
-    	int y = 0;
-    	
-    	//If the statement is adding a number...
-    	if (TriangleItrLoopPlusOrMinus2Selector.getSelectedIndex() == 0)
-    	{
-    		try {
-    			//Get the number being added
-    			y = Integer.parseInt(TriangleItrLoopStatement2TextField.getText());
-    			//Add this number to the argument and return the result
-    			x = x+y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	}
-    	//The statement is subtracting a number
-    	else 
-    	{
-    		try {
-    			//Get the number being subtracted
-    			y = Integer.parseInt(TriangleItrLoopStatement2TextField.getText());
-    			//Subtract this number from the argument and return the result
-    			x = x-y;
-    			return x;
-    		}
-    		catch(Exception exc)
-    		{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
-    		return 0;
-    	} 	
-    }
-    
-    public void redrawBead()
-    {
-    	try
-        {
-        	URL beadURL = new URL(BeadLoom.beadLocation);
-        	java.awt.Toolkit.getDefaultToolkit();
-        	beadImage = Toolkit.getDefaultToolkit().createImage(beadURL);
-			
-        }
-        catch(Exception e)
-        {
-        	JOptionPane.showMessageDialog(null, "Error Creating Bead!");
-        }
-    }
-    
-    
+
+	//Linear sequence tool Statement1 method
+	public int LinearItrLoopStatement1(int x)
+	{
+		int y = 0;
+
+		//If the statement is adding a number...
+		if (LinearItrLoopPlusOrMinus1Selector.getSelectedIndex() == 0)
+		{
+			try {
+				//Get the number being added
+				y = Integer.parseInt(LinearItrLoopStatement1TextField.getText());
+				//Add this number to the argument and return the result
+				x = x+y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		}
+		//The statement is subtracting a number
+		else 
+		{
+			try {
+				//Get the number being subtracted
+				y = Integer.parseInt(LinearItrLoopStatement1TextField.getText());
+				//Subtract this number from the argument and return the result
+				x = x-y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		} 	
+	}
+
+	public int LinearItrLoopStatement2(int x)
+	{
+		int y = 0;
+
+		//If the statement is adding a number...
+		if (LinearItrLoopPlusOrMinus2Selector.getSelectedIndex() == 0)
+		{
+			try {
+				//Get the number being added
+				y = Integer.parseInt(LinearItrLoopStatement2TextField.getText());
+				//Add this number to the argument and return the result
+				x = x+y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		}
+		//The statement is subtracting a number
+		else 
+		{
+			try {
+				//Get the number being subtracted
+				y = Integer.parseInt(LinearItrLoopStatement2TextField.getText());
+				//Subtract this number from the argument and return the result
+				x = x-y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		} 	
+	}
+
+	//Triangle sequence tool Statement1 method
+	public int TriangleItrLoopStatement1(int x)
+	{
+		int y = 0;
+
+		//If the statement is adding a number...
+		if (TriangleItrLoopPlusOrMinus1Selector.getSelectedIndex() == 0)
+		{
+			try {
+				//Get the number being added
+				y = Integer.parseInt(TriangleItrLoopStatement1TextField.getText());
+				//Add this number to the argument and return the result
+				x = x+y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		}
+		//The statement is subtracting a number
+		else 
+		{
+			try {
+				//Get the number being subtracted
+				y = Integer.parseInt(TriangleItrLoopStatement1TextField.getText());
+				//Subtract this number from the argument and return the result
+				x = x-y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		} 	
+	}
+
+	//Triangle sequence tool Statement2 method
+	public int TriangleItrLoopStatement2(int x)
+	{
+		int y = 0;
+
+		//If the statement is adding a number...
+		if (TriangleItrLoopPlusOrMinus2Selector.getSelectedIndex() == 0)
+		{
+			try {
+				//Get the number being added
+				y = Integer.parseInt(TriangleItrLoopStatement2TextField.getText());
+				//Add this number to the argument and return the result
+				x = x+y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		}
+		//The statement is subtracting a number
+		else 
+		{
+			try {
+				//Get the number being subtracted
+				y = Integer.parseInt(TriangleItrLoopStatement2TextField.getText());
+				//Subtract this number from the argument and return the result
+				x = x-y;
+				return x;
+			}
+			catch(Exception exc)
+			{JOptionPane.showMessageDialog(null, "Values must be integers between -50 and 50");}
+			return 0;
+		} 	
+	}
+
+	public void redrawBead()
+	{
+		try
+		{
+			URL beadURL = new URL(BeadLoom.beadLocation);
+			java.awt.Toolkit.getDefaultToolkit();
+			beadImage = Toolkit.getDefaultToolkit().createImage(beadURL);
+
+		}
+		catch(Exception e)
+		{
+			JOptionPane.showMessageDialog(null, "Error Creating Bead!");
+		}
+	}
+
+
 }
 
 
