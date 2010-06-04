@@ -1395,6 +1395,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		
+		else if (e.getSource() == CustomPuzzleButton) {
+			setGamePlayMode();
+		}
+		
 		else if (e.getSource() == NormalBeadButton) {
 			BeadLoom.beadLocation = "bead.JPG";
 			redrawGrid();
@@ -2934,7 +2938,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//TODO insert code to add main menu here
 	}
 	
-	public void setCustomPuzzle()
+	public void setCustomPuzzleMode()
 	{
 		removeAllWindows();
 		
