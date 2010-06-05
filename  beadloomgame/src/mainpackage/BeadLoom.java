@@ -127,6 +127,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	private JInternalFrame BeadUtilitiesFrame;
 	private JInternalFrame GridFrame;
 	private JInternalFrame GridFrame2;
+	private JInternalFrame MainMenuFrame;
+	private JInternalFrame InGameFrame;
 	private JLabel CoordinatesLabel;
 	private JLabel CoordinatesLabel2;
 	private JLabel MousePosition;
@@ -222,6 +224,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		GridFrame = new JInternalFrame();
 		GridFrame2 = new JInternalFrame();
 		BeadUtilitiesFrame = new JInternalFrame();
+		MainMenuFrame = new JInternalFrame();
+		InGameFrame = new JInternalFrame();
 
 		//======= Grid Panel Components =======
 		gridPanel = new GridPanel(this);
@@ -804,6 +808,30 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						public void internalFrameIconified(InternalFrameEvent arg0) {}
 						public void internalFrameOpened(InternalFrameEvent arg0) {}
 					});
+					
+					//Main Menu
+					MainMenuFrame.getContentPane().add(Game.getMainMenuPanel());
+					MainMenuFrame.setVisible(false);
+					MainMenuFrame.setBorder(new LineBorder(Color.red));
+					MainMenuFrame.setTitle("Main Menu");
+					MainMenuFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(MainMenuFrame);
+							try {
+								MainMenuFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
+					
 					GameFrame.setResizable(true);
 
 				}
@@ -875,6 +903,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			BeadLoomBackgroundPane.add(ContentPanel, BorderLayout.CENTER);
 		}
 		contentPane.add(BeadLoomBackgroundPane, BorderLayout.CENTER);
+		//MainMenuFrame.add()
+		Game.initMainMenu();
+		Game.setMainMenuMode();
 	}
 
 	//******* Methods *******
@@ -1214,6 +1245,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	}
 	public JInternalFrame getColorFrame(){
 		return ColorFrame;
+	}
+	public JInternalFrame getMainMenuFrame(){
+		return MainMenuFrame;
 	}
 	public GUIGoalImages getGoalImagesFrame(){
 		return GoalImagesFrame;
