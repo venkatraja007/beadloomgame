@@ -58,6 +58,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//GUI Parts
 	//Panels
 	private JPanel GamePanel = new JPanel();
+	private JPanel MainMenuPanel = new JPanel();
+	private JPanel InGamePanel = new JPanel();
 	private JPanel ChoosePuzzlePanel = new JPanel();
 	private JPanel ColorPanel = new JPanel();
 	private JPanel HighScoresPanel = new JPanel();
@@ -73,6 +75,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton SubmitButton = new JButton();
 	private JButton GameOptionsButton = new JButton();
 	private JButton QuitButton = new JButton();
+	private JButton ToolButton = new JButton();
 	private JButton PlayGameButton = new JButton();
 	private JButton HighScoresButton = new JButton();
 	private JButton UpdateHighScoresButton = new JButton();
@@ -295,6 +298,18 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GamePanel.setBackground(Color.white);
 		GamePanel.setLayout(null);
 		GamePanel.setBounds(4, 3, 195, 165);
+		
+		//---- in game panel ----
+		InGamePanel.setBorder(new LineBorder(Color.red));
+		InGamePanel.setBackground(Color.white);
+		InGamePanel.setLayout(null);
+		InGamePanel.setBounds(4, 3, 195, 165);
+		
+		//---- main menu panel ----
+		MainMenuPanel.setBorder(new LineBorder(Color.red));
+		MainMenuPanel.setBackground(Color.white);
+		MainMenuPanel.setLayout(null);
+		MainMenuPanel.setBounds(4, 3, 195, 165);
 
 		//---- high scores panel ----
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
@@ -782,6 +797,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		NameTextField.addActionListener(this);
 
+		//---- Tool button ----
+		ToolButton.setText("Use Tool");
+		ToolButton.setBounds(25, 100, 145, ToolButton.getPreferredSize().height);
+		ToolButton.addActionListener(this);
+
 		//---- Color Blind Button ----
 		ColorBlindButton.setText("Color Blind Mode Off");
 		ColorBlindButton.setBounds(20, 25, 155, ColorBlindButton.getPreferredSize().height);
@@ -935,6 +955,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//Changes the layout of the box for playing the game
 	//Input: Players name for log in purposes
 	public void startGame(){
+		setGamePlayMode();
 		//Adjust BeadLoom
 		bl.getContentPanel().add(bl.getGridFrame2());
 		bl.getContentPanel().remove(bl.getGoalImagesFrame());
@@ -964,8 +985,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GamePanel.add(NameLabel);
 		GamePanel.add(BestScoreLabel);
 		GamePanel.add(HighScoresButton);
-		GamePanel.remove(PlayGameButton);
-		GamePanel.remove(NameTextField);
 		NameLabel.setText(playerName);
 		BestScoreLabel.setText("Best Score:" + bestScore);
 
@@ -1123,8 +1142,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GamePanel.remove(BestScoreLabel);
 		GamePanel.remove(HighScoresButton);
 		GamePanel.remove(GameOptionsButton);
-		GamePanel.add(PlayGameButton);
-		GamePanel.add(NameTextField);
+		GamePanel.add(QuitButton);
 		NameTextField.setText("Enter Your Name");
 
 		//Log qutting
@@ -1294,6 +1312,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public JPanel getGamePanel() {
 		return GamePanel;
 	}
+	
+	public JPanel getInGamePanel() {
+		return InGamePanel;
+	}
+	
+	public JPanel getMainMenuPanel() {
+		return MainMenuPanel;
+	}
 	public JScrollPane getHighScoresScrollPane() {
 		return HighScoresScrollPane;
 	}
@@ -1320,6 +1346,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 	public JButton getPlayGameButton(){
 		return PlayGameButton;
+	}
+	public JButton getToolButton(){
+		return ToolButton;
 	}
 	public JTextField getNameTextField(){
 		return NameTextField;
@@ -1351,6 +1380,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		return builder.toString();
 	}
+	
+	public void initMainMenu() {
+		MainMenuPanel.add(PlayGameButton);
+		MainMenuPanel.add(NameTextField);
+		MainMenuPanel.add(ToolButton);
+	}
 
 	//Action Listener
 	public void actionPerformed(ActionEvent e) {
@@ -1361,6 +1396,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			else{
 				startGame();
 			}
+		}
+		
+		else if (e.getSource() == ToolButton) {
+			setToolMode();
 		}
 
 		else if (e.getSource() == UpdateHighScoresButton) {
@@ -1395,7 +1434,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == CustomPuzzleButton) {
-			setGamePlayMode();
+			setMainMenuMode();
 		}
 
 		else if (e.getSource() == NormalBeadButton) {
@@ -1474,7 +1513,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource()== QuitButton) {
-			quitGame();
+			setMainMenuMode();
 		}
 		else if (e.getSource()== RestartButton) {
 			int choice = JOptionPane.showConfirmDialog(null, "Are you sure? This will remove ALL beads from the grid!", "Beadloom", JOptionPane.YES_NO_OPTION);
@@ -2942,6 +2981,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		JPanel panel = bl.getContentPanel();
 		//TODO insert code to add main menu here
+		bl.getMainMenuFrame().setBounds(((int)BeadLoom.usableDim.getWidth())/2-100, ((int)BeadLoom.usableDim.getHeight())/2-150, 200, 300);
+		bl.getMainMenuFrame().setVisible(true);
+		panel.add(bl.getMainMenuFrame());
 	}
 
 	public void setCustomPuzzleMode()
@@ -2968,6 +3010,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//TODO insert code to add in-game frame here
 		panel.add(bl.getGameFrame());
 		panel.repaint();
+	}
+	
+	public void setToolMode()
+	{
+		removeAllWindows();
+		
+		//TODO: remove this hack
+		setGamePlayMode();
+		quitGame();
 	}
 
 	public void removeAllWindows()
