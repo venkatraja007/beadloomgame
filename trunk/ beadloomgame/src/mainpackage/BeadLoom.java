@@ -764,6 +764,29 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						public void internalFrameOpened(InternalFrameEvent arg0) {}
 					});
 
+					InGameFrame.getContentPane().add(Game.getGamePanel());
+					InGameFrame.setVisible(true);
+					InGameFrame.setBorder(new LineBorder(Color.red));
+					InGameFrame.setTitle("Game");
+					InGameFrame.setResizable(true);
+					InGameFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(InGameFrame);
+							try {
+								InGameFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
+
 					PuzzleFrame.getContentPane().add(Game.getChoosePuzzlePanel());
 					PuzzleFrame.setVisible(false);
 					PuzzleFrame.setBorder(new LineBorder(Color.red));
@@ -1239,6 +1262,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	}
 	public JInternalFrame getGameFrame(){
 		return GameFrame;
+	}
+	public JInternalFrame getInGameFrame(){
+		return InGameFrame;
 	}
 	public JInternalFrame getPuzzleFrame(){
 		return PuzzleFrame;
@@ -1757,8 +1783,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		else if(e.getSource()== Top.getGrid_40()) {
 			gridPanel.setPanelGridSize(40);
 			gridPanel2.setPanelGridSize(40);
-			//TODO lower scale on image according to resize
-
 		}
 		else if(e.getSource()== Top.getGrid_50()) {
 			gridPanel.setPanelGridSize(50);
