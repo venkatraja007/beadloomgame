@@ -74,7 +74,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton RestartButton = new JButton();
 	private JButton SubmitButton = new JButton();
 	private JButton GameOptionsButton = new JButton();
-	private JButton QuitButton = new JButton();
+	private JButton MainMenuButton = new JButton();
 	private JButton ToolButton = new JButton();
 	private JButton PlayGameButton = new JButton();
 	private JButton HighScoresButton = new JButton();
@@ -757,9 +757,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitButton.addActionListener(this);
 
 		//---- Quit button ----
-		QuitButton.setText("Quit");
-		QuitButton.setBounds(25, 150, 145, QuitButton.getPreferredSize().height);
-		QuitButton.addActionListener(this);
+		MainMenuButton.setText("Main Menu");
+		MainMenuButton.setBounds(25, 150, 145, MainMenuButton.getPreferredSize().height);
+		MainMenuButton.addActionListener(this);
 
 		//---- Play Game button ----
 		PlayGameButton.setText("Play Game");
@@ -979,17 +979,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		playerName = NameTextField.getText();
 		GamePanel.add(RestartButton);
 		GamePanel.add(SubmitButton);
-		GamePanel.add(QuitButton);
+		GamePanel.add(MainMenuButton);
 		GamePanel.add(NameLabel);
 		GamePanel.add(BestScoreLabel);
 		NameLabel.setText(playerName);
 		BestScoreLabel.setText("Best Score:" + bestScore);
 
 		//Restart Game to reset move counter and clear grid
-		Restart(true, true, false);
+		//Restart(true, true, false);
 
 		//Load Default Puzzle
-		currentPuzzle = puz.setLoomEx8();
+		//currentPuzzle = puz.setLoomEx8();
 
 		//Load Player Data
 		try{
@@ -1135,12 +1135,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GamePanel.remove(ChoosePuzzleButton);
 		GamePanel.remove(RestartButton);
 		GamePanel.remove(SubmitButton);
-		GamePanel.remove(QuitButton);
+		GamePanel.remove(MainMenuButton);
 		GamePanel.remove(NameLabel);
 		GamePanel.remove(BestScoreLabel);
 		GamePanel.remove(HighScoresButton);
 		GamePanel.remove(GameOptionsButton);
-		GamePanel.add(QuitButton);
+		GamePanel.add(MainMenuButton);
 		NameTextField.setText("Enter Your Name");
 
 		//Log qutting
@@ -1339,8 +1339,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public JButton getSubmitButton() {
 		return SubmitButton;
 	}
-	public JButton getQuitButton() {
-		return QuitButton;
+	public JButton getMainMenuButton() {
+		return MainMenuButton;
 	}
 	public JButton getPlayGameButton(){
 		return PlayGameButton;
@@ -1513,7 +1513,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			checkSolution();
 		}
 
-		else if (e.getSource()== QuitButton) {
+		else if (e.getSource()== MainMenuButton) {
 			setMainMenuMode();
 		}
 		else if (e.getSource()== RestartButton) {
@@ -2986,7 +2986,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getMainMenuFrame().setVisible(true);
 		panel.add(bl.getMainMenuFrame());
 		panel.add(bl.getGameOptionsFrame());
+		panel.add(bl.getPuzzleFrame());
 		panel.add(bl.getHighScoresFrame());
+		panel.add(bl.getGridFrame());
+		bl.getGridFrame().setVisible(false);
+		panel.add(bl.getGridFrame2());
+		bl.getGridFrame2().setVisible(false);
 	}
 
 	public void setCustomPuzzleMode()
@@ -3008,6 +3013,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		JPanel panel = bl.getContentPanel();
 		panel.add(bl.getGridFrame());
 		panel.add(bl.getGridFrame2());
+		bl.getGridFrame().setVisible(true);
+		bl.getGridFrame2().setVisible(true);
 		panel.add(bl.getOutputWindow());
 		panel.add(bl.getBeadUtilitiesFrame());
 		//TODO insert code to add in-game frame here
