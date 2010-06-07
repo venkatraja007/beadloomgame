@@ -41,6 +41,8 @@ import javax.swing.JTextField;
 
 import javax.swing.border.LineBorder;
 
+import sun.net.ftp.FtpClient;
+
 import com.sun.xml.internal.ws.wsdl.writer.UsingAddressing;
 
 public class GUIGameTools extends JPanel implements ActionListener{
@@ -1436,7 +1438,32 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == CustomPuzzleButton) {
-			setMainMenuMode();
+			startGame();
+			Restart(true, true, true);
+			puz.setCustomPuzzle("Dustin-testPuzzle");
+			bestScore = RecordMove[currentPuzzle];
+			BestScoreLabel.setText("Best Score:" + bestScore);
+			bl.getPuzzleFrame().setVisible(false);
+			//Log the Puzzle Change
+			try{
+				FileWriter log = new FileWriter("log.txt", true);
+				log.write("\t" + getTime() + " Custom Puzzle Selected.\n");
+				log.close();
+
+				//Display Hint
+				if(hintsOn)	
+				{
+					String hint;
+					hint = getHint(puz.getPuzzleName(currentPuzzle));
+					JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+
+				}
+				//Restart Timer
+				bl.restartTimer();
+
+			}catch (Exception ex){//Catch exception if any
+				System.err.println("Error: " + ex.getMessage());
+			}
 		}
 
 		else if (e.getSource() == NormalBeadButton) {
@@ -2980,6 +3007,36 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridPanel().rebuildLayerImages();
 		bl.getGridPanel2().rebuildLayerImages();
 		bl.getContentPanel().repaint();
+	}
+	
+	public void sendPostRequest(String fileContents, String url)
+	{
+		StringBuilder builder = new StringBuilder(); 
+		try {
+			URL test = new URL(url);
+			URLConnection con = test.openConnection();
+			con.setDoOutput(true);
+			OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+			wr.write(fileContents);
+			wr.flush();
+			
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(
+							con.getInputStream()));
+			String inputLine;
+
+			while ((inputLine = in.readLine()) != null)  {
+
+				builder.append(inputLine);
+			}
+			wr.close();
+			in.close();
+			JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
+		} catch (Exception ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		}
 	}
 
 	public boolean getHintModeStatus()

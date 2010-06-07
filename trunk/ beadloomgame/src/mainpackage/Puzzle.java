@@ -1498,7 +1498,7 @@ public class Puzzle {
 
 	//Array Pos = 32
 	//Returns array pos
-	public int setaDC(){
+	public int setDC(){
 
 		ideal = 15;
 		InputTools.setGrid(bl.getGridPanel2());
@@ -1710,10 +1710,10 @@ public class Puzzle {
 			return null;
 		}
 	}
-
-	public int setDC()
+	
+	public void setCustomPuzzle(String puzzleName)
 	{
-		String puzzleName = "Dustin-testPuzzle";
+		//Set the active grid to the goal image grid
 		InputTools.setGrid(bl.getGridPanel2());
 		try {
 
@@ -1820,6 +1820,6 @@ public class Puzzle {
 		//Reset the Current Selected Color to default
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 1;
 	}
+
 }
