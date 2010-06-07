@@ -1387,7 +1387,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		MainMenuPanel.add(NameTextField);
 		MainMenuPanel.add(ToolButton);
 		MainMenuPanel.add(GameOptionsButton);
-		MainMenuPanel.add(HighScoresButton);
+		if(ComponentToggle.globalHighScores){ MainMenuPanel.add(HighScoresButton); }
 	}
 
 	//Action Listener
