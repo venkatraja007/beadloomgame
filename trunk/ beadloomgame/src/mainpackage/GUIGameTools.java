@@ -1395,7 +1395,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Please Enter Your Name", "Name Error", JOptionPane.PLAIN_MESSAGE);
 			}
 			else{
-				startGame();
+				showChoosePuzzle();
+				//startGame();
 			}
 		}
 		
@@ -1522,61 +1523,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				Restart(true, false, true);
 			}
 		}
-		else if (e.getSource()== ChoosePuzzleButton){			
-			bl.getPuzzleFrame().setVisible(true);
-			bl.getPuzzleFrame().toFront();
-			//Set up the Tutorial Menu
-			EasyButton.setBounds(LeftDifR);
-			ChoosePuzzlePanel.add(EasyButton);
-			MediumButton.setBounds(CenterDifR);
-			ChoosePuzzlePanel.add(MediumButton);
-			HardButton.setBounds(RightDifR);
-			ChoosePuzzlePanel.add(HardButton);
-			//			ChoosePuzzlePanel.remove(TutButton);
-			removePuzzleButtons();
-
-			ChoosePuzzlePanel.add(Tut1Button);
-			ChoosePuzzlePanel.add(Tut2Button);
-			ChoosePuzzlePanel.add(Tut3Button);
-			ChoosePuzzlePanel.add(Tut4Button);
-			ChoosePuzzlePanel.add(Tut5Button);
-			ChoosePuzzlePanel.add(Tut6Button);
-
-			HSLabel1.setText("" + RecordMove[0]);
-			MLabel1.setText(RecordMedal[0]);
-
-			HSLabel2.setText("" + RecordMove[1]);
-			MLabel2.setText(RecordMedal[1]);
-
-			HSLabel3.setText("" + RecordMove[2]);
-			MLabel3.setText(RecordMedal[2]);
-
-			HSLabel4.setText("" + RecordMove[3]);
-			MLabel4.setText(RecordMedal[3]);
-
-			HSLabel5.setText("" + RecordMove[4]);
-			MLabel5.setText(RecordMedal[4]);
-
-			HSLabel6.setText("" + RecordMove[5]);
-			MLabel6.setText(RecordMedal[5]);
-
-			HSLabel7.setText(" ");
-			MLabel7.setText(" ");
-
-			HSLabel8.setText(" ");
-			MLabel8.setText(" ");
-
-			HSLabel9.setText(" ");
-			MLabel9.setText(" ");
-
-			HSLabelA.setText(" ");
-			MLabelA.setText(" ");	
-
-			HSLabelB.setText(" ");
-			MLabelB.setText(" ");
+		else if (e.getSource()== ChoosePuzzleButton){
+			showChoosePuzzle();
 		}
 
 		else if (e.getSource() == Tut1Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle = puz.setTut1();
 			bestScore = RecordMove[currentPuzzle];
@@ -1605,6 +1557,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == Tut2Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle = puz.setTut2();
 			bestScore = RecordMove[currentPuzzle];
@@ -1632,6 +1585,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == Tut3Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle = puz.setTut3();
 			bestScore = RecordMove[currentPuzzle];
@@ -1659,6 +1613,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == Tut4Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setTut4();
 			bestScore = RecordMove[currentPuzzle];
@@ -1686,6 +1641,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}	    
 		}
 		else if (e.getSource() == Tut5Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setTut5();
 			bestScore = RecordMove[currentPuzzle];
@@ -1713,6 +1669,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}			    
 		}
 		else if (e.getSource() == Tut6Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setTut6();
 			bestScore = RecordMove[currentPuzzle];
@@ -1740,6 +1697,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == TriforceButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setTriforce();
 			bestScore = RecordMove[currentPuzzle];
@@ -1767,6 +1725,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == OverlappingSquaresButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setOverlappingSquares();
 			bestScore = RecordMove[currentPuzzle];
@@ -1794,6 +1753,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == SixButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setSix();
 			bestScore = RecordMove[currentPuzzle];
@@ -1821,6 +1781,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == CanYouHearMeNowButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setCanYouHearMeNow();
 			bestScore = RecordMove[currentPuzzle];
@@ -1848,6 +1809,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == StarrySkyButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setStarrySky();
 			bestScore = RecordMove[currentPuzzle];
@@ -1875,6 +1837,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == LoomEx6Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx6();
 			bestScore = RecordMove[currentPuzzle];
@@ -1902,6 +1865,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}	    
 		}
 		else if (e.getSource() == LoomEx8Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx8();
 			bestScore = RecordMove[currentPuzzle];
@@ -1929,6 +1893,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == CircleButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setCircle();
 			bestScore = RecordMove[currentPuzzle];
@@ -1956,6 +1921,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}   
 		}
 		else if (e.getSource() == FlagButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setFlag();
 			bestScore = RecordMove[currentPuzzle];
@@ -1983,6 +1949,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == UNCCButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setUNCC();
 			bestScore = RecordMove[currentPuzzle];
@@ -2010,6 +1977,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == LoomEx10Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx10();
 			bestScore = RecordMove[currentPuzzle];
@@ -2037,6 +2005,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == LoomEx13Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx13();
 			bestScore = RecordMove[currentPuzzle];
@@ -2064,6 +2033,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}  
 		}
 		else if (e.getSource() == LoomEx14Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx14();
 			bestScore = RecordMove[currentPuzzle];
@@ -2091,6 +2061,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}	    
 		}
 		else if (e.getSource() == SunriseButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setSunRise();
 			bestScore = RecordMove[currentPuzzle];
@@ -2118,6 +2089,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == HeartButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setHeart();
 			bestScore = RecordMove[currentPuzzle];
@@ -2145,6 +2117,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == SunnySkyButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setSunnySky();
 			bestScore = RecordMove[currentPuzzle];
@@ -2172,6 +2145,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}    
 		}
 		else if (e.getSource() == StarsAndStripesButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setStarsAndStripes();
 			bestScore = RecordMove[currentPuzzle];
@@ -2199,6 +2173,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == ROSSButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setROSS();
 			bestScore = RecordMove[currentPuzzle];
@@ -2226,6 +2201,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == BullseyeButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setBullseye();
 			bestScore = RecordMove[currentPuzzle];
@@ -2253,6 +2229,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == LoomEx7Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx7();
 			bestScore = RecordMove[currentPuzzle];
@@ -2280,6 +2257,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == LoomEx1Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx1();
 			bestScore = RecordMove[currentPuzzle];
@@ -2307,6 +2285,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == LoomEx5Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx5();
 			bestScore = RecordMove[currentPuzzle];
@@ -2334,6 +2313,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == LoomEx3Button){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setLoomEx3();
 			bestScore = RecordMove[currentPuzzle];
@@ -2361,6 +2341,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == MoonButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setMoon();
 			bestScore = RecordMove[currentPuzzle];
@@ -2388,6 +2369,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == MegamanButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setMegaman();
 			bestScore = RecordMove[currentPuzzle];
@@ -2415,6 +2397,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == BatmanButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setBatman();
 			bestScore = RecordMove[currentPuzzle];
@@ -2442,6 +2425,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == DCButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setDC();
 			bestScore = RecordMove[currentPuzzle];
@@ -2469,6 +2453,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == SergeantButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle =puz.setSergeant();
 			bestScore = RecordMove[currentPuzzle];
@@ -2497,6 +2482,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == TieFighterButton){
+			startGame();
 			Restart(true, true, true);
 			currentPuzzle = puz.setTieFighter();
 			bestScore = RecordMove[currentPuzzle];
@@ -2935,6 +2921,51 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				System.err.println("Error: " + ex.getMessage());
 			}
 		}
+	}
+	
+	public void showChoosePuzzle() {
+		bl.getPuzzleFrame().setVisible(true);
+		bl.getPuzzleFrame().toFront();
+		//Set up the Tutorial Menu
+		EasyButton.setBounds(LeftDifR);
+		ChoosePuzzlePanel.add(EasyButton);
+		MediumButton.setBounds(CenterDifR);
+		ChoosePuzzlePanel.add(MediumButton);
+		HardButton.setBounds(RightDifR);
+		ChoosePuzzlePanel.add(HardButton);
+
+		HSLabel1.setText("" + RecordMove[0]);
+		MLabel1.setText(RecordMedal[0]);
+
+		HSLabel2.setText("" + RecordMove[1]);
+		MLabel2.setText(RecordMedal[1]);
+
+		HSLabel3.setText("" + RecordMove[2]);
+		MLabel3.setText(RecordMedal[2]);
+
+		HSLabel4.setText("" + RecordMove[3]);
+		MLabel4.setText(RecordMedal[3]);
+
+		HSLabel5.setText("" + RecordMove[4]);
+		MLabel5.setText(RecordMedal[4]);
+
+		HSLabel6.setText("" + RecordMove[5]);
+		MLabel6.setText(RecordMedal[5]);
+
+		HSLabel7.setText(" ");
+		MLabel7.setText(" ");
+
+		HSLabel8.setText(" ");
+		MLabel8.setText(" ");
+
+		HSLabel9.setText(" ");
+		MLabel9.setText(" ");
+
+		HSLabelA.setText(" ");
+		MLabelA.setText(" ");	
+
+		HSLabelB.setText(" ");
+		MLabelB.setText(" ");
 	}
 
 	private void setCreatePuzzleMode()
