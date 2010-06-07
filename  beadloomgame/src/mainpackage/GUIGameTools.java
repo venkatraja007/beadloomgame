@@ -821,19 +821,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NormalBeadButton.setBounds(20, 100, 155, NormalBeadButton.getPreferredSize().height);
 		NormalBeadButton.setBackground(Color.CYAN);
 		NormalBeadButton.addActionListener(this);
-		GameOptionsPanel.add(NormalBeadButton);
+		if(ComponentToggle.aesthetics) { GameOptionsPanel.add(NormalBeadButton); }
 
 		//---- Awesome Bead Button ----
 		AwesomeBeadButton.setText("Awesome Bead");
 		AwesomeBeadButton.setBounds(20, 125, 155, AwesomeBeadButton.getPreferredSize().height);
 		AwesomeBeadButton.addActionListener(this);
-		GameOptionsPanel.add(AwesomeBeadButton);
+		if(ComponentToggle.aesthetics) { GameOptionsPanel.add(AwesomeBeadButton); }
 
 		//---- Peace Bead Button ----
 		PeaceBeadButton.setText("Peace Bead");
 		PeaceBeadButton.setBounds(20, 150, 155, PeaceBeadButton.getPreferredSize().height);
 		PeaceBeadButton.addActionListener(this);
-		GameOptionsPanel.add(PeaceBeadButton);
+		if(ComponentToggle.aesthetics) { GameOptionsPanel.add(PeaceBeadButton); }
 
 		//---- Peace Bead Button ----
 		GameOptionsCloseButton.setText("Close");
@@ -2645,7 +2645,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			MLabelB.setText(" ");
 		}
 		else if (e.getSource() == MediumButton){
-			if(RecordMedalShort[14].equals("N") ||
+			if(		(RecordMedalShort[14].equals("N") ||
 					RecordMedalShort[13].equals("N") ||	
 					RecordMedalShort[12].equals("N") ||
 					RecordMedalShort[11].equals("N") ||
@@ -2653,7 +2653,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					RecordMedalShort[9].equals("N") ||
 					RecordMedalShort[8].equals("N") ||
 					RecordMedalShort[7].equals("N") ||
-					RecordMedalShort[6].equals("N")){
+					RecordMedalShort[6].equals("N")) &&
+					ComponentToggle.unlockableDifficultyLevels) {
 				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
 			}
 			else{
@@ -2711,7 +2712,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == HardButton){
-			if(		   RecordMedalShort[34].equals("N") ||
+			if(		(RecordMedalShort[34].equals("N") ||
 					RecordMedalShort[33].equals("N") ||
 					RecordMedalShort[21].equals("N") ||	
 					RecordMedalShort[20].equals("N") ||	
@@ -2719,7 +2720,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					RecordMedalShort[18].equals("N") ||
 					RecordMedalShort[17].equals("N") ||
 					RecordMedalShort[16].equals("N") ||
-					RecordMedalShort[15].equals("N")){
+					RecordMedalShort[15].equals("N")) &&
+					ComponentToggle.unlockableDifficultyLevels){
 				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
 			}
 			else{

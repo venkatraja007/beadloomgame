@@ -16,5 +16,5 @@ public class ComponentToggle {
 	public static boolean codeOuputWindow = true;				//Done
 	public static boolean userAccounts = true;					//TODO: implement this
 	public static boolean gameSaves = true;						//TODO: implement this
-	public static boolean unlockableDifficultyLevels = true;	//TODO: implement this
+	public static boolean unlockableDifficultyLevels = true;	//Done
 }
