@@ -1,7 +1,7 @@
 package src.mainpackage;
 
 public class ComponentToggle {
-	public static boolean scoring = true;						//TODO: implement this
+	public static boolean scoring = true;						//done
 	public static boolean medals = true;						//done
 	public static boolean personalHighScores = true;			//done
 	public static boolean globalHighScores = true;				//done
