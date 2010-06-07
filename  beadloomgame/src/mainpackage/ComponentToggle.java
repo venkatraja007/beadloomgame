@@ -10,11 +10,11 @@ public class ComponentToggle {
 	public static boolean avatars = true;						//TODO: implement this
 	public static boolean unlockableAvatar = true;				//TODO: implement this
 	public static boolean achievements = true;					//TODO: implement this
-	public static boolean aesthetics = true;					//TODO: implement this
-	public static boolean basicHints = true;					//TODO: implement this
+	public static boolean aesthetics = true;					//done
+	public static boolean basicHints = false;					//done
 	public static boolean advancedHints = true;					//TODO: implement this
 	public static boolean codeOuputWindow = true;				//Done
 	public static boolean userAccounts = true;					//TODO: implement this
 	public static boolean gameSaves = true;						//TODO: implement this
-	public static boolean unlockableDifficultyLevels = true;	//Done
+	public static boolean unlockableDifficultyLevels = true;	//done
 }

@@ -814,7 +814,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HintsButton.setText("Hints Off");
 		HintsButton.setBounds(20, 50, 155, HintsButton.getPreferredSize().height);
 		HintsButton.addActionListener(this);
-		GameOptionsPanel.add(HintsButton);
+		if(ComponentToggle.basicHints) { GameOptionsPanel.add(HintsButton); }
 
 		//---- Normal Bead Button ----
 		NormalBeadButton.setText("Normal Bead");
