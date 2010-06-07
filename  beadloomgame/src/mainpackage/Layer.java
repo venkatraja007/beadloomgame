@@ -216,6 +216,72 @@ public class Layer {
 		}
 		return output;
 	}
+	
+	public String toXMLString() {
+		String output = "  <layer color=\"";
+		output += color.toString() + "\" ";
+		output += "typeID=\"" + type + "\" ";
+		
+		if(type.equals("point"))
+		{
+			output += "x=\"" + x1 +"\" ";
+			output += "y=\"" + y1 +"\" ";
+		}
+		else if(type.equals("line"))
+		{
+			output += "x1=\"" + x1 +"\" ";
+			output += "y1=\"" + y1 +"\" ";
+			output += "x2=\"" + x2 +"\" ";
+			output += "y2=\"" + y2 +"\" ";
+		}
+		else if(type.equals("rectangle"))
+		{
+			output += "x1=\"" + x1 +"\" ";
+			output += "y1=\"" + y1 +"\" ";
+			output += "x2=\"" + x2 +"\" ";
+			output += "y2=\"" + y2 +"\" ";
+		}
+		else if(type.equals("triangle"))
+		{
+			output += "x1=\"" + x1 +"\" ";
+			output += "y1=\"" + y1 +"\" ";
+			output += "x2=\"" + x2 +"\" ";
+			output += "y2=\"" + y2 +"\" ";
+			output += "x3=\"" + x3 +"\" ";
+			output += "y3=\"" + y3 +"\" ";
+		}
+		else if(type.equals("triangleit"))
+		{
+			output += "x=\"" + x1 +"\" ";
+			output += "y=\"" + y1 +"\" ";
+			output += "stepheight=\"" + stepHeight + "\" ";
+			output += "beadsadded=\"" + beadsAdded1 + "\" ";
+			output += "rowstotal=\"" + rowsTotal + "\" ";
+			//direction
+			output += "direction=\"";
+			if(!positiveInc) { output += "-"; }
+			if(yInc) { output += "Y\" "; }
+			else { output += "X\" "; }
+		}
+		else if(type.equals("linearit"))
+		{
+			output += "x=\"" + x1 +"\" ";
+			output += "y=\"" + y1 +"\" ";
+			output += "startlength=\"" + startLength + "\" ";
+			output += "beadsadded1=\"" + beadsAdded1 + "\" ";
+			output += "beadsadded2=\"" + beadsAdded2 + "\" ";
+			output += "rowstotal=\"" + rowsTotal + "\" ";
+			//direction
+			output += "direction=\"";
+			if(!positiveInc) { output += "-"; }
+			if(yInc) { output += "Y\" "; }
+			else { output += "X\" "; }
+		}
+		
+		output += "/>";
+		
+		return output;
+	}
 	//****************************************************************************
 	//***************[Static Methods]*********************************************
 	//****************************************************************************
