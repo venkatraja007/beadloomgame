@@ -527,103 +527,109 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		DCButton.addActionListener(this);
 		DCButton.setBounds(R30);
 
-		//---- HSLabel0 ----
-		HSLabel0.setBounds(R01);
-		ChoosePuzzlePanel.add(HSLabel0);
-		HSLabel0.setText("Your Best Score:");
+		if(ComponentToggle.personalHighScores)
+		{
+			//---- HSLabel0 ----
+			HSLabel0.setBounds(R01);
+			ChoosePuzzlePanel.add(HSLabel0);
+			HSLabel0.setText("Your Best Score:");
+	
+			//---- HSLabel1 ----
+			HSLabel1.setBounds(R11);
+			ChoosePuzzlePanel.add(HSLabel1);
+	
+			//---- HSLabel2 ----
+			HSLabel2.setBounds(R21);
+			ChoosePuzzlePanel.add(HSLabel2);
+	
+			//---- HSLabel3 ----
+			HSLabel3.setBounds(R31);
+			ChoosePuzzlePanel.add(HSLabel3);
+	
+			//---- HSLabel4 ----
+			HSLabel4.setBounds(R41);
+			ChoosePuzzlePanel.add(HSLabel4);
+	
+			//---- HSLabel5 ----
+			HSLabel5.setBounds(R51);
+			ChoosePuzzlePanel.add(HSLabel5);
+	
+			//---- HSLabel6 ----
+			HSLabel6.setBounds(R61);
+			ChoosePuzzlePanel.add(HSLabel6);
+	
+			//---- HSLabel7 ----
+			HSLabel7.setBounds(R71);
+			ChoosePuzzlePanel.add(HSLabel7);
+	
+			//---- HSLabel8 ----
+			HSLabel8.setBounds(R81);
+			ChoosePuzzlePanel.add(HSLabel8);
+	
+			//---- HSLabel9 ----
+			HSLabel9.setBounds(R91);
+			ChoosePuzzlePanel.add(HSLabel9);
+	
+			//---- HSLabelA ----
+			HSLabelA.setBounds(RA1);
+			ChoosePuzzlePanel.add(HSLabelA);
+	
+			//---- HSLabelB ----
+			HSLabelB.setBounds(RB1);
+			ChoosePuzzlePanel.add(HSLabelB);
+		}
 
-		//---- HSLabel1 ----
-		HSLabel1.setBounds(R11);
-		ChoosePuzzlePanel.add(HSLabel1);
-
-		//---- HSLabel2 ----
-		HSLabel2.setBounds(R21);
-		ChoosePuzzlePanel.add(HSLabel2);
-
-		//---- HSLabel3 ----
-		HSLabel3.setBounds(R31);
-		ChoosePuzzlePanel.add(HSLabel3);
-
-		//---- HSLabel4 ----
-		HSLabel4.setBounds(R41);
-		ChoosePuzzlePanel.add(HSLabel4);
-
-		//---- HSLabel5 ----
-		HSLabel5.setBounds(R51);
-		ChoosePuzzlePanel.add(HSLabel5);
-
-		//---- HSLabel6 ----
-		HSLabel6.setBounds(R61);
-		ChoosePuzzlePanel.add(HSLabel6);
-
-		//---- HSLabel7 ----
-		HSLabel7.setBounds(R71);
-		ChoosePuzzlePanel.add(HSLabel7);
-
-		//---- HSLabel8 ----
-		HSLabel8.setBounds(R81);
-		ChoosePuzzlePanel.add(HSLabel8);
-
-		//---- HSLabel9 ----
-		HSLabel9.setBounds(R91);
-		ChoosePuzzlePanel.add(HSLabel9);
-
-		//---- HSLabelA ----
-		HSLabelA.setBounds(RA1);
-		ChoosePuzzlePanel.add(HSLabelA);
-
-		//---- HSLabelB ----
-		HSLabelB.setBounds(RB1);
-		ChoosePuzzlePanel.add(HSLabelB);
-
-		//---- MLabel0 ----
-		MLabel0.setBounds(R02);
-		ChoosePuzzlePanel.add(MLabel0);
-		MLabel0.setText("Medal:");
-
-		//---- MLabel1 ----
-		MLabel1.setBounds(R12);
-		ChoosePuzzlePanel.add(MLabel1);
-
-		//---- MLabel2 ----
-		MLabel2.setBounds(R22);
-		ChoosePuzzlePanel.add(MLabel2);
-
-		//---- MLabel3 ----
-		MLabel3.setBounds(R32);
-		ChoosePuzzlePanel.add(MLabel3);
-
-		//---- MLabel4 ----
-		MLabel4.setBounds(R42);
-		ChoosePuzzlePanel.add(MLabel4);
-
-		//---- MLabel5 ----
-		MLabel5.setBounds(R52);
-		ChoosePuzzlePanel.add(MLabel5);
-
-		//---- MLabel6 ----
-		MLabel6.setBounds(R62);
-		ChoosePuzzlePanel.add(MLabel6);
-
-		//---- MLabel7 ----
-		MLabel7.setBounds(R72);
-		ChoosePuzzlePanel.add(MLabel7);
-
-		//---- MLabel8 ----
-		MLabel8.setBounds(R82);
-		ChoosePuzzlePanel.add(MLabel8);
-
-		//---- MLabel9 ----
-		MLabel9.setBounds(R92);
-		ChoosePuzzlePanel.add(MLabel9);
-
-		//---- MLabelA ----
-		MLabelA.setBounds(RA2);
-		ChoosePuzzlePanel.add(MLabelA);
-
-		//---- MLabelA ----
-		MLabelB.setBounds(RB2);
-		ChoosePuzzlePanel.add(MLabelB);
+		if(ComponentToggle.medals)
+		{
+			//---- MLabel0 ----
+			MLabel0.setBounds(R02);
+			ChoosePuzzlePanel.add(MLabel0);
+			MLabel0.setText("Medal:");
+	
+			//---- MLabel1 ----
+			MLabel1.setBounds(R12);
+			ChoosePuzzlePanel.add(MLabel1);
+	
+			//---- MLabel2 ----
+			MLabel2.setBounds(R22);
+			ChoosePuzzlePanel.add(MLabel2);
+	
+			//---- MLabel3 ----
+			MLabel3.setBounds(R32);
+			ChoosePuzzlePanel.add(MLabel3);
+	
+			//---- MLabel4 ----
+			MLabel4.setBounds(R42);
+			ChoosePuzzlePanel.add(MLabel4);
+	
+			//---- MLabel5 ----
+			MLabel5.setBounds(R52);
+			ChoosePuzzlePanel.add(MLabel5);
+	
+			//---- MLabel6 ----
+			MLabel6.setBounds(R62);
+			ChoosePuzzlePanel.add(MLabel6);
+	
+			//---- MLabel7 ----
+			MLabel7.setBounds(R72);
+			ChoosePuzzlePanel.add(MLabel7);
+	
+			//---- MLabel8 ----
+			MLabel8.setBounds(R82);
+			ChoosePuzzlePanel.add(MLabel8);
+	
+			//---- MLabel9 ----
+			MLabel9.setBounds(R92);
+			ChoosePuzzlePanel.add(MLabel9);
+	
+			//---- MLabelA ----
+			MLabelA.setBounds(RA2);
+			ChoosePuzzlePanel.add(MLabelA);
+	
+			//---- MLabelB ----
+			MLabelB.setBounds(RB2);
+			ChoosePuzzlePanel.add(MLabelB);
+		}
 
 		//---- Tutorial Button ----
 		TutButton.setText("Tutorial Puzzles");
