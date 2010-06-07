@@ -1409,16 +1409,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					HighScoresLabel.setText(
 							sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + 
 									URLEncoder.encode(
-											puz.getPuzzleName(currentPuzzle), "UTF-8")) +
-					"&token=token");
+											puz.getPuzzleName(currentPuzzle), "UTF-8") +
+					"&token=token"));
 				}
 				else
 				{
 					HighScoresLabel.setText(
 							sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + 
 									URLEncoder.encode(
-											HighScoresComboBox.getSelectedItem().toString(),"UTF-8")) +
-					"&token=token");
+											HighScoresComboBox.getSelectedItem().toString(),"UTF-8") +
+					"&token=token"));
 				}
 				HighScoresComboBox.removeAllItems();
 				String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/puzzles.php");
@@ -3022,6 +3022,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//TODO: remove this hack
 		setGamePlayMode();
 		quitGame();
+		bl.getContentPanel().add(bl.getGameFrame());
 	}
 
 	public void removeAllWindows()
