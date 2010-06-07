@@ -783,8 +783,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NameTextField.addActionListener(this);
 
 		//---- choose puzzle button ----
-		ChoosePuzzleButton.setText("Choose Puzzle");
-		ChoosePuzzleButton.setBounds(25, 75, 145, ChoosePuzzleButton.getPreferredSize().height);
+		ChoosePuzzleButton.setText("Change Puzzle");
+		ChoosePuzzleButton.setBounds(25, 50, 145, ChoosePuzzleButton.getPreferredSize().height);
 		ChoosePuzzleButton.addActionListener(this);
 
 		//---- Tool button ----
@@ -984,6 +984,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GamePanel.add(BestScoreLabel);
 		NameLabel.setText(playerName);
 		BestScoreLabel.setText("Best Score:" + bestScore);
+		GamePanel.add(ChoosePuzzleButton);
 
 		//Restart Game to reset move counter and clear grid
 		//Restart(true, true, false);
@@ -1383,7 +1384,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		MainMenuPanel.add(PlayGameButton);
 		MainMenuPanel.add(NameTextField);
 		MainMenuPanel.add(ToolButton);
-		MainMenuPanel.add(ChoosePuzzleButton);
 		MainMenuPanel.add(GameOptionsButton);
 		MainMenuPanel.add(HighScoresButton);
 	}
@@ -3047,6 +3047,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridFrame().setVisible(true);
 		bl.getGridFrame2().setVisible(true);
 		panel.add(bl.getOutputWindow());
+		panel.add(bl.getPuzzleFrame());
 		panel.add(bl.getBeadUtilitiesFrame());
 		//TODO insert code to add in-game frame here
 		panel.add(bl.getInGameFrame());
@@ -3073,5 +3074,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		String hint = "this is a test";
 		return hint;
+	}
+	
+	public String getGridXML(String puzzleName)
+	{
+		String puzzleXML = "<custompuzzle Name=\""+puzzleName+"\">\n";
+		for(int i=0; i<bl.getGridPanel().getLayers().size(); i++)
+		{
+			puzzleXML += bl.getGridPanel().getLayers().get(i).toXMLString() + "\n";
+		}
+		puzzleXML += "</custompuzzle>";
+		
+		return puzzleXML;
 	}
 }
