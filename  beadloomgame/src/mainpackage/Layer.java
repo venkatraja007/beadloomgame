@@ -219,29 +219,29 @@ public class Layer {
 	
 	public String toXMLString() {
 		String output = "  <layer color=\"";
-		output += color.toString() + "\" ";
-		output += "typeID=\"" + type + "\" ";
+		output += BeadLoom.getColorName(color).toUpperCase() + "\" ";
+		output += "typeID=\"" + type.toLowerCase() + "\" ";
 		
-		if(type.equals("point"))
+		if(type.equalsIgnoreCase("point"))
 		{
 			output += "x=\"" + x1 +"\" ";
 			output += "y=\"" + y1 +"\" ";
 		}
-		else if(type.equals("line"))
+		else if(type.equalsIgnoreCase("line"))
 		{
 			output += "x1=\"" + x1 +"\" ";
 			output += "y1=\"" + y1 +"\" ";
 			output += "x2=\"" + x2 +"\" ";
 			output += "y2=\"" + y2 +"\" ";
 		}
-		else if(type.equals("rectangle"))
+		else if(type.equalsIgnoreCase("rectangle"))
 		{
 			output += "x1=\"" + x1 +"\" ";
 			output += "y1=\"" + y1 +"\" ";
 			output += "x2=\"" + x2 +"\" ";
 			output += "y2=\"" + y2 +"\" ";
 		}
-		else if(type.equals("triangle"))
+		else if(type.equalsIgnoreCase("triangle"))
 		{
 			output += "x1=\"" + x1 +"\" ";
 			output += "y1=\"" + y1 +"\" ";
@@ -250,7 +250,7 @@ public class Layer {
 			output += "x3=\"" + x3 +"\" ";
 			output += "y3=\"" + y3 +"\" ";
 		}
-		else if(type.equals("triangleit"))
+		else if(type.equalsIgnoreCase("triangle_iteration"))
 		{
 			output += "x=\"" + x1 +"\" ";
 			output += "y=\"" + y1 +"\" ";
@@ -263,7 +263,7 @@ public class Layer {
 			if(yInc) { output += "Y\" "; }
 			else { output += "X\" "; }
 		}
-		else if(type.equals("linearit"))
+		else if(type.equalsIgnoreCase("linear_iteration"))
 		{
 			output += "x=\"" + x1 +"\" ";
 			output += "y=\"" + y1 +"\" ";

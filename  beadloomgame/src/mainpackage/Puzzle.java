@@ -1775,7 +1775,7 @@ public class Puzzle {
 							InputTools.drawRectangle(x1, x2, y1, y2);
 						}
 						//check for triangle iteration
-						else if(layer.getAttribute("typeID").equalsIgnoreCase("triangleit"))
+						else if(layer.getAttribute("typeID").equalsIgnoreCase("triangle_iteration"))
 						{
 							int x = Integer.parseInt(layer.getAttribute("x"));
 							int y = Integer.parseInt(layer.getAttribute("y"));
@@ -1789,7 +1789,7 @@ public class Puzzle {
 							doTriangleIt(x, y, every, add, total, incY, isPositive);
 						}
 						//check for linear iteration
-						else if(layer.getAttribute("typeID").equalsIgnoreCase("linearit"))
+						else if(layer.getAttribute("typeID").equalsIgnoreCase("linear_iteration"))
 						{
 							int x = Integer.parseInt(layer.getAttribute("x"));
 							int y = Integer.parseInt(layer.getAttribute("y"));
