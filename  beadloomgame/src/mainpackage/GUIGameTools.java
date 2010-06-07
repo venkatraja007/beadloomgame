@@ -1131,8 +1131,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getTop().getFileMenu().setEnabled(true);
 		bl.getTop().getOptionsMenu().setEnabled(true);
 		bl.getTop().getHelpMenu().setEnabled(true);
-		bl.getInputTools().getBeadLoomUtilitiesTabbedPane().addTab("Layers Tool", bl.getInputTools().getLayersDrawTabbedPane());
-		bl.getInputTools().getBeadLoomUtilitiesTabbedPane().addTab("Trig Functions Tool", bl.getInputTools().getTrigFunctionsTabbedPane());
+		bl.getInputTools().getBeadLoomUtilitiesTabbedPane().addTab("Layers Function", bl.getInputTools().getLayersDrawTabbedPane());
+		bl.getInputTools().getBeadLoomUtilitiesTabbedPane().addTab("Trig Functions", bl.getInputTools().getTrigFunctionsTabbedPane());
 		bl.getPuzzleFrame().setVisible(false);
 		bl.getColorFrame().setVisible(false);
 		bl.getHighScoresFrame().setVisible(false);

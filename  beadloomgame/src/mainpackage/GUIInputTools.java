@@ -339,7 +339,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 
 		}
-		BeadLoomUtilitiesTabbedPane.addTab("Point & Line Tool", BeadLoomUtilitiesPanel);
+		BeadLoomUtilitiesTabbedPane.addTab("Point & Line Functions", BeadLoomUtilitiesPanel);
 
 
 		//			======== RectangleDrawTabbedPane ========
@@ -397,7 +397,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			RectangleDrawTabbedPane.addTab("Rectangle Draw", RectangleDrawLayeredPane);
 
 		}
-		BeadLoomUtilitiesTabbedPane.addTab("Rectangle Tool", RectangleDrawTabbedPane);
+		BeadLoomUtilitiesTabbedPane.addTab("Rectangle Function", RectangleDrawTabbedPane);
 
 
 		//			======== LayersTabbedPane ========
@@ -420,7 +420,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			LayersDrawTabbedPane.addTab("Modify Layers", LayersSelectPane);
 
 		}
-		BeadLoomUtilitiesTabbedPane.addTab("Layers Tool", LayersDrawTabbedPane);
+		BeadLoomUtilitiesTabbedPane.addTab("Layers Functions", LayersDrawTabbedPane);
 
 
 		//======== TriangleDrawTabbedPane ========
@@ -501,7 +501,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			TriangleDrawTabbedPane.addTab("Triangle Draw", TriangleDrawPanel);
 
 		}
-		BeadLoomUtilitiesTabbedPane.addTab("Triangle Tool", TriangleDrawTabbedPane);
+		BeadLoomUtilitiesTabbedPane.addTab("Triangle Function", TriangleDrawTabbedPane);
 
 
 		//======== IterationTabbedPane ========
@@ -982,7 +982,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			}
 			TrigFunctionsTabbedPane.addTab("Trigonometric Functions", TrigFunctionsLayeredPane);
 		}
-		BeadLoomUtilitiesTabbedPane.addTab("Trig Functions Tool", TrigFunctionsTabbedPane);
+		BeadLoomUtilitiesTabbedPane.addTab("Trig Functions", TrigFunctionsTabbedPane);
 
 
 		//  ======== TriangleItrLoopTabbedPane ========
@@ -1180,7 +1180,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			}
 			LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
 		}
-		BeadLoomUtilitiesTabbedPane.addTab("Iterative Tools", LinearIterationTabbedPane);
+		BeadLoomUtilitiesTabbedPane.addTab("Iterative Functions", LinearIterationTabbedPane);
 
 		//Make the bead so it is stored in memory
 		redrawBead();
