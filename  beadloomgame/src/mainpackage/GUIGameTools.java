@@ -3089,7 +3089,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		JPanel panel = bl.getContentPanel();
 		panel.add(bl.getGridFrame());
 		panel.add(bl.getBeadUtilitiesFrame());
-		panel.add(bl.getOutputWindow());
+		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
 		//TODO insert code to add custom puzzle menu here
 		panel.repaint();
 	}
@@ -3103,7 +3103,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.add(bl.getGridFrame2());
 		bl.getGridFrame().setVisible(true);
 		bl.getGridFrame2().setVisible(true);
-		panel.add(bl.getOutputWindow());
+		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
 		panel.add(bl.getPuzzleFrame());
 		panel.add(bl.getBeadUtilitiesFrame());
 		//TODO insert code to add in-game frame here
