@@ -904,7 +904,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				CoordinatesLabel2.setText("Coordinates 2");
 				CoordinatesLabel2.setForeground(Color.gray);
 				holder2.add(CoordinatesLabel2,BorderLayout.AFTER_LINE_ENDS);
-				GridFrame2.add(holder2,BorderLayout.NORTH );
+				if(ComponentToggle.scoring){ GridFrame2.add(holder2,BorderLayout.NORTH ); }
 
 
 
