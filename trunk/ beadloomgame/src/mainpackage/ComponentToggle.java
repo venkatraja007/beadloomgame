@@ -4,7 +4,7 @@ public class ComponentToggle {
 	public static boolean scoring = true;						//TODO: implement this
 	public static boolean medals = true;						//TODO: implement this
 	public static boolean personalHighScores = true;			//TODO: implement this
-	public static boolean globalHighScores = true;				//TODO: implement this
+	public static boolean globalHighScores = true;				//done
 	public static boolean userCreatedContent = true;			//TODO: implement this
 	public static boolean otherUserCreatedContent = true;		//TODO: implement this
 	public static boolean avatars = true;						//TODO: implement this
