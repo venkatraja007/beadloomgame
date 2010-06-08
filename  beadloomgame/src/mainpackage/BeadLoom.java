@@ -50,6 +50,7 @@ import java.awt.Frame;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageFilter;
+import java.awt.image.MemoryImageSource;
 import java.awt.image.RGBImageFilter;
 import java.awt.image.ImageProducer;
 import java.awt.image.FilteredImageSource;
@@ -889,7 +890,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				ContentPanel.add(HighScoresFrame);
 				ContentPanel.add(GameOptionsFrame);
 				GameFrame.setBounds((int)(usableDim.getWidth()*0.42)+panelBorder, (int)(usableDim.getHeight()*.70)+panelBorder, (int)(usableDim.getWidth()*0.58)-panelBorder, (int)(usableDim.getHeight()*0.30)-panelBorder);
-				PuzzleFrame.setBounds(panelBorder, panelBorder, (int)(usableDim.getWidth()*0.65) - panelBorder,(int)(usableDim.getHeight()*0.65) - panelBorder);
+				PuzzleFrame.setBounds(panelBorder, panelBorder, (int)(usableDim.getWidth()*1.00) - panelBorder,(int)(usableDim.getHeight()*0.65) - panelBorder);
 				ColorFrame.setBounds((int)(usableDim.getWidth()/8), (int)(usableDim.getHeight()/4), 375, 140);
 				HighScoresFrame.setBounds(PuzzleFrame.getBounds());
 				GameOptionsFrame.setBounds((int)(usableDim.getWidth()*0.10) + panelBorder, (int)(usableDim.getHeight()*.30) + panelBorder, (int)(usableDim.getWidth()*0.20) - panelBorder, (int)(usableDim.getHeight()*0.40) - panelBorder);
@@ -1982,6 +1983,22 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 		}
 	}  
+	
+	public Image createImageFromGrid() {
+		int[] pixels = new int[41*41];
+		for(int y=0; y<41; y++)
+		{
+			for(int x=0; x<41; x++)
+			{
+				Color temp =  getGridPanel2().getColorAt(x, y);
+				if(temp == null) { temp = Color.PINK; }
+				System.out.println(temp.toString());
+				pixels[(40-y)*41+x] = temp.getRGB();
+			}
+		}
+		Image ret = createImage(new MemoryImageSource(41, 41, pixels, 0, 41));
+		return ret;
+	}
 
 	/*private class XMLFileFilter1 extends javax.swing.filechooser.FileFilter {
 
