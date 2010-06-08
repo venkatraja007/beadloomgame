@@ -2784,7 +2784,6 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		try
 		{
 			URL beadURL = new URL(BeadLoom.beadLocation);
-			JOptionPane.showMessageDialog(null, "Bead Location is " + BeadLoom.beadLocation);
 			java.awt.Toolkit.getDefaultToolkit();
 			beadImage = Toolkit.getDefaultToolkit().createImage(beadURL);
 
