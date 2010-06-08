@@ -1,0 +1,21 @@
+#summary Weekly Report 6/14/10
+
+= Weekly Report =
+
+1. What was planned?
+  * Create script to write POST data to file for custom puzzle saving
+  * Create method in applet so send POST data to site to be saved
+  * Create GUI elements to load and save custom puzzles from the website
+
+2. What was done?
+  * Create script to write POST data to file for custom puzzle saving
+  * Create method in applet so send POST data to site to be saved
+3. Problems encountered?
+
+4. What did you learn this week? (esp. computer science, or anything surprising or interesting) Be sure to cite any resources you used (e.g. online tutorials, etc).
+
+
+5. What's planned for next week?
+
+
+6. Hours worked. 
