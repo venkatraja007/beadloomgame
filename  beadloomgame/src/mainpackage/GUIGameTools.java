@@ -899,6 +899,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//Clears grid 2 if clear2 is true
 	//Logs the restart if log is true (only doesn't log during start and when not in game)
 	public void Restart(Boolean clear1, Boolean clear2, Boolean dolog){
+		bl.getOutputWindow().getEditorPane().setText("");
 		puzzleStartTime = System.currentTimeMillis();
 		moveCounter = 0;
 		MoveLabel.setText("Total Actions: " + moveCounter);
@@ -1512,7 +1513,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == NormalBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
+			BeadLoom.beadLocation = "bead.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(Color.CYAN);
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
@@ -1520,7 +1521,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == AwesomeBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
+			BeadLoom.beadLocation = "beadAwesome.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(Color.CYAN);
@@ -1528,7 +1529,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == PeaceBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
+			BeadLoom.beadLocation = "beadPeace.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
