@@ -40,6 +40,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import sun.net.ftp.FtpClient;
 
@@ -89,6 +91,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JTextField NameTextField = new JTextField();
 
 	//Choose Puzzle Panel Parts
+	JLabel puzIcon = new JLabel();
 	private JButton TutButton = new JButton();
 	private JButton EasyButton = new JButton();
 	private JButton MediumButton = new JButton();
@@ -263,6 +266,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle R92 = new Rectangle(R91.x +buttonLength+horizSpace, R82.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle RA2 = new Rectangle(RA1.x +buttonLength+horizSpace, R92.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
 	Rectangle RB2 = new Rectangle(RB1.x +buttonLength+horizSpace, RA2.y + buttonHeight+vertSpace, buttonLength, buttonHeight);
+	
+	//for displaying the puzzle thumbnail
+	Rectangle PuzzleThumbnail = new Rectangle(R02.x + buttonLength + horizSpace, R01.y + buttonHeight+vertSpace, 328, 328);
 
 	//	Rectangle LeftDifR = new Rectangle(startX, RA0.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
 	//	Rectangle CenterDifR = new Rectangle(LeftDifR.x + buttonLength + horizSpace, RA1.y + buttonHeight + buttonHeight + vertSpace + vertSpace, buttonLength, buttonHeight);
@@ -357,186 +363,886 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		Tut1Button.setText("Tutorial 1");
 		Tut1Button.addActionListener(this);
 		Tut1Button.setBounds(R10);
+		Tut1Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTut1();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 		ChoosePuzzlePanel.add(Tut1Button);
 
 		//---- Tut2 Button ----
 		Tut2Button.setText("Tutorial 2");
 		Tut2Button.addActionListener(this);
 		Tut2Button.setBounds(R20);
+		Tut2Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTut2();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 		ChoosePuzzlePanel.add(Tut2Button);
 
 		//---- Tut3 Button ----
 		Tut3Button.setText("Tutorial 3");
 		Tut3Button.addActionListener(this);
 		Tut3Button.setBounds(R30);
+		Tut3Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTut3();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 		ChoosePuzzlePanel.add(Tut3Button);
 
 		//---- Tut4 Button ----
 		Tut4Button.setText("Tutorial 4");
 		Tut4Button.addActionListener(this);
 		Tut4Button.setBounds(R40);
+		Tut4Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTut4();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 		ChoosePuzzlePanel.add(Tut4Button);
 
 		//---- Tut5 Button ----
 		Tut5Button.setText("Tutorial 5");
 		Tut5Button.addActionListener(this);
 		Tut5Button.setBounds(R50);
+		Tut5Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTut5();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 		ChoosePuzzlePanel.add(Tut5Button);
 
 		//---- Tut6 Button ----
 		Tut6Button.setText("Tutorial 6");
 		Tut6Button.addActionListener(this);
 		Tut6Button.setBounds(R60);
+		Tut6Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTut6();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 		ChoosePuzzlePanel.add(Tut6Button);
 
 		//---- Triforce Button ----
 		TriforceButton.setText("Triforce");
 		TriforceButton.addActionListener(this);
 		TriforceButton.setBounds(R10);
+		TriforceButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTriforce();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 
 		//---- Overlapping Squares Button ----
 		OverlappingSquaresButton.setText("Overlapping Squares");
 		OverlappingSquaresButton.addActionListener(this);
 		OverlappingSquaresButton.setBounds(R50);
+		OverlappingSquaresButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setOverlappingSquares();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 
 		//---- LoomEx14 Button ----
 		LoomEx14Button.setText("Native American Example 14");
 		LoomEx14Button.addActionListener(this);
 		LoomEx14Button.setBounds(R80);
+		LoomEx14Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx14();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 
 		//---- Six Button ----
 		SixButton.setText("Six");
 		SixButton.addActionListener(this);
 		SixButton.setBounds(R30);
+		SixButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setSix();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 
 		//---- Can You Hear Me Now Button ----
 		CanYouHearMeNowButton.setText("Can You Hear Me Now?");
 		CanYouHearMeNowButton.addActionListener(this);
 		CanYouHearMeNowButton.setBounds(R20);
+		CanYouHearMeNowButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setCanYouHearMeNow();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Starry Sky Button ----
 		StarrySkyButton.setText("Starry Sky");
 		StarrySkyButton.addActionListener(this);
 		StarrySkyButton.setBounds(R70);
+		StarrySkyButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setStarrySky();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx6 Button ----
 		LoomEx6Button.setText("Native American Example 6");
 		LoomEx6Button.addActionListener(this);
 		LoomEx6Button.setBounds(R90);
+		LoomEx6Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx6();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx8 Button ----
 		LoomEx8Button.setText("Native American Example 8");
 		LoomEx8Button.addActionListener(this);
 		LoomEx8Button.setBounds(R40);
+		LoomEx8Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx8();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Circle Button ----
 		CircleButton.setText("Circle");
 		CircleButton.addActionListener(this);
 		CircleButton.setBounds(R60);
+		CircleButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setCircle();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Flag Button ----
 		FlagButton.setText("American Flag");
 		FlagButton.addActionListener(this);
 		FlagButton.setBounds(R40);
+		FlagButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setFlag();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- UNCC Button ----
 		UNCCButton.setText("UNC Charlotte");
 		UNCCButton.addActionListener(this);
 		UNCCButton.setBounds(R70);
+		UNCCButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setUNCC();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx10 Button ----
 		LoomEx10Button.setText("Native American Example 10");
 		LoomEx10Button.addActionListener(this);
 		LoomEx10Button.setBounds(R60);
+		LoomEx10Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx10();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx13 Button ----
 		LoomEx13Button.setText("Native American Example 13");
 		LoomEx13Button.addActionListener(this);
 		LoomEx13Button.setBounds(R50);
+		LoomEx13Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx13();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Sunrise Button ----
 		SunriseButton.setText("Sunrise");
 		SunriseButton.addActionListener(this);
 		SunriseButton.setBounds(R30);
+		SunriseButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setSunRise();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Heart Button ----
 		HeartButton.setText("Heart");
 		HeartButton.addActionListener(this);
 		HeartButton.setBounds(R20);
+		HeartButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setHeart();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Sergeant Button ----
 		SergeantButton.setText("Sergeant");
 		SergeantButton.addActionListener(this);
 		SergeantButton.setBounds(R80);
+		SergeantButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setSergeant();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Tie Fighter Button ----
 		TieFighterButton.setText("Tie Fighter");
 		TieFighterButton.addActionListener(this);
 		TieFighterButton.setBounds(R90);
+		TieFighterButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setTieFighter();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Sunny Sky Button ----
 		SunnySkyButton.setText("Sunny Sky");
 		SunnySkyButton.addActionListener(this);
 		SunnySkyButton.setBounds(R10);
+		SunnySkyButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setSunnySky();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Stars and Stripes Button ----
 		StarsAndStripesButton.setText("Stars and Stripes");
 		StarsAndStripesButton.addActionListener(this);
 		StarsAndStripesButton.setBounds(R70);
+		StarsAndStripesButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setStarsAndStripes();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- ROSS Button ----
 		ROSSButton.setText("ROSS the bunny");
 		ROSSButton.addActionListener(this);
 		ROSSButton.setBounds(R60);
+		ROSSButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setROSS();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Bullseye Button ----
 		BullseyeButton.setText("Bullseye");
 		BullseyeButton.addActionListener(this);
 		BullseyeButton.setBounds(R40);
+		BullseyeButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setBullseye();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx7 Button ----
 		LoomEx7Button.setText("Native American Example 7");
 		LoomEx7Button.addActionListener(this);
 		LoomEx7Button.setBounds(R20);
+		LoomEx7Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx7();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx1 Button ----
 		LoomEx1Button.setText("Native American Example 1");
 		LoomEx1Button.addActionListener(this);
 		LoomEx1Button.setBounds(R50);
+		LoomEx1Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx1();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx5 Button ----
 		LoomEx5Button.setText("Native American Example 5");
 		LoomEx5Button.addActionListener(this);
 		LoomEx5Button.setBounds(R80);
+		LoomEx5Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx5();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- LoomEx3 Button ----
 		LoomEx3Button.setText("Native American Example 3");
 		LoomEx3Button.addActionListener(this);
 		LoomEx3Button.setBounds(R90);
+		LoomEx3Button.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setLoomEx3();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Moon Button ----
 		MoonButton.setText("Moon");
 		MoonButton.addActionListener(this);
 		MoonButton.setBounds(R10);
+		MoonButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setMoon();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Megaman Button ----
 		MegamanButton.setText("Megaman");
 		MegamanButton.addActionListener(this);
 		MegamanButton.setBounds(RA0);
+		MegamanButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setMegaman();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- Batman Button ----
 		BatmanButton.setText("Batman");
 		BatmanButton.addActionListener(this);
 		BatmanButton.setBounds(RB0);
+		BatmanButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setBatman();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		//---- DC Button ----
 		DCButton.setText("DC");
 		DCButton.addActionListener(this);
 		DCButton.setBounds(R30);
+		DCButton.addMouseListener(new MouseListener() {
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {
+				puzIcon.setBounds(0,0,0,0);
+				ChoosePuzzlePanel.repaint();
+			}
+			public void mouseEntered(MouseEvent e) {
+				bl.getGridPanel2().clear();
+				puz.setDC();
+				ChoosePuzzlePanel.remove(puzIcon);
+				puzIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+				puzIcon.setBounds(PuzzleThumbnail);
+				ChoosePuzzlePanel.add(puzIcon);
+				puzIcon.repaint();
+			}
+			public void mouseClicked(MouseEvent e) {}
+		});
 
 		if(ComponentToggle.personalHighScores)
 		{
@@ -641,6 +1347,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			MLabelB.setBounds(RB2);
 			ChoosePuzzlePanel.add(MLabelB);
 		}
+		
+		//---- Puzzle Thumbnail ----
+		puzIcon.setBounds(PuzzleThumbnail);
 
 		//---- Tutorial Button ----
 		TutButton.setText("Tutorial Puzzles");
@@ -2604,6 +3313,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		else if (e.getSource() == CancelButton){
 			bl.getPuzzleFrame().setVisible(false);
+			bl.getMainMenuFrame().setVisible(true);
 		}
 		else if (e.getSource() == TutButton){
 			//			EasyButton.setBounds(LeftDifR);
@@ -2790,13 +3500,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
 			}
 			else{
-				//			EasyButton.setBounds(LeftDifR);
-				//			ChoosePuzzlePanel.add(EasyButton);
-				//			MediumButton.setBounds(CenterDifR);
-				//			ChoosePuzzlePanel.add(MediumButton);
-				//			TutButton.setBounds(RightDifR);
-				//			ChoosePuzzlePanel.add(TutButton);
-				//			ChoosePuzzlePanel.remove(HardButton);
 				removePuzzleButtons();
 
 				ChoosePuzzlePanel.add(MoonButton);
@@ -3018,6 +3721,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 	
 	public void showChoosePuzzle() {
+		bl.getMainMenuFrame().setVisible(false);
 		bl.getPuzzleFrame().setVisible(true);
 		bl.getPuzzleFrame().toFront();
 		//Set up the Tutorial Menu
@@ -3137,8 +3841,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getMainMenuFrame().setVisible(true);
 		panel.add(bl.getMainMenuFrame());
 		panel.add(bl.getGameOptionsFrame());
+		bl.getGameOptionsFrame().setVisible(false);
 		panel.add(bl.getPuzzleFrame());
+		bl.getPuzzleFrame().setVisible(false);
 		panel.add(bl.getHighScoresFrame());
+		bl.getHighScoresFrame().setVisible(false);
 		panel.add(bl.getGridFrame());
 		bl.getGridFrame().setVisible(false);
 		panel.add(bl.getGridFrame2());
