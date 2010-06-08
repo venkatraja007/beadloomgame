@@ -7,11 +7,17 @@
 	
 	<script type="text/javascript">
 	
-	function playGame()
+	function playGame(form)
 	{
-		//Change once we have URL of actual applet
-		window.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.html";
-	
+		var name = form.nameBox.value;
+		if(name == "")
+		{
+			alert('Please enter your name!');
+		}
+		else
+		{
+			window.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.php?name=" + name;
+		}
 	}
 	
 	
@@ -29,7 +35,11 @@
 			<td><a href="puzzleScores.php">High Scores</a></td>
 		</tr>
 		<tr>
-			<td><input type="button" value="Play!" onclick="playGame()" />
+		<td colspan="2">
+			Please enter your name!: <br />
+				<input type="text" size="50" id="nameBox" /><br />
+				<input type="button" value="Play!" onclick="playGame(document.mainTable)" />
+		</td>
 	
 	</table>
 	</form>
