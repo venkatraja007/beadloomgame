@@ -145,6 +145,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton NormalBeadButton = new JButton();
 	private JButton AwesomeBeadButton = new JButton();
 	private JButton PeaceBeadButton = new JButton();
+	private JButton EightBitBeadButton = new JButton();
 	private JButton GameOptionsCloseButton = new JButton();
 	//
 
@@ -862,9 +863,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		PeaceBeadButton.addActionListener(this);
 		if(ComponentToggle.aesthetics) { GameOptionsPanel.add(PeaceBeadButton); }
 
-		//---- Peace Bead Button ----
+		//---- 8 Bit Bead Button ----
+		EightBitBeadButton.setText("8 Bit Bead");
+		EightBitBeadButton.setBounds(20, 175, 155, EightBitBeadButton.getPreferredSize().height);
+		EightBitBeadButton.addActionListener(this);
+		if(ComponentToggle.aesthetics) { GameOptionsPanel.add(EightBitBeadButton); }
+
+		//---- Game Options Close Button ----
 		GameOptionsCloseButton.setText("Close");
-		GameOptionsCloseButton.setBounds(20, 175, 155, GameOptionsCloseButton.getPreferredSize().height);
+		GameOptionsCloseButton.setBounds(20, 200, 155, GameOptionsCloseButton.getPreferredSize().height);
 		GameOptionsCloseButton.addActionListener(this);
 		GameOptionsPanel.add(GameOptionsCloseButton);
 
@@ -1513,27 +1520,39 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == NormalBeadButton) {
-			BeadLoom.beadLocation = "bead.JPG";
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(Color.CYAN);
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
 
 		else if (e.getSource() == AwesomeBeadButton) {
-			BeadLoom.beadLocation = "beadAwesome.JPG";
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(Color.CYAN);
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
 
 		else if (e.getSource() == PeaceBeadButton) {
-			BeadLoom.beadLocation = "beadPeace.JPG";
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
 			PeaceBeadButton.setBackground(Color.CYAN);
+			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
+		}
+
+		else if (e.getSource() == EightBitBeadButton) {
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead8Bit.JPG";
+			redrawGrid();
+			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
+			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
+			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+			EightBitBeadButton.setBackground(Color.CYAN);
 		}
 
 		else if (e.getSource() == ColorBlindButton) {
