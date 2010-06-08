@@ -3044,9 +3044,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 	private void redrawGrid()
 	{
+		bl.getInputTools().redrawBead();
 		bl.getGridPanel().rebuildLayerImages();
 		bl.getGridPanel2().rebuildLayerImages();
 		bl.getContentPanel().repaint();
+		
 	}
 	
 	public void sendPostRequest(String fileContents, String url)
@@ -3158,6 +3160,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//TODO insert code to add in-game frame here
 		panel.add(bl.getInGameFrame());
 		panel.repaint();
+		
 	}
 	
 	public void setToolMode()
