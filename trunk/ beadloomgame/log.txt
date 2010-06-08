@@ -377,3 +377,623 @@
 			increment 1= -1
 			increment 2= 1
 			rows total= 5
+<5/27/2010 14:45:44> acey logs in.
+	<5/27/2010 14:45:44> Loom Example 8 Puzzle Selected.
+		<5/27/2010 14:45:59> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 14:46:8> Draw Line:
+			x1= 0
+			x2= 7
+			y1= 0
+			y2= 7
+		<5/27/2010 14:46:35> Color Change: Cyan
+		<5/27/2010 14:46:42> Draw Triangle:
+			x1= 0
+			x2= 4
+			x3= 0
+			y1= 0
+			y2= 0
+			y3= 4
+<5/27/2010 14:48:3> s logs in.
+	<5/27/2010 14:48:3> Loom Example 8 Puzzle Selected.
+		<5/27/2010 14:48:7> Restart Performed
+	<5/27/2010 14:48:7> Triforce Puzzle Selected.
+<5/27/2010 14:52:50> s logs out.
+<5/27/2010 14:52:53> Acey logs in.
+	<5/27/2010 14:52:53> Loom Example 8 Puzzle Selected.
+		<5/27/2010 14:52:57> Restart Performed
+	<5/27/2010 14:52:57> Tie Fighter Puzzle Selected.
+		<5/27/2010 14:53:9> Color Change: Blue
+<5/27/2010 15:0:18> Acey logs in.
+	<5/27/2010 15:0:18> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:0:44> Acey logs in.
+	<5/27/2010 15:0:44> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:5:27> Acey logs in.
+	<5/27/2010 15:5:27> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:5:35> Acey logs out.
+<5/27/2010 15:12:39> Acey logs in.
+	<5/27/2010 15:12:39> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:12:42> Acey logs out.
+<5/27/2010 15:14:18> Acey logs in.
+	<5/27/2010 15:14:18> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:15:16> Acey logs in.
+	<5/27/2010 15:15:16> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:15:30> Acey logs out.
+<5/27/2010 15:33:10> acey logs in.
+	<5/27/2010 15:33:10> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:33:59> Acey logs in.
+	<5/27/2010 15:33:59> Loom Example 8 Puzzle Selected.
+<5/27/2010 15:42:22> Acey logs in.
+	<5/27/2010 15:42:22> Loom Example 8 Puzzle Selected.
+		<5/27/2010 15:42:25> Draw Point:
+			x= 0
+			y= 0
+		<5/27/2010 15:42:30> Draw Linear Iteration:
+			x= 0
+			y= 0
+			start length= 5
+			increment 1= -1
+			increment 2= 1
+			rows total= 5
+		<5/27/2010 15:42:35> Color Change: Blue
+		<5/27/2010 15:42:39> Draw Triangle Iteration:
+			x= 0
+			y= 0
+			step height= 3
+			add= 1
+			rows total= 9
+<5/27/2010 17:8:12> Acey logs in.
+	<5/27/2010 17:8:12> Loom Example 8 Puzzle Selected.
+		<5/27/2010 17:8:15> Restart Performed
+	<5/27/2010 17:8:15> Tie Fighter Puzzle Selected.
+<5/31/2010 10:10:59> Acey logs in.
+	<5/31/2010 10:10:59> Loom Example 8 Puzzle Selected.
+<5/31/2010 10:12:38> Acey logs in.
+	<5/31/2010 10:12:38> Loom Example 8 Puzzle Selected.
+<5/31/2010 12:30:54> Acey logs in.
+	<5/31/2010 12:30:54> Loom Example 8 Puzzle Selected.
+		<5/31/2010 12:30:56> Restart Performed
+	<5/31/2010 12:30:56> Tutorial 1 Puzzle Selected.
+<5/31/2010 12:31:0> Acey logs out.
+<5/31/2010 12:31:2> Acey logs in.
+	<5/31/2010 12:31:2> Loom Example 8 Puzzle Selected.
+<5/31/2010 12:31:15> Acey logs out.
+<5/31/2010 12:31:21> Acey logs in.
+	<5/31/2010 12:31:21> Loom Example 8 Puzzle Selected.
+		<5/31/2010 12:31:27> Restart Performed
+	<5/31/2010 12:31:27> Tutorial 1 Puzzle Selected.
+<5/31/2010 12:31:44> Acey logs in.
+	<5/31/2010 12:31:44> Loom Example 8 Puzzle Selected.
+		<5/31/2010 12:31:50> Restart Performed
+	<5/31/2010 12:31:50> Tutorial 1 Puzzle Selected.
+<5/31/2010 12:32:4> Acey logs in.
+	<5/31/2010 12:32:4> Loom Example 8 Puzzle Selected.
+		<5/31/2010 12:32:11> Restart Performed
+	<5/31/2010 12:32:11> Tutorial 1 Puzzle Selected.
+<5/31/2010 12:32:21> Acey logs in.
+	<5/31/2010 12:32:21> Loom Example 8 Puzzle Selected.
+		<5/31/2010 12:32:32> Restart Performed
+	<5/31/2010 12:32:32> Tutorial 1 Puzzle Selected.
+<5/31/2010 12:46:27> Acey logs in.
+	<5/31/2010 12:46:27> Loom Example 8 Puzzle Selected.
+		<5/31/2010 12:46:30> Restart Performed
+	<5/31/2010 12:46:30> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:3:20> Acey logs in.
+	<5/31/2010 13:3:20> Loom Example 8 Puzzle Selected.
+<5/31/2010 13:4:21> s logs in.
+	<5/31/2010 13:4:21> Loom Example 8 Puzzle Selected.
+<5/31/2010 13:20:6> Acey logs in.
+	<5/31/2010 13:20:6> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:20:11> Restart Performed
+	<5/31/2010 13:20:11> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:22:6> a logs in.
+	<5/31/2010 13:22:6> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:22:9> Restart Performed
+	<5/31/2010 13:22:9> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:23:41> a logs in.
+	<5/31/2010 13:23:41> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:23:43> Restart Performed
+	<5/31/2010 13:23:43> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:26:10> a logs in.
+	<5/31/2010 13:26:10> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:26:12> Restart Performed
+	<5/31/2010 13:26:12> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:27:21> a logs in.
+	<5/31/2010 13:27:21> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:27:24> Restart Performed
+	<5/31/2010 13:27:24> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:29:15> a logs in.
+	<5/31/2010 13:29:15> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:29:17> Restart Performed
+	<5/31/2010 13:29:17> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:30:7> a logs in.
+	<5/31/2010 13:30:7> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:30:9> Restart Performed
+	<5/31/2010 13:30:9> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:32:15> a logs in.
+	<5/31/2010 13:32:15> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:32:17> Restart Performed
+	<5/31/2010 13:32:17> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:36:9> a logs in.
+	<5/31/2010 13:36:9> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:36:11> Restart Performed
+	<5/31/2010 13:36:11> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:38:23> a logs in.
+	<5/31/2010 13:38:23> Loom Example 8 Puzzle Selected.
+		<5/31/2010 13:38:30> Restart Performed
+	<5/31/2010 13:38:30> Tutorial 1 Puzzle Selected.
+<5/31/2010 13:43:9> acey logs in.
+	<5/31/2010 13:43:9> Loom Example 8 Puzzle Selected.
+<5/31/2010 14:6:9> a logs in.
+	<5/31/2010 14:6:9> Loom Example 8 Puzzle Selected.
+		<5/31/2010 14:6:33> Restart Performed
+	<5/31/2010 14:6:33> Tutorial 1 Puzzle Selected.
+		<5/31/2010 14:6:38> Restart Performed
+	<5/31/2010 14:6:38> Tutorial 2 Puzzle Selected.
+<5/31/2010 14:9:45> a logs in.
+	<5/31/2010 14:9:45> Loom Example 8 Puzzle Selected.
+		<5/31/2010 14:9:47> Restart Performed
+	<5/31/2010 14:9:47> Tutorial 1 Puzzle Selected.
+		<5/31/2010 14:9:52> Restart Performed
+	<5/31/2010 14:9:52> Tutorial 2 Puzzle Selected.
+		<5/31/2010 14:9:59> Restart Performed
+	<5/31/2010 14:9:59> Tutorial 3 Puzzle Selected.
+<6/1/2010 14:31:4> a logs in.
+	<6/1/2010 14:31:4> Loom Example 8 Puzzle Selected.
+		<6/1/2010 14:31:7> Restart Performed
+	<6/1/2010 14:31:7> Tutorial 1 Puzzle Selected.
+		<6/1/2010 14:31:42> Restart Performed
+	<6/1/2010 14:31:42> Tutorial 2 Puzzle Selected.
+<6/1/2010 14:32:6> a logs in.
+	<6/1/2010 14:32:6> Loom Example 8 Puzzle Selected.
+		<6/1/2010 14:32:9> Restart Performed
+	<6/1/2010 14:32:9> Tutorial 1 Puzzle Selected.
+<6/1/2010 14:33:41> a logs in.
+	<6/1/2010 14:33:41> Loom Example 8 Puzzle Selected.
+		<6/1/2010 14:33:43> Restart Performed
+	<6/1/2010 14:33:43> Tutorial 1 Puzzle Selected.
+<6/1/2010 14:40:55> a logs in.
+	<6/1/2010 14:40:55> Loom Example 8 Puzzle Selected.
+		<6/1/2010 14:40:57> Restart Performed
+	<6/1/2010 14:40:57> Tutorial 1 Puzzle Selected.
+		<6/1/2010 14:41:3> Checked Solution.
+			<6/1/2010 14:41:3> Puzzle Incomplete. Errors: 1
+<6/1/2010 14:42:12> a logs in.
+	<6/1/2010 14:42:12> Loom Example 8 Puzzle Selected.
+		<6/1/2010 14:42:14> Restart Performed
+	<6/1/2010 14:42:14> Tutorial 1 Puzzle Selected.
+		<6/1/2010 14:42:20> Checked Solution.
+			<6/1/2010 14:42:20> Puzzle Incomplete. Errors: 1
+		<6/1/2010 14:42:33> Draw Point:
+			x= 5
+			y= 5
+		<6/1/2010 14:42:42> Checked Solution.
+			<6/1/2010 14:42:42> Puzzle Completed in 1moves.  Earned Platinum!!!!
+<6/1/2010 14:53:25> acey logs in.
+	<6/1/2010 14:53:25> Loom Example 8 Puzzle Selected.
+		<6/1/2010 14:53:32> Restart Performed
+	<6/1/2010 14:53:32> Tutorial 1 Puzzle Selected.
+		<6/1/2010 14:53:35> Restart Performed
+	<6/1/2010 14:53:35> Tutorial 2 Puzzle Selected.
+		<6/1/2010 14:53:38> Restart Performed
+	<6/1/2010 14:53:38> Tutorial 3 Puzzle Selected.
+<6/1/2010 14:54:11> Acey logs in.
+	<6/1/2010 14:54:11> Loom Example 8 Puzzle Selected.
+		<6/1/2010 14:54:15> Restart Performed
+	<6/1/2010 14:54:15> Tutorial 3 Puzzle Selected.
+<6/1/2010 16:37:17> acey logs in.
+	<6/1/2010 16:37:17> Loom Example 8 Puzzle Selected.
+		<6/1/2010 16:37:24> Restart Performed
+	<6/1/2010 16:37:24> Tutorial 1 Puzzle Selected.
+<6/1/2010 16:37:58> Acey logs in.
+	<6/1/2010 16:37:58> Loom Example 8 Puzzle Selected.
+		<6/1/2010 16:38:7> Restart Performed
+	<6/1/2010 16:38:7> Tutorial 1 Puzzle Selected.
+<6/1/2010 16:39:4> Acey logs in.
+	<6/1/2010 16:39:4> Loom Example 8 Puzzle Selected.
+		<6/1/2010 16:39:8> Restart Performed
+	<6/1/2010 16:39:8> Tutorial 1 Puzzle Selected.
+<6/1/2010 16:43:15> Acey logs in.
+	<6/1/2010 16:43:15> Loom Example 8 Puzzle Selected.
+		<6/1/2010 16:43:20> Restart Performed
+	<6/1/2010 16:43:20> Tutorial 1 Puzzle Selected.
+<6/1/2010 16:43:26> Acey logs out.
+<6/1/2010 16:43:56> Acey logs in.
+	<6/1/2010 16:43:56> Loom Example 8 Puzzle Selected.
+		<6/1/2010 16:44:3> Restart Performed
+	<6/1/2010 16:44:3> Tutorial 1 Puzzle Selected.
+		<6/1/2010 16:44:7> Restart Performed
+	<6/1/2010 16:44:7> Tutorial 2 Puzzle Selected.
+<6/1/2010 16:44:23> Acey logs in.
+	<6/1/2010 16:44:23> Loom Example 8 Puzzle Selected.
+		<6/1/2010 16:44:29> Restart Performed
+	<6/1/2010 16:44:29> Tutorial 2 Puzzle Selected.
+<6/1/2010 16:47:47> Acey logs in.
+	<6/1/2010 16:47:47> Loom Example 8 Puzzle Selected.
+		<6/1/2010 16:47:55> Restart Performed
+	<6/1/2010 16:47:55> Tutorial 1 Puzzle Selected.
+		<6/1/2010 16:48:1> Restart Performed
+	<6/1/2010 16:48:1> Tutorial 2 Puzzle Selected.
+<6/1/2010 17:12:34> Acey logs in.
+	<6/1/2010 17:12:34> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:12:39> Restart Performed
+	<6/1/2010 17:12:39> Tutorial 1 Puzzle Selected.
+<6/1/2010 17:13:25> Acey logs in.
+	<6/1/2010 17:13:25> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:13:31> Restart Performed
+	<6/1/2010 17:13:31> Tutorial 2 Puzzle Selected.
+		<6/1/2010 17:13:35> Restart Performed
+	<6/1/2010 17:13:35> Tutorial 1 Puzzle Selected.
+<6/1/2010 17:14:14> Acey logs in.
+	<6/1/2010 17:14:14> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:14:19> Restart Performed
+	<6/1/2010 17:14:19> Tutorial 3 Puzzle Selected.
+<6/1/2010 17:16:10> Acey logs in.
+	<6/1/2010 17:16:10> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:16:13> Restart Performed
+	<6/1/2010 17:16:13> Tutorial 3 Puzzle Selected.
+		<6/1/2010 17:16:19> Restart Performed
+	<6/1/2010 17:16:19> Tutorial 1 Puzzle Selected.
+		<6/1/2010 17:16:24> Restart Performed
+	<6/1/2010 17:16:24> Tutorial 3 Puzzle Selected.
+<6/1/2010 17:22:8> Acey logs in.
+	<6/1/2010 17:22:8> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:22:17> Restart Performed
+	<6/1/2010 17:22:17> Tutorial 3 Puzzle Selected.
+		<6/1/2010 17:22:24> Restart Performed
+	<6/1/2010 17:22:24> Tutorial 2 Puzzle Selected.
+<6/1/2010 17:22:26> Acey logs out.
+<6/1/2010 17:24:7> Acey logs in.
+	<6/1/2010 17:24:7> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:24:13> Restart Performed
+	<6/1/2010 17:24:13> Tutorial 3 Puzzle Selected.
+<6/1/2010 17:24:24> Acey logs in.
+	<6/1/2010 17:24:24> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:24:29> Restart Performed
+	<6/1/2010 17:24:29> Tutorial 3 Puzzle Selected.
+<6/1/2010 17:25:52> Acey logs in.
+	<6/1/2010 17:25:52> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:26:0> Restart Performed
+	<6/1/2010 17:26:0> Tutorial 3 Puzzle Selected.
+		<6/1/2010 17:26:4> Restart Performed
+	<6/1/2010 17:26:4> Tutorial 2 Puzzle Selected.
+<6/1/2010 17:26:28> Acey logs in.
+	<6/1/2010 17:26:28> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:26:33> Restart Performed
+	<6/1/2010 17:26:33> Tutorial 3 Puzzle Selected.
+<6/1/2010 17:30:40> Acey logs in.
+	<6/1/2010 17:30:40> Loom Example 8 Puzzle Selected.
+		<6/1/2010 17:30:46> Restart Performed
+	<6/1/2010 17:30:46> Tutorial 6 Selected.
+<6/2/2010 12:32:44> Acey logs in.
+	<6/2/2010 12:32:44> Loom Example 8 Puzzle Selected.
+		<6/2/2010 12:32:46> Restart Performed
+	<6/2/2010 12:32:46> Tutorial 3 Puzzle Selected.
+<6/2/2010 12:33:42> Acey logs in.
+	<6/2/2010 12:33:42> Loom Example 8 Puzzle Selected.
+		<6/2/2010 12:33:47> Restart Performed
+	<6/2/2010 12:33:47> Tutorial 3 Puzzle Selected.
+		<6/2/2010 12:33:52> Restart Performed
+	<6/2/2010 12:33:52> Tutorial 4 Puzzle Selected.
+<6/2/2010 12:34:43> Acey logs in.
+	<6/2/2010 12:34:43> Loom Example 8 Puzzle Selected.
+		<6/2/2010 12:34:45> Restart Performed
+	<6/2/2010 12:34:45> Tutorial 4 Puzzle Selected.
+		<6/2/2010 12:35:10> Restart Performed
+	<6/2/2010 12:35:10> Tutorial 5 Puzzle Selected.
+		<6/2/2010 12:44:21> Restart Performed
+	<6/2/2010 12:44:21> Tutorial 5 Puzzle Selected.
+		<6/2/2010 12:44:25> Restart Performed
+	<6/2/2010 12:44:25> Tutorial 6 Selected.
+<6/2/2010 12:48:6> Acey logs in.
+	<6/2/2010 12:48:6> Loom Example 8 Puzzle Selected.
+		<6/2/2010 12:48:15> Restart Performed
+	<6/2/2010 12:48:15> Tutorial 1 Puzzle Selected.
+		<6/2/2010 12:48:18> Restart Performed
+	<6/2/2010 12:48:18> Tutorial 6 Selected.
+		<6/2/2010 12:48:25> Restart Performed
+	<6/2/2010 12:48:25> Tutorial 5 Puzzle Selected.
+<6/2/2010 12:49:54> Acey logs in.
+	<6/2/2010 12:49:54> Loom Example 8 Puzzle Selected.
+		<6/2/2010 12:49:57> Restart Performed
+	<6/2/2010 12:49:57> Tutorial 6 Selected.
+		<6/2/2010 12:50:1> Restart Performed
+	<6/2/2010 12:50:1> Tutorial 6 Selected.
+		<6/2/2010 12:50:6> Restart Performed
+	<6/2/2010 12:50:6> Triforce Puzzle Selected.
+<6/2/2010 12:52:3> Acey logs in.
+	<6/2/2010 12:52:3> Loom Example 8 Puzzle Selected.
+		<6/2/2010 12:52:9> Restart Performed
+	<6/2/2010 12:52:9> Tutorial 1 Puzzle Selected.
+<6/2/2010 12:57:20> Acey logs in.
+	<6/2/2010 12:57:20> Loom Example 8 Puzzle Selected.
+		<6/2/2010 12:57:28> Restart Performed
+	<6/2/2010 12:57:28>Six Puzzle Selected.
+		<6/2/2010 12:57:33> Restart Performed
+	<6/2/2010 12:57:33> Tutorial 6 Selected.
+		<6/2/2010 12:57:36> Restart Performed
+	<6/2/2010 12:57:36> Can You Hear Me Now Puzzle Selected.
+<6/2/2010 13:11:27> Acey logs in.
+	<6/2/2010 13:11:27> Loom Example 8 Puzzle Selected.
+		<6/2/2010 13:11:35> Restart Performed
+	<6/2/2010 13:11:35> Tutorial 6 Selected.
+		<6/2/2010 13:11:38> Restart Performed
+	<6/2/2010 13:11:38> Tutorial 3 Puzzle Selected.
+		<6/2/2010 13:11:42> Restart Performed
+	<6/2/2010 13:11:42> Sunrise Puzzle Selected.
+		<6/2/2010 13:11:46> Restart Performed
+	<6/2/2010 13:11:46> Megaman Puzzle Selected.
+<6/3/2010 10:23:40> Acey logs in.
+	<6/3/2010 10:23:40> Loom Example 8 Puzzle Selected.
+		<6/3/2010 10:24:27> Restart Performed
+	<6/3/2010 10:24:27> Tutorial 5 Puzzle Selected.
+		<6/3/2010 10:24:35> Restart Performed
+	<6/3/2010 10:24:35> UNCC Puzzle Selected.
+<6/3/2010 11:2:35> Acey logs in.
+	<6/3/2010 11:2:35> Loom Example 8 Puzzle Selected.
+<6/3/2010 11:4:27> Acey logs in.
+	<6/3/2010 11:4:27> Loom Example 8 Puzzle Selected.
+<6/3/2010 11:21:56> Acey logs in.
+	<6/3/2010 11:21:56> Loom Example 8 Puzzle Selected.
+		<6/3/2010 11:22:3> Restart Performed
+	<6/3/2010 11:22:3> Tutorial 6 Selected.
+		<6/3/2010 11:22:6> Restart Performed
+	<6/3/2010 11:22:7> Tie Fighter Puzzle Selected.
+<6/3/2010 11:35:8> Acey logs in.
+	<6/3/2010 11:35:8> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:8:37> Acey logs in.
+	<6/3/2010 13:8:37> Loom Example 8 Puzzle Selected.
+		<6/3/2010 13:8:48> Restart Performed
+	<6/3/2010 13:8:48> Tutorial 2 Puzzle Selected.
+<6/3/2010 13:9:41> Acey logs in.
+	<6/3/2010 13:9:41> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:11:5> Acey logs in.
+	<6/3/2010 13:11:5> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:12:5> Acey logs in.
+	<6/3/2010 13:12:5> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:18:23> Acey logs in.
+	<6/3/2010 13:18:23> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:19:33> Acey logs in.
+	<6/3/2010 13:19:33> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:29:52> Acey logs in.
+	<6/3/2010 13:29:52> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:30:27> Acey logs in.
+	<6/3/2010 13:30:27> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:31:9> Acey logs in.
+	<6/3/2010 13:31:9> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:32:13> Acey logs in.
+	<6/3/2010 13:32:13> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:33:8> Acey logs in.
+	<6/3/2010 13:33:8> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:37:14> Acey logs in.
+	<6/3/2010 13:37:14> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:42:20> Acey logs in.
+	<6/3/2010 13:42:20> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:49:30> Acey logs in.
+	<6/3/2010 13:49:30> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:51:56> Acey logs in.
+	<6/3/2010 13:51:56> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:52:36> Acey logs in.
+	<6/3/2010 13:52:36> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:53:7> Acey logs in.
+	<6/3/2010 13:53:7> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:56:8> Acey logs in.
+	<6/3/2010 13:56:8> Loom Example 8 Puzzle Selected.
+<6/3/2010 13:58:12> Acey logs in.
+	<6/3/2010 13:58:12> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:1:32> Acey logs in.
+	<6/3/2010 14:1:32> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:2:2> Acey logs in.
+	<6/3/2010 14:2:2> Loom Example 8 Puzzle Selected.
+		<6/3/2010 14:2:5> Restart Performed
+	<6/3/2010 14:2:5> Tutorial 2 Puzzle Selected.
+		<6/3/2010 14:2:9> Restart Performed
+	<6/3/2010 14:2:9> Can You Hear Me Now Puzzle Selected.
+		<6/3/2010 14:2:12> Restart Performed
+	<6/3/2010 14:2:12> Tie Fighter Puzzle Selected.
+		<6/3/2010 14:2:20> Restart Performed
+	<6/3/2010 14:2:20> Tutorial 5 Puzzle Selected.
+		<6/3/2010 14:2:36> Restart Performed
+	<6/3/2010 14:2:36> Batman Puzzle Selected.
+		<6/3/2010 14:2:41> Restart Performed
+	<6/3/2010 14:2:41> Tie Fighter Puzzle Selected.
+		<6/3/2010 14:3:3> Restart Performed
+	<6/3/2010 14:3:3> Megaman Puzzle Selected.
+<6/3/2010 14:11:46> Acey logs in.
+	<6/3/2010 14:11:46> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:15:52> Acey logs in.
+	<6/3/2010 14:15:52> Loom Example 8 Puzzle Selected.
+		<6/3/2010 14:16:0> Restart Performed
+	<6/3/2010 14:16:0> Tie Fighter Puzzle Selected.
+<6/3/2010 14:16:26> Acey logs in.
+	<6/3/2010 14:16:26> Loom Example 8 Puzzle Selected.
+		<6/3/2010 14:16:32> Restart Performed
+	<6/3/2010 14:16:32> Sergeant Puzzle Selected.
+<6/3/2010 14:28:8> Acey logs in.
+	<6/3/2010 14:28:8> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:29:7> Acey logs in.
+	<6/3/2010 14:29:7> Loom Example 8 Puzzle Selected.
+		<6/3/2010 14:29:11> Restart Performed
+	<6/3/2010 14:29:11> Tie Fighter Puzzle Selected.
+<6/3/2010 14:33:23> Acey logs in.
+	<6/3/2010 14:33:23> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:38:57> Acey logs in.
+	<6/3/2010 14:38:57> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:41:6> Acey logs in.
+	<6/3/2010 14:41:6> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:45:57> Acey logs in.
+	<6/3/2010 14:45:57> Loom Example 8 Puzzle Selected.
+<6/3/2010 14:58:30> Acey logs in.
+	<6/3/2010 14:58:30> Loom Example 8 Puzzle Selected.
+		<6/3/2010 14:58:35> Restart Performed
+	<6/3/2010 14:58:35> Tie Fighter Puzzle Selected.
+<6/3/2010 16:49:57> Acey logs in.
+	<6/3/2010 16:49:57> Loom Example 8 Puzzle Selected.
+		<6/3/2010 16:49:59> Restart Performed
+	<6/3/2010 16:49:59> Tutorial 1 Puzzle Selected.
+<6/3/2010 16:51:20> Acey logs in.
+	<6/3/2010 16:51:20> Loom Example 8 Puzzle Selected.
+		<6/3/2010 16:51:23> Restart Performed
+	<6/3/2010 16:51:23> Tutorial 1 Puzzle Selected.
+<6/3/2010 17:32:14> Acey logs in.
+	<6/3/2010 17:32:14> Loom Example 8 Puzzle Selected.
+		<6/3/2010 17:32:17> Restart Performed
+	<6/3/2010 17:32:17> Tie Fighter Puzzle Selected.
+		<6/3/2010 17:32:32> Restart Performed
+	<6/3/2010 17:32:32> Circle Puzzle Selected.
+<6/3/2010 17:38:55> Acey logs in.
+	<6/3/2010 17:38:55> Loom Example 8 Puzzle Selected.
+		<6/3/2010 17:38:58> Restart Performed
+	<6/3/2010 17:38:58> Loom Example 6 Puzzle Selected.
+<6/3/2010 17:39:44> Acey logs in.
+	<6/3/2010 17:39:44> Loom Example 8 Puzzle Selected.
+		<6/3/2010 17:39:47> Restart Performed
+	<6/3/2010 17:39:47> Tutorial 6 Selected.
+<6/3/2010 17:54:1> Acey logs in.
+	<6/3/2010 17:54:1> Loom Example 8 Puzzle Selected.
+		<6/3/2010 17:54:6> Restart Performed
+	<6/3/2010 17:54:6> Loom Example 6 Puzzle Selected.
+<6/3/2010 17:54:10> Acey logs out.
+<6/3/2010 17:56:23> Acey logs in.
+	<6/3/2010 17:56:23> Loom Example 8 Puzzle Selected.
+<6/3/2010 17:56:48> Acey logs in.
+	<6/3/2010 17:56:48> Loom Example 8 Puzzle Selected.
+<6/3/2010 17:57:8> Acey logs in.
+	<6/3/2010 17:57:8> Loom Example 8 Puzzle Selected.
+		<6/3/2010 17:57:10> Restart Performed
+	<6/3/2010 17:57:10> Tutorial 6 Selected.
+<6/3/2010 17:58:9> Acey logs in.
+	<6/3/2010 17:58:9> Loom Example 8 Puzzle Selected.
+<6/8/2010 9:33:20> Acey logs in.
+	<6/8/2010 9:33:20> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:33:20> Restart Performed
+	<6/8/2010 9:33:21> Triforce Puzzle Selected.
+<6/8/2010 9:33:25> Acey logs in.
+	<6/8/2010 9:33:25> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:33:25> Restart Performed
+	<6/8/2010 9:33:25> Tie Fighter Puzzle Selected.
+<6/8/2010 9:33:40> Acey logs in.
+	<6/8/2010 9:33:40> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:33:40> Restart Performed
+	<6/8/2010 9:33:40> Tie Fighter Puzzle Selected.
+<6/8/2010 9:41:25> Acey logs in.
+	<6/8/2010 9:41:25> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:41:25> Restart Performed
+	<6/8/2010 9:41:25> Loom Example 6 Puzzle Selected.
+<6/8/2010 9:41:27> Acey logs in.
+	<6/8/2010 9:41:27> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:41:27> Restart Performed
+	<6/8/2010 9:41:27> Tie Fighter Puzzle Selected.
+<6/8/2010 9:41:36> Acey logs in.
+	<6/8/2010 9:41:36> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:41:36> Restart Performed
+	<6/8/2010 9:41:36> Sergeant Puzzle Selected.
+<6/8/2010 9:41:41> Acey logs in.
+	<6/8/2010 9:41:41> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:41:41> Restart Performed
+	<6/8/2010 9:41:41> Tie Fighter Puzzle Selected.
+<6/8/2010 9:42:45> Acey logs in.
+	<6/8/2010 9:42:45> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:42:45> Restart Performed
+	<6/8/2010 9:42:46> Custom Puzzle Selected.
+<6/8/2010 9:42:51> Acey logs in.
+	<6/8/2010 9:42:51> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:42:51> Restart Performed
+	<6/8/2010 9:42:51> Tie Fighter Puzzle Selected.
+<6/8/2010 9:43:30> Acey logs in.
+	<6/8/2010 9:43:30> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:43:30> Restart Performed
+	<6/8/2010 9:43:30> Tie Fighter Puzzle Selected.
+<6/8/2010 9:45:0> Acey logs in.
+	<6/8/2010 9:45:0> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:45:0> Restart Performed
+	<6/8/2010 9:45:0> Loom Example 6 Puzzle Selected.
+<6/8/2010 9:45:11> Acey logs in.
+	<6/8/2010 9:45:11> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:45:11> Restart Performed
+	<6/8/2010 9:45:11> Tie Fighter Puzzle Selected.
+<6/8/2010 9:53:26> Acey logs in.
+	<6/8/2010 9:53:26> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:53:29> Color Change: Orange
+		<6/8/2010 9:53:36> Color Change: White
+		<6/8/2010 9:53:38> Color Change: Black
+		<6/8/2010 9:53:41> Color Change: Yellow
+		<6/8/2010 9:53:49> Restart Performed
+	<6/8/2010 9:53:49> Tie Fighter Puzzle Selected.
+<6/8/2010 9:55:51> Acey logs in.
+	<6/8/2010 9:55:51> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:55:51> Restart Performed
+	<6/8/2010 9:55:51> Loom Example 6 Puzzle Selected.
+<6/8/2010 9:56:0> Acey logs in.
+	<6/8/2010 9:56:0> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:56:0> Restart Performed
+	<6/8/2010 9:56:0> Tie Fighter Puzzle Selected.
+<6/8/2010 9:58:33> Shaun logs in.
+	<6/8/2010 9:58:33> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:58:33> Restart Performed
+	<6/8/2010 9:58:33> Loom Example 6 Puzzle Selected.
+<6/8/2010 9:58:42> Shaun logs in.
+	<6/8/2010 9:58:42> Loom Example 8 Puzzle Selected.
+		<6/8/2010 9:58:42> Restart Performed
+	<6/8/2010 9:58:42> Loom Example 6 Puzzle Selected.
+<6/8/2010 10:1:59> Acey logs in.
+	<6/8/2010 10:1:59> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:1:59> Restart Performed
+	<6/8/2010 10:1:59> Loom Example 6 Puzzle Selected.
+<6/8/2010 10:8:36> shu logs in.
+	<6/8/2010 10:8:36> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:8:36> Restart Performed
+	<6/8/2010 10:8:36> Loom Example 6 Puzzle Selected.
+<6/8/2010 10:8:42> shu logs in.
+	<6/8/2010 10:8:42> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:8:42> Restart Performed
+	<6/8/2010 10:8:42> Loom Example 14 Puzzle Selected.
+<6/8/2010 10:8:52> shu logs in.
+	<6/8/2010 10:8:52> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:8:52> Restart Performed
+	<6/8/2010 10:8:52> Loom Example 6 Puzzle Selected.
+<6/8/2010 10:8:59> shu logs in.
+	<6/8/2010 10:8:59> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:8:59> Restart Performed
+	<6/8/2010 10:8:59> Starry Sky Puzzle Selected.
+<6/8/2010 10:9:30> Acey logs in.
+	<6/8/2010 10:9:30> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:9:30> Restart Performed
+	<6/8/2010 10:9:30> Loom Example 6 Puzzle Selected.
+<6/8/2010 10:10:5> Acey logs in.
+	<6/8/2010 10:10:5> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:10:5> Restart Performed
+	<6/8/2010 10:10:5> Loom Example 6 Puzzle Selected.
+<6/8/2010 10:21:28> Acey logs in.
+	<6/8/2010 10:21:28> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:21:28> Restart Performed
+	<6/8/2010 10:21:28> Tutorial 6 Selected.
+<6/8/2010 10:21:51> Acey logs in.
+	<6/8/2010 10:21:51> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:21:51> Restart Performed
+	<6/8/2010 10:21:51> Loom Example 14 Puzzle Selected.
+<6/8/2010 10:23:30> Acey logs in.
+	<6/8/2010 10:23:30> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:23:30> Restart Performed
+	<6/8/2010 10:23:30> Tutorial 6 Selected.
+<6/8/2010 10:23:38> Acey logs in.
+	<6/8/2010 10:23:38> Loom Example 8 Puzzle Selected.
+		<6/8/2010 10:23:38> Restart Performed
+	<6/8/2010 10:23:38> Tie Fighter Puzzle Selected.
+<6/8/2010 11:2:35> Acey logs in.
+	<6/8/2010 11:2:35> Loom Example 8 Puzzle Selected.
+		<6/8/2010 11:2:35> Restart Performed
+	<6/8/2010 11:2:36> Tutorial 6 Selected.
+<6/8/2010 11:11:48> Acey logs in.
+	<6/8/2010 11:11:48> Loom Example 8 Puzzle Selected.
+		<6/8/2010 11:11:48> Restart Performed
+	<6/8/2010 11:11:50> Tutorial 6 Selected.
+<6/8/2010 11:20:34> Acey logs in.
+	<6/8/2010 11:20:34> Loom Example 8 Puzzle Selected.
+		<6/8/2010 11:20:34> Restart Performed
+	<6/8/2010 11:20:34> Starry Sky Puzzle Selected.
+<6/8/2010 11:22:19> Acey logs in.
+	<6/8/2010 11:22:19> Loom Example 8 Puzzle Selected.
+		<6/8/2010 11:22:19> Restart Performed
+	<6/8/2010 11:22:19> Loom Example 14 Puzzle Selected.
