@@ -4,5 +4,7 @@
 
 == Week 1 ==
 [AntoineWeek1 Weekly Report Week 1]
+
 [AntoineWeek2 Weekly Report Week 2]
+
 [AntoineWeek3 Weekly Report Week 3]
