@@ -1547,7 +1547,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == EightBitBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead8Bit.JPG";
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
