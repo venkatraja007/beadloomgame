@@ -251,6 +251,16 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 	//Bead Information
 	Image beadImage = null;	
+	
+	//------- Bead Image and location files
+	Image normalBead;
+	Image awesomeBead;
+	Image peaceBead;
+	Image bitBead;
+	String normalBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
+	String awesomeBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
+	String peaceBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
+	String bitBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg";
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	//============================== Panel implementation ===============================//
@@ -259,6 +269,9 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 
 	public GUIInputTools() {
+		//Create Beads
+		createBeads();
+		
 		//======== BeadLoomUtilitiesTabbedPane ========
 
 		//======== BeadLoomUtilitiesPanel ========
@@ -1181,9 +1194,6 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
 		}
 		BeadLoomUtilitiesTabbedPane.addTab("Iterative Functions", LinearIterationTabbedPane);
-
-		//Make the bead so it is stored in memory
-		redrawBead();
 		
 		
 	}
@@ -2472,6 +2482,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	private synchronized Image makeBullet(Color fg, int panelWidth, int panelHeight) {
 
 		Image bullet = null;
+		beadImage = getBead();
 		try
 		{
 			beadImage = beadImage.getScaledInstance(panelWidth/GRID_SIZE+1,
@@ -2779,18 +2790,63 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		} 	
 	}
 
+	/* TODO Remove this method when we completely deprecate it */
 	public void redrawBead()
 	{
 		try
 		{
+			/* TODO Commented out for testing pulling bead from BeadLoom.java 
 			URL beadURL = new URL(BeadLoom.beadLocation);
 			java.awt.Toolkit.getDefaultToolkit();
-			beadImage = Toolkit.getDefaultToolkit().createImage(beadURL);
+			beadImage = Toolkit.getDefaultToolkit().createImage(beadURL); */
 
 		}
 		catch(Exception e)
 		{
-			JOptionPane.showMessageDialog(null, "Error Creating Bead!");
+			JOptionPane.showMessageDialog(null, "Error Creating Bead! Error Message: " + e.getMessage());
+		}
+	}
+	
+	private void createBeads()
+	{
+		URL normalBeadURL;
+		try {
+			
+			normalBeadURL = new URL(normalBeadLocation);
+			URL awesomeBeadURL = new URL(awesomeBeadLocation);
+			URL peaceBeadURL = new URL(peaceBeadLocation);
+			URL bitBeadURL = new URL(bitBeadLocation);
+			java.awt.Toolkit.getDefaultToolkit();
+			normalBead = Toolkit.getDefaultToolkit().createImage(normalBeadURL);
+			awesomeBead = Toolkit.getDefaultToolkit().createImage(awesomeBeadURL);
+			peaceBead = Toolkit.getDefaultToolkit().createImage(peaceBeadURL);
+			bitBead = Toolkit.getDefaultToolkit().createImage(bitBeadURL);
+			//TODO Remove this after debugging
+			//JOptionPane.showMessageDialog(null, "Create Beads Completed!");
+			
+		} catch (MalformedURLException e) {
+			JOptionPane.showMessageDialog(null, "Error Creating Beads! Error Message: " + e.getMessage(), "Bead Loom Game", ERROR);
+		}
+		
+	}
+	
+	public Image getBead()
+	{
+		if(BeadLoom.beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG"))
+		{
+			return awesomeBead;
+		}
+		else if(BeadLoom.beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG"))
+		{
+			return peaceBead;
+		}
+		else if(BeadLoom.beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg"))
+		{
+			return bitBead;
+		}
+		else
+		{
+			return normalBead;
 		}
 	}
 

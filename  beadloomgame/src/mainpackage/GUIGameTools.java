@@ -2133,6 +2133,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void initMainMenu() {
 		MainMenuPanel.add(PlayGameButton);
 		MainMenuPanel.add(CreateCustomPuzzleButton);
+		NameTextField.setText(BeadLoom.playerName);
 		MainMenuPanel.add(NameTextField);
 		MainMenuPanel.add(ToolButton);
 		MainMenuPanel.add(GameOptionsButton);
@@ -3768,7 +3769,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 	private void redrawGrid()
 	{
-		bl.getInputTools().redrawBead();
 		bl.getGridPanel().rebuildLayerImages();
 		bl.getGridPanel2().rebuildLayerImages();
 		bl.getContentPanel().repaint();
@@ -3822,7 +3822,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		try
 		{
 			puzzleName = URLEncoder.encode(puzzleName, "UTF-8");
-			hint = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName);
+			hint = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName);
 		}
 		catch (Exception e)
 		{
@@ -3835,6 +3835,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		removeAllWindows();
 
+		NameTextField.setText(BeadLoom.playerName);
 		JPanel panel = bl.getContentPanel();
 		//TODO insert code to add main menu here
 		bl.getMainMenuFrame().setBounds(((int)BeadLoom.usableDim.getWidth())/2-100, ((int)BeadLoom.usableDim.getHeight())/2-150, 200, 300);
@@ -3850,6 +3851,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridFrame().setVisible(false);
 		panel.add(bl.getGridFrame2());
 		bl.getGridFrame2().setVisible(false);
+		
 	}
 
 	public void setCustomPuzzleMode()
@@ -3905,12 +3907,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getContentPanel().removeAll();
 		bl.getContentPanel().repaint();
 	}
-
-	public String getHint()
-	{
-		String hint = "this is a test";
-		return hint;
-	}
 	
 	public String getGridXML(String puzzleName)
 	{
@@ -3922,5 +3918,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		puzzleXML += "</custompuzzle>";
 		
 		return puzzleXML;
+	}
+	
+	public void setPlayerName(String name)
+	{
+		NameTextField.setText(name);
 	}
 }
