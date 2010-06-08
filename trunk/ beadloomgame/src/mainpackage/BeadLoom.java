@@ -63,14 +63,19 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 	//******* Main Method *******
 	public void init() {
+		
 		setSize((int)dim.getWidth(),(int)dim.getHeight());
-		BeadLoom Gui = new BeadLoom();
-		color = Gui.getMoveBeads().getColor();
-
 		//Base URL for image location, passed by HTML parameter "server"
 		//Set to null if no parameter is given
 		String baseURL;
 		baseURL = this.getParameter("server");
+		
+		
+		//Get players name from website
+		playerName = getParameter("name");
+		
+		BeadLoom Gui = new BeadLoom();
+		color = Gui.getMoveBeads().getColor();
 
 		//Set static BEAD_ADDRESS to baseURL 
 		BEAD_ADDRESS = baseURL;
@@ -93,6 +98,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 		doBeadSetting(null, gridPanel);
 		Gui.setVisible(true);
+		
+		Game.setPlayerName(playerName);
 	}
 
 	//******* Variables declaration ******
@@ -186,17 +193,35 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			}
 		}
 	});
+	
+	//------- Bead Image and location files
+	Image normalBead;
+	Image awesomeBead;
+	Image peaceBead;
+	Image bitBead;
+	String normalBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
+	String awesomeBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
+	String peaceBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
+	String bitBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg";
+	
+	//------- Player Info -------
+	public static String playerName;
+	String tempPlayerName;
 
 	//------- Constructor -------
 	public BeadLoom() {
+		
+		//Creates bead images
+		createBeads();
+		
 		//Initialize all Beadloom components
 		initComponents();
+
 	}
 	private void initComponents() {
 
-
 		//******* Components for the GUI initialization *******
-
+		
 		//======== Bead Loom Applet ========
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
@@ -697,7 +722,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 				{
 					Game = new GUIGameTools();
 					Game.setLoom(this);
-
+					
 					HighScoresFrame.getContentPane().add(Game.getHighScoresScrollPane());
 					HighScoresFrame.setVisible(false);
 					HighScoresFrame.setBorder(new LineBorder(Color.red));
@@ -1970,6 +1995,54 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			colorblindModeOn = true;
 		}
 
+	}
+	
+	private void createBeads()
+	{
+		URL normalBeadURL;
+		try {
+			
+			normalBeadURL = new URL(normalBeadLocation);
+			URL awesomeBeadURL = new URL(awesomeBeadLocation);
+			URL peaceBeadURL = new URL(peaceBeadLocation);
+			URL bitBeadURL = new URL(bitBeadLocation);
+			java.awt.Toolkit.getDefaultToolkit();
+			normalBead = Toolkit.getDefaultToolkit().createImage(normalBeadURL);
+			awesomeBead = Toolkit.getDefaultToolkit().createImage(awesomeBeadURL);
+			peaceBead = Toolkit.getDefaultToolkit().createImage(peaceBeadURL);
+			bitBead = Toolkit.getDefaultToolkit().createImage(bitBeadURL);
+			//TODO Remove this after debugging
+			//JOptionPane.showMessageDialog(null, "Create Beads Completed!");
+			
+		} catch (MalformedURLException e) {
+			JOptionPane.showMessageDialog(null, "Error Creating Beads! Error Message: " + e.getMessage(), "Bead Loom Game", ERROR);
+		}
+		
+	}
+	
+	public Image getBead()
+	{
+		if(beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG"))
+		{
+			return awesomeBead;
+		}
+		else if(beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG"))
+		{
+			return peaceBead;
+		}
+		else if(beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg"))
+		{
+			return bitBead;
+		}
+		else
+		{
+			return normalBead;
+		}
+	}
+	
+	public String getPlayerName()
+	{
+		return playerName.toString();
 	}
 
 
