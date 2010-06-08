@@ -99,13 +99,13 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	//public static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	public static Dimension dim = new Dimension(1024, 768);
 	//Set BEAD_ADDRESS to null, initialized in the the init() function
-	public static String BEAD_ADDRESS = "http://webpages.uncc.edu/~sgpickfo/bead.jpg";
+	public static String BEAD_ADDRESS = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
 
 	//this line is correct
 	//public static String beadLocation = "bead.JPG";
 
 	//this line is added for testing to see if it will pull from an online space
-	public static String beadLocation = "http://webpages.uncc.edu/~sgpickfo/bead.jpg";
+	public static String beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
 
 	private GUIGoalImages GoalImagesFrame;
 	private GUIOutputWindow OutputWindow;
@@ -1008,7 +1008,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		try
 		{
 			//scale beads to fit panel width and height
-			Image sourceImage = Toolkit.getDefaultToolkit().getImage("http://webpages.uncc.edu/~sgpickfo/bead.jpg");
+			Image sourceImage = Toolkit.getDefaultToolkit().getImage(beadLocation);
 			sourceImage = sourceImage.getScaledInstance(panelWidth/InputTools.GRID_SIZE+1,
 					panelHeight/InputTools.GRID_SIZE+1, 0);
 			ImageFilter imgf = new HueFilter(fg);

@@ -1512,7 +1512,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == NormalBeadButton) {
-			BeadLoom.beadLocation = "bead.JPG";
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(Color.CYAN);
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
@@ -1520,7 +1520,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == AwesomeBeadButton) {
-			BeadLoom.beadLocation = "beadAwesome.JPG";
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(Color.CYAN);
@@ -1528,7 +1528,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == PeaceBeadButton) {
-			BeadLoom.beadLocation = "beadPeace.JPG";
+			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
