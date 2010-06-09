@@ -27,43 +27,44 @@ public class Puzzle {
 	private Color betterOrange;
 
 	private final int TOTALPUZZLES = 35;
-	private String[] PuzzleNames = {"Tutorial 1",
-			"Tutorial 2",
-			"Tutorial 3",
-			"Tutorial 4",
-			"Tutorial 5",
-			"Tutorial 6",
-			"TriForce",
-			"Can You Hear Me Now",
-			"Six",
-			"Native American Example 8",
-			"Overlapping Squares",
-			"Circle",
-			"Starry Sky",
-			"Native American Example 14",
-			"Native American Example 6",
+	private String[] PuzzleNames = {
+			"Tutorial 1",						//0
+			"Tutorial 2",						//1
+			"Tutorial 3",						//2
+			"Tutorial 4",						//3					
+			"Tutorial 5",						//4
+			"Tutorial 6",						//5
+			"TriForce",							//6
+			"Can You Hear Me Now",				//7		
+			"Six",								//8
+			"Native American Example 8",		//9			
+			"Overlapping Squares",				//10		
+			"Circle",							//11
+			"Starry Sky",						//12
+			"Native American Example 14",		//13				
+			"Native American Example 6",		//14
+			
+			"Sunny Sky",						//15
+			"Heart",							//16
+			"Sun Rise",							//17
+			"Flag",								//18
+			"Native American Example 13",		//19				
+			"Native American Example 10",		//20				
+			"UNCC",								//21				
+			"Sergeant",							//22
+			"Tie Fighter",						//23
 
-			"Sunny Sky",
-			"Heart",
-			"Sun Rise",
-			"Flag",
-			"Native American Example 13",
-			"Native American Example 10",
-			"UNCC",
-			"Sergeant",
-			"Tie Fighter",
-
-			"Moon",
-			"Native American Example 7",
-			"DC",
-			"Bullseye",
-			"Native American Example 1",
-			"ROSS",
-			"Stars and Stripes",
-			"Native American Example 5",
-			"Native American Example 3",
-			"Megaman",
-			"Batman"
+			"Moon",								//24
+			"Native American Example 7",		//25			
+			"DC",								//26			
+			"Bullseye",							//27
+			"Native American Example 1",		//28			
+			"ROSS",								//29
+			"Stars and Stripes",				//30	
+			"Native American Example 5",		//31			
+			"Native American Example 3",		//32			
+			"Megaman",							//33
+			"Batman"							//34
 	};
 	//Constructor.  Takes the beadloom 
 	public Puzzle(BeadLoom bl){
