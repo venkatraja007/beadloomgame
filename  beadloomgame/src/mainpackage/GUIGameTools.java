@@ -1738,92 +1738,93 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//Load Default Puzzle
 		//currentPuzzle = puz.setLoomEx8();
 
-		//Load Player Data
-		try{
-			FileReader fr = new FileReader("Scores.txt"); 
-			BufferedReader br = new BufferedReader(fr); 
-			String s; 
-			s = br.readLine();
-			//First Line is total number of entries
-			totalEntries = Integer.parseInt(s);
-			int lineCounter = 0;
-			//Store the file in an array for later storing and editing
-			//Size is 3 bigger than needed in case the player is a new player and their data needs to be added
-			scoreFile = new String[((totalEntries+1)*3) + 1];
-			scoreFile[lineCounter] = ""+totalEntries;
-			lineCounter++;
-			boolean exists = false;
-			playerIndex = 0;
-			for (int i = 0; i < totalEntries; i++){
-				s = br.readLine();
-				scoreFile[lineCounter] = s;
-				lineCounter++;
-				if (!exists){
-					playerIndex++;
-					if (s.equals(playerName)){
-						exists = true;
-					}
-				}
-
-			}
-			//If its a new player add a new entry for them
-			if (!exists){
-				scoreFile[lineCounter] = playerName;
-				lineCounter++;
-				totalEntries++;
-				scoreFile[0] = ""+totalEntries;
-				playerIndex++;
-			}
-
-			//Read the rest of the file for writing purposes
-			while ((s = br.readLine()) != null){
-				scoreFile[lineCounter] = s;
-				lineCounter++;
-			}
-
-			//If new player add in default scores for them
-			if (!exists){
-				scoreFile[lineCounter] = playerName + " 1682 1682 1682 1682 1682 1682" +
-				" 1682 1682 1682 1682 1682 1682" +
-				" 1682 1682 1682 1682 1682 1682" +
-				" 1682 1682 1682 1682 1682 1682" +
-				" 1682 1682 1682 1682 1682 1682 1682 1682 1682 1682 1682";
-				lineCounter++;
-				scoreFile[lineCounter] = playerName + " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N";
-			}
-
-			StringTokenizer st = new StringTokenizer(scoreFile[playerIndex + playerIndex + totalEntries -1]);
-			st.nextToken();
-			for (int j = 0; j < puz.getTotalPuzzles(); j++){
-				RecordMove[j] = Integer.parseInt(st.nextToken());
-			}
-			st = new StringTokenizer(scoreFile[playerIndex + playerIndex + totalEntries]);
-			st.nextToken();
-			for (int j = 0; j < puz.getTotalPuzzles(); j++){
-				RecordMedalShort[j] = st.nextToken();
-				if(RecordMedalShort[j].equals("B")){
-					RecordMedal[j] = "Bronze!";
-				}
-				else if(RecordMedalShort[j].equals("N")){
-					RecordMedal[j] = "-None-";
-				}
-				else if(RecordMedalShort[j].equals("S")){
-					RecordMedal[j] = "Silver!!";
-				}
-				else if(RecordMedalShort[j].equals("G")){
-					RecordMedal[j] = "Gold!!!";
-				}
-				else{
-					RecordMedal[j] = "Platinum!!!!!";    					
-				}
-			}
-
-
-			fr.close();
-		}
-		catch (Exception e)
-		{   System.err.println("File input error: " + e.toString());
-		}
+		// TODO Load Player Data from site
+		getScores();
+//		try{
+//			FileReader fr = new FileReader("Scores.txt"); 
+//			BufferedReader br = new BufferedReader(fr); 
+//			String s; 
+//			s = br.readLine();
+//			//First Line is total number of entries
+//			totalEntries = Integer.parseInt(s);
+//			int lineCounter = 0;
+//			//Store the file in an array for later storing and editing
+//			//Size is 3 bigger than needed in case the player is a new player and their data needs to be added
+//			scoreFile = new String[((totalEntries+1)*3) + 1];
+//			scoreFile[lineCounter] = ""+totalEntries;
+//			lineCounter++;
+//			boolean exists = false;
+//			playerIndex = 0;
+//			for (int i = 0; i < totalEntries; i++){
+//				s = br.readLine();
+//				scoreFile[lineCounter] = s;
+//				lineCounter++;
+//				if (!exists){
+//					playerIndex++;
+//					if (s.equals(playerName)){
+//						exists = true;
+//					}
+//				}
+//
+//			}
+//			//If its a new player add a new entry for them
+//			if (!exists){
+//				scoreFile[lineCounter] = playerName;
+//				lineCounter++;
+//				totalEntries++;
+//				scoreFile[0] = ""+totalEntries;
+//				playerIndex++;
+//			}
+//
+//			//Read the rest of the file for writing purposes
+//			while ((s = br.readLine()) != null){
+//				scoreFile[lineCounter] = s;
+//				lineCounter++;
+//			}
+//
+//			//If new player add in default scores for them
+//			if (!exists){
+//				scoreFile[lineCounter] = playerName + " 1682 1682 1682 1682 1682 1682" +
+//				" 1682 1682 1682 1682 1682 1682" +
+//				" 1682 1682 1682 1682 1682 1682" +
+//				" 1682 1682 1682 1682 1682 1682" +
+//				" 1682 1682 1682 1682 1682 1682 1682 1682 1682 1682 1682";
+//				lineCounter++;
+//				scoreFile[lineCounter] = playerName + " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N";
+//			}
+//
+//			StringTokenizer st = new StringTokenizer(scoreFile[playerIndex + playerIndex + totalEntries -1]);
+//			st.nextToken();
+//			for (int j = 0; j < puz.getTotalPuzzles(); j++){
+//				RecordMove[j] = Integer.parseInt(st.nextToken());
+//			}
+//			st = new StringTokenizer(scoreFile[playerIndex + playerIndex + totalEntries]);
+//			st.nextToken();
+//			for (int j = 0; j < puz.getTotalPuzzles(); j++){
+//				RecordMedalShort[j] = st.nextToken();
+//				if(RecordMedalShort[j].equals("B")){
+//					RecordMedal[j] = "Bronze!";
+//				}
+//				else if(RecordMedalShort[j].equals("N")){
+//					RecordMedal[j] = "-None-";
+//				}
+//				else if(RecordMedalShort[j].equals("S")){
+//					RecordMedal[j] = "Silver!!";
+//				}
+//				else if(RecordMedalShort[j].equals("G")){
+//					RecordMedal[j] = "Gold!!!";
+//				}
+//				else{
+//					RecordMedal[j] = "Platinum!!!!!";    					
+//				}
+//			}
+//
+//
+//			fr.close();
+//		}
+//		catch (Exception e)
+//		{   System.err.println("File input error: " + e.toString());
+//		}
 
 		//Set Tutorial Scores to be displayed
 		HSLabel1.setText("" + this.RecordMove[0]);
@@ -2144,6 +2145,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Please Enter Your Name", "Name Error", JOptionPane.PLAIN_MESSAGE);
 			}
 			else{
+				BeadLoom.playerName = NameTextField.getText();
 				showChoosePuzzle();
 				//startGame();
 			}
@@ -2162,6 +2164,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Please Enter Your Name", "Name Error", JOptionPane.PLAIN_MESSAGE);
 			}
 			else {
+				BeadLoom.playerName = NameTextField.getText();
 				setCustomPuzzleMode();
 			}
 		}
@@ -3812,6 +3815,30 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void setHintModeStatus(boolean isOn)
 	{
 		hintsOn = isOn;
+	}
+	
+	public void getScores()
+	{
+		String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/playerScores.php?user="+ NameLabel.getText());
+		String[] scores = temp.split(",");
+		int totalPuzzles = puz.getTotalPuzzles();
+		RecordMove = new int[totalPuzzles];
+		RecordMedalShort = new String[totalPuzzles];
+		RecordMedal = new String[totalPuzzles];
+		for(int i=0; i<RecordMove.length; i++)
+		{
+			RecordMove[i] = 1682;
+			RecordMedalShort[i] = "N";
+			RecordMedal[i] = "-None-";
+		}
+		
+		for(int i=0; i<scores.length; i+=3)
+		{
+			int index = puz.getPuzzleIndex(scores[i]);
+			RecordMove[index] = Integer.parseInt(scores[i+1]);
+			RecordMedal[index] = scores[i+2];
+			RecordMedalShort[index] = scores[i+2].substring(0, 0);
+		}
 	}
 
 	public String getHint(String puzzleName)

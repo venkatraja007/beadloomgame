@@ -74,6 +74,18 @@ public class Puzzle {
 		//ReadFromXML();
 	}
 
+	public int getPuzzleIndex(String puzzleName)
+	{
+		for(int i=0; i<PuzzleNames.length; i++)
+		{
+			if(puzzleName.equals(PuzzleNames[i]))
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+	
 	//Returns the name of a puzzle based on an int index
 	public String getPuzzleName(int index) {
 		return PuzzleNames[index];
@@ -933,7 +945,7 @@ public class Puzzle {
 		//Reset the Current Selected Color to default
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 33;
+		return 22;
 	}
 
 	//Array Position = 34
@@ -1035,7 +1047,7 @@ public class Puzzle {
 		//Reset the Current Selected Color to default
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 34;  
+		return 23;  
 	}
 
 	//Array Pos = 22
@@ -1074,7 +1086,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 22;
+		return 24;
 	}
 
 	//Array Pos = 23
@@ -1124,7 +1136,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 23;
+		return 25;
 	}
 
 	//Array Pos = 32
@@ -1170,7 +1182,7 @@ public class Puzzle {
 		//Reset the Current Selected Color to default
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 32;
+		return 26;
 	}
 
 	//Array Pos = 24
@@ -1222,7 +1234,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 24;
+		return 27;
 	}
 
 	//Array Pos = 25
@@ -1280,7 +1292,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 25;
+		return 28;
 	}
 
 	//Array Pos = 26
@@ -1342,7 +1354,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 26;
+		return 29;
 	}
 
 	//Array Pos = 27
@@ -1404,7 +1416,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 27;
+		return 30;
 	}
 
 	//Array Pos = 28
@@ -1473,7 +1485,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 28;
+		return 31;
 	}
 
 	//Array Pos = 29
@@ -1542,7 +1554,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 29;
+		return 32;
 	}
 
 	//Array Pos = 30
@@ -1623,7 +1635,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 30;
+		return 33;
 	}
 
 	//Array Pos = 31
@@ -1697,7 +1709,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 31;
+		return 34;
 	}
 
 	public InputStream getStream(String url) {
