@@ -3828,25 +3828,37 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public void getScores()
 	{
-		String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/playerScores.php?user="+ NameTextField.getText());
-		String[] scores = temp.split(",");
-		int totalPuzzles = puz.getTotalPuzzles();
-		RecordMove = new int[totalPuzzles];
-		RecordMedalShort = new String[totalPuzzles];
-		RecordMedal = new String[totalPuzzles];
-		for(int i=0; i<RecordMove.length; i++)
-		{
-			RecordMove[i] = 1682;
-			RecordMedalShort[i] = "N";
-			RecordMedal[i] = "-None-";
+		if (!NameTextField.getText().equalsIgnoreCase("admin")) {
+			String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/playerScores.php?user="
+					+ NameTextField.getText());
+			String[] scores = temp.split(",");
+			int totalPuzzles = puz.getTotalPuzzles();
+			RecordMove = new int[totalPuzzles];
+			RecordMedalShort = new String[totalPuzzles];
+			RecordMedal = new String[totalPuzzles];
+			for (int i = 0; i < RecordMove.length; i++) {
+				RecordMove[i] = 1682;
+				RecordMedalShort[i] = "N";
+				RecordMedal[i] = "-None-";
+			}
+			for (int i = 0; i < scores.length; i += 3) {
+				int index = puz.getPuzzleIndex(scores[i]);
+				RecordMove[index] = Integer.parseInt(scores[i + 1]);
+				RecordMedal[index] = scores[i + 2];
+				RecordMedalShort[index] = scores[i + 2].substring(0, 0);
+			}
 		}
-		
-		for(int i=0; i<scores.length; i+=3)
+		else
 		{
-			int index = puz.getPuzzleIndex(scores[i]);
-			RecordMove[index] = Integer.parseInt(scores[i+1]);
-			RecordMedal[index] = scores[i+2];
-			RecordMedalShort[index] = scores[i+2].substring(0, 0);
+			int totalPuzzles = puz.getTotalPuzzles();
+			RecordMove = new int[totalPuzzles];
+			RecordMedalShort = new String[totalPuzzles];
+			RecordMedal = new String[totalPuzzles];
+			for (int i = 0; i < RecordMove.length; i++) {
+				RecordMove[i] = 1;
+				RecordMedalShort[i] = "P";
+				RecordMedal[i] = "Platinum!!!!";
+			}
 		}
 	}
 
