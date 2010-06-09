@@ -3841,11 +3841,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				RecordMedalShort[i] = "N";
 				RecordMedal[i] = "-None-";
 			}
-			for (int i = 0; i < scores.length; i += 3) {
-				int index = puz.getPuzzleIndex(scores[i]);
-				RecordMove[index] = Integer.parseInt(scores[i + 1]);
-				RecordMedal[index] = scores[i + 2];
-				RecordMedalShort[index] = scores[i + 2].substring(0, 0);
+			if(scores.length > 2)
+			{
+				for (int i = 0; i < scores.length; i += 3) {
+					int index = puz.getPuzzleIndex(scores[i]);
+					RecordMove[index] = Integer.parseInt(scores[i + 1]);
+					RecordMedal[index] = scores[i + 2];
+					RecordMedalShort[index] = scores[i + 2].substring(0, 0);
+				}
 			}
 		}
 		else
