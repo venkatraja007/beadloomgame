@@ -386,6 +386,85 @@ public class Puzzle {
 		return 6;
 	}
 
+	//Array Pos = 7
+	//Returns array pos
+	public int setCanYouHearMeNow(){
+		ideal = 4;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-20, -15, 5, 0);
+
+		InputTools.drawRectangle(-10, -5, 10, 0);
+
+		InputTools.drawRectangle(0, 5, 15, 0);
+
+		InputTools.drawRectangle(10, 15, 20, 0);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 7;
+	}
+
+	//Array Pos = 8
+	//Returns array pos
+	public int setSix(){
+		ideal = 5;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.WHITE);
+		InputTools.drawRectangle(-10, 10, 15, -15);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-5, 5, 15, -15);
+
+		InputTools.drawRectangle(-10, 10, 10, 3);
+
+		InputTools.drawRectangle(-10, 10, -3, -10);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 8;
+	}
+
+	//Array Pos = 9
+	//Returns array pos
+	public int setLoomEx8(){
+		ideal = 6;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.WHITE);
+		InputTools.drawRectangle(-4, 4, -9, 3);
+
+		InputTools.setColor(Color.BLACK);
+		doTriangleIt(0, 3, 3, 1, 12, true, false);
+
+		InputTools.setColor(Color.RED);
+		doTriangleIt(0, 0, 3, 1, 10, true, false);
+
+		InputTools.setColor(betterOrange);
+		doTriangleIt(0, -3, 3, 1, 7, true, false);
+
+		InputTools.setColor(Color.YELLOW);
+		doTriangleIt(0, -6, 3, 1, 4, true, false);
+
+		InputTools.setColor(Color.WHITE);
+		InputTools.drawPoint(0, -9);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 9;
+	}
+
 	//Array Pos = 10
 	//Returns array pos
 	public int setOverlappingSquares(){
@@ -415,6 +494,69 @@ public class Puzzle {
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
 		return 10;
+	}
+
+	//Array Pos = 11
+	//Returns array pos
+	public int setCircle(){
+		ideal = 7;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(-3, 3, 14, -14);
+
+		InputTools.drawRectangle(-6, 6, 13, -13);
+
+		InputTools.drawRectangle(-9, 9, 11, -11);
+
+		InputTools.drawRectangle(-11, 11, 9, -9);
+
+		InputTools.drawRectangle(-13, 13, 6, -6);
+
+		InputTools.drawRectangle(-14, 14, 3, -3);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 11;
+	}
+
+	//Array Pos = 12
+	//Returns array pos
+	public int setStarrySky(){
+		ideal = 9;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-20, 20, 20, 0);
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-20, 20, 0, -20);
+
+		InputTools.setColor(Color.WHITE);
+		InputTools.drawPoint(-13, 15);
+
+		InputTools.drawPoint(-5, 15);
+
+		InputTools.drawPoint(0,12);
+
+		InputTools.drawPoint(4, 9);
+
+		InputTools.drawPoint(6, 3);
+
+		InputTools.drawPoint(16, 8);
+
+		InputTools.drawPoint(13, 2);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 12;
 	}
 
 	//Array Pos = 13
@@ -455,88 +597,6 @@ public class Puzzle {
 		return 13;
 	}
 
-	//Array Pos = 8
-	//Returns array pos
-	public int setSix(){
-		ideal = 5;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawRectangle(-10, 10, 15, -15);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-5, 5, 15, -15);
-
-		InputTools.drawRectangle(-10, 10, 10, 3);
-
-		InputTools.drawRectangle(-10, 10, -3, -10);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 8;
-	}
-
-	//Array Pos = 7
-	//Returns array pos
-	public int setCanYouHearMeNow(){
-		ideal = 4;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-20, -15, 5, 0);
-
-		InputTools.drawRectangle(-10, -5, 10, 0);
-
-		InputTools.drawRectangle(0, 5, 15, 0);
-
-		InputTools.drawRectangle(10, 15, 20, 0);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 7;
-	}
-
-	//Array Pos = 12
-	//Returns array pos
-	public int setStarrySky(){
-		ideal = 9;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-20, 20, 20, 0);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-20, 20, 0, -20);
-
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawPoint(-13, 15);
-
-		InputTools.drawPoint(-5, 15);
-
-		InputTools.drawPoint(0,12);
-
-		InputTools.drawPoint(4, 9);
-
-		InputTools.drawPoint(6, 3);
-
-		InputTools.drawPoint(16, 8);
-
-		InputTools.drawPoint(13, 2);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 12;
-	}
-
 	//Array Pos = 14
 	//Returns array pos
 	public int setLoomEx6(){
@@ -574,64 +634,92 @@ public class Puzzle {
 		return 14;
 	}
 
-	//Array Pos = 9
+	//Array Pos = 15
 	//Returns array pos
-	public int setLoomEx8(){
-		ideal = 6;
-		InputTools.setGrid(bl.getGridPanel2());
+	public int setSunnySky(){
 
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawRectangle(-4, 4, -9, 3);
-
-		InputTools.setColor(Color.BLACK);
-		doTriangleIt(0, 3, 3, 1, 12, true, false);
-
-		InputTools.setColor(Color.RED);
-		doTriangleIt(0, 0, 3, 1, 10, true, false);
-
-		InputTools.setColor(betterOrange);
-		doTriangleIt(0, -3, 3, 1, 7, true, false);
-
-		InputTools.setColor(Color.YELLOW);
-		doTriangleIt(0, -6, 3, 1, 4, true, false);
-
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawPoint(0, -9);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 9;
-	}
-
-	//Array Pos = 11
-	//Returns array pos
-	public int setCircle(){
-		ideal = 7;
+		ideal = 5;
 		InputTools.setGrid(bl.getGridPanel2());
 
 		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-20, 20, -20, 20);
+		InputTools.drawRectangle(20, -20, 20, -20);
 
 		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(-3, 3, 14, -14);
+		InputTools.drawRectangle(7, 20, 7, 20);
 
-		InputTools.drawRectangle(-6, 6, 13, -13);
+		InputTools.setColor(Color.BLUE);
+		doTriangleIt(5, 20, 3, 2, 15, true, false);
 
-		InputTools.drawRectangle(-9, 9, 11, -11);
+		doTriangleIt(20, 5, 3, 2, 15, false, false);
 
-		InputTools.drawRectangle(-11, 11, 9, -9);
-
-		InputTools.drawRectangle(-13, 13, 6, -6);
-
-		InputTools.drawRectangle(-14, 14, 3, -3);
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-20, 20, 0, -20);
 
 		bl.getGridPanel2().calcGameGrid();
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 11;
+		return 15;
+	}
+
+	//Array Pos = 16
+	//Returns array pos
+	public int setHeart(){
+
+		ideal = 5;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-20, 20, -1, -20);
+
+		InputTools.setColor(Color.RED);
+		doTriangleIt( 0, -20, 1, 1, 41, true, true);
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawTriangle(0, -20, 20, 11, 20, 20);
+
+		InputTools.setColor(Color.BLUE);
+
+		doTriangleIt(-13, 16, 2, 1, 8, false, false);
+
+		doTriangleIt(13, 16, 2, 1, 8, false, true);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 16;
+	}
+
+	//Array Pos = 17
+	//Returns array pos
+	public int setSunRise(){
+		ideal = 7;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(betterOrange);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(14, -14, 14, 0);
+
+		InputTools.setColor(betterOrange);
+		doTriangleIt(16, 1, 3, 2, 14, true, true);
+
+		doTriangleIt(-16, 1, 3, 2, 14, true, true);
+
+		doTriangleIt(1, 16, 3, 2, 14, false, true);
+
+		doTriangleIt(-1, 16, 3, 2, 14, false, false);
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-20, 20, 0, -20);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 17;
 	}
 
 	//Array Pos = 18
@@ -666,47 +754,45 @@ public class Puzzle {
 		return 18;
 	}
 
-	//Array Pos = 21
+	//Array Pos = 19
 	//Returns array pos
-	public int setUNCC(){
-		ideal = 13;
+	public int setLoomEx13(){
+
+		ideal = 10;
 		InputTools.setGrid(bl.getGridPanel2());
 
-		InputTools.setColor(Color.GREEN);
+		InputTools.setColor(Color.RED);
 		InputTools.drawRectangle(-20, 20, -20, 20);
 
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawRectangle(-17, 17, 17, -17);
+		InputTools.setColor(Color.CYAN);
+		InputTools.drawRectangle(-20, 20, 6, -6);
+
+		InputTools.setColor(Color.blue);
+		doTriangleIt( 17, 0, 7, 3, 18, false, false);
+
+		doTriangleIt( -17, 0 ,7, 3, 18, false, true);
+
+		InputTools.setColor(Color.RED);
+		doTriangleIt(10, 0, 7, 3, 11, false, false);
+
+		doTriangleIt(-10, 0, 7, 3, 11, false, true);
+
+		InputTools.setColor(betterOrange);
+		doLinearIt(-1, 7, 3, 1, 1, 14, true, true);
+
+		doLinearIt(-1, -7, 3, 1, 1, 14, true, false);
 
 		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-2, 2, 17, -17);
+		doLinearIt(-1, -11, 3, 1, 1, 10, true, false);
 
-		InputTools.drawRectangle(17, -17, 2, -2);
-
-		InputTools.drawRectangle(-14, -6, 17, 6);
-
-		InputTools.drawTriangle(6, 6, 14, 13, 3, 3);
-
-		InputTools.drawTriangle(6, 14, 14, 17, 7, 17);
-
-		InputTools.drawRectangle(-14, -3, -14, -6);
-
-		InputTools.drawRectangle(17, 6, -14, -6);
-
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawPoint(-1, 3);
-
-		InputTools.drawPoint(19, 3);
-
-		InputTools.drawPoint(-1, -17);
-
-		InputTools.drawPoint(19, -17);
+		doLinearIt(-1, 11, 3, 1, 1, 10, true, true);
 
 		bl.getGridPanel2().calcGameGrid();
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 21;
+		return 19;
+
 	}
 
 	//Array Pos = 20
@@ -751,795 +837,47 @@ public class Puzzle {
 		return 20;
 	}
 
-	//Array Pos = 19
+	//Array Pos = 21
 	//Returns array pos
-	public int setLoomEx13(){
-
-		ideal = 10;
+	public int setUNCC(){
+		ideal = 13;
 		InputTools.setGrid(bl.getGridPanel2());
 
-		InputTools.setColor(Color.RED);
+		InputTools.setColor(Color.GREEN);
 		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.CYAN);
-		InputTools.drawRectangle(-20, 20, 6, -6);
-
-		InputTools.setColor(Color.blue);
-		doTriangleIt( 17, 0, 7, 3, 18, false, false);
-
-		doTriangleIt( -17, 0 ,7, 3, 18, false, true);
-
-		InputTools.setColor(Color.RED);
-		doTriangleIt(10, 0, 7, 3, 11, false, false);
-
-		doTriangleIt(-10, 0, 7, 3, 11, false, true);
-
-		InputTools.setColor(betterOrange);
-		doLinearIt(-1, 7, 3, 1, 1, 14, true, true);
-
-		doLinearIt(-1, -7, 3, 1, 1, 14, true, false);
-
-		InputTools.setColor(Color.GREEN);
-		doLinearIt(-1, -11, 3, 1, 1, 10, true, false);
-
-		doLinearIt(-1, 11, 3, 1, 1, 10, true, true);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 19;
-
-	}
-
-	//Array Pos = 17
-	//Returns array pos
-	public int setSunRise(){
-		ideal = 7;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(betterOrange);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(14, -14, 14, 0);
-
-		InputTools.setColor(betterOrange);
-		doTriangleIt(16, 1, 3, 2, 14, true, true);
-
-		doTriangleIt(-16, 1, 3, 2, 14, true, true);
-
-		doTriangleIt(1, 16, 3, 2, 14, false, true);
-
-		doTriangleIt(-1, 16, 3, 2, 14, false, false);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-20, 20, 0, -20);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 17;
-	}
-
-	//Array Pos = 16
-	//Returns array pos
-	public int setHeart(){
-
-		ideal = 5;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-20, 20, -1, -20);
-
-		InputTools.setColor(Color.RED);
-		doTriangleIt( 0, -20, 1, 1, 41, true, true);
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawTriangle(0, -20, 20, 11, 20, 20);
-
-		InputTools.setColor(Color.BLUE);
-
-		doTriangleIt(-13, 16, 2, 1, 8, false, false);
-
-		doTriangleIt(13, 16, 2, 1, 8, false, true);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 16;
-	}
-
-	//Array Pos = 15
-	//Returns array pos
-	public int setSunnySky(){
-
-		ideal = 5;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(20, -20, 20, -20);
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(7, 20, 7, 20);
-
-		InputTools.setColor(Color.BLUE);
-		doTriangleIt(5, 20, 3, 2, 15, true, false);
-
-		doTriangleIt(20, 5, 3, 2, 15, false, false);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-20, 20, 0, -20);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 15;
-	}
-
-	//Array Pos = 27
-	//Returns array pos
-	public int setStarsAndStripes(){
-
-		ideal = 21;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(20, -20, 20, -18);
 
 		InputTools.setColor(Color.WHITE);
-		InputTools.drawRectangle(-20, 20, 17, 15);
+		InputTools.drawRectangle(-17, 17, 17, -17);
 
-		InputTools.drawRectangle(-20, 20, 11, 9);
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-2, 2, 17, -17);
 
-		InputTools.drawRectangle(-20, 20, 5, 3);
+		InputTools.drawRectangle(17, -17, 2, -2);
 
-		InputTools.drawRectangle(-20, 20, -1, -3);
+		InputTools.drawRectangle(-14, -6, 17, 6);
 
-		InputTools.drawRectangle(-20, 20, -7, -9);
+		InputTools.drawTriangle(6, 6, 14, 13, 3, 3);
 
-		InputTools.drawRectangle(-20, 20, -13, -15);
+		InputTools.drawTriangle(6, 14, 14, 17, 7, 17);
 
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-20, 0, 20, 0);
+		InputTools.drawRectangle(-14, -3, -14, -6);
+
+		InputTools.drawRectangle(17, 6, -14, -6);
 
 		InputTools.setColor(Color.WHITE);
+		InputTools.drawPoint(-1, 3);
 
-		doLine(-19, 19, -1, 19);
+		InputTools.drawPoint(19, 3);
 
-		doLine(-19, 16, -1, 16);
+		InputTools.drawPoint(-1, -17);
 
-		doLine(-19, 13, -1, 13);
-
-		doLine(-19, 10, -1, 10);
-
-		doLine(-19, 7, -1, 7);
-
-		doLine(-19, 4, -1, 4);
-
-		doLine(-19, 1, -1, 1);
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-18, -17, 19, 1);
-
-		InputTools.drawRectangle(-15, -14, 19, 1);
-
-		InputTools.drawRectangle(-12, -11, 19, 1);
-
-		InputTools.drawRectangle(-9, -8, 19, 1);
-
-		InputTools.drawRectangle(-6, -5, 19, 1);
-
-		InputTools.drawRectangle(-3, -2, 19, 1);
+		InputTools.drawPoint(19, -17);
 
 		bl.getGridPanel2().calcGameGrid();
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 27;
-	}
-
-	//Array Pos = 26
-	//Returns array pos
-	public int setROSS(){
-
-		ideal = 19;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.CYAN);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.PINK);
-		InputTools.drawRectangle(-9, -8, 15, 11);
-
-		doLinearIt(-5, 14, 2, 1 ,-1, 4, true, false);
-
-		InputTools.drawRectangle(-12, -7, 10, 5);
-
-		doLinearIt(-14, 8, 3, 1, 1, 2, false, true);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawPoint(-14, 7);
-
-		InputTools.drawPoint(-10, 9);
-
-		InputTools.setColor(Color.PINK);
-		InputTools.drawRectangle(-9, 8, 7, 2);
-
-		doLine(-8, 1, 7, 1);
-
-		InputTools.drawRectangle(-9, 6, 0, -1);
-
-		InputTools.setColor(Color.CYAN);
-		doLine(-6, -1, 1, -1);
-
-		InputTools.setColor(Color.PINK);
-		doLine(3, -2, 5, -2);
-
-		doLine(-4, 8, 3, 8);
-
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawRectangle(7, 8, 9, 6);
-
-		InputTools.drawRectangle(6, 9, 8, 7);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(0, 2, 13, 9);
-
-		InputTools.drawRectangle(-1, 3, 12, 10);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawPoint(1, 14);
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawPoint(2, 15);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 26;
-	}
-
-	//Array Pos = 24
-	//Returns array pos
-	public int setBullseye(){
-
-		ideal = 16;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(-3, 3, 14, -14);
-
-		InputTools.drawRectangle(-6, 6, 13, -13);
-
-		InputTools.drawRectangle(-9, 9, 11, -11);
-
-		InputTools.drawRectangle(-11, 11, 9, -9);
-
-		InputTools.drawRectangle(-13, 13, 6, -6);
-
-		InputTools.drawRectangle(-14, 14, 3, -3);
-
-		InputTools.setColor(Color.CYAN);
-		InputTools.drawRectangle(-3, 3, 10, -10);
-
-		InputTools.drawRectangle(-6, 6, 8, -8);
-
-		InputTools.drawRectangle(-8, 8, 6, -6);
-
-		InputTools.drawRectangle(-10, 10, 3, -3);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-3, 3, 5, -5);
-
-		InputTools.drawRectangle(-5, 5, 3, -3);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-2, 2, 2, -2);
-
-		InputTools.setColor(Color.YELLOW);
-		doLine(-20, 20, 20, -20);
-
-		doLine(20, 20, -20, -20);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 24;
-	}
-
-	//Array Pos = 23
-	//Returns array pos
-	public int setLoomEx7(){
-
-		ideal = 14; 
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(betterOrange);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.RED);
-		doLinearIt(-20, 20, 41, -1, -1, 41, false, true);
-
-		InputTools.setColor(Color.MAGENTA);
-		InputTools.drawTriangle(7, 20, 20, 0, 13, -13);
-
-		InputTools.drawTriangle(-7, -20, -20, 0, 13, -13);
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawTriangle(12, 20, 20, 0, 8, -8);
-
-		InputTools.drawTriangle(-12, -20, -20, 0, 8, -8);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawTriangle(17, 20, 20, 0, 3, -3);
-
-		InputTools.drawTriangle(-17, -20, -20, 0, 3, -3);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawTriangle(-8, 8, 0, -18, -18, -10);
-
-		InputTools.drawTriangle(-8, 8, 0, 18, 18, 10);
-
-		InputTools.setColor(Color.YELLOW);
-		InputTools.drawTriangle(-3, 3, 0, -16, -16, -13);
-
-		InputTools.drawTriangle(-3, 3, 0, 16, 16, 13);
-
-		InputTools.setColor(betterOrange);
-		doLine(-7, 0, -11, 0);
-
-		doLine(7, 0, 11, 0);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 23;
-	}
-
-	//Array Pos = 25
-	//Returns array pos
-	public int setLoomEx1(){
-
-		ideal = 19;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.BLACK);
-		doLinearIt(-8, -7, 3, -1,1, 15, true, true);
-
-		doLinearIt(-8, 7, 3, -1, 1, 15, true, false);
-
-		InputTools.setColor(betterOrange);
-
-		doTriangleIt(6, 0, 1, 1, 15, false, true);
-
-		doTriangleIt(-6, 0, 1, 1, 15, false, false);
-
-		doTriangleIt(0, 6, 1, 1, 15, true, true);
-
-		doTriangleIt(0, -6, 1, 1, 15, true, false);
-
-		InputTools.setColor(Color.YELLOW);
-		doTriangleIt(10, 0, 1, 1, 11, false, true);
-
-		doTriangleIt(-10, 0, 1, 1, 11, false, false);
-
-		doTriangleIt(0, 10, 1, 1, 11, true, true);
-
-		doTriangleIt(0, -10, 1, 1, 11, true, false);
-
-		InputTools.setColor(Color.BLACK);
-		doTriangleIt(14, 0, 1, 1, 7, false, true);
-
-		doTriangleIt(-14, 0, 1, 1, 7, false, false);
-
-		doTriangleIt(0, 14, 1, 1, 7, true, true);
-
-		doTriangleIt(0, -14, 1, 1, 7, true, false);
-
-		InputTools.drawRectangle(20, 7, 7, 20);
-
-		InputTools.drawRectangle(-20, -7, 7, 20);
-
-		InputTools.drawRectangle(20, 7, -7, -20);
-
-		InputTools.drawRectangle(-20, -7, -7, -20);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 25;
-	}
-
-	//Array Pos = 28
-	//Returns array pos
-	public int setLoomEx5(){
-
-		ideal = 22;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-12, 12, 15, -15);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawTriangle(-12, -12, -9, 15, 12, 15);
-
-		InputTools.drawTriangle(-12, -12, -9, -15, -12, -15);
-
-		InputTools.drawTriangle(12, 12, 9, 15, 12, 15);
-
-		InputTools.drawTriangle(12, 12, 9, -15, -12, -15);
-
-		InputTools.drawTriangle(0, -3, 3, 12, 15, 15);
-
-		InputTools.drawTriangle(0, -3, 3, -12, -15, -15);
-
-		InputTools.setColor(Color.MAGENTA);
-		InputTools.drawTriangle(-6, -10, -2, 12, 8, 8);
-
-		InputTools.drawTriangle(-6, -10, -2, -12, -8, -8);
-
-		InputTools.drawTriangle(6, 10, 2, 12, 8, 8);
-
-		InputTools.drawTriangle(6, 10, 2, -12, -8, -8);
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(-12, 12, 7, -7);
-
-		InputTools.setColor(betterOrange);
-		InputTools.drawTriangle(2, 9, 9, 0, 6, -6);
-
-		InputTools.drawTriangle(-2, -9, -9, 0, 6, -6);
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawTriangle(5, 8, 8, 0, 3, -3);
-
-		InputTools.drawTriangle(-5, -8, -8, 0, 3, -3);
-
-		InputTools.setColor(Color.YELLOW);
-		InputTools.drawTriangle(6, 7, 7, 0, 1, -1);
-
-		InputTools.drawTriangle(-6, -7, -7, 0, 1, -1);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-1, 1, 7, -7);
-
-		InputTools.setColor(Color.BLUE);
-		doLine(0, 7, 0, -7);
-
-		InputTools.setColor(betterOrange);
-		doLine(0, 6, 0, -6);
-
-		InputTools.setColor(Color.YELLOW);
-		InputTools.drawRectangle(1, -1, 1, -1);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 28;
-	}
-
-	//Array Pos = 29
-	//Returns array pos
-	public int setLoomEx3(){
-
-		ideal = 24;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.YELLOW);
-		InputTools.drawRectangle(19, -19, 19, -19);
-
-		InputTools.setColor(Color.BLUE);
-		doTriangleIt(19, 0, 3, 2, 21, false,false);
-
-		doTriangleIt(19, -1, 3, 2, 21, false,false);
-
-		doTriangleIt(19, +1, 3, 2, 21, false,false);
-
-		doTriangleIt(-19, 0, 3, 2, 21, false,true);
-
-		doTriangleIt(-19, -1, 3, 2, 21, false,true);
-
-		doTriangleIt(-19, 1, 3, 2, 21, false,true);
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(-1, 1, 14, 19);
-
-		InputTools.drawRectangle(-1, 1, -14, -19);
-
-		InputTools.drawRectangle(-4, 4, 19, 16);
-
-		InputTools.drawRectangle(-4, 4, -19, -16);
-
-		InputTools.drawRectangle(-7, 7, 19, 18);
-
-		InputTools.drawRectangle(-7, 7, -19, -18);
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-1, 1, -18, -19);
-
-		InputTools.drawRectangle(-1, 1, 18, 19);
-
-		InputTools.setColor(Color.MAGENTA);
-		doTriangleIt(16, 0, 3, 2, 18, false, false);
-
-		doTriangleIt(16, -1, 3, 2, 18, false, false);
-
-		doTriangleIt(16, 1, 3, 2, 18, false, false);
-
-		doTriangleIt(-16, 0, 3, 2, 18, false, true);
-
-		doTriangleIt(-16, -1, 3, 2, 18, false, true);
-
-		doTriangleIt(-16, 1, 3, 2, 18, false, true);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-3, 3, 1, -1);
-
-		InputTools.drawRectangle(-1, 1, 3, -3);
-
-		InputTools.setColor(Color.RED);
-		InputTools.drawRectangle(-1, 1, -1, 1);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 29;
-	}
-
-	//Array Pos = 22
-	//Returns array pos
-	public int setMoon(){
-
-		ideal = 11;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.YELLOW);
-		InputTools.drawRectangle(-3, 3, 14, -14);
-
-		InputTools.drawRectangle(-6, 6, 13, -13);
-
-		InputTools.drawRectangle(-9, 9, 11, -11);
-
-		InputTools.drawRectangle(-11, 11, 9, -9);
-
-		InputTools.drawRectangle(-13, 13, 6, -6);
-
-		InputTools.drawRectangle(-14, 14, 3, -3);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-6, -1, 13, -6);
-
-		InputTools.drawRectangle(-9, 2, 11, -4);
-
-		InputTools.drawRectangle(-11, 4, 9, -2);
-
-		InputTools.drawRectangle(-13, 6, 6, 1);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 22;
-	}
-
-	//Array Pos = 30
-	//Returns array pos
-	public int setMegaman(){
-
-		ideal = 26;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(betterOrange);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-4, 4, 12, 11);
-
-		InputTools.drawRectangle(-14, 14, 10, -17);           
-
-		InputTools.setColor(betterOrange);
-		doTriangleIt(7, 11, 2, 2, 8, false, true);
-
-		doTriangleIt(-7, 11, 2, 2, 8, false, false);
-
-		InputTools.setColor(Color.BLUE);
-		InputTools.drawRectangle(-8, 8, -8, 7);
-
-		InputTools.drawRectangle(-10, 10, 6, 5);
-
-		InputTools.drawRectangle(-12, 12, 4, -1);
-
-		InputTools.setColor(Color.CYAN);
-		InputTools.drawRectangle(-2, 2, 10, -1);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-2, 2, 4, 3);
-
-		InputTools.drawRectangle(-16, 16, -2, -9);
-
-		InputTools.setColor(Color.CYAN);
-		InputTools.drawRectangle(-14, -13, -2, -9);
-
-		InputTools.drawRectangle(14, 13, -2, -9);
-
-		InputTools.setColor(peach);
-		InputTools.drawRectangle(-10, 10, -8, -13);
-
-		InputTools.setColor(Color.WHITE);
-		InputTools.drawRectangle(-8, 8, -2, -9);
-
-		InputTools.drawRectangle(-10, 10, -4, -7);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-6, -3, -6, -9);
-
-		InputTools.drawRectangle(6, 3, -6, -9);
-
-		InputTools.drawRectangle(-4, 4, -2, -3);
-
-		InputTools.drawRectangle(-2, 2, -4, -5);
-
-		InputTools.setColor(betterOrange);
-		doTriangleIt(-5, -20, 2, 2, 10, false, false);
-
-		doTriangleIt(5, -20, 2, 2, 10, false, true);
-
-		InputTools.setColor(peach);
-		InputTools.drawRectangle(-8, 8, -14, -15);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-4, 4, -14, -19);
-
-		InputTools.setColor(peach);
-		InputTools.drawRectangle(-4, 4, -16, -17);
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-6, 6, -12, -13);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 30;
-	}
-
-	//Array Pos = 31
-	//Returns array pos
-	public int setBatman(){
-
-		ideal = 27;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.YELLOW);
-		doLinearIt(-7, 5, 15, 1, 1, 4, true, true);
-
-		doLinearIt(-12, 13, 2, -2, 2, 2, true, true);
-
-		doLinearIt(11, 13, 2, 2, -2, 2, true, true);
-
-		InputTools.drawRectangle(-8, 8, 15, 14);
-
-		doLinearIt(-7, 13, 15, 1, 1, 3, true, false);
-
-		doLinearIt(-9, 10, 19, 1, 1, 2, true, false);
-
-		InputTools.setColor(Color.BLACK);
-		doLinearIt(-5, 5, 11, -1, -1, 3, true, true);
-
-		InputTools.drawRectangle(-3, 3, 14, 8);
-
-		InputTools.setColor(Color.YELLOW);
-		doLinearIt(-2, 14, 5, 1, 1, 3, true, true);
-
-		doLinearIt(-2, 13, 5, -1, -1, 2, true, false);
-
-		InputTools.drawRectangle(-12, 12, -5, -9);
-
-		InputTools.drawRectangle(-13, 13, -6, -7);
-
-		doLinearIt(-11, -10, 23, -1, -1, 2, true, false);
-
-		doLinearIt(-12, -12, 25, -1, -1, 3, true, false);
-
-		doLinearIt(-8, -15, 17, -4, -4, 2, true, false);
-
-		doLine(13, 12, 17, 8);
-
-		doLine(-13, 12, -17, 8);
-
-		doLine(-12, -13, -17, -8);
-
-		doLine(12, -13, 17, -8);
-
-		doLinearIt(-20, 3, 7, 2, 2, 3, false, true);
-
-		doLinearIt(20, 3, 7, 2, 2, 3, false, false);
-
-
-		InputTools.setColor(Color.BLACK);
-		doLinearIt(-19, 3, 7, 2, 2, 2, false, true);
-
-		doLinearIt(19, 3, 7, 2, 2, 2, false, false);
-
-		InputTools.drawTriangle(0, -3, 3, -11, -5, -5);
-
-		InputTools.drawTriangle(-8, -6, -7, -5, -5, -7);
-
-		InputTools.drawTriangle(8, 6, 7, -5, -5, -7);
-
-		bl.getGridPanel2().calcGameGrid();
-
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 31;
-	}
-
-	//Array Pos = 32
-	//Returns array pos
-	public int setDC(){
-
-		ideal = 15;
-		InputTools.setGrid(bl.getGridPanel2());
-
-		InputTools.setColor(Color.BLACK);
-		InputTools.drawRectangle(-20, 20, -20, 20);
-
-		InputTools.setColor(Color.GREEN);
-		InputTools.drawRectangle(-15, 15, -15, 15);
-
-		InputTools.setColor(Color.BLACK);
-		doTriangleIt(0, 12, 1, 2, 4, true, true);
-		doTriangleIt(0, -12, 1, 2, 4, true, false);
-
-		doLinearIt(-3, 10, 1, 0, 3, 3, false, false);
-
-		doLinearIt(-3, -10, 1, 3, 0, 3, false, false);
-
-		InputTools.drawRectangle(-8, -6, 11, -11);
-		InputTools.drawRectangle(-12, -9, -12, 12);
-
-		doLinearIt(3, 10, 1, 0, 3, 3, false, true);
-
-		doLinearIt(3, -10, 1, 3, 0, 3, false, true);
-
-		InputTools.drawRectangle(8, 6, 11, -11);
-		InputTools.drawRectangle(12, 9, -12, 12);
-
-		InputTools.drawTriangle(0, -2, 2, 8, -4, -4);
-		InputTools.drawTriangle(0, -2, 2, -8, 4, 4);
-
-		InputTools.drawRectangle(13, 15, 7, -7);
-
-		//Calculate the Goal Images bead array
-		bl.getGridPanel2().calcGameGrid();
-
-		//Change grid back so they can work on the puzzle
-		//Reset the Current Selected Color to default
-		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
-		return 32;
+		return 21;
 	}
 
 	public int setSergeant(){
@@ -1698,6 +1036,668 @@ public class Puzzle {
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
 		return 34;  
+	}
+
+	//Array Pos = 22
+	//Returns array pos
+	public int setMoon(){
+
+		ideal = 11;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.YELLOW);
+		InputTools.drawRectangle(-3, 3, 14, -14);
+
+		InputTools.drawRectangle(-6, 6, 13, -13);
+
+		InputTools.drawRectangle(-9, 9, 11, -11);
+
+		InputTools.drawRectangle(-11, 11, 9, -9);
+
+		InputTools.drawRectangle(-13, 13, 6, -6);
+
+		InputTools.drawRectangle(-14, 14, 3, -3);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-6, -1, 13, -6);
+
+		InputTools.drawRectangle(-9, 2, 11, -4);
+
+		InputTools.drawRectangle(-11, 4, 9, -2);
+
+		InputTools.drawRectangle(-13, 6, 6, 1);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 22;
+	}
+
+	//Array Pos = 23
+	//Returns array pos
+	public int setLoomEx7(){
+
+		ideal = 14; 
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(betterOrange);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.RED);
+		doLinearIt(-20, 20, 41, -1, -1, 41, false, true);
+
+		InputTools.setColor(Color.MAGENTA);
+		InputTools.drawTriangle(7, 20, 20, 0, 13, -13);
+
+		InputTools.drawTriangle(-7, -20, -20, 0, 13, -13);
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawTriangle(12, 20, 20, 0, 8, -8);
+
+		InputTools.drawTriangle(-12, -20, -20, 0, 8, -8);
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawTriangle(17, 20, 20, 0, 3, -3);
+
+		InputTools.drawTriangle(-17, -20, -20, 0, 3, -3);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawTriangle(-8, 8, 0, -18, -18, -10);
+
+		InputTools.drawTriangle(-8, 8, 0, 18, 18, 10);
+
+		InputTools.setColor(Color.YELLOW);
+		InputTools.drawTriangle(-3, 3, 0, -16, -16, -13);
+
+		InputTools.drawTriangle(-3, 3, 0, 16, 16, 13);
+
+		InputTools.setColor(betterOrange);
+		doLine(-7, 0, -11, 0);
+
+		doLine(7, 0, 11, 0);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 23;
+	}
+
+	//Array Pos = 32
+	//Returns array pos
+	public int setDC(){
+
+		ideal = 15;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-15, 15, -15, 15);
+
+		InputTools.setColor(Color.BLACK);
+		doTriangleIt(0, 12, 1, 2, 4, true, true);
+		doTriangleIt(0, -12, 1, 2, 4, true, false);
+
+		doLinearIt(-3, 10, 1, 0, 3, 3, false, false);
+
+		doLinearIt(-3, -10, 1, 3, 0, 3, false, false);
+
+		InputTools.drawRectangle(-8, -6, 11, -11);
+		InputTools.drawRectangle(-12, -9, -12, 12);
+
+		doLinearIt(3, 10, 1, 0, 3, 3, false, true);
+
+		doLinearIt(3, -10, 1, 3, 0, 3, false, true);
+
+		InputTools.drawRectangle(8, 6, 11, -11);
+		InputTools.drawRectangle(12, 9, -12, 12);
+
+		InputTools.drawTriangle(0, -2, 2, 8, -4, -4);
+		InputTools.drawTriangle(0, -2, 2, -8, 4, 4);
+
+		InputTools.drawRectangle(13, 15, 7, -7);
+
+		//Calculate the Goal Images bead array
+		bl.getGridPanel2().calcGameGrid();
+
+		//Change grid back so they can work on the puzzle
+		//Reset the Current Selected Color to default
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 32;
+	}
+
+	//Array Pos = 24
+	//Returns array pos
+	public int setBullseye(){
+
+		ideal = 16;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(-3, 3, 14, -14);
+
+		InputTools.drawRectangle(-6, 6, 13, -13);
+
+		InputTools.drawRectangle(-9, 9, 11, -11);
+
+		InputTools.drawRectangle(-11, 11, 9, -9);
+
+		InputTools.drawRectangle(-13, 13, 6, -6);
+
+		InputTools.drawRectangle(-14, 14, 3, -3);
+
+		InputTools.setColor(Color.CYAN);
+		InputTools.drawRectangle(-3, 3, 10, -10);
+
+		InputTools.drawRectangle(-6, 6, 8, -8);
+
+		InputTools.drawRectangle(-8, 8, 6, -6);
+
+		InputTools.drawRectangle(-10, 10, 3, -3);
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-3, 3, 5, -5);
+
+		InputTools.drawRectangle(-5, 5, 3, -3);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-2, 2, 2, -2);
+
+		InputTools.setColor(Color.YELLOW);
+		doLine(-20, 20, 20, -20);
+
+		doLine(20, 20, -20, -20);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 24;
+	}
+
+	//Array Pos = 25
+	//Returns array pos
+	public int setLoomEx1(){
+
+		ideal = 19;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.BLACK);
+		doLinearIt(-8, -7, 3, -1,1, 15, true, true);
+
+		doLinearIt(-8, 7, 3, -1, 1, 15, true, false);
+
+		InputTools.setColor(betterOrange);
+
+		doTriangleIt(6, 0, 1, 1, 15, false, true);
+
+		doTriangleIt(-6, 0, 1, 1, 15, false, false);
+
+		doTriangleIt(0, 6, 1, 1, 15, true, true);
+
+		doTriangleIt(0, -6, 1, 1, 15, true, false);
+
+		InputTools.setColor(Color.YELLOW);
+		doTriangleIt(10, 0, 1, 1, 11, false, true);
+
+		doTriangleIt(-10, 0, 1, 1, 11, false, false);
+
+		doTriangleIt(0, 10, 1, 1, 11, true, true);
+
+		doTriangleIt(0, -10, 1, 1, 11, true, false);
+
+		InputTools.setColor(Color.BLACK);
+		doTriangleIt(14, 0, 1, 1, 7, false, true);
+
+		doTriangleIt(-14, 0, 1, 1, 7, false, false);
+
+		doTriangleIt(0, 14, 1, 1, 7, true, true);
+
+		doTriangleIt(0, -14, 1, 1, 7, true, false);
+
+		InputTools.drawRectangle(20, 7, 7, 20);
+
+		InputTools.drawRectangle(-20, -7, 7, 20);
+
+		InputTools.drawRectangle(20, 7, -7, -20);
+
+		InputTools.drawRectangle(-20, -7, -7, -20);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 25;
+	}
+
+	//Array Pos = 26
+	//Returns array pos
+	public int setROSS(){
+
+		ideal = 19;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.CYAN);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.PINK);
+		InputTools.drawRectangle(-9, -8, 15, 11);
+
+		doLinearIt(-5, 14, 2, 1 ,-1, 4, true, false);
+
+		InputTools.drawRectangle(-12, -7, 10, 5);
+
+		doLinearIt(-14, 8, 3, 1, 1, 2, false, true);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawPoint(-14, 7);
+
+		InputTools.drawPoint(-10, 9);
+
+		InputTools.setColor(Color.PINK);
+		InputTools.drawRectangle(-9, 8, 7, 2);
+
+		doLine(-8, 1, 7, 1);
+
+		InputTools.drawRectangle(-9, 6, 0, -1);
+
+		InputTools.setColor(Color.CYAN);
+		doLine(-6, -1, 1, -1);
+
+		InputTools.setColor(Color.PINK);
+		doLine(3, -2, 5, -2);
+
+		doLine(-4, 8, 3, 8);
+
+		InputTools.setColor(Color.WHITE);
+		InputTools.drawRectangle(7, 8, 9, 6);
+
+		InputTools.drawRectangle(6, 9, 8, 7);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(0, 2, 13, 9);
+
+		InputTools.drawRectangle(-1, 3, 12, 10);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawPoint(1, 14);
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawPoint(2, 15);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 26;
+	}
+
+	//Array Pos = 27
+	//Returns array pos
+	public int setStarsAndStripes(){
+
+		ideal = 21;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(20, -20, 20, -18);
+
+		InputTools.setColor(Color.WHITE);
+		InputTools.drawRectangle(-20, 20, 17, 15);
+
+		InputTools.drawRectangle(-20, 20, 11, 9);
+
+		InputTools.drawRectangle(-20, 20, 5, 3);
+
+		InputTools.drawRectangle(-20, 20, -1, -3);
+
+		InputTools.drawRectangle(-20, 20, -7, -9);
+
+		InputTools.drawRectangle(-20, 20, -13, -15);
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-20, 0, 20, 0);
+
+		InputTools.setColor(Color.WHITE);
+
+		doLine(-19, 19, -1, 19);
+
+		doLine(-19, 16, -1, 16);
+
+		doLine(-19, 13, -1, 13);
+
+		doLine(-19, 10, -1, 10);
+
+		doLine(-19, 7, -1, 7);
+
+		doLine(-19, 4, -1, 4);
+
+		doLine(-19, 1, -1, 1);
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-18, -17, 19, 1);
+
+		InputTools.drawRectangle(-15, -14, 19, 1);
+
+		InputTools.drawRectangle(-12, -11, 19, 1);
+
+		InputTools.drawRectangle(-9, -8, 19, 1);
+
+		InputTools.drawRectangle(-6, -5, 19, 1);
+
+		InputTools.drawRectangle(-3, -2, 19, 1);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 27;
+	}
+
+	//Array Pos = 28
+	//Returns array pos
+	public int setLoomEx5(){
+
+		ideal = 22;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-12, 12, 15, -15);
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawTriangle(-12, -12, -9, 15, 12, 15);
+
+		InputTools.drawTriangle(-12, -12, -9, -15, -12, -15);
+
+		InputTools.drawTriangle(12, 12, 9, 15, 12, 15);
+
+		InputTools.drawTriangle(12, 12, 9, -15, -12, -15);
+
+		InputTools.drawTriangle(0, -3, 3, 12, 15, 15);
+
+		InputTools.drawTriangle(0, -3, 3, -12, -15, -15);
+
+		InputTools.setColor(Color.MAGENTA);
+		InputTools.drawTriangle(-6, -10, -2, 12, 8, 8);
+
+		InputTools.drawTriangle(-6, -10, -2, -12, -8, -8);
+
+		InputTools.drawTriangle(6, 10, 2, 12, 8, 8);
+
+		InputTools.drawTriangle(6, 10, 2, -12, -8, -8);
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(-12, 12, 7, -7);
+
+		InputTools.setColor(betterOrange);
+		InputTools.drawTriangle(2, 9, 9, 0, 6, -6);
+
+		InputTools.drawTriangle(-2, -9, -9, 0, 6, -6);
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawTriangle(5, 8, 8, 0, 3, -3);
+
+		InputTools.drawTriangle(-5, -8, -8, 0, 3, -3);
+
+		InputTools.setColor(Color.YELLOW);
+		InputTools.drawTriangle(6, 7, 7, 0, 1, -1);
+
+		InputTools.drawTriangle(-6, -7, -7, 0, 1, -1);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-1, 1, 7, -7);
+
+		InputTools.setColor(Color.BLUE);
+		doLine(0, 7, 0, -7);
+
+		InputTools.setColor(betterOrange);
+		doLine(0, 6, 0, -6);
+
+		InputTools.setColor(Color.YELLOW);
+		InputTools.drawRectangle(1, -1, 1, -1);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 28;
+	}
+
+	//Array Pos = 29
+	//Returns array pos
+	public int setLoomEx3(){
+
+		ideal = 24;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.YELLOW);
+		InputTools.drawRectangle(19, -19, 19, -19);
+
+		InputTools.setColor(Color.BLUE);
+		doTriangleIt(19, 0, 3, 2, 21, false,false);
+
+		doTriangleIt(19, -1, 3, 2, 21, false,false);
+
+		doTriangleIt(19, +1, 3, 2, 21, false,false);
+
+		doTriangleIt(-19, 0, 3, 2, 21, false,true);
+
+		doTriangleIt(-19, -1, 3, 2, 21, false,true);
+
+		doTriangleIt(-19, 1, 3, 2, 21, false,true);
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(-1, 1, 14, 19);
+
+		InputTools.drawRectangle(-1, 1, -14, -19);
+
+		InputTools.drawRectangle(-4, 4, 19, 16);
+
+		InputTools.drawRectangle(-4, 4, -19, -16);
+
+		InputTools.drawRectangle(-7, 7, 19, 18);
+
+		InputTools.drawRectangle(-7, 7, -19, -18);
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-1, 1, -18, -19);
+
+		InputTools.drawRectangle(-1, 1, 18, 19);
+
+		InputTools.setColor(Color.MAGENTA);
+		doTriangleIt(16, 0, 3, 2, 18, false, false);
+
+		doTriangleIt(16, -1, 3, 2, 18, false, false);
+
+		doTriangleIt(16, 1, 3, 2, 18, false, false);
+
+		doTriangleIt(-16, 0, 3, 2, 18, false, true);
+
+		doTriangleIt(-16, -1, 3, 2, 18, false, true);
+
+		doTriangleIt(-16, 1, 3, 2, 18, false, true);
+
+		InputTools.setColor(Color.GREEN);
+		InputTools.drawRectangle(-3, 3, 1, -1);
+
+		InputTools.drawRectangle(-1, 1, 3, -3);
+
+		InputTools.setColor(Color.RED);
+		InputTools.drawRectangle(-1, 1, -1, 1);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 29;
+	}
+
+	//Array Pos = 30
+	//Returns array pos
+	public int setMegaman(){
+
+		ideal = 26;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(betterOrange);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-4, 4, 12, 11);
+
+		InputTools.drawRectangle(-14, 14, 10, -17);           
+
+		InputTools.setColor(betterOrange);
+		doTriangleIt(7, 11, 2, 2, 8, false, true);
+
+		doTriangleIt(-7, 11, 2, 2, 8, false, false);
+
+		InputTools.setColor(Color.BLUE);
+		InputTools.drawRectangle(-8, 8, -8, 7);
+
+		InputTools.drawRectangle(-10, 10, 6, 5);
+
+		InputTools.drawRectangle(-12, 12, 4, -1);
+
+		InputTools.setColor(Color.CYAN);
+		InputTools.drawRectangle(-2, 2, 10, -1);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-2, 2, 4, 3);
+
+		InputTools.drawRectangle(-16, 16, -2, -9);
+
+		InputTools.setColor(Color.CYAN);
+		InputTools.drawRectangle(-14, -13, -2, -9);
+
+		InputTools.drawRectangle(14, 13, -2, -9);
+
+		InputTools.setColor(peach);
+		InputTools.drawRectangle(-10, 10, -8, -13);
+
+		InputTools.setColor(Color.WHITE);
+		InputTools.drawRectangle(-8, 8, -2, -9);
+
+		InputTools.drawRectangle(-10, 10, -4, -7);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-6, -3, -6, -9);
+
+		InputTools.drawRectangle(6, 3, -6, -9);
+
+		InputTools.drawRectangle(-4, 4, -2, -3);
+
+		InputTools.drawRectangle(-2, 2, -4, -5);
+
+		InputTools.setColor(betterOrange);
+		doTriangleIt(-5, -20, 2, 2, 10, false, false);
+
+		doTriangleIt(5, -20, 2, 2, 10, false, true);
+
+		InputTools.setColor(peach);
+		InputTools.drawRectangle(-8, 8, -14, -15);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-4, 4, -14, -19);
+
+		InputTools.setColor(peach);
+		InputTools.drawRectangle(-4, 4, -16, -17);
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-6, 6, -12, -13);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 30;
+	}
+
+	//Array Pos = 31
+	//Returns array pos
+	public int setBatman(){
+
+		ideal = 27;
+		InputTools.setGrid(bl.getGridPanel2());
+
+		InputTools.setColor(Color.BLACK);
+		InputTools.drawRectangle(-20, 20, -20, 20);
+
+		InputTools.setColor(Color.YELLOW);
+		doLinearIt(-7, 5, 15, 1, 1, 4, true, true);
+
+		doLinearIt(-12, 13, 2, -2, 2, 2, true, true);
+
+		doLinearIt(11, 13, 2, 2, -2, 2, true, true);
+
+		InputTools.drawRectangle(-8, 8, 15, 14);
+
+		doLinearIt(-7, 13, 15, 1, 1, 3, true, false);
+
+		doLinearIt(-9, 10, 19, 1, 1, 2, true, false);
+
+		InputTools.setColor(Color.BLACK);
+		doLinearIt(-5, 5, 11, -1, -1, 3, true, true);
+
+		InputTools.drawRectangle(-3, 3, 14, 8);
+
+		InputTools.setColor(Color.YELLOW);
+		doLinearIt(-2, 14, 5, 1, 1, 3, true, true);
+
+		doLinearIt(-2, 13, 5, -1, -1, 2, true, false);
+
+		InputTools.drawRectangle(-12, 12, -5, -9);
+
+		InputTools.drawRectangle(-13, 13, -6, -7);
+
+		doLinearIt(-11, -10, 23, -1, -1, 2, true, false);
+
+		doLinearIt(-12, -12, 25, -1, -1, 3, true, false);
+
+		doLinearIt(-8, -15, 17, -4, -4, 2, true, false);
+
+		doLine(13, 12, 17, 8);
+
+		doLine(-13, 12, -17, 8);
+
+		doLine(-12, -13, -17, -8);
+
+		doLine(12, -13, 17, -8);
+
+		doLinearIt(-20, 3, 7, 2, 2, 3, false, true);
+
+		doLinearIt(20, 3, 7, 2, 2, 3, false, false);
+
+
+		InputTools.setColor(Color.BLACK);
+		doLinearIt(-19, 3, 7, 2, 2, 2, false, true);
+
+		doLinearIt(19, 3, 7, 2, 2, 2, false, false);
+
+		InputTools.drawTriangle(0, -3, 3, -11, -5, -5);
+
+		InputTools.drawTriangle(-8, -6, -7, -5, -5, -7);
+
+		InputTools.drawTriangle(8, 6, 7, -5, -5, -7);
+
+		bl.getGridPanel2().calcGameGrid();
+
+		InputTools.setGrid(bl.getGridPanel());
+		resetColor();
+		return 31;
 	}
 
 	public InputStream getStream(String url) {
