@@ -28,6 +28,10 @@ VALUES (
 'Acey',  '10',  '2:10',  'Platinum',  'Batman', NOW( )
 );
 
+== Users Table ==
+Table Schema:
+|| *user* || *password(md5)* ||
+
 == High Scores Table==
 
 Should be grouped by puzzle upon display
