@@ -34,6 +34,7 @@ public class Puzzle {
 			"Tutorial 4",						//3					
 			"Tutorial 5",						//4
 			"Tutorial 6",						//5
+			
 			"TriForce",							//6
 			"Can You Hear Me Now",				//7		
 			"Six",								//8
@@ -85,6 +86,119 @@ public class Puzzle {
 			}
 		}
 		return -1;
+	}
+	
+	public void setPuzzle(int puzzleNumber) {
+		switch(puzzleNumber)
+		{
+		case 0:
+			setTut1();
+			break;
+		case 1:
+			setTut2();
+			break;
+		case 2:
+			setTut3();
+			break;
+		case 3:
+			setTut4();
+			break;
+		case 4:
+			setTut5();
+			break;
+		case 5:
+			setTut6();
+			break;
+		case 6:
+			setTriforce();
+			break;
+		case 7:
+			setCanYouHearMeNow();
+			break;
+		case 8:
+			setSix();
+			break;
+		case 9:
+			setLoomEx8();
+			break;
+		case 10:
+			setOverlappingSquares();
+			break;
+		case 11:
+			setCircle();
+			break;
+		case 12:
+			setStarrySky();
+			break;
+		case 13:
+			setLoomEx14();
+			break;
+		case 14:
+			setLoomEx6();
+			break;
+		case 15:
+			setSunnySky();
+			break;
+		case 16:
+			setHeart();
+			break;
+		case 17:
+			setSunRise();
+			break;
+		case 18:
+			setFlag();
+			break;
+		case 19:
+			setLoomEx13();
+			break;
+		case 20:
+			setLoomEx10();
+			break;
+		case 21:
+			setUNCC();
+			break;
+		case 22:
+			setSergeant();
+			break;
+		case 23:
+			setTieFighter();
+			break;
+		case 24:
+			setMoon();
+			break;
+		case 25:
+			setLoomEx7();
+			break;
+		case 26:
+			setDC();
+			break;
+		case 27:
+			setBullseye();
+			break;
+		case 28:
+			setLoomEx1();
+			break;
+		case 29:
+			setROSS();
+			break;
+		case 30:
+			setStarsAndStripes();
+			break;
+		case 31:
+			setLoomEx5();
+			break;
+		case 32:
+			setLoomEx3();
+			break;
+		case 33:
+			setMegaman();
+			break;
+		case 34:
+			setBatman();
+			break;
+		default:
+			break;
+		}
 	}
 	
 	//Returns the name of a puzzle based on an int index

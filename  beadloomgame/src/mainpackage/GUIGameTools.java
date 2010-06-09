@@ -2327,6 +2327,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource()== ChoosePuzzleButton){
+			bl.getGridFrame().setVisible(false);
+			bl.getGridFrame2().setVisible(false);
 			showChoosePuzzle();
 		}
 
@@ -3314,8 +3316,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == CancelButton){
+			puz.setPuzzle(currentPuzzle);
 			bl.getPuzzleFrame().setVisible(false);
 			bl.getMainMenuFrame().setVisible(true);
+			bl.getGridFrame().setVisible(true);
+			bl.getGridFrame2().setVisible(true);
 		}
 		else if (e.getSource() == TutButton){
 			//			EasyButton.setBounds(LeftDifR);
