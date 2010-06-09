@@ -2146,6 +2146,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			else{
 				BeadLoom.playerName = NameTextField.getText();
+				getScores();
 				showChoosePuzzle();
 				//startGame();
 			}
@@ -3819,7 +3820,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public void getScores()
 	{
-		String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/playerScores.php?user="+ NameLabel.getText());
+		String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/playerScores.php?user="+ NameTextField.getText());
 		String[] scores = temp.split(",");
 		int totalPuzzles = puz.getTotalPuzzles();
 		RecordMove = new int[totalPuzzles];
