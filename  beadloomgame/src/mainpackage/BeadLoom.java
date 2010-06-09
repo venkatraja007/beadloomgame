@@ -1002,6 +1002,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 	/*
 	 * Create a bullet bitmap from a new foreground color and a color image.
+	 * It seems that this is the only makeBullet that is called
 	 */
 	private synchronized Image makeBullet(Color fg, URL url, int panelWidth, int panelHeight) {
 		Image bullet = null;
@@ -1157,7 +1158,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	//Parses given XML file and loads layer data from file
 	private void OpenBeadsItemMenuActionPerformed(ActionEvent e){
 
-		File file;
 		try {
 			/*JFileChooser fc = new JFileChooser(); //use jFileDialog
 		    fc.addChoosableFileFilter(new XMLFileFilter());
@@ -2057,6 +2057,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		}
 	}  
 	
+	/* 
+	 * this will create a 41x41 image from the beads on grid 2
+	 * It assumes pink when no bead is at a specific x, y coord on the grid
+	 */
 	public Image createImageFromGrid() {
 		int[] pixels = new int[41*41];
 		for(int y=0; y<41; y++)
