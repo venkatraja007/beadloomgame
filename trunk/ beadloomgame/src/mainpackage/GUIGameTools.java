@@ -2045,6 +2045,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		RecordMedalShort = new String[puz.getTotalPuzzles()];
 	}
 
+	//Gets
 	public Color getColor()
 	{
 		return color;
@@ -2053,19 +2054,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		color = c;
 	}
-	//Gets
 	public JPanel getGamePanel() {
 		return GamePanel;
 	}
-	
 	public JPanel getInGamePanel() {
 		return InGamePanel;
 	}
-	
 	public JPanel getCustomPuzzleMenuPanel() {
 		return CustomPuzzleMenuPanel;
 	}
-	
 	public JPanel getMainMenuPanel() {
 		return MainMenuPanel;
 	}
@@ -3767,6 +3764,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		MLabelB.setText(" ");
 	}
 
+	//this redraws everything on both grids when the bead image is changed
 	private void redrawGrid()
 	{
 		bl.getGridPanel().rebuildLayerImages();
@@ -3831,6 +3829,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		return hint;
 	}
 
+	//set up the content pane for Main Menu Mode
 	public void setMainMenuMode()
 	{
 		removeAllWindows();
@@ -3854,6 +3853,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 	}
 
+	//set up the content pane for Custom Puzzle Creation Mode
 	public void setCustomPuzzleMode()
 	{
 		startGame();
@@ -3874,6 +3874,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.repaint();
 	}
 
+	//set up the content pane for Game Play Mode
 	public void setGamePlayMode()
 	{
 		removeAllWindows();
@@ -3891,7 +3892,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.repaint();
 		
 	}
-	
+
+	//set up the content pane for Tool Mode
 	public void setToolMode()
 	{
 		removeAllWindows();
@@ -3902,6 +3904,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getContentPanel().add(bl.getGameFrame());
 	}
 
+	//remove all windows from the main content pane
 	public void removeAllWindows()
 	{
 		bl.getContentPanel().removeAll();
@@ -3920,6 +3923,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		return puzzleXML;
 	}
 	
+	//sets the players name in the text box
 	public void setPlayerName(String name)
 	{
 		NameTextField.setText(name);
