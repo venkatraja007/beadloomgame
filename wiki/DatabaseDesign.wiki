@@ -5,6 +5,12 @@
 Information about the database, currently hosted on playground.
 database name: BeadLoomGame
 
+CREATE TABLE  `unccmake_CSDT`.`Users` (
+`user` VARCHAR( 20 ) NOT NULL ,
+`password` VARCHAR( 20 ) NOT NULL ,
+PRIMARY KEY (  `user` )
+) ENGINE = MYISAM ;
+
 CREATE TABLE  
 `BeadLoomGame`.`HighScores` (
 `user` VARCHAR( 20 ) NOT NULL ,
