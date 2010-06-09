@@ -3734,38 +3734,41 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HardButton.setBounds(RightDifR);
 		ChoosePuzzlePanel.add(HardButton);
 
-		HSLabel1.setText("" + RecordMove[0]);
-		MLabel1.setText(RecordMedal[0]);
-
-		HSLabel2.setText("" + RecordMove[1]);
-		MLabel2.setText(RecordMedal[1]);
-
-		HSLabel3.setText("" + RecordMove[2]);
-		MLabel3.setText(RecordMedal[2]);
-
-		HSLabel4.setText("" + RecordMove[3]);
-		MLabel4.setText(RecordMedal[3]);
-
-		HSLabel5.setText("" + RecordMove[4]);
-		MLabel5.setText(RecordMedal[4]);
-
-		HSLabel6.setText("" + RecordMove[5]);
-		MLabel6.setText(RecordMedal[5]);
-
-		HSLabel7.setText(" ");
-		MLabel7.setText(" ");
-
-		HSLabel8.setText(" ");
-		MLabel8.setText(" ");
-
-		HSLabel9.setText(" ");
-		MLabel9.setText(" ");
-
-		HSLabelA.setText(" ");
-		MLabelA.setText(" ");	
-
-		HSLabelB.setText(" ");
-		MLabelB.setText(" ");
+		if(!(MLabel1.getText().length() > 1))
+			{
+			HSLabel1.setText("" + RecordMove[0]);
+			MLabel1.setText(RecordMedal[0]);
+	
+			HSLabel2.setText("" + RecordMove[1]);
+			MLabel2.setText(RecordMedal[1]);
+	
+			HSLabel3.setText("" + RecordMove[2]);
+			MLabel3.setText(RecordMedal[2]);
+	
+			HSLabel4.setText("" + RecordMove[3]);
+			MLabel4.setText(RecordMedal[3]);
+	
+			HSLabel5.setText("" + RecordMove[4]);
+			MLabel5.setText(RecordMedal[4]);
+	
+			HSLabel6.setText("" + RecordMove[5]);
+			MLabel6.setText(RecordMedal[5]);
+	
+			HSLabel7.setText(" ");
+			MLabel7.setText(" ");
+	
+			HSLabel8.setText(" ");
+			MLabel8.setText(" ");
+	
+			HSLabel9.setText(" ");
+			MLabel9.setText(" ");
+	
+			HSLabelA.setText(" ");
+			MLabelA.setText(" ");	
+	
+			HSLabelB.setText(" ");
+			MLabelB.setText(" ");
+		}
 	}
 
 	//this redraws everything on both grids when the bead image is changed
