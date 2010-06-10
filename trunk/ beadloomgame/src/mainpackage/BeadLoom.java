@@ -815,7 +815,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						public void internalFrameOpened(InternalFrameEvent arg0) {}
 					});
 
-					InGameFrame.getContentPane().add(Game.getGamePanel());
+					InGameFrame.getContentPane().add(Game.getInGamePanel());
 					InGameFrame.setVisible(true);
 					InGameFrame.setBorder(new LineBorder(Color.red));
 					InGameFrame.setTitle("Game");

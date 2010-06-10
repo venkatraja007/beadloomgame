@@ -81,6 +81,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton GameOptionsButton = new JButton();
 	private JButton MainMenuButton = new JButton();
 	private JButton CreateCustomPuzzleButton = new JButton();
+	private JButton CreateAvatarButton = new JButton();
 	private JButton SubmitCustomPuzzleButton = new JButton();
 	private JButton ToolButton = new JButton();
 	private JButton PlayGameButton = new JButton();
@@ -1490,7 +1491,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitButton.setBackground(Color.RED);
 		SubmitButton.addActionListener(this);
 
-		//---- Quit button ----
+		//---- Main Menu button ----
 		MainMenuButton.setText("Main Menu");
 		MainMenuButton.setBounds(25, 150, 145, MainMenuButton.getPreferredSize().height);
 		MainMenuButton.addActionListener(this);
@@ -1499,6 +1500,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		CreateCustomPuzzleButton.setText("Create Puzzle");
 		CreateCustomPuzzleButton.setBounds(25, 75, 145, CreateCustomPuzzleButton.getPreferredSize().height);
 		CreateCustomPuzzleButton.addActionListener(this);
+
+		//---- Create Custom Puzzle ----
+		CreateAvatarButton.setText("Create Avatar");
+		CreateAvatarButton.setBounds(25, 100, 145, CreateCustomPuzzleButton.getPreferredSize().height);
+		CreateAvatarButton.addActionListener(this);
 		
 		//---- Play Game button ----
 		PlayGameButton.setText("Play Game");
@@ -1528,17 +1534,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		//---- Tool button ----
 		ToolButton.setText("Use Tool");
-		ToolButton.setBounds(25, 100, 145, ToolButton.getPreferredSize().height);
+		ToolButton.setBounds(25, 125, 145, ToolButton.getPreferredSize().height);
 		ToolButton.addActionListener(this);
 
 		//---- High Scores Button ----
 		HighScoresButton.setText("High Scores");
-		HighScoresButton.setBounds(25, 125, 145, HighScoresButton.getPreferredSize().height);
+		HighScoresButton.setBounds(25, 150, 145, HighScoresButton.getPreferredSize().height);
 		HighScoresButton.addActionListener(this);
 
 		//---- Options button ---
 		GameOptionsButton.setText("Options");
-		GameOptionsButton.setBounds(25, 150, 145, GameOptionsButton.getPreferredSize().height);
+		GameOptionsButton.setBounds(25, 175, 145, GameOptionsButton.getPreferredSize().height);
 		GameOptionsButton.addActionListener(this);
 
 		//---- Color Blind Button ----
@@ -1723,14 +1729,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		//Adjust Game GUI
 		playerName = NameTextField.getText();
-		GamePanel.add(RestartButton);
-		GamePanel.add(SubmitButton);
-		GamePanel.add(MainMenuButton);
-		GamePanel.add(NameLabel);
-		GamePanel.add(BestScoreLabel);
+		InGamePanel.add(RestartButton);
+		InGamePanel.add(SubmitButton);
+		InGamePanel.add(MainMenuButton);
+		InGamePanel.add(NameLabel);
+		InGamePanel.add(BestScoreLabel);
 		NameLabel.setText(playerName);
 		BestScoreLabel.setText("Best Score:" + bestScore);
-		GamePanel.add(ChoosePuzzleButton);
+		InGamePanel.add(ChoosePuzzleButton);
 
 		//Restart Game to reset move counter and clear grid
 		//Restart(true, true, false);
@@ -1880,16 +1886,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 
 		//Adjust Game GUI
-		GamePanel.remove(ChoosePuzzleButton);
-		GamePanel.remove(RestartButton);
-		GamePanel.remove(SubmitButton);
-		GamePanel.remove(MainMenuButton);
-		GamePanel.remove(NameLabel);
-		GamePanel.remove(BestScoreLabel);
-		GamePanel.remove(HighScoresButton);
-		GamePanel.remove(GameOptionsButton);
-		GamePanel.add(MainMenuButton);
-		NameTextField.setText("Enter Your Name");
+//		GamePanel.remove(ChoosePuzzleButton);
+//		GamePanel.remove(RestartButton);
+//		GamePanel.remove(SubmitButton);
+//		GamePanel.remove(MainMenuButton);
+//		GamePanel.remove(NameLabel);
+//		GamePanel.remove(BestScoreLabel);
+//		GamePanel.remove(HighScoresButton);
+//		GamePanel.remove(GameOptionsButton);
+//		GamePanel.add(MainMenuButton);
+//		NameTextField.setText("Enter Your Name");
 
 		//Log qutting
 		try{
@@ -2129,10 +2135,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 	
 	public void initMainMenu() {
-		MainMenuPanel.add(PlayGameButton);
-		MainMenuPanel.add(CreateCustomPuzzleButton);
 		NameTextField.setText(BeadLoom.playerName);
 		MainMenuPanel.add(NameTextField);
+		MainMenuPanel.add(PlayGameButton);
+		MainMenuPanel.add(CreateCustomPuzzleButton);
+		MainMenuPanel.add(CreateAvatarButton);
 		MainMenuPanel.add(ToolButton);
 		MainMenuPanel.add(GameOptionsButton);
 		if(ComponentToggle.globalHighScores){ MainMenuPanel.add(HighScoresButton); }
@@ -2148,7 +2155,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				BeadLoom.playerName = NameTextField.getText();
 				getScores();
 				showChoosePuzzle();
-				//startGame();
 			}
 		}
 		
@@ -3899,10 +3905,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getPuzzleFrame().setVisible(false);
 		panel.add(bl.getHighScoresFrame());
 		bl.getHighScoresFrame().setVisible(false);
-//		panel.add(bl.getGridFrame());
-//		bl.getGridFrame().setVisible(false);
-//		panel.add(bl.getGridFrame2());
-//		bl.getGridFrame2().setVisible(false);
 		
 	}
 
@@ -3918,8 +3920,27 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.add(bl.getGridFrame());
 		bl.getGridFrame().setVisible(true);
 		panel.add(bl.getBeadUtilitiesFrame());
-		GamePanel.remove(MainMenuButton);
+		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
 		CustomPuzzleMenuPanel.add(MainMenuButton);
+		NameLabel.getParent().remove(NameLabel);
+		CustomPuzzleMenuPanel.add(NameLabel);
+		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
+		//TODO insert code to add custom puzzle menu here
+		panel.repaint();
+	}
+
+	//set up the content pane for Avatar Creation Mode
+	public void setCreateAvatarMode()
+	{
+		startGame();
+		removeAllWindows();
+
+		JPanel panel = bl.getContentPanel();
+		panel.add(bl.getCustomPuzzleMenuFrame());
+		bl.getCustomPuzzleMenuFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
+		panel.add(bl.getGridFrame());
+		bl.getGridFrame().setVisible(true);
+		panel.add(bl.getBeadUtilitiesFrame());
 		NameLabel.getParent().remove(NameLabel);
 		CustomPuzzleMenuPanel.add(NameLabel);
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
@@ -3941,6 +3962,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.add(bl.getPuzzleFrame());
 		panel.add(bl.getBeadUtilitiesFrame());
 		//TODO insert code to add in-game frame here
+		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
+		//bl.getInGameFrame().add(InGamePanel);
+		InGamePanel.add(MainMenuButton);
+		bl.getInGameFrame().setVisible(true);
 		panel.add(bl.getInGameFrame());
 		panel.repaint();
 		
@@ -3954,7 +3979,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//TODO: remove this hack
 		setGamePlayMode();
 		quitGame();
+		bl.getContentPanel().remove(bl.getInGameFrame());
 		bl.getContentPanel().add(bl.getGameFrame());
+		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
+		bl.getGameFrame().add(GamePanel);
+		GamePanel.add(MainMenuButton);
 	}
 
 	//remove all windows from the main content pane
