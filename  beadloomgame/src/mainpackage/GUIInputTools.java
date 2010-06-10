@@ -1963,6 +1963,10 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 				//Initialize the coordinate list and layer
 				Layer l = CoordListAction("LINE", xValue, yValue);
+				l.setX1(x1);
+				l.setX2(x2);
+				l.setY1(y1);
+				l.setY2(y2);
 				grid.addLayer(l);
 
 			} catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
@@ -2084,7 +2088,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			l.setY1(startY);
 			l.setStepHeight(Math.abs(height));
 			l.setBeadsAdded1(width);
-			l.setRowsTotal((int)cycles);
+			l.setRowsTotal((int)(cycles * Math.abs((double)height)));
 			l.setYInc(incY);
 			l.setPositiveInc(height>=0);
 			grid.addLayer(l);
