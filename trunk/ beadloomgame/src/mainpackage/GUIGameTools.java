@@ -1721,6 +1721,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//Changes the layout of the box for playing the game
 	//Input: Players name for log in purposes
 	public void startGame(){
+		
+		//TODO testing the Achievements reading in
+		Achievements.retrieveAchievements(BeadLoom.playerName);
 		setGamePlayMode();
 		//Adjust BeadLoom
 		bl.getContentPanel().add(bl.getGridFrame2());
@@ -2122,7 +2125,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		return moveCounter;
 	}
 
-	public String sendWebRequest(String url) {
+	public static String sendWebRequest(String url) {
 		StringBuilder builder = new StringBuilder(); 
 		try {
 			URL test = new URL(url);

@@ -1655,3 +1655,13 @@
 			y2= 7
 		<6/9/2010 16:16:34> Checked Solution.
 			<6/9/2010 16:16:34> Puzzle Incomplete. Errors: 1681
+<6/10/2010 14:8:38> Acey logs in.
+	<6/10/2010 14:8:38> Loom Example 8 Puzzle Selected.
+		<6/10/2010 14:8:38> Restart Performed
+	<6/10/2010 14:8:38> Tutorial 1 Puzzle Selected.
+<6/10/2010 14:8:59> Acey logs in.
+	<6/10/2010 14:8:59> Loom Example 8 Puzzle Selected.
+<6/10/2010 18:2:29> Antoine logs in.
+	<6/10/2010 18:2:29> Loom Example 8 Puzzle Selected.
+		<6/10/2010 18:2:29> Restart Performed
+	<6/10/2010 18:2:29> Tutorial 1 Puzzle Selected.
