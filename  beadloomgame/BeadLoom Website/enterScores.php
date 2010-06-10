@@ -78,7 +78,7 @@ if($result)
 			$db_puzzle = $row['puzzle'];
 			
 			//New medal is better update new record
-			if($db_score < $score)
+			if($db_score > $score)
 			{
 				//Insert new record
 				$result = $db->query($updateQuery);
