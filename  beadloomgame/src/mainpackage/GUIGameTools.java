@@ -54,6 +54,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private int playerIndex;
 	private int totalEntries;
 	private int currentPuzzle;
+	
+	private boolean limitedColorChoice;
 
 	private long puzzleStartTime;
 
@@ -62,6 +64,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//GUI Parts
 	//Panels
 	private JPanel CustomPuzzleMenuPanel = new JPanel();
+	private JPanel AvatarMenuPanel = new JPanel();
 	private JPanel GamePanel = new JPanel();
 	private JPanel MainMenuPanel = new JPanel();
 	private JPanel InGamePanel = new JPanel();
@@ -78,6 +81,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton ChoosePuzzleButton = new JButton();
 	private JButton RestartButton = new JButton();
 	private JButton SubmitButton = new JButton();
+	private JButton SubmitAvatarButton = new JButton();
 	private JButton GameOptionsButton = new JButton();
 	private JButton MainMenuButton = new JButton();
 	private JButton CreateCustomPuzzleButton = new JButton();
@@ -324,6 +328,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		InGamePanel.setBackground(Color.white);
 		InGamePanel.setLayout(null);
 		InGamePanel.setBounds(4, 3, 195, 165);
+		
+		//---- avatar menu panel ----
+		AvatarMenuPanel.setBorder(new LineBorder(Color.red));
+		AvatarMenuPanel.setBackground(Color.white);
+		AvatarMenuPanel.setLayout(null);
 		
 		//---- main menu panel ----
 		MainMenuPanel.setBorder(new LineBorder(Color.red));
@@ -1491,6 +1500,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitButton.setBackground(Color.RED);
 		SubmitButton.addActionListener(this);
 
+		//---- Submit Avatar button ----
+		SubmitAvatarButton.setText("Submit Avatar");
+		SubmitAvatarButton.setBounds(25, 100, 145, SubmitAvatarButton.getPreferredSize().height);
+		SubmitAvatarButton.addActionListener(this);
+
 		//---- Main Menu button ----
 		MainMenuButton.setText("Main Menu");
 		MainMenuButton.setBounds(25, 150, 145, MainMenuButton.getPreferredSize().height);
@@ -1716,6 +1730,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridFrame2().setBounds(BeadLoom.panelBorder, BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.5) -BeadLoom.panelBorder,(int)(BeadLoom.usableDim.getHeight()*0.65)-BeadLoom.panelBorder);
 		bl.getOutputWindow().setBounds(BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.37) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
 		bl.getInGameFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
+		bl.getAvatarMenuFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
 		bl.getBeadUtilitiesFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.57) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.43) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
 		bl.getTop().getFileMenu().setEnabled(false);
 		bl.getTop().getOptionsMenu().setEnabled(false);
@@ -1884,19 +1899,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getInGameFrame().setVisible(false);
 		bl.getInputTools().addLoopTools();
 
-
-		//Adjust Game GUI
-//		GamePanel.remove(ChoosePuzzleButton);
-//		GamePanel.remove(RestartButton);
-//		GamePanel.remove(SubmitButton);
-//		GamePanel.remove(MainMenuButton);
-//		GamePanel.remove(NameLabel);
-//		GamePanel.remove(BestScoreLabel);
-//		GamePanel.remove(HighScoresButton);
-//		GamePanel.remove(GameOptionsButton);
-//		GamePanel.add(MainMenuButton);
-//		NameTextField.setText("Enter Your Name");
-
 		//Log qutting
 		try{
 			FileWriter log = new FileWriter("log.txt", true);
@@ -2061,11 +2063,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		color = c;
 	}
+	public boolean isLimitedColorChoice() {
+		return limitedColorChoice;
+	}
 	public JPanel getGamePanel() {
 		return GamePanel;
 	}
 	public JPanel getInGamePanel() {
 		return InGamePanel;
+	}
+	public JPanel getAvatarMenuPanel() {
+		return AvatarMenuPanel;
 	}
 	public JPanel getCustomPuzzleMenuPanel() {
 		return CustomPuzzleMenuPanel;
@@ -2093,6 +2101,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 	public JButton getSubmitButton() {
 		return SubmitButton;
+	}
+	public JButton getSubmitAvatarButton() {
+		return SubmitAvatarButton;
 	}
 	public JButton getMainMenuButton() {
 		return MainMenuButton;
@@ -2144,6 +2155,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		MainMenuPanel.add(GameOptionsButton);
 		if(ComponentToggle.globalHighScores){ MainMenuPanel.add(HighScoresButton); }
 	}
+	
+	public void initAvatarMenu() {
+		AvatarMenuPanel.add(SubmitAvatarButton);
+	}
 
 	//Action Listener
 	public void actionPerformed(ActionEvent e) {
@@ -2163,7 +2178,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == SubmitCustomPuzzleButton) {
-			sendPostRequest(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php");
+			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php");
+		}
+		
+		else if (e.getSource() == SubmitAvatarButton) {
+			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php");
 		}
 		
 		else if (e.getSource() == CreateCustomPuzzleButton) {
@@ -2173,6 +2192,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			else {
 				BeadLoom.playerName = NameTextField.getText();
 				setCustomPuzzleMode();
+			}
+		}
+		
+		else if (e.getSource() == CreateAvatarButton) {
+			if (NameTextField.getText().equals("Enter Your Name") || NameTextField.getText().equals("")){
+				JOptionPane.showMessageDialog(null, "Please Enter Your Name", "Name Error", JOptionPane.PLAIN_MESSAGE);
+			}
+			else {
+				BeadLoom.playerName = NameTextField.getText();
+				setCreateAvatarMode();
 			}
 		}
 
@@ -2323,6 +2352,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		else if (e.getSource()== SubmitButton) {
 			checkSolution();
+		}
+		
+		else if (e.getSource() == SubmitAvatarButton) {
+			//TODO: implement avatar submit
 		}
 
 		else if (e.getSource()== MainMenuButton) {
@@ -3793,7 +3826,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 	}
 	
-	public void sendPostRequest(String fileContents, String url)
+	public void sendCustomPuzzlePost(String fileContents, String url)
 	{
 		StringBuilder builder = new StringBuilder(); 
 		try {
@@ -3905,12 +3938,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getPuzzleFrame().setVisible(false);
 		panel.add(bl.getHighScoresFrame());
 		bl.getHighScoresFrame().setVisible(false);
-		
 	}
 
 	//set up the content pane for Custom Puzzle Creation Mode
 	public void setCustomPuzzleMode()
 	{
+		//Do this to reposition the windows
 		startGame();
 		removeAllWindows();
 
@@ -3918,6 +3951,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.add(bl.getCustomPuzzleMenuFrame());
 		bl.getCustomPuzzleMenuFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
 		panel.add(bl.getGridFrame());
+		panel.add(bl.getColorFrame());
 		bl.getGridFrame().setVisible(true);
 		panel.add(bl.getBeadUtilitiesFrame());
 		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
@@ -3925,26 +3959,34 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NameLabel.getParent().remove(NameLabel);
 		CustomPuzzleMenuPanel.add(NameLabel);
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
-		//TODO insert code to add custom puzzle menu here
+		bl.getTimerLabel().setVisible(false);
+		limitedColorChoice = true;
 		panel.repaint();
 	}
 
 	//set up the content pane for Avatar Creation Mode
 	public void setCreateAvatarMode()
 	{
+		//Do this to reposition the windows
 		startGame();
 		removeAllWindows();
+		
+		initAvatarMenu();
 
 		JPanel panel = bl.getContentPanel();
-		panel.add(bl.getCustomPuzzleMenuFrame());
+		panel.add(bl.getAvatarMenuFrame());
 		bl.getCustomPuzzleMenuFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
 		panel.add(bl.getGridFrame());
 		bl.getGridFrame().setVisible(true);
 		panel.add(bl.getBeadUtilitiesFrame());
+		panel.add(bl.getColorFrame());
 		NameLabel.getParent().remove(NameLabel);
 		CustomPuzzleMenuPanel.add(NameLabel);
+		if(MainMenuButton.getParent() != null) { MainMenuButton.getParent().remove(MainMenuButton); }
+		AvatarMenuPanel.add(MainMenuButton);
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
-		//TODO insert code to add custom puzzle menu here
+		limitedColorChoice = true;
+		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 	}
 
@@ -3967,6 +4009,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		InGamePanel.add(MainMenuButton);
 		bl.getInGameFrame().setVisible(true);
 		panel.add(bl.getInGameFrame());
+		panel.add(bl.getColorFrame());
+		limitedColorChoice = true;
+		bl.getTimerLabel().setVisible(true);
 		panel.repaint();
 		
 	}
@@ -3984,6 +4029,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
 		bl.getGameFrame().add(GamePanel);
 		GamePanel.add(MainMenuButton);
+		limitedColorChoice = false;
+		bl.getTimerLabel().setVisible(false);
 	}
 
 	//remove all windows from the main content pane

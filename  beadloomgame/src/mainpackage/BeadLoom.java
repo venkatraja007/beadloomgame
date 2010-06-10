@@ -138,6 +138,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	private JInternalFrame MainMenuFrame;
 	private JInternalFrame InGameFrame;
 	private JInternalFrame CustomPuzzleMenuFrame;
+	private JInternalFrame AvatarMenuFrame;
 	private JLabel CoordinatesLabel;
 	private JLabel CoordinatesLabel2;
 	private JLabel MousePosition;
@@ -253,6 +254,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		BeadUtilitiesFrame = new JInternalFrame();
 		MainMenuFrame = new JInternalFrame();
 		InGameFrame = new JInternalFrame();
+		AvatarMenuFrame = new JInternalFrame();
 		CustomPuzzleMenuFrame = new JInternalFrame();
 
 		//======= Grid Panel Components =======
@@ -814,6 +816,29 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						public void internalFrameIconified(InternalFrameEvent arg0) {}
 						public void internalFrameOpened(InternalFrameEvent arg0) {}
 					});
+					
+					AvatarMenuFrame.getContentPane().add(Game.getAvatarMenuPanel());
+					AvatarMenuFrame.setVisible(true);
+					AvatarMenuFrame.setBorder(new LineBorder(Color.red));
+					AvatarMenuFrame.setTitle("Avatar Menu");
+					AvatarMenuFrame.setResizable(true);
+					AvatarMenuFrame.addInternalFrameListener(new InternalFrameListener()
+					{
+						public void internalFrameActivated(InternalFrameEvent arg0) {
+							decrementZVals(AvatarMenuFrame);
+							try {
+								AvatarMenuFrame.setSelected(false);
+							} catch (PropertyVetoException e) {
+								e.printStackTrace();
+							}
+						}
+						public void internalFrameClosed(InternalFrameEvent arg0) {}
+						public void internalFrameClosing(InternalFrameEvent arg0) {}
+						public void internalFrameDeactivated(InternalFrameEvent arg0) {}
+						public void internalFrameDeiconified(InternalFrameEvent arg0) {}
+						public void internalFrameIconified(InternalFrameEvent arg0) {}
+						public void internalFrameOpened(InternalFrameEvent arg0) {}
+					});
 
 					InGameFrame.getContentPane().add(Game.getInGamePanel());
 					InGameFrame.setVisible(true);
@@ -1293,6 +1318,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	public JPanel  getContentPanel(){
 		return ContentPanel;
 	}
+	public JLabel getTimerLabel() {
+		return TimerLabel;
+	}
 	public JInternalFrame getMoveBeadsFrame(){
 		return MoveBeadsFrame;
 	}
@@ -1319,6 +1347,9 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	}
 	public JInternalFrame getCustomPuzzleMenuFrame() {
 		return CustomPuzzleMenuFrame;
+	}
+	public JInternalFrame getAvatarMenuFrame() {
+		return AvatarMenuFrame;
 	}
 	public JInternalFrame getPuzzleFrame(){
 		return PuzzleFrame;
@@ -1804,7 +1835,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			}
 		}
 		else if(e.getSource() == MoveBeads.getTopColorsButton()) {
-			if (!gridPanel2.isShowing()){
+			if (!Game.isLimitedColorChoice()){
 				Color c;
 				//JColorChooser j = new JColorChooser();
 				c = JColorChooser.showDialog(this, null, MoveBeads.getColor());
