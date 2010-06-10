@@ -2203,10 +2203,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		else if (e.getSource() == CustomPuzzleButton) {
 			startGame();
+			currentPuzzle = -1;
 			Restart(true, true, true);
 			puz.setCustomPuzzle("MyLevel");
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
+			//bestScore = RecordMove[currentPuzzle];
+			//BestScoreLabel.setText("Best Score:" + bestScore);
+			BestScoreLabel.setText("Custom Puzzle");
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
 			try{
@@ -3897,10 +3899,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getPuzzleFrame().setVisible(false);
 		panel.add(bl.getHighScoresFrame());
 		bl.getHighScoresFrame().setVisible(false);
-		panel.add(bl.getGridFrame());
-		bl.getGridFrame().setVisible(false);
-		panel.add(bl.getGridFrame2());
-		bl.getGridFrame2().setVisible(false);
+//		panel.add(bl.getGridFrame());
+//		bl.getGridFrame().setVisible(false);
+//		panel.add(bl.getGridFrame2());
+//		bl.getGridFrame2().setVisible(false);
 		
 	}
 
