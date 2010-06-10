@@ -2293,7 +2293,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		LinearIterationTabbedPane.remove(LinearItrLoopLayeredPane);
 	}
 
-	//Add the Loop Tools back into tjhe GUI
+	//Add the Loop Tools back into the GUI
 	public void addLoopTools(){
 		LinearIterationTabbedPane.addTab("Linear Iteration Loop", LinearItrLoopLayeredPane);
 		LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
