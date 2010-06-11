@@ -75,7 +75,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JScrollPane HighScoresScrollPane = new JScrollPane(
 			HighScoresPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	private JPanel GameOptionsPanel = new JPanel();
-	//private FlowLayout HighScoresLayout = new FlowLayout(FlowLayout.LEFT);
+	private FlowLayout HighScoresLayout = new FlowLayout(FlowLayout.LEFT);
 
 	//GamePanel Parts
 	private JButton ChoosePuzzleButton = new JButton();
@@ -348,7 +348,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
 		HighScoresPanel.setBackground(Color.white);
 		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
-		HighScoresPanel.setLayout(null);
+		HighScoresPanel.setLayout(HighScoresLayout);
 
 		//---- high scores panel ----
 		GameOptionsPanel.setBorder(new LineBorder(Color.red));
