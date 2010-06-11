@@ -3956,6 +3956,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getCustomPuzzleMenuFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
 		panel.add(bl.getGridFrame());
 		panel.add(bl.getColorFrame());
+		bl.getColorFrame().setVisible(false);
 		bl.getGridFrame().setVisible(true);
 		panel.add(bl.getBeadUtilitiesFrame());
 		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
@@ -3985,6 +3986,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridFrame().setVisible(true);
 		panel.add(bl.getBeadUtilitiesFrame());
 		panel.add(bl.getColorFrame());
+		bl.getColorFrame().setVisible(false);
 		NameLabel.getParent().remove(NameLabel);
 		CustomPuzzleMenuPanel.add(NameLabel);
 		if(MainMenuButton.getParent() != null) { MainMenuButton.getParent().remove(MainMenuButton); }
@@ -4020,6 +4022,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getInGameFrame().setVisible(true);
 		panel.add(bl.getInGameFrame());
 		panel.add(bl.getColorFrame());
+		bl.getColorFrame().setVisible(false);
 		limitedColorChoice = true;
 		setColorButtonsVisbility(true);
 		bl.getTimerLabel().setVisible(true);
