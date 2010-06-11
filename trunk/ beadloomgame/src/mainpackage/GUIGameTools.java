@@ -75,7 +75,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JScrollPane HighScoresScrollPane = new JScrollPane(
 			HighScoresPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	private JPanel GameOptionsPanel = new JPanel();
-	private FlowLayout HighScoresLayout = new FlowLayout(FlowLayout.LEFT);
+	//private FlowLayout HighScoresLayout = new FlowLayout(FlowLayout.LEFT);
 
 	//GamePanel Parts
 	private JButton ChoosePuzzleButton = new JButton();
@@ -90,10 +90,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton ToolButton = new JButton();
 	private JButton PlayGameButton = new JButton();
 	private JButton HighScoresButton = new JButton();
+	private JButton HighScoresCloseButton = new JButton();
 	private JButton UpdateHighScoresButton = new JButton();
 	private JLabel NameLabel = new JLabel();
 	private JLabel BestScoreLabel = new JLabel();
 	private JTextField NameTextField = new JTextField();
+
+	private JTextField CustomPuzzleTextField = new JTextField();
 	JLabel avatarIcon = new JLabel();
 
 	//Choose Puzzle Panel Parts
@@ -345,7 +348,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HighScoresPanel.setBorder(new LineBorder(Color.red));
 		HighScoresPanel.setBackground(Color.white);
 		HighScoresPanel.setBounds(ChoosePuzzlePanel.getBounds());
-		HighScoresPanel.setLayout(HighScoresLayout);
+		HighScoresPanel.setLayout(null);
 
 		//---- high scores panel ----
 		GameOptionsPanel.setBorder(new LineBorder(Color.red));
@@ -1403,6 +1406,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitCustomPuzzleButton.addActionListener(this);
 		SubmitCustomPuzzleButton.setBounds(25, 75, 145, SubmitCustomPuzzleButton.getPreferredSize().height);
 		CustomPuzzleMenuPanel.add(SubmitCustomPuzzleButton);
+		
+		//---- Custom Puzzle Name Text Field ----
+		CustomPuzzleTextField.setText("Enter Puzzle Name");
+		CustomPuzzleTextField.setBounds(25, 50, 145, CustomPuzzleTextField.getPreferredSize().height);
+		CustomPuzzleMenuPanel.add(CustomPuzzleTextField);
 
 		//---- Green Button ----
 		GreenButton.setText("Green");
@@ -1516,7 +1524,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		CreateCustomPuzzleButton.setBounds(25, 75, 145, CreateCustomPuzzleButton.getPreferredSize().height);
 		CreateCustomPuzzleButton.addActionListener(this);
 
-		//---- Create Custom Puzzle ----
+		//---- Create Avatar Puzzle ----
 		CreateAvatarButton.setText("Create Avatar");
 		CreateAvatarButton.setBounds(25, 100, 145, CreateCustomPuzzleButton.getPreferredSize().height);
 		CreateAvatarButton.addActionListener(this);
@@ -1615,14 +1623,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		//---- Update HighScores Button ----
 		UpdateHighScoresButton.setText("Update High Scores");
+		UpdateHighScoresButton.setBounds(5, 5, 175, UpdateHighScoresButton.getPreferredSize().height);
+		HighScoresComboBox.setBounds(5, 50, 175, HighScoresComboBox.getPreferredSize().height);
 		//HighScoresPanel.add(WebRequestTextField);
 		HighScoresPanel.add(UpdateHighScoresButton);
 		HighScoresPanel.add(HighScoresComboBox);
 		UpdateHighScoresButton.addActionListener(this);
+		
 
 		//---- High Scores Label ----
+		HighScoresCloseButton.setText("Close");
+		HighScoresCloseButton.setBounds(180, 5, 175, HighScoresCloseButton.getPreferredSize().height);
+		HighScoresPanel.add(HighScoresCloseButton);
 		HighScoresLabel.setText("");
 		HighScoresPanel.add(HighScoresLabel);
+		HighScoresLabel.setBounds(5, 0, 300, 5000);
 		HighScoresLabel.setMaximumSize(HighScoresPanel.getMaximumSize());
 	}
 
@@ -2180,7 +2195,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == SubmitCustomPuzzleButton) {
-			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", BeadLoom.playerName+"-MyLevel", "CustomPuzzles");
+			String text = CustomPuzzleTextField.getText();
+			if(text.equalsIgnoreCase("Enter Puzzle Name") || text.length() < 3)
+			{
+				JOptionPane.showMessageDialog(null, "Enter a Valid Puzzle Name!", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if(bl.getGridPanel().getLayers().size() < 1)
+			{
+				JOptionPane.showMessageDialog(null, "The Grid is Blank!", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else
+			{
+				sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", BeadLoom.playerName+"-"+text, "CustomPuzzles");
+			}
 		}
 		
 		else if (e.getSource() == SubmitAvatarButton) {
