@@ -3965,6 +3965,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
 		bl.getTimerLabel().setVisible(false);
 		limitedColorChoice = true;
+		setColorButtonsVisbility(true);
 		panel.repaint();
 	}
 
@@ -3990,6 +3991,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		AvatarMenuPanel.add(MainMenuButton);
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
 		limitedColorChoice = true;
+		setAvatarColorButtons();
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 	}
@@ -4015,6 +4017,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.add(bl.getInGameFrame());
 		panel.add(bl.getColorFrame());
 		limitedColorChoice = true;
+		setColorButtonsVisbility(true);
 		bl.getTimerLabel().setVisible(true);
 		panel.repaint();
 		
@@ -4060,5 +4063,50 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void setPlayerName(String name)
 	{
 		NameTextField.setText(name);
+	}
+	
+	//Return the number of puzzles the player has completed
+	public int puzzlesCompleted()
+	{
+		int complete = 0;
+		for(int i=0; i<RecordMedalShort.length; i++)
+		{
+			if(!RecordMedalShort[i].equals("N")) { complete++; }
+		}
+		return complete;
+	}
+	
+	public void setColorButtonsVisbility(boolean visible)
+	{
+		GreenButton.setVisible(visible);
+		RedButton.setVisible(visible);
+		YellowButton.setVisible(visible);
+		BlueButton.setVisible(visible);
+		MagentaButton.setVisible(visible);
+		CyanButton.setVisible(visible);
+		OrangeButton.setVisible(visible);
+		WhiteButton.setVisible(visible);
+		BlackButton.setVisible(visible);
+		PinkButton.setVisible(visible);
+		PeachButton.setVisible(visible);
+		GrayButton.setVisible(visible);
+	}
+	
+	public void setAvatarColorButtons()
+	{
+		setColorButtonsVisbility(false);
+		WhiteButton.setVisible(true);
+		BlackButton.setVisible(true);
+		int comp = puzzlesCompleted();
+		if(comp>=35){ GreenButton.setVisible(true); }
+		if(comp>=34){ PeachButton.setVisible(true); }
+		if(comp>=32){ CyanButton.setVisible(true); }
+		if(comp>=28){ PinkButton.setVisible(true); }
+		if(comp>=24){ OrangeButton.setVisible(true); }
+		if(comp>=20){ MagentaButton.setVisible(true); }
+		if(comp>=16){ BlueButton.setVisible(true); }
+		if(comp>=12){ YellowButton.setVisible(true); }
+		if(comp>=8){ RedButton.setVisible(true); }
+		if(comp>=4){ GrayButton.setVisible(true); }
 	}
 }
