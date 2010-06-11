@@ -2423,7 +2423,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == Tut5Button && avatarMode) { avatarPuzzle = 4; setMainMenuMode(); }
 		else if (e.getSource() == Tut6Button && avatarMode) { avatarPuzzle = 5; setMainMenuMode(); }
 
-		else if (e.getSource() == TieFighterButton && avatarMode) { avatarPuzzle = 6; setMainMenuMode(); }
+		else if (e.getSource() == TriforceButton && avatarMode) { avatarPuzzle = 6; setMainMenuMode(); }
 		else if (e.getSource() == CanYouHearMeNowButton && avatarMode) { avatarPuzzle = 7; setMainMenuMode(); }
 		else if (e.getSource() == SixButton && avatarMode) { avatarPuzzle = 8; setMainMenuMode(); }
 		else if (e.getSource() == LoomEx8Button && avatarMode) { avatarPuzzle = 9; setMainMenuMode(); }
