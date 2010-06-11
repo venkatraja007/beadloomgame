@@ -2453,7 +2453,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx5Button && avatarMode) { avatarPuzzle = 31; setMainMenuMode(); }
 		else if (e.getSource() == LoomEx3Button && avatarMode) { avatarPuzzle = 32; setMainMenuMode(); }
 		else if (e.getSource() == MegamanButton && avatarMode) { avatarPuzzle = 33; setMainMenuMode(); }
-		else if (e.getSource() == BatmanButton && avatarMode) { avatarPuzzle = 33; setMainMenuMode(); }
+		else if (e.getSource() == BatmanButton && avatarMode) { avatarPuzzle = 34; setMainMenuMode(); }
 
 		else if (e.getSource() == Tut1Button){
 			startGame();
