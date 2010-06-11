@@ -1838,7 +1838,7 @@ public class Puzzle {
 		}
 	}
 	
-	public void setCustomPuzzle(String puzzleName)
+	public boolean setCustomPuzzle(String puzzleName, String folderName)
 	{
 		//Set the active grid to the goal image grid
 		InputTools.setGrid(bl.getGridPanel2());
@@ -1847,7 +1847,7 @@ public class Puzzle {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			InputStream stream = getStream(
-					"http://unccmakesgames.com/games/BeadLoomGame/CustomPuzzles/"+puzzleName+".xml");
+					"http://unccmakesgames.com/games/BeadLoomGame/"+folderName+"/"+puzzleName+".xml");
 			Document doc = db.parse(stream);
 			stream.close();
 			doc.getDocumentElement().normalize();
@@ -1933,11 +1933,11 @@ public class Puzzle {
 						}
 					}
 				}
-
 			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
 
 		//Calculate the Goal Images bead array
@@ -1947,6 +1947,7 @@ public class Puzzle {
 		//Reset the Current Selected Color to default
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
+		return true;
 	}
 
 }
