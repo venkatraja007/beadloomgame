@@ -1753,8 +1753,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//Input: Players name for log in purposes
 	public void startGame(){
 		
-		//TODO testing the Achievements reading in
-		Achievements.retrieveAchievements(BeadLoom.playerName);
 		setGamePlayMode();
 		//Adjust BeadLoom
 		bl.getContentPanel().add(bl.getGridFrame2());
@@ -1794,6 +1792,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//currentPuzzle = puz.setLoomEx8();
 
 		getScores();
+		Achievements.retrieveAchievements(BeadLoom.playerName);
+		Achievements.retrieveMedals(RecordMedal, RecordMove);
 //		try{
 //			FileReader fr = new FileReader("Scores.txt"); 
 //			BufferedReader br = new BufferedReader(fr); 
@@ -1997,6 +1997,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				RecordMedalShort[currentPuzzle] = "B";
 			}
 
+			//TODO write achievements here
+			Achievements.checkAchievements();
+			Achievements.viewAchievements();
 			//Send this medal to the website
 			try {
 				message = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php?" +

@@ -1665,3 +1665,223 @@
 	<6/10/2010 18:2:29> Loom Example 8 Puzzle Selected.
 		<6/10/2010 18:2:29> Restart Performed
 	<6/10/2010 18:2:29> Tutorial 1 Puzzle Selected.
+<6/11/2010 10:7:37> Antoine logs in.
+	<6/11/2010 10:7:37> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:7:44> Antoine logs in.
+	<6/11/2010 10:7:44> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:8:39> Antoine logs in.
+	<6/11/2010 10:8:39> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:10:43> Antoine logs in.
+	<6/11/2010 10:10:43> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:11:56> Antoine logs in.
+	<6/11/2010 10:11:56> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:16:12> Antoine logs in.
+	<6/11/2010 10:16:12> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:22:30> Antoine logs in.
+	<6/11/2010 10:22:30> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:28:23> Antoine logs in.
+	<6/11/2010 10:28:23> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:30:2> Antoine logs in.
+	<6/11/2010 10:30:2> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:30:39> Antoine logs in.
+	<6/11/2010 10:30:39> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:31:34> Antoine logs in.
+	<6/11/2010 10:31:34> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:47:25> Antoine logs in.
+	<6/11/2010 10:47:25> Loom Example 8 Puzzle Selected.
+<6/11/2010 10:48:36> Antoine logs in.
+	<6/11/2010 10:48:36> Loom Example 8 Puzzle Selected.
+<6/11/2010 11:39:50> Acey logs out.
+<6/11/2010 11:51:44> Antoine logs in.
+	<6/11/2010 11:51:44> Loom Example 8 Puzzle Selected.
+<6/11/2010 11:52:53> Antoine logs in.
+	<6/11/2010 11:52:53> Loom Example 8 Puzzle Selected.
+		<6/11/2010 11:52:53> Restart Performed
+	<6/11/2010 11:52:53> Custom Puzzle Selected.
+<6/11/2010 13:48:57> Dustin logs in.
+	<6/11/2010 13:48:57> Loom Example 8 Puzzle Selected.
+		<6/11/2010 13:48:57> Restart Performed
+	<6/11/2010 13:48:57> Tutorial 1 Puzzle Selected.
+<6/11/2010 14:34:4> Antoine logs in.
+	<6/11/2010 14:34:4> Loom Example 8 Puzzle Selected.
+		<6/11/2010 14:34:9> Color Change: Red
+<6/11/2010 16:17:53> Antoine logs in.
+	<6/11/2010 16:17:53> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:17:53> Restart Performed
+	<6/11/2010 16:17:53> Tutorial 2 Puzzle Selected.
+		<6/11/2010 16:18:6> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:18:30> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:18:51> Checked Solution.
+			<6/11/2010 16:18:51> Puzzle Completed in 2moves.  Earned Platinum!!!!
+<6/11/2010 16:20:53> Antoine logs in.
+	<6/11/2010 16:20:53> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:20:53> Restart Performed
+	<6/11/2010 16:20:53> Tutorial 2 Puzzle Selected.
+		<6/11/2010 16:21:0> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:21:6> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:21:17> Checked Solution.
+			<6/11/2010 16:21:17> Puzzle Completed in 2moves.  Earned Platinum!!!!
+<6/11/2010 16:26:24> Antoine logs in.
+	<6/11/2010 16:26:24> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:26:31> Color Change: Gray
+<6/11/2010 16:27:0> Antoine logs in.
+	<6/11/2010 16:27:0> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:27:0> Restart Performed
+	<6/11/2010 16:27:0> Custom Puzzle Selected.
+<6/11/2010 16:37:45> Antoine logs in.
+	<6/11/2010 16:37:45> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:37:45> Restart Performed
+	<6/11/2010 16:37:45> Tutorial 2 Puzzle Selected.
+		<6/11/2010 16:37:58> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:38:3> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:38:19> Checked Solution.
+			<6/11/2010 16:38:19> Puzzle Completed in 2moves.  Earned Platinum!!!!
+<6/11/2010 16:41:40> Antoine logs in.
+	<6/11/2010 16:41:40> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:41:40> Restart Performed
+	<6/11/2010 16:41:40> Tutorial 1 Puzzle Selected.
+<6/11/2010 16:41:45> Antoine logs in.
+	<6/11/2010 16:41:45> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:41:45> Restart Performed
+	<6/11/2010 16:41:45> Tutorial 2 Puzzle Selected.
+		<6/11/2010 16:41:55> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:42:0> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+<6/11/2010 16:43:47> Antoine logs in.
+	<6/11/2010 16:43:47> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:43:47> Restart Performed
+	<6/11/2010 16:43:47> Tutorial 2 Puzzle Selected.
+		<6/11/2010 16:43:54> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:43:59> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:44:11> Checked Solution.
+			<6/11/2010 16:44:11> Puzzle Completed in 2moves.  Earned Platinum!!!!
+<6/11/2010 16:50:19> Antoine logs in.
+	<6/11/2010 16:50:19> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:50:19> Restart Performed
+	<6/11/2010 16:50:19> Tutorial 2 Puzzle Selected.
+		<6/11/2010 16:50:26> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:50:32> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:50:43> Checked Solution.
+			<6/11/2010 16:50:43> Puzzle Completed in 2moves.  Earned Platinum!!!!
+		<6/11/2010 16:50:49> Checked Solution.
+			<6/11/2010 16:50:49> Puzzle Completed in 2moves.  Earned Platinum!!!!
+		<6/11/2010 16:50:51> Restart Performed
+		<6/11/2010 16:50:52> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:50:58> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:51:2> Checked Solution.
+			<6/11/2010 16:51:2> Puzzle Completed in 2moves.  Earned Platinum!!!!
+<6/11/2010 16:51:29> Antoine logs in.
+	<6/11/2010 16:51:29> Loom Example 8 Puzzle Selected.
+		<6/11/2010 16:51:29> Restart Performed
+	<6/11/2010 16:51:29> Tutorial 2 Puzzle Selected.
+		<6/11/2010 16:51:30> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:51:38> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:51:42> Checked Solution.
+			<6/11/2010 16:51:42> Puzzle Completed in 2moves.  Earned Platinum!!!!
+		<6/11/2010 16:51:43> Restart Performed
+		<6/11/2010 16:51:44> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:51:49> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:51:54> Checked Solution.
+			<6/11/2010 16:51:54> Puzzle Completed in 2moves.  Earned Platinum!!!!
+		<6/11/2010 16:51:59> Restart Performed
+		<6/11/2010 16:52:0> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:52:8> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:52:13> Checked Solution.
+			<6/11/2010 16:52:13> Puzzle Completed in 2moves.  Earned Platinum!!!!
+		<6/11/2010 16:52:16> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:52:19> Restart Performed
+		<6/11/2010 16:52:20> Draw Line:
+			x1= -5
+			x2= 5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:52:24> Draw Line:
+			x1= 5
+			x2= -5
+			y1= 5
+			y2= -5
+		<6/11/2010 16:52:28> Checked Solution.
+			<6/11/2010 16:52:28> Puzzle Completed in 2moves.  Earned Platinum!!!!

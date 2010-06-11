@@ -1,5 +1,6 @@
 <?php
 
+//TODO change these tokens to read, write, and soemthing else i guess
 include('config.php');
 include('connect.php');
 
@@ -18,9 +19,30 @@ if(isset($_GET['token']))
 		}
 		else
 		{
-			die("<html><h2>Error retrieving number of Achievements</h2></html>");
+			die("<html><h2>Error retrieving number of Achievements.</h2></html>");
 		}
-		
+	}
+	else if($token == "send")
+	{
+		if(isset($_GET['user']) && isset($_GET['achievements']))
+		{
+			$query = "UPDATE Users SET Achievements='$achievements' WHERE user='$user'";
+			$user = $_GET['user'];
+			$achievements = $_GET['achievements'];
+			$result = $db->query($query);
+			if($result)
+			{
+				die("<html><h2>$user's Achivements updated.</h2></html>");
+			}
+			else
+			{
+				die("<html><h2>Error Updating user Achievements.</h2></html>");
+			}
+		}
+		else
+		{
+			die("<html><h2>User or Achivement string missing.</h2></html>");
+		}
 	}
 	else if($token == "retrieve")
 	{
@@ -38,12 +60,12 @@ if(isset($_GET['token']))
 			}
 			else
 			{
-				die("<html><h2>Error retrieving user Achievements</h2></html>");
+				die("<html><h2>Error retrieving user Achievements.</h2></html>");
 			}
 		}
 		else
 		{
-			die("<html><h2>User name missing</h2></html>");
+			die("<html><h2>User name missing.</h2></html>");
 		}
 	}
 	else if($token == "names")
