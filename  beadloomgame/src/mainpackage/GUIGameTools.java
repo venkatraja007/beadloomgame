@@ -54,6 +54,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private int playerIndex;
 	private int totalEntries;
 	private int currentPuzzle;
+	private boolean avatarMode;
+	private int avatarPuzzle;
 	
 	private boolean limitedColorChoice;
 
@@ -80,6 +82,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//GamePanel Parts
 	private JButton ChoosePuzzleButton = new JButton();
 	private JButton RestartButton = new JButton();
+	private JButton PuzzleAvatarButton = new JButton();
+	private JButton ClearButton = new JButton();
 	private JButton SubmitButton = new JButton();
 	private JButton SubmitAvatarButton = new JButton();
 	private JButton GameOptionsButton = new JButton();
@@ -313,6 +317,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle CR23 = new Rectangle(CR22.x + colorButtonLength + colorHorizSpace, CR13.y + colorButtonHeight + colorVertSpace, colorButtonLength, colorButtonHeight);
 
 	public GUIGameTools() {
+		avatarPuzzle = -1;
 
 		//---- game panel -----
 		GamePanel.setBorder(new LineBorder(Color.red));
@@ -1503,6 +1508,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		RestartButton.setBounds(25, 75, 145, RestartButton.getPreferredSize().height);
 		RestartButton.addActionListener(this);
 
+		//---- clear button ----
+		ClearButton.setText("Clear");
+		ClearButton.setBounds(25, 50, 145, ClearButton.getPreferredSize().height);
+		ClearButton.addActionListener(this);
+
 		//---- Submit button ----
 		SubmitButton.setText("Submit");
 		SubmitButton.setBounds(25, 100, 145, SubmitButton.getPreferredSize().height);
@@ -1554,6 +1564,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		ChoosePuzzleButton.setText("Change Puzzle");
 		ChoosePuzzleButton.setBounds(25, 50, 145, ChoosePuzzleButton.getPreferredSize().height);
 		ChoosePuzzleButton.addActionListener(this);
+
+		//---- puzzle avatar button ----
+		PuzzleAvatarButton.setText("Puzzle Avatar");
+		PuzzleAvatarButton.setBounds(25, 125, 145, PuzzleAvatarButton.getPreferredSize().height);
+		PuzzleAvatarButton.addActionListener(this);
 
 		//---- Tool button ----
 		ToolButton.setText("Use Tool");
@@ -2117,6 +2132,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public JButton getRestartButton() {
 		return RestartButton;
 	}
+	public JButton getClearButton() {
+		return ClearButton;
+	}
 	public JButton getSubmitButton() {
 		return SubmitButton;
 	}
@@ -2175,6 +2193,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public void initAvatarMenu() {
 		AvatarMenuPanel.add(SubmitAvatarButton);
+		AvatarMenuPanel.add(PuzzleAvatarButton);
 	}
 
 	//Action Listener
@@ -2212,6 +2231,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		else if (e.getSource() == SubmitAvatarButton) {
 			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
+			avatarPuzzle = -1;
 		}
 		
 		else if (e.getSource() == CreateCustomPuzzleButton) {
@@ -2268,7 +2288,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			startGame();
 			currentPuzzle = -1;
 			Restart(true, true, true);
-			puz.setCustomPuzzle(BeadLoom.playerName+"-MyLevel", "CustomPuzzles");
+			puz.setCustomPuzzle(BeadLoom.playerName+"-MyLevel", "CustomPuzzles", 2);
 			//bestScore = RecordMove[currentPuzzle];
 			//BestScoreLabel.setText("Best Score:" + bestScore);
 			BestScoreLabel.setText("Custom Puzzle");
@@ -2385,17 +2405,55 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource()== MainMenuButton) {
 			setMainMenuMode();
 		}
-		else if (e.getSource()== RestartButton) {
+		else if (e.getSource()== RestartButton || e.getSource() == ClearButton) {
 			int choice = JOptionPane.showConfirmDialog(null, "Are you sure? This will remove ALL beads from the grid!", "Beadloom", JOptionPane.YES_NO_OPTION);
 			if (choice == 0){
 				Restart(true, false, true);
 			}
 		}
-		else if (e.getSource()== ChoosePuzzleButton){
+		else if (e.getSource()== ChoosePuzzleButton || e.getSource() == PuzzleAvatarButton){
 			bl.getGridFrame().setVisible(false);
 			bl.getGridFrame2().setVisible(false);
 			showChoosePuzzle();
 		}
+		else if (e.getSource() == Tut1Button && avatarMode) { avatarPuzzle = 0; setMainMenuMode(); }
+		else if (e.getSource() == Tut2Button && avatarMode) { avatarPuzzle = 1; setMainMenuMode(); }
+		else if (e.getSource() == Tut3Button && avatarMode) { avatarPuzzle = 2; setMainMenuMode(); }
+		else if (e.getSource() == Tut4Button && avatarMode) { avatarPuzzle = 3; setMainMenuMode(); }
+		else if (e.getSource() == Tut5Button && avatarMode) { avatarPuzzle = 4; setMainMenuMode(); }
+		else if (e.getSource() == Tut6Button && avatarMode) { avatarPuzzle = 5; setMainMenuMode(); }
+
+		else if (e.getSource() == TieFighterButton && avatarMode) { avatarPuzzle = 6; setMainMenuMode(); }
+		else if (e.getSource() == CanYouHearMeNowButton && avatarMode) { avatarPuzzle = 7; setMainMenuMode(); }
+		else if (e.getSource() == SixButton && avatarMode) { avatarPuzzle = 8; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx8Button && avatarMode) { avatarPuzzle = 9; setMainMenuMode(); }
+		else if (e.getSource() == OverlappingSquaresButton && avatarMode) { avatarPuzzle = 10; setMainMenuMode(); }
+		else if (e.getSource() == CircleButton && avatarMode) { avatarPuzzle = 11; setMainMenuMode(); }
+		else if (e.getSource() == StarrySkyButton && avatarMode) { avatarPuzzle = 12; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx14Button && avatarMode) { avatarPuzzle = 13; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx6Button && avatarMode) { avatarPuzzle = 14; setMainMenuMode(); }
+		
+		else if (e.getSource() == SunnySkyButton && avatarMode) { avatarPuzzle = 15; setMainMenuMode(); }
+		else if (e.getSource() == HeartButton && avatarMode) { avatarPuzzle = 16; setMainMenuMode(); }
+		else if (e.getSource() == SunriseButton && avatarMode) { avatarPuzzle = 17; setMainMenuMode(); }
+		else if (e.getSource() == FlagButton && avatarMode) { avatarPuzzle = 18; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx13Button && avatarMode) { avatarPuzzle = 19; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx10Button && avatarMode) { avatarPuzzle = 20; setMainMenuMode(); }
+		else if (e.getSource() == UNCCButton && avatarMode) { avatarPuzzle = 21; setMainMenuMode(); }
+		else if (e.getSource() == SergeantButton && avatarMode) { avatarPuzzle = 22; setMainMenuMode(); }
+		else if (e.getSource() == TieFighterButton && avatarMode) { avatarPuzzle = 23; setMainMenuMode(); }
+		
+		else if (e.getSource() == MoonButton && avatarMode) { avatarPuzzle = 24; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx7Button && avatarMode) { avatarPuzzle = 25; setMainMenuMode(); }
+		else if (e.getSource() == DCButton && avatarMode) { avatarPuzzle = 26; setMainMenuMode(); }
+		else if (e.getSource() == BullseyeButton && avatarMode) { avatarPuzzle = 27; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx1Button && avatarMode) { avatarPuzzle = 28; setMainMenuMode(); }
+		else if (e.getSource() == ROSSButton && avatarMode) { avatarPuzzle = 29; setMainMenuMode(); }
+		else if (e.getSource() == StarsAndStripesButton && avatarMode) { avatarPuzzle = 30; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx5Button && avatarMode) { avatarPuzzle = 31; setMainMenuMode(); }
+		else if (e.getSource() == LoomEx3Button && avatarMode) { avatarPuzzle = 32; setMainMenuMode(); }
+		else if (e.getSource() == MegamanButton && avatarMode) { avatarPuzzle = 33; setMainMenuMode(); }
+		else if (e.getSource() == BatmanButton && avatarMode) { avatarPuzzle = 33; setMainMenuMode(); }
 
 		else if (e.getSource() == Tut1Button){
 			startGame();
@@ -3949,6 +4007,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//set up the content pane for Main Menu Mode
 	public void setMainMenuMode()
 	{
+		avatarMode = false;
+		hidePuzzleButtons();
 		removeAllWindows();
 		
 		NameTextField.setText(BeadLoom.playerName);
@@ -3966,8 +4026,28 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.add(bl.getHighScoresFrame());
 		bl.getHighScoresFrame().setVisible(false);
 		//load Avatar
-		if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars"))
+		bl.getGridPanel2().clear();
+		if(avatarPuzzle==-1)
 		{
+			if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 2))
+			{
+				MainMenuPanel.remove(avatarIcon);
+				int avatarSize = 123;
+				avatarIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						avatarSize, avatarSize, 0)));
+				MainMenuPanel.remove(avatarIcon);
+				avatarIcon.setVisible(true);
+				avatarIcon.setBounds((200-avatarSize)/2,205, avatarSize, avatarSize);
+				MainMenuPanel.add(avatarIcon);
+				avatarIcon.repaint();
+			}
+			else { avatarIcon.setVisible(false); }
+		}
+		else
+		{
+			puz.setPuzzle(avatarPuzzle);
+			MainMenuPanel.remove(avatarIcon);
 			int avatarSize = 123;
 			avatarIcon = new JLabel(new ImageIcon(
 					bl.createImageFromGrid().getScaledInstance(
@@ -3978,7 +4058,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			MainMenuPanel.add(avatarIcon);
 			avatarIcon.repaint();
 		}
-		else { avatarIcon.setVisible(false); }
 	}
 
 	//set up the content pane for Custom Puzzle Creation Mode
@@ -3996,6 +4075,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getColorFrame().setVisible(false);
 		bl.getGridFrame().setVisible(true);
 		panel.add(bl.getBeadUtilitiesFrame());
+		if(ClearButton.getParent() != null){ ClearButton.getParent().remove(ClearButton); }
+		CustomPuzzleMenuPanel.add(ClearButton);
 		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
 		CustomPuzzleMenuPanel.add(MainMenuButton);
 		NameLabel.getParent().remove(NameLabel);
@@ -4016,6 +4097,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		removeAllWindows();
 		
 		initAvatarMenu();
+		avatarMode = true;
 
 		JPanel panel = bl.getContentPanel();
 		panel.add(bl.getAvatarMenuFrame());
@@ -4025,8 +4107,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.add(bl.getBeadUtilitiesFrame());
 		panel.add(bl.getColorFrame());
 		bl.getColorFrame().setVisible(false);
+		panel.add(bl.getPuzzleFrame());
+		hidePuzzleButtons();
 		NameLabel.getParent().remove(NameLabel);
 		CustomPuzzleMenuPanel.add(NameLabel);
+		if(ClearButton.getParent() != null){ ClearButton.getParent().remove(ClearButton); }
+		AvatarMenuPanel.add(ClearButton);
 		if(MainMenuButton.getParent() != null) { MainMenuButton.getParent().remove(MainMenuButton); }
 		AvatarMenuPanel.add(MainMenuButton);
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
@@ -4039,6 +4125,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 		bl.getInputTools().setGrid(bl.getGridPanel());
+		puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1);
 	}
 
 	//set up the content pane for Game Play Mode
@@ -4054,9 +4141,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
 		panel.add(bl.getPuzzleFrame());
 		panel.add(bl.getBeadUtilitiesFrame());
-		//TODO insert code to add in-game frame here
 		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
-		//bl.getInGameFrame().add(InGamePanel);
 		InGamePanel.add(MainMenuButton);
 		bl.getInGameFrame().setVisible(true);
 		panel.add(bl.getInGameFrame());
@@ -4154,5 +4239,133 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(comp>=12){ YellowButton.setVisible(true); }
 		if(comp>=8){ RedButton.setVisible(true); }
 		if(comp>=4){ GrayButton.setVisible(true); }
+	}
+	
+	public void hidePuzzleButtons()
+	{
+		if(!avatarMode || RecordMedal[0].equals("Platinum!!!!")) { Tut1Button.setVisible(true); }
+		else { Tut1Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[1].equals("Platinum!!!!")) { Tut2Button.setVisible(true); }
+		else { Tut2Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[2].equals("Platinum!!!!")) { Tut3Button.setVisible(true); }
+		else { Tut3Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[3].equals("Platinum!!!!")) { Tut4Button.setVisible(true); }
+		else { Tut4Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[4].equals("Platinum!!!!")) { Tut5Button.setVisible(true); }
+		else { Tut5Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[5].equals("Platinum!!!!")) { Tut6Button.setVisible(true); }
+		else { Tut6Button.setVisible(false); }
+		
+		if(!avatarMode || RecordMedal[6].equals("Platinum!!!!")) { TriforceButton.setVisible(true); }
+		else { TriforceButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[7].equals("Platinum!!!!")) { CanYouHearMeNowButton.setVisible(true); }
+		else { CanYouHearMeNowButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[8].equals("Platinum!!!!")) { SixButton.setVisible(true); }
+		else { SixButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[9].equals("Platinum!!!!")) { LoomEx8Button.setVisible(true); }
+		else { LoomEx8Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[10].equals("Platinum!!!!")) { OverlappingSquaresButton.setVisible(true); }
+		else { OverlappingSquaresButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[11].equals("Platinum!!!!")) { CircleButton.setVisible(true); }
+		else { CircleButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[12].equals("Platinum!!!!")) { StarrySkyButton.setVisible(true); }
+		else { StarrySkyButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[13].equals("Platinum!!!!")) { LoomEx14Button.setVisible(true); }
+		else { LoomEx14Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[14].equals("Platinum!!!!")) { LoomEx6Button.setVisible(true); }
+		else { LoomEx6Button.setVisible(false); }
+
+		if(!avatarMode || RecordMedal[15].equals("Platinum!!!!")) { SunnySkyButton.setVisible(true); }
+		else { SunnySkyButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[16].equals("Platinum!!!!")) { HeartButton.setVisible(true); }
+		else { HeartButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[17].equals("Platinum!!!!")) { SunriseButton.setVisible(true); }
+		else { SunriseButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[18].equals("Platinum!!!!")) { FlagButton.setVisible(true); }
+		else { FlagButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[19].equals("Platinum!!!!")) { LoomEx13Button.setVisible(true); }
+		else { LoomEx13Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[20].equals("Platinum!!!!")) { LoomEx10Button.setVisible(true); }
+		else { LoomEx10Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[21].equals("Platinum!!!!")) { UNCCButton.setVisible(true); }
+		else { UNCCButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[22].equals("Platinum!!!!")) { SergeantButton.setVisible(true); }
+		else { SergeantButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[23].equals("Platinum!!!!")) { TieFighterButton.setVisible(true); }
+		else { TieFighterButton.setVisible(false); }
+		
+		if(!avatarMode || RecordMedal[24].equals("Platinum!!!!")) { MoonButton.setVisible(true); }
+		else { MoonButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[25].equals("Platinum!!!!")) { LoomEx7Button.setVisible(true); }
+		else { LoomEx7Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[26].equals("Platinum!!!!")) { DCButton.setVisible(true); }
+		else { DCButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[27].equals("Platinum!!!!")) { BullseyeButton.setVisible(true); }
+		else { BullseyeButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[28].equals("Platinum!!!!")) { LoomEx1Button.setVisible(true); }
+		else { LoomEx1Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[29].equals("Platinum!!!!")) { ROSSButton.setVisible(true); }
+		else { ROSSButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[30].equals("Platinum!!!!")) { StarsAndStripesButton.setVisible(true); }
+		else { StarsAndStripesButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[31].equals("Platinum!!!!")) { LoomEx5Button.setVisible(true); }
+		else { LoomEx5Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[32].equals("Platinum!!!!")) { LoomEx3Button.setVisible(true); }
+		else { LoomEx3Button.setVisible(false); }
+		if(!avatarMode || RecordMedal[33].equals("Platinum!!!!")) { MegamanButton.setVisible(true); }
+		else { MegamanButton.setVisible(false); }
+		if(!avatarMode || RecordMedal[34].equals("Platinum!!!!")) { BatmanButton.setVisible(true); }
+		else { BatmanButton.setVisible(false); }
+		
+		//highscore and medal labels
+		if(avatarMode) { HSLabel0.setVisible(false); }
+		else { HSLabel0.setVisible(true); }
+		if(avatarMode) { HSLabel1.setVisible(false); }
+		else { HSLabel1.setVisible(true); }
+		if(avatarMode) { HSLabel2.setVisible(false); }
+		else { HSLabel2.setVisible(true); }
+		if(avatarMode) { HSLabel3.setVisible(false); }
+		else { HSLabel3.setVisible(true); }
+		if(avatarMode) { HSLabel4.setVisible(false); }
+		else { HSLabel4.setVisible(true); }
+		if(avatarMode) { HSLabel5.setVisible(false); }
+		else { HSLabel5.setVisible(true); }
+		if(avatarMode) { HSLabel6.setVisible(false); }
+		else { HSLabel6.setVisible(true); }
+		if(avatarMode) { HSLabel7.setVisible(false); }
+		else { HSLabel7.setVisible(true); }
+		if(avatarMode) { HSLabel8.setVisible(false); }
+		else { HSLabel8.setVisible(true); }
+		if(avatarMode) { HSLabel9.setVisible(false); }
+		else { HSLabel9.setVisible(true); }
+		if(avatarMode) { HSLabelA.setVisible(false); }
+		else { HSLabelA.setVisible(true); }
+		if(avatarMode) { HSLabelB.setVisible(false); }
+		else { HSLabelB.setVisible(true); }
+
+		if(avatarMode) { MLabel0.setVisible(false); }
+		else { MLabel0.setVisible(true); }
+		if(avatarMode) { MLabel1.setVisible(false); }
+		else { MLabel1.setVisible(true); }
+		if(avatarMode) { MLabel2.setVisible(false); }
+		else { MLabel2.setVisible(true); }
+		if(avatarMode) { MLabel3.setVisible(false); }
+		else { MLabel3.setVisible(true); }
+		if(avatarMode) { MLabel4.setVisible(false); }
+		else { MLabel4.setVisible(true); }
+		if(avatarMode) { MLabel5.setVisible(false); }
+		else { MLabel5.setVisible(true); }
+		if(avatarMode) { MLabel6.setVisible(false); }
+		else { MLabel6.setVisible(true); }
+		if(avatarMode) { MLabel7.setVisible(false); }
+		else { MLabel7.setVisible(true); }
+		if(avatarMode) { MLabel8.setVisible(false); }
+		else { MLabel8.setVisible(true); }
+		if(avatarMode) { MLabel9.setVisible(false); }
+		else { MLabel9.setVisible(true); }
+		if(avatarMode) { MLabelA.setVisible(false); }
+		else { MLabelA.setVisible(true); }
+		if(avatarMode) { MLabelB.setVisible(false); }
+		else { MLabelB.setVisible(true); }
 	}
 }

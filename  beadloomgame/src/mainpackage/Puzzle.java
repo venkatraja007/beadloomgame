@@ -1838,10 +1838,12 @@ public class Puzzle {
 		}
 	}
 	
-	public boolean setCustomPuzzle(String puzzleName, String folderName)
+	public boolean setCustomPuzzle(String puzzleName, String folderName, int gridNumber)
 	{
 		//Set the active grid to the goal image grid
-		InputTools.setGrid(bl.getGridPanel2());
+		if(gridNumber==1) { InputTools.setGrid(bl.getGridPanel()); }
+		else if(gridNumber==2) { InputTools.setGrid(bl.getGridPanel2()); }
+		else { return false; }
 		try {
 
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
