@@ -2181,11 +2181,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == SubmitCustomPuzzleButton) {
-			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php");
+			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", BeadLoom.playerName+"-MyLevel", "CustomPuzzles");
 		}
 		
 		else if (e.getSource() == SubmitAvatarButton) {
-			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php");
+			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
 		}
 		
 		else if (e.getSource() == CreateCustomPuzzleButton) {
@@ -2243,7 +2243,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			startGame();
 			currentPuzzle = -1;
 			Restart(true, true, true);
-			puz.setCustomPuzzle("MyLevel");
+			puz.setCustomPuzzle(BeadLoom.playerName+"-MyLevel");
 			//bestScore = RecordMove[currentPuzzle];
 			//BestScoreLabel.setText("Best Score:" + bestScore);
 			BestScoreLabel.setText("Custom Puzzle");
@@ -3829,7 +3829,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 	}
 	
-	public void sendCustomPuzzlePost(String fileContents, String url)
+	public void sendCustomPuzzlePost(String fileContents, String url, String puzzleName, String folderName)
 	{
 		StringBuilder builder = new StringBuilder(); 
 		try {
@@ -3837,7 +3837,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			URLConnection con = test.openConnection();
 			con.setDoOutput(true);
 			OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
-			wr.write("fileName=MyLevel");
+			wr.write("folderName="+folderName);
+			wr.write("&fileName="+puzzleName);
 			wr.write("&file=" + URLEncoder.encode(fileContents, "UTF-8"));
 			wr.flush();
 			
