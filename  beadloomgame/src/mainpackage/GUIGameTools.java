@@ -3992,6 +3992,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
 		limitedColorChoice = true;
 		setAvatarColorButtons();
+		bl.getInputTools().setColor(Color.BLACK);
+		bl.getColorFrame().setVisible(false);
+		bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLACK);
+		bl.getMoveBeads().getTopColorsButton().setText("Black");
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 	}
