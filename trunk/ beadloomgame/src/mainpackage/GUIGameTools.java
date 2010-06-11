@@ -94,6 +94,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JLabel NameLabel = new JLabel();
 	private JLabel BestScoreLabel = new JLabel();
 	private JTextField NameTextField = new JTextField();
+	JLabel avatarIcon = new JLabel();
 
 	//Choose Puzzle Panel Parts
 	JLabel puzIcon = new JLabel();
@@ -1762,7 +1763,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//Load Default Puzzle
 		//currentPuzzle = puz.setLoomEx8();
 
-		// TODO Load Player Data from site
 		getScores();
 //		try{
 //			FileReader fr = new FileReader("Scores.txt"); 
@@ -2141,7 +2141,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			in.close();
 		} catch (Exception ex) {
-			// TODO Auto-generated catch block
 			ex.printStackTrace();
 			return builder.toString();
 		}
@@ -2234,7 +2233,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				}
 
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
@@ -2243,7 +2241,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			startGame();
 			currentPuzzle = -1;
 			Restart(true, true, true);
-			puz.setCustomPuzzle(BeadLoom.playerName+"-MyLevel");
+			puz.setCustomPuzzle(BeadLoom.playerName+"-MyLevel", "CustomPuzzles");
 			//bestScore = RecordMove[currentPuzzle];
 			//BestScoreLabel.setText("Best Score:" + bestScore);
 			BestScoreLabel.setText("Custom Puzzle");
@@ -2355,10 +2353,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		else if (e.getSource()== SubmitButton) {
 			checkSolution();
-		}
-		
-		else if (e.getSource() == SubmitAvatarButton) {
-			//TODO: implement avatar submit
 		}
 
 		else if (e.getSource()== MainMenuButton) {
@@ -3929,11 +3923,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void setMainMenuMode()
 	{
 		removeAllWindows();
-
+		
 		NameTextField.setText(BeadLoom.playerName);
 		JPanel panel = bl.getContentPanel();
+		
+
 		//TODO insert code to add main menu here
-		bl.getMainMenuFrame().setBounds(((int)BeadLoom.usableDim.getWidth())/2-100, ((int)BeadLoom.usableDim.getHeight())/2-150, 200, 300);
+		bl.getMainMenuFrame().setBounds(((int)BeadLoom.usableDim.getWidth())/2-100, ((int)BeadLoom.usableDim.getHeight())/2-150, 200, 400);
 		bl.getMainMenuFrame().setVisible(true);
 		panel.add(bl.getMainMenuFrame());
 		panel.add(bl.getGameOptionsFrame());
@@ -3942,6 +3938,20 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getPuzzleFrame().setVisible(false);
 		panel.add(bl.getHighScoresFrame());
 		bl.getHighScoresFrame().setVisible(false);
+		//load Avatar
+		if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars"))
+		{
+			int avatarSize = 123;
+			avatarIcon = new JLabel(new ImageIcon(
+					bl.createImageFromGrid().getScaledInstance(
+					avatarSize, avatarSize, 0)));
+			MainMenuPanel.remove(avatarIcon);
+			avatarIcon.setVisible(true);
+			avatarIcon.setBounds((200-avatarSize)/2,205, avatarSize, avatarSize);
+			MainMenuPanel.add(avatarIcon);
+			avatarIcon.repaint();
+		}
+		else { avatarIcon.setVisible(false); }
 	}
 
 	//set up the content pane for Custom Puzzle Creation Mode
@@ -3968,6 +3978,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		limitedColorChoice = true;
 		setColorButtonsVisbility(true);
 		panel.repaint();
+		bl.getInputTools().setGrid(bl.getGridPanel());
 	}
 
 	//set up the content pane for Avatar Creation Mode
@@ -4000,6 +4011,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getMoveBeads().getTopColorsButton().setText("Black");
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
+		bl.getInputTools().setGrid(bl.getGridPanel());
 	}
 
 	//set up the content pane for Game Play Mode
