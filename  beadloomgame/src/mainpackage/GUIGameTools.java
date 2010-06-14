@@ -1445,7 +1445,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		LoadCustomPuzzleUserTextField.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
 		LoadCustomPuzzleUserTextField.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(MouseEvent me) {
-				if(LoadCustomPuzzleUserTextField.getText().equals(BeadLoom.playerName))
+				if(LoadCustomPuzzleUserTextField.getText().equals("Username of Puzzle"))
 				{
 					LoadCustomPuzzleUserTextField.selectAll();
 				}
@@ -1456,9 +1456,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		LoadCustomPuzzleButton.setText("Load Puzzle");
 		LoadCustomPuzzleButton.addActionListener(this);
 		LoadCustomPuzzleButton.setBounds(25, 75, 145, LoadCustomPuzzleButton.getPreferredSize().height);
-//		private JButton LoadCustomPuzzleButton = new JButton();
-//		private JTextField LoadCustomPuzzleTextField = new JTextField();
-//		private JTextField LoadCustomPuzzleUserTextField = new JTextField();
 
 		//---- Green Button ----
 		GreenButton.setText("Green");
@@ -2341,11 +2338,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == CustomPuzzleButton) {
-			//TODO clear other buttons
 			removePuzzleButtons();
 			ChoosePuzzlePanel.add(LoadCustomPuzzleButton);
 			ChoosePuzzlePanel.add(LoadCustomPuzzleTextField);
 			ChoosePuzzlePanel.add(LoadCustomPuzzleUserTextField);
+			//TODO fix this hack
+			avatarMode = true;
+			hidePuzzleButtons();
+			avatarMode = false;
 		}
 
 		else if (e.getSource() == LoadCustomPuzzleButton) {
