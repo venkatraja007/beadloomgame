@@ -1674,6 +1674,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//Clears grid 2 if clear2 is true
 	//Logs the restart if log is true (only doesn't log during start and when not in game)
 	public void Restart(Boolean clear1, Boolean clear2, Boolean dolog){
+		bl.getInputTools().resetDrawTextFields();
 		bl.getOutputWindow().getEditorPane().setText("");
 		puzzleStartTime = System.currentTimeMillis();
 		moveCounter = 0;

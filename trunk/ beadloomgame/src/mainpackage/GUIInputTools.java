@@ -1213,6 +1213,42 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	{
 		grid = gp;
 	}
+	
+	public void resetDrawTextFields()
+	{
+		DrawPointXTextField.setText("0");
+		DrawPointYTextField.setText("0");
+		
+		DrawLineX1TextField.setText("0");
+		DrawLineY1TextField.setText("0");
+		DrawLineX2TextField.setText("0");
+		DrawLineY2TextField.setText("0");
+
+		DrawRectangleX1TextField.setText("0");
+		DrawRectangleY1TextField.setText("0");
+		DrawRectangleX2TextField.setText("0");
+		DrawRectangleY2TextField.setText("0");
+
+		DrawTriangleX1TextField.setText("0");
+		DrawTriangleY1TextField.setText("0");
+		DrawTriangleX2TextField.setText("0");
+		DrawTriangleY2TextField.setText("0");
+		DrawTriangleX3TextField.setText("0");
+		DrawTriangleY3TextField.setText("0");
+
+		LinearIterationInc1TextField.setText("0");
+		LinearIterationInc2TextField.setText("0");
+		LinearIterationRowsTotalTextField.setText("0");
+		LinearIterationStartLengthTextField.setText("0");
+		LinearIterationStartXTextField.setText("0");
+		LinearIterationStartYTextField.setText("0");
+		
+		TriangleIterationBeadsAddedTextField.setText("0");
+		TriangleIterationRowsTotalTextField.setText("0");
+		TriangleIterationStartXTextField.setText("0");
+		TriangleIterationStartYTextField.setText("0");
+		TriangleIterationStepHeightTextField.setText("0");
+	}
 
 	//Draw a single point
 	public void drawPoint(int x, int y)
