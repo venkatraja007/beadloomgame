@@ -1,5 +1,17 @@
+<?php
+		include('config.php');
+		include('connect.php');
+		include('functions.php');
+		
+		session_start();
+		if(!isset($_SESSION['userid']))
+		{
+			header('Location: http://www.unccmakesgames.com/games/BeadLoomGame/login.php');
+		}
+		
+		$userid = $_SESSION['userid'];
+?>
 <html>
-
 <head>
 	<title>Bead Loom Game</title>
 	<link rel="SHORTCUT ICON" href="http://www.uncc.edu/uncc.ico" type="image/x-icon" />
@@ -7,42 +19,55 @@
 	
 	<script type="text/javascript">
 	
-	function playGame(form)
+	function playGame()
 	{
-		var name = form.nameBox.value;
-		if(name == "")
-		{
-			alert('Please enter your name!');
-		}
-		else
-		{
-			window.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.php?name=" + name;
-		}
+			window.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.php";
 	}
-	
+	function puzzleSelect()
+	{
+		var selectBox = document.getElementById("puzzle").value;
+		window.location = "http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + selectBox;
+	}
 	
 	</script>
 </head>
 
 <body>
-	<form id="mainTable" name="mainTable">
-	<table width="800" align="center">
-		<tr>
-			<th colspan="2"><h2> Bead Loom Game<br /></h2><h3>Coming Soon!!</h3></th>
-		</tr>
-		<tr>
-			<td>Play Bead Loom Game!</td>
-			<td><a href="puzzleScores.php">High Scores</a></td>
-		</tr>
-		<tr>
-		<td colspan="2">
-			Please enter your name!: <br />
-				<input type="text" size="50" id="nameBox" /><br />
-				<input type="button" value="Play!" onclick="playGame(document.mainTable)" />
-		</td>
-	
-	</table>
-	</form>
+
+	<div id="mainDiv" name="mainDiv">
+		<div id="headerDiv" name="headerDiv">
+			Bead Loom Game<br />
+			<h3>Welcome <?php echo "$userid" ?>!<br />We're still under construction, so bear with us!!</h3>
+			<h4>All Done Playing? <a href="logout.php" class="header">Click here to logout!</a></h4>
+		</div>
+		<div id="leftDiv" name="leftDiv">
+			<div id="playGame" name="playGame">
+				Play Bead Loom Game!<br />
+				<input type="button" value="Play!" onclick="playGame()" width="50px"/>
+			</div>
+			<div id="myScores" name="myScores">
+				<?php
+					getUserScores($db, $userid);
+				?>
+			</div>
+			<div id="myAchievements" name="myAchievements">
+				<?php
+					getAchievements($db, $userid);
+				?>
+			</div>
+			<div id="myCustomPuzzles" name="myCustomPuzzles">
+			</div>
+		</div>
+		<div id="rightDiv" name="rightDiv"> 
+			<?php
+				getLeaderBoard($db);
+			?>
+		</div>
+		<div id="footer" name="footer">
+			<h4>Copyright 2010, University of North Carolina at Charlotte. College of Computing and Informatics.</h4>
+		</div>
+	</div>
+
 </body>
 
 </html>

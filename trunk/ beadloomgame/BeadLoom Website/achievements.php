@@ -26,9 +26,10 @@ if(isset($_GET['token']))
 	{
 		if(isset($_GET['user']) && isset($_GET['achievements']))
 		{
-			$query = "UPDATE Users SET Achievements='$achievements' WHERE user='$user'";
 			$user = $_GET['user'];
 			$achievements = $_GET['achievements'];
+			$achievements = str_pad($achievements, 64, "0", STR_PAD_RIGHT);
+			$query = "UPDATE Users SET Achievements='$achievements' WHERE user='$user'";
 			$result = $db->query($query);
 			if($result)
 			{

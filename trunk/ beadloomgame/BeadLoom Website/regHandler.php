@@ -37,7 +37,7 @@ $result = $db->query($verifyQuery);
 $row = $result->fetch_assoc();
 if($row['count'] == '1')
 {
-	echo "<h2>Uh oh! The user $uid already exists! Please try another username! </h2><br>";
+	echo "<h2>The user: $uid already exist in the database.</h2><br>";
 	die("<input type='button' value='BACK' onclick='history.back()'/>");
 }
 //Add the user to the database and check for errors
