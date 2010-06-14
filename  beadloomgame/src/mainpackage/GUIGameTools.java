@@ -2042,9 +2042,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				RecordMedalShort[currentPuzzle] = "B";
 			}
 
-			//TODO write achievements here
-			Achievements.checkAchievements();
-			Achievements.sendAchievements(BeadLoom.playerName);
 			//Send this medal to the website
 			try {
 				message = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php?" +
@@ -2125,6 +2122,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				System.err.println("Error: " + e.getMessage());
 			}
 		}
+		
+		//TODO write achievements here
+		getScores();
+		Achievements.checkAchievements();
+		Achievements.sendAchievements(BeadLoom.playerName);
 	}
 
 	public void setLoom(BeadLoom toSet){
