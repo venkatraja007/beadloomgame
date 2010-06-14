@@ -1414,8 +1414,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		//---- Custom Puzzle Name Text Field ----
 		CustomPuzzleTextField.setText("Enter Puzzle Name");
-		CustomPuzzleTextField.setBounds(25, 50, 145, CustomPuzzleTextField.getPreferredSize().height);
+		CustomPuzzleTextField.setBounds(25, 100, 145, CustomPuzzleTextField.getPreferredSize().height);
 		CustomPuzzleMenuPanel.add(CustomPuzzleTextField);
+		CustomPuzzleTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mousePressed(MouseEvent me) {
+				if(CustomPuzzleTextField.getText().equals("Enter Puzzle Name"))
+				{
+					CustomPuzzleTextField.selectAll();
+				}
+			}
+		});
 
 		//---- Green Button ----
 		GreenButton.setText("Green");
