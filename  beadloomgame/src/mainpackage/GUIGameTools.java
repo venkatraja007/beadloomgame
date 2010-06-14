@@ -4046,10 +4046,28 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getHighScoresFrame().setVisible(false);
 		//load Avatar
 		bl.getGridPanel2().clear();
-		if(avatarPuzzle==-1)
+		if(ComponentToggle.avatars)
 		{
-			if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 2))
+			if(avatarPuzzle==-1)
 			{
+				if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 2))
+				{
+					MainMenuPanel.remove(avatarIcon);
+					int avatarSize = 123;
+					avatarIcon = new JLabel(new ImageIcon(
+							bl.createImageFromGrid().getScaledInstance(
+							avatarSize, avatarSize, 0)));
+					MainMenuPanel.remove(avatarIcon);
+					avatarIcon.setVisible(true);
+					avatarIcon.setBounds((200-avatarSize)/2,205, avatarSize, avatarSize);
+					MainMenuPanel.add(avatarIcon);
+					avatarIcon.repaint();
+				}
+				else { avatarIcon.setVisible(false); }
+			}
+			else
+			{
+				puz.setPuzzle(avatarPuzzle);
 				MainMenuPanel.remove(avatarIcon);
 				int avatarSize = 123;
 				avatarIcon = new JLabel(new ImageIcon(
@@ -4061,21 +4079,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				MainMenuPanel.add(avatarIcon);
 				avatarIcon.repaint();
 			}
-			else { avatarIcon.setVisible(false); }
 		}
 		else
 		{
-			puz.setPuzzle(avatarPuzzle);
-			MainMenuPanel.remove(avatarIcon);
-			int avatarSize = 123;
-			avatarIcon = new JLabel(new ImageIcon(
-					bl.createImageFromGrid().getScaledInstance(
-					avatarSize, avatarSize, 0)));
-			MainMenuPanel.remove(avatarIcon);
-			avatarIcon.setVisible(true);
-			avatarIcon.setBounds((200-avatarSize)/2,205, avatarSize, avatarSize);
-			MainMenuPanel.add(avatarIcon);
-			avatarIcon.repaint();
+			avatarIcon.setVisible(false);
+			CreateAvatarButton.setVisible(false);
 		}
 	}
 
