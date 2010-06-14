@@ -32,8 +32,22 @@ public abstract class Achievements {
 		{
 			currentAchievements[i] = Integer.parseInt((achievements.charAt(i) + ""));
 			currentAchievementNames[i]  = achievementNames[i];
-			System.out.println(currentAchievements[i] + "---" + currentAchievementNames[i]);
+			//System.out.println(currentAchievements[i] + "---" + currentAchievementNames[i]);
 		}
+	}
+	
+	public static void sendAchievements(String user)
+	{
+		String achievements = "";
+		for(int i=0; i<currentAchievements.length; i++)
+		{
+			achievements += currentAchievements[i];
+		}
+		
+		String message = GUIGameTools.sendWebRequest(
+				"http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=send&user=" + 
+				user + "&achievements=" + achievements);
+		JOptionPane.showMessageDialog(null, message, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	public static void retrieveMedals(String[] recordMedals, int[] recordMoves)
@@ -74,6 +88,10 @@ public abstract class Achievements {
 						currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
 				{
 					currentAchievements[id] = 1;
+					JOptionPane.showMessageDialog(null, 
+							"Congratulations you have earned the 'Persistant Puzzler' Achievement", 
+							"Achievements Message", 
+							JOptionPane.PLAIN_MESSAGE);
 					return;
 				}
 			}
@@ -97,6 +115,10 @@ public abstract class Achievements {
 						currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
 				{
 					currentAchievements[id] = 1;
+					JOptionPane.showMessageDialog(null, 
+							"Congratulations you have earned the 'Silver Puzzler' Achievement", 
+							"Achievements Message", 
+							JOptionPane.PLAIN_MESSAGE);
 					return;
 				}
 			}
@@ -119,6 +141,10 @@ public abstract class Achievements {
 						currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
 				{
 					currentAchievements[id] = 1;
+					JOptionPane.showMessageDialog(null, 
+							"Congratulations you have earned the 'So Close Yet So Far' Achievement", 
+							"Achievements Message", 
+							JOptionPane.PLAIN_MESSAGE);
 					return;
 				}
 			}
@@ -140,6 +166,10 @@ public abstract class Achievements {
 				if(!currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
 				{
 					currentAchievements[id] = 1;
+					JOptionPane.showMessageDialog(null, 
+							"Congratulations you have earned the 'Pure Platinum' Achievement", 
+							"Achievements Message", 
+							JOptionPane.PLAIN_MESSAGE);
 					return;
 				}
 			}

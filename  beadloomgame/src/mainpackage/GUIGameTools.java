@@ -2044,7 +2044,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 			//TODO write achievements here
 			Achievements.checkAchievements();
-			Achievements.viewAchievements();
+			Achievements.sendAchievements(BeadLoom.playerName);
 			//Send this medal to the website
 			try {
 				message = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php?" +
