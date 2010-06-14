@@ -1214,7 +1214,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		grid = gp;
 	}
 	
-	public void resetDrawTextFields()
+	public void setDrawTextFieldsToZero()
 	{
 		DrawPointXTextField.setText("0");
 		DrawPointYTextField.setText("0");
