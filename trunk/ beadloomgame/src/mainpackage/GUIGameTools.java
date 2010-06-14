@@ -1657,6 +1657,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- High Scores Label ----
 		HighScoresCloseButton.setText("Close");
 		HighScoresCloseButton.setBounds(180, 5, 175, HighScoresCloseButton.getPreferredSize().height);
+		HighScoresCloseButton.addActionListener(this);
 		HighScoresPanel.add(HighScoresCloseButton);
 		HighScoresLabel.setText("");
 		HighScoresPanel.add(HighScoresLabel);
@@ -1674,7 +1675,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//Clears grid 2 if clear2 is true
 	//Logs the restart if log is true (only doesn't log during start and when not in game)
 	public void Restart(Boolean clear1, Boolean clear2, Boolean dolog){
-		bl.getInputTools().resetDrawTextFields();
+		bl.getInputTools().setDrawTextFieldsToZero();
 		bl.getOutputWindow().getEditorPane().setText("");
 		puzzleStartTime = System.currentTimeMillis();
 		moveCounter = 0;
@@ -2225,6 +2226,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			setToolMode();
 		}
 		
+		else if (e.getSource() == HighScoresCloseButton) {
+			bl.getHighScoresFrame().setVisible(false);
+			bl.getMainMenuFrame().setVisible(true);
+		}
+		
 		else if (e.getSource() == SubmitCustomPuzzleButton) {
 			String text = CustomPuzzleTextField.getText();
 			if(text.equalsIgnoreCase("Enter Puzzle Name") || text.length() < 3)
@@ -2404,6 +2410,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			{
 				HighScoresComboBox.addItem(items[i]);
 			}
+			bl.getMainMenuFrame().setVisible(false);
 		}
 
 		else if (e.getSource() == GameOptionsButton) {
