@@ -100,6 +100,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JLabel BestScoreLabel = new JLabel();
 	private JTextField NameTextField = new JTextField();
 
+	private JButton LoadCustomPuzzleButton = new JButton();
+	private JTextField LoadCustomPuzzleTextField = new JTextField();
+	private JTextField LoadCustomPuzzleUserTextField = new JTextField();
 	private JTextField CustomPuzzleTextField = new JTextField();
 	JLabel avatarIcon = new JLabel();
 
@@ -1411,7 +1414,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitCustomPuzzleButton.addActionListener(this);
 		SubmitCustomPuzzleButton.setBounds(25, 75, 145, SubmitCustomPuzzleButton.getPreferredSize().height);
 		CustomPuzzleMenuPanel.add(SubmitCustomPuzzleButton);
-		
+
 		//---- Custom Puzzle Name Text Field ----
 		CustomPuzzleTextField.setText("Enter Puzzle Name");
 		CustomPuzzleTextField.setBounds(25, 100, 145, CustomPuzzleTextField.getPreferredSize().height);
@@ -1424,6 +1427,38 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				}
 			}
 		});
+
+		//---- Load Custom Puzzle Text Field ----
+		LoadCustomPuzzleTextField.setText("Enter Puzzle Name");
+		LoadCustomPuzzleTextField.setBounds(25, 50, 145, CustomPuzzleTextField.getPreferredSize().height);
+		LoadCustomPuzzleTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mousePressed(MouseEvent me) {
+				if(LoadCustomPuzzleTextField.getText().equals("Enter Puzzle Name"))
+				{
+					LoadCustomPuzzleTextField.selectAll();
+				}
+			}
+		});
+
+		//---- Load Custom Puzzle User Text Field ----
+		LoadCustomPuzzleUserTextField.setText("Username of Puzzle");
+		LoadCustomPuzzleUserTextField.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
+		LoadCustomPuzzleUserTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+			public void mousePressed(MouseEvent me) {
+				if(LoadCustomPuzzleUserTextField.getText().equals(BeadLoom.playerName))
+				{
+					LoadCustomPuzzleUserTextField.selectAll();
+				}
+			}
+		});
+		
+		//---- Load Custom Puzzle Button ----
+		LoadCustomPuzzleButton.setText("Load Puzzle");
+		LoadCustomPuzzleButton.addActionListener(this);
+		LoadCustomPuzzleButton.setBounds(25, 75, 145, LoadCustomPuzzleButton.getPreferredSize().height);
+//		private JButton LoadCustomPuzzleButton = new JButton();
+//		private JTextField LoadCustomPuzzleTextField = new JTextField();
+//		private JTextField LoadCustomPuzzleUserTextField = new JTextField();
 
 		//---- Green Button ----
 		GreenButton.setText("Green");
@@ -1544,7 +1579,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		//---- Create Avatar Puzzle ----
 		CreateAvatarButton.setText("Create Avatar");
-		CreateAvatarButton.setBounds(25, 100, 145, CreateCustomPuzzleButton.getPreferredSize().height);
+		CreateAvatarButton.setBounds(25, 100, 145, CreateAvatarButton.getPreferredSize().height);
 		CreateAvatarButton.addActionListener(this);
 		
 		//---- Play Game button ----
@@ -1754,6 +1789,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		ChoosePuzzlePanel.remove(MoonButton);
 		ChoosePuzzlePanel.remove(MegamanButton);
 		ChoosePuzzlePanel.remove(BatmanButton);
+		ChoosePuzzlePanel.remove(LoadCustomPuzzleButton);
+		ChoosePuzzlePanel.remove(LoadCustomPuzzleTextField);
+		ChoosePuzzlePanel.remove(LoadCustomPuzzleUserTextField);
 		//Refreshes Panel
 		ChoosePuzzlePanel.setVisible(false);
 		ChoosePuzzlePanel.setVisible(true);
@@ -2301,14 +2339,20 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				e1.printStackTrace();
 			}
 		}
-
+		
 		else if (e.getSource() == CustomPuzzleButton) {
+			//TODO clear other buttons
+			removePuzzleButtons();
+			ChoosePuzzlePanel.add(LoadCustomPuzzleButton);
+			ChoosePuzzlePanel.add(LoadCustomPuzzleTextField);
+			ChoosePuzzlePanel.add(LoadCustomPuzzleUserTextField);
+		}
+
+		else if (e.getSource() == LoadCustomPuzzleButton) {
 			startGame();
 			currentPuzzle = -1;
 			Restart(true, true, true);
-			puz.setCustomPuzzle(BeadLoom.playerName+"-MyLevel", "CustomPuzzles", 2);
-			//bestScore = RecordMove[currentPuzzle];
-			//BestScoreLabel.setText("Best Score:" + bestScore);
+			puz.setCustomPuzzle(LoadCustomPuzzleUserTextField.getText()+"-"+LoadCustomPuzzleTextField.getText(), "CustomPuzzles", 2);
 			BestScoreLabel.setText("Custom Puzzle");
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
