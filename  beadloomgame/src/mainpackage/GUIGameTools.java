@@ -2128,7 +2128,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		//TODO write achievements here
-		getScores();
+		Achievements.retrieveMedals(RecordMedal, RecordMove);
 		Achievements.checkAchievements();
 		Achievements.sendAchievements(BeadLoom.playerName);
 	}
