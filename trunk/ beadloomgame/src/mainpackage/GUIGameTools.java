@@ -1710,6 +1710,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getInputTools().setDrawTextFieldsToZero();
 		bl.getOutputWindow().getEditorPane().setText("");
 		puzzleStartTime = System.currentTimeMillis();
+		bl.seconds = 0;
+		bl.minutes = 0;
+		bl.timer.restart();
+		bl.getTimerLabel().setText("Timer: " + bl.updateTime(bl.minutes, bl.seconds));
 		moveCounter = 0;
 		MoveLabel.setText("Total Actions: " + moveCounter);
 		if (clear2){
