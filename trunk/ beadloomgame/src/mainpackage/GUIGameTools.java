@@ -4206,7 +4206,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 		bl.getInputTools().setGrid(bl.getGridPanel());
-		puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1);
+		if(!puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1))
+		{
+
+			JOptionPane.showMessageDialog(null, "Complete move game puzzles to unlock more colors for your custom Avatar", "Custom Avatar Creation", JOptionPane.PLAIN_MESSAGE);
+		}
 	}
 
 	//set up the content pane for Game Play Mode
