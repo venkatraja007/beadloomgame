@@ -7,8 +7,8 @@ public class ComponentToggle {
 	public static boolean globalHighScores = true;				//done
 	public static boolean userCreatedContent = true;			//TODO: implement this
 	public static boolean otherUserCreatedContent = true;		//TODO: implement this
-	public static boolean avatars = true;						//TODO: implement this
-	public static boolean unlockableAvatar = true;				//TODO: implement this
+	public static boolean avatars = true;						//done
+	public static boolean unlockableAvatar = true;				//done
 	public static boolean achievements = true;					//TODO: implement this
 	public static boolean aesthetics = true;					//done
 	public static boolean basicHints = true;					//done

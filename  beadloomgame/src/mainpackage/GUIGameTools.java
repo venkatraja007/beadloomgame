@@ -4312,6 +4312,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(comp>=12){ YellowButton.setVisible(true); }
 		if(comp>=8){ RedButton.setVisible(true); }
 		if(comp>=4){ GrayButton.setVisible(true); }
+		if(!ComponentToggle.unlockableAvatar) { setColorButtonsVisbility(true); }
 	}
 	
 	public void hidePuzzleButtons()
