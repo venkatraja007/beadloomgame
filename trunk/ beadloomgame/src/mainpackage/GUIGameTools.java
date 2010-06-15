@@ -2153,6 +2153,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public boolean isLimitedColorChoice() {
 		return limitedColorChoice;
 	}
+	public boolean getAvatarMode() {
+		return avatarMode;
+	}
 	public JPanel getGamePanel() {
 		return GamePanel;
 	}
@@ -4199,6 +4202,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getColorFrame().setVisible(false);
 		bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLACK);
 		bl.getMoveBeads().getTopColorsButton().setText("Black");
+		bl.getMoveBeads().getTopColorsButton().setForeground(Color.WHITE);
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 		bl.getInputTools().setGrid(bl.getGridPanel());
