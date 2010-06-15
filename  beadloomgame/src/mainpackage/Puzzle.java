@@ -1948,7 +1948,7 @@ public class Puzzle {
 		//Change grid back so they can work on the puzzle
 		//Reset the Current Selected Color to default
 		InputTools.setGrid(bl.getGridPanel());
-		resetColor();
+		if(!bl.getGame().getAvatarMode()){ resetColor(); }
 		return true;
 	}
 
