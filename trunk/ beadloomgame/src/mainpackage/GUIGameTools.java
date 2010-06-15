@@ -1842,7 +1842,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		getScores();
 		Achievements.retrieveAchievements(BeadLoom.playerName);
-		Achievements.retrieveMedals(RecordMedal, RecordMove);
+		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
 //		try{
 //			FileReader fr = new FileReader("Scores.txt"); 
 //			BufferedReader br = new BufferedReader(fr); 
@@ -2128,8 +2128,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		//TODO write achievements here
-		getScores();
-		Achievements.retrieveMedals(RecordMedal, RecordMove);
+		//getScores();
+		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
 		Achievements.checkAchievements();
 		Achievements.sendAchievements(BeadLoom.playerName);
 	}

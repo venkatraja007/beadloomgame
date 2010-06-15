@@ -19,6 +19,7 @@ public abstract class Achievements {
 	
 	static String[] currentMedals;
 	static int[] currentMoves;
+	static String[] currentMedalsShort;
 	
 	
 	public static void retrieveAchievements(String user)
@@ -50,10 +51,11 @@ public abstract class Achievements {
 		JOptionPane.showMessageDialog(null, message, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
 	}
 	
-	public static void retrieveMedals(String[] recordMedals, int[] recordMoves)
+	public static void retrieveMedals(String[] recordMedals, int[] recordMoves, String[] recordMedalsShort)
 	{
 		currentMedals = recordMedals;
 		currentMoves = recordMoves;
+		currentMedalsShort = recordMedalsShort;
 	}
 	
 	public static void checkAchievements()
@@ -85,7 +87,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedals[i].equalsIgnoreCase("Bronze!"))
+				if(currentMedalsShort[i].equalsIgnoreCase("B"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
@@ -110,7 +112,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedals[i].equalsIgnoreCase("Silver!!"))
+				if(currentMedalsShort[i].equalsIgnoreCase("S"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
@@ -135,7 +137,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedals[i].equalsIgnoreCase("Gold!!!"))
+				if(currentMedalsShort[i].equalsIgnoreCase("G"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
@@ -160,7 +162,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
+				if(currentMedalsShort[i].equalsIgnoreCase("P"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
