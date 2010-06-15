@@ -85,11 +85,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(!currentMedals[i].equalsIgnoreCase("Bronze!") || 
-						currentMedals[i].equalsIgnoreCase("Silver!!") ||
-						currentMedals[i].equalsIgnoreCase("Gold!!!") ||
-						currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
-				{
+				if(!currentMedals[i].equalsIgnoreCase("Bronze!"))
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
 							"Congratulations you have earned the 'Persistant Puzzler' Achievement", 
@@ -113,9 +109,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(!currentMedals[i].equalsIgnoreCase("Silver!!") ||
-						currentMedals[i].equalsIgnoreCase("Gold!!!") ||
-						currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
+				if(!currentMedals[i].equalsIgnoreCase("Silver!!"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
@@ -140,8 +134,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(!currentMedals[i].equalsIgnoreCase("Gold!!!") ||
-						currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
+				if(!currentMedals[i].equalsIgnoreCase("Gold!!!"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
