@@ -2030,12 +2030,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				medal = "Platinum!!!!";
 				RecordMedalShort[currentPuzzle] = "P";
 			}
-			else if (moveCounter <= puz.getIdeal()*2){
+			else if (moveCounter <= puz.getIdeal()*1.5){
 				JOptionPane.showMessageDialog(null, "You Earned the Gold Medal.  You completed the puzzle in "+completeTime+" second(s).", "Congratulations", JOptionPane.PLAIN_MESSAGE);
 				medal = "Gold!!!";
 				RecordMedalShort[currentPuzzle] = "G";
 			}
-			else if (moveCounter <= puz.getIdeal()*3){
+			else if (moveCounter <= puz.getIdeal()*2){
 				JOptionPane.showMessageDialog(null, "You Earned the Silver Medal.  You completed the puzzle in "+completeTime+" second(s).", "Congratulations", JOptionPane.PLAIN_MESSAGE);
 				medal = "Silver!!";
 				RecordMedalShort[currentPuzzle] = "S";
