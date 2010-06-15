@@ -1506,26 +1506,26 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		gridPanel.undo();
 		if (gridPanel2.isShowing()){
 			//Log the Undo
-			try{
-				FileWriter log = new FileWriter("log.txt", true);
-				log.write("\t\t" + Game.getTime() + " Undo Performed\n");
-				log.close();
-			}catch (Exception ex){//Catch exception if any
-				System.err.println("Error: " + ex.getMessage());
-			}
+//			try{
+//				FileWriter log = new FileWriter("log.txt", true);
+//				log.write("\t\t" + Game.getTime() + " Undo Performed\n");
+//				log.close();
+//			}catch (Exception ex){//Catch exception if any
+//				System.err.println("Error: " + ex.getMessage());
+//			}
 		}
 	}
 	private void RedoMenuItemActionPerformed(ActionEvent e){
 		gridPanel.redo();
 		if (gridPanel2.isShowing()){
 			//Log the Redo
-			try{
-				FileWriter log = new FileWriter("log.txt", true);
-				log.write("\t\t" + Game.getTime() + " Redo Performed\n");
-				log.close();
-			}catch (Exception ex){//Catch exception if any
-				System.err.println("Error: " + ex.getMessage());
-			}
+//			try{
+//				FileWriter log = new FileWriter("log.txt", true);
+//				log.write("\t\t" + Game.getTime() + " Redo Performed\n");
+//				log.close();
+//			}catch (Exception ex){//Catch exception if any
+//				System.err.println("Error: " + ex.getMessage());
+//			}
 		}
 	}
 
@@ -1700,15 +1700,15 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			if (gridPanel2.isShowing()){
 				Game.incrementMove();
 				//Log the Draw Point
-				try{
-					FileWriter log = new FileWriter("log.txt", true);
-					log.write("\t\t" + Game.getTime() + " Draw Point:\n");
-					log.write("\t\t\tx= " + InputTools.getDrawPointXTextField().getText() +"\n");
-					log.write("\t\t\ty= " + InputTools.getDrawPointYTextField().getText() + "\n");
-					log.close();
-				}catch (Exception ex){//Catch exception if any
-					System.err.println("Error: " + ex.getMessage());
-				}
+//				try{
+//					FileWriter log = new FileWriter("log.txt", true);
+//					log.write("\t\t" + Game.getTime() + " Draw Point:\n");
+//					log.write("\t\t\tx= " + InputTools.getDrawPointXTextField().getText() +"\n");
+//					log.write("\t\t\ty= " + InputTools.getDrawPointYTextField().getText() + "\n");
+//					log.close();
+//				}catch (Exception ex){//Catch exception if any
+//					System.err.println("Error: " + ex.getMessage());
+//				}
 			}
 		}
 		else if (e.getSource() == InputTools.getDrawLineButton()) {
@@ -1720,17 +1720,17 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			if (gridPanel2.isShowing()){
 				Game.incrementMove();
 				//Log the Draw Line
-				try{
-					FileWriter log = new FileWriter("log.txt", true);
-					log.write("\t\t" + Game.getTime() + " Draw Line:\n");
-					log.write("\t\t\tx1= " + InputTools.getDrawLineX1TextField().getText() +"\n");
-					log.write("\t\t\tx2= " + InputTools.getDrawLineX2TextField().getText() +"\n");
-					log.write("\t\t\ty1= " + InputTools.getDrawLineY1TextField().getText() + "\n");
-					log.write("\t\t\ty2= " + InputTools.getDrawLineY2TextField().getText() + "\n");
-					log.close();
-				}catch (Exception ex){//Catch exception if any
-					System.err.println("Error: " + ex.getMessage());
-				}
+//				try{
+//					FileWriter log = new FileWriter("log.txt", true);
+//					log.write("\t\t" + Game.getTime() + " Draw Line:\n");
+//					log.write("\t\t\tx1= " + InputTools.getDrawLineX1TextField().getText() +"\n");
+//					log.write("\t\t\tx2= " + InputTools.getDrawLineX2TextField().getText() +"\n");
+//					log.write("\t\t\ty1= " + InputTools.getDrawLineY1TextField().getText() + "\n");
+//					log.write("\t\t\ty2= " + InputTools.getDrawLineY2TextField().getText() + "\n");
+//					log.close();
+//				}catch (Exception ex){//Catch exception if any
+//					System.err.println("Error: " + ex.getMessage());
+//				}
 			}
 		}
 		else if (e.getSource() == InputTools.getRectangleButton()) {
@@ -1742,17 +1742,17 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			if (gridPanel2.isShowing()){
 				Game.incrementMove();
 				//Log the Draw Rectangle
-				try{
-					FileWriter log = new FileWriter("log.txt", true);
-					log.write("\t\t" + Game.getTime() + " Draw Rectangle:\n");
-					log.write("\t\t\tx1= " + InputTools.getDrawRectangleX1TextField().getText() +"\n");
-					log.write("\t\t\tx2= " + InputTools.getDrawRectangleX2TextField().getText() +"\n");
-					log.write("\t\t\ty1= " + InputTools.getDrawRectangleY1TextField().getText() + "\n");
-					log.write("\t\t\ty2= " + InputTools.getDrawRectangleY2TextField().getText() + "\n");
-					log.close();
-				}catch (Exception ex){//Catch exception if any
-					System.err.println("Error: " + ex.getMessage());
-				}
+//				try{
+//					FileWriter log = new FileWriter("log.txt", true);
+//					log.write("\t\t" + Game.getTime() + " Draw Rectangle:\n");
+//					log.write("\t\t\tx1= " + InputTools.getDrawRectangleX1TextField().getText() +"\n");
+//					log.write("\t\t\tx2= " + InputTools.getDrawRectangleX2TextField().getText() +"\n");
+//					log.write("\t\t\ty1= " + InputTools.getDrawRectangleY1TextField().getText() + "\n");
+//					log.write("\t\t\ty2= " + InputTools.getDrawRectangleY2TextField().getText() + "\n");
+//					log.close();
+//				}catch (Exception ex){//Catch exception if any
+//					System.err.println("Error: " + ex.getMessage());
+//				}
 			}
 		}
 		else if (e.getSource() == InputTools.getDrawTriangleButton()) {
@@ -1765,19 +1765,19 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			if (gridPanel2.isShowing()){
 				Game.incrementMove();
 				//Log the Draw Triangle 
-				try{
-					FileWriter log = new FileWriter("log.txt", true);
-					log.write("\t\t" + Game.getTime() + " Draw Triangle:\n");
-					log.write("\t\t\tx1= " + InputTools.getDrawTriangleX1TextField().getText() +"\n");
-					log.write("\t\t\tx2= " + InputTools.getDrawTriangleX2TextField().getText() +"\n");
-					log.write("\t\t\tx3= " + InputTools.getDrawTriangleX3TextField().getText() +"\n");
-					log.write("\t\t\ty1= " + InputTools.getDrawTriangleY1TextField().getText() + "\n");
-					log.write("\t\t\ty2= " + InputTools.getDrawTriangleY2TextField().getText() + "\n");
-					log.write("\t\t\ty3= " + InputTools.getDrawTriangleY3TextField().getText() + "\n");
-					log.close();
-				}catch (Exception ex){//Catch exception if any
-					System.err.println("Error: " + ex.getMessage());
-				}
+//				try{
+//					FileWriter log = new FileWriter("log.txt", true);
+//					log.write("\t\t" + Game.getTime() + " Draw Triangle:\n");
+//					log.write("\t\t\tx1= " + InputTools.getDrawTriangleX1TextField().getText() +"\n");
+//					log.write("\t\t\tx2= " + InputTools.getDrawTriangleX2TextField().getText() +"\n");
+//					log.write("\t\t\tx3= " + InputTools.getDrawTriangleX3TextField().getText() +"\n");
+//					log.write("\t\t\ty1= " + InputTools.getDrawTriangleY1TextField().getText() + "\n");
+//					log.write("\t\t\ty2= " + InputTools.getDrawTriangleY2TextField().getText() + "\n");
+//					log.write("\t\t\ty3= " + InputTools.getDrawTriangleY3TextField().getText() + "\n");
+//					log.close();
+//				}catch (Exception ex){//Catch exception if any
+//					System.err.println("Error: " + ex.getMessage());
+//				}
 			}
 		}
 		else if (e.getSource() == InputTools.getDrawTriangleIterationButton()) {
@@ -1792,18 +1792,18 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			if (gridPanel2.isShowing()){
 				Game.incrementMove();
 				//Log the Draw Triangle Iteration Tool
-				try{
-					FileWriter log = new FileWriter("log.txt", true);
-					log.write("\t\t" + Game.getTime() + " Draw Triangle Iteration:\n");
-					log.write("\t\t\tx= " + InputTools.getTriangleIterationStartXTextField().getText() +"\n");
-					log.write("\t\t\ty= " + InputTools.getTriangleIterationStartYTextField().getText() + "\n");
-					log.write("\t\t\tstep height= " + InputTools.getTriangleIterationStepHeightTextField().getText() + "\n");
-					log.write("\t\t\tadd= " + InputTools.getTriangleIterationBeadsAddedTextField().getText() + "\n");
-					log.write("\t\t\trows total= " + InputTools.getTriangleIterationRowsTotalTextField().getText() + "\n");
-					log.close();
-				}catch (Exception ex){//Catch exception if any
-					System.err.println("Error: " + ex.getMessage());
-				}
+//				try{
+//					FileWriter log = new FileWriter("log.txt", true);
+//					log.write("\t\t" + Game.getTime() + " Draw Triangle Iteration:\n");
+//					log.write("\t\t\tx= " + InputTools.getTriangleIterationStartXTextField().getText() +"\n");
+//					log.write("\t\t\ty= " + InputTools.getTriangleIterationStartYTextField().getText() + "\n");
+//					log.write("\t\t\tstep height= " + InputTools.getTriangleIterationStepHeightTextField().getText() + "\n");
+//					log.write("\t\t\tadd= " + InputTools.getTriangleIterationBeadsAddedTextField().getText() + "\n");
+//					log.write("\t\t\trows total= " + InputTools.getTriangleIterationRowsTotalTextField().getText() + "\n");
+//					log.close();
+//				}catch (Exception ex){//Catch exception if any
+//					System.err.println("Error: " + ex.getMessage());
+//				}
 			}
 		}
 		else if (e.getSource() == InputTools.getDrawLinearIterationButton()) {
@@ -1819,19 +1819,19 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			if (gridPanel2.isShowing()){
 				Game.incrementMove();
 				//Log the Draw Linear Iteration Tool
-				try{
-					FileWriter log = new FileWriter("log.txt", true);
-					log.write("\t\t" + Game.getTime() + " Draw Linear Iteration:\n");
-					log.write("\t\t\tx= " + InputTools.getLinearIterationStartXTextField().getText() +"\n");
-					log.write("\t\t\ty= " + InputTools.getLinearIterationStartYTextField().getText() + "\n");
-					log.write("\t\t\tstart length= " + InputTools.getLinearIterationStartLengthTextField().getText() + "\n");
-					log.write("\t\t\tincrement 1= " + InputTools.getLinearIterationInc1TextField().getText() + "\n");
-					log.write("\t\t\tincrement 2= " + InputTools.getLinearIterationInc2TextField().getText() + "\n");
-					log.write("\t\t\trows total= " + InputTools.getLinearIterationRowsTotalTextField().getText() + "\n");
-					log.close();
-				}catch (Exception ex){//Catch exception if any
-					System.err.println("Error: " + ex.getMessage());
-				}
+//				try{
+//					FileWriter log = new FileWriter("log.txt", true);
+//					log.write("\t\t" + Game.getTime() + " Draw Linear Iteration:\n");
+//					log.write("\t\t\tx= " + InputTools.getLinearIterationStartXTextField().getText() +"\n");
+//					log.write("\t\t\ty= " + InputTools.getLinearIterationStartYTextField().getText() + "\n");
+//					log.write("\t\t\tstart length= " + InputTools.getLinearIterationStartLengthTextField().getText() + "\n");
+//					log.write("\t\t\tincrement 1= " + InputTools.getLinearIterationInc1TextField().getText() + "\n");
+//					log.write("\t\t\tincrement 2= " + InputTools.getLinearIterationInc2TextField().getText() + "\n");
+//					log.write("\t\t\trows total= " + InputTools.getLinearIterationRowsTotalTextField().getText() + "\n");
+//					log.close();
+//				}catch (Exception ex){//Catch exception if any
+//					System.err.println("Error: " + ex.getMessage());
+//				}
 			}
 		}
 		else if(e.getSource() == MoveBeads.getTopColorsButton()) {
