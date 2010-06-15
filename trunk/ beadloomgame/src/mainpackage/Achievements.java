@@ -86,6 +86,7 @@ public abstract class Achievements {
 			for(int i=0; i< currentMedals.length; i++)
 			{
 				if(!currentMedals[i].equalsIgnoreCase("Bronze!"))
+				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
 							"Congratulations you have earned the 'Persistant Puzzler' Achievement", 
