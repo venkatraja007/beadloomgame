@@ -109,7 +109,7 @@ if(isset($_POST['submitButton']))
 	if($valid)
 	{
 		//Add the user to the database and check for errors
-		$query = "INSERT INTO Users (user, password, firstName, lastName, email, age, gender, affiliation, occupation) VALUES ('$uid', '$password_md5', '$fname', '$lname', '$email', '$age', '$gender', '$affiliation', '$occupation')";
+		$query = "INSERT INTO Users (user, password, firstName, lastName, email, age, gender, affiliation, occupation, Achievements) VALUES ('$uid', '$password_md5', '$fname', '$lname', '$email', '$age', '$gender', '$affiliation', '$occupation')";
 		$result = $db->query($query);
 		if($result)
 		{

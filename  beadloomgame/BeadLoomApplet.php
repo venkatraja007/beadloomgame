@@ -1,13 +1,22 @@
+<?php
+		session_start();
+		if(isset($_SESSION['userid']))
+		{
+		}
+		else
+		{
+			header("Location: http://unccmakesgames.com/games/BeadLoomGame/login.php");
+		}
+		
+		$userName = $_SESSION['userid'];
+?>		
+
 <html>
 	<head>
 		<title>Bead Loom Applet</title>
 		<link rel="SHORTCUT ICON" href="http://www.uncc.edu/uncc.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="beadloomstyles.css" />
 
-		
-	<?php
-		$userName = $_GET['name'];	
-	?>
 	</head>
 	
 	<body>
