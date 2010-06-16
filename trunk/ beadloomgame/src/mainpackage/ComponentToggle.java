@@ -28,5 +28,5 @@ public class ComponentToggle {
 	 * 
 	 * Remove all references to this if you do not have the extra file
 	 */
-	public static boolean securityEnabled = false;
+	public static boolean securityEnabled = true;
 }

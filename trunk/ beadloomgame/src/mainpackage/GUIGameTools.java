@@ -4277,6 +4277,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		setColorButtonsVisbility(true);
 		bl.getTimerLabel().setVisible(true);
 		panel.repaint();
+		if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 		
 	}
 
