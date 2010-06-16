@@ -3527,6 +3527,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//			ChoosePuzzlePanel.add(HardButton);
 			//			ChoosePuzzlePanel.remove(TutButton);
 			removePuzzleButtons();
+			hidePuzzleButtons();
 
 			ChoosePuzzlePanel.add(Tut1Button);
 			ChoosePuzzlePanel.add(Tut2Button);
@@ -3578,6 +3579,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//			ChoosePuzzlePanel.remove(EasyButton);
 
 			removePuzzleButtons();
+			hidePuzzleButtons();
 
 			ChoosePuzzlePanel.add(TriforceButton);
 			ChoosePuzzlePanel.add(CanYouHearMeNowButton);
@@ -3644,6 +3646,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				//			ChoosePuzzlePanel.add(HardButton);
 				//			ChoosePuzzlePanel.remove(MediumButton);
 				removePuzzleButtons();
+				hidePuzzleButtons();
 
 				ChoosePuzzlePanel.add(SunnySkyButton);
 				ChoosePuzzlePanel.add(HeartButton);
@@ -3704,6 +3707,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			else{
 				removePuzzleButtons();
+				hidePuzzleButtons();
 
 				ChoosePuzzlePanel.add(MoonButton);
 				ChoosePuzzlePanel.add(LoomEx7Button);
