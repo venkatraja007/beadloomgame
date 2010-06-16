@@ -2042,19 +2042,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				medal = "Bronze!";
 				RecordMedalShort[currentPuzzle] = "B";
 			}
-
-//			//Send this medal to the website
-//			try {
-//				message = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php?" +
-//						"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
-//						"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
-//						"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
-//						"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
-//						"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8"));
-//				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
-//			} catch (Exception e1) {
-//				e1.printStackTrace();
-//			}
+			
 			String sendString = "";
 			try {
 				sendString = "user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
@@ -2091,8 +2079,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					move = move + " " + RecordMove[i];
 					med = med + " " + RecordMedalShort[i];
 				}
-				scoreFile[playerIndex+playerIndex+totalEntries-1] = move;
-				scoreFile[playerIndex+playerIndex+totalEntries] = med;
+				//scoreFile[playerIndex+playerIndex+totalEntries-1] = move;
+				//scoreFile[playerIndex+playerIndex+totalEntries] = med;
 //				try{
 //					FileWriter log = new FileWriter("Scores.txt", false);
 //					int i = 0;
@@ -2137,6 +2125,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //				System.err.println("Error: " + e.getMessage());
 //			}
 		}
+		//Check Achivements here
+		getScores();
+		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
+		Achievements.checkAchievements();
+		
 	}
 
 	public void setLoom(BeadLoom toSet){
@@ -4278,6 +4271,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getTimerLabel().setVisible(true);
 		panel.repaint();
 		if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
+		Achievements.retrieveAchievements(BeadLoom.playerName);
 		
 	}
 

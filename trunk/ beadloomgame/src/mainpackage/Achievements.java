@@ -87,7 +87,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedalsShort[i].equalsIgnoreCase("B"))
+				if(currentMedals[i].equalsIgnoreCase("Bronze!"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
@@ -112,7 +112,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedalsShort[i].equalsIgnoreCase("S"))
+				if(currentMedals[i].equalsIgnoreCase("Silver!!"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
@@ -137,7 +137,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedalsShort[i].equalsIgnoreCase("G"))
+				if(currentMedals[i].equalsIgnoreCase("Gold!!!"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
@@ -162,7 +162,7 @@ public abstract class Achievements {
 		{
 			for(int i=0; i< currentMedals.length; i++)
 			{
-				if(currentMedalsShort[i].equalsIgnoreCase("P"))
+				if(currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
 				{
 					currentAchievements[id] = 1;
 					JOptionPane.showMessageDialog(null, 
