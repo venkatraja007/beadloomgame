@@ -1840,9 +1840,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//Load Default Puzzle
 		//currentPuzzle = puz.setLoomEx8();
 
-		getScores();
-		Achievements.retrieveAchievements(BeadLoom.playerName);
-		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
 //		try{
 //			FileReader fr = new FileReader("Scores.txt"); 
 //			BufferedReader br = new BufferedReader(fr); 
@@ -2046,17 +2043,29 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				RecordMedalShort[currentPuzzle] = "B";
 			}
 
-			//Send this medal to the website
+//			//Send this medal to the website
+//			try {
+//				message = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php?" +
+//						"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
+//						"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
+//						"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
+//						"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
+//						"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8"));
+//				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
+//			} catch (Exception e1) {
+//				e1.printStackTrace();
+//			}
+			String sendString = "";
 			try {
-				message = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php?" +
-						"user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
-						"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
-						"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
-						"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
-						"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8"));
+				sendString = "user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
+				"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
+				"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
+				"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
+				"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8");
+				message = sendPost("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php", sendString);
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
-			} catch (Exception e1) {
-				e1.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
 			}
 
 			//Log the Results
@@ -2126,12 +2135,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //				System.err.println("Error: " + e.getMessage());
 //			}
 		}
-		
-		//TODO write achievements here
-		//getScores();
-		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
-		Achievements.checkAchievements();
-		Achievements.sendAchievements(BeadLoom.playerName);
 	}
 
 	public void setLoom(BeadLoom toSet){
@@ -3983,6 +3986,37 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridPanel2().rebuildLayerImages();
 		bl.getContentPanel().repaint();
 		
+	}
+	
+	public String sendPost(String sendURL, String sendString)
+	{
+		StringBuilder builder = new StringBuilder();
+
+		try {
+			URLConnection con = new URL(sendURL).openConnection();
+			con.setDoOutput(true);
+			OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+			wr.write(sendString);
+			wr.flush();
+			
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(
+							con.getInputStream()));
+			String inputLine;
+
+			while ((inputLine = in.readLine()) != null)  {
+
+				builder.append(inputLine);
+			}
+			wr.close();
+			in.close();
+		} catch (Exception ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		}
+		
+		return builder.toString();
 	}
 	
 	public void sendCustomPuzzlePost(String fileContents, String url, String puzzleName, String folderName)
