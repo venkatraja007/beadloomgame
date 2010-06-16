@@ -4,24 +4,24 @@ include('config.php');
 include('connect.php');
 
 //Check that each variable is set to a value
-if(checkVariable("user", $_GET['user']))
-	$user = $_GET['user'];
+if(checkVariable("user", $_POST['user']))
+	$user = $_POST['user'];
 else
 	die("<html><h2>User Name is invalid or too short.</h2></html><br/>");
-if(checkVariable("score", $_GET['score']))
-	$score = $_GET['score'];
+if(checkVariable("score", $_POST['score']))
+	$score = $_POST['score'];
 else
 	die("<html><h2>Score is invalid.</h2></html><br/>");
-if(checkVariable("time",$_GET['time']))
-	$time = $_GET['time'];
+if(checkVariable("time",$_POST['time']))
+	$time = $_POST['time'];
 else
 	die("<html><h2>Time is invalid.</h2></html><br/>");
-if(checkVariable("medal",$_GET['medal']))
-	$medal = $_GET['medal'];
+if(checkVariable("medal",$_POST['medal']))
+	$medal = $_POST['medal'];
 else
 	die("<html><h2>Medal is invalid.</h2></html><br/>");
-if(checkVariable("puzzle", $_GET['puzzle']))
-	$puzzle = $_GET['puzzle'];
+if(checkVariable("puzzle", $_POST['puzzle']))
+	$puzzle = $_POST['puzzle'];
 else 
 	die("<html><h2>Puzzle is invalid.</h2></html><br/>");
 

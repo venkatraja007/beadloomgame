@@ -83,6 +83,7 @@ if(isset($_POST['submitButton']))
 	$affiliation = $_POST['affiliation'];
 	$occupation = $_POST['occupation'];
 	$password_md5 = md5($password);
+	$achievements = "0000000000000000000000000000000000000000000000000000000000000000";
 
 	/*  Check User ID and Password Fields */
 	if(empty($uid) || empty($password))
@@ -105,11 +106,37 @@ if(isset($_POST['submitButton']))
 		echo "<center><h3>Uh oh! The Username $uid already exists! Please try another username! </h3></center><br />";
 		$valid = false;
 	}
+	/* Check that username has at least 4 characters and less than or equal to 20 */
+	if(strlen($uid) < 4 || strlen($uid) > 20)
+	{
+		echo "<center><h3>Uh oh! The Username $uid must be between 4 and 20 characters long! Please try another Username! </h3></center><br />";
+		$valid = false;
+	}
+	/* Check that password has at least 4 characters and less than or equal to 20 */
+	if(strlen($password) < 4 || strlen($password) > 20)
+	{
+		echo "<center><h3>Uh oh! The Password must be between 4 and 20 characters long! Please try another Password! </h3></center><br />";
+		$valid = false;
+	}
+	/* Check that the characters in the username are alphanumeric */
+	if(preg_match("/\W/", $uid))
+	{
+		echo "<center><h3>Uh oh! The Username can only contain alpha-numeric characters. Please try another Username! </h3></center><br />";
+		$valid = false;
+	}
+	/* Check that the characters in the username are alphanumeric */
+	if(preg_match("/\W/", $password))
+	{
+		echo "<center><h3>Uh oh! The Password can only contain alpha-numeric characters. Please try another Password! </h3></center><br />";
+		$valid = false;
+	}
+		
+	
 	
 	if($valid)
 	{
 		//Add the user to the database and check for errors
-		$query = "INSERT INTO Users (user, password, firstName, lastName, email, age, gender, affiliation, occupation, Achievements) VALUES ('$uid', '$password_md5', '$fname', '$lname', '$email', '$age', '$gender', '$affiliation', '$occupation')";
+		$query = "INSERT INTO Users (user, password, firstName, lastName, email, age, gender, affiliation, occupation, Achievements) VALUES ('$uid', '$password_md5', '$fname', '$lname', '$email', '$age', '$gender', '$affiliation', '$occupation', '$achievements')";
 		$result = $db->query($query);
 		if($result)
 		{

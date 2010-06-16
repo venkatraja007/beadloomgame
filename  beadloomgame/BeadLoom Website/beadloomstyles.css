@@ -230,3 +230,21 @@ a.header:hover
 {
 	color:#333;
 }
+a.table
+{
+	color:#333;
+}
+a.table:hover
+{
+	color:#f38315;
+}
+
+#tipsList
+{
+	font-size:12px;
+}
+p.list
+{
+	font-size:12px;
+	text-align:left;
+}

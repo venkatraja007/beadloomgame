@@ -21,7 +21,7 @@
 	
 	function playGame()
 	{
-			window.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.php";
+			document.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.php";
 	}
 	function puzzleSelect()
 	{

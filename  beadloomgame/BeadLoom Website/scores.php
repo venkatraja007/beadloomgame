@@ -16,7 +16,7 @@
 include('config.php');
 include('connect.php');
 
-$puzzleName = $_GET['puzzleName'];
+$puzzleName = $GET['puzzleName'];
 
 ?>
 	<title>Bead Loom Game - High Scores - <?php echo "$puzzleName"; ?> </title>
