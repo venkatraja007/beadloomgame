@@ -2062,7 +2062,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
 				"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
 				"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8");
+				if(ComponentToggle.securityEnabled){ sendString+="&token=" + URLEncoder.encode(""+Security.getSecurityToken(), "UTF-8"); }
 				message = sendPost("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php", sendString);
+				if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();

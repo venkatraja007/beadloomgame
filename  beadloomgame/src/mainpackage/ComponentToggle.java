@@ -19,4 +19,14 @@ public class ComponentToggle {
 	public static boolean unlockableDifficultyLevels = true;	//done
 	public static boolean hintsOn = true;						//done
 	public static boolean timerEnabled = true;					//done
+	
+	/*
+	 * When security is enabled you need an extra file that is not included in the svn.
+	 * This is to help prevent people from inserting false values into the current bead
+	 * loom game database. If you do not have this file make sure that securityEnabled
+	 * is set to false.
+	 * 
+	 * Remove all references to this if you do not have the extra file
+	 */
+	public static boolean securityEnabled = false;
 }

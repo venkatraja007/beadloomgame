@@ -63,6 +63,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 	//******* Main Method *******
 	public void init() {
+		if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 		
 		setSize((int)dim.getWidth(),(int)dim.getHeight());
 		//Base URL for image location, passed by HTML parameter "server"
