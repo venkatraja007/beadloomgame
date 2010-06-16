@@ -68,7 +68,7 @@
 		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Medal</b></td>";
 		echo "</tr></th>";
 		
-		$query = "SELECT score, time, medal, puzzle FROM HighScores WHERE user='".$user."' ORDER BY puzzle";
+		$query = "SELECT score, time, medal, puzzle, user FROM HighScores WHERE user='".$user."' ORDER BY puzzle";
 		$result = $db->query($query);
 		if($result)
 		{
@@ -99,6 +99,32 @@
 		echo "<th>";
 		echo "<h2>".$user."'s Achievements:</h2></th></tr>";
 		
+		/* Check for "World Champion Achievement" */
+		$worldChamp = false;
+		//Get every puzzle name
+		$query = "SELECT DISTINCT puzzle FROM HighScores WHERE 1 ORDER BY puzzle";
+		$result = $db->query($query);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				$query2 = "SELECT user, score, time, medal FROM HighScores WHERE puzzle  = '".$row['puzzle']."' ORDER BY score, time LIMIT 0, 1";
+				$result2 = $db->query($query2);
+				if($result2)
+				{
+					$row2 = $result2->fetch_assoc();
+					if($user == $row2['user'])
+					{
+						$worldChamp = true;
+					}
+				}
+			}
+		}
+		//if they have a global high score ($worldChamp is true), write to table
+		if($worldChamp)
+		{
+			echo "<tr><td align=\"center\" class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" title=\"Earn a Spot on the Leaderboard\"><b>World Champion</b></td></tr>";
+		}
 		//get all achievements from database
 		$query = "SELECT * FROM Achievements ORDER BY id";
 		$result = $db->query($query);
@@ -122,7 +148,7 @@
 				
 				if($achievements[$index] == 1)
 				{
-					echo "<tr><td align=\"center\" class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['name']."</td></tr>";
+					echo "<tr title=\"".$row['text']."\"><td align=\"center\" class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" >".$row['name']."</td></tr>";
 				}
 				
 				//increase index
@@ -134,5 +160,92 @@
 		}
 		echo "</table>";
 	}
+	
+	function getMyAchievements($db, $user)
+	{
+	
+		//create table
+		echo "<table border=\"1\" align=\"center\" class=\"leaderboard\">";
+		echo "<tr>";
+		echo "<th colspan=\"2\">";
+		echo "<h2>".$user."'s Achievements:</h2></th></tr>";
+		
+		//create table header
+		echo "<td colspan=\"2\" align=\"center\"><h4>Italics indicates you have earned the Achievement</h4></td>";
+		echo "<tr>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Achievement</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Description</b></td>";
+		echo "</tr></th>";
+		
+		
+		/* Check for "World Champion Achievement"
+		$worldChamp = false;
+		//Get every puzzle name
+		$query = "SELECT DISTINCT puzzle FROM HighScores WHERE 1 ORDER BY puzzle";
+		$result = $db->query($query);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				$query2 = "SELECT user, score, time, medal FROM HighScores WHERE puzzle  = '".$row['puzzle']."' ORDER BY score, time LIMIT 0, 1";
+				$result2 = $db->query($query2);
+				if($result2)
+				{
+					$row2 = $result2->fetch_assoc();
+					if($user == $row2['user'])
+					{
+						$worldChamp = true;
+					}
+				}
+			}
+		}
+		//if they have a global high score ($worldChamp is true), write to table
+		if($worldChamp)
+		{
+			echo "<tr><td align=\"center\" class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" title=\"Earn a Spot on the Leaderboard\"><b>World Champion</b></td></tr>";
+		} */
+		
+		//get all achievements from database
+		$query = "SELECT * FROM Achievements ORDER BY id";
+		$result = $db->query($query);
+		if($result)
+		{
+			//get users achievement blob
+			$userAchievementsQuery = "SELECT Achievements FROM Users WHERE user='".$user."' LIMIT 0, 1";
+			$result2 = $db->query($userAchievementsQuery);
+			$row2 = $result2->fetch_assoc();
+			$achievements = str_split($row2['Achievements'], 1);
+			
+			$index = 0;
+			//loop through each achivement in achievement array
+			while($row = $result->fetch_assoc())
+			{
+				//this is each achievement
+				//echo $row['name']."<br />";
+				
+				//this is the user's achievment blob
+				//echo $row2['Achievements'];
+				
+				if($achievements[$index] == 1)
+				{
+					echo "<tr title=\"".$row['text']."\"><td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" ><em>".$row['name']."</em></td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" ><em>".$row['text']."</em></td></tr>";
+				}
+				else
+				{
+					echo "<tr title=\"".$row['text']."\"><td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" >".$row['name']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" >".$row['text']."</td></tr>";
+				}
+				
+				//increase index
+				$index = $index + 1;
+			}
+		}
+		else
+		{
+		}
+		echo "</table>";
+	}
+
 
 ?>
