@@ -1,8 +1,7 @@
 <?php
+		session_start();
 		include('config.php');
 		include('connect.php');
-		
-		session_start();
 		
 		$userid = $_SESSION['userid'];
 		if(isset($_SESSION['userid']))
@@ -13,12 +12,12 @@
 		if(isset($_POST['btnLogin']))
 		{
 			/* Handle Login Information */
-			$uid = $_POST['username'];
+			$userid = $_POST['username'];
 			$password = $_POST['password'];
 			$password_md5 = md5($password);
 			
 			/* Get username and password from database */
-			$verifyQuery = "SELECT password FROM Users WHERE user='$uid' ";
+			$verifyQuery = "SELECT password FROM Users WHERE user='$userid' ";
 			$result = $db->query($verifyQuery);
 			$row = $result->fetch_assoc();
 			$tempPassword = $row['password'];
@@ -26,8 +25,8 @@
 			/* Compare Passwords */
 			if($tempPassword == $password_md5)
 			{
+				$_SESSION['userid'] = $userid;
 				header("Location: http://www.unccmakesgames.com/games/BeadLoomGame/index.php");
-				$_SESSION['userid'] = $uid;
 			}
 			else
 			{

@@ -1,9 +1,9 @@
 <?php
+		session_start();
 		include('config.php');
 		include('connect.php');
 		include('functions.php');
 		
-		session_start();
 		if(isset($_SESSION['userid']))
 		{
 			$userid = $_SESSION['userid'];

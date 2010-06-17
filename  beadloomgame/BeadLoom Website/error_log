@@ -100,3 +100,31 @@
 [15-Jun-2010 08:34:46] PHP Parse error:  syntax error, unexpected $end in /home5/unccmake/public_html/games/BeadLoomGame/functions.php on line 165
 [15-Jun-2010 15:25:33] PHP Fatal error:  Call to undefined function  getmyachivements() in /home5/unccmake/public_html/games/BeadLoomGame/myAchievements.php on line 50
 [15-Jun-2010 15:25:52] PHP Fatal error:  Call to undefined function  getmyachievements() in /home5/unccmake/public_html/games/BeadLoomGame/myAchievements.php on line 50
+[16-Jun-2010 13:53:18] PHP Parse error:  syntax error, unexpected T_STRING in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 165
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 87
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 88
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 89
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 90
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 91
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 92
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 94
+[16-Jun-2010 13:56:21] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 95
+[16-Jun-2010 13:59:00] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 182
+[16-Jun-2010 14:05:51] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 214
+[16-Jun-2010 14:07:25] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 214
+[16-Jun-2010 14:09:09] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 210
+[16-Jun-2010 14:10:55] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 211
+[16-Jun-2010 14:17:35] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 211
+[16-Jun-2010 14:25:43] PHP Fatal error:  Call to undefined function  sendhtmlmail() in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 162
+[16-Jun-2010 14:26:28] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home5/unccmake/public_html/games/BeadLoomGame/registration.php on line 185
+[17-Jun-2010 06:57:30] PHP Parse error:  syntax error, unexpected ')' in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 38
+[17-Jun-2010 08:02:47] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 34
+[17-Jun-2010 08:02:47] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 35
+[17-Jun-2010 08:02:47] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 36
+[17-Jun-2010 08:02:47] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 37
+[17-Jun-2010 08:02:47] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 41
+[17-Jun-2010 08:03:32] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 34
+[17-Jun-2010 08:03:32] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 35
+[17-Jun-2010 08:03:32] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 36
+[17-Jun-2010 08:03:32] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 37
+[17-Jun-2010 08:03:32] PHP Warning:  mysqli_escape_string() expects exactly 2 parameters, 1 given in /home5/unccmake/public_html/games/BeadLoomGame/feedback.php on line 41
