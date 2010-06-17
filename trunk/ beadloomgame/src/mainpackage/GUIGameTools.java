@@ -101,8 +101,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JTextField NameTextField = new JTextField();
 
 	private JButton LoadCustomPuzzleButton = new JButton();
-	private JComboBox LoadCustomPuzzleTextField = new JComboBox();
-	private JComboBox LoadCustomPuzzleUserTextField = new JComboBox();
+	private JComboBox LoadCustomPuzzleDropBox = new JComboBox();
+	private JComboBox LoadCustomPuzzleUserDropBox = new JComboBox();
 	private JTextField CustomPuzzleTextField = new JTextField();
 	JLabel avatarIcon = new JLabel();
 
@@ -1429,10 +1429,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		});
 
 		//---- Load Custom Puzzle Text Field ----
-		LoadCustomPuzzleTextField.setBounds(25, 50, 145, CustomPuzzleTextField.getPreferredSize().height);
+		LoadCustomPuzzleDropBox.setBounds(25, 50, 145, CustomPuzzleTextField.getPreferredSize().height);
 
 		//---- Load Custom Puzzle User Text Field ----
-		LoadCustomPuzzleUserTextField.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
+		LoadCustomPuzzleUserDropBox.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
 		
 		//---- Load Custom Puzzle Button ----
 		LoadCustomPuzzleButton.setText("Load Puzzle");
@@ -1773,8 +1773,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		ChoosePuzzlePanel.remove(MegamanButton);
 		ChoosePuzzlePanel.remove(BatmanButton);
 		ChoosePuzzlePanel.remove(LoadCustomPuzzleButton);
-		ChoosePuzzlePanel.remove(LoadCustomPuzzleTextField);
-		ChoosePuzzlePanel.remove(LoadCustomPuzzleUserTextField);
+		ChoosePuzzlePanel.remove(LoadCustomPuzzleDropBox);
+		ChoosePuzzlePanel.remove(LoadCustomPuzzleUserDropBox);
 		//Refreshes Panel
 		ChoosePuzzlePanel.setVisible(false);
 		ChoosePuzzlePanel.setVisible(true);
@@ -2331,8 +2331,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == CustomPuzzleButton) {
 			removePuzzleButtons();
 			ChoosePuzzlePanel.add(LoadCustomPuzzleButton);
-			ChoosePuzzlePanel.add(LoadCustomPuzzleTextField);
-			ChoosePuzzlePanel.add(LoadCustomPuzzleUserTextField);
+			ChoosePuzzlePanel.add(LoadCustomPuzzleDropBox);
+			ChoosePuzzlePanel.add(LoadCustomPuzzleUserDropBox);
 			//TODO fix this hack
 			avatarMode = true;
 			hidePuzzleButtons();
@@ -2343,7 +2343,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			startGame();
 			currentPuzzle = -1;
 			Restart(true, true, true);
-			puz.setCustomPuzzle(LoadCustomPuzzleUserTextField.getText()+"-"+LoadCustomPuzzleTextField.getText(), "CustomPuzzles", 2);
+			puz.setCustomPuzzle(LoadCustomPuzzleUserDropBox.getSelectedItem()+"-"+LoadCustomPuzzleDropBox.getSelectedItem(), "CustomPuzzles", 2);
 			BestScoreLabel.setText("Custom Puzzle");
 			bl.getPuzzleFrame().setVisible(false);
 			//Log the Puzzle Change
