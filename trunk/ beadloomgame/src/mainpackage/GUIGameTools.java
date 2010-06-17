@@ -101,8 +101,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JTextField NameTextField = new JTextField();
 
 	private JButton LoadCustomPuzzleButton = new JButton();
-	private JTextField LoadCustomPuzzleTextField = new JTextField();
-	private JTextField LoadCustomPuzzleUserTextField = new JTextField();
+	private JComboBox LoadCustomPuzzleTextField = new JComboBox();
+	private JComboBox LoadCustomPuzzleUserTextField = new JComboBox();
 	private JTextField CustomPuzzleTextField = new JTextField();
 	JLabel avatarIcon = new JLabel();
 
@@ -1429,28 +1429,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		});
 
 		//---- Load Custom Puzzle Text Field ----
-		LoadCustomPuzzleTextField.setText("Enter Puzzle Name");
 		LoadCustomPuzzleTextField.setBounds(25, 50, 145, CustomPuzzleTextField.getPreferredSize().height);
-		LoadCustomPuzzleTextField.addMouseListener(new java.awt.event.MouseAdapter() {
-			public void mousePressed(MouseEvent me) {
-				if(LoadCustomPuzzleTextField.getText().equals("Enter Puzzle Name"))
-				{
-					LoadCustomPuzzleTextField.selectAll();
-				}
-			}
-		});
 
 		//---- Load Custom Puzzle User Text Field ----
-		LoadCustomPuzzleUserTextField.setText("Username of Puzzle");
 		LoadCustomPuzzleUserTextField.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
-		LoadCustomPuzzleUserTextField.addMouseListener(new java.awt.event.MouseAdapter() {
-			public void mousePressed(MouseEvent me) {
-				if(LoadCustomPuzzleUserTextField.getText().equals("Username of Puzzle"))
-				{
-					LoadCustomPuzzleUserTextField.selectAll();
-				}
-			}
-		});
 		
 		//---- Load Custom Puzzle Button ----
 		LoadCustomPuzzleButton.setText("Load Puzzle");
@@ -4189,6 +4171,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		//Do this to reposition the windows
 		startGame();
+		getScores();
 		removeAllWindows();
 
 		JPanel panel = bl.getContentPanel();
@@ -4218,6 +4201,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		//Do this to reposition the windows
 		startGame();
+		getScores();
 		removeAllWindows();
 		
 		initAvatarMenu();
