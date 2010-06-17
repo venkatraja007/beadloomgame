@@ -2293,6 +2293,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == SubmitAvatarButton) {
 			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
 			avatarPuzzle = -1;
+			sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/avatar.php?avatar=-1");
 		}
 		
 		else if (e.getSource() == CreateCustomPuzzleButton) {
@@ -3923,6 +3924,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //				System.err.println("Error: " + ex.getMessage());
 //			}
 		}
+		//set avatar button
+
 	}
 	
 	public void showChoosePuzzle() {
@@ -3930,7 +3933,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getPuzzleFrame().setVisible(true);
 		bl.getPuzzleFrame().toFront();
 		//Set up the Tutorial Menu
-		EasyButton.setBounds(LeftDifR);
+		EasyButton.setBounds(LeftDifR);	
 		ChoosePuzzlePanel.add(EasyButton);
 		MediumButton.setBounds(CenterDifR);
 		ChoosePuzzlePanel.add(MediumButton);
@@ -4101,7 +4104,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		try
 		{
 			puzzleName = URLEncoder.encode(puzzleName, "UTF-8");
-			hint = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName);
+			hint = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName + "&user=" + BeadLoom.playerName);
 		}
 		catch (Exception e)
 		{
@@ -4113,7 +4116,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//set up the content pane for Main Menu Mode
 	public void setMainMenuMode()
 	{
-		avatarMode = false;
+		if(avatarMode)
+		{
+			sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/avatar.php?avatar="+avatarPuzzle + "&user=" + BeadLoom.playerName);
+			avatarMode = false;
+		}
+		String puzNum = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
+		if(puzNum.length()>0) { avatarPuzzle = Integer.parseInt(puzNum); }
+
 		hidePuzzleButtons();
 		removeAllWindows();
 		
