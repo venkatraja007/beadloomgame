@@ -199,11 +199,11 @@ public abstract class Achievements {
 				if (!currentMedals[i].equalsIgnoreCase("-None-")) {
 					//Do nothing 
 				} else {
-					//Achivement not earned
+					//Achievement not earned
 					return;
 				}
 			}
-			//Achivement Earned
+			//Achievement Earned
 			currentAchievements[id] = 1;
 			JOptionPane.showMessageDialog(null, 
 					"Congratulations you have earned the 'Learned the Basics' Achievement", 
@@ -228,11 +228,11 @@ public abstract class Achievements {
 				if (currentMedals[i].equalsIgnoreCase("Platinum!!!!")) {
 					//Do nothing 
 				} else {
-					//Achivement not earned
+					//Achievement not earned
 					return;
 				}
 			}
-			//Achivement Earned
+			//Achievement Earned
 			currentAchievements[id] = 1;
 			JOptionPane.showMessageDialog(null, 
 					"Congratulations you have earned the 'Mastered the Basics' Achievement", 
@@ -256,11 +256,11 @@ public abstract class Achievements {
 				if (!currentMedals[i].equalsIgnoreCase("-None-")) {
 					//Do nothing 
 				} else {
-					//Achivement not earned
+					//Achievement not earned
 					return;
 				}
 			}
-			//Achivement Earned
+			//Achievement Earned
 			currentAchievements[id] = 1;
 			JOptionPane.showMessageDialog(null, 
 					"Congratulations you have earned the 'Easy as Pie' Achievement", 
@@ -313,11 +313,11 @@ public abstract class Achievements {
 				if (!currentMedals[i].equalsIgnoreCase("-None-")) {
 					//Do nothing 
 				} else {
-					//Achivement not earned
+					//Achievement not earned
 					return;
 				}
 			}
-			//Achivement Earned
+			//Achievement Earned
 			currentAchievements[id] = 1;
 			JOptionPane.showMessageDialog(null, 
 					"Congratulations you have earned the 'Mental Medium' Achievement", 
