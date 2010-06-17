@@ -1444,6 +1444,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GreenButton.addActionListener(this);
 		GreenButton.setBackground(Color.GREEN);
 		GreenButton.setBounds(CR10);
+		GreenButton.setOpaque(true);
 		ColorPanel.add(GreenButton);
 
 		//---- Red Button ----
@@ -1451,6 +1452,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		RedButton.addActionListener(this);
 		RedButton.setBackground(Color.RED);
 		RedButton.setBounds(CR00);
+		RedButton.setOpaque(true);
 		ColorPanel.add(RedButton);
 
 		//---- Blue Button ----
@@ -1459,6 +1461,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		BlueButton.addActionListener(this);
 		BlueButton.setBackground(Color.BLUE);
 		BlueButton.setBounds(CR20);
+		BlueButton.setOpaque(true);
 		ColorPanel.add(BlueButton);
 
 		//---- Yellow Button ----
@@ -1466,6 +1469,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		YellowButton.addActionListener(this);
 		YellowButton.setBackground(Color.YELLOW);
 		YellowButton.setBounds(CR01);
+		YellowButton.setOpaque(true);
 		ColorPanel.add(YellowButton);
 
 		//---- Magenta Button ----
@@ -1473,6 +1477,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		MagentaButton.addActionListener(this);
 		MagentaButton.setBackground(Color.MAGENTA);
 		MagentaButton.setBounds(CR21);
+		MagentaButton.setOpaque(true);
 		ColorPanel.add(MagentaButton);
 
 		//---- Cyan Button ----
@@ -1480,6 +1485,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		CyanButton.addActionListener(this);
 		CyanButton.setBackground(Color.CYAN);
 		CyanButton.setBounds(CR11);
+		CyanButton.setOpaque(true);
 		ColorPanel.add(CyanButton);
 
 		//---- Orange Button ----
@@ -1487,6 +1493,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		OrangeButton.addActionListener(this);
 		OrangeButton.setBackground(betterOrange);
 		OrangeButton.setBounds(CR02);
+		OrangeButton.setOpaque(true);
 		ColorPanel.add(OrangeButton);
 
 		//---- Pink Button ----
@@ -1494,6 +1501,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		PinkButton.addActionListener(this);
 		PinkButton.setBackground(Color.PINK);
 		PinkButton.setBounds(CR12);
+		PinkButton.setOpaque(true);
 		ColorPanel.add(PinkButton);
 
 		//---- Peach Button ----
@@ -1501,6 +1509,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		PeachButton.addActionListener(this);
 		PeachButton.setBackground(peach);
 		PeachButton.setBounds(CR22);
+		PeachButton.setOpaque(true);
 		ColorPanel.add(PeachButton);
 
 		//-----Gray Button ----
@@ -1508,6 +1517,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		GrayButton.addActionListener(this);
 		GrayButton.setBackground(Color.GRAY);
 		GrayButton.setBounds(CR23);
+		GrayButton.setOpaque(true);
 		ColorPanel.add(GrayButton);
 
 		//---- Black Button ----
@@ -1516,6 +1526,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		BlackButton.addActionListener(this);
 		BlackButton.setBackground(Color.BLACK);
 		BlackButton.setBounds(CR03);
+		BlackButton.setOpaque(true);
 		ColorPanel.add(BlackButton);
 
 		//---- White Button ----
@@ -1523,6 +1534,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		WhiteButton.addActionListener(this);
 		WhiteButton.setBackground(Color.WHITE);
 		WhiteButton.setBounds(CR13);
+		WhiteButton.setOpaque(true);
 		ColorPanel.add(WhiteButton);
 
 		//---- restart button ----
