@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public abstract class Achievements {
 	
-	//Total Number of achievements according to the databse
+	//Total Number of achievements according to the database
 	final static int TOTAL_ACHIEVEMENTS = 
 		Integer.parseInt(GUIGameTools.sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=num"));
 	//acheivement index the current user has
@@ -60,13 +60,16 @@ public abstract class Achievements {
 	
 	public static void checkAchievements()
 	{
-		PersistentPuzzler();	//0
-		SilverPuzzler();		//1
-		SoCloseYetSoFar();		//2
-		PurePlatinum();			//3
-		WorldChampion();		//4
-		LearnedTheBasics();		//5
-		MasteredTheBasics();	//6
+		PersistentPuzzler();		//0
+		SilverPuzzler();			//1
+		SoCloseYetSoFar();			//2
+		PurePlatinum();				//3
+		WorldChampion();			//4
+		LearnedTheBasics();			//5
+		MasteredTheBasics();		//6
+		EasyAsPie();				//7
+		HaveYourPieAndEatItToo(); 	//8
+		MentalMedium();				//9
 	}
 	
 	public static void viewAchievements()
@@ -233,6 +236,91 @@ public abstract class Achievements {
 			currentAchievements[id] = 1;
 			JOptionPane.showMessageDialog(null, 
 					"Congratulations you have earned the 'Mastered the Basics' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void EasyAsPie()
+	{
+		int id = 7;
+		//if already obtained do not check
+		if (currentAchievements[id] == 0) 
+		{
+			for (int i = 6; i < 15; i++) {
+				if (!currentMedals[i].equalsIgnoreCase("-None-")) {
+					//Do nothing 
+				} else {
+					//Achivement not earned
+					return;
+				}
+			}
+			//Achivement Earned
+			currentAchievements[id] = 1;
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Easy as Pie' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void HaveYourPieAndEatItToo()
+	{
+		int id = 8;
+		if(currentAchievements[id] == 0)
+		{
+			for(int i=6; i<15; i++)
+			{
+				if(currentMedals[i].equalsIgnoreCase("Platinum!!!!"))
+				{
+					//Do nothing
+				}
+				else
+				{
+					//Achievement not earned
+					return;
+				}
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'Have your Pie and Eat it too' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void MentalMedium()
+	{
+		int id = 9;
+		//if already obtained do not check
+		if (currentAchievements[id] == 0) 
+		{
+			for (int i = 15; i < 24; i++) {
+				if (!currentMedals[i].equalsIgnoreCase("-None-")) {
+					//Do nothing 
+				} else {
+					//Achivement not earned
+					return;
+				}
+			}
+			//Achivement Earned
+			currentAchievements[id] = 1;
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Mental Medium' Achievement", 
 					"Achievements Message", 
 					JOptionPane.PLAIN_MESSAGE);
 		}
