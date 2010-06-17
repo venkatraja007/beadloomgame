@@ -190,8 +190,8 @@ public abstract class Achievements {
 		int id = 4;
 		if(currentAchievements[id] == 0)
 		{
-			String champion = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
-			if(champion == "true")
+			String champion = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/worldChampion.php?user=" + BeadLoom.playerName);
+			if(champion.equalsIgnoreCase("true"))
 			{
 				currentAchievements[id] = 1;
 				JOptionPane.showMessageDialog(null, 
