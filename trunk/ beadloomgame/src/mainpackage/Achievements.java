@@ -71,6 +71,7 @@ public abstract class Achievements {
 		HaveYourPieAndEatItToo(); 	//8
 		MentalMedium();				//9
 		MentalMediumMaster();		//10
+		PuzzleMaster();				//11
 	}
 	
 	public static void viewAchievements()
@@ -187,6 +188,30 @@ public abstract class Achievements {
 	{
 		//TODO implement this achievement have to check to see if the player has a global high score for any puzzle
 		int id = 4;
+		if(currentAchievements[id] == 0)
+		{
+			String champion = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
+			if(champion == "false")
+			{
+				return;
+			}
+			//Achievement earned 
+			else
+			{
+				currentAchievements[id] = 1;
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'World Champion' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+		
 	}
 	
 	public static void LearnedTheBasics()
@@ -362,7 +387,58 @@ public abstract class Achievements {
 	
 	public static void PuzzleMaster()
 	{
-		
+		int id = 11;
+		//if already obtained do not check
+		if (currentAchievements[id] == 0) 
+		{
+			for (int i = 24; i < 35; i++) {
+				if (!currentMedals[i].equalsIgnoreCase("-None-")) {
+					//Do nothing 
+				} else {
+					//Achievement not earned
+					return;
+				}
+			}
+			//Achievement Earned
+			currentAchievements[id] = 1;
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Puzzle Master' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void AbsolutePuzzleMaster()
+	{
+		int id = 12;
+		//if already obtained do not check
+		if (currentAchievements[id] == 0) 
+		{
+			for (int i = 24; i < 35; i++) {
+				if (currentMedals[i].equalsIgnoreCase("Platinum!!!!")) {
+					//Do nothing 
+				} else {
+					//Achievement not earned
+					return;
+				}
+			}
+			//Achievement Earned
+			currentAchievements[id] = 1;
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Absolute Puzzle Master' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
 	}
 	
 }

@@ -3,6 +3,20 @@
 include('config.php');
 include('connect.php');
 
+//security check
+$tokenQuery = "
+SELECT securityToken
+FROM Users 
+WHERE user='$user'";
+$securityResult = $db->query($tokenQuery);
+
+$securityRow = $securityResult->fetch_assoc();
+if($securityRow['securityToken'] != $token)
+{
+	//rick roll
+	die("<html><h2>Rick Roll</h2></html>");
+}
+
 //Check that each variable is set to a value
 if(checkVariable("user", $_POST['user']))
 	$user = $_POST['user'];

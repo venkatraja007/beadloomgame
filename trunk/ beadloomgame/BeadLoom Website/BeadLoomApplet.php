@@ -8,8 +8,6 @@
 		{
 			header("Location: http://unccmakesgames.com/games/BeadLoomGame/login.php");
 		}
-		
-		
 ?>		
 
 <html>

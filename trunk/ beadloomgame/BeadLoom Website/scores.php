@@ -1,4 +1,6 @@
-
+<?php
+	session_start();
+?>
 <html>
 
 <head>
@@ -16,7 +18,7 @@
 include('config.php');
 include('connect.php');
 
-$puzzleName = $GET['puzzleName'];
+$puzzleName = $_GET['puzzleName'];
 
 ?>
 	<title>Bead Loom Game - High Scores - <?php echo "$puzzleName"; ?> </title>

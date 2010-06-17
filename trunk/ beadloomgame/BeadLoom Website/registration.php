@@ -1,8 +1,8 @@
 <?php
+		session_start();
 		include('config.php');
 		include('connect.php');
-		
-		session_start();
+		include('functions.php');
 		
 		$userid = $_SESSION['userid'];
 		if(isset($_SESSION['userid']))
@@ -53,6 +53,18 @@
 					alert('Email and Confirm Email fields do not match!');
 					valid = false;
 				}
+				/* Check that emails are valid */
+				function CheckEmail()
+				{
+					email = document.f1.email.value
+					var AtPos = email.indexOf("@")
+					var StopPos = email.lastIndexOf(".")
+
+					if (AtPos == -1 || StopPos == -1)
+					{
+						alert('Email Address is not a valid email!');
+					}
+				}
 				
 				return valid;
 			}
@@ -72,15 +84,15 @@ if(isset($_POST['submitButton']))
 {
 	$valid = true;
 	/* Gather information from registration form */
-	$uid = $_POST['userid'];
-	$password = $_POST['password'];
-	$confirmpass = $_POST['confirmPassword'];
-	$lname = $_POST['lastname'];
-	$fname = $_POST['firstname'];
-	$age = $_POST['age'];
+	$uid = $db->escape_string($_POST['userid']);
+	$password = $db->escape_string($_POST['password']);
+	$confirmpass = $db->escape_string($_POST['confirmPassword']);
+	$lname = $db->escape_string($_POST['lastname']);
+	$fname = $db->escape_string($_POST['firstname']);
+	$age = $db->escape_string($_POST['age']);
 	$gender = $_POST['gender'];
-	$email = $_POST['email'];
-	$affiliation = $_POST['affiliation'];
+	$email = $db->escape_string($_POST['email']);
+	$affiliation = $db->escape_string($_POST['affiliation']);
 	$occupation = $_POST['occupation'];
 	$password_md5 = md5($password);
 	$achievements = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -131,8 +143,6 @@ if(isset($_POST['submitButton']))
 		$valid = false;
 	}
 		
-	
-	
 	if($valid)
 	{
 		//Add the user to the database and check for errors
@@ -141,18 +151,27 @@ if(isset($_POST['submitButton']))
 		if($result)
 		{
 			$_SESSION['userid'] = $uid;
+			//generate information for email
+			//generate data for email
+			$to = "$email";
+			$from = "Bead Loom Game";
+			$subject = "Bead Loom Game Registration";
+			$HTML = "<b>PLEASE DO NOT REPLY TO THIS EMAIL!</b><br /><br />Thank you, $fname $lname for registering for Bead Loom Game!<br /><br />As a reminder, the Username and Password used for registration are as follows:<br /><b>Username:</b> $uid<br /><b>Password:</b> $password<br /><br />We hope that you enjoy playing Bead Loom Game! Instructions are available on our <a href=\"http://www.unccmakesgames.com/games/BeadLoomGame/instructions.php\">Instructions</a> page.<br /><br />Your feedback is important to us! Please take a moment to <a href=\"http://www.unccmakesgames.com/games/BeadLoomGame/feedback.php\">fill out our feedback page</a>! Your input is greatly appreciated!<br /><br />Thank You!<br />Sincerely,<br />Bead Loom Team";
+			sendHTMLemail($HTML, $from, $to, $subject);
 			echo "<script type=\"text/javascript\">
-					alert('$uid has been succesfully registered! Redirecting you to the home page!')
-					redirect(\"http://www.unccmakesgames.com/games/BeadLoomGame/index.php\");
-					</script>";
+					alert('Username $uid has been successfully registered! You will receive a confirmation email shortly! You are now being redirected to the main page!');
+					redirect(\"http://www.unccmakesgames.com/games/BeadLoomGame\");
+				</script>";
+			$db->close();
 					
 		}
 		else
 		{
 			echo "<center><h3>Uh oh! An error has occurred during registration! Please try again!<br />Error message:".mysqli_error($db)."</h3></center><br />";
 		}
+			
+			
 	}
-	$db->close();
 }
 ?>
 

@@ -1,15 +1,18 @@
 <?php
+		session_start();
 		include('config.php');
 		include('connect.php');
 		include('functions.php');
 		
-		session_start();
-		if(!isset($_SESSION['userid']))
+		
+		if(isset($_SESSION['userid']))
+		{
+			$userid = $_SESSION['userid'];
+		}
+		else
 		{
 			header('Location: http://www.unccmakesgames.com/games/BeadLoomGame/login.php');
 		}
-		
-		$userid = $_SESSION['userid'];
 ?>
 <html>
 <head>
@@ -21,12 +24,7 @@
 	
 	function playGame()
 	{
-			document.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.php";
-	}
-	function puzzleSelect()
-	{
-		var selectBox = document.getElementById("puzzle").value;
-		window.location = "http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + selectBox;
+		document.location = "http://unccmakesgames.com/games/BeadLoomGame/BeadLoomApplet.php";
 	}
 	
 	</script>
@@ -42,7 +40,9 @@
 		</div>
 		<div id="leftDiv" name="leftDiv">
 			<div id="playGame" name="playGame">
-				Play Bead Loom Game!<br />
+				<b>Play Bead Loom Game!<b><br />
+				<p class="text">Wondering How to Play?<br />
+				<a class="table" href="instructions.php">Click Here for Instructions!</a></p><br />
 				<input type="button" value="Play!" onclick="playGame()" width="50px"/>
 			</div>
 			<div id="myScores" name="myScores">
@@ -64,7 +64,8 @@
 			?>
 		</div>
 		<div id="footer" name="footer">
-			<h4>Copyright 2010, University of North Carolina at Charlotte. College of Computing and Informatics.</h4>
+			<h4>If you haven't already, <a class="header" href="feedback.php">please provide us Feedback!</a> Your input is greatly welcomed and appreciated!<br />
+			Copyright 2010, University of North Carolina at Charlotte. College of Computing and Informatics.</h4>
 		</div>
 	</div>
 

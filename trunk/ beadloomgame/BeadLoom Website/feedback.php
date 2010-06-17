@@ -1,22 +1,23 @@
 <?php
+		session_start();
 		include('config.php');
 		include('connect.php');
-		
-		session_start();
 		
 		
 		if(isset($_SESSION['userid']))
 		{
 			$uid = $_SESSION['userid'];
 		}
+		else
+		{
+			header('Location: http://www.unccmakesgames.com/games/BeadLoomGame/login.php');
+		}
 ?>
-
 <html>
 <head>
 		<title>Bead Loom Game - Feedback</title>
 		<link rel="SHORTCUT ICON" href="http://www.uncc.edu/uncc.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="beadloomstyles.css" />
-
 		<script type="text/javascript">			
 			function redirect(url)
 			{
@@ -25,21 +26,19 @@
 			}
 		</script>
 </head>
-
-<body>
 <?php
 
 if(isset($_POST['submitButton']))
 {
 	//gather information from form
-	$uid = $_POST['userid'];
-	$fname = $_POST['firstname'];
-	$lname = $_POST['lastname'];
-	$email = $_POST['email'];
+	$uid = mysqli_escape_string($_POST['userid']);
+	$fname = mysqli_escape_string($_POST['firstname']);
+	$lname = mysqli_escape_string($_POST['lastname']);
+	$email = mysqli_escape_string($_POST['email']);
 	$difficulty = $_POST['difficulty'];
 	$content = $_POST['educationalContent'];
 	$funLevel = $_POST['funLevel'];
-	$comments = $_POST['comments'];
+	$comments = mysqli_escape_string($_POST['comments']);
 	
 	//create query to write to database
 	$query = "INSERT INTO Feedback (user, firstName, lastName, email, difficulty, content, funLevel, comments) VALUES ('$uid', '$fname', '$lname', '$email', '$difficulty', '$content', '$funLevel', '$comments')";
@@ -48,7 +47,7 @@ if(isset($_POST['submitButton']))
 	{
 		echo "<script type=\"text/javascript\">
 				alert('Thank you for your feedback! You are being redirected back to the main page!');
-				redirect('http://www.unccmakesgames.com/games/BeadLoomGame');
+				redirect(\"http://www.unccmakesgames.com/games/BeadLoomGame\");
 				</script>";
 				
 	}
@@ -75,8 +74,7 @@ if(isset($_POST['submitButton']))
 }
 ?>
 
-
-	<br/>
+<body>
 	<form name="feedbackForm" id="feedbackForm" method="post" action="feedback.php" onsubmit="return validateInfo(this)">
 		<table name="mainTable" id="mainTable" class="registrationTable" width="800" border="0" align="center">
 			<tr>
