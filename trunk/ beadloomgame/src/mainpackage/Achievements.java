@@ -70,6 +70,7 @@ public abstract class Achievements {
 		EasyAsPie();				//7
 		HaveYourPieAndEatItToo(); 	//8
 		MentalMedium();				//9
+		MentalMediumMaster();		//10
 	}
 	
 	public static void viewAchievements()
@@ -329,6 +330,39 @@ public abstract class Achievements {
 			//Achievement already gained
 			return;
 		}
+	}
+	
+	public static void MentalMediumMaster()
+	{
+		int id = 10;
+		//if already obtained do not check
+		if (currentAchievements[id] == 0) 
+		{
+			for (int i = 15; i < 24; i++) {
+				if (currentMedals[i].equalsIgnoreCase("Platinum!!!!")) {
+					//Do nothing 
+				} else {
+					//Achievement not earned
+					return;
+				}
+			}
+			//Achievement Earned
+			currentAchievements[id] = 1;
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Mental Medium Master' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void PuzzleMaster()
+	{
+		
 	}
 	
 }
