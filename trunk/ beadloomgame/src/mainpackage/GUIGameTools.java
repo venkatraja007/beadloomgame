@@ -1437,7 +1437,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		LoadCustomPuzzleUserDropBox.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
 		LoadCustomPuzzleUserDropBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setCustomPuzzleNames(LoadCustomPuzzleUserDropBox.getSelectedItem().toString());
+				if(LoadCustomPuzzleUserDropBox.getSelectedItem()!=null)
+				{
+					setCustomPuzzleNames(LoadCustomPuzzleUserDropBox.getSelectedItem().toString());
+				}
 			}
 		});
 		
@@ -2262,6 +2265,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			else{
 				BeadLoom.playerName = NameTextField.getText();
 				getScores();
+				showTutorialButtons();
 				showChoosePuzzle();
 			}
 		}
@@ -2349,10 +2353,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		else if (e.getSource() == CustomPuzzleButton) {
 			removePuzzleButtons();
+			LoadCustomPuzzleDropBox.setVisible(true);
+			LoadCustomPuzzleUserDropBox.setVisible(true);
 			ChoosePuzzlePanel.add(LoadCustomPuzzleButton);
-			setCustomPuzzleUsers();
 			ChoosePuzzlePanel.add(LoadCustomPuzzleDropBox);
 			ChoosePuzzlePanel.add(LoadCustomPuzzleUserDropBox);
+			setCustomPuzzleUsers();
 			//TODO fix this hack
 			avatarMode = true;
 			hidePuzzleButtons();
@@ -2486,6 +2492,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource()== ChoosePuzzleButton || e.getSource() == PuzzleAvatarButton){
+			showTutorialButtons();
 			bl.getGridFrame().setVisible(false);
 			bl.getGridFrame2().setVisible(false);
 			showChoosePuzzle();
@@ -3527,48 +3534,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//			HardButton.setBounds(RightDifR);
 			//			ChoosePuzzlePanel.add(HardButton);
 			//			ChoosePuzzlePanel.remove(TutButton);
-			removePuzzleButtons();
-			hidePuzzleButtons();
-
-			ChoosePuzzlePanel.add(Tut1Button);
-			ChoosePuzzlePanel.add(Tut2Button);
-			ChoosePuzzlePanel.add(Tut3Button);
-			ChoosePuzzlePanel.add(Tut4Button);
-			ChoosePuzzlePanel.add(Tut5Button);
-			ChoosePuzzlePanel.add(Tut6Button);
-
-			HSLabel1.setText("" + RecordMove[0]);
-			MLabel1.setText(RecordMedal[0]);
-
-			HSLabel2.setText("" + RecordMove[1]);
-			MLabel2.setText(RecordMedal[1]);
-
-			HSLabel3.setText("" + RecordMove[2]);
-			MLabel3.setText(RecordMedal[2]);
-
-			HSLabel4.setText("" + RecordMove[3]);
-			MLabel4.setText(RecordMedal[3]);
-
-			HSLabel5.setText("" + RecordMove[4]);
-			MLabel5.setText(RecordMedal[4]);
-
-			HSLabel6.setText("" + RecordMove[5]);
-			MLabel6.setText(RecordMedal[5]);
-
-			HSLabel7.setText(" ");
-			MLabel7.setText(" ");
-
-			HSLabel8.setText(" ");
-			MLabel8.setText(" ");
-
-			HSLabel9.setText(" ");
-			MLabel9.setText(" ");
-
-			HSLabelA.setText(" ");
-			MLabelA.setText(" ");	
-
-			HSLabelB.setText(" ");
-			MLabelB.setText(" ");
+			showTutorialButtons();
 		}
 		else if (e.getSource() == EasyButton){
 			//			TutButton.setBounds(LeftDifR);
@@ -4032,7 +3998,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public void setCustomPuzzleNames(String user)
 	{
-		LoadCustomPuzzleDropBox.removeAllItems();
+		try
+		{
+			LoadCustomPuzzleDropBox.removeAllItems();
+		}
+		catch(Exception e){}
 		String puzzlelist = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/customPuzzles.php?token=puzzleList&user="+LoadCustomPuzzleUserDropBox.getSelectedItem());
 		if(!puzzlelist.equalsIgnoreCase("error"))
 		{
@@ -4123,6 +4093,52 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				RecordMedal[i] = "Platinum!!!!";
 			}
 		}
+	}
+	
+	public void showTutorialButtons()
+	{
+		removePuzzleButtons();
+		hidePuzzleButtons();
+
+		ChoosePuzzlePanel.add(Tut1Button);
+		ChoosePuzzlePanel.add(Tut2Button);
+		ChoosePuzzlePanel.add(Tut3Button);
+		ChoosePuzzlePanel.add(Tut4Button);
+		ChoosePuzzlePanel.add(Tut5Button);
+		ChoosePuzzlePanel.add(Tut6Button);
+
+		HSLabel1.setText("" + RecordMove[0]);
+		MLabel1.setText(RecordMedal[0]);
+
+		HSLabel2.setText("" + RecordMove[1]);
+		MLabel2.setText(RecordMedal[1]);
+
+		HSLabel3.setText("" + RecordMove[2]);
+		MLabel3.setText(RecordMedal[2]);
+
+		HSLabel4.setText("" + RecordMove[3]);
+		MLabel4.setText(RecordMedal[3]);
+
+		HSLabel5.setText("" + RecordMove[4]);
+		MLabel5.setText(RecordMedal[4]);
+
+		HSLabel6.setText("" + RecordMove[5]);
+		MLabel6.setText(RecordMedal[5]);
+
+		HSLabel7.setText(" ");
+		MLabel7.setText(" ");
+
+		HSLabel8.setText(" ");
+		MLabel8.setText(" ");
+
+		HSLabel9.setText(" ");
+		MLabel9.setText(" ");
+
+		HSLabelA.setText(" ");
+		MLabelA.setText(" ");	
+
+		HSLabelB.setText(" ");
+		MLabelB.setText(" ");
 	}
 
 	public String getHint(String puzzleName)
