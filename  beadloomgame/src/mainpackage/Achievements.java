@@ -191,18 +191,18 @@ public abstract class Achievements {
 		if(currentAchievements[id] == 0)
 		{
 			String champion = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
-			if(champion == "false")
-			{
-				return;
-			}
-			//Achievement earned 
-			else
+			if(champion == "true")
 			{
 				currentAchievements[id] = 1;
 				JOptionPane.showMessageDialog(null, 
 						"Congratulations you have earned the 'World Champion' Achievement", 
 						"Achievements Message", 
 						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			//Achievement earned 
+			else
+			{
 				return;
 			}
 		}
