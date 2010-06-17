@@ -10,6 +10,8 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -1433,6 +1435,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		//---- Load Custom Puzzle User Text Field ----
 		LoadCustomPuzzleUserDropBox.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
+		LoadCustomPuzzleUserDropBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setCustomPuzzleNames(LoadCustomPuzzleUserDropBox.getSelectedItem().toString());
+			}
+		});
 		
 		//---- Load Custom Puzzle Button ----
 		LoadCustomPuzzleButton.setText("Load Puzzle");
@@ -2343,6 +2350,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == CustomPuzzleButton) {
 			removePuzzleButtons();
 			ChoosePuzzlePanel.add(LoadCustomPuzzleButton);
+			setCustomPuzzleUsers();
 			ChoosePuzzlePanel.add(LoadCustomPuzzleDropBox);
 			ChoosePuzzlePanel.add(LoadCustomPuzzleUserDropBox);
 			//TODO fix this hack
@@ -4009,6 +4017,31 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		return builder.toString();
+	}
+	
+	public void setCustomPuzzleUsers()
+	{
+		LoadCustomPuzzleUserDropBox.removeAllItems();
+		String userlist = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/customPuzzles.php?token=userList");
+		String[] users = userlist.split(",");
+		for(int i=0; i<users.length; i++)
+		{
+			LoadCustomPuzzleUserDropBox.addItem(users[i]);
+		}
+	}
+	
+	public void setCustomPuzzleNames(String user)
+	{
+		LoadCustomPuzzleDropBox.removeAllItems();
+		String puzzlelist = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/customPuzzles.php?token=puzzleList&user="+LoadCustomPuzzleUserDropBox.getSelectedItem());
+		if(!puzzlelist.equalsIgnoreCase("error"))
+		{
+			String[] puzzles = puzzlelist.split(",");
+			for(int i=0; i<puzzles.length; i++)
+			{
+				LoadCustomPuzzleDropBox.addItem(puzzles[i]);
+			}
+		}
 	}
 	
 	public void sendCustomPuzzlePost(String fileContents, String url, String puzzleName, String folderName)
