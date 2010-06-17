@@ -2129,7 +2129,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		getScores();
 		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
 		Achievements.checkAchievements();
-		
+		Achievements.sendAchievements(BeadLoom.playerName);
 	}
 
 	public void setLoom(BeadLoom toSet){
