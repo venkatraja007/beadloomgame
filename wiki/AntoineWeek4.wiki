@@ -17,7 +17,7 @@
   * Unity GUI tutorial done, and 3D platformer started
 
 3. Problems encountered?
-  * Mainly debugging PHP bugs that don't create errors(using $GET instead '$_GET')
+  * Mainly debugging PHP bugs that don't create errors(using $GET)
 
 4. What did you learn this week? (esp. computer science, or anything surprising or interesting) Be sure to cite any resources you used (e.g. online tutorials, etc).
   * Debugging PHP
