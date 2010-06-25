@@ -87,6 +87,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton PuzzleAvatarButton = new JButton();
 	private JButton ClearButton = new JButton();
 	private JButton SubmitButton = new JButton();
+	private JButton UndoButton = new JButton();
 	private JButton SubmitAvatarButton = new JButton();
 	private JButton GameOptionsButton = new JButton();
 	private JButton MainMenuButton = new JButton();
@@ -1564,6 +1565,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitButton.setBackground(Color.RED);
 		SubmitButton.addActionListener(this);
 
+		//---- Undo button ----
+		UndoButton.setText("Undo");
+		UndoButton.setBounds(25, 125, 145, UndoButton.getPreferredSize().height);
+		UndoButton.addActionListener(this);
+
 		//---- Submit Avatar button ----
 		SubmitAvatarButton.setText("Submit Avatar");
 		SubmitAvatarButton.setBounds(25, 100, 145, SubmitAvatarButton.getPreferredSize().height);
@@ -1612,7 +1618,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		//---- puzzle avatar button ----
 		PuzzleAvatarButton.setText("Puzzle Avatar");
-		PuzzleAvatarButton.setBounds(25, 125, 145, PuzzleAvatarButton.getPreferredSize().height);
+		PuzzleAvatarButton.setBounds(25, 75, 145, PuzzleAvatarButton.getPreferredSize().height);
 		PuzzleAvatarButton.addActionListener(this);
 
 		//---- Tool button ----
@@ -1833,6 +1839,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		playerName = NameTextField.getText();
 		InGamePanel.add(RestartButton);
 		InGamePanel.add(SubmitButton);
+		InGamePanel.add(UndoButton);
 		InGamePanel.add(MainMenuButton);
 		InGamePanel.add(NameLabel);
 		InGamePanel.add(BestScoreLabel);
@@ -2200,6 +2207,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public JButton getSubmitButton() {
 		return SubmitButton;
 	}
+	public JButton getUndoButton() {
+		return UndoButton;
+	}
 	public JButton getSubmitAvatarButton() {
 		return SubmitAvatarButton;
 	}
@@ -2482,6 +2492,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		else if (e.getSource()== SubmitButton) {
 			checkSolution();
+		}
+		
+		else if (e.getSource() == UndoButton) {
+			bl.getGridPanel().undo();
 		}
 
 		else if (e.getSource()== MainMenuButton) {
@@ -4441,6 +4455,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		CustomPuzzleMenuPanel.add(ClearButton);
 		if(MainMenuButton.getParent()  !=  null) { MainMenuButton.getParent().remove(MainMenuButton); }
 		CustomPuzzleMenuPanel.add(MainMenuButton);
+		if(UndoButton.getParent()  !=  null) { UndoButton.getParent().remove(UndoButton); }
+		CustomPuzzleMenuPanel.add(UndoButton);
 		NameLabel.getParent().remove(NameLabel);
 		CustomPuzzleMenuPanel.add(NameLabel);
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
@@ -4478,6 +4494,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		AvatarMenuPanel.add(ClearButton);
 		if(MainMenuButton.getParent() != null) { MainMenuButton.getParent().remove(MainMenuButton); }
 		AvatarMenuPanel.add(MainMenuButton);
+		if(UndoButton.getParent()  !=  null) { UndoButton.getParent().remove(UndoButton); }
+		AvatarMenuPanel.add(UndoButton);
 		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
 		limitedColorChoice = true;
 		setAvatarColorButtons();
