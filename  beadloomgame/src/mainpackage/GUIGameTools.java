@@ -2930,12 +2930,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}   
 		}
 		else if (e.getSource() == FlagButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setFlag();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setFlag();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -2958,12 +2965,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == UNCCButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setUNCC();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setUNCC();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -2986,12 +3000,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}    
 		}
 		else if (e.getSource() == LoomEx10Button){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setLoomEx10();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setLoomEx10();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3014,12 +3035,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == LoomEx13Button){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setLoomEx13();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setLoomEx13();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3070,12 +3098,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}	    
 		}
 		else if (e.getSource() == SunriseButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setSunRise();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setSunRise();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3098,12 +3133,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}    
 		}
 		else if (e.getSource() == HeartButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setHeart();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setHeart();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3126,12 +3168,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == SunnySkyButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setSunnySky();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setSunnySky();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3154,12 +3203,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}    
 		}
 		else if (e.getSource() == StarsAndStripesButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setStarsAndStripes();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setStarsAndStripes();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3182,12 +3238,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == ROSSButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setROSS();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setROSS();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3210,12 +3273,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == BullseyeButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setBullseye();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setBullseye();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3238,12 +3308,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == LoomEx7Button){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setLoomEx7();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setLoomEx7();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3266,12 +3343,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == LoomEx1Button){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setLoomEx1();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setLoomEx1();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3294,12 +3378,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == LoomEx5Button){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setLoomEx5();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setLoomEx5();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3322,12 +3413,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == LoomEx3Button){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setLoomEx3();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setLoomEx3();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3350,12 +3448,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == MoonButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setMoon();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setMoon();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3378,12 +3483,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == MegamanButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setMegaman();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setMegaman();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3406,12 +3518,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == BatmanButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setBatman();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setBatman();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3434,12 +3553,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == DCButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setDC();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(hardPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setDC();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3462,12 +3588,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == SergeantButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle =puz.setSergeant();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle =puz.setSergeant();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3491,12 +3624,19 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == TieFighterButton){
-			startGame();
-			Restart(true, true, true);
-			currentPuzzle = puz.setTieFighter();
-			bestScore = RecordMove[currentPuzzle];
-			BestScoreLabel.setText("Best Score:" + bestScore);
-			bl.getPuzzleFrame().setVisible(false);
+			if(mediumPuzzlesUnlocked())
+			{
+				startGame();
+				Restart(true, true, true);
+				currentPuzzle = puz.setTieFighter();
+				bestScore = RecordMove[currentPuzzle];
+				BestScoreLabel.setText("Best Score:" + bestScore);
+				bl.getPuzzleFrame().setVisible(false);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+			}
 			//Log the Puzzle Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3592,19 +3732,20 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			MLabelB.setText(" ");
 		}
 		else if (e.getSource() == MediumButton){
-			if(		(RecordMedalShort[14].equals("N") ||
-					RecordMedalShort[13].equals("N") ||	
-					RecordMedalShort[12].equals("N") ||
-					RecordMedalShort[11].equals("N") ||
-					RecordMedalShort[10].equals("N") ||
-					RecordMedalShort[9].equals("N") ||
-					RecordMedalShort[8].equals("N") ||
-					RecordMedalShort[7].equals("N") ||
-					RecordMedalShort[6].equals("N")) &&
-					ComponentToggle.unlockableDifficultyLevels) {
-				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
-			}
-			else{
+//			if(		(RecordMedalShort[14].equals("N") ||
+//					RecordMedalShort[13].equals("N") ||	
+//					RecordMedalShort[12].equals("N") ||
+//					RecordMedalShort[11].equals("N") ||
+//					RecordMedalShort[10].equals("N") ||
+//					RecordMedalShort[9].equals("N") ||
+//					RecordMedalShort[8].equals("N") ||
+//					RecordMedalShort[7].equals("N") ||
+//					RecordMedalShort[6].equals("N")) &&
+//					ComponentToggle.unlockableDifficultyLevels) {
+//				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+//			}
+//			else
+			{
 				//			EasyButton.setBounds(LeftDifR);
 				//			ChoosePuzzlePanel.add(EasyButton);
 				//			TutButton.setBounds(CenterDifR);
@@ -3660,19 +3801,20 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		else if (e.getSource() == HardButton){
-			if(		(RecordMedalShort[34].equals("N") ||
-					RecordMedalShort[33].equals("N") ||
-					RecordMedalShort[21].equals("N") ||	
-					RecordMedalShort[20].equals("N") ||	
-					RecordMedalShort[19].equals("N") ||
-					RecordMedalShort[18].equals("N") ||
-					RecordMedalShort[17].equals("N") ||
-					RecordMedalShort[16].equals("N") ||
-					RecordMedalShort[15].equals("N")) &&
-					ComponentToggle.unlockableDifficultyLevels){
-				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
-			}
-			else{
+//			if(		(RecordMedalShort[34].equals("N") ||
+//					RecordMedalShort[33].equals("N") ||
+//					RecordMedalShort[21].equals("N") ||	
+//					RecordMedalShort[20].equals("N") ||	
+//					RecordMedalShort[19].equals("N") ||
+//					RecordMedalShort[18].equals("N") ||
+//					RecordMedalShort[17].equals("N") ||
+//					RecordMedalShort[16].equals("N") ||
+//					RecordMedalShort[15].equals("N")) &&
+//					ComponentToggle.unlockableDifficultyLevels){
+//				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+//			}
+//			else
+			{
 				removePuzzleButtons();
 				hidePuzzleButtons();
 
@@ -4225,6 +4367,42 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			avatarIcon.setVisible(false);
 			CreateAvatarButton.setVisible(false);
 		}
+	}
+	
+	public boolean mediumPuzzlesUnlocked()
+	{
+		if(		(RecordMedalShort[14].equals("N") ||
+				RecordMedalShort[13].equals("N") ||	
+				RecordMedalShort[12].equals("N") ||
+				RecordMedalShort[11].equals("N") ||
+				RecordMedalShort[10].equals("N") ||
+				RecordMedalShort[9].equals("N") ||
+				RecordMedalShort[8].equals("N") ||
+				RecordMedalShort[7].equals("N") ||
+				RecordMedalShort[6].equals("N")) &&
+				ComponentToggle.unlockableDifficultyLevels)
+		{
+			return false;
+		}
+		else { return true; }
+	}
+	
+	public boolean hardPuzzlesUnlocked()
+	{
+		if(		(RecordMedalShort[34].equals("N") ||
+				RecordMedalShort[33].equals("N") ||
+				RecordMedalShort[21].equals("N") ||	
+				RecordMedalShort[20].equals("N") ||	
+				RecordMedalShort[19].equals("N") ||
+				RecordMedalShort[18].equals("N") ||
+				RecordMedalShort[17].equals("N") ||
+				RecordMedalShort[16].equals("N") ||
+				RecordMedalShort[15].equals("N")) &&
+				ComponentToggle.unlockableDifficultyLevels)
+		{
+			return false;
+		}
+		else { return true; }
 	}
 
 	//set up the content pane for Custom Puzzle Creation Mode
