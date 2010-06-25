@@ -4343,6 +4343,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			MainMenuPanel.add(logoIcon);
 			avatarIcon.repaint();
 		}
+		bl.getGridPanel2().clear();
 		if(ComponentToggle.avatars)
 		{
 			if(avatarPuzzle==-1)
