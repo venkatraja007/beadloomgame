@@ -316,11 +316,12 @@ public abstract class Achievements {
 					//Achievement not earned
 					return;
 				}
-				JOptionPane.showMessageDialog(null, 
-						"Congratulations you have earned the 'Have your Pie and Eat it too' Achievement", 
-						"Achievements Message", 
-						JOptionPane.PLAIN_MESSAGE);
 			}
+			currentAchievements[id] = 1;
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Have your Pie and Eat it too' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
 		}
 		else
 		{
