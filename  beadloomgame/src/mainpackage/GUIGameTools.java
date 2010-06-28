@@ -1815,6 +1815,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void startGame(){
 		
 		setGamePlayMode();
+		if(getHintModeStatus() && ComponentToggle.hintsOn)
+		{
+			String hint = getHint(puz.getPuzzleName(currentPuzzle));
+			JOptionPane.showMessageDialog(null, hint, "Hint!", JOptionPane.PLAIN_MESSAGE);
+		}
 		//Adjust BeadLoom
 		bl.getContentPanel().add(bl.getGridFrame2());
 		bl.getContentPanel().remove(bl.getGoalImagesFrame());
@@ -3803,11 +3808,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				HSLabel7.setText(""+ RecordMove[21]);
 				MLabel7.setText(RecordMedal[21]);
 
-				HSLabel8.setText(""+ RecordMove[33]);
-				MLabel8.setText(RecordMedal[33]);
+				HSLabel8.setText(""+ RecordMove[22]);
+				MLabel8.setText(RecordMedal[22]);
 
-				HSLabel9.setText(""+ RecordMove[34]);
-				MLabel9.setText(RecordMedal[34]);
+				HSLabel9.setText(""+ RecordMove[23]);
+				MLabel9.setText(RecordMedal[23]);
 
 				HSLabelA.setText(" ");
 				MLabelA.setText(" ");
@@ -3846,38 +3851,38 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				ChoosePuzzlePanel.add(MegamanButton);
 				ChoosePuzzlePanel.add(BatmanButton);
 
-				HSLabel1.setText("" + RecordMove[22]);
-				MLabel1.setText(RecordMedal[22]);
+				HSLabel1.setText("" + RecordMove[24]);
+				MLabel1.setText(RecordMedal[24]);
 
-				HSLabel2.setText("" + RecordMove[23]);
-				MLabel2.setText(RecordMedal[23]);
+				HSLabel2.setText("" + RecordMove[25]);
+				MLabel2.setText(RecordMedal[25]);
 
-				HSLabel3.setText("" + RecordMove[32]);
-				MLabel3.setText(RecordMedal[32]);
+				HSLabel3.setText("" + RecordMove[26]);
+				MLabel3.setText(RecordMedal[26]);
 
-				HSLabel4.setText("" + RecordMove[24]);
-				MLabel4.setText(RecordMedal[24]);
+				HSLabel4.setText("" + RecordMove[27]);
+				MLabel4.setText(RecordMedal[27]);
 
-				HSLabel5.setText("" + RecordMove[25]);
-				MLabel5.setText(RecordMedal[25]);
+				HSLabel5.setText("" + RecordMove[28]);
+				MLabel5.setText(RecordMedal[28]);
 
-				HSLabel6.setText("" + RecordMove[26]);
-				MLabel6.setText(RecordMedal[26]);
+				HSLabel6.setText("" + RecordMove[29]);
+				MLabel6.setText(RecordMedal[29]);
 
-				HSLabel7.setText(""+RecordMove[27]);
-				MLabel7.setText(RecordMedal[27]);
+				HSLabel7.setText(""+RecordMove[30]);
+				MLabel7.setText(RecordMedal[30]);
 
-				HSLabel8.setText(""+RecordMove[28]);
-				MLabel8.setText(RecordMedal[28]);
+				HSLabel8.setText(""+RecordMove[31]);
+				MLabel8.setText(RecordMedal[31]);
 
-				HSLabel9.setText(""+RecordMove[29]);
-				MLabel9.setText(RecordMedal[29]);
+				HSLabel9.setText(""+RecordMove[32]);
+				MLabel9.setText(RecordMedal[32]);
 
-				HSLabelA.setText(""+RecordMove[30]);
-				MLabelA.setText(RecordMedal[30]);
+				HSLabelA.setText(""+RecordMove[33]);
+				MLabelA.setText(RecordMedal[33]);
 
-				HSLabelB.setText(""+RecordMove[31]);
-				MLabelB.setText(RecordMedal[31]);
+				HSLabelB.setText(""+RecordMove[34]);
+				MLabelB.setText(RecordMedal[34]);
 			}
 		}
 		else if (e.getSource() == RedButton){
