@@ -1434,6 +1434,24 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		//---- Load Custom Puzzle Text Field ----
 		LoadCustomPuzzleDropBox.setBounds(25, 50, 145, CustomPuzzleTextField.getPreferredSize().height);
+		LoadCustomPuzzleDropBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				// TODO Auto-generated method stub
+				if(LoadCustomPuzzleUserDropBox.getSelectedItem()!=null && LoadCustomPuzzleDropBox.getSelectedItem() != null)
+				{
+					bl.getGridPanel2().clear();
+					puz.setCustomPuzzle(LoadCustomPuzzleUserDropBox.getSelectedItem()+"-"+LoadCustomPuzzleDropBox.getSelectedItem(), "CustomPuzzles", 2);
+					ChoosePuzzlePanel.remove(puzIcon);
+					puzIcon = new JLabel(new ImageIcon(
+							bl.createImageFromGrid().getScaledInstance(
+							PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+					puzIcon.setBounds(PuzzleThumbnail);
+					ChoosePuzzlePanel.add(puzIcon);
+					puzIcon.repaint();
+				}
+			}
+		});
 
 		//---- Load Custom Puzzle User Text Field ----
 		LoadCustomPuzzleUserDropBox.setBounds(25, 25, 145, CustomPuzzleTextField.getPreferredSize().height);
@@ -2022,7 +2040,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 
-		if(totalErrors == 0){
+		if(totalErrors == 0 && currentPuzzle == -1)
+		{
+			JOptionPane.showMessageDialog(null, "Congratulations you completed this Custom Puzzle", "High Scores messages", JOptionPane.PLAIN_MESSAGE);
+		}
+		else if(totalErrors == 0)
+		{
 			bl.stopTimer();
 			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
 
@@ -2089,66 +2112,44 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//IF new best high score
 			//Log new high score
 			//First in Array then in file
-			if (getMoveCount() <RecordMove[currentPuzzle]){
+		try
+		{
+			if (getMoveCount() <RecordMove[currentPuzzle] && currentPuzzle != -1)
+			{
 				RecordMove[currentPuzzle] = getMoveCount();
 				RecordMedal[currentPuzzle] = medal;
 				String move = playerName;
 				String med = playerName;
-				for (int i = 0; i < puz.getTotalPuzzles(); i++){
+				for (int i = 0; i < puz.getTotalPuzzles(); i++)
+				{
 					move = move + " " + RecordMove[i];
 					med = med + " " + RecordMedalShort[i];
 				}
-				//scoreFile[playerIndex+playerIndex+totalEntries-1] = move;
-				//scoreFile[playerIndex+playerIndex+totalEntries] = med;
-//				try{
-//					FileWriter log = new FileWriter("Scores.txt", false);
-//					int i = 0;
-//					System.out.println(scoreFile[i]);
-//					log.write(scoreFile[i]);
-//					i++;
-//					while (i < (totalEntries*3) +1){
-//						log.write("\n" + scoreFile[i]);
-//						i++;
-//					}
-//					log.close();
-//				}catch (Exception e){//Catch exception if any
-//					System.err.println("Error: " + e.getMessage());
-//				}
+			}
+			else if(totalErrors > 10) 
+			{
+				JOptionPane.showMessageDialog(null, "Incorrect: \n Total Errors: "+ totalErrors, "Sorry", JOptionPane.PLAIN_MESSAGE);
+	
+			}
+			else
+			{
+				String Output = "Incorrect: \n Total Errors: " + totalErrors + "\n";
+				for(int i = 0; i < totalErrors; i++){
+					Output = Output + "(" + errorX[i] + ", " + errorY[i] + ")\n";
+				}
+				JOptionPane.showMessageDialog(null, Output, "Sorry", JOptionPane.PLAIN_MESSAGE);
 			}
 		}
-		else if(totalErrors > 10) {
-			JOptionPane.showMessageDialog(null, "Incorrect: \n Total Errors: "+ totalErrors, "Sorry", JOptionPane.PLAIN_MESSAGE);
-			//Log the Results
-//			try{
-//				FileWriter log = new FileWriter("log.txt", true);
-//				log.write("\t\t" + getTime() + " Checked Solution.\n");
-//				log.write("\t\t\t" + getTime() + " Puzzle Incomplete. Errors: " + totalErrors + "\n");
-//				log.close();
-//			}catch (Exception e){//Catch exception if any
-//				System.err.println("Error: " + e.getMessage());
-//			}
-		}
-		else{
-			String Output = "Incorrect: \n Total Errors: " + totalErrors + "\n";
-			for(int i = 0; i < totalErrors; i++){
-				Output = Output + "(" + errorX[i] + ", " + errorY[i] + ")\n";
-			}
-			JOptionPane.showMessageDialog(null, Output, "Sorry", JOptionPane.PLAIN_MESSAGE);
-			//Log the Results
-//			try{
-//				FileWriter log = new FileWriter("log.txt", true);
-//				log.write("\t\t" + getTime() + " Checked Solution.\n");
-//				log.write("\t\t\t" + getTime() + " Puzzle Incomplete. Errors: " + totalErrors + "\n");
-//				log.close();
-//			}catch (Exception e){//Catch exception if any
-//				System.err.println("Error: " + e.getMessage());
-//			}
+		catch(Exception e)
+		{
+			e.printStackTrace();
 		}
 		//Check Achivements here
 		getScores();
 		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
 		Achievements.checkAchievements();
 		Achievements.sendAchievements(BeadLoom.playerName);
+	}
 	}
 
 	public void setLoom(BeadLoom toSet){
@@ -2299,9 +2300,23 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		else if (e.getSource() == SubmitCustomPuzzleButton) {
 			String text = CustomPuzzleTextField.getText();
-			if(text.equalsIgnoreCase("Enter Puzzle Name") || text.length() < 3)
+			if(text.equalsIgnoreCase("Enter Puzzle Name"))
 			{
-				JOptionPane.showMessageDialog(null, "Enter a Valid Puzzle Name!", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+				
+				JOptionPane.showMessageDialog(null, "Enter a Valid Puzzle Name", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if(text.length() < 3)
+			{
+				JOptionPane.showMessageDialog(null, "Puzzle Name must have at least 3 characters", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if(text.length() > 30)
+			{
+				JOptionPane.showMessageDialog(null, "Puzzle Name must be less than 30 characters", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if(text.contains(" ") || text.contains(",") || text.contains("/") || text.contains("\\"))
+			{
+				JOptionPane.showMessageDialog(null, "No Spaces,Commas or Slashes Allowed use Underscores : '_'", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+				return;
 			}
 			else if(bl.getGridPanel().getLayers().size() < 1)
 			{

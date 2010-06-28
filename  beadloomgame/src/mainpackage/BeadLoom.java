@@ -73,6 +73,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		
 		//Get players name from website
 		playerName = getParameter("name");
+
 		
 		BeadLoom Gui = new BeadLoom();
 		color = Gui.getMoveBeads().getColor();
@@ -233,6 +234,8 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 		//******* Components for the GUI initialization *******
 		
+		//TODO remove before jar
+		//playerName = "Antoine";
 		//======== Bead Loom Applet ========
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
@@ -2110,7 +2113,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			{
 				Color temp =  getGridPanel2().getColorAt(x, y);
 				if(temp == null) { temp = Color.PINK; }
-				System.out.println(temp.toString());
+				//System.out.println(temp.toString());
 				pixels[(40-y)*41+x] = temp.getRGB();
 			}
 		}

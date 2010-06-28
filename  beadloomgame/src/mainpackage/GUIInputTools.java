@@ -2498,7 +2498,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 	public void setImage(Image ii){
 		catimage = ii;
-		System.out.println("setImage called");
+		//System.out.println("setImage called");
 	}
 
 	//Used for getting layer

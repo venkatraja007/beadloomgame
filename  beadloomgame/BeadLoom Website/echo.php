@@ -28,7 +28,7 @@ if($folderName == "CustomPuzzles")
 	}
 	else
 	{
-		die("Custom Puzzle $user-$puzzle probably already exist.");
+		die("Custom Puzzle $user-$puzzle already exists.");
 	}
 }
 
