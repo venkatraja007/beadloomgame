@@ -361,12 +361,12 @@ public class GUIMenuBar {
 		
 	//======= Outside State Changing =======
     public void enableUndo(boolean x) {
-    	System.out.println("Undo called.");
+    	//System.out.println("Undo called.");
     	if (x==false) { UndoMenuItem.setEnabled(false); }
     	else UndoMenuItem.setEnabled(true);
     }
     public void enableRedo(boolean x) {
-    	System.out.println("Redo called.");
+    	//System.out.println("Redo called.");
     	if (x==false) { RedoMenuItem.setEnabled(false); }
     	else RedoMenuItem.setEnabled(true);
     }

@@ -156,7 +156,7 @@ class GridPanel extends JPanel {
 		//BEAD REPAINTING
 		//int iconSize=catimage.getHeight(null)/2;
 		int iconSize=getHeight()/41/2;	//get half of the bead size
-		System.out.println(iconSize);
+		//System.out.println(iconSize);
 
 		for (int i = 0; i < layer.size(); i++) {
 			//int i = layer.size() - 1;
@@ -285,7 +285,7 @@ class GridPanel extends JPanel {
 	//*****************************************************************************
 
 	public void addLayer(Layer l) { 
-		System.out.println("Layer added to " + this);
+		//System.out.println("Layer added to " + this);
 		bl.getInputTools().setLay(l);
 		bl.getTop().enableUndo(true);
 		if(isClear == true){
