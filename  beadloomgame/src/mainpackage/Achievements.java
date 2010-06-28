@@ -48,7 +48,7 @@ public abstract class Achievements {
 		String message = GUIGameTools.sendWebRequest(
 				"http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=send&user=" + 
 				user + "&achievements=" + achievements);
-		JOptionPane.showMessageDialog(null, message, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
+		//JOptionPane.showMessageDialog(null, message, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	public static void retrieveMedals(String[] recordMedals, int[] recordMoves, String[] recordMedalsShort)
