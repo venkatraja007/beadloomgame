@@ -1669,7 +1669,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(ComponentToggle.aesthetics) { GameOptionsPanel.add(PeaceBeadButton); }
 
 		//---- 8 Bit Bead Button ----
-		EightBitBeadButton.setText("8 Bit Bead");
+		//Changed to be acurate
+		EightBitBeadButton.setText("Retro Bead");
 		EightBitBeadButton.setBounds(20, 175, 155, EightBitBeadButton.getPreferredSize().height);
 		EightBitBeadButton.addActionListener(this);
 		if(ComponentToggle.aesthetics) { GameOptionsPanel.add(EightBitBeadButton); }

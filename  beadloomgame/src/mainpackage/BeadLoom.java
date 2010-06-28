@@ -100,6 +100,14 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		Gui.setVisible(true);
 		
 		Game.setPlayerName(playerName);
+		if(playerName == null)
+		{
+			Game.getNameTextField().setEditable(true);
+		}
+		else
+		{
+			Game.getNameTextField().setEditable(false);
+		}
 		hintsOn = ComponentToggle.hintsOn;
 		timerEnabled = ComponentToggle.timerEnabled;
 	}
