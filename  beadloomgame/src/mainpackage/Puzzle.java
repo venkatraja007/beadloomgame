@@ -1757,7 +1757,7 @@ public class Puzzle {
 	//Returns array pos
 	public int setBatman(){
 
-		ideal = 27;
+		ideal = 26;
 		InputTools.setGrid(bl.getGridPanel2());
 
 		InputTools.setColor(Color.BLACK);
