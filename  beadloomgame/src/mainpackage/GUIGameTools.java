@@ -4365,6 +4365,37 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		NameTextField.setText(BeadLoom.playerName);
 		JPanel panel = bl.getContentPanel();
 		
+		//set up options menu bead selected
+
+		if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/bead.jpg"))
+		{
+			NormalBeadButton.setBackground(Color.CYAN);
+			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
+			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
+		}
+		else if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/awesomeBead.jpg"))
+		{
+			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
+			AwesomeBeadButton.setBackground(Color.CYAN);
+			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
+		}
+		else if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/peaceBead.jpg"))
+		{
+			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
+			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
+			PeaceBeadButton.setBackground(Color.CYAN);
+			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
+		}
+		else if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg"))
+		{
+			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
+			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
+			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
+			EightBitBeadButton.setBackground(Color.CYAN);
+		}
+		
 
 		//TODO insert code to add main menu here
 		bl.getMainMenuFrame().setBounds(((int)BeadLoom.usableDim.getWidth())/2-100, ((int)BeadLoom.usableDim.getHeight())/2-275, 200, 550);
