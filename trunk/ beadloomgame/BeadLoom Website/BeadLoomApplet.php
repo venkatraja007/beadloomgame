@@ -20,6 +20,7 @@
 	
 	<body>
 		<h1><center>Bead Loom Game!</center></h1>
+		 <h1><center><input type="button" value="Logout" onclick="document.location='logout.php'"/></center></h1>
 		
 		<center><applet code = 'src.mainpackage.BeadLoom'
 			archive = 'BeadLoom.jar, xom-1.1.jar',
