@@ -287,6 +287,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						{
 							MoveBeads.getTopColorsButton().setForeground(Color.WHITE);
 						}
+						else
+						{
+							MoveBeads.getTopColorsButton().setForeground(Color.BLACK);
+						}
 					}
 				}
 			}
@@ -334,6 +338,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 						if(getColorName(colorAt).equalsIgnoreCase("Black") || getColorName(colorAt).equalsIgnoreCase("Blue"))
 						{
 							MoveBeads.getTopColorsButton().setForeground(Color.WHITE);
+						}
+						else
+						{
+							MoveBeads.getTopColorsButton().setForeground(Color.BLACK);
 						}
 					}
 				}

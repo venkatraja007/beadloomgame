@@ -221,6 +221,8 @@ public class Puzzle {
 		InputTools.setColor(defaultColor);
 		bl.getMoveBeads().setColor(defaultColor);
 		bl.getMoveBeads().getTopColorsButton().setBackground(defaultColor);
+		bl.getMoveBeads().getTopColorsButton().setText("Red");
+		bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 	}
 
 	//Mimics the calculations in GUIInputTools performed when the user clicks the Triangle Iteration Button
