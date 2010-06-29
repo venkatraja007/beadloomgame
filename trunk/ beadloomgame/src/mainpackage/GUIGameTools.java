@@ -4368,58 +4368,65 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getHighScoresFrame().setVisible(false);
 		//load Avatar and logo
 		bl.getGridPanel2().clear();
-		if(puz.setCustomPuzzle("GameLogo", "Avatars", 2))
-		{
-			MainMenuPanel.remove(logoIcon);
-			int logoSize = 123;
-			logoIcon = new JLabel(new ImageIcon(
-					bl.createImageFromGrid().getScaledInstance(
-					logoSize, logoSize, 0)));
-			MainMenuPanel.remove(logoIcon);
-			logoIcon.setVisible(true);
-			logoIcon.setBounds((200-logoSize)/2, 25, logoSize, logoSize);
-			MainMenuPanel.add(logoIcon);
-			avatarIcon.repaint();
-		}
-		if(ComponentToggle.avatars)
-		{
- 			bl.getGridPanel2().clear();
-			if(avatarPuzzle==-1)
+		
+		try {
+			if(puz.setCustomPuzzle("GameLogo", "Avatars", 2))
 			{
-				if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 2))
+				MainMenuPanel.remove(logoIcon);
+				int logoSize = 123;
+				logoIcon = new JLabel(new ImageIcon(
+						bl.createImageFromGrid().getScaledInstance(
+						logoSize, logoSize, 0)));
+				MainMenuPanel.remove(logoIcon);
+				logoIcon.setVisible(true);
+				logoIcon.setBounds((200-logoSize)/2, 25, logoSize, logoSize);
+				MainMenuPanel.add(logoIcon);
+				avatarIcon.repaint();
+			}
+			
+			if(ComponentToggle.avatars)
+			{
+				bl.getGridPanel2().clear();
+				if(avatarPuzzle==-1)
 				{
+					if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 2))
+					{
+						MainMenuPanel.remove(avatarIcon);
+						int avatarSize = 123;
+						avatarIcon = new JLabel(new ImageIcon(
+								bl.createImageFromGrid().getScaledInstance(
+								avatarSize, avatarSize, 0)));
+						MainMenuPanel.remove(avatarIcon);
+						avatarIcon.setVisible(true);
+						avatarIcon.setBounds((200-avatarSize)/2,355, avatarSize, avatarSize);
+						MainMenuPanel.add(avatarIcon);
+						avatarIcon.repaint();
+					}
+					else { avatarIcon.setVisible(false); }
+				}
+				else
+				{
+					puz.setPuzzle(avatarPuzzle);
 					MainMenuPanel.remove(avatarIcon);
 					int avatarSize = 123;
 					avatarIcon = new JLabel(new ImageIcon(
 							bl.createImageFromGrid().getScaledInstance(
 							avatarSize, avatarSize, 0)));
-					MainMenuPanel.remove(avatarIcon);
+					//MainMenuPanel.remove(avatarIcon);
 					avatarIcon.setVisible(true);
 					avatarIcon.setBounds((200-avatarSize)/2,355, avatarSize, avatarSize);
 					MainMenuPanel.add(avatarIcon);
 					avatarIcon.repaint();
 				}
-				else { avatarIcon.setVisible(false); }
 			}
 			else
 			{
-				puz.setPuzzle(avatarPuzzle);
-				MainMenuPanel.remove(avatarIcon);
-				int avatarSize = 123;
-				avatarIcon = new JLabel(new ImageIcon(
-						bl.createImageFromGrid().getScaledInstance(
-						avatarSize, avatarSize, 0)));
-				//MainMenuPanel.remove(avatarIcon);
-				avatarIcon.setVisible(true);
-				avatarIcon.setBounds((200-avatarSize)/2,205, avatarSize, avatarSize);
-				MainMenuPanel.add(avatarIcon);
-				avatarIcon.repaint();
+				avatarIcon.setVisible(false);
+				CreateAvatarButton.setVisible(false);
 			}
-		}
-		else
-		{
-			avatarIcon.setVisible(false);
-			CreateAvatarButton.setVisible(false);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -4501,6 +4508,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		initAvatarMenu();
 		avatarMode = true;
+		String puzNum = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
+		if(puzNum.length()>0) 
+		{
+			avatarPuzzle = Integer.parseInt(puzNum); 
+		}
 
 		JPanel panel = bl.getContentPanel();
 		panel.add(bl.getAvatarMenuFrame());
@@ -4531,9 +4543,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 		bl.getInputTools().setGrid(bl.getGridPanel());
-		if(!puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1))
+		if(avatarPuzzle != -1)
 		{
-
+			JOptionPane.showMessageDialog(null, "Complete more game puzzles to unlock more colors for your custom Avatar", "Custom Avatar Creation", JOptionPane.PLAIN_MESSAGE);
+		}
+		else if(!puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1))
+		{
 			JOptionPane.showMessageDialog(null, "Complete more game puzzles to unlock more colors for your custom Avatar", "Custom Avatar Creation", JOptionPane.PLAIN_MESSAGE);
 		}
 	}

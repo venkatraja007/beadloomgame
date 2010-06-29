@@ -1838,6 +1838,11 @@ public class Puzzle {
 		}
 	}
 	
+	public void setAvatarPuzzle(int puzzleIndex)
+	{
+		
+	}
+	
 	public boolean setCustomPuzzle(String puzzleName, String folderName, int gridNumber)
 	{
 		//Set the active grid to the goal image grid
