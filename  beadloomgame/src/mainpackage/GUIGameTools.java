@@ -324,7 +324,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	Rectangle CR23 = new Rectangle(CR22.x + colorButtonLength + colorHorizSpace, CR13.y + colorButtonHeight + colorVertSpace, colorButtonLength, colorButtonHeight);
 
 	public GUIGameTools() {
-		avatarPuzzle = -1;
+		avatarPuzzle = -2;
 
 		//---- game panel -----
 		GamePanel.setBorder(new LineBorder(Color.red));
@@ -2332,6 +2332,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
 			avatarPuzzle = -1;
 			sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/avatar.php?avatar=-1");
+			setMainMenuMode();
+			//TODO
 		}
 		
 		else if (e.getSource() == CreateCustomPuzzleButton) {
@@ -4345,6 +4347,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		String puzNum = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
 		if(puzNum.length()>0) { avatarPuzzle = Integer.parseInt(puzNum); }
+		if(avatarPuzzle < -1) { avatarPuzzle = -1; }
 
 		hidePuzzleButtons();
 		removeAllWindows();
@@ -4378,9 +4381,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			MainMenuPanel.add(logoIcon);
 			avatarIcon.repaint();
 		}
-		bl.getGridPanel2().clear();
 		if(ComponentToggle.avatars)
 		{
+ 			bl.getGridPanel2().clear();
 			if(avatarPuzzle==-1)
 			{
 				if(puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 2))
@@ -4406,7 +4409,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				avatarIcon = new JLabel(new ImageIcon(
 						bl.createImageFromGrid().getScaledInstance(
 						avatarSize, avatarSize, 0)));
-				MainMenuPanel.remove(avatarIcon);
+				//MainMenuPanel.remove(avatarIcon);
 				avatarIcon.setVisible(true);
 				avatarIcon.setBounds((200-avatarSize)/2,205, avatarSize, avatarSize);
 				MainMenuPanel.add(avatarIcon);
