@@ -2112,31 +2112,31 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//IF new best high score
 			//Log new high score
 			//First in Array then in file
-		try
-		{
-			if (getMoveCount() <RecordMove[currentPuzzle] && currentPuzzle != -1)
+			try
 			{
-				RecordMove[currentPuzzle] = getMoveCount();
-				RecordMedal[currentPuzzle] = medal;
-				String move = playerName;
-				String med = playerName;
-				for (int i = 0; i < puz.getTotalPuzzles(); i++)
+				if (getMoveCount() <RecordMove[currentPuzzle] && currentPuzzle != -1)
 				{
-					move = move + " " + RecordMove[i];
-					med = med + " " + RecordMedalShort[i];
+					RecordMove[currentPuzzle] = getMoveCount();
+					RecordMedal[currentPuzzle] = medal;
+					String move = playerName;
+					String med = playerName;
+					for (int i = 0; i < puz.getTotalPuzzles(); i++)
+					{
+						move = move + " " + RecordMove[i];
+						med = med + " " + RecordMedalShort[i];
+					}
 				}
 			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			//Check Achivements here
+			getScores();
+			Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
+			Achievements.checkAchievements();
+			Achievements.sendAchievements(BeadLoom.playerName);
 		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		//Check Achivements here
-		getScores();
-		Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
-		Achievements.checkAchievements();
-		Achievements.sendAchievements(BeadLoom.playerName);
-	}
 		else if(totalErrors > 10) 
 		{
 			JOptionPane.showMessageDialog(null, "Incorrect: \n Total Errors: "+ totalErrors, "Sorry", JOptionPane.PLAIN_MESSAGE);
@@ -4513,6 +4513,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		{
 			avatarPuzzle = Integer.parseInt(puzNum); 
 		}
+		else { avatarPuzzle = -1; }
 
 		JPanel panel = bl.getContentPanel();
 		panel.add(bl.getAvatarMenuFrame());
@@ -4543,11 +4544,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getTimerLabel().setVisible(false);
 		panel.repaint();
 		bl.getInputTools().setGrid(bl.getGridPanel());
-		if(avatarPuzzle != -1)
-		{
-			JOptionPane.showMessageDialog(null, "Complete more game puzzles to unlock more colors for your custom Avatar", "Custom Avatar Creation", JOptionPane.PLAIN_MESSAGE);
-		}
-		else if(!puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1))
+		if(!puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1))
 		{
 			JOptionPane.showMessageDialog(null, "Complete more game puzzles to unlock more colors for your custom Avatar", "Custom Avatar Creation", JOptionPane.PLAIN_MESSAGE);
 		}
