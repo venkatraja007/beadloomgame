@@ -3907,6 +3907,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.RED);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.RED);
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			bl.getMoveBeads().getTopColorsButton().setText("Red");
 			//Log the Color Change
 //			try{
@@ -3921,6 +3922,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getInputTools().setColor(Color.GREEN);
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.GREEN);
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			bl.getMoveBeads().getTopColorsButton().setText("Green");
 			//Log the Color Change
 //			try{
@@ -3951,6 +3953,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.YELLOW);
 			bl.getMoveBeads().getTopColorsButton().setText("Yellow");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the Color Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3965,6 +3968,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.CYAN);
 			bl.getMoveBeads().getTopColorsButton().setText("Cyan");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the Color Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3979,6 +3983,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.MAGENTA);
 			bl.getMoveBeads().getTopColorsButton().setText("Magenta");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the Color Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -3993,6 +3998,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(betterOrange);
 			bl.getMoveBeads().getTopColorsButton().setText("Orange");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the Color Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -4007,6 +4013,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.PINK);
 			bl.getMoveBeads().getTopColorsButton().setText("Pink");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the Color Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -4021,6 +4028,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(peach);
 			bl.getMoveBeads().getTopColorsButton().setText("Peach");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the Color Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -4035,6 +4043,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.GRAY);
 			bl.getMoveBeads().getTopColorsButton().setText("Gray");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the color change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -4064,6 +4073,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getColorFrame().setVisible(false);
 			bl.getMoveBeads().getTopColorsButton().setBackground(Color.WHITE);
 			bl.getMoveBeads().getTopColorsButton().setText("White");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.BLACK);
 			//Log the Color Change
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
