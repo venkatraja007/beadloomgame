@@ -1944,6 +1944,9 @@ public class Puzzle {
 
 		//Calculate the Goal Images bead array
 		bl.getGridPanel2().calcGameGrid();
+		if(gridNumber==1) { bl.getGridPanel().calcGameGrid(); }
+		else if(gridNumber==2) { bl.getGridPanel2().calcGameGrid(); }
+		else { return false; }
 
 		//Change grid back so they can work on the puzzle
 		//Reset the Current Selected Color to default
