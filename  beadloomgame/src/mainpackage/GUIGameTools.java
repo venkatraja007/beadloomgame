@@ -2126,19 +2126,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					med = med + " " + RecordMedalShort[i];
 				}
 			}
-			else if(totalErrors > 10) 
-			{
-				JOptionPane.showMessageDialog(null, "Incorrect: \n Total Errors: "+ totalErrors, "Sorry", JOptionPane.PLAIN_MESSAGE);
-	
-			}
-			else
-			{
-				String Output = "Incorrect: \n Total Errors: " + totalErrors + "\n";
-				for(int i = 0; i < totalErrors; i++){
-					Output = Output + "(" + errorX[i] + ", " + errorY[i] + ")\n";
-				}
-				JOptionPane.showMessageDialog(null, Output, "Sorry", JOptionPane.PLAIN_MESSAGE);
-			}
 		}
 		catch(Exception e)
 		{
@@ -2150,7 +2137,20 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		Achievements.checkAchievements();
 		Achievements.sendAchievements(BeadLoom.playerName);
 	}
-	}
+		else if(totalErrors > 10) 
+		{
+			JOptionPane.showMessageDialog(null, "Incorrect: \n Total Errors: "+ totalErrors, "Sorry", JOptionPane.PLAIN_MESSAGE);
+
+		}
+		else
+		{
+			String Output = "Incorrect: \n Total Errors: " + totalErrors + "\n";
+			for(int i = 0; i < totalErrors; i++){
+				Output = Output + "(" + errorX[i] + ", " + errorY[i] + ")\n";
+			}
+			JOptionPane.showMessageDialog(null, Output, "Sorry", JOptionPane.PLAIN_MESSAGE);
+		}
+}
 
 	public void setLoom(BeadLoom toSet){
 		bl = toSet;
