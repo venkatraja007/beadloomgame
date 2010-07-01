@@ -2,6 +2,7 @@
 		session_start();
 		include('config.php');
 		include('connect.php');
+		include('functions.php');
 		
 		
 		if(isset($_SESSION['userid']))
@@ -31,14 +32,14 @@
 if(isset($_POST['submitButton']))
 {
 	//gather information from form
-	$uid = mysqli_escape_string($_POST['userid']);
-	$fname = mysqli_escape_string($_POST['firstname']);
-	$lname = mysqli_escape_string($_POST['lastname']);
-	$email = mysqli_escape_string($_POST['email']);
+	$uid = $db->escape_string($_POST['userid']);
+	$fname = $db->escape_string($_POST['firstname']);
+	$lname = $db->escape_string($_POST['lastname']);
+	$email = $db->escape_string($_POST['email']);
 	$difficulty = $_POST['difficulty'];
 	$content = $_POST['educationalContent'];
 	$funLevel = $_POST['funLevel'];
-	$comments = mysqli_escape_string($_POST['comments']);
+	$comments = $db->escape_string($_POST['comments']);
 	
 	//create query to write to database
 	$query = "INSERT INTO Feedback (user, firstName, lastName, email, difficulty, content, funLevel, comments) VALUES ('$uid', '$fname', '$lname', '$email', '$difficulty', '$content', '$funLevel', '$comments')";
@@ -59,17 +60,10 @@ if(isset($_POST['submitButton']))
 	
 	//generate data for email
 	$to = "shaun.pickford@gmail.com";
+	$from = "Bead Loom Website";
 	$subject = "Bead Loom Feedback";
-	$body = "Username: ".$uid."\nFirst Name: ".$fname."\nLast Name: ".$lname."\nEmail: ".$email."\nDifficulty: ".$difficulty."\nContent: ".$content."\nFun Level: ".$funLevel."\nComments: ".$comments;
-	$headers = "From : Bead Loom Website\r\n";
-	if(mail($to, $subject, $body, $headers))
-	{
-		
-	}
-	else
-	{
-	
-	}
+	$HTML = "Feedback generated from the Bead Loom Website.<br /><br /><b>Username:</b> ".$uid."<br /><b>First Name:</b> ".$fname."<br /><b>Last Name</b>: ".$lname."<br /><b>Email:</b> ".$email."<br /><b>Difficulty:</b> ".$difficulty."<br /><b>Content:</b> ".$content."<br /><b>Fun Level:</b> ".$funLevel."<br /><b>Comments:</b> ".$comments;
+	sendHTMLemail($HTML,$from,$to,$subject);
 	$db->close();
 }
 ?>
@@ -96,8 +90,8 @@ if(isset($_POST['submitButton']))
 			</tr>
 			<tr>
 				<td width="400" align="right"><b>Username:</b><br /></td>
-				<td width="400" align="left"><input type="text" maxlength="20" name="userid" id="userid" value="<?php echo $uid ?>"/><br />
-				<h4>(please use the Username that you registered with!)</h4></td>
+				<td width="400" align="left"><input type="text" maxlength="20" READONLY name="userid" id="userid" value="<?php echo $uid ?>"/><br />
+				<h4>(this is the Username that you registered with!)</h4></td>
 			</tr>
 			<tr>
 				<td width="400" align="right">First Name:</td>
@@ -111,7 +105,6 @@ if(isset($_POST['submitButton']))
 				<td width="400" align="right">Email Address:</td>
 				<td width="400" align="left"><input type="text" maxlength="40" name="email" id="email" value="<?php echo $_POST['firstname'] ?>"/></td>
 			</tr>
-			<br /><br />
 			<tr>
 				<td align="center" colspan="2"><h3 class="registrationTable">Rate the Game!</h3><h4>(1 being the lowest, 5 being the highest)</h4></td>
 			</tr>
@@ -145,9 +138,9 @@ if(isset($_POST['submitButton']))
 					<input type="radio" name="funLevel" id="funLevel" value="3"/>3
 					<input type="radio" name="funLevel" id="funLevel" value="4"/>4
 					<input type="radio" name="funLevel" id="funLevel" value="5"/>5
+					<br />
 				</td>
 			</tr>
-			<br /><br />
 			<tr>
 				<td align="center" colspan="2"><h3 class="registrationTable">Give Us Your Thoughts!<br /></h3></td>
 			</tr>
@@ -157,7 +150,6 @@ if(isset($_POST['submitButton']))
 			</tr>
 			<tr>
 				<td align="center" colspan="2">
-					<br /><br />
 					<input type="submit" name="submitButton" id="submitButton" value="Submit" />
 					<input type="reset" name="reset" id="reset" value="Reset"/>
 				</td>

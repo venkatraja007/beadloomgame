@@ -61,7 +61,13 @@
 					<li><p class="list">Most puzzles have a background. It is easier to start with this, rather than trying to add it at the end. This is the basis of layering.</p></li>
 					<li><p class="list">Stuck? Turn Hints on in the Options Menu!</p></li>
 					<li><p class="list">Learn Iteration! You will need it to earn the Platinum medal of most of the puzzles!</p></li>
+					<li><p class="list">Click on a bead to pick its color instead of using the color chooser at the top! This is especially helpful if you're color-impaired!</p></li>
 				</ul></p></td>
+			</tr>
+			<tr>
+				<td align="center"><p class="text">Still unsure? Check out the original Bead Loom Tool <a href="http://csdt.rpi.edu/na/loom/index.html" class="table">here</a> to familarize yourself with the concepts!
+				<br /><br />
+				</td>
 			</tr>
 			<tr>
 				<td align="center">Ready to play now?<br />

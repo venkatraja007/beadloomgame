@@ -1,6 +1,7 @@
 <?php
 		include('config.php');
 		include('connect.php');
+		include('functions.php');
 		
 		session_start();
 		
@@ -13,7 +14,7 @@
 
 <html>
 <head>
-		<title>Bead Loom Game - Registration</title>
+		<title>Bead Loom Game - Forgot Password</title>
 		<link rel="SHORTCUT ICON" href="http://www.uncc.edu/uncc.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="beadloomstyles.css" />
 
@@ -53,7 +54,7 @@ if(isset($_POST['submitButton']))
 	$password_md5 = md5($password);
 
 	/*  Check User ID and Password Fields */
-	if(empty($uid) || empty($password))
+	if(empty($uid))
 	{
 		echo "<center><h3>Username field cannot be blank! Please retry!</h3></center><br>";
 		$valid = false;
@@ -77,13 +78,36 @@ if(isset($_POST['submitButton']))
 		$valid = true;
 	}
 	
+	if($valid)
+	{
+		//create new temp password and write to database
+		$tempPassword = rand(0,30000);
+		$HTML = "So you forgot your password? Geez! No worries though, we've got you covered!<br /><br />Your temporary password is: $tempPassword <br />Don't forget it! Actually, you don't need to remember it at all. Just click the link below and reset your password!<br /><br /><a href=\"http:/www.unccmakesgames.com/games/BeadLoomGame/resetPassword.php?tempPassword=".$tempPassword."&username=".$uid."\">Click here to reset your password!</a>";
+		$from = "Bead Loom Website";
+		$subject = "Forgot Password";
+		
+		$query2 = "UPDATE Users SET tempPassword = '$tempPassword' WHERE user = '$uid' ";
+		$result2 = $db->query($query2);
+		//$row2 = $result2->fetch_assoc();
+		if($result2)
+		{
+			//send email
+			sendHTMLemail($HTML,$from,$email,$subject);
+			echo "<script type=\"text/javascript\">
+					alert('Your password has been reset! An email with your temporary password and instructions for reset has been sent to you!');
+					redirect(\"http://www.unccmakesgames.com/games/BeadLoomGame/login.php\");
+					</script>";
+		}
+	}
+	
+	
 	$db->close();
 }
 ?>
 
 
 	<br/>
-	<form name="registrationForm" id="registrationForm" method="post" action="registration.php" onsubmit="return validateInfo(this)">
+	<form name="registrationForm" id="registrationForm" method="post" action="forgotPassword.php" onsubmit="return validateInfo(this)">
 		<table name="mainTable" id="mainTable" class="registrationTable" width="800" border="0" align="center">
 		<tr>
 			<th colspan="2">Bead Loom Game</th>
@@ -94,7 +118,7 @@ if(isset($_POST['submitButton']))
 			</td>
 		</tr>
 			<tr>
-				<td width="400" align="right"><b>Username:</b></td>
+				<td width="400" align="right">Username:</td>
 				<td width="400" align="left"><input type="text" maxlength="20" name="userid" id="userid" value="<?php echo $_POST['userid'] ?>"/></td>
 			</tr>
 			<tr>

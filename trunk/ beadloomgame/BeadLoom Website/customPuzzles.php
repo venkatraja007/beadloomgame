@@ -3,32 +3,58 @@
 include('config.php');
 include('connect.php');
 
-$userquery = $_GET['user'];
-$query = "";
-
-if($user)
+if(isset($_GET['token']) && !empty($_GET['token']))
 {
-	$query = "SELECT user, puzzle, moves FROM CustomPuzzles Where user='$userquery'";
+	$token = $_GET['token'];	
 }
 else
 {
-	$query = "SELECT user, puzzle, moves FROM CustomPuzzles";
+	die("Error");
 }
 
-$result = $db->query($query);
-
-if($result)
+if($token == "userList")
 {
-	$string ="";
-	while($row = $result->fetch_assoc())
+	$query = "SELECT DISTINCT user FROM CustomPuzzles";
+	$result = $db->query($query);
+	if($result)
 	{
-		$string.= $row['user'].",".$row['puzzle'].",".$row['moves'].",";
+		while($row = $result->fetch_assoc())
+		{
+			echo $row['user'].",";
+		}
+		die;
 	}
-	echo $string;
+	else
+	{
+		echo "Error";
+	}
+}
+else if($token == "puzzleList" && isset($_GET['user']) && !empty($_GET['user']))
+{
+	$user = $_GET['user'];
+	$query = "SELECT puzzle FROM CustomPuzzles WHERE user='$user'";
+	$result = $db->query($query);
+	if($result)
+	{
+		while($row = $result->fetch_assoc())
+		{
+			echo $row['puzzle'].",";
+		}
+		die;
+	}
+	else
+	{
+		echo "Error";
+	}
 }
 else
 {
 	echo "Error";
 }
+
+
+
+
+
 
 ?>

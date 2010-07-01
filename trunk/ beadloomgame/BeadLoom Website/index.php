@@ -33,17 +33,14 @@
 <body>
 
 	<div id="mainDiv" name="mainDiv">
-		<div id="headerDiv" name="headerDiv">
-			Bead Loom Game<br />
-			<h3>Welcome <?php echo "$userid" ?>!<br />We're still under construction, so bear with us!!</h3>
-			<h4>All Done Playing? <a href="logout.php" class="header">Click here to logout!</a></h4>
-		</div>
+		<?php getHeader($userid); ?>
 		<div id="leftDiv" name="leftDiv">
 			<div id="playGame" name="playGame">
 				<b>Play Bead Loom Game!<b><br />
 				<p class="text">Wondering How to Play?<br />
-				<a class="table" href="instructions.php">Click Here for Instructions!</a></p><br />
-				<input type="button" value="Play!" onclick="playGame()" width="50px"/>
+				<p><a class="table" href="instructions.php">Click Here for Instructions!</a></p><br />
+				<a class="table" href="puzzleScores.php">High Scores</a></p><br />
+				<a href="BeadLoomApplet.php" class="table"><img src="button1" border="0" onmouseover="this.src='button2'" onmouseout="this.src='button1'" onclick="this.src='button3'"/></a>
 			</div>
 			<div id="myScores" name="myScores">
 				<?php
@@ -56,6 +53,9 @@
 				?>
 			</div>
 			<div id="myCustomPuzzles" name="myCustomPuzzles">
+				<?php
+					getCustomPuzzleScores($db, $userid) 
+				?>
 			</div>
 		</div>
 		<div id="rightDiv" name="rightDiv"> 
