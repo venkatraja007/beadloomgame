@@ -2042,7 +2042,38 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 		if(totalErrors == 0 && currentPuzzle == -1)
 		{
-			JOptionPane.showMessageDialog(null, "Congratulations you completed this Custom Puzzle", "High Scores messages", JOptionPane.PLAIN_MESSAGE);
+			bl.stopTimer();
+			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
+
+			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
+			String seconds = "";
+			String message = "";
+			if(((int)puzzleTime % 60) < 10)
+			{
+				seconds = "0" + ((int)(puzzleTime % 60));
+			}
+			else
+			{
+				seconds = ((int)(puzzleTime % 60)) + "";
+			}
+
+			String urlTime = ((int)puzzleTime/60) + ":" + seconds;
+			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
+			
+			String sendString = "";
+			try {
+				sendString = "user=" + URLEncoder.encode(NameLabel.getText(), "UTF-8") + 
+				"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
+				"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
+				"&medal=Custom" + 
+				"&puzzle=" + URLEncoder.encode(puz.getCustomPuzzleName(), "UTF-8");
+				if(ComponentToggle.securityEnabled){ sendString+="&token=" + URLEncoder.encode(""+Security.getSecurityToken(), "UTF-8"); }
+				message = sendPost("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php", sendString);
+				if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
+				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
 		}
 		else if(totalErrors == 0)
 		{

@@ -27,6 +27,7 @@ public class Puzzle {
 	private Color betterOrange;
 
 	private final int TOTALPUZZLES = 35;
+	private String CustomPuzzleName = "";
 	private String[] PuzzleNames = {
 			"Tutorial 1",						//0
 			"Tutorial 2",						//1
@@ -204,6 +205,10 @@ public class Puzzle {
 	//Returns the name of a puzzle based on an int index
 	public String getPuzzleName(int index) {
 		return PuzzleNames[index];
+	}
+	
+	public String getCustomPuzzleName() {
+		return CustomPuzzleName;
 	}
 
 	//Returns the total number of puzzle types
@@ -1847,6 +1852,7 @@ public class Puzzle {
 	
 	public boolean setCustomPuzzle(String puzzleName, String folderName, int gridNumber)
 	{
+		CustomPuzzleName = puzzleName;
 		//Set the active grid to the goal image grid
 		if(gridNumber==1) { InputTools.setGrid(bl.getGridPanel()); }
 		else if(gridNumber==2) { InputTools.setGrid(bl.getGridPanel2()); }
