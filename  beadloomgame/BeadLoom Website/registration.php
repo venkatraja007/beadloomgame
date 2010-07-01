@@ -157,7 +157,11 @@ if(isset($_POST['submitButton']))
 			$from = "Bead Loom Game";
 			$subject = "Bead Loom Game Registration";
 			$HTML = "<b>PLEASE DO NOT REPLY TO THIS EMAIL!</b><br /><br />Thank you, $fname $lname for registering for Bead Loom Game!<br /><br />As a reminder, the Username and Password used for registration are as follows:<br /><b>Username:</b> $uid<br /><b>Password:</b> $password<br /><br />We hope that you enjoy playing Bead Loom Game! Instructions are available on our <a href=\"http://www.unccmakesgames.com/games/BeadLoomGame/instructions.php\">Instructions</a> page.<br /><br />Your feedback is important to us! Please take a moment to <a href=\"http://www.unccmakesgames.com/games/BeadLoomGame/feedback.php\">fill out our feedback page</a>! Your input is greatly appreciated!<br /><br />Thank You!<br />Sincerely,<br />Bead Loom Team";
+			$HTML2 = "$fname $lname has registered for Bead Loom!<br /><br /><b>Username:</b> $uid <br /><b>Occupation:</b> $occupation <br /><b>Affiliation:</b> $affiliation ";
+			$to2 = "shaun.pickford@gmail.com";
+			$subject2 = "New Bead Loom Registration";
 			sendHTMLemail($HTML, $from, $to, $subject);
+			sendHTMLemail($HTML2, $from, $to2, $subject2);
 			echo "<script type=\"text/javascript\">
 					alert('Username $uid has been successfully registered! You will receive a confirmation email shortly! You are now being redirected to the main page!');
 					redirect(\"http://www.unccmakesgames.com/games/BeadLoomGame\");
@@ -191,7 +195,7 @@ if(isset($_POST['submitButton']))
 				<td align="center" colspan="2"><h3 class="registrationTable">Why am I required to register for Bead Loom?</h3></td>
 			</tr>
 			<tr>
-				<td align="center" colspan="2"><p class="text">Bead Loom is a Culturally Situated Design Tool (CSDT) that was created to educate basic Computer Science concepts and a programmatic way of thinking those with little to no knowledge of Computer Science and Computer Science related concepts. The project is funded by the Game2Learn lab in the College of Computing and Informatics at the University of North Carolina at Charlotte. We ask for registration so that we can gather information about the players of the game for use in our research, analysis and improvement of the Bead Loom Game. Your information is kept confidential and is only used for research and educational related purposes. Personal information is not required, but is encouraged to assist us in our research and demographic analysis of the tool.</p><br /></td>
+				<td align="center" colspan="2"><p class="text">Bead Loom is a Culturally Situated Design Tool (CSDT) that was created to educate basic Computer Science concepts and a programmatic way of thinking those with little to no knowledge of Computer Science and Computer Science related concepts. The original Bead Loom Tool is hosted by Rensselaer Polytechnic Institute and can <a href="http://csdt.rpi.edu/na/loom/index.html" class="table">be found here</a>. The Bead Loom Game project is funded by the Game2Learn lab in the College of Computing and Informatics at the University of North Carolina at Charlotte. We ask for registration so that we can gather information about the players of the game for use in our research, analysis and improvement of the Bead Loom Game. Your information is kept confidential and is only used for research and educational related purposes. Personal information is not required, but is encouraged to assist us in our research and demographic analysis of the tool.</p><br /></td>
 			</tr>
 			<tr>
 				<td align="center" colspan="2"><p class="text"><b>Required Fields are Listed in Bold</b><br />

@@ -1,5 +1,54 @@
 <?php
 
+	function getCustomPuzzleScores($db, $user)
+	{
+		//create table
+		echo "<table border=\"1\" align=\"center\" class=\"leaderboard\">";
+		echo "<tr>";
+		echo "<th colspan=\"5\">";
+		echo "<h2>Custom Puzzle Leaderboard:</h2>";
+		
+		//print table header
+		echo "<tr>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Puzzle</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>User Name</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Score</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Time</b></td>";
+		echo "</tr></th>";
+		
+		//Get every custom puzzle name
+		$query = "SELECT DISTINCT puzzle FROM HighScores WHERE medal='Custom' ORDER BY puzzle";
+		$result = $db->query($query);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				$query2 = "SELECT user, score, time, medal FROM HighScores WHERE puzzle  = '".$row['puzzle']."' ORDER BY score, time LIMIT 0, 1";
+				$result2 = $db->query($query2);
+				if($result2)
+				{
+					$row2 = $result2->fetch_assoc();
+					//print results to table
+					echo "<tr>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['puzzle']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['user']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['score']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['time']."</td>";
+					echo "</tr>";
+				}
+				else
+				{
+					echo "Uh Oh! There's been a PHP Error! Error message: ".mysqli_error($db);
+				}
+						
+			}
+		}
+		else
+		{
+		}
+		echo "</table>";
+	}
+	
 	function getLeaderBoard($db)
 	{
 		//create table
@@ -18,7 +67,7 @@
 		echo "</tr></th>";
 					
 		//Get every puzzle name
-		$query = "SELECT DISTINCT puzzle FROM HighScores WHERE 1 ORDER BY puzzle";
+		$query = "SELECT DISTINCT puzzle FROM HighScores WHERE medal!='Custom' ORDER BY puzzle";
 		$result = $db->query($query);
 		if($result)
 		{
@@ -99,7 +148,7 @@
 		echo "<th>";
 		echo "<h2>".$user."'s Achievements:</h2></th></tr>";
 		
-		/* Check for "World Champion Achievement" */
+		/* Check for "World Champion Achievement"
 		$worldChamp = false;
 		//Get every puzzle name
 		$query = "SELECT DISTINCT puzzle FROM HighScores WHERE 1 ORDER BY puzzle";
@@ -124,7 +173,8 @@
 		if($worldChamp)
 		{
 			echo "<tr><td align=\"center\" class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\" title=\"Earn a Spot on the Leaderboard\"><b>World Champion</b></td></tr>";
-		}
+		} */
+		
 		//get all achievements from database
 		$query = "SELECT * FROM Achievements ORDER BY id";
 		$result = $db->query($query);
@@ -294,6 +344,16 @@
 		{
 		}
     
+	}
+	
+	function getHeader($userid)
+	{
+		echo "<div id=\"headerDiv\" name=\"headerDiv\">
+			Bead Loom Game<br />
+			<h3>Welcome $userid !</h3>
+			<h4>All Done Playing? <a href=\"logout.php\" class=\"header\">Click here to logout!</a></h4>
+		</div>";
+	
 	}
 
 
