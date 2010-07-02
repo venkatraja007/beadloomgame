@@ -1421,7 +1421,7 @@ public class Puzzle {
 	//Returns array pos
 	public int setROSS(){
 
-		ideal = 19;
+		ideal = 18;
 		InputTools.setGrid(bl.getGridPanel2());
 
 		InputTools.setColor(Color.CYAN);
