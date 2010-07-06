@@ -640,6 +640,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				LinearIterationStartXTextField.setText("0");
 				LinearIterationPanel.add(LinearIterationStartXTextField);
 				LinearIterationStartXTextField.setBounds(215, 75, 25, 24);
+				LinearIterationStartXTextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostLinearIteration();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- LinearIterationStartYLabel ----
 				LinearIterationStartYLabel.setText("startY:");
@@ -650,6 +657,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				LinearIterationStartYTextField.setText("0");
 				LinearIterationPanel.add(LinearIterationStartYTextField);
 				LinearIterationStartYTextField.setBounds(215, 100, 25, 24);
+				LinearIterationStartYTextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostLinearIteration();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- LinearIterationStartLengthLabel ----
 				LinearIterationStartLengthLabel.setText("startLength:");
@@ -660,6 +674,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				LinearIterationStartLengthTextField.setText("5");
 				LinearIterationPanel.add(LinearIterationStartLengthTextField);
 				LinearIterationStartLengthTextField.setBounds(215, 125, 25, 24);
+				LinearIterationStartLengthTextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostLinearIteration();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- LinearIterationIncLabel ----
 				LinearIterationIncLabel.setText("beadsAdded: ");
@@ -670,11 +691,25 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				LinearIterationInc1TextField.setText("-1");
 				LinearIterationPanel.add(LinearIterationInc1TextField);
 				LinearIterationInc1TextField.setBounds(350, 75, 25, 24);
+				LinearIterationInc1TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostLinearIteration();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- LinearIterationBeadsInc2TextField ----
 				LinearIterationInc2TextField.setText("1");
 				LinearIterationPanel.add(LinearIterationInc2TextField);
 				LinearIterationInc2TextField.setBounds(375, 75, 25, 24);
+				LinearIterationInc2TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostLinearIteration();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- LinearIterationRowsTotalLabel ----
 				LinearIterationRowsTotalLabel.setText("rowsTotal: ");
@@ -685,6 +720,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				LinearIterationRowsTotalTextField.setText("5");
 				LinearIterationPanel.add(LinearIterationRowsTotalTextField);
 				LinearIterationRowsTotalTextField.setBounds(350, 100, 25, 24);
+				LinearIterationRowsTotalTextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostLinearIteration();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- TriangleDirectionLabel ----
 				LinearDirectionLabel.setText("direction:");
@@ -696,6 +738,11 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					LinearIterationDirectionSelector.addItem(DirectionStrings[i]);}
 				LinearIterationPanel.add(LinearIterationDirectionSelector, JLayeredPane.DEFAULT_LAYER);
 				LinearIterationDirectionSelector.setBounds(350, 125, 40, 24);
+				LinearIterationDirectionSelector.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						ghostLinearIteration();
+					}
+				});
 
 			}
 			LinearIterationTabbedPane.addTab("Linear Iteration", LinearIterationPanel);
@@ -1275,6 +1322,17 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				{
 					ghostTriangle();
 				}
+				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == LinearIterationTabbedPane)
+				{
+					if(LinearIterationTabbedPane.getSelectedComponent() == LinearIterationPanel)
+					{
+						ghostLinearIteration();
+					}
+					else if(LinearIterationTabbedPane.getSelectedComponent() == TriangleIterationPanel)
+					{
+						//TODO implement Triangle Iteration Ghost
+					}
+				}
 				else
 				{
 					removeGhost();
@@ -1677,6 +1735,52 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				newY -= inc2;
 			}
 		}
+	}
+	
+	public Layer drawLinearIterationLayer()
+	{
+		int startLength = 5, startX = 0, startY = 0, inc1 = 1, inc2 = -1, rows = 5;
+		boolean incY = true, posDir = true;
+		//Initialize the coordinate arrays
+		ArrayList<Integer> xValue = new ArrayList();
+		ArrayList<Integer> yValue = new ArrayList();
+
+		try
+		{
+			startLength = Math.abs(Integer.parseInt(LinearIterationStartLengthTextField.getText()));
+			startX = Integer.parseInt(LinearIterationStartXTextField.getText());
+			startY = Integer.parseInt(LinearIterationStartYTextField.getText());
+			inc1 = Integer.parseInt(LinearIterationInc1TextField.getText());
+			inc2 = Integer.parseInt(LinearIterationInc2TextField.getText());
+			rows = Math.abs(Integer.parseInt(LinearIterationRowsTotalTextField.getText()));
+
+			//If the arguments are not in bounds throw an exception
+			if(startX < -1*GRID_SIZE/2 || startX > GRID_SIZE/2 || startY < -1*GRID_SIZE/2 || startY > GRID_SIZE/2 || startLength > GRID_SIZE+1 ||
+					rows > GRID_SIZE+1 || inc1 < -1*GRID_SIZE+1 || inc1 > GRID_SIZE+1 || inc2 < -1*GRID_SIZE+1 || inc2 > GRID_SIZE+1)
+				throw new NumberFormatException();
+		}
+		catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
+
+		incY = !(LinearIterationDirectionSelector.getSelectedIndex() == 2 || LinearIterationDirectionSelector.getSelectedIndex() == 3);
+		if(LinearIterationDirectionSelector.getSelectedIndex() == 3 || LinearIterationDirectionSelector.getSelectedIndex() == 1)
+		{
+			posDir = false;
+		}
+
+		//Call the linearIteration method
+		linearIteration(startX, startY, startLength, inc1, inc2, rows, incY, posDir, xValue, yValue);
+
+		//Draw the iteration
+		Layer l = CoordListAction("LINEAR_ITERATION", xValue, yValue);
+		l.setX1(startX);
+		l.setY1(startY);
+		l.setStartLength(startLength);
+		l.setBeadsAdded1(inc1);
+		l.setBeadsAdded2(inc2);
+		l.setRowsTotal(rows);
+		l.setYInc(incY);
+		l.setPositiveInc(posDir);
+		return l;
 	}
 
 	public void LinearIterationLoop(int startX, int startY, int nStart, int nEnd, int inc1, int inc2, int rows, boolean incY, boolean posDir)
@@ -2524,6 +2628,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	public void ghostTriangle(){
 		try{
 			grid.setGhostLayer(drawTriangleLayer());
+		}catch(Exception e){
+			removeGhost();
+		}
+	}
+	
+	public void ghostLinearIteration(){
+		try{
+			grid.setGhostLayer(drawLinearIterationLayer());
 		}catch(Exception e){
 			removeGhost();
 		}
