@@ -1271,10 +1271,10 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				{
 					ghostRectangle();
 				}
-//				if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
-//				{
-//					ghostTriangle();
-//				}
+				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
+				{
+					ghostTriangle();
+				}
 				else
 				{
 					removeGhost();
@@ -2516,8 +2516,6 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	public void ghostRectangle(){
 		try{
 			grid.setGhostLayer(drawRectangleLayer());
-			grid.rebuildLayerImages();
-			grid.repaint();
 		}catch(Exception e){
 			removeGhost();
 		}
@@ -2526,8 +2524,6 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	public void ghostTriangle(){
 		try{
 			grid.setGhostLayer(drawTriangleLayer());
-			grid.rebuildLayerImages();
-			grid.repaint();
 		}catch(Exception e){
 			removeGhost();
 		}
@@ -2535,8 +2531,6 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	
 	public void removeGhost(){
 		grid.stopGhost();
-		grid.rebuildLayerImages();
-		grid.repaint();
 	}
 
 	//------------Other Get and Set Methods--------------//
