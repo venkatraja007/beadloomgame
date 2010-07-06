@@ -25,7 +25,9 @@ package src.mainpackage;
 
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+
 import java.awt.Graphics;
 import java.awt.geom.*;
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ import java.util.ArrayList;
 class GridPanel extends JPanel {
 	private ArrayList<Layer> layer = new ArrayList<Layer>();
 	private ArrayList<Layer> undo = new ArrayList<Layer>(); //all inactive and active layers
+	private Layer ghost;
 	//private ArrayList<ArrayList<Layer>> undo = new ArrayList<ArrayList<Layer>>();
 	//private ArrayList<ArrayList<Layer>> redo = new ArrayList<ArrayList<Layer>>();
 	private int undoPtr = 0;
@@ -41,6 +44,16 @@ class GridPanel extends JPanel {
 	private boolean hidelines = true;
 	private boolean isMainGrid = true;
 	private boolean isClear = false;
+	private boolean ghostShowing = false;
+	private boolean ghostBlink = true;
+	Timer timer = new Timer(500, new ActionListener()
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			ghostBlink = !ghostBlink;
+			refreshGrid();
+		}
+	});
 
 	//Single Array representation of all the Layers
 	private Color[][] gameGrid = new Color[41][41];
@@ -172,8 +185,33 @@ class GridPanel extends JPanel {
 			}
 			//testCounter++;
 		}
+		if(ghostShowing && ghostBlink && ComponentToggle.ghostPreview)
+		{
+			for (int j=0; j < ghost.getCoords().getSize();j++) {
+				int xcoord = (int)((int)((ghost.getCoords().getCoord(j, 0)  + (ghost.getXOffset()))+ (getGridSize()/2)) * xInc + PAD)-iconSize;
+				int ycoord = ((int)(yInc*((getGridSize()/2) - (ghost.getCoords().getCoord(j, 1) ) + ghost.getYOffset())) + PAD-iconSize);
+				int x = ghost.getCoords().getCoord(j, 0) + ghost.getXOffset();
+				int y = ghost.getCoords().getCoord(j, 1) - ghost.getYOffset();
+				if(x <= GRID_SIZE / 2 && x >= (GRID_SIZE / 2) * -1 && 
+						y <= GRID_SIZE / 2 && y >= (GRID_SIZE / 2) * -1)
+					g.drawImage(ghost.getImage(), xcoord, ycoord, this);       	
+			}
+		}
 	}
-
+	
+	public void setGhostLayer(Layer ghost)
+	{
+		this.ghost = ghost;
+		ghostShowing = true;
+		ghostBlink = true;
+		timer.start();
+	}
+	
+	public void stopGhost()
+	{
+		ghostShowing = false;
+		timer.stop();
+	}
 
 	public void  setImage(Image ii) {
 		catimage = ii;

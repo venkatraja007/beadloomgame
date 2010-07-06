@@ -30,6 +30,8 @@ import java.awt.image.ImageFilter;
 import java.awt.image.ImageProducer;
 import java.lang.Double;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import java.net.*;
 import java.util.ArrayList;
@@ -391,24 +393,51 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				DrawRectangleX1TextField.setText("0");
 				RectangleDrawLayeredPane.add(DrawRectangleX1TextField, JLayeredPane.DEFAULT_LAYER);
 				DrawRectangleX1TextField.setBounds(190, 5, 30, 26);
+				DrawRectangleX1TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostRectangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawRectangleX2TextField ----
 				DrawRectangleX2TextField.setText("6");
 				RectangleDrawLayeredPane.add(DrawRectangleX2TextField, JLayeredPane.DEFAULT_LAYER);
 				DrawRectangleX2TextField.setBounds(190, 40, 30, 26);
+				DrawRectangleX2TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostRectangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawRectangleY1TextField ----
 				DrawRectangleY1TextField.setText("0");
 				RectangleDrawLayeredPane.add(DrawRectangleY1TextField, JLayeredPane.DEFAULT_LAYER);
 				DrawRectangleY1TextField.setBounds(270, 5, 30, 26);
+				DrawRectangleY1TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostRectangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawRectangleY2TextField ----
 				DrawRectangleY2TextField.setText("6");
 				RectangleDrawLayeredPane.add(DrawRectangleY2TextField, JLayeredPane.DEFAULT_LAYER);
 				DrawRectangleY2TextField.setBounds(270, 40, 30, 26);
+				DrawRectangleY2TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostRectangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 			}
 			RectangleDrawTabbedPane.addTab("Rectangle Draw", RectangleDrawLayeredPane);
-
 		}
 		BeadLoomUtilitiesTabbedPane.addTab("Rectangle Function", RectangleDrawTabbedPane);
 
@@ -483,31 +512,73 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				DrawTriangleX1TextField.setText("0");
 				TriangleDrawPanel.add(DrawTriangleX1TextField);
 				DrawTriangleX1TextField.setBounds(160, 5, 30, 26);
+				DrawTriangleX1TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostTriangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawTriangleX2TextField ----
 				DrawTriangleX2TextField.setText("4");
 				TriangleDrawPanel.add(DrawTriangleX2TextField);
 				DrawTriangleX2TextField.setBounds(160, 40, 30, 26);
+				DrawTriangleX2TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostTriangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawTriangleX3TextField ----
 				DrawTriangleX3TextField.setText("0");
 				TriangleDrawPanel.add(DrawTriangleX3TextField);
 				DrawTriangleX3TextField.setBounds(160, 75, 30, 26);
+				DrawTriangleX3TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostTriangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawTriangleY1TextField ----
 				DrawTriangleY1TextField.setText("0");
 				TriangleDrawPanel.add(DrawTriangleY1TextField);
 				DrawTriangleY1TextField.setBounds(240, 5, 30, 26);
+				DrawTriangleY1TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostTriangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawTriangleY2TextField ----
 				DrawTriangleY2TextField.setText("0");
 				TriangleDrawPanel.add(DrawTriangleY2TextField);
 				DrawTriangleY2TextField.setBounds(240, 40, 30, 26);
+				DrawTriangleY2TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostTriangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 				//---- DrawTriangleY3TextField ----
 				DrawTriangleY3TextField.setText("4");
 				TriangleDrawPanel.add(DrawTriangleY3TextField);
 				DrawTriangleY3TextField.setBounds(240, 75, 30, 26);
+				DrawTriangleY3TextField.addKeyListener(new KeyListener() {
+					public void keyTyped(KeyEvent e) {}
+					public void keyReleased(KeyEvent e) {
+						ghostTriangle();
+					}
+					public void keyPressed(KeyEvent e) {}
+				});
 
 
 			}
@@ -1194,6 +1265,22 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
 		}
 		BeadLoomUtilitiesTabbedPane.addTab("Iterative Functions", LinearIterationTabbedPane);
+		BeadLoomUtilitiesTabbedPane.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent e) {
+				if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == RectangleDrawTabbedPane)
+				{
+					ghostRectangle();
+				}
+//				if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
+//				{
+//					ghostTriangle();
+//				}
+				else
+				{
+					removeGhost();
+				}
+			}
+		});
 		
 		
 	}
@@ -1381,6 +1468,46 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setY2(y2);
 		grid.addLayer(l);
 	}
+	
+	public Layer drawRectangleLayer()
+	{
+		//Initialize the coordinate arrays
+		ArrayList<Integer> xValue = new ArrayList();
+		ArrayList<Integer> yValue = new ArrayList();
+		int x1 = Integer.parseInt(getDrawRectangleX1TextField().getText());
+		int x2 = Integer.parseInt(getDrawRectangleX2TextField().getText());
+		int y1 = Integer.parseInt(getDrawRectangleY1TextField().getText());
+		int y2 = Integer.parseInt(getDrawRectangleY2TextField().getText());
+
+		//If the 1st x coordinate is bigger, swap
+		if(x1 > x2) {
+			int temp = x1;
+			x1 = x2;
+			x2 = temp;
+		}
+		//If the 1st y coordinate is bigger, swap
+		if(y1 > y2) {
+			int temp = y1;
+			y1 = y2;
+			y2 = temp;
+		}
+		//Add coordinates to arrays
+		for(int y = y1; y <= y2; y++)
+			for(int x = x1; x <= x2; x++) {
+				xValue.add(x);
+				yValue.add(y);
+			}
+		//Draw rectangle
+		CoordList coords = new CoordList(xValue, yValue);
+		Layer l = new Layer("RECTANGLE", coords," ");
+		l.setColor(color);
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
+		l.setX1(x1);
+		l.setY1(y1);
+		l.setX2(x2);
+		l.setY2(y2);
+		return l;
+	}
 
 	//Draw a solid triangle, relies on the drawLine method
 	public void drawTriangle(int x1, int x2, int x3, int y1, int y2, int y3)
@@ -1421,6 +1548,53 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setX3(x3);
 		l.setY3(y3);
 		grid.addLayer(l);
+	}
+	
+	public Layer drawTriangleLayer()
+	{
+		//Initialize the coordinate arrays
+		ArrayList<Integer> xValue = new ArrayList();
+		ArrayList<Integer> yValue = new ArrayList();
+
+		int x1 = Integer.parseInt(DrawTriangleX1TextField.getText());
+		int y1 = Integer.parseInt(DrawTriangleY1TextField.getText());
+		int x2 = Integer.parseInt(DrawTriangleX2TextField.getText());
+		int y2 = Integer.parseInt(DrawTriangleY2TextField.getText());
+		int x3 = Integer.parseInt(DrawTriangleX3TextField.getText());
+		int y3 = Integer.parseInt(DrawTriangleY3TextField.getText());
+
+		//Draw the three sides of the triangle
+		drawLine(x1, y1, x2, y2, xValue, yValue);
+		drawLine(x2, y2, x3, y3, xValue, yValue);
+		drawLine(x1, y1, x3, y3, xValue, yValue);
+
+		//Find the fill start point
+		int start = x1;
+		if(x2 < start) start = x2;
+		if(x3 < start) start = x3;
+
+		//Find the fill end point
+		int stop = x1;
+		if(x2 > stop) stop = x2;
+		if(x3 > stop) stop = x3;
+
+		//Fill the triangle
+		CoordList coords = new CoordList(xValue, yValue);
+		coords.sortByX(start, stop);
+		coords.sortByY();
+		coords.fillTriangle();
+
+		//Draw the triangle
+		Layer l = new Layer("TRIANGLE", coords," ");
+		l.setColor(color);
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
+		l.setX1(x1);
+		l.setY1(y1);
+		l.setX2(x2);
+		l.setY2(y2);
+		l.setX3(x3);
+		l.setY3(y3);
+		return l;
 	}
 
 	//Draw a linear sequence of iterative beads
@@ -2339,6 +2513,31 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
 	}
 
+	public void ghostRectangle(){
+		try{
+			grid.setGhostLayer(drawRectangleLayer());
+			grid.rebuildLayerImages();
+			grid.repaint();
+		}catch(Exception e){
+			removeGhost();
+		}
+	}
+
+	public void ghostTriangle(){
+		try{
+			grid.setGhostLayer(drawTriangleLayer());
+			grid.rebuildLayerImages();
+			grid.repaint();
+		}catch(Exception e){
+			removeGhost();
+		}
+	}
+	
+	public void removeGhost(){
+		grid.stopGhost();
+		grid.rebuildLayerImages();
+		grid.repaint();
+	}
 
 	//------------Other Get and Set Methods--------------//
 
