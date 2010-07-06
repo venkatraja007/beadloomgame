@@ -4173,7 +4173,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getGridPanel().rebuildLayerImages();
 		bl.getGridPanel2().rebuildLayerImages();
 		bl.getContentPanel().repaint();
-		
 	}
 	
 	public String sendPost(String sendURL, String sendString)

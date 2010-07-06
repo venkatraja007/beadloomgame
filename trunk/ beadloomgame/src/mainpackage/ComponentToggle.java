@@ -19,6 +19,7 @@ public class ComponentToggle {
 	public static boolean unlockableDifficultyLevels = true;	//done
 	public static boolean hintsOn = true;						//done
 	public static boolean timerEnabled = true;					//done
+	public static boolean ghostPreview = true;					//done
 	
 	/*
 	 * When security is enabled you need an extra file that is not included in the svn.
