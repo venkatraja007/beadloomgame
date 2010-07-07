@@ -40,6 +40,8 @@ import java.util.ArrayList;
 public class GUIInputTools extends JApplet implements ActionListener, ItemListener{
 	private GridPanel grid;
 	private Layer lay;
+	
+	int lastPointSelected = 1; //for determining which point was last selected in a specific tool (such as rectangle)
 
 	//======= Utilities Tabbed Panel=======
 	private JTabbedPane BeadLoomUtilitiesTabbedPane = new JTabbedPane();
@@ -318,6 +320,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void keyTyped(KeyEvent e) {}
 				public void keyReleased(KeyEvent e) {
 					ghostPoint();
+					lastPointSelected = 1;
 				}
 				public void keyPressed(KeyEvent e) {}
 			});
@@ -325,6 +328,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusLost(FocusEvent e) {}
 				public void focusGained(FocusEvent e) {
 					ghostPoint();
+					lastPointSelected = 1;
 				}
 			});
 
@@ -336,6 +340,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void keyTyped(KeyEvent e) {}
 				public void keyReleased(KeyEvent e) {
 					ghostPoint();
+					lastPointSelected = 1;
 				}
 				public void keyPressed(KeyEvent e) {}
 			});
@@ -343,6 +348,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusLost(FocusEvent e) {}
 				public void focusGained(FocusEvent e) {
 					ghostPoint();
+					lastPointSelected = 1;
 				}
 			});
 
@@ -354,6 +360,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void keyTyped(KeyEvent e) {}
 				public void keyReleased(KeyEvent e) {
 					ghostLine();
+					lastPointSelected = 2;
 				}
 				public void keyPressed(KeyEvent e) {}
 			});
@@ -361,6 +368,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusLost(FocusEvent e) {}
 				public void focusGained(FocusEvent e) {
 					ghostLine();
+					lastPointSelected = 2;
 				}
 			});
 
@@ -372,6 +380,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void keyTyped(KeyEvent e) {}
 				public void keyReleased(KeyEvent e) {
 					ghostLine();
+					lastPointSelected = 3;
 				}
 				public void keyPressed(KeyEvent e) {}
 			});
@@ -379,6 +388,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusLost(FocusEvent e) {}
 				public void focusGained(FocusEvent e) {
 					ghostLine();
+					lastPointSelected = 3;
 				}
 			});
 
@@ -390,6 +400,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void keyTyped(KeyEvent e) {}
 				public void keyReleased(KeyEvent e) {
 					ghostLine();
+					lastPointSelected = 2;
 				}
 				public void keyPressed(KeyEvent e) {}
 			});
@@ -397,6 +408,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusLost(FocusEvent e) {}
 				public void focusGained(FocusEvent e) {
 					ghostLine();
+					lastPointSelected = 2;
 				}
 			});
 
@@ -408,6 +420,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void keyTyped(KeyEvent e) {}
 				public void keyReleased(KeyEvent e) {
 					ghostLine();
+					lastPointSelected = 3;
 				}
 				public void keyPressed(KeyEvent e) {}
 			});
@@ -415,6 +428,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusLost(FocusEvent e) {}
 				public void focusGained(FocusEvent e) {
 					ghostLine();
+					lastPointSelected = 3;
 				}
 			});
 
@@ -475,8 +489,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostRectangle();
+						lastPointSelected = 1;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawRectangleX1TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 1;
+					}
 				});
 
 				//---- DrawRectangleX2TextField ----
@@ -487,8 +508,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostRectangle();
+						lastPointSelected = 2;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawRectangleX2TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 2;
+					}
 				});
 
 				//---- DrawRectangleY1TextField ----
@@ -499,8 +527,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostRectangle();
+						lastPointSelected = 1;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawRectangleY1TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 1;
+					}
 				});
 
 				//---- DrawRectangleY2TextField ----
@@ -511,8 +546,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostRectangle();
+						lastPointSelected = 2;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawRectangleY2TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 2;
+					}
 				});
 			}
 			RectangleDrawTabbedPane.addTab("Rectangle Draw", RectangleDrawLayeredPane);
@@ -594,8 +636,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostTriangle();
+						lastPointSelected = 1;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawTriangleX1TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 1;
+					}
 				});
 
 				//---- DrawTriangleX2TextField ----
@@ -606,8 +655,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostTriangle();
+						lastPointSelected = 2;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawTriangleX2TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 2;
+					}
 				});
 
 				//---- DrawTriangleX3TextField ----
@@ -618,8 +674,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostTriangle();
+						lastPointSelected = 3;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawTriangleX3TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 3;
+					}
 				});
 
 				//---- DrawTriangleY1TextField ----
@@ -630,8 +693,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostTriangle();
+						lastPointSelected = 1;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawTriangleY1TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 1;
+					}
 				});
 
 				//---- DrawTriangleY2TextField ----
@@ -642,8 +712,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostTriangle();
+						lastPointSelected = 2;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawTriangleY2TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 2;
+					}
 				});
 
 				//---- DrawTriangleY3TextField ----
@@ -654,8 +731,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void keyTyped(KeyEvent e) {}
 					public void keyReleased(KeyEvent e) {
 						ghostTriangle();
+						lastPointSelected = 3;
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				DrawTriangleY3TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						lastPointSelected = 3;
+					}
 				});
 
 
@@ -1451,10 +1535,6 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == RectangleDrawTabbedPane)
 				{
 					ghostRectangle();
-				}
-				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
-				{
-					ghostTriangle();
 				}
 				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
 				{
@@ -3561,6 +3641,86 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	}
 
 
+
+
+
+	public void pointClicked(int x, int y) {
+		if(ComponentToggle.clickToSet)
+		{
+			if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == BeadLoomUtilitiesPanel)
+			{
+				if(lastPointSelected == 1)
+				{
+					DrawPointXTextField.setText(""+x);
+					DrawPointYTextField.setText(""+y);
+					ghostPoint();
+				}
+				else if(lastPointSelected == 2)
+				{
+					DrawLineX1TextField.setText(""+x);
+					DrawLineY1TextField.setText(""+y);
+					ghostLine();
+				}
+				else if(lastPointSelected == 3)
+				{
+					DrawLineX2TextField.setText(""+x);
+					DrawLineY2TextField.setText(""+y);
+					ghostLine();
+				}
+			}
+			else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == RectangleDrawTabbedPane)
+			{
+				if(lastPointSelected == 1)
+				{
+					DrawRectangleX1TextField.setText(""+x);
+					DrawRectangleY1TextField.setText(""+y);
+					ghostRectangle();
+				}
+				else if(lastPointSelected == 2)
+				{
+					DrawRectangleX2TextField.setText(""+x);
+					DrawRectangleY2TextField.setText(""+y);
+					ghostRectangle();
+				}
+			}
+			else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
+			{
+				if(lastPointSelected == 1)
+				{
+					DrawTriangleX1TextField.setText(""+x);
+					DrawTriangleY1TextField.setText(""+y);
+					ghostTriangle();
+				}
+				else if(lastPointSelected == 2)
+				{
+					DrawTriangleX2TextField.setText(""+x);
+					DrawTriangleY2TextField.setText(""+y);
+					ghostTriangle();
+				}
+				else if(lastPointSelected == 3)
+				{
+					DrawTriangleX3TextField.setText(""+x);
+					DrawTriangleY3TextField.setText(""+y);
+					ghostTriangle();
+				}
+			}
+			else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == LinearIterationTabbedPane)
+			{
+				if(LinearIterationTabbedPane.getSelectedComponent() == LinearIterationPanel)
+				{
+					LinearIterationStartXTextField.setText(""+x);
+					LinearIterationStartYTextField.setText(""+y);
+					ghostLinearIteration();
+				}
+				else if(LinearIterationTabbedPane.getSelectedComponent() == TriangleIterationPanel)
+				{
+					TriangleIterationStartXTextField.setText(""+x);
+					TriangleIterationStartYTextField.setText(""+y);
+					ghostTriangleIteration();
+				}
+			}
+		}
+	}
 }
 
 

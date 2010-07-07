@@ -2193,6 +2193,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 
 	//Gets
+	public int getCurrentPuzzle()
+	{
+		return currentPuzzle;
+	}
 	public Color getColor()
 	{
 		return color;
