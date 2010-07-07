@@ -2019,6 +2019,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		}
 
 		//Call the linearIteration method
+		if(startLength <= 0){ return null; }
 		linearIteration(startX, startY, startLength, inc1, inc2, rows, incY, posDir, xValue, yValue);
 
 		//Draw the iteration
@@ -2711,19 +2712,24 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 			//fill = TriangleIterationFilledCheckBox.isSelected();
 
-			//Call the triangleIteration method
-			triangleIteration(startX, startY, width, exSteps, height, cycles, incY, true, xValue, yValue);
-
-			//Draw the iteration
-			Layer l = CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
-			l.setX1(startX);
-			l.setY1(startY);
-			l.setStepHeight(Math.abs(height));
-			l.setBeadsAdded1(width);
-			l.setRowsTotal((int)(cycles * Math.abs((double)height)));
-			l.setYInc(incY);
-			l.setPositiveInc(height>=0);
-			grid.addLayer(l);
+			if(height<=0){JOptionPane.showMessageDialog(null, "Step Height must be greater than 0");}
+			else if(cycles<=0){JOptionPane.showMessageDialog(null, "Rows must be greater than 0");}
+			else
+			{
+				//Call the triangleIteration method
+				triangleIteration(startX, startY, width, exSteps, height, cycles, incY, true, xValue, yValue);
+	
+				//Draw the iteration
+				Layer l = CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
+				l.setX1(startX);
+				l.setY1(startY);
+				l.setStepHeight(Math.abs(height));
+				l.setBeadsAdded1(width);
+				l.setRowsTotal((int)(cycles * Math.abs((double)height)));
+				l.setYInc(incY);
+				l.setPositiveInc(height>=0);
+				grid.addLayer(l);
+			}
 		}
 
 		//Fires when the [Linear]draw button is pressed
@@ -2759,19 +2765,24 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			}
 
 			//Call the linearIteration method
-			linearIteration(startX, startY, startLength, inc1, inc2, rows, incY, posDir, xValue, yValue);
-
-			//Draw the iteration
-			Layer l = CoordListAction("LINEAR_ITERATION", xValue, yValue);
-			l.setX1(startX);
-			l.setY1(startY);
-			l.setStartLength(startLength);
-			l.setBeadsAdded1(inc1);
-			l.setBeadsAdded2(inc2);
-			l.setRowsTotal(rows);
-			l.setYInc(incY);
-			l.setPositiveInc(posDir);
-			grid.addLayer(l);
+			if(rows<=0){JOptionPane.showMessageDialog(null, "Rows must be greater than 0");}
+			else if(startLength<=0){JOptionPane.showMessageDialog(null, "Start Length must be greater than 0");}
+			else
+			{
+				linearIteration(startX, startY, startLength, inc1, inc2, rows, incY, posDir, xValue, yValue);
+	
+				//Draw the iteration
+				Layer l = CoordListAction("LINEAR_ITERATION", xValue, yValue);
+				l.setX1(startX);
+				l.setY1(startY);
+				l.setStartLength(startLength);
+				l.setBeadsAdded1(inc1);
+				l.setBeadsAdded2(inc2);
+				l.setRowsTotal(rows);
+				l.setYInc(incY);
+				l.setPositiveInc(posDir);
+				grid.addLayer(l);
+			}
 		}
 
 		//Fires when the [Linear Sequence]draw button is pressed
