@@ -746,6 +746,18 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 			}
 			LinearIterationTabbedPane.addTab("Linear Iteration", LinearIterationPanel);
+			LinearIterationTabbedPane.addChangeListener(new ChangeListener() {
+				public void stateChanged(ChangeEvent e) {
+					if(LinearIterationTabbedPane.getSelectedComponent() == LinearIterationPanel)
+					{
+						ghostLinearIteration();
+					}
+					else if(LinearIterationTabbedPane.getSelectedComponent() == TriangleIterationPanel)
+					{
+						ghostTriangleIteration();
+					}
+				}
+			});
 
 
 			//======== TriangleIterationTabbedPane ========
@@ -800,6 +812,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					TriangleIterationStartXTextField.setText("0");
 					TriangleIterationPanel.add(TriangleIterationStartXTextField);
 					TriangleIterationStartXTextField.setBounds(215, 75, 25, 24);
+					TriangleIterationStartXTextField.addKeyListener(new KeyListener() {
+						public void keyTyped(KeyEvent e) {}
+						public void keyReleased(KeyEvent e) {
+							ghostTriangleIteration();
+						}
+						public void keyPressed(KeyEvent e) {}
+					});
 
 					//---- TriangleIterationStartYLabel ----
 					TriangleIterationStartYLabel.setText("startY:");
@@ -810,6 +829,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					TriangleIterationStartYTextField.setText("0");
 					TriangleIterationPanel.add(TriangleIterationStartYTextField);
 					TriangleIterationStartYTextField.setBounds(215, 100, 25, 24);
+					TriangleIterationStartYTextField.addKeyListener(new KeyListener() {
+						public void keyTyped(KeyEvent e) {}
+						public void keyReleased(KeyEvent e) {
+							ghostTriangleIteration();
+						}
+						public void keyPressed(KeyEvent e) {}
+					});
 
 					//---- TriangleIterationStepHeightLabel ----
 					TriangleIterationStepHeightLabel.setText("stepHeight:");
@@ -820,6 +846,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					TriangleIterationStepHeightTextField.setText("3");
 					TriangleIterationPanel.add(TriangleIterationStepHeightTextField);
 					TriangleIterationStepHeightTextField.setBounds(215, 125, 25, 24);
+					TriangleIterationStepHeightTextField.addKeyListener(new KeyListener() {
+						public void keyTyped(KeyEvent e) {}
+						public void keyReleased(KeyEvent e) {
+							ghostTriangleIteration();
+						}
+						public void keyPressed(KeyEvent e) {}
+					});
 
 					//---- TriangleIterationBeadsAddedLabel ----
 					TriangleIterationBeadsAddedLabel.setText("beadsAdded: ");
@@ -830,6 +863,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					TriangleIterationBeadsAddedTextField.setText("1");
 					TriangleIterationPanel.add(TriangleIterationBeadsAddedTextField);
 					TriangleIterationBeadsAddedTextField.setBounds(350, 75, 25, 24);
+					TriangleIterationBeadsAddedTextField.addKeyListener(new KeyListener() {
+						public void keyTyped(KeyEvent e) {}
+						public void keyReleased(KeyEvent e) {
+							ghostTriangleIteration();
+						}
+						public void keyPressed(KeyEvent e) {}
+					});
 
 					//---- TriangleIterationRowsTotalLabel ----
 					TriangleIterationRowsTotalLabel.setText("rowsTotal: ");
@@ -840,6 +880,13 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					TriangleIterationRowsTotalTextField.setText("9");
 					TriangleIterationPanel.add(TriangleIterationRowsTotalTextField);
 					TriangleIterationRowsTotalTextField.setBounds(350, 100, 25, 24);
+					TriangleIterationRowsTotalTextField.addKeyListener(new KeyListener() {
+						public void keyTyped(KeyEvent e) {}
+						public void keyReleased(KeyEvent e) {
+							ghostTriangleIteration();
+						}
+						public void keyPressed(KeyEvent e) {}
+					});
 
 					//---- TriangleDirectionLabel ----
 					TriangleDirectionLabel.setText("direction:");
@@ -852,6 +899,11 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					TriangleIterationPanel.add(TriangleIterationDirectionSelector, JLayeredPane.DEFAULT_LAYER);
 					TriangleIterationDirectionSelector.setSelectedIndex(1);
 					TriangleIterationDirectionSelector.setBounds(350, 125, 40, 24);
+					TriangleIterationDirectionSelector.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							ghostTriangleIteration();
+						}
+					});
 
 				}
 				LinearIterationTabbedPane.addTab("Triangle Iteration", TriangleIterationPanel);
@@ -1330,7 +1382,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					}
 					else if(LinearIterationTabbedPane.getSelectedComponent() == TriangleIterationPanel)
 					{
-						//TODO implement Triangle Iteration Ghost
+						ghostTriangleIteration();
 					}
 				}
 				else
@@ -1759,7 +1811,9 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					rows > GRID_SIZE+1 || inc1 < -1*GRID_SIZE+1 || inc1 > GRID_SIZE+1 || inc2 < -1*GRID_SIZE+1 || inc2 > GRID_SIZE+1)
 				throw new NumberFormatException();
 		}
-		catch(Exception exc){JOptionPane.showMessageDialog(null, "Values must be integers between " + -1*GRID_SIZE/2 + " and " + GRID_SIZE/2);}
+		catch(Exception exc){
+			return null;
+		}
 
 		incY = !(LinearIterationDirectionSelector.getSelectedIndex() == 2 || LinearIterationDirectionSelector.getSelectedIndex() == 3);
 		if(LinearIterationDirectionSelector.getSelectedIndex() == 3 || LinearIterationDirectionSelector.getSelectedIndex() == 1)
@@ -1780,6 +1834,73 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		l.setRowsTotal(rows);
 		l.setYInc(incY);
 		l.setPositiveInc(posDir);
+		return l;
+	}
+	
+	public Layer drawTriangleIterationLayer()
+	{
+		ArrayList<Integer> xValue = new ArrayList();
+		ArrayList<Integer> yValue = new ArrayList();
+
+		int startX;
+		int startY;
+		int width;
+		int height;
+		int exSteps;
+		double cycles;
+		boolean incY;
+
+		try {
+			startX = Integer.parseInt(TriangleIterationStartXTextField.getText());
+			startY = Integer.parseInt(TriangleIterationStartYTextField.getText());
+			width = Integer.parseInt(TriangleIterationBeadsAddedTextField.getText());
+			height = Integer.parseInt(TriangleIterationStepHeightTextField.getText());
+			cycles = Integer.parseInt(TriangleIterationRowsTotalTextField.getText());
+
+			//If the arguments are not in bounds throw an exception
+			if(width < 0 || height < 0 || cycles < 0)
+				throw new NumberFormatException();
+			if(startX < -1*GRID_SIZE/2 || startX > GRID_SIZE/2 || startY < -1*GRID_SIZE/2 || startY > GRID_SIZE/2 ||
+					width > GRID_SIZE+1 || height > GRID_SIZE+1 || height < -1*GRID_SIZE+1 || cycles > GRID_SIZE+1)
+				throw new NumberFormatException();
+		}
+		catch(Exception exc)
+		{
+			return null;
+		}
+
+		//If stepHeight > totalRows only draw the total number of rows
+		if ((cycles/(double)height) < 1)
+		{
+			cycles = 1;
+			height = Integer.parseInt(TriangleIterationRowsTotalTextField.getText());
+			exSteps = 1;
+		}
+		else //Check to make sure extra rows are accounted for
+		{
+			exSteps = (int)cycles % height;
+			cycles = cycles/(double)height;
+		}
+
+		//Set incY to false if horizontal iteration is selected
+		incY = !(TriangleIterationDirectionSelector.getSelectedIndex() == 2 || TriangleIterationDirectionSelector.getSelectedIndex() == 3);
+		if(TriangleIterationDirectionSelector.getSelectedIndex() == 3 || TriangleIterationDirectionSelector.getSelectedIndex() == 1)
+			height *= -1;
+
+		//fill = TriangleIterationFilledCheckBox.isSelected();
+
+		//Call the triangleIteration method
+		triangleIteration(startX, startY, width, exSteps, height, cycles, incY, true, xValue, yValue);
+
+		//Draw the iteration
+		Layer l = CoordListAction("TRIANGLE_ITERATION", xValue, yValue);
+		l.setX1(startX);
+		l.setY1(startY);
+		l.setStepHeight(Math.abs(height));
+		l.setBeadsAdded1(width);
+		l.setRowsTotal((int)(cycles * Math.abs((double)height)));
+		l.setYInc(incY);
+		l.setPositiveInc(height>=0);
 		return l;
 	}
 
@@ -2635,7 +2756,26 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	
 	public void ghostLinearIteration(){
 		try{
-			grid.setGhostLayer(drawLinearIterationLayer());
+			Layer temp = drawLinearIterationLayer();
+			if(temp == null)
+			{
+				removeGhost();
+				return;
+			}
+			grid.setGhostLayer(temp);
+		}catch(Exception e){
+			removeGhost();
+		}
+	}
+	
+	public void ghostTriangleIteration(){
+		try{
+			Layer temp = drawTriangleIterationLayer();
+			if(temp == null){
+				removeGhost();
+				return;
+			}
+			grid.setGhostLayer(temp);
 		}catch(Exception e){
 			removeGhost();
 		}

@@ -211,6 +211,7 @@ class GridPanel extends JPanel {
 	{
 		ghostShowing = false;
 		timer.stop();
+		refreshGrid();
 	}
 
 	public void  setImage(Image ii) {
