@@ -221,21 +221,6 @@ class GridPanel extends JPanel {
 		return catimage;
 	}
 
-
-	public void mouseClicked(MouseEvent e) { }
-
-	public void mousePressed(MouseEvent e) { }
-
-	public void mouseEntered(MouseEvent e) { }
-
-	public void mouseExited(MouseEvent e) { }
-
-	public void mouseReleased(MouseEvent e) { }
-
-	public void mouseDragged(MouseEvent e) { }
-
-	public void mouseMoved(MouseEvent e) {}
-
 	//When mouse is moved, mouse position on the grid is found
 	public JLabel findMousePosition(MouseEvent e) {
 
@@ -465,6 +450,16 @@ class GridPanel extends JPanel {
 			layer.set(i, new Layer(layer.get(i).getType(), layer.get(i).getCoords(), BeadLoom.beadLocation));
 			layer.get(i).setImage(bl.getInputTools().getMakeBullet(beadColor, getWidth(), getHeight()));
 			layer.get(i).setColor(beadColor);
+		}
+	}
+	
+	public void setGhostColor(Color beadColor)
+	{
+		if(ghostShowing)
+		{
+			ghost = new Layer(ghost.getType(), ghost.getCoords(), BeadLoom.beadLocation);
+			ghost.setImage(bl.getInputTools().getMakeBullet(beadColor, getWidth(), getHeight()));
+			ghost.setColor(beadColor);
 		}
 	}
 
