@@ -276,6 +276,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		gridPanel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e){ 
 				if ((Math.abs(gridPanel.findMouseX(e)) <=gridPanel.getGridSize())&&(Math.abs(gridPanel.findMouseY(e)) <=gridPanel.getGridSize())){
+					if(Game.puz.isMediumOrHard(Game.getCurrentPuzzle()))
+					{
+						InputTools.pointClicked(gridPanel.findMousePositionX(e), gridPanel.findMousePositionY(e));
+					}
+					//InputTools.pointClicked(3, 3);
 					gridPanel.calcGameGrid();
 					Color colorAt = gridPanel.getColorAt(gridPanel.findMouseX(e)+20, gridPanel.findMouseY(e)+20);
 					Color blank = new Color(254, 254, 254);
@@ -311,7 +316,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 			public void mouseDragged(MouseEvent e) { }
 			public void mouseMoved(MouseEvent e) {	
 				//------- XY Follow Mouse -------
-				MousePosition = gridPanel.findMousePosition(e);			    	 
+				MousePosition = gridPanel.findMousePosition(e);
 				if(Top.getXYFollowMouseMenuItem().isSelected()){
 					gridPanel.setToolTipText(MousePosition.getText());
 				}

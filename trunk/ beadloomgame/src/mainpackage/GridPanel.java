@@ -241,6 +241,22 @@ class GridPanel extends JPanel {
 		return l;
 	}
 
+	public int findMousePositionX(MouseEvent e) {
+		int get_col = (e.getX());
+
+		double OGx = ((get_col-PAD)/xInc)-(getGridSize()/2);
+		int roundX = (int)Math.round(OGx);
+		return roundX;
+	}
+
+	public int findMousePositionY(MouseEvent e) {
+		int get_row = (e.getY());
+		
+		double OGy = ((getGridSize()/2)-(get_row-PAD)/yInc);
+		int roundY = (int)Math.round(OGy);
+		return roundY;
+	}
+
 	//Find the X component of MousePosition
 	//Acey Boyce
 	public int findMouseX(MouseEvent e){

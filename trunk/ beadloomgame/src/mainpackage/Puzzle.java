@@ -1968,4 +1968,8 @@ public class Puzzle {
 		return true;
 	}
 
+	public boolean isMediumOrHard(int currentPuzzle) {
+		return (currentPuzzle>=15);
+	}
+
 }
