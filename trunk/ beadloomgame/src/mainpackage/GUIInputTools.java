@@ -3002,6 +3002,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 	public void setColor(Color c) {
 		color = c;
+		grid.setGhostColor(c);
 	}
 
 	public JRadioButton getLinearIterationDirection()
