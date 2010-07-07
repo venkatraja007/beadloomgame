@@ -314,31 +314,109 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 			DrawPointXTextField.setText("0");
 			BeadLoomUtilitiesPanel.add(DrawPointXTextField);
 			DrawPointXTextField.setBounds(165, 10, 30, 26);
+			DrawPointXTextField.addKeyListener(new KeyListener() {
+				public void keyTyped(KeyEvent e) {}
+				public void keyReleased(KeyEvent e) {
+					ghostPoint();
+				}
+				public void keyPressed(KeyEvent e) {}
+			});
+			DrawPointXTextField.addFocusListener(new FocusListener() {
+				public void focusLost(FocusEvent e) {}
+				public void focusGained(FocusEvent e) {
+					ghostPoint();
+				}
+			});
 
 			//---- DrawPointYTextField ----
 			DrawPointYTextField.setText("0");
 			BeadLoomUtilitiesPanel.add(DrawPointYTextField);
 			DrawPointYTextField.setBounds(235, 10, 30, 26);
+			DrawPointYTextField.addKeyListener(new KeyListener() {
+				public void keyTyped(KeyEvent e) {}
+				public void keyReleased(KeyEvent e) {
+					ghostPoint();
+				}
+				public void keyPressed(KeyEvent e) {}
+			});
+			DrawPointYTextField.addFocusListener(new FocusListener() {
+				public void focusLost(FocusEvent e) {}
+				public void focusGained(FocusEvent e) {
+					ghostPoint();
+				}
+			});
 
 			//---- DrawLineX1TextField ----
 			DrawLineX1TextField.setText("0");
 			BeadLoomUtilitiesPanel.add(DrawLineX1TextField);
 			DrawLineX1TextField.setBounds(165, 55, 30, 26);
+			DrawLineX1TextField.addKeyListener(new KeyListener() {
+				public void keyTyped(KeyEvent e) {}
+				public void keyReleased(KeyEvent e) {
+					ghostLine();
+				}
+				public void keyPressed(KeyEvent e) {}
+			});
+			DrawLineX1TextField.addFocusListener(new FocusListener() {
+				public void focusLost(FocusEvent e) {}
+				public void focusGained(FocusEvent e) {
+					ghostLine();
+				}
+			});
 
 			//---- DrawLineX2TextField ----
 			DrawLineX2TextField.setText("7");
 			BeadLoomUtilitiesPanel.add(DrawLineX2TextField);
 			DrawLineX2TextField.setBounds(165, 90, 30, 26);
+			DrawLineX2TextField.addKeyListener(new KeyListener() {
+				public void keyTyped(KeyEvent e) {}
+				public void keyReleased(KeyEvent e) {
+					ghostLine();
+				}
+				public void keyPressed(KeyEvent e) {}
+			});
+			DrawLineX2TextField.addFocusListener(new FocusListener() {
+				public void focusLost(FocusEvent e) {}
+				public void focusGained(FocusEvent e) {
+					ghostLine();
+				}
+			});
 
 			//---- DrawLineY1TextField ----
 			DrawLineY1TextField.setText("0");
 			BeadLoomUtilitiesPanel.add(DrawLineY1TextField);
 			DrawLineY1TextField.setBounds(235, 55, 30, 26);
+			DrawLineY1TextField.addKeyListener(new KeyListener() {
+				public void keyTyped(KeyEvent e) {}
+				public void keyReleased(KeyEvent e) {
+					ghostLine();
+				}
+				public void keyPressed(KeyEvent e) {}
+			});
+			DrawLineY1TextField.addFocusListener(new FocusListener() {
+				public void focusLost(FocusEvent e) {}
+				public void focusGained(FocusEvent e) {
+					ghostLine();
+				}
+			});
 
 			//---- DrawLineY2TextField ----
 			DrawLineY2TextField.setText("7");
 			BeadLoomUtilitiesPanel.add(DrawLineY2TextField);
 			DrawLineY2TextField.setBounds(235, 90, 30, 26);
+			DrawLineY2TextField.addKeyListener(new KeyListener() {
+				public void keyTyped(KeyEvent e) {}
+				public void keyReleased(KeyEvent e) {
+					ghostLine();
+				}
+				public void keyPressed(KeyEvent e) {}
+			});
+			DrawLineY2TextField.addFocusListener(new FocusListener() {
+				public void focusLost(FocusEvent e) {}
+				public void focusGained(FocusEvent e) {
+					ghostLine();
+				}
+			});
 
 			//---- DrawPointButton ----
 			DrawPointButton.setText("Draw Point");
@@ -1366,9 +1444,17 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		BeadLoomUtilitiesTabbedPane.addTab("Iterative Functions", LinearIterationTabbedPane);
 		BeadLoomUtilitiesTabbedPane.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
-				if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == RectangleDrawTabbedPane)
+				if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == BeadLoomUtilitiesPanel)
+				{
+					ghostPoint();
+				}
+				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == RectangleDrawTabbedPane)
 				{
 					ghostRectangle();
+				}
+				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
+				{
+					ghostTriangle();
 				}
 				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
 				{
@@ -1470,6 +1556,31 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		grid.addLayer(l);		
 	}
 
+	public Layer drawPointLayer()
+	{	
+		//Initialize the coordinate arrays
+		ArrayList<Integer> xValue = new ArrayList(1);
+		ArrayList<Integer> yValue = new ArrayList(1);
+
+		int x = Integer.parseInt(DrawPointXTextField.getText());
+		int y = Integer.parseInt(DrawPointYTextField.getText());
+
+		//Add x and y coordinates
+		xValue.add(x);
+		yValue.add(y);
+
+		//Draw the bead
+		CoordList coords = new CoordList(xValue, yValue);
+		Layer l = new Layer("POINT", coords," ");
+		l.setColor(color);
+		l.setImage(makeBullet(l.getColor(), grid.getWidth(), grid.getHeight()));
+
+		//write coordinate and type data
+		l.setX1(x);
+		l.setY1(y);
+		return l;		
+	}
+
 	//Draw a line consisting of multiple beads
 	public void drawLine(int x1, int y1, int x2, int y2, ArrayList<Integer> xValue, ArrayList<Integer> yValue) 
 	{	
@@ -1540,6 +1651,92 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				}
 			}
 		}
+	}
+
+	public Layer drawLineLayer() 
+	{	
+		//Initialize the coordinate arrays
+		ArrayList<Integer> xValue = new ArrayList(1);
+		ArrayList<Integer> yValue = new ArrayList(1);
+
+		int x1 = Integer.parseInt(DrawLineX1TextField.getText());
+		int x2 = Integer.parseInt(DrawLineX2TextField.getText());
+		int y1 = Integer.parseInt(DrawLineY1TextField.getText());
+		int y2 = Integer.parseInt(DrawLineY2TextField.getText());
+		
+		if(x1 == x2 && y1 == y2) // single point
+		{ 
+			//Add x and y coordinates to passed arrays
+			xValue.add(x1);
+			yValue.add(y1);
+		}
+		else if(x1 == x2) // vertical line (undefined slope)
+		{
+			//If coordinate one is bigger, swap
+			if(y2 < y1) {
+				int temp = y1;
+				y1 = y2;
+				y2 = temp;
+			}
+			//Add all x and y coordinates
+			for(int i = y1; i <= y2; i++) {
+				xValue.add(x1);
+				yValue.add(i);
+			}
+		}
+		else if(y1 == y2) // horizontal line (slope == 0)
+		{
+			//If coordinate one is bigger, swap
+			if(x2 < x1) {
+				int temp = x1;
+				x1 = x2;
+				x2 = temp;
+			}
+			//Add all x an y coordinates
+			for(int i = x1; i <= x2; i++) {
+				xValue.add(i);
+				yValue.add(y1);
+			}
+		}
+		//Find the slope of the line and add coordinates
+		else {
+			double m = (y2 - y1) / (double)(x2 - x1); //slope
+			double b = y1 - m * x1;
+			if(Math.abs(m) <= 1) {
+				int startX = (x1 < x2) ? x1 : x2;
+				int endX = (x1 < x2) ? x2 : x1;
+				int intY;
+				double doubleY;
+				for(int i = startX; i <= endX; i++) {
+					xValue.add(i);
+					doubleY = m * i + b;
+					intY = (int)doubleY;
+					if(Math.abs(doubleY - intY) >= 0.5)
+						intY = (doubleY >= 0) ? intY + 1 : intY - 1;
+					yValue.add(intY);
+				}
+			}
+			else {
+				int startY = (y1 < y2) ? y1 : y2;
+				int endY = (y1 < y2) ? y2 : y1;
+				int intX;
+				double doubleX;
+				for(int i = startY; i <= endY; i++) {
+					yValue.add(i);
+					doubleX = (i - b) / (double)m;
+					intX = (int)doubleX;
+					if(Math.abs(doubleX - intX) >= 0.5)
+						intX = (doubleX >= 0) ? intX + 1 : intX - 1;
+					xValue.add(intX);
+				}
+			}
+		}
+		Layer l = CoordListAction("LINE", xValue, yValue);
+		l.setX1(x1);
+		l.setX2(x2);
+		l.setY1(y1);
+		l.setY2(y2);
+		return l;
 	}
 
 	//Draw a solid rectangle
@@ -2736,6 +2933,22 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	public void addLoopTools(){
 		LinearIterationTabbedPane.addTab("Linear Iteration Loop", LinearItrLoopLayeredPane);
 		LinearIterationTabbedPane.addTab("Triangle Iteration Loop", TriangleItrLoopLayeredPane);
+	}
+
+	public void ghostPoint(){
+		try{
+			grid.setGhostLayer(drawPointLayer());
+		}catch(Exception e){
+			removeGhost();
+		}
+	}
+
+	public void ghostLine(){
+		try{
+			grid.setGhostLayer(drawLineLayer());
+		}catch(Exception e){
+			removeGhost();
+		}
 	}
 
 	public void ghostRectangle(){
