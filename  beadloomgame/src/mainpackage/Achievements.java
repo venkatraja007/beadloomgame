@@ -74,6 +74,11 @@ public abstract class Achievements {
 		PuzzleMaster();				//11
 	}
 	
+	public static boolean hasAchievement(int achievementNumber)
+	{
+		return (currentAchievements[achievementNumber] == 1);
+	}
+	
 	public static void viewAchievements()
 	{
 		String test = "";

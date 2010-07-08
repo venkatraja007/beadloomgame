@@ -21,6 +21,7 @@ public class ComponentToggle {
 	public static boolean timerEnabled = true;					//done
 	public static boolean ghostPreview = true;					//done
 	public static boolean clickToSet = true;					//done
+	public static boolean unlockableAvatarContent = true;		//done
 	
 	/*
 	 * When security is enabled you need an extra file that is not included in the svn.

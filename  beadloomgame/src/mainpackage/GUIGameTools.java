@@ -2168,6 +2168,25 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
 			Achievements.checkAchievements();
 			Achievements.sendAchievements(BeadLoom.playerName);
+			bl.getGridFrame().setVisible(false);
+			bl.getGridFrame2().setVisible(false);
+			HighScoresComboBox.removeAllItems();
+			//Populate the level comboBox on click of HighScores button
+			String temp = sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/puzzles.php");
+			String[] items = temp.split(",");
+			for(int i=0; i<items.length; i++)
+			{
+				HighScoresComboBox.addItem(items[i]);
+			}
+			//show high score
+			try{
+				HighScoresLabel.setText(
+						sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/scores.php?puzzleName=" + 
+								URLEncoder.encode(
+										puz.getPuzzleName(currentPuzzle), "UTF-8") +
+				"&token=token"));
+			}catch(Exception e) {}
+			bl.getHighScoresFrame().setVisible(true);
 		}
 		else if(totalErrors > 10) 
 		{
@@ -2331,7 +2350,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		else if (e.getSource() == HighScoresCloseButton) {
 			bl.getHighScoresFrame().setVisible(false);
-			bl.getMainMenuFrame().setVisible(true);
+			if(bl.getInGameFrame().isVisible())
+			{
+				bl.getGridFrame().setVisible(true);
+				bl.getGridFrame2().setVisible(true);
+			}
+			else
+			{
+				bl.getMainMenuFrame().setVisible(true);
+			}
 		}
 		
 		else if (e.getSource() == SubmitCustomPuzzleButton) {
@@ -2570,6 +2597,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			showTutorialButtons();
 			bl.getGridFrame().setVisible(false);
 			bl.getGridFrame2().setVisible(false);
+			bl.getHighScoresFrame().setVisible(false);
 			showChoosePuzzle();
 		}
 		else if (e.getSource() == Tut1Button && avatarMode) { avatarPuzzle = 0; setMainMenuMode(); }
@@ -4635,6 +4663,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		removeAllWindows();
 
 		JPanel panel = bl.getContentPanel();
+		panel.add(bl.getHighScoresFrame());
+		bl.getHighScoresFrame().setVisible(false);
 		panel.add(bl.getGridFrame());
 		panel.add(bl.getGridFrame2());
 		bl.getGridFrame().setVisible(true);
@@ -4742,7 +4772,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(comp>=12){ YellowButton.setVisible(true); }
 		if(comp>=8){ RedButton.setVisible(true); }
 		if(comp>=4){ GrayButton.setVisible(true); }
-		if(!ComponentToggle.unlockableAvatar) { setColorButtonsVisbility(true); }
+		if(!ComponentToggle.unlockableAvatarContent) { setColorButtonsVisbility(true); }
 	}
 	
 	public void hidePuzzleButtons()

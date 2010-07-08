@@ -276,7 +276,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		gridPanel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e){ 
 				if ((Math.abs(gridPanel.findMouseX(e)) <=gridPanel.getGridSize())&&(Math.abs(gridPanel.findMouseY(e)) <=gridPanel.getGridSize())){
-					if(Game.puz.isMediumOrHard(Game.getCurrentPuzzle()))
+					if(Game.puz.isMediumOrHard(Game.getCurrentPuzzle()) ||
+							(Game.getCurrentPuzzle()==-1 &&
+							Achievements.hasAchievement(5) &&
+							Achievements.hasAchievement(7)))
 					{
 						InputTools.pointClicked(gridPanel.findMousePositionX(e), gridPanel.findMousePositionY(e));
 					}

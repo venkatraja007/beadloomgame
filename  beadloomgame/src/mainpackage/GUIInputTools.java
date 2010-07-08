@@ -1531,24 +1531,29 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == BeadLoomUtilitiesPanel)
 				{
 					ghostPoint();
+					lastPointSelected = 1;
 				}
 				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == RectangleDrawTabbedPane)
 				{
 					ghostRectangle();
+					lastPointSelected = 1;
 				}
 				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
 				{
 					ghostTriangle();
+					lastPointSelected = 1;
 				}
 				else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == LinearIterationTabbedPane)
 				{
 					if(LinearIterationTabbedPane.getSelectedComponent() == LinearIterationPanel)
 					{
 						ghostLinearIteration();
+						lastPointSelected = 1;
 					}
 					else if(LinearIterationTabbedPane.getSelectedComponent() == TriangleIterationPanel)
 					{
 						ghostTriangleIteration();
+						lastPointSelected = 1;
 					}
 				}
 				else
@@ -2744,7 +2749,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 		//Utilizes the triangleIteration method
 		else if(e.getSource() == DrawTriangleIterationButton) 
 		{
-			int width = 0, height = 0, startX = 0, startY = 0, exSteps = 0;
+			int width = 0, height = 0, startX = 0, startY = 0, exSteps = 0, stepHeight = 0;
 			double cycles = 0;
 			boolean incY = false;
 			//Initialize the coordinate arrays
@@ -2756,6 +2761,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				startY = Integer.parseInt(TriangleIterationStartYTextField.getText());
 				width = Integer.parseInt(TriangleIterationBeadsAddedTextField.getText());
 				height = Integer.parseInt(TriangleIterationStepHeightTextField.getText());
+				stepHeight = height;
 				cycles = Integer.parseInt(TriangleIterationRowsTotalTextField.getText());
 
 				//If the arguments are not in bounds throw an exception
@@ -2792,7 +2798,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 
 			//fill = TriangleIterationFilledCheckBox.isSelected();
 
-			if(height<=0){JOptionPane.showMessageDialog(null, "Step Height must be greater than 0");}
+			if(stepHeight<=0){JOptionPane.showMessageDialog(null, "Step Height must be greater than 0");}
 			else if(cycles<=0){JOptionPane.showMessageDialog(null, "Rows must be greater than 0");}
 			else
 			{
@@ -3660,12 +3666,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					DrawLineX1TextField.setText(""+x);
 					DrawLineY1TextField.setText(""+y);
 					ghostLine();
+					lastPointSelected++;
 				}
 				else if(lastPointSelected == 3)
 				{
 					DrawLineX2TextField.setText(""+x);
 					DrawLineY2TextField.setText(""+y);
 					ghostLine();
+					lastPointSelected--;
 				}
 			}
 			else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == RectangleDrawTabbedPane)
@@ -3675,12 +3683,14 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					DrawRectangleX1TextField.setText(""+x);
 					DrawRectangleY1TextField.setText(""+y);
 					ghostRectangle();
+					lastPointSelected++;
 				}
 				else if(lastPointSelected == 2)
 				{
 					DrawRectangleX2TextField.setText(""+x);
 					DrawRectangleY2TextField.setText(""+y);
 					ghostRectangle();
+					lastPointSelected--;
 				}
 			}
 			else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == TriangleDrawTabbedPane)
@@ -3690,18 +3700,21 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					DrawTriangleX1TextField.setText(""+x);
 					DrawTriangleY1TextField.setText(""+y);
 					ghostTriangle();
+					lastPointSelected++;
 				}
 				else if(lastPointSelected == 2)
 				{
 					DrawTriangleX2TextField.setText(""+x);
 					DrawTriangleY2TextField.setText(""+y);
 					ghostTriangle();
+					lastPointSelected++;
 				}
 				else if(lastPointSelected == 3)
 				{
 					DrawTriangleX3TextField.setText(""+x);
 					DrawTriangleY3TextField.setText(""+y);
 					ghostTriangle();
+					lastPointSelected = 1;
 				}
 			}
 			else if(BeadLoomUtilitiesTabbedPane.getSelectedComponent() == LinearIterationTabbedPane)
