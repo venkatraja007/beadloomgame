@@ -5,7 +5,7 @@ include('connect.php');
 
 $user = $_GET['user'];
 
-$query = "SELECT puzzle, score, medal FROM HighScores Where user='$user'";
+$query = "SELECT puzzle, score, medal FROM HighScores Where medal!='Custom' AND user='$user'";
 
 $result = $db->query($query);
 

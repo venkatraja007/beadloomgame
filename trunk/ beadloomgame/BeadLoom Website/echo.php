@@ -20,7 +20,14 @@ if($folderName == "CustomPuzzles")
 	$pos = stripos($fileName2, "-");
 	$user = substr($fileName2, 0, ($pos));
 	$puzzle = substr($fileName2, ($pos+1));
-	$query = "INSERT INTO CustomPuzzles VALUES('$user','$puzzle', NOW())";
+	if(isset($_GET['token']) && $_GET['token'] == "save")
+	{
+		$query = "INSERT INTO CustomPuzzles (user, puzzle, published, timestamp)  VALUES('$user','$puzzle', 0, NOW())";
+	}
+	else
+	{
+		$query = "INSERT INTO CustomPuzzles (user, puzzle, published, timestamp)  VALUES('$user','$puzzle', 1, NOW())";
+	}
 	$queryResult = $db->query($query);
 	if($queryResult)
 	{
