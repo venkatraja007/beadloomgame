@@ -948,7 +948,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Tie Fighter Button ----
 		TieFighterButton.setText("Tie Fighter");
 		TieFighterButton.addActionListener(this);
-		TieFighterButton.setBounds(R90);
+		TieFighterButton.setBounds(R10);
 		TieFighterButton.addMouseListener(new MouseListener() {
 			public void mouseReleased(MouseEvent e) {}
 			public void mousePressed(MouseEvent e) {}
@@ -1173,7 +1173,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//---- Moon Button ----
 		MoonButton.setText("Moon");
 		MoonButton.addActionListener(this);
-		MoonButton.setBounds(R10);
+		MoonButton.setBounds(R90);
 		MoonButton.addMouseListener(new MouseListener() {
 			public void mouseReleased(MouseEvent e) {}
 			public void mousePressed(MouseEvent e) {}
@@ -2625,9 +2625,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else if (e.getSource() == LoomEx10Button && avatarMode) { avatarPuzzle = 20; setMainMenuMode(); }
 		else if (e.getSource() == UNCCButton && avatarMode) { avatarPuzzle = 21; setMainMenuMode(); }
 		else if (e.getSource() == SergeantButton && avatarMode) { avatarPuzzle = 22; setMainMenuMode(); }
-		else if (e.getSource() == TieFighterButton && avatarMode) { avatarPuzzle = 23; setMainMenuMode(); }
+		else if (e.getSource() == MoonButton && avatarMode) { avatarPuzzle = 23; setMainMenuMode(); }
 		
-		else if (e.getSource() == MoonButton && avatarMode) { avatarPuzzle = 24; setMainMenuMode(); }
+		else if (e.getSource() == TieFighterButton && avatarMode) { avatarPuzzle = 24; setMainMenuMode(); }
 		else if (e.getSource() == LoomEx7Button && avatarMode) { avatarPuzzle = 25; setMainMenuMode(); }
 		else if (e.getSource() == DCButton && avatarMode) { avatarPuzzle = 26; setMainMenuMode(); }
 		else if (e.getSource() == BullseyeButton && avatarMode) { avatarPuzzle = 27; setMainMenuMode(); }
@@ -3551,7 +3551,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //			}
 		}
 		else if (e.getSource() == MoonButton){
-			if(hardPuzzlesUnlocked())
+			if(mediumPuzzlesUnlocked())
 			{
 				startGame();
 				Restart(true, true, true);
@@ -3562,7 +3562,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
 			}
 			//Log the Puzzle Change
 //			try{
@@ -3727,7 +3727,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == TieFighterButton){
-			if(mediumPuzzlesUnlocked())
+			if(hardPuzzlesUnlocked())
 			{
 				startGame();
 				Restart(true, true, true);
@@ -3738,7 +3738,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null, "Complete all the Easy Puzzles to Unlock the Medium Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Complete all the Medium Puzzles to Unlock the Hard Ones!", "Locked!", JOptionPane.PLAIN_MESSAGE);
 			}
 			//Log the Puzzle Change
 //			try{
@@ -3867,7 +3867,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				ChoosePuzzlePanel.add(LoomEx10Button);
 				ChoosePuzzlePanel.add(UNCCButton);
 				ChoosePuzzlePanel.add(SergeantButton);
-				ChoosePuzzlePanel.add(TieFighterButton);
+				ChoosePuzzlePanel.add(MoonButton);
 
 				HSLabel1.setText("" + RecordMove[15]);
 				MLabel1.setText(RecordMedal[15]);
@@ -3921,7 +3921,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				removePuzzleButtons();
 				hidePuzzleButtons();
 
-				ChoosePuzzlePanel.add(MoonButton);
+				ChoosePuzzlePanel.add(TieFighterButton);
 				ChoosePuzzlePanel.add(LoomEx7Button);
 				ChoosePuzzlePanel.add(DCButton);
 				ChoosePuzzlePanel.add(BullseyeButton);
@@ -4825,11 +4825,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		else { UNCCButton.setVisible(false); }
 		if(!avatarMode || RecordMedal[22].equals("Platinum!!!!")) { SergeantButton.setVisible(true); }
 		else { SergeantButton.setVisible(false); }
-		if(!avatarMode || RecordMedal[23].equals("Platinum!!!!")) { TieFighterButton.setVisible(true); }
-		else { TieFighterButton.setVisible(false); }
-		
-		if(!avatarMode || RecordMedal[24].equals("Platinum!!!!")) { MoonButton.setVisible(true); }
+		if(!avatarMode || RecordMedal[23].equals("Platinum!!!!")) { MoonButton.setVisible(true); }
 		else { MoonButton.setVisible(false); }
+		
+		if(!avatarMode || RecordMedal[24].equals("Platinum!!!!")) { TieFighterButton.setVisible(true); }
+		else { TieFighterButton.setVisible(false); }
 		if(!avatarMode || RecordMedal[25].equals("Platinum!!!!")) { LoomEx7Button.setVisible(true); }
 		else { LoomEx7Button.setVisible(false); }
 		if(!avatarMode || RecordMedal[26].equals("Platinum!!!!")) { DCButton.setVisible(true); }
