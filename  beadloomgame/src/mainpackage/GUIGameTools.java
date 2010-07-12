@@ -4604,6 +4604,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.repaint();
 		bl.getInputTools().setGrid(bl.getGridPanel());
 	}
+	
+	//set custom puzzle mode with loadPuzzle loaded
+	public void setCustomPuzzleMode(String loadPuzzle)
+	{
+		setCustomPuzzleMode();
+		puz.setCustomPuzzle(loadPuzzle, "CustomPuzzles", 1);
+	}
 
 	//set up the content pane for Avatar Creation Mode
 	public void setCreateAvatarMode()
