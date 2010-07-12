@@ -68,6 +68,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//GUI Parts
 	//Panels
 	private JPanel CustomPuzzleMenuPanel = new JPanel();
+	private JPanel CustomPuzzleOptionPanel = new JPanel();
 	private JPanel AvatarMenuPanel = new JPanel();
 	private JPanel GamePanel = new JPanel();
 	private JPanel MainMenuPanel = new JPanel();
@@ -76,6 +77,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JPanel ColorPanel = new JPanel();
 	private JPanel HighScoresPanel = new JPanel();
 	private JComboBox HighScoresComboBox = new JComboBox();
+	private JComboBox LoadSavedCustomPuzzleComboBox = new JComboBox();
 	private JScrollPane HighScoresScrollPane = new JScrollPane(
 			HighScoresPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	private JPanel GameOptionsPanel = new JPanel();
@@ -92,6 +94,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton GameOptionsButton = new JButton();
 	private JButton MainMenuButton = new JButton();
 	private JButton CreateCustomPuzzleButton = new JButton();
+	private JButton CreateNewCustomPuzzleButton = new JButton();
+	private JButton LoadSavedCustomPuzzleButton = new JButton();
+	
 	private JButton CreateAvatarButton = new JButton();
 	private JButton SubmitCustomPuzzleButton = new JButton();
 	private JButton ToolButton = new JButton();
@@ -338,6 +343,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		CustomPuzzleMenuPanel.setLayout(null);
 		CustomPuzzleMenuPanel.setVisible(true);
 		CustomPuzzleMenuPanel.setBounds(4, 3, 195, 165);
+		
+		//---- Custom Puzzle Option Panel ----
+		CustomPuzzleOptionPanel.setBackground(Color.white);
+		CustomPuzzleOptionPanel.setLayout(null);
+		CustomPuzzleOptionPanel.setBounds(4, 3, 195, 165);
 		
 		//---- in game panel ----
 		InGamePanel.setBorder(new LineBorder(Color.red));
@@ -1598,6 +1608,22 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		MainMenuButton.setBounds(25, 150, 145, MainMenuButton.getPreferredSize().height);
 		MainMenuButton.addActionListener(this);
 
+		//---- Load Saved Custom Puzzle ----
+		LoadSavedCustomPuzzleButton.setText("Load Saved Puzzle");
+		LoadSavedCustomPuzzleButton.setBounds(25, 125, 145, LoadSavedCustomPuzzleButton.getPreferredSize().height);
+		LoadSavedCustomPuzzleButton.addActionListener(this);
+		CustomPuzzleOptionPanel.add(LoadSavedCustomPuzzleButton);
+		
+		//---- Load Saved Custom Puzzle Drop Down ----
+		LoadSavedCustomPuzzleComboBox.setBounds(25, 150, 145, LoadSavedCustomPuzzleComboBox.getPreferredSize().height);
+		CustomPuzzleOptionPanel.add(LoadSavedCustomPuzzleComboBox);
+	
+		//---- Create New Custom Puzzle ----
+		CreateNewCustomPuzzleButton.setText("Create New Puzzle");
+		CreateNewCustomPuzzleButton.setBounds(25, 100, 145, CreateNewCustomPuzzleButton.getPreferredSize().height);
+		CreateNewCustomPuzzleButton.addActionListener(this);
+		CustomPuzzleOptionPanel.add(CreateNewCustomPuzzleButton);
+		
 		//---- Create Custom Puzzle ----
 		CreateCustomPuzzleButton.setText("Create Puzzle");
 		CreateCustomPuzzleButton.setBounds(25, 225, 145, CreateCustomPuzzleButton.getPreferredSize().height);
@@ -2248,6 +2274,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public JScrollPane getHighScoresScrollPane() {
 		return HighScoresScrollPane;
 	}
+	public JPanel getCustomPuzzleOptionPanel(){
+		return CustomPuzzleOptionPanel;
+	}
 	public JPanel getGameOptionsPanel() {
 		return GameOptionsPanel;
 	}
@@ -2399,13 +2428,33 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//TODO
 		}
 		
+		else if (e.getSource() == LoadSavedCustomPuzzleButton)
+		{
+			if(LoadSavedCustomPuzzleComboBox.getSelectedItem() != null)
+			{
+				setCustomPuzzleMode(BeadLoom.playerName + "-" + LoadSavedCustomPuzzleComboBox.getSelectedItem());
+			}
+		}
+		
+		else if(e.getSource() == CreateNewCustomPuzzleButton)
+		{
+			setCustomPuzzleMode();
+		}
+		
 		else if (e.getSource() == CreateCustomPuzzleButton) {
 			if (NameTextField.getText().equals("Enter Your Name") || NameTextField.getText().equals("")){
 				JOptionPane.showMessageDialog(null, "Please Enter Your Name", "Name Error", JOptionPane.PLAIN_MESSAGE);
 			}
 			else {
 				BeadLoom.playerName = NameTextField.getText();
-				setCustomPuzzleMode();
+				bl.getMainMenuFrame().setVisible(false);
+				bl.getCustomPuzzleOptionsFrame().setVisible(true);
+				LoadSavedCustomPuzzleComboBox.removeAllItems();
+				String[] items= sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/customPuzzles.php?token=edit&user=" + BeadLoom.playerName).split(",");
+				for(int i=0; i<items.length; i++)
+				{
+					LoadSavedCustomPuzzleComboBox.addItem(items[i]);
+				}
 			}
 		}
 		
@@ -4473,6 +4522,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		bl.getPuzzleFrame().setVisible(false);
 		panel.add(bl.getHighScoresFrame());
 		bl.getHighScoresFrame().setVisible(false);
+		bl.getCustomPuzzleOptionsFrame().setVisible(false);
+		panel.add(bl.getCustomPuzzleOptionsFrame());
 		//load Avatar and logo
 		bl.getGridPanel2().clear();
 		
