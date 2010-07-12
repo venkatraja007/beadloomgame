@@ -54,9 +54,9 @@ public class Puzzle {
 			"Native American Example 10",		//20				
 			"UNCC",								//21				
 			"Sergeant",							//22
-			"Tie Fighter",						//23
+			"Moon",								//23
 
-			"Moon",								//24
+			"Tie Fighter",						//24
 			"Native American Example 7",		//25			
 			"DC",								//26			
 			"Bullseye",							//27
@@ -162,10 +162,10 @@ public class Puzzle {
 			setSergeant();
 			break;
 		case 23:
-			setTieFighter();
+			setMoon();
 			break;
 		case 24:
-			setMoon();
+			setTieFighter();
 			break;
 		case 25:
 			setLoomEx7();
@@ -800,7 +800,7 @@ public class Puzzle {
 	//Returns array pos
 	public int setHeart(){
 
-		ideal = 5;
+		ideal = 4;
 		InputTools.setGrid(bl.getGridPanel2());
 
 		InputTools.setColor(Color.BLUE);
@@ -1070,7 +1070,7 @@ public class Puzzle {
 		return 22;
 	}
 
-	//Array Position = 34
+	//Array Position = 24
 	//Returns array position
 	public int setTieFighter(){
 
@@ -1169,10 +1169,10 @@ public class Puzzle {
 		//Reset the Current Selected Color to default
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 23;  
+		return 24;  
 	}
 
-	//Array Pos = 22
+	//Array Pos = 23
 	//Returns array pos
 	public int setMoon(){
 
@@ -1208,7 +1208,7 @@ public class Puzzle {
 
 		InputTools.setGrid(bl.getGridPanel());
 		resetColor();
-		return 24;
+		return 23;
 	}
 
 	//Array Pos = 23
