@@ -98,6 +98,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton SaveCustomPuzzleButton = new JButton();
 	private JButton CreateNewCustomPuzzleButton = new JButton();
 	private JButton LoadSavedCustomPuzzleButton = new JButton();
+	private JButton CancelCustomPuzzleButton = new JButton();
 	
 	private JButton CreateAvatarButton = new JButton();
 	private JButton SubmitCustomPuzzleButton = new JButton();
@@ -1634,6 +1635,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		LoadSavedCustomPuzzleButton.setBounds(25, 125, 145, LoadSavedCustomPuzzleButton.getPreferredSize().height);
 		LoadSavedCustomPuzzleButton.addActionListener(this);
 		CustomPuzzleOptionPanel.add(LoadSavedCustomPuzzleButton);
+
+		//---- Load Saved Custom Puzzle ----
+		CancelCustomPuzzleButton.setText("Cancel");
+		CancelCustomPuzzleButton.setBounds(25, 200, 145, CancelCustomPuzzleButton.getPreferredSize().height);
+		CancelCustomPuzzleButton.addActionListener(this);
+		CustomPuzzleOptionPanel.add(CancelCustomPuzzleButton);
 		
 		//---- Load Saved Custom Puzzle Drop Down ----
 		LoadSavedCustomPuzzleComboBox.setBounds(25, 150, 145, LoadSavedCustomPuzzleComboBox.getPreferredSize().height);
@@ -2494,6 +2501,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			{
 				setCustomPuzzleMode(BeadLoom.playerName + "-" + LoadSavedCustomPuzzleComboBox.getSelectedItem(), ""+LoadSavedCustomPuzzleComboBox.getSelectedItem());
 			}
+		}
+		
+		else if (e.getSource() == CancelCustomPuzzleButton)
+		{
+			bl.getCustomPuzzleOptionsFrame().setVisible(false);
+			bl.getMainMenuFrame().setVisible(true);
 		}
 		
 		else if(e.getSource() == CreateNewCustomPuzzleButton)
