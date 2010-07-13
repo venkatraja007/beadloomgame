@@ -65,7 +65,22 @@ if($result == FALSE)
 }
 else
 {
-	echo "<html><h2>Custom Puzzle ".$_POST['fileName']." added.</h2></html>";
+	if($folderName == "CustomPuzzles")
+	{
+		echo "<html><h2>Custom Puzzle ".$_POST['fileName']." added.</h2></html>";
+	}
+	else if($folderName == "Avatars")
+	{
+		echo "<html><h2>Avatar has been submitted.</h2></html>";
+	}
+	else if($folderName == "GameSaves")
+	{
+		echo "<html><h2>Game has been saved.</h2></html>";
+	}
+	else
+	{
+		echo "<html><h2>XML puzzle ".$_POST['fileName']." has been submitted to folder ".$folderName.".</h2></html>";
+	}
 }
 
 ?>
