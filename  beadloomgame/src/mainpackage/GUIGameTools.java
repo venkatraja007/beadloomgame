@@ -94,6 +94,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton GameOptionsButton = new JButton();
 	private JButton MainMenuButton = new JButton();
 	private JButton CreateCustomPuzzleButton = new JButton();
+	private JButton SaveCustomPuzzleButton = new JButton();
 	private JButton CreateNewCustomPuzzleButton = new JButton();
 	private JButton LoadSavedCustomPuzzleButton = new JButton();
 	
@@ -1608,6 +1609,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		MainMenuButton.setBounds(25, 150, 145, MainMenuButton.getPreferredSize().height);
 		MainMenuButton.addActionListener(this);
 
+		//---- Save Custom Puzzle button ----
+		SaveCustomPuzzleButton.setText("Save");
+		SaveCustomPuzzleButton.setBounds(25, 25, 145, SaveCustomPuzzleButton.getPreferredSize().height);
+		SaveCustomPuzzleButton.addActionListener(this);
+		CustomPuzzleMenuPanel.add(SaveCustomPuzzleButton);
+
 		//---- Load Saved Custom Puzzle ----
 		LoadSavedCustomPuzzleButton.setText("Load Saved Puzzle");
 		LoadSavedCustomPuzzleButton.setBounds(25, 125, 145, LoadSavedCustomPuzzleButton.getPreferredSize().height);
@@ -2420,6 +2427,36 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 		}
 		
+		else if (e.getSource() == SaveCustomPuzzleButton) {
+			String text = CustomPuzzleTextField.getText();
+			if(text.equalsIgnoreCase("Enter Puzzle Name"))
+			{
+				
+				JOptionPane.showMessageDialog(null, "Enter a Valid Puzzle Name", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if(text.length() < 3)
+			{
+				JOptionPane.showMessageDialog(null, "Puzzle Name must have at least 3 characters", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if(text.length() > 30)
+			{
+				JOptionPane.showMessageDialog(null, "Puzzle Name must be less than 30 characters", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if(text.contains(" ") || text.contains(",") || text.contains("/") || text.contains("\\"))
+			{
+				JOptionPane.showMessageDialog(null, "No Spaces,Commas or Slashes Allowed use Underscores : '_'", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			else if(bl.getGridPanel().getLayers().size() < 1)
+			{
+				JOptionPane.showMessageDialog(null, "The Grid is Blank!", "Custom Puzzle Message", JOptionPane.PLAIN_MESSAGE);
+			}
+			else
+			{
+				sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php?token=save&", BeadLoom.playerName+"-"+text, "CustomPuzzles");
+			}
+		}
+		
 		else if (e.getSource() == SubmitAvatarButton) {
 			sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
 			avatarPuzzle = -1;
@@ -2432,7 +2469,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		{
 			if(LoadSavedCustomPuzzleComboBox.getSelectedItem() != null)
 			{
-				setCustomPuzzleMode(BeadLoom.playerName + "-" + LoadSavedCustomPuzzleComboBox.getSelectedItem());
+				setCustomPuzzleMode(BeadLoom.playerName + "-" + LoadSavedCustomPuzzleComboBox.getSelectedItem(), ""+LoadSavedCustomPuzzleComboBox.getSelectedItem());
 			}
 		}
 		
@@ -4657,10 +4694,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 	
 	//set custom puzzle mode with loadPuzzle loaded
-	public void setCustomPuzzleMode(String loadPuzzle)
+	public void setCustomPuzzleMode(String loadPuzzle, String puzName)
 	{
 		setCustomPuzzleMode();
 		puz.setCustomPuzzle(loadPuzzle, "CustomPuzzles", 1);
+		CustomPuzzleTextField.setText(puzName);
 	}
 
 	//set up the content pane for Avatar Creation Mode
