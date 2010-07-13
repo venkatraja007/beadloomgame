@@ -87,6 +87,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton ChoosePuzzleButton = new JButton();
 	private JButton RestartButton = new JButton();
 	private JButton PuzzleAvatarButton = new JButton();
+	private JButton SaveGameButton = new JButton();
 	private JButton ClearButton = new JButton();
 	private JButton SubmitButton = new JButton();
 	private JButton UndoButton = new JButton();
@@ -122,6 +123,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	private JButton EasyButton = new JButton();
 	private JButton MediumButton = new JButton();
 	private JButton HardButton = new JButton();
+	private JButton LoadGameButton = new JButton();
 
 	private JButton Tut1Button = new JButton();
 	private JButton Tut2Button = new JButton();
@@ -1412,6 +1414,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		HardButton.setBounds(RightDifR);
 		ChoosePuzzlePanel.add(HardButton);
 
+		//---- Load Game Button ----
+		LoadGameButton.setText("Load Game");
+		LoadGameButton.addActionListener(this);
+		LoadGameButton.setBounds(FarRightDifR);
+		ChoosePuzzlePanel.add(LoadGameButton);
+
 		//---- Cancel Button ----
 		CancelButton.setText("Cancel");
 		CancelButton.addActionListener(this);
@@ -1614,6 +1622,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SaveCustomPuzzleButton.setBounds(25, 25, 145, SaveCustomPuzzleButton.getPreferredSize().height);
 		SaveCustomPuzzleButton.addActionListener(this);
 		CustomPuzzleMenuPanel.add(SaveCustomPuzzleButton);
+
+		//---- Save Puzzle button ----
+		SaveGameButton.setText("Save Game");
+		SaveGameButton.setBounds(25, 25, 145, SaveGameButton.getPreferredSize().height);
+		SaveGameButton.addActionListener(this);
+		InGamePanel.add(SaveGameButton);
 
 		//---- Load Saved Custom Puzzle ----
 		LoadSavedCustomPuzzleButton.setText("Load Saved Puzzle");
@@ -2454,6 +2468,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			else
 			{
 				sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php?token=save&", BeadLoom.playerName+"-"+text, "CustomPuzzles");
+			}
+		}
+		
+		else if (e.getSource() == SaveGameButton) {
+			if(currentPuzzle != -1)
+			{
+				sendCustomPuzzlePost(getGridXML(moveCounter+","+(System.currentTimeMillis()-puzzleStartTime)+","+currentPuzzle),
+					"http://unccmakesgames.com/games/BeadLoomGame/echo.php", BeadLoom.playerName, "GameSaves");
+				setMainMenuMode();
 			}
 		}
 		
@@ -4053,6 +4076,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				MLabelB.setText(RecordMedal[34]);
 			}
 		}
+		else if (e.getSource() == LoadGameButton) {
+			if(!puz.setCustomPuzzle(BeadLoom.playerName, "GameSaves", 1))
+			{
+				JOptionPane.showMessageDialog(null, "Could not load game.\nNo Saved Game Found", "No Save Game!", JOptionPane.PLAIN_MESSAGE);
+			}
+			else
+			{
+				loadSavedGame();
+			}
+		}
 		else if (e.getSource() == RedButton){
 			bl.getInputTools().setColor(Color.RED);
 			bl.getColorFrame().setVisible(false);
@@ -4237,6 +4270,29 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 	}
 	
+	private void loadSavedGame() {
+		startGame();
+		Restart(true, true, true);
+		puz.setCustomPuzzle(BeadLoom.playerName, "GameSaves", 1);
+
+		//load info from customPuzzleName
+		String[] items = puz.getCustomPuzzleName().split(",");
+		if(items.length <3) {
+			setMainMenuMode();
+			return;
+		}
+		int totalMoves = Integer.parseInt(items[0]);
+		long timeElapsed = Long.parseLong(items[1]);
+		currentPuzzle = Integer.parseInt(items[2]);
+
+		bestScore = RecordMove[currentPuzzle];
+		BestScoreLabel.setText("Best Score:" + bestScore);
+		bl.getPuzzleFrame().setVisible(false);
+		puzzleStartTime = System.currentTimeMillis() - timeElapsed;
+		moveCounter = totalMoves;
+		bl.setPuzzleTimer(timeElapsed);
+	}
+
 	public void showChoosePuzzle() {
 		bl.getMainMenuFrame().setVisible(false);
 		bl.getPuzzleFrame().setVisible(true);

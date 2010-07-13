@@ -1866,6 +1866,19 @@ public class Puzzle {
 			Document doc = db.parse(stream);
 			stream.close();
 			doc.getDocumentElement().normalize();
+			
+			//get puzzle name if this is a game save
+			if(folderName.equalsIgnoreCase("GameSaves"))
+			{
+				NodeList puzLst = doc.getElementsByTagName("custompuzzle");
+				if(puzLst.getLength() < 1) { return false; }
+				else
+				{
+					CustomPuzzleName = ((Element)puzLst.item(0)).getAttribute("Name");
+				}
+			}
+			
+			//set layers
 			NodeList nodeLst = doc.getElementsByTagName("layer");
 
 			for (int s = 0; s < nodeLst.getLength(); s++)

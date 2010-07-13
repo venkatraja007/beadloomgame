@@ -2165,6 +2165,20 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		Image ret = createImage(new MemoryImageSource(41, 41, pixels, 0, 41));
 		return ret;
 	}
+	public void setPuzzleTimer(long timeElapsed) {
+		seconds = (int)(timeElapsed / 1000)+1;
+		minutes = seconds/60;
+		seconds %= 60;
+		TimerLabel.setText("Timer: " + updateTime(minutes, seconds));
+		Timer tempTimer = new Timer((int)(timeElapsed%1000), new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				timer.stop();
+				timer.start();
+			}
+		});
+		tempTimer.start();
+		tempTimer.setRepeats(false);
+	}
 
 	/*private class XMLFileFilter1 extends javax.swing.filechooser.FileFilter {
 
