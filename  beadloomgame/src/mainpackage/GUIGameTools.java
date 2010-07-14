@@ -2416,6 +2416,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			{
 				bl.getMainMenuFrame().setVisible(true);
 			}
+			bl.getMainMenuFrame().setVisible(true);
 		}
 		
 		else if (e.getSource() == SubmitCustomPuzzleButton) {
