@@ -1434,7 +1434,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		ChoosePuzzlePanel.add(CustomPuzzleButton);
 		
 		//---- Submit Custom Puzzle Button ----
-		SubmitCustomPuzzleButton.setText("Submit Puzzle");
+		SubmitCustomPuzzleButton.setText("Publish Puzzle");
 		SubmitCustomPuzzleButton.addActionListener(this);
 		SubmitCustomPuzzleButton.setBounds(25, 75, 145, SubmitCustomPuzzleButton.getPreferredSize().height);
 		CustomPuzzleMenuPanel.add(SubmitCustomPuzzleButton);
