@@ -38,7 +38,7 @@ if(checkVariable("puzzle", $_POST['puzzle']))
 	$puzzle = $_POST['puzzle'];
 else 
 	die("<html><h2>Puzzle is invalid.</h2></html><br/>");
-
+	
 $countQuery = "
 SELECT count(*) as count 
 FROM HighScores 
@@ -49,13 +49,36 @@ SELECT *
 FROM HighScores 
 WHERE user='$user' and puzzle='$puzzle'";
 
-$insertQuery = "INSERT INTO HighScores 
+$insertQuery = "
+INSERT INTO HighScores 
 VALUES('$user', '$score', '$time', '$medal', '$puzzle', NOW())";
 
 $updateQuery = "
 UPDATE HighScores
 SET score='$score', time='$time', medal='$medal'
 WHERE user='$user' and puzzle='$puzzle'";
+
+//check for rating variable
+if(isset($_POST['rating']) && !empty($_POST['rating']))
+{
+	$rating = $_POST['rating'];
+	$ratingQuery = "
+	INSERT INTO UserCustomPuzzleRating (user, puzzleName, rating, timeStamp)
+	Values('$user', '$puzzle', '$rating' , NOW())
+	ON DUPLICATE KEY
+	UPDATE rating='$rating' AND timeStamp=NOW()";
+	
+	//Insert rating
+	$result = $db->query($ratingQuery);
+	if($result)
+	{
+		//successful query
+	}
+	else
+	{
+		echo "<html><h2>An Error Occurred sending rating. $db->error</h2></html>";
+	}
+}
 
 //Query for a duplicate
 $result = $db->query($countQuery);
