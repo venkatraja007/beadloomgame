@@ -139,6 +139,91 @@
 	
 	}
 	
+	function getCustomPuzzleRatings($db)
+	{
+		//create table
+		echo "<table border=\"1\" align=\"center\" class=\"leaderboard\">";
+		echo "<tr>";
+		echo "<th colspan=\"3\">";
+		echo "<h2>Custom Puzzle Ratings:</h2>";
+		
+		//print table header
+		echo "<tr>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Puzzle</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Rating</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Votes</b></td>";
+		echo "</tr></th>";
+		
+		$query = "SELECT DISTINCT puzzleName FROM UserCustomPuzzleRatings";
+		$result = $db->query($query);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				$query2 = "SELECT puzzleName, COUNT(rating) AS votes, AVG(rating) AS rated FROM UserCustomPuzzleRatings WHERE puzzleName = '".$row['puzzleName']."'";
+				$result2 = $db->query($query2);
+				if($result2)
+				{
+					$row2 = $result2->fetch_assoc();
+				
+					//print results to table as new row
+					echo "<tr>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['puzzleName']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['rated']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['votes']."</td>";
+					echo "</tr>";
+				}
+				else
+				{
+					echo "error2".$db->error;
+				}
+			}
+		}
+		else
+		{
+			echo "error".$db->error;
+		}
+		echo "</table>";
+	}
+	
+	function getUserCustomPuzzleScores($db, $user)
+	{
+		//create table
+		echo "<table border=\"1\" align=\"center\" class=\"leaderboard\">";
+		echo "<tr>";
+		echo "<th colspan=\"5\">";
+		echo "<h2>".$user."'s Custom Puzzle High Scores:</h2>";
+		
+		//print table header
+		echo "<tr>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Puzzle</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Score</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Time</b></td>";
+		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Medal</b></td>";
+		echo "</tr></th>";
+		
+		$query = "SELECT score, time, medal, puzzle, user FROM HighScores WHERE user='".$user."' AND medal=='Custom' ORDER BY puzzle";
+		$result = $db->query($query);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+					//print results to table as new row
+					echo "<tr>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['puzzle']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['score']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['time']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['medal']."</td>";
+					echo "</tr>";
+			}
+		}
+		else
+		{
+		}
+		echo "</table>";
+	
+	}
+	
 	function getAchievements($db, $user)
 	{
 	
