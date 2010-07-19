@@ -202,7 +202,7 @@
 		echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\"><b>Medal</b></td>";
 		echo "</tr></th>";
 		
-		$query = "SELECT score, time, medal, puzzle, user FROM HighScores WHERE user='".$user."' AND medal=='Custom' ORDER BY puzzle";
+		$query = "SELECT score, time, medal, puzzle, user FROM HighScores WHERE user='".$user."' AND medal='Custom' ORDER BY puzzle";
 		$result = $db->query($query);
 		if($result)
 		{
