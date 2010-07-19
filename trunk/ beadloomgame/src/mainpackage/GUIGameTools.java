@@ -29,6 +29,7 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
 import javax.swing.JTextArea;
 import javax.swing.Spring;
 import javax.swing.SpringLayout;
@@ -230,6 +231,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 
 	private JLabel MoveLabel = new JLabel();
+	
+	private JOptionPane rating = new JOptionPane();
 
 	private Color color = new Color(255, 0, 0);
 
@@ -334,7 +337,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 	public GUIGameTools() {
 		avatarPuzzle = -2;
-
+		
 		//---- game panel -----
 		GamePanel.setBorder(new LineBorder(Color.red));
 		GamePanel.setBackground(Color.white);
@@ -2112,6 +2115,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			{
 				seconds = ((int)(puzzleTime % 60)) + "";
 			}
+			int rating;
+			String[] options = {"1","2","3","4","5"};
+			rating = JOptionPane.showOptionDialog(null, "Rate " + puz.getCustomPuzzleName(), "Custom Puzzle Rating", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,options, 0);
+			JOptionPane.showMessageDialog(null, options[rating]);
 
 			String urlTime = ((int)puzzleTime/60) + ":" + seconds;
 			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
@@ -2122,6 +2129,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
 				"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
 				"&medal=Custom" + 
+				"$rating=" + URLEncoder.encode(""+rating, "UTF-8") +
 				"&puzzle=" + URLEncoder.encode(puz.getCustomPuzzleName(), "UTF-8");
 				if(ComponentToggle.securityEnabled){ sendString+="&token=" + URLEncoder.encode(""+Security.getSecurityToken(), "UTF-8"); }
 				message = sendPost("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php", sendString);
