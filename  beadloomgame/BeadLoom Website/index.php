@@ -40,6 +40,7 @@
 				<p class="text">Wondering How to Play?<br />
 				<p><a class="table" href="instructions.php">Click Here for Instructions!</a></p><br />
 				<a class="table" href="puzzleScores.php">High Scores</a></p><br />
+				<a class="table" href="customPuzzleLeaderboards.php">Custom Puzzle High Scores</a></p><br />
 				<a href="BeadLoomApplet.php" class="table"><img src="button1" border="0" onmouseover="this.src='button2'" onmouseout="this.src='button1'" onclick="this.src='button3'"/></a>
 			</div>
 			<div id="myScores" name="myScores">
