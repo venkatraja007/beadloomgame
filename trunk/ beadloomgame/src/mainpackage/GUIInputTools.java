@@ -329,6 +329,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusGained(FocusEvent e) {
 					ghostPoint();
 					lastPointSelected = 1;
+					DrawPointXTextField.selectAll();
 				}
 			});
 
@@ -349,6 +350,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusGained(FocusEvent e) {
 					ghostPoint();
 					lastPointSelected = 1;
+					DrawPointYTextField.selectAll();
 				}
 			});
 
@@ -369,6 +371,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusGained(FocusEvent e) {
 					ghostLine();
 					lastPointSelected = 2;
+					DrawLineX1TextField.selectAll();
 				}
 			});
 
@@ -389,6 +392,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusGained(FocusEvent e) {
 					ghostLine();
 					lastPointSelected = 3;
+					DrawLineX2TextField.selectAll();
 				}
 			});
 
@@ -409,6 +413,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusGained(FocusEvent e) {
 					ghostLine();
 					lastPointSelected = 2;
+					DrawLineY1TextField.selectAll();
 				}
 			});
 
@@ -429,6 +434,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 				public void focusGained(FocusEvent e) {
 					ghostLine();
 					lastPointSelected = 3;
+					DrawLineY2TextField.selectAll();
 				}
 			});
 
@@ -497,6 +503,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 1;
+						DrawRectangleX1TextField.selectAll();
 					}
 				});
 
@@ -516,6 +523,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 2;
+						DrawRectangleX2TextField.selectAll();
 					}
 				});
 
@@ -535,6 +543,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 1;
+						DrawRectangleY1TextField.selectAll();
 					}
 				});
 
@@ -554,6 +563,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 2;
+						DrawRectangleY2TextField.selectAll();
 					}
 				});
 			}
@@ -644,6 +654,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 1;
+						DrawTriangleX1TextField.selectAll();
 					}
 				});
 
@@ -663,6 +674,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 2;
+						DrawTriangleX2TextField.selectAll();
 					}
 				});
 
@@ -682,6 +694,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 3;
+						DrawTriangleX3TextField.selectAll();
 					}
 				});
 
@@ -701,6 +714,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 1;
+						DrawTriangleY1TextField.selectAll();
 					}
 				});
 
@@ -720,6 +734,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 2;
+						DrawTriangleY2TextField.selectAll();
 					}
 				});
 
@@ -739,6 +754,7 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					public void focusLost(FocusEvent e) {}
 					public void focusGained(FocusEvent e) {
 						lastPointSelected = 3;
+						DrawTriangleY3TextField.selectAll();
 					}
 				});
 
@@ -809,6 +825,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					}
 					public void keyPressed(KeyEvent e) {}
 				});
+				LinearIterationStartXTextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						LinearIterationStartXTextField.selectAll();
+					}
+				});
 
 				//---- LinearIterationStartYLabel ----
 				LinearIterationStartYLabel.setText("startY:");
@@ -825,6 +847,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						ghostLinearIteration();
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				LinearIterationStartYTextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						LinearIterationStartYTextField.selectAll();
+					}
 				});
 
 				//---- LinearIterationStartLengthLabel ----
@@ -843,6 +871,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					}
 					public void keyPressed(KeyEvent e) {}
 				});
+				LinearIterationStartLengthTextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						LinearIterationStartLengthTextField.selectAll();
+					}
+				});
 
 				//---- LinearIterationIncLabel ----
 				LinearIterationIncLabel.setText("beadsAdded: ");
@@ -860,6 +894,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 					}
 					public void keyPressed(KeyEvent e) {}
 				});
+				LinearIterationInc1TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						LinearIterationInc1TextField.selectAll();
+					}
+				});
 
 				//---- LinearIterationBeadsInc2TextField ----
 				LinearIterationInc2TextField.setText("1");
@@ -871,6 +911,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						ghostLinearIteration();
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				LinearIterationInc2TextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						LinearIterationInc2TextField.selectAll();
+					}
 				});
 
 				//---- LinearIterationRowsTotalLabel ----
@@ -888,6 +934,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						ghostLinearIteration();
 					}
 					public void keyPressed(KeyEvent e) {}
+				});
+				LinearIterationRowsTotalTextField.addFocusListener(new FocusListener() {
+					public void focusLost(FocusEvent e) {}
+					public void focusGained(FocusEvent e) {
+						LinearIterationRowsTotalTextField.selectAll();
+					}
 				});
 
 				//---- TriangleDirectionLabel ----
@@ -981,6 +1033,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						}
 						public void keyPressed(KeyEvent e) {}
 					});
+					TriangleIterationStartXTextField.addFocusListener(new FocusListener() {
+						public void focusLost(FocusEvent e) {}
+						public void focusGained(FocusEvent e) {
+							TriangleIterationStartXTextField.selectAll();
+						}
+					});
 
 					//---- TriangleIterationStartYLabel ----
 					TriangleIterationStartYLabel.setText("startY:");
@@ -997,6 +1055,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 							ghostTriangleIteration();
 						}
 						public void keyPressed(KeyEvent e) {}
+					});
+					TriangleIterationStartYTextField.addFocusListener(new FocusListener() {
+						public void focusLost(FocusEvent e) {}
+						public void focusGained(FocusEvent e) {
+							TriangleIterationStartYTextField.selectAll();
+						}
 					});
 
 					//---- TriangleIterationStepHeightLabel ----
@@ -1015,6 +1079,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						}
 						public void keyPressed(KeyEvent e) {}
 					});
+					TriangleIterationStepHeightTextField.addFocusListener(new FocusListener() {
+						public void focusLost(FocusEvent e) {}
+						public void focusGained(FocusEvent e) {
+							TriangleIterationStepHeightTextField.selectAll();
+						}
+					});
 
 					//---- TriangleIterationBeadsAddedLabel ----
 					TriangleIterationBeadsAddedLabel.setText("beadsAdded: ");
@@ -1032,6 +1102,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 						}
 						public void keyPressed(KeyEvent e) {}
 					});
+					TriangleIterationBeadsAddedTextField.addFocusListener(new FocusListener() {
+						public void focusLost(FocusEvent e) {}
+						public void focusGained(FocusEvent e) {
+							TriangleIterationBeadsAddedTextField.selectAll();
+						}
+					});
 
 					//---- TriangleIterationRowsTotalLabel ----
 					TriangleIterationRowsTotalLabel.setText("rowsTotal: ");
@@ -1048,6 +1124,12 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 							ghostTriangleIteration();
 						}
 						public void keyPressed(KeyEvent e) {}
+					});
+					TriangleIterationRowsTotalTextField.addFocusListener(new FocusListener() {
+						public void focusLost(FocusEvent e) {}
+						public void focusGained(FocusEvent e) {
+							TriangleIterationRowsTotalTextField.selectAll();
+						}
 					});
 
 					//---- TriangleDirectionLabel ----
