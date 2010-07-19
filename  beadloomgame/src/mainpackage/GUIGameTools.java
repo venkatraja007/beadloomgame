@@ -2129,7 +2129,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				"&score=" + URLEncoder.encode((getMoveCount() + ""), "UTF-8") + 
 				"&time=" + URLEncoder.encode(urlTime, "UTF-8")  + 
 				"&medal=Custom" + 
-				"&rating=" + URLEncoder.encode(""+rating, "UTF-8") +
+				"&rating=" + URLEncoder.encode(options[rating], "UTF-8") +
 				"&puzzle=" + URLEncoder.encode(puz.getCustomPuzzleName(), "UTF-8");
 				if(ComponentToggle.securityEnabled){ sendString+="&token=" + URLEncoder.encode(""+Security.getSecurityToken(), "UTF-8"); }
 				message = sendPost("http://unccmakesgames.com/games/BeadLoomGame/enterScores.php", sendString);

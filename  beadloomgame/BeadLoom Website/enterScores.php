@@ -66,7 +66,7 @@ if(isset($_POST['rating']) && !empty($_POST['rating']))
 	INSERT INTO UserCustomPuzzleRatings (user, puzzleName, rating, timeStamp)
 	Values('$user', '$puzzle', '$rating' , NOW())
 	ON DUPLICATE KEY
-	UPDATE rating='$rating' AND timeStamp=NOW()";
+	UPDATE rating='$rating'";
 	
 	//Insert rating
 	$result = $db->query($ratingQuery);
