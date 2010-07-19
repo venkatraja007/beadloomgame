@@ -63,7 +63,7 @@ if(isset($_POST['rating']) && !empty($_POST['rating']))
 {
 	$rating = $_POST['rating'];
 	$ratingQuery = "
-	INSERT INTO UserCustomPuzzleRating (user, puzzleName, rating, timeStamp)
+	INSERT INTO UserCustomPuzzleRatings (user, puzzleName, rating, timeStamp)
 	Values('$user', '$puzzle', '$rating' , NOW())
 	ON DUPLICATE KEY
 	UPDATE rating='$rating' AND timeStamp=NOW()";
@@ -73,7 +73,6 @@ if(isset($_POST['rating']) && !empty($_POST['rating']))
 	if($result)
 	{
 		//successful query
-		echo "success rating query maybe";
 	}
 	else
 	{
