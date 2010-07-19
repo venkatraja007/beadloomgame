@@ -73,6 +73,7 @@ if(isset($_POST['rating']) && !empty($_POST['rating']))
 	if($result)
 	{
 		//successful query
+		echo "success rating query maybe";
 	}
 	else
 	{
