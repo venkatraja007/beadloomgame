@@ -2118,7 +2118,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			int rating;
 			String[] options = {"1","2","3","4","5"};
 			rating = JOptionPane.showOptionDialog(null, "Rate " + puz.getCustomPuzzleName(), "Custom Puzzle Rating", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,options, 0);
-			JOptionPane.showMessageDialog(null, options[rating]);
 
 			String urlTime = ((int)puzzleTime/60) + ":" + seconds;
 			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
