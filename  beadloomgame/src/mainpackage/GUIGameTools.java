@@ -1604,6 +1604,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SubmitButton.setText("Submit");
 		SubmitButton.setBounds(25, 100, 145, SubmitButton.getPreferredSize().height);
 		SubmitButton.setBackground(Color.RED);
+		SubmitButton.setForeground(Color.WHITE);
 		SubmitButton.addActionListener(this);
 
 		//---- Undo button ----
