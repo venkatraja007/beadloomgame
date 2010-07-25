@@ -17,6 +17,7 @@
 
 include('config.php');
 include('connect.php');
+include('functions.php');
 
 $puzzleName = $_GET['puzzleName'];
 
@@ -95,14 +96,16 @@ $puzzleName = $_GET['puzzleName'];
 		if($result)
 		{
 			$rank = 1;
-			while($row = $result->fetch_array(MYSQLI_NUM))
+			while($row = $result->fetch_assoc())
 			{
 				echo "<tr><td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">$rank</td>";
-				foreach($row as $val)
+				echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['user']."</td>";
+				echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['score']."</td>";
+				echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".secondsToTime($row['time'])."</td>";
+				echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['medal']."</td>";
+				if(!isset($_GET['puzzleName']) || empty($_GET['puzzleName']))
 				{
-					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">";
-					echo $val;
-					echo "</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['puzzle']."</td>";
 				}
 				echo "</tr>";
 				$rank++;

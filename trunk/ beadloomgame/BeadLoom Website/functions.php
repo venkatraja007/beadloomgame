@@ -33,7 +33,7 @@
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['puzzle']."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['user']."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['score']."</td>";
-					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['time']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".secondsToTime($row2['time'])."</td>";
 					echo "</tr>";
 				}
 				else
@@ -83,7 +83,7 @@
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['puzzle']."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['user']."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['score']."</td>";
-					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['time']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".secondsToTime($row2['time'])."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row2['medal']."</td>";
 					echo "</tr>";
 				}
@@ -127,7 +127,7 @@
 					echo "<tr>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['puzzle']."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['score']."</td>";
-					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['time']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".secondsToTime($row['time'])."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['medal']."</td>";
 					echo "</tr>";
 			}
@@ -212,7 +212,7 @@
 					echo "<tr>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['puzzle']."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['score']."</td>";
-					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['time']."</td>";
+					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".secondsToTime($row['time'])."</td>";
 					echo "<td class=\"off\" onmouseover=\"this.className='on'\" onmouseout=\"this.className='off'\">".$row['medal']."</td>";
 					echo "</tr>";
 			}
@@ -439,6 +439,63 @@
 			<h4>All Done Playing? <a href=\"logout.php\" class=\"header\">Click here to logout!</a></h4>
 		</div>";
 	
+	}
+	
+	function updateAllHighScores($db)
+	{
+		//DO NOT USE AGAIN
+		/*
+		$selectQuery = "SELECT user, puzzle, time FROM HighScores WHERE 1";
+		$result = $db->query($selectQuery);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				$updateQuery = "UPDATE HighScores SET time='".timeToSeconds($row['time'])."' WHERE user='".$row['user']."' AND puzzle='".$row['puzzle']."'";
+				$result2 = $db->query($updateQuery);
+				echo "<br/>".$row['time'];
+				if($result2)
+				{
+					
+				}
+				else
+				{
+					echo "Error $db->error";
+				}
+			}
+			echo $updateQuery;
+			echo "Success.";
+		}
+		else
+		{
+			echo "Error $db->error";
+		}
+		*/
+	}
+	
+	function timeToSeconds($time)
+	{
+		
+		//SHOULD NOT BE NEEDED AGAIN
+		/*
+		$temp = explode(":", $time);
+		$time = 0;
+		$time += intval($temp[0]) * 60;
+		$time += intval($temp[1]);
+		return $time;
+		*/
+	}
+	
+	function secondsToTime($time)
+	{
+		$temp = "";
+		$temp .= intval($time/60);
+		$seconds = $time % 60;
+		if($seconds < 10)
+			$temp .= ":0$seconds";
+		else 
+			$temp .= ":$seconds";
+		return $temp;
 	}
 
 
