@@ -2106,21 +2106,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
 
 			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
-			String seconds = "";
 			String message = "";
-			if(((int)puzzleTime % 60) < 10)
-			{
-				seconds = "0" + ((int)(puzzleTime % 60));
-			}
-			else
-			{
-				seconds = ((int)(puzzleTime % 60)) + "";
-			}
 			int rating;
 			String[] options = {"1","2","3","4","5"};
 			rating = JOptionPane.showOptionDialog(null, "Rate " + puz.getCustomPuzzleName(), "Custom Puzzle Rating", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,options, 0);
 
-			String urlTime = ((int)puzzleTime/60) + ":" + seconds;
+			String urlTime = (int)puzzleTime + "";
 			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
 			
 			String sendString = "";
@@ -2145,18 +2136,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			float puzzleTime = (float)(System.currentTimeMillis()- puzzleStartTime)/1000.0f;
 
 			String completeTime = (((int)puzzleTime)/60)+" minute(s) and "+puzzleTime%60;
-			String seconds = "";
 			String message = "";
-			if(((int)puzzleTime % 60) < 10)
-			{
-				seconds = "0" + ((int)(puzzleTime % 60));
-			}
-			else
-			{
-				seconds = ((int)(puzzleTime % 60)) + "";
-			}
-
-			String urlTime = ((int)puzzleTime/60) + ":" + seconds;
+			String urlTime = (int)puzzleTime + "";
 			JOptionPane.showMessageDialog(null, "CONGRATULATIONS\nPuzzle Solved in " + getMoveCount(), "Congratulations", JOptionPane.PLAIN_MESSAGE);
 			String medal;
 			if (moveCounter <= puz.getIdeal()){
