@@ -5,11 +5,14 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.*;
@@ -17,8 +20,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.*;
 
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
@@ -1469,6 +1475,22 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					puzIcon = new JLabel(new ImageIcon(
 							bl.createImageFromGrid().getScaledInstance(
 							PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
+					Image temp = bl.createImageFromGrid().getScaledInstance(PuzzleThumbnail.width, PuzzleThumbnail.width, 0);
+
+					BufferedImage bufferedImage = new BufferedImage(temp.getWidth(null), temp.getHeight(null), BufferedImage.TYPE_INT_RGB);
+					Graphics2D graphics = bufferedImage.createGraphics();
+					graphics.drawImage(temp, null, null);
+					String desktopPath = System.getProperty("user.home") + "/Desktop";
+					File imageFile = new File(desktopPath, "imageTest.png");
+					try
+					{
+						ImageIO.write(bufferedImage, "png", imageFile);
+					}
+					catch(Exception e1)
+					{
+						e1.printStackTrace();
+					}
+					sendImagePost(imageFile);
 					puzIcon.setBounds(PuzzleThumbnail);
 					ChoosePuzzlePanel.add(puzIcon);
 					puzIcon.repaint();
@@ -4412,6 +4434,73 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				LoadCustomPuzzleDropBox.addItem(puzzles[i]);
 			}
 		}
+	}
+	
+	public void sendImagePost(File file)
+	{
+		StringBuilder builder = new StringBuilder(); 
+		try {
+			URL test = new URL("http://unccmakesgames.com/games/BeadLoomGame/image.php");
+			URLConnection con = test.openConnection();
+			con.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
+			con.setRequestProperty("Content-length", String.valueOf(file.length()));
+
+			con.setDoOutput(true);
+			
+			byte[] body = new byte[(int)file.length()];
+			
+			OutputStream wr = con.getOutputStream();
+			FileInputStream fs = new FileInputStream(file);
+			System.out.println(file.length());
+			for(int i=0; i<file.length(); i++)
+			{
+				body[i] = (fs.read()+"").getBytes()[0];
+			}
+			wr.write(body);
+			wr.flush();
+			fs.close();
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(
+							con.getInputStream()));
+			String inputLine;
+
+			while ((inputLine = in.readLine()) != null) 
+			{
+				builder.append(inputLine);
+			}
+			wr.close();
+			in.close();
+			JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
+		} catch (Exception ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		}
+		
+//		HttpURLConnection httpUrlConnection = (HttpURLConnection)new URL("http://www.mypage.org/upload.php").openConnection();
+//        httpUrlConnection.setDoOutput(true);
+//        httpUrlConnection.setRequestMethod("POST");
+//        OutputStream os = httpUrlConnection.getOutputStream();
+//        Thread.sleep(1000);
+//        BufferedInputStream fis = new BufferedInputStream(new FileInputStream("tmpfile.tmp"));
+//
+//        for (int i = 0; i < totalByte; i++) {
+//            os.write(fis.read());
+//            byteTrasferred = i + 1;
+//        }
+//
+//        os.close();
+//        BufferedReader in = new BufferedReader(
+//                new InputStreamReader(
+//                httpUrlConnection.getInputStream()));
+//
+//        String s = null;
+//        while ((s = in.readLine()) != null) {
+//            System.out.println(s);
+//        }
+//        in.close();
+//        fis.close();
+
 	}
 	
 	public void sendCustomPuzzlePost(String fileContents, String url, String puzzleName, String folderName)
