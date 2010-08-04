@@ -12,7 +12,25 @@ else
 	die("Error");
 }
 
-if($token == "userList")
+//return comma seperated list of custom puzzles
+if($token == "puzzles")
+{
+	$query = "SELECT DISTINCT puzzle FROM CustomPuzzles";
+	$result = $db->query($query);
+	if($result)
+	{
+		while($row = $result->fetch_assoc())
+		{
+			echo $row['puzzle'].",";
+		}
+		die;
+	}
+	else
+	{
+		echo "Error";
+	}
+}
+else if($token == "userList")
 {
 	$query = "SELECT DISTINCT user FROM CustomPuzzles";
 	$result = $db->query($query);
