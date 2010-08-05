@@ -1354,7 +1354,6 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	}
 
 	//******* Set and Get Methods *******
-
 	public GridPanel getGridPanel() {
 		return gridPanel;
 	}
@@ -2165,6 +2164,23 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		Image ret = createImage(new MemoryImageSource(41, 41, pixels, 0, 41));
 		return ret;
 	}
+	
+	public Image createImageFromGrid1() {
+		int[] pixels = new int[41*41];
+		for(int y=0; y<41; y++)
+		{
+			for(int x=0; x<41; x++)
+			{
+				Color temp =  getGridPanel().getColorAt(x, y);
+				if(temp == null) { temp = Color.WHITE; }
+				//System.out.println(temp.toString());
+				pixels[(40-y)*41+x] = temp.getRGB();
+			}
+		}
+		Image ret = createImage(new MemoryImageSource(41, 41, pixels, 0, 41));
+		return ret;
+	}
+	
 	public void setPuzzleTimer(long timeElapsed) {
 		seconds = (int)(timeElapsed / 1000)+1;
 		minutes = seconds/60;

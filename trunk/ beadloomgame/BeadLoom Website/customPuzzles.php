@@ -32,7 +32,7 @@ if($token == "puzzles")
 }
 else if($token == "userList")
 {
-	$query = "SELECT DISTINCT user FROM CustomPuzzles";
+	$query = "SELECT DISTINCT user FROM CustomPuzzles WHERE published='1' ORDER BY user";
 	$result = $db->query($query);
 	if($result)
 	{

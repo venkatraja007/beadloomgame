@@ -1475,22 +1475,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 					puzIcon = new JLabel(new ImageIcon(
 							bl.createImageFromGrid().getScaledInstance(
 							PuzzleThumbnail.width, PuzzleThumbnail.width, 0)));
-					Image temp = bl.createImageFromGrid().getScaledInstance(PuzzleThumbnail.width, PuzzleThumbnail.width, 0);
-
-					BufferedImage bufferedImage = new BufferedImage(temp.getWidth(null), temp.getHeight(null), BufferedImage.TYPE_INT_RGB);
-					Graphics2D graphics = bufferedImage.createGraphics();
-					graphics.drawImage(temp, null, null);
-					String desktopPath = System.getProperty("user.home") + "/Desktop";
-					File imageFile = new File(desktopPath, "imageTest.png");
-					try
-					{
-						ImageIO.write(bufferedImage, "png", imageFile);
-					}
-					catch(Exception e1)
-					{
-						e1.printStackTrace();
-					}
-					sendImagePost(imageFile);
+					
 					puzIcon.setBounds(PuzzleThumbnail);
 					ChoosePuzzlePanel.add(puzIcon);
 					puzIcon.repaint();
@@ -2458,6 +2443,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			else
 			{
 				sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", BeadLoom.playerName+"-"+text, "CustomPuzzles");
+				createCustomPuzzleImage();
 			}
 		}
 		
@@ -2510,7 +2496,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		else if (e.getSource() == LoadSavedCustomPuzzleButton)
 		{
-			if(LoadSavedCustomPuzzleComboBox.getSelectedItem() != null)
+			if(LoadSavedCustomPuzzleComboBox.getSelectedItem() == null || LoadSavedCustomPuzzleComboBox.getSelectedItem().equals("") == true)
+			{
+				JOptionPane.showMessageDialog(null, "Nothing to Load.", "Error", JOptionPane.PLAIN_MESSAGE);
+			}
+			else
 			{
 				setCustomPuzzleMode(BeadLoom.playerName + "-" + LoadSavedCustomPuzzleComboBox.getSelectedItem(), ""+LoadSavedCustomPuzzleComboBox.getSelectedItem());
 			}
@@ -4440,29 +4430,22 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		StringBuilder builder = new StringBuilder(); 
 		try {
-			URL test = new URL("http://unccmakesgames.com/games/BeadLoomGame/image.php");
+			String puzzleName = playerName + "-" + CustomPuzzleTextField.getText();
+			URL test = new URL("http://unccmakesgames.com/games/BeadLoomGame/image.php?fileName=" + puzzleName);
 			URLConnection con = test.openConnection();
-			con.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
-			con.setRequestProperty("Content-length", String.valueOf(file.length()));
-
+			con.setRequestProperty("Content-Type", "application/octet-stream");;
+			con.setRequestProperty("Content-Disposition", "attachment; filename=image.png");
 			con.setDoOutput(true);
-			
-			byte[] body = new byte[(int)file.length()];
+			con.setDoInput(true);
 			
 			OutputStream wr = con.getOutputStream();
 			DataInputStream ds = new DataInputStream(new FileInputStream(file));
 			byte[] data  = new byte[(int)file.length()];
-			ds.readFully(data);
-			FileInputStream fs = new FileInputStream(file);
+			ds.readFully(data,0, (int)file.length());
 			System.out.println(file.length());
-//			for(int i=0; i<file.length(); i++)
-//			{
-//				body[i] = (fs.read()+"").getBytes()[0];
-//			}
-			
 			wr.write(data);
 			wr.flush();
-			fs.close();
+			ds.close();
 			
 			BufferedReader in = new BufferedReader(
 					new InputStreamReader(
@@ -4475,35 +4458,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			wr.close();
 			in.close();
+			if(builder.toString().length() > 0)
 			JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
 		} catch (Exception ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
 		}
-		
-//		HttpURLConnection httpUrlConnection = (HttpURLConnection)new URL("http://www.mypage.org/upload.php").openConnection();
-//        httpUrlConnection.setDoOutput(true);
-//        httpUrlConnection.setRequestMethod("POST");
-//        OutputStream os = httpUrlConnection.getOutputStream();
-//        Thread.sleep(1000);
-//        BufferedInputStream fis = new BufferedInputStream(new FileInputStream("tmpfile.tmp"));
-//
-//        for (int i = 0; i < totalByte; i++) {
-//            os.write(fis.read());
-//            byteTrasferred = i + 1;
-//        }
-//
-//        os.close();
-//        BufferedReader in = new BufferedReader(
-//                new InputStreamReader(
-//                httpUrlConnection.getInputStream()));
-//
-//        String s = null;
-//        while ((s = in.readLine()) != null) {
-//            System.out.println(s);
-//        }
-//        in.close();
-//        fis.close();
 
 	}
 	
@@ -4987,6 +4947,31 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			if(!RecordMedalShort[i].equals("N")) { complete++; }
 		}
 		return complete;
+	}
+	
+	public void createCustomPuzzleImage()
+	{
+		Image temp = bl.createImageFromGrid().getScaledInstance(PuzzleThumbnail.width, PuzzleThumbnail.width, 0);
+
+		BufferedImage bufferedImage = new BufferedImage(temp.getWidth(null), temp.getHeight(null), BufferedImage.TYPE_INT_RGB);
+		Graphics2D graphics = bufferedImage.createGraphics();
+		graphics.drawImage(temp, null, null);
+		String desktopPath = System.getProperty("user.home") + "/Desktop";
+		File imageFile = new File(desktopPath, playerName + "-" + CustomPuzzleTextField.getText()+ ".png");
+		try
+		{
+			ImageIO.write(bufferedImage, "png", imageFile);
+		}
+		catch(Exception e1)
+		{
+			e1.printStackTrace();
+		}
+		sendImagePost(imageFile);
+		//Ask user if they would like their custom puzzle image created on the desktop
+		if(JOptionPane.showConfirmDialog(null, "Would you like an image of your puzzle on the desktop", "Image", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION)
+		{
+			imageFile.delete();
+		}
 	}
 	
 	public void setColorButtonsVisbility(boolean visible)
