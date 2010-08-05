@@ -2442,8 +2442,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			else
 			{
-				sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", BeadLoom.playerName+"-"+text, "CustomPuzzles");
-				createCustomPuzzleImage();
+				String returnMessage = sendCustomPuzzlePost(getGridXML("Hey"), "http://unccmakesgames.com/games/BeadLoomGame/echo.php", BeadLoom.playerName+"-"+text, "CustomPuzzles");
+				//Only send image if the puzzle is not already published
+				if(!returnMessage.contains("already published"))
+					createCustomPuzzleImage();
 			}
 		}
 		
@@ -4467,7 +4469,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 
 	}
 	
-	public void sendCustomPuzzlePost(String fileContents, String url, String puzzleName, String folderName)
+	public String sendCustomPuzzlePost(String fileContents, String url, String puzzleName, String folderName)
 	{
 		StringBuilder builder = new StringBuilder(); 
 		try {
@@ -4493,10 +4495,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			wr.close();
 			in.close();
 			JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
+			
 		} catch (Exception ex) {
 			// TODO Auto-generated catch block
 			ex.printStackTrace();
 		}
+		return builder.toString();
 	}
 
 	public boolean getHintModeStatus()
@@ -4951,7 +4955,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public void createCustomPuzzleImage()
 	{
-		Image temp = bl.createImageFromGrid().getScaledInstance(PuzzleThumbnail.width, PuzzleThumbnail.width, 0);
+		bl.getGridPanel().calcGameGrid();
+		Image temp = bl.createImageFromGrid1().getScaledInstance(PuzzleThumbnail.width, PuzzleThumbnail.width, 0);
 
 		BufferedImage bufferedImage = new BufferedImage(temp.getWidth(null), temp.getHeight(null), BufferedImage.TYPE_INT_RGB);
 		Graphics2D graphics = bufferedImage.createGraphics();
@@ -4966,6 +4971,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		{
 			e1.printStackTrace();
 		}
+		
 		sendImagePost(imageFile);
 		//Ask user if they would like their custom puzzle image created on the desktop
 		if(JOptionPane.showConfirmDialog(null, "Would you like an image of your puzzle on the desktop", "Image", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION)
