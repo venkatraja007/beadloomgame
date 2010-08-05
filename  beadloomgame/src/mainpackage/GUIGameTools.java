@@ -4450,13 +4450,17 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			byte[] body = new byte[(int)file.length()];
 			
 			OutputStream wr = con.getOutputStream();
+			DataInputStream ds = new DataInputStream(new FileInputStream(file));
+			byte[] data  = new byte[(int)file.length()];
+			ds.readFully(data);
 			FileInputStream fs = new FileInputStream(file);
 			System.out.println(file.length());
-			for(int i=0; i<file.length(); i++)
-			{
-				body[i] = (fs.read()+"").getBytes()[0];
-			}
-			wr.write(body);
+//			for(int i=0; i<file.length(); i++)
+//			{
+//				body[i] = (fs.read()+"").getBytes()[0];
+//			}
+			
+			wr.write(data);
 			wr.flush();
 			fs.close();
 			
