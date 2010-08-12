@@ -1,9 +1,4 @@
 package src.mainpackage;
-
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.Map;
-
 import javax.swing.JOptionPane;
 
 
@@ -72,6 +67,12 @@ public abstract class Achievements {
 		MentalMedium();				//9
 		MentalMediumMaster();		//10
 		PuzzleMaster();				//11
+		AbsolutePuzzleMaster();		//12
+		CreativeCat();				//13
+		NewIdeal();					//14
+		RocketShip();				//15
+		SenseSelf();				//16
+		SpeedKing();				//17
 	}
 	
 	public static boolean hasAchievement(int achievementNumber)
@@ -447,6 +448,150 @@ public abstract class Achievements {
 		}
 	}
 	
+	public static void CreativeCat()
+	{
+		int id = 13;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/creativeCat.php?user=" + BeadLoom.playerName);
+			if(creativeCat.equalsIgnoreCase("true"))
+			{
+				currentAchievements[id] = 1;
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'Creative Cat' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			//Achievement earned 
+			else
+			{
+				return;
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+
+	public static void NewIdeal()
+	{
+		int id = 14;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/newIdeal.php?user=" + BeadLoom.playerName);
+			if(creativeCat.equalsIgnoreCase("true"))
+			{
+				currentAchievements[id] = 1;
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'The New Ideal' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			//Achievement earned 
+			else
+			{
+				return;
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void RocketShip()
+	{
+		int id = 15;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/rocketShip.php?user=" + BeadLoom.playerName);
+			if(creativeCat.equalsIgnoreCase("true"))
+			{
+				currentAchievements[id] = 1;
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'Was it a Rocket Ship?' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			//Achievement earned 
+			else
+			{
+				return;
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+
+	public static void SenseSelf()
+	{
+		int id = 16;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/senseSelf.php?user=" + BeadLoom.playerName);
+			if(creativeCat.equalsIgnoreCase("true"))
+			{
+				currentAchievements[id] = 1;
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'A Sense of Self' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			//Achievement earned 
+			else
+			{
+				return;
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void SpeedKing()
+	{
+		int id = 17;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/speedKing.php?user=" + BeadLoom.playerName);
+			if(creativeCat.equalsIgnoreCase("true"))
+			{
+				currentAchievements[id] = 1;
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'Speed King' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			//Achievement earned 
+			else
+			{
+				return;
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
 }
 
 
