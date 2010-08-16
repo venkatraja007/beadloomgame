@@ -2214,7 +2214,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			{
 				e.printStackTrace();
 			}
-			//Check Achivements here
+			//Check Achievements here
 			getScores();
 			Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);
 			Achievements.checkAchievements();
