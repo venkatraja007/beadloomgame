@@ -73,6 +73,10 @@ public abstract class Achievements {
 		RocketShip();				//15
 		SenseSelf();				//16
 		SpeedKing();				//17
+		
+		
+		
+		PuzzlePerfection();			//21
 	}
 	
 	public static boolean hasAchievement(int achievementNumber)
@@ -592,7 +596,44 @@ public abstract class Achievements {
 			return;
 		}
 	}
+
+	public static void PuzzlePerfection()
+	{
+		int id = 21;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			int achievementCount = 0;
+			for(int i=0; i<currentAchievements.length; i++)
+			{
+				if(currentAchievements[i] == 1)
+				{
+					achievementCount++;
+				}
+			}
+			if(achievementCount == currentAchievements.length - 1)
+			{
+				currentAchievements[id] = 1;
+				JOptionPane.showMessageDialog(null, 
+						"Congratulations you have earned the 'Puzzle Perfection' Achievement", 
+						"Achievements Message", 
+						JOptionPane.PLAIN_MESSAGE);
+				return;
+			}
+			//Achievement earned 
+			else
+			{
+				return;
+			}
+		}
+		else
+		{
+			//Achievement already gained
+			return;
+		}
+	}
 }
+
 
 
 
