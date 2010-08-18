@@ -2214,6 +2214,18 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			{
 				e.printStackTrace();
 			}
+			if(bl.bitBeadLocation.contains("Awesome"))
+			{
+				Achievements.AssignTempAchievement(18);
+			}
+			else if(bl.beadLocation.contains("Peace"))
+			{
+				Achievements.AssignTempAchievement(19);
+			}
+			else if(bl.beadLocation.contains("Bit"))
+			{
+				Achievements.AssignTempAchievement(20);
+			}
 			//Check Achievements here
 			getScores();
 			Achievements.retrieveMedals(RecordMedal, RecordMove, RecordMedalShort);

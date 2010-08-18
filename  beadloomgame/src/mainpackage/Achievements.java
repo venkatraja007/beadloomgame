@@ -7,7 +7,7 @@ public abstract class Achievements {
 	//Total Number of achievements according to the database
 	final static int TOTAL_ACHIEVEMENTS = 
 		Integer.parseInt(GUIGameTools.sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=num"));
-	//acheivement index the current user has
+	//Achievement index the current user has
 	static int[] currentAchievements = new int[TOTAL_ACHIEVEMENTS];
 	//achievement names the current user has
 	static String[] currentAchievementNames = new String[TOTAL_ACHIEVEMENTS];
@@ -73,9 +73,9 @@ public abstract class Achievements {
 		RocketShip();				//15
 		SenseSelf();				//16
 		SpeedKing();				//17
-		
-		
-		
+		AwesomeSauce();				//18
+		Peace();					//19
+		EightBit();					//20
 		PuzzlePerfection();			//21
 	}
 	
@@ -92,6 +92,14 @@ public abstract class Achievements {
 			test += currentAchievements[i];
 		}
 		JOptionPane.showMessageDialog(null, test, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
+	}
+	
+	public static void AssignTempAchievement(int achivementID)
+	{
+		if(currentAchievements[achivementID] != 1)
+		{
+			currentAchievements[achivementID] = 2;
+		}
 	}
 	
 	public static void PersistentPuzzler()
@@ -593,6 +601,75 @@ public abstract class Achievements {
 		else
 		{
 			//Achievement already gained
+			return;
+		}
+	}
+	
+	public static void AwesomeSauce()
+	{
+		int id = 18;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			return;
+		}
+		else if(currentAchievements[id] == 2)
+		{
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Awesome Sauce' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+			currentAchievements[id] = 1;
+			return;
+		}
+		else
+		{
+			return;
+		}
+	}
+	
+	public static void Peace()
+	{
+		int id = 19;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			return;
+		}
+		else if(currentAchievements[id] == 2)
+		{
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Give Peace A Chance' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+			currentAchievements[id] = 1;
+			return;
+		}
+		else
+		{
+			return;
+		}
+	}
+	
+	public static void EightBit()
+	{
+		int id = 20;
+		//if already obtained do not check
+		if(currentAchievements[id] == 0)
+		{
+			return;
+		}
+		else if(currentAchievements[id] == 2)
+		{
+			JOptionPane.showMessageDialog(null, 
+					"Congratulations you have earned the 'Old School' Achievement", 
+					"Achievements Message", 
+					JOptionPane.PLAIN_MESSAGE);
+			currentAchievements[id] = 1;
+			return;
+		}
+		else
+		{
 			return;
 		}
 	}
