@@ -12,8 +12,30 @@ else
 	die("Error");
 }
 
+
+if($token == "sitePuzzleList")
+{
+	if(isset($_GET['user']) && !empty($_GET['user']))
+	{
+		$user = $_GET['user'];
+		$query = "SELECT * FROM CustomPuzzles WHERE published='1' AND user='$user' ORDER BY user";
+		$result = $db->query($query);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				echo $row['user']."-".$row['puzzle'].",";
+			}
+			die;
+		}
+		else
+		{
+			echo "Error";
+		}
+	}
+}
 //return comma seperated list of custom puzzles
-if($token == "puzzles")
+else if($token == "puzzles")
 {
 	$query = "SELECT DISTINCT puzzle FROM CustomPuzzles";
 	$result = $db->query($query);
