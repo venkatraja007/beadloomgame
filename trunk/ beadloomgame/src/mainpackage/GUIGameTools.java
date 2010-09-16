@@ -2632,7 +2632,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == NormalBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
+			BeadLoom.beadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/bead.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(Color.CYAN);
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
@@ -2641,7 +2641,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == AwesomeBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
+			BeadLoom.beadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/beadAwesome.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(Color.CYAN);
@@ -2650,7 +2650,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == PeaceBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
+			BeadLoom.beadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/beadPeace.JPG";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
@@ -2659,7 +2659,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 
 		else if (e.getSource() == EightBitBeadButton) {
-			BeadLoom.beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg";
+			BeadLoom.beadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/8BitBead.jpg";
 			redrawGrid();
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
@@ -4619,7 +4619,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		try
 		{
 			puzzleName = URLEncoder.encode(puzzleName, "UTF-8");
-			hint = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName + "&user=" + BeadLoom.playerName);
+			hint = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName + "&user=" + BeadLoom.playerName);
 		}
 		catch (Exception e)
 		{
@@ -4636,7 +4636,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/avatar.php?avatar="+avatarPuzzle + "&user=" + BeadLoom.playerName);
 			avatarMode = false;
 		}
-		String puzNum = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
+		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
 		if(puzNum.length()>0) { avatarPuzzle = Integer.parseInt(puzNum); }
 		if(avatarPuzzle < -1) { avatarPuzzle = -1; }
 
@@ -4648,28 +4648,28 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		//set up options menu bead selected
 
-		if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/bead.jpg"))
+		if(BeadLoom.beadLocation.equalsIgnoreCase(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/bead.jpg"))
 		{
 			NormalBeadButton.setBackground(Color.CYAN);
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
 			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
-		else if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/awesomeBead.jpg"))
+		else if(BeadLoom.beadLocation.equalsIgnoreCase(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/awesomeBead.jpg"))
 		{
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(Color.CYAN);
 			PeaceBeadButton.setBackground(UIManager.getColor("Button.background"));
 			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
-		else if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/peaceBead.jpg"))
+		else if(BeadLoom.beadLocation.equalsIgnoreCase(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/peaceBead.jpg"))
 		{
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
 			PeaceBeadButton.setBackground(Color.CYAN);
 			EightBitBeadButton.setBackground(UIManager.getColor("Button.background"));
 		}
-		else if(BeadLoom.beadLocation.equalsIgnoreCase("http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg"))
+		else if(BeadLoom.beadLocation.equalsIgnoreCase(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/8BitBead.jpg"))
 		{
 			NormalBeadButton.setBackground(UIManager.getColor("Button.background"));
 			AwesomeBeadButton.setBackground(UIManager.getColor("Button.background"));
@@ -4840,7 +4840,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		initAvatarMenu();
 		avatarMode = true;
-		String puzNum = sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
+		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
 		if(puzNum.length()>0) 
 		{
 			avatarPuzzle = Integer.parseInt(puzNum); 

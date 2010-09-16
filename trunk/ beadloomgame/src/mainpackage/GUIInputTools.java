@@ -261,10 +261,10 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	Image awesomeBead;
 	Image peaceBead;
 	Image bitBead;
-	String normalBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
-	String awesomeBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
-	String peaceBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
-	String bitBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg";
+	String normalBeadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/bead.JPG";
+	String awesomeBeadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/beadAwesome.JPG";
+	String peaceBeadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/beadPeace.JPG";
+	String bitBeadLocation = BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/8BitBead.jpg";
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	//============================== Panel implementation ===============================//
@@ -3710,15 +3710,15 @@ public class GUIInputTools extends JApplet implements ActionListener, ItemListen
 	
 	public Image getBead()
 	{
-		if(BeadLoom.beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG"))
+		if(BeadLoom.beadLocation.equals(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/beadAwesome.JPG"))
 		{
 			return awesomeBead;
 		}
-		else if(BeadLoom.beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG"))
+		else if(BeadLoom.beadLocation.equals(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/beadPeace.JPG"))
 		{
 			return peaceBead;
 		}
-		else if(BeadLoom.beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg"))
+		else if(BeadLoom.beadLocation.equals(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/8BitBead.jpg"))
 		{
 			return bitBead;
 		}
