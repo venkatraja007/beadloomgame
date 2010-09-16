@@ -117,14 +117,16 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 	//public static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	public static Dimension dim = new Dimension(1024, 768);
+	//Set WEB_ADDRESS for the base website
+	public static String WEB_ADDRESS = "http://www.unccmakesgames.com";
 	//Set BEAD_ADDRESS to null, initialized in the the init() function
-	public static String BEAD_ADDRESS = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
+	public static String BEAD_ADDRESS = WEB_ADDRESS+"/games/BeadLoomGame/bead.JPG";
 
 	//this line is correct
 	//public static String beadLocation = "bead.JPG";
 
 	//this line is added for testing to see if it will pull from an online space
-	public static String beadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
+	public static String beadLocation = WEB_ADDRESS + "/games/BeadLoomGame/bead.JPG";
 
 	private GUIGoalImages GoalImagesFrame;
 	private GUIOutputWindow OutputWindow;
@@ -212,10 +214,10 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	Image awesomeBead;
 	Image peaceBead;
 	Image bitBead;
-	String normalBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/bead.JPG";
-	String awesomeBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG";
-	String peaceBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG";
-	String bitBeadLocation = "http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg";
+	String normalBeadLocation = WEB_ADDRESS + "/games/BeadLoomGame/bead.JPG";
+	String awesomeBeadLocation = WEB_ADDRESS + "/games/BeadLoomGame/beadAwesome.JPG";
+	String peaceBeadLocation = WEB_ADDRESS + "/games/BeadLoomGame/beadPeace.JPG";
+	String bitBeadLocation = WEB_ADDRESS + "/games/BeadLoomGame/8BitBead.jpg";
 	
 	//------- Player Info -------
 	public static String playerName;
@@ -1477,6 +1479,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	{
 		return minutes;
 	}
+	
+	public int getTotalSeconds()
+	{
+		return (60 * minutes) + seconds;
+	}
 
 	public String updateTime(int minutes, int seconds)
 	{	
@@ -2110,15 +2117,15 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	
 	public Image getBead()
 	{
-		if(beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadAwesome.JPG"))
+		if(beadLocation.equals(WEB_ADDRESS + "/games/BeadLoomGame/beadAwesome.JPG"))
 		{
 			return awesomeBead;
 		}
-		else if(beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/beadPeace.JPG"))
+		else if(beadLocation.equals(WEB_ADDRESS + "/games/BeadLoomGame/beadPeace.JPG"))
 		{
 			return peaceBead;
 		}
-		else if(beadLocation.equals("http://www.unccmakesgames.com/games/BeadLoomGame/8BitBead.jpg"))
+		else if(beadLocation.equals(WEB_ADDRESS + "/games/BeadLoomGame/8BitBead.jpg"))
 		{
 			return bitBead;
 		}
