@@ -6,7 +6,7 @@ public abstract class Achievements {
 	
 	//Total Number of achievements according to the database
 	final static int TOTAL_ACHIEVEMENTS = 
-		Integer.parseInt(GUIGameTools.sendWebRequest("http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=num"));
+		Integer.parseInt(GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=num"));
 	//Achievement index the current user has
 	static int[] currentAchievements = new int[TOTAL_ACHIEVEMENTS];
 	//achievement names the current user has
@@ -20,9 +20,9 @@ public abstract class Achievements {
 	public static void retrieveAchievements(String user)
 	{
 		String achievements = GUIGameTools.sendWebRequest(
-				"http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=retrieve&user=" + user);
+				BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=retrieve&user=" + user);
 		String[] achievementNames = GUIGameTools.sendWebRequest(
-				"http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=names").split(",");
+				BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=names").split(",");
 		
 		for(int i=0; i<currentAchievements.length; i++)
 		{
@@ -41,7 +41,7 @@ public abstract class Achievements {
 		}
 		
 		String message = GUIGameTools.sendWebRequest(
-				"http://www.unccmakesgames.com/games/BeadLoomGame/achievements.php?token=send&user=" + 
+				BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=send&user=" + 
 				user + "&achievements=" + achievements);
 		//JOptionPane.showMessageDialog(null, message, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
 	}

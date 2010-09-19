@@ -2130,7 +2130,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				"&rating=" + URLEncoder.encode(options[rating], "UTF-8") +
 				"&puzzle=" + URLEncoder.encode(puz.getCustomPuzzleName(), "UTF-8");
 				if(ComponentToggle.securityEnabled){ sendString+="&token=" + URLEncoder.encode(""+Security.getSecurityToken(), "UTF-8"); }
-				message = sendPost(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/enterScores.php", sendString);
+				message = sendPost(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/enterScores.php", sendString);
 				if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
 			} catch (UnsupportedEncodingException e) {
@@ -2176,7 +2176,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				"&medal=" + URLEncoder.encode(medal, "UTF-8") + 
 				"&puzzle=" + URLEncoder.encode(puz.getPuzzleName(currentPuzzle), "UTF-8");
 				if(ComponentToggle.securityEnabled){ sendString+="&token=" + URLEncoder.encode(""+Security.getSecurityToken(), "UTF-8"); }
-				message = sendPost(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/enterScores.php", sendString);
+				message = sendPost(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/enterScores.php", sendString);
 				if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
 			} catch (UnsupportedEncodingException e) {
@@ -2235,7 +2235,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getGridFrame2().setVisible(false);
 			HighScoresComboBox.removeAllItems();
 			//Populate the level comboBox on click of HighScores button
-			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/puzzles.php");
+			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
 			String[] items = temp.split(",");
 			for(int i=0; i<items.length; i++)
 			{
@@ -2244,7 +2244,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//show high score
 			try{
 				HighScoresLabel.setText(
-						sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/scores.php?puzzleName=" + 
+						sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 								URLEncoder.encode(
 										puz.getPuzzleName(currentPuzzle), "UTF-8") +
 				"&token=token"));
@@ -2454,7 +2454,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			else
 			{
-				String returnMessage = sendCustomPuzzlePost(getGridXML("Hey"), BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/echo.php", BeadLoom.playerName+"-"+text, "CustomPuzzles");
+				String returnMessage = sendCustomPuzzlePost(getGridXML("Hey"), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName+"-"+text, "CustomPuzzles");
 				//Only send image if the puzzle is not already published
 				if(!returnMessage.contains("already published"))
 					createCustomPuzzleImage();
@@ -2487,7 +2487,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			else
 			{
-				sendCustomPuzzlePost(getGridXML("Hey"), BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/echo.php?token=save&", BeadLoom.playerName+"-"+text, "CustomPuzzles");
+				sendCustomPuzzlePost(getGridXML("Hey"), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php?token=save&", BeadLoom.playerName+"-"+text, "CustomPuzzles");
 			}
 		}
 		
@@ -2495,15 +2495,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			if(currentPuzzle != -1)
 			{
 				sendCustomPuzzlePost(getGridXML(moveCounter+","+(System.currentTimeMillis()-puzzleStartTime)+","+currentPuzzle),
-					BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/echo.php", BeadLoom.playerName, "GameSaves");
+					BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "GameSaves");
 				setMainMenuMode();
 			}
 		}
 		
 		else if (e.getSource() == SubmitAvatarButton) {
-			sendCustomPuzzlePost(getGridXML("Hey"), BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
+			sendCustomPuzzlePost(getGridXML("Hey"), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
 			avatarPuzzle = -1;
-			sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/avatar.php?avatar=-1");
+			sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?avatar=-1");
 			setMainMenuMode();
 			//TODO
 		}
@@ -2540,7 +2540,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				bl.getMainMenuFrame().setVisible(false);
 				bl.getCustomPuzzleOptionsFrame().setVisible(true);
 				LoadSavedCustomPuzzleComboBox.removeAllItems();
-				String[] items= sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/customPuzzles.php?token=edit&user=" + BeadLoom.playerName).split(",");
+				String[] items= sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=edit&user=" + BeadLoom.playerName).split(",");
 				for(int i=0; i<items.length; i++)
 				{
 					LoadSavedCustomPuzzleComboBox.addItem(items[i]);
@@ -2562,7 +2562,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			try {
 				if (HighScoresComboBox.getSelectedItem() == null) {
 					HighScoresLabel.setText(
-							sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/scores.php?puzzleName=" + 
+							sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											puz.getPuzzleName(currentPuzzle), "UTF-8") +
 					"&token=token"));
@@ -2570,13 +2570,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				else
 				{
 					HighScoresLabel.setText(
-							sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/scores.php?puzzleName=" + 
+							sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											HighScoresComboBox.getSelectedItem().toString(),"UTF-8") +
 					"&token=token"));
 				}
 				HighScoresComboBox.removeAllItems();
-				String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/puzzles.php");
+				String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
 				String[] items = temp.split(",");
 				for(int i=0; i<items.length; i++)
 				{
@@ -2702,7 +2702,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getHighScoresFrame().setBounds(bl.getPuzzleFrame().getBounds());
 			HighScoresComboBox.removeAllItems();
 			//Populate the level comboBox on click of HighScores button
-			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/puzzles.php");
+			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
 			String[] items = temp.split(",");
 			for(int i=0; i<items.length; i++)
 			{
@@ -4414,7 +4414,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void setCustomPuzzleUsers()
 	{
 		LoadCustomPuzzleUserDropBox.removeAllItems();
-		String userlist = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/customPuzzles.php?token=userList");
+		String userlist = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=userList");
 		String[] users = userlist.split(",");
 		for(int i=0; i<users.length; i++)
 		{
@@ -4429,7 +4429,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			LoadCustomPuzzleDropBox.removeAllItems();
 		}
 		catch(Exception e){}
-		String puzzlelist = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/customPuzzles.php?token=puzzleList&user="+LoadCustomPuzzleUserDropBox.getSelectedItem());
+		String puzzlelist = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=puzzleList&user="+LoadCustomPuzzleUserDropBox.getSelectedItem());
 		if(!puzzlelist.equalsIgnoreCase("error"))
 		{
 			String[] puzzles = puzzlelist.split(",");
@@ -4445,7 +4445,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		StringBuilder builder = new StringBuilder(); 
 		try {
 			String puzzleName = playerName + "-" + CustomPuzzleTextField.getText();
-			URL test = new URL(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/image.php?fileName=" + puzzleName);
+			URL test = new URL(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/image.php?fileName=" + puzzleName);
 			URLConnection con = test.openConnection();
 			con.setRequestProperty("Content-Type", "application/octet-stream");;
 			con.setRequestProperty("Content-Disposition", "attachment; filename=image.png");
@@ -4528,7 +4528,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void getScores()
 	{
 		if (!NameTextField.getText().equalsIgnoreCase("admin")) {
-			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/playerScores.php?user="
+			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/playerScores.php?user="
 					+ NameTextField.getText());
 			String[] scores = temp.split(",");
 			int totalPuzzles = puz.getTotalPuzzles();
@@ -4619,7 +4619,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		try
 		{
 			puzzleName = URLEncoder.encode(puzzleName, "UTF-8");
-			hint = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/hints.php?puzzleName=" + puzzleName + "&user=" + BeadLoom.playerName);
+			hint = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/hints.php?puzzleName=" + puzzleName + "&user=" + BeadLoom.playerName);
 		}
 		catch (Exception e)
 		{
@@ -4633,10 +4633,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	{
 		if(avatarMode)
 		{
-			sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/avatar.php?avatar="+avatarPuzzle + "&user=" + BeadLoom.playerName);
+			sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?avatar="+avatarPuzzle + "&user=" + BeadLoom.playerName);
 			avatarMode = false;
 		}
-		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
+		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?user=" + BeadLoom.playerName);
 		if(puzNum.length()>0) { avatarPuzzle = Integer.parseInt(puzNum); }
 		if(avatarPuzzle < -1) { avatarPuzzle = -1; }
 
@@ -4840,7 +4840,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		
 		initAvatarMenu();
 		avatarMode = true;
-		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + "/games/BeadLoomGame/avatar.php?user=" + BeadLoom.playerName);
+		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?user=" + BeadLoom.playerName);
 		if(puzNum.length()>0) 
 		{
 			avatarPuzzle = Integer.parseInt(puzNum); 
