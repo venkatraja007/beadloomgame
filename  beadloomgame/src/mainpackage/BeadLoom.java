@@ -118,9 +118,11 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	//public static Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	public static Dimension dim = new Dimension(1024, 768);
 	//Set WEB_ADDRESS for the base website
-	public static String WEB_ADDRESS = "http://www.unccmakesgames.com";
+	public static String WEB_ADDRESS = "http://community.game2learn.com";
+	//Set SCRIPTS_FOLDER for the folder where the php scripts are stored
+	public static String SCRIPTS_FOLDER = "/scripts/BeadLoomGame";
 	//Set BEAD_ADDRESS to null, initialized in the the init() function
-	public static String BEAD_ADDRESS = WEB_ADDRESS+"/games/BeadLoomGame/bead.JPG";
+	public static String BEAD_ADDRESS = WEB_ADDRESS + "/games/BeadLoomGame/bead.JPG";
 
 	//this line is correct
 	//public static String beadLocation = "bead.JPG";
