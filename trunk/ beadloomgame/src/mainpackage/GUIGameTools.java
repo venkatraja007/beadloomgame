@@ -2133,6 +2133,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				message = sendPost(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/enterScores.php", sendString);
 				if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
+				
+				//Send Log to Server
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+				
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
@@ -2179,10 +2183,16 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				message = sendPost(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/enterScores.php", sendString);
 				if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
+				
+				//Send Log to Server
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+				
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
 
+			
+			
 			//Log the Results
 //			try{
 //				FileWriter log = new FileWriter("log.txt", true);
@@ -4885,6 +4895,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//set up the content pane for Game Play Mode
 	public void setGamePlayMode()
 	{
+		
+		//Clear log
+		PuzzleLog.Clear();
+		
 		removeAllWindows();
 
 		JPanel panel = bl.getContentPanel();
