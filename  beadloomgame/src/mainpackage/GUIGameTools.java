@@ -1829,6 +1829,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //				System.err.println("Error: " + ex.getMessage());
 //			}
 		}
+		//Clear log
+		PuzzleLog.Clear();
 	}
 
 	public void setMoveLabel(JLabel toSet){
@@ -2058,6 +2060,9 @@ public class GUIGameTools extends JPanel implements ActionListener{
 //		}
 		bl.getGridPanel().clear();
 		bl.getInputTools().ghostPoint();
+		
+		//Clear log
+		PuzzleLog.Clear();
 	}
 
 	//Changes the layout of the box free play
@@ -4896,9 +4901,6 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	public void setGamePlayMode()
 	{
 		
-		//Clear log
-		PuzzleLog.Clear();
-		
 		removeAllWindows();
 
 		JPanel panel = bl.getContentPanel();
@@ -4923,6 +4925,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		panel.repaint();
 		if(ComponentToggle.securityEnabled){ Security.setSecurityToken(); }
 		Achievements.retrieveAchievements(BeadLoom.playerName);
+		
 		
 	}
 
