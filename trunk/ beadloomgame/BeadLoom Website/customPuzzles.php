@@ -33,6 +33,24 @@ if($token == "sitePuzzleList")
 			echo "Error";
 		}
 	}
+	else
+	{
+		$query = "SELECT * FROM CustomPuzzles WHERE published='1' ORDER BY user";
+		$result = $db->query($query);
+		if($result)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				echo $row['user']."-".$row['puzzle'].",";
+			}
+			die;
+		}
+		else
+		{
+			echo "Error";
+		}
+
+	}
 }
 //return comma seperated list of custom puzzles
 else if($token == "puzzles")

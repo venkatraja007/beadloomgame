@@ -158,7 +158,7 @@ if(isset($_POST['submitButton']))
 			$subject = "Bead Loom Game Registration";
 			$HTML = "<b>PLEASE DO NOT REPLY TO THIS EMAIL!</b><br /><br />Thank you, $fname $lname for registering for Bead Loom Game!<br /><br />As a reminder, the Username and Password used for registration are as follows:<br /><b>Username:</b> $uid<br /><b>Password:</b> $password<br /><br />We hope that you enjoy playing Bead Loom Game! Instructions are available on our <a href=\"http://www.unccmakesgames.com/games/BeadLoomGame/instructions.php\">Instructions</a> page.<br /><br />Your feedback is important to us! Please take a moment to <a href=\"http://www.unccmakesgames.com/games/BeadLoomGame/feedback.php\">fill out our feedback page</a>! Your input is greatly appreciated!<br /><br />Thank You!<br />Sincerely,<br />Bead Loom Team";
 			$HTML2 = "$fname $lname has registered for Bead Loom!<br /><br /><b>Username:</b> $uid <br /><b>Occupation:</b> $occupation <br /><b>Affiliation:</b> $affiliation ";
-			$to2 = "shaun.pickford@gmail.com";
+			$to2 = "BeadLoomGame@gmail.com";
 			$subject2 = "New Bead Loom Registration";
 			sendHTMLemail($HTML, $from, $to, $subject);
 			sendHTMLemail($HTML2, $from, $to2, $subject2);
