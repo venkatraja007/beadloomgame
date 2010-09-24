@@ -208,7 +208,7 @@ public abstract class Achievements {
 		int id = 4;
 		if(currentAchievements[id] == 0)
 		{
-			String champion = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/worldChampion.php?user=" + BeadLoom.playerName);
+			String champion = GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/worldChampion.php?user=" + BeadLoom.playerName);
 			if(champion.equalsIgnoreCase("true"))
 			{
 				currentAchievements[id] = 1;
@@ -466,7 +466,7 @@ public abstract class Achievements {
 		//if already obtained do not check
 		if(currentAchievements[id] == 0)
 		{
-			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/creativeCat.php?user=" + BeadLoom.playerName);
+			String creativeCat = GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/creativeCat.php?user=" + BeadLoom.playerName);
 			if(creativeCat.equalsIgnoreCase("true"))
 			{
 				currentAchievements[id] = 1;
@@ -495,7 +495,7 @@ public abstract class Achievements {
 		//if already obtained do not check
 		if(currentAchievements[id] == 0)
 		{
-			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/newIdeal.php?user=" + BeadLoom.playerName);
+			String creativeCat = GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/newIdeal.php?user=" + BeadLoom.playerName);
 			if(creativeCat.equalsIgnoreCase("true"))
 			{
 				currentAchievements[id] = 1;
@@ -524,7 +524,7 @@ public abstract class Achievements {
 		//if already obtained do not check
 		if(currentAchievements[id] == 0)
 		{
-			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/rocketShip.php?user=" + BeadLoom.playerName);
+			String creativeCat = GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/rocketShip.php?user=" + BeadLoom.playerName);
 			if(creativeCat.equalsIgnoreCase("true"))
 			{
 				currentAchievements[id] = 1;
@@ -553,7 +553,7 @@ public abstract class Achievements {
 		//if already obtained do not check
 		if(currentAchievements[id] == 0)
 		{
-			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/senseSelf.php?user=" + BeadLoom.playerName);
+			String creativeCat = GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/senseSelf.php?user=" + BeadLoom.playerName);
 			if(creativeCat.equalsIgnoreCase("true"))
 			{
 				currentAchievements[id] = 1;
@@ -582,7 +582,7 @@ public abstract class Achievements {
 		//if already obtained do not check
 		if(currentAchievements[id] == 0)
 		{
-			String creativeCat = GUIGameTools.sendWebRequest("http://unccmakesgames.com/games/BeadLoomGame/speedKing.php?user=" + BeadLoom.playerName);
+			String creativeCat = GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/speedKing.php?user=" + BeadLoom.playerName);
 			if(creativeCat.equalsIgnoreCase("true"))
 			{
 				currentAchievements[id] = 1;
