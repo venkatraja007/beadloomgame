@@ -14,5 +14,12 @@ public abstract class PuzzleLog
 	{
 		puzzleLog = "";
 	}
+	
+	public static String GetLog(String puzzleName)
+	{
+		return "<puzzlelog puzzle=\"" + puzzleName + "\">" + puzzleLog + "\n</puzzlelog>";
+	}
+	
+	
 
 }

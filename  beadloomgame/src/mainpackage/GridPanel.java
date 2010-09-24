@@ -350,6 +350,9 @@ class GridPanel extends JPanel {
 		}
 		if(isClear == false) bl.getTop().enableRedo(false);
 		repaint();
+		
+		//Add Layer To Puzzle Log
+		PuzzleLog.AddLayer("\n\t" + l.toXMLString());
 	}
 
 	public void undo() {
@@ -377,6 +380,9 @@ class GridPanel extends JPanel {
 			layer.add(undo.get(undoPtr));
 		}
 		repaint();
+		
+		//Add UNDO layer
+		PuzzleLog.AddLayer("\n\t<undo/>");
 	}
 
 	public void redo() {
@@ -392,6 +398,9 @@ class GridPanel extends JPanel {
 				bl.getTop().enableRedo(false);
 			}
 			repaint();
+			
+			//Add REDO layer
+			PuzzleLog.AddLayer("\n\t<redo/>");
 		}
 	}
 
