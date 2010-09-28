@@ -352,7 +352,10 @@ class GridPanel extends JPanel {
 		repaint();
 		
 		//Add Layer To Puzzle Log
-		PuzzleLog.AddLayer("\n\t" + l.toXMLString());
+		if(isMainGrid)
+		{
+			PuzzleLog.AddLayer("\n\t" + l.toXMLString());
+		}
 	}
 
 	public void undo() {

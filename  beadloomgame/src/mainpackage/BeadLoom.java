@@ -278,7 +278,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 
 		//======= Grid Panel Components =======
 		gridPanel = new GridPanel(this);
-		gridPanel.setMain(false);
+		gridPanel.setMain(true);
 		gridPanel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e){ 
 				if ((Math.abs(gridPanel.findMouseX(e)) <=gridPanel.getGridSize())&&(Math.abs(gridPanel.findMouseY(e)) <=gridPanel.getGridSize())){
