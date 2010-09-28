@@ -2519,6 +2519,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			sendCustomPuzzlePost(getGridXML("Hey"), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", "MyAvatar-"+BeadLoom.playerName, "Avatars");
 			avatarPuzzle = -1;
 			sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?avatar=-1");
+			createAvatarImage();
 			setMainMenuMode();
 			//TODO
 		}
@@ -4455,12 +4456,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 	}
 	
-	public void sendImagePost(File file)
+	public void sendImagePost(File file, String folder, String name)
 	{
 		StringBuilder builder = new StringBuilder(); 
 		try {
 			String puzzleName = playerName + "-" + CustomPuzzleTextField.getText();
-			URL test = new URL(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/image.php?fileName=" + puzzleName);
+			URL test = new URL(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/image.php?fileName=" + name + "&folderName=" + folder);
 			URLConnection con = test.openConnection();
 			con.setRequestProperty("Content-Type", "application/octet-stream");;
 			con.setRequestProperty("Content-Disposition", "attachment; filename=image.png");
@@ -5004,9 +5005,36 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			e1.printStackTrace();
 		}
 		
-		sendImagePost(imageFile);
+		sendImagePost(imageFile, "CustomPuzzleImages", playerName + "-" + CustomPuzzleTextField.getText());
 		//Ask user if they would like their custom puzzle image created on the desktop
 		if(JOptionPane.showConfirmDialog(null, "Would you like an image of your puzzle on the desktop", "Image", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION)
+		{
+			imageFile.delete();
+		}
+	}
+	
+	public void createAvatarImage()
+	{
+		bl.getGridPanel().calcGameGrid();
+		Image temp = bl.createImageFromGrid1().getScaledInstance(PuzzleThumbnail.width, PuzzleThumbnail.width, 0);
+
+		BufferedImage bufferedImage = new BufferedImage(temp.getWidth(null), temp.getHeight(null), BufferedImage.TYPE_INT_RGB);
+		Graphics2D graphics = bufferedImage.createGraphics();
+		graphics.drawImage(temp, null, null);
+		String desktopPath = System.getProperty("user.home") + "/Desktop";
+		File imageFile = new File(desktopPath, playerName + ".png");
+		try
+		{
+			ImageIO.write(bufferedImage, "png", imageFile);
+		}
+		catch(Exception e1)
+		{
+			e1.printStackTrace();
+		}
+		
+		sendImagePost(imageFile, "AvatarImages", playerName);
+		//Ask user if they would like their custom puzzle image created on the desktop
+		if(JOptionPane.showConfirmDialog(null, "Would you like an image of your avatar on the desktop", "Image", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION)
 		{
 			imageFile.delete();
 		}
