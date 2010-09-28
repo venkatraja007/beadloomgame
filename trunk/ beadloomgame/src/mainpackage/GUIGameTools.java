@@ -4521,7 +4521,10 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			}
 			wr.close();
 			in.close();
-			JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
+			if(builder.toString().length() > 0)
+			{
+				JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
+			}
 			
 		} catch (Exception ex) {
 			// TODO Auto-generated catch block

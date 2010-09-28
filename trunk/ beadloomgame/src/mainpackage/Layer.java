@@ -23,6 +23,10 @@
 package src.mainpackage;
 
 import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
 
 //This is a class to store data about layers
 public class Layer {
@@ -217,10 +221,20 @@ public class Layer {
 		return output;
 	}
 	
+	public String getTime()
+	{
+		String time = "";
+		Calendar cal = Calendar.getInstance(Locale.US);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		time = sdf.format(cal.getTime());
+		return time;
+	}
+	
 	public String toXMLString() {
 		String output = "  <layer color=\"";
 		output += BeadLoom.getColorName(color).toUpperCase() + "\" ";
 		output += "typeID=\"" + type.toLowerCase() + "\" ";
+		output += "time=\"" + getTime() + "\" ";
 		
 		if(type.equalsIgnoreCase("point"))
 		{
