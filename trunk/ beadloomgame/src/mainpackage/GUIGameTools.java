@@ -1834,7 +1834,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//Send Log to Server
 		if(!PuzzleLog.IsEmpty())
 		{
-			PuzzleLog.AddLayer("  <restart />");
+			PuzzleLog.AddLayer("\n  <restart />");
 			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
 			PuzzleLog.Clear();
 		}
@@ -2295,7 +2295,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//Send Log to Server
 		if(!PuzzleLog.IsEmpty())
 		{
-			PuzzleLog.AddLayer("  <incorrect errors='" + totalErrors + "' />");
+			PuzzleLog.AddLayer("\n  <incorrect errors='" + totalErrors + "' />");
 			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
 			PuzzleLog.Clear();
 		}
@@ -4674,7 +4674,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		//Send Log to Server
 		if(!PuzzleLog.IsEmpty())
 		{
-			PuzzleLog.AddLayer("  <noSubmit />");
+			PuzzleLog.AddLayer("\n  <exitNoSubmit />");
 			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
 			PuzzleLog.Clear();
 		}
