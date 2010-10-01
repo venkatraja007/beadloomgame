@@ -20,6 +20,8 @@ public abstract class PuzzleLog
 		return "<puzzlelog puzzle=\"" + puzzleName + "\">" + puzzleLog + "\n</puzzlelog>";
 	}
 	
-	
-
+	public static boolean IsEmpty()
+	{
+		return !(puzzleLog.length()>0);
+	}
 }
