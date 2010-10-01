@@ -112,6 +112,24 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		hintsOn = ComponentToggle.hintsOn;
 		timerEnabled = ComponentToggle.timerEnabled;
 	}
+	
+	public void stop()
+	{
+		//Send Log to Server
+		if(!PuzzleLog.IsEmpty() && Game.getCurrentPuzzle() == -1)
+		{
+			PuzzleLog.AddLayer("\n  <exitApplet />");
+			Game.sendCustomPuzzlePost(PuzzleLog.GetLog(Game.puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			PuzzleLog.Clear();
+		}
+		//Send Log to Server
+		else if(!PuzzleLog.IsEmpty())
+		{
+			PuzzleLog.AddLayer("\n  <exitApplet />");
+			Game.sendCustomPuzzlePost(PuzzleLog.GetLog(Game.puz.getPuzzleName(Game.getCurrentPuzzle())), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			PuzzleLog.Clear();
+		}
+	}
 
 	//******* Variables declaration ******
 
