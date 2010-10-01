@@ -2140,8 +2140,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
 				
 				//Send Log to Server
-				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
-				
+				if(!PuzzleLog.IsEmpty())
+				{
+					sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+					PuzzleLog.Clear();
+				}
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
@@ -2190,8 +2193,11 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, message, "High Scores messages", JOptionPane.PLAIN_MESSAGE);
 				
 				//Send Log to Server
-				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
-				
+				if(!PuzzleLog.IsEmpty())
+				{
+					sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+					PuzzleLog.Clear();
+				}
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
@@ -2278,6 +2284,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				Output = Output + "(" + errorX[i] + ", " + errorY[i] + ")\n";
 			}
 			JOptionPane.showMessageDialog(null, Output, "Sorry", JOptionPane.PLAIN_MESSAGE);
+		}
+		//Send Log to Server
+		if(!PuzzleLog.IsEmpty())
+		{
+			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			PuzzleLog.Clear();
 		}
 }
 
@@ -4650,6 +4662,15 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//set up the content pane for Main Menu Mode
 	public void setMainMenuMode()
 	{
+
+		//Send Log to Server
+		if(!PuzzleLog.IsEmpty())
+		{
+			PuzzleLog.AddLayer("  <noSubmit />");
+			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			PuzzleLog.Clear();
+		}
+		
 		if(avatarMode)
 		{
 			sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?avatar="+avatarPuzzle + "&user=" + BeadLoom.playerName);
