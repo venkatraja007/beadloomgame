@@ -1692,6 +1692,12 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				}
 			}
 		});
+		if(!ComponentToggle.userAccounts)
+		{
+			NameTextField.setText("Guest");
+			BeadLoom.playerName = "Guest";
+			NameTextField.setEditable(false);
+		}
 
 		NameTextField.addActionListener(this);
 
@@ -1836,14 +1842,28 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(!PuzzleLog.IsEmpty() && currentPuzzle == -1)
 		{
 			PuzzleLog.AddLayer("\n  <restart />");
-			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				sendGuestFilePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 		//Send Log to Server
 		else if(!PuzzleLog.IsEmpty())
 		{
 			PuzzleLog.AddLayer("\n  <restart />");
-			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				sendGuestFilePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 	}
@@ -2157,7 +2177,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				//Send Log to Server
 				if(!PuzzleLog.IsEmpty())
 				{
-					sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+					if(ComponentToggle.userAccounts)
+					{
+						sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+					}
+					else
+					{
+						sendGuestFilePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+					}
 					PuzzleLog.Clear();
 				}
 			} catch (UnsupportedEncodingException e) {
@@ -2210,7 +2237,14 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				//Send Log to Server
 				if(!PuzzleLog.IsEmpty())
 				{
-					sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+					if(ComponentToggle.userAccounts)
+					{
+						sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+					}
+					else
+					{
+						sendGuestFilePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+					}
 					PuzzleLog.Clear();
 				}
 			} catch (UnsupportedEncodingException e) {
@@ -2271,7 +2305,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getGridFrame2().setVisible(false);
 			HighScoresComboBox.removeAllItems();
 			//Populate the level comboBox on click of HighScores button
-			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
+			String temp = sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
 			String[] items = temp.split(",");
 			for(int i=0; i<items.length; i++)
 			{
@@ -2280,7 +2314,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			//show high score
 			try{
 				HighScoresLabel.setText(
-						sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
+						sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 								URLEncoder.encode(
 										puz.getPuzzleName(currentPuzzle), "UTF-8") +
 				"&token=token"));
@@ -2304,14 +2338,28 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(!PuzzleLog.IsEmpty() && currentPuzzle == -1)
 		{
 			PuzzleLog.AddLayer("\n  <incorrect errors='" + totalErrors + "' />");
-			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				sendGuestFilePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 		//Send Log to Server
 		else if(!PuzzleLog.IsEmpty())
 		{
 			PuzzleLog.AddLayer("\n  <incorrect errors='" + totalErrors + "' />");
-			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				sendGuestFilePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 }
@@ -2409,25 +2457,56 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	}
 
 	public static String sendWebRequest(String url) {
-		StringBuilder builder = new StringBuilder(); 
-		try {
-			URL test = new URL(url);
-			URLConnection con = test.openConnection();
-			BufferedReader in = new BufferedReader(
-					new InputStreamReader(
-							con.getInputStream()));
-			String inputLine;
-
-			while ((inputLine = in.readLine()) != null)  {
-
-				builder.append(inputLine);
+		if(ComponentToggle.userAccounts)
+		{
+			StringBuilder builder = new StringBuilder(); 
+			try {
+				URL test = new URL(url);
+				URLConnection con = test.openConnection();
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(
+								con.getInputStream()));
+				String inputLine;
+	
+				while ((inputLine = in.readLine()) != null)  {
+	
+					builder.append(inputLine);
+				}
+				in.close();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				return builder.toString();
 			}
-			in.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
 			return builder.toString();
 		}
-		return builder.toString();
+		else
+		{
+			return "This action not available as a guest.";
+		}
+	}
+
+	public static String sendGuestWebRequest(String url) {
+		{
+			StringBuilder builder = new StringBuilder(); 
+			try {
+				URL test = new URL(url);
+				URLConnection con = test.openConnection();
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(
+								con.getInputStream()));
+				String inputLine;
+	
+				while ((inputLine = in.readLine()) != null)  {
+	
+					builder.append(inputLine);
+				}
+				in.close();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				return builder.toString();
+			}
+			return builder.toString();
+		}
 	}
 	
 	public void initMainMenu() {
@@ -2542,11 +2621,18 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		}
 		
 		else if (e.getSource() == SaveGameButton) {
-			if(currentPuzzle != -1)
+			if(ComponentToggle.userAccounts)
 			{
-				sendCustomPuzzlePost(getGridXML(moveCounter+","+(System.currentTimeMillis()-puzzleStartTime)+","+currentPuzzle),
-					BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "GameSaves");
-				setMainMenuMode();
+				if(currentPuzzle != -1)
+				{
+					sendCustomPuzzlePost(getGridXML(moveCounter+","+(System.currentTimeMillis()-puzzleStartTime)+","+currentPuzzle),
+						BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "GameSaves");
+					setMainMenuMode();
+				}
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "You must be logged in to save a game.", "Guest Restriction", JOptionPane.PLAIN_MESSAGE);
 			}
 		}
 		
@@ -2587,14 +2673,21 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Please Enter Your Name", "Name Error", JOptionPane.PLAIN_MESSAGE);
 			}
 			else {
-				BeadLoom.playerName = NameTextField.getText();
-				bl.getMainMenuFrame().setVisible(false);
-				bl.getCustomPuzzleOptionsFrame().setVisible(true);
-				LoadSavedCustomPuzzleComboBox.removeAllItems();
-				String[] items= sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=edit&user=" + BeadLoom.playerName).split(",");
-				for(int i=0; i<items.length; i++)
+				if(ComponentToggle.userAccounts)
 				{
-					LoadSavedCustomPuzzleComboBox.addItem(items[i]);
+					BeadLoom.playerName = NameTextField.getText();
+					bl.getMainMenuFrame().setVisible(false);
+					bl.getCustomPuzzleOptionsFrame().setVisible(true);
+					LoadSavedCustomPuzzleComboBox.removeAllItems();
+					String[] items= sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=edit&user=" + BeadLoom.playerName).split(",");
+					for(int i=0; i<items.length; i++)
+					{
+						LoadSavedCustomPuzzleComboBox.addItem(items[i]);
+					}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "This feature has been disabled for guests.", "Guest Restriction", JOptionPane.PLAIN_MESSAGE);
 				}
 			}
 		}
@@ -2613,7 +2706,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			try {
 				if (HighScoresComboBox.getSelectedItem() == null) {
 					HighScoresLabel.setText(
-							sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
+							sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											puz.getPuzzleName(currentPuzzle), "UTF-8") +
 					"&token=token"));
@@ -2621,13 +2714,13 @@ public class GUIGameTools extends JPanel implements ActionListener{
 				else
 				{
 					HighScoresLabel.setText(
-							sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
+							sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											HighScoresComboBox.getSelectedItem().toString(),"UTF-8") +
 					"&token=token"));
 				}
 				HighScoresComboBox.removeAllItems();
-				String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
+				String temp = sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
 				String[] items = temp.split(",");
 				for(int i=0; i<items.length; i++)
 				{
@@ -2753,7 +2846,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			bl.getHighScoresFrame().setBounds(bl.getPuzzleFrame().getBounds());
 			HighScoresComboBox.removeAllItems();
 			//Populate the level comboBox on click of HighScores button
-			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
+			String temp = sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
 			String[] items = temp.split(",");
 			for(int i=0; i<items.length; i++)
 			{
@@ -4433,39 +4526,46 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public String sendPost(String sendURL, String sendString)
 	{
-		StringBuilder builder = new StringBuilder();
-
-		try {
-			URLConnection con = new URL(sendURL).openConnection();
-			con.setDoOutput(true);
-			OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
-			wr.write(sendString);
-			wr.flush();
-			
-			
-			BufferedReader in = new BufferedReader(
-					new InputStreamReader(
-							con.getInputStream()));
-			String inputLine;
-
-			while ((inputLine = in.readLine()) != null)  {
-
-				builder.append(inputLine);
+		if(ComponentToggle.userAccounts)
+		{
+			StringBuilder builder = new StringBuilder();
+	
+			try {
+				URLConnection con = new URL(sendURL).openConnection();
+				con.setDoOutput(true);
+				OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+				wr.write(sendString);
+				wr.flush();
+				
+				
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(
+								con.getInputStream()));
+				String inputLine;
+	
+				while ((inputLine = in.readLine()) != null)  {
+	
+					builder.append(inputLine);
+				}
+				wr.close();
+				in.close();
+			} catch (Exception ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
 			}
-			wr.close();
-			in.close();
-		} catch (Exception ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
+			
+			return builder.toString();
 		}
-		
-		return builder.toString();
+		else
+		{
+			return "This action not available as a guest.";
+		}
 	}
 	
 	public void setCustomPuzzleUsers()
 	{
 		LoadCustomPuzzleUserDropBox.removeAllItems();
-		String userlist = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=userList");
+		String userlist = sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=userList");
 		String[] users = userlist.split(",");
 		for(int i=0; i<users.length; i++)
 		{
@@ -4480,7 +4580,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			LoadCustomPuzzleDropBox.removeAllItems();
 		}
 		catch(Exception e){}
-		String puzzlelist = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=puzzleList&user="+LoadCustomPuzzleUserDropBox.getSelectedItem());
+		String puzzlelist = sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/customPuzzles.php?token=puzzleList&user="+LoadCustomPuzzleUserDropBox.getSelectedItem());
 		if(!puzzlelist.equalsIgnoreCase("error"))
 		{
 			String[] puzzles = puzzlelist.split(",");
@@ -4493,46 +4593,92 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public void sendImagePost(File file, String folder, String name)
 	{
-		StringBuilder builder = new StringBuilder(); 
-		try {
-			String puzzleName = playerName + "-" + CustomPuzzleTextField.getText();
-			URL test = new URL(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/image.php?fileName=" + name + "&folderName=" + folder);
-			URLConnection con = test.openConnection();
-			con.setRequestProperty("Content-Type", "application/octet-stream");;
-			con.setRequestProperty("Content-Disposition", "attachment; filename=image.png");
-			con.setDoOutput(true);
-			con.setDoInput(true);
-			
-			OutputStream wr = con.getOutputStream();
-			DataInputStream ds = new DataInputStream(new FileInputStream(file));
-			byte[] data  = new byte[(int)file.length()];
-			ds.readFully(data,0, (int)file.length());
-			System.out.println(file.length());
-			wr.write(data);
-			wr.flush();
-			ds.close();
-			
-			BufferedReader in = new BufferedReader(
-					new InputStreamReader(
-							con.getInputStream()));
-			String inputLine;
-
-			while ((inputLine = in.readLine()) != null) 
-			{
-				builder.append(inputLine);
+		if(ComponentToggle.userAccounts)
+		{
+			StringBuilder builder = new StringBuilder(); 
+			try {
+				String puzzleName = playerName + "-" + CustomPuzzleTextField.getText();
+				URL test = new URL(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/image.php?fileName=" + name + "&folderName=" + folder);
+				URLConnection con = test.openConnection();
+				con.setRequestProperty("Content-Type", "application/octet-stream");;
+				con.setRequestProperty("Content-Disposition", "attachment; filename=image.png");
+				con.setDoOutput(true);
+				con.setDoInput(true);
+				
+				OutputStream wr = con.getOutputStream();
+				DataInputStream ds = new DataInputStream(new FileInputStream(file));
+				byte[] data  = new byte[(int)file.length()];
+				ds.readFully(data,0, (int)file.length());
+				System.out.println(file.length());
+				wr.write(data);
+				wr.flush();
+				ds.close();
+				
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(
+								con.getInputStream()));
+				String inputLine;
+	
+				while ((inputLine = in.readLine()) != null) 
+				{
+					builder.append(inputLine);
+				}
+				wr.close();
+				in.close();
+				if(builder.toString().length() > 0)
+				JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
+			} catch (Exception ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
 			}
-			wr.close();
-			in.close();
-			if(builder.toString().length() > 0)
-			JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
-		} catch (Exception ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
 		}
-
 	}
 	
 	public String sendCustomPuzzlePost(String fileContents, String url, String puzzleName, String folderName)
+	{
+		if(ComponentToggle.userAccounts)
+		{
+			StringBuilder builder = new StringBuilder(); 
+			try {
+				URL test = new URL(url);
+				URLConnection con = test.openConnection();
+				con.setDoOutput(true);
+				OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+				wr.write("folderName="+folderName);
+				wr.write("&fileName="+puzzleName);
+				wr.write("&file=" + URLEncoder.encode(fileContents, "UTF-8"));
+				wr.flush();
+				
+				
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(
+								con.getInputStream()));
+				String inputLine;
+	
+				while ((inputLine = in.readLine()) != null)  {
+	
+					builder.append(inputLine);
+				}
+				wr.close();
+				in.close();
+				if(builder.toString().length() > 0)
+				{
+					JOptionPane.showMessageDialog(null, builder.toString(), "Echo messages", JOptionPane.PLAIN_MESSAGE);
+				}
+				
+			} catch (Exception ex) {
+				// TODO Auto-generated catch block
+				ex.printStackTrace();
+			}
+			return builder.toString();
+		}
+		else
+		{
+			return "This action not available as a guest.";
+		}
+	}
+	
+	public String sendGuestFilePost(String fileContents, String url, String puzzleName, String folderName)
 	{
 		StringBuilder builder = new StringBuilder(); 
 		try {
@@ -4581,7 +4727,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	
 	public void getScores()
 	{
-		if (!NameTextField.getText().equalsIgnoreCase("admin")) {
+		if (!NameTextField.getText().equalsIgnoreCase("admin") && ComponentToggle.userAccounts) {
 			String temp = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/playerScores.php?user="
 					+ NameTextField.getText());
 			String[] scores = temp.split(",");
@@ -4689,14 +4835,28 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		if(!PuzzleLog.IsEmpty() && currentPuzzle == -1)
 		{
 			PuzzleLog.AddLayer("\n  <exitNoSubmits />");
-			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				sendGuestFilePost(PuzzleLog.GetLog(puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 		//Send Log to Server
 		else if(!PuzzleLog.IsEmpty())
 		{
 			PuzzleLog.AddLayer("\n  <exitNoSubmits />");
-			sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				sendCustomPuzzlePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				sendGuestFilePost(PuzzleLog.GetLog(puz.getPuzzleName(currentPuzzle)), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 		
@@ -4706,7 +4866,8 @@ public class GUIGameTools extends JPanel implements ActionListener{
 			avatarMode = false;
 		}
 		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?user=" + BeadLoom.playerName);
-		if(puzNum.length()>0) { avatarPuzzle = Integer.parseInt(puzNum); }
+		if(puzNum.length()>0 && ComponentToggle.userAccounts) { avatarPuzzle = Integer.parseInt(puzNum); }
+		else {avatarPuzzle = -1; }
 		if(avatarPuzzle < -1) { avatarPuzzle = -1; }
 
 		hidePuzzleButtons();
@@ -4902,52 +5063,59 @@ public class GUIGameTools extends JPanel implements ActionListener{
 	//set up the content pane for Avatar Creation Mode
 	public void setCreateAvatarMode()
 	{
-		//Do this to reposition the windows
-		startGame();
-		getScores();
-		removeAllWindows();
-		
-		initAvatarMenu();
-		avatarMode = true;
-		String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?user=" + BeadLoom.playerName);
-		if(puzNum.length()>0) 
+		if(ComponentToggle.userAccounts)
 		{
-			avatarPuzzle = Integer.parseInt(puzNum); 
+			//Do this to reposition the windows
+			startGame();
+			getScores();
+			removeAllWindows();
+			
+			initAvatarMenu();
+			avatarMode = true;
+			String puzNum = sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/avatar.php?user=" + BeadLoom.playerName);
+			if(puzNum.length()>0) 
+			{
+				avatarPuzzle = Integer.parseInt(puzNum); 
+			}
+			else { avatarPuzzle = -1; }
+	
+			JPanel panel = bl.getContentPanel();
+			panel.add(bl.getAvatarMenuFrame());
+			bl.getCustomPuzzleMenuFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
+			panel.add(bl.getGridFrame());
+			bl.getGridFrame().setVisible(true);
+			panel.add(bl.getBeadUtilitiesFrame());
+			panel.add(bl.getColorFrame());
+			bl.getColorFrame().setVisible(false);
+			panel.add(bl.getPuzzleFrame());
+			hidePuzzleButtons();
+			NameLabel.getParent().remove(NameLabel);
+			CustomPuzzleMenuPanel.add(NameLabel);
+			if(ClearButton.getParent() != null){ ClearButton.getParent().remove(ClearButton); }
+			AvatarMenuPanel.add(ClearButton);
+			if(MainMenuButton.getParent() != null) { MainMenuButton.getParent().remove(MainMenuButton); }
+			AvatarMenuPanel.add(MainMenuButton);
+			if(UndoButton.getParent()  !=  null) { UndoButton.getParent().remove(UndoButton); }
+			AvatarMenuPanel.add(UndoButton);
+			if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
+			limitedColorChoice = true;
+			setAvatarColorButtons();
+			bl.getInputTools().setColor(Color.BLACK);
+			bl.getColorFrame().setVisible(false);
+			bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLACK);
+			bl.getMoveBeads().getTopColorsButton().setText("Black");
+			bl.getMoveBeads().getTopColorsButton().setForeground(Color.WHITE);
+			bl.getTimerLabel().setVisible(false);
+			panel.repaint();
+			bl.getInputTools().setGrid(bl.getGridPanel());
+			if(!puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1))
+			{
+				JOptionPane.showMessageDialog(null, "Complete more game puzzles to unlock more colors for your custom Avatar", "Custom Avatar Creation", JOptionPane.PLAIN_MESSAGE);
+			}
 		}
-		else { avatarPuzzle = -1; }
-
-		JPanel panel = bl.getContentPanel();
-		panel.add(bl.getAvatarMenuFrame());
-		bl.getCustomPuzzleMenuFrame().setBounds((int)(BeadLoom.usableDim.getWidth()*0.37) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.65) + BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getWidth()*0.20) - BeadLoom.panelBorder, (int)(BeadLoom.usableDim.getHeight()*0.35) - BeadLoom.panelBorder);
-		panel.add(bl.getGridFrame());
-		bl.getGridFrame().setVisible(true);
-		panel.add(bl.getBeadUtilitiesFrame());
-		panel.add(bl.getColorFrame());
-		bl.getColorFrame().setVisible(false);
-		panel.add(bl.getPuzzleFrame());
-		hidePuzzleButtons();
-		NameLabel.getParent().remove(NameLabel);
-		CustomPuzzleMenuPanel.add(NameLabel);
-		if(ClearButton.getParent() != null){ ClearButton.getParent().remove(ClearButton); }
-		AvatarMenuPanel.add(ClearButton);
-		if(MainMenuButton.getParent() != null) { MainMenuButton.getParent().remove(MainMenuButton); }
-		AvatarMenuPanel.add(MainMenuButton);
-		if(UndoButton.getParent()  !=  null) { UndoButton.getParent().remove(UndoButton); }
-		AvatarMenuPanel.add(UndoButton);
-		if(ComponentToggle.codeOuputWindow) { panel.add(bl.getOutputWindow()); }
-		limitedColorChoice = true;
-		setAvatarColorButtons();
-		bl.getInputTools().setColor(Color.BLACK);
-		bl.getColorFrame().setVisible(false);
-		bl.getMoveBeads().getTopColorsButton().setBackground(Color.BLACK);
-		bl.getMoveBeads().getTopColorsButton().setText("Black");
-		bl.getMoveBeads().getTopColorsButton().setForeground(Color.WHITE);
-		bl.getTimerLabel().setVisible(false);
-		panel.repaint();
-		bl.getInputTools().setGrid(bl.getGridPanel());
-		if(!puz.setCustomPuzzle("MyAvatar-"+BeadLoom.playerName, "Avatars", 1))
+		else
 		{
-			JOptionPane.showMessageDialog(null, "Complete more game puzzles to unlock more colors for your custom Avatar", "Custom Avatar Creation", JOptionPane.PLAIN_MESSAGE);
+			JOptionPane.showMessageDialog(null, "You must be logged in to create an avatar.", "Guest Restriction", JOptionPane.PLAIN_MESSAGE);
 		}
 	}
 

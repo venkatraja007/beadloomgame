@@ -13,8 +13,8 @@ public class ComponentToggle {
 	public static boolean aesthetics = true;					//done
 	public static boolean basicHints = true;					//done
 	public static boolean advancedHints = true;					//TODO: implement this
-	public static boolean codeOuputWindow = true;				//Done
-	public static boolean userAccounts = true;					//TODO: implement this
+	public static boolean codeOuputWindow = true;				//done
+	public static boolean userAccounts = true;					//done
 	public static boolean gameSaves = true;						//done
 	public static boolean unlockableDifficultyLevels = true;	//done
 	public static boolean hintsOn = true;						//done
