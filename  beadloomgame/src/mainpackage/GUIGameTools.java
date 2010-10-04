@@ -1640,6 +1640,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 		SaveGameButton.setBounds(25, 25, 145, SaveGameButton.getPreferredSize().height);
 		SaveGameButton.addActionListener(this);
 		InGamePanel.add(SaveGameButton);
+		SaveGameButton.setVisible(ComponentToggle.gameSaves);
 
 		//---- Load Saved Custom Puzzle ----
 		LoadSavedCustomPuzzleButton.setText("Load Saved Puzzle");
