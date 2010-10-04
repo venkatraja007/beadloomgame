@@ -6,7 +6,7 @@ public abstract class Achievements {
 	
 	//Total Number of achievements according to the database
 	final static int TOTAL_ACHIEVEMENTS = 
-		Integer.parseInt(GUIGameTools.sendWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=num"));
+		Integer.parseInt(GUIGameTools.sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=num"));
 	//Achievement index the current user has
 	static int[] currentAchievements = new int[TOTAL_ACHIEVEMENTS];
 	//achievement names the current user has
@@ -21,7 +21,11 @@ public abstract class Achievements {
 	{
 		String achievements = GUIGameTools.sendWebRequest(
 				BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=retrieve&user=" + user);
-		String[] achievementNames = GUIGameTools.sendWebRequest(
+		if(!ComponentToggle.userAccounts)
+		{
+			achievements = "0000000000000000000000000000000000000000000000000000000000000000";
+		}
+		String[] achievementNames = GUIGameTools.sendGuestWebRequest(
 				BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=names").split(",");
 		
 		for(int i=0; i<currentAchievements.length; i++)
@@ -34,16 +38,19 @@ public abstract class Achievements {
 	
 	public static void sendAchievements(String user)
 	{
-		String achievements = "";
-		for(int i=0; i<currentAchievements.length; i++)
+		if(ComponentToggle.userAccounts)
 		{
-			achievements += currentAchievements[i];
+			String achievements = "";
+			for(int i=0; i<currentAchievements.length; i++)
+			{
+				achievements += currentAchievements[i];
+			}
+			
+			String message = GUIGameTools.sendWebRequest(
+					BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=send&user=" + 
+					user + "&achievements=" + achievements);
+			//JOptionPane.showMessageDialog(null, message, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
 		}
-		
-		String message = GUIGameTools.sendWebRequest(
-				BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/achievements.php?token=send&user=" + 
-				user + "&achievements=" + achievements);
-		//JOptionPane.showMessageDialog(null, message, "Achievements Message", JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	public static void retrieveMedals(String[] recordMedals, int[] recordMoves, String[] recordMedalsShort)
@@ -55,28 +62,31 @@ public abstract class Achievements {
 	
 	public static void checkAchievements()
 	{
-		PersistentPuzzler();		//0
-		SilverPuzzler();			//1
-		SoCloseYetSoFar();			//2
-		PurePlatinum();				//3
-		WorldChampion();			//4
-		LearnedTheBasics();			//5
-		MasteredTheBasics();		//6
-		EasyAsPie();				//7
-		HaveYourPieAndEatItToo(); 	//8
-		MentalMedium();				//9
-		MentalMediumMaster();		//10
-		PuzzleMaster();				//11
-		AbsolutePuzzleMaster();		//12
-		CreativeCat();				//13
-		NewIdeal();					//14
-		RocketShip();				//15
-		SenseSelf();				//16
-		SpeedKing();				//17
-		AwesomeSauce();				//18
-		Peace();					//19
-		EightBit();					//20
-		PuzzlePerfection();			//21
+		if(ComponentToggle.userAccounts)
+		{
+			PersistentPuzzler();		//0
+			SilverPuzzler();			//1
+			SoCloseYetSoFar();			//2
+			PurePlatinum();				//3
+			WorldChampion();			//4
+			LearnedTheBasics();			//5
+			MasteredTheBasics();		//6
+			EasyAsPie();				//7
+			HaveYourPieAndEatItToo(); 	//8
+			MentalMedium();				//9
+			MentalMediumMaster();		//10
+			PuzzleMaster();				//11
+			AbsolutePuzzleMaster();		//12
+			CreativeCat();				//13
+			NewIdeal();					//14
+			RocketShip();				//15
+			SenseSelf();				//16
+			SpeedKing();				//17
+			AwesomeSauce();				//18
+			Peace();					//19
+			EightBit();					//20
+			PuzzlePerfection();			//21
+		}
 	}
 	
 	public static boolean hasAchievement(int achievementNumber)

@@ -55,7 +55,10 @@ import java.awt.image.RGBImageFilter;
 import java.awt.image.ImageProducer;
 import java.awt.image.FilteredImageSource;
 import java.beans.PropertyVetoException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 import java.io.FilenameFilter; 
 
@@ -73,6 +76,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		
 		//Get players name from website
 		playerName = getParameter("name");
+		guestPlayerName = "guest" + getGuestNumber();
 
 		
 		BeadLoom Gui = new BeadLoom();
@@ -113,20 +117,41 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 		timerEnabled = ComponentToggle.timerEnabled;
 	}
 	
+	public String getGuestNumber()
+	{
+		Calendar cal = Calendar.getInstance(Locale.US);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+		return sdf.format(cal.getTime());
+	}
+	
 	public void stop()
 	{
 		//Send Log to Server
 		if(!PuzzleLog.IsEmpty() && Game.getCurrentPuzzle() == -1)
 		{
 			PuzzleLog.AddLayer("\n  <exitApplet />");
-			Game.sendCustomPuzzlePost(PuzzleLog.GetLog(Game.puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				Game.sendCustomPuzzlePost(PuzzleLog.GetLog(Game.puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				Game.sendGuestFilePost(PuzzleLog.GetLog(Game.puz.getCustomPuzzleName()), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 		//Send Log to Server
 		else if(!PuzzleLog.IsEmpty())
 		{
 			PuzzleLog.AddLayer("\n  <exitApplet />");
-			Game.sendCustomPuzzlePost(PuzzleLog.GetLog(Game.puz.getPuzzleName(Game.getCurrentPuzzle())), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			if(ComponentToggle.userAccounts)
+			{
+				Game.sendCustomPuzzlePost(PuzzleLog.GetLog(Game.puz.getPuzzleName(Game.getCurrentPuzzle())), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.playerName, "PuzzleLogs");
+			}
+			else
+			{
+				Game.sendGuestFilePost(PuzzleLog.GetLog(Game.puz.getPuzzleName(Game.getCurrentPuzzle())), BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/echo.php", BeadLoom.guestPlayerName, "PuzzleLogs");
+			}
 			PuzzleLog.Clear();
 		}
 	}
@@ -241,6 +266,7 @@ public class BeadLoom extends JApplet implements Printable, MouseListener, Mouse
 	
 	//------- Player Info -------
 	public static String playerName;
+	public static String guestPlayerName;
 	String tempPlayerName;
 
 	//------- Constructor -------
