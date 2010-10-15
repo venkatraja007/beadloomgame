@@ -298,7 +298,7 @@ public class Puzzle {
 	public void doLine(int x1, int y1, int x2, int y2) {
 		xValue = new ArrayList();
 		yValue = new ArrayList();
-		Layer l = InputTools.CoordListAction("LINEAR", xValue, yValue);
+		Layer l = InputTools.CoordListAction("LINE", xValue, yValue);
 		l.setX1(x1);
 		l.setY1(y1);
 		l.setX2(x2);
