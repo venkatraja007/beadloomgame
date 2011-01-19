@@ -2317,7 +2317,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 						sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 								URLEncoder.encode(
 										puz.getPuzzleName(currentPuzzle), "UTF-8") +
-				"&token=token"));
+				"&token=applet&user=" + BeadLoom.playerName));
 			}catch(Exception e) {}
 			bl.getHighScoresFrame().setVisible(true);
 		}
@@ -2709,7 +2709,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 							sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											puz.getPuzzleName(currentPuzzle), "UTF-8") +
-					"&token=token"));
+					"&token=applet&user=" + BeadLoom.playerName));
 				}
 				else
 				{
@@ -2717,7 +2717,7 @@ public class GUIGameTools extends JPanel implements ActionListener{
 							sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/scores.php?puzzleName=" + 
 									URLEncoder.encode(
 											HighScoresComboBox.getSelectedItem().toString(),"UTF-8") +
-					"&token=token"));
+					"&token=applet&user=" + BeadLoom.playerName));
 				}
 				HighScoresComboBox.removeAllItems();
 				String temp = sendGuestWebRequest(BeadLoom.WEB_ADDRESS + BeadLoom.SCRIPTS_FOLDER + "/puzzles.php");
